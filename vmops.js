@@ -402,7 +402,7 @@
   function viewImport() {
     setActive('import');
     app.innerHTML =
-      '<header class="view"><div class="overline">Import</div><h1>Load scan findings</h1>' +
+      '<header class="view"><div class="overline">Data Import</div><h1>Load scan findings</h1>' +
       '<p class="lede">Drop a Tenable / Nessus CSV export. It is parsed entirely in your browser — each row becomes a finding keyed by CVE + host. Re-importing merges and preserves your status, owner, and notes.</p></header>' +
       privSlim() +
       '<label class="drop" id="drop"><input type="file" id="file" accept=".csv,text/csv" hidden>' +
