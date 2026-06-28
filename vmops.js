@@ -26,7 +26,7 @@
   var SLABEL = {}; STATUS.forEach(function (s) { SLABEL[s.k] = s.l; });
   var OPEN_STATES = STATUS.filter(function (s) { return s.open; }).map(function (s) { return s.k; });
   var SEV_ORDER = { Critical: 0, High: 1, Medium: 2, Low: 3, Info: 4 };
-  var DEFAULT_CFG = { sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '' };
+  var DEFAULT_CFG = { sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tsUrl: '', tsAccess: '', tsSecret: '', tioAccess: '', tioSecret: '' };
 
   function load(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
   function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
@@ -489,7 +489,7 @@
     var c = STATE.cfg;
     app.innerHTML =
       '<header class="view"><div class="overline">Settings</div><h1>Configuration</h1>' +
-      '<p class="lede">SLA windows and ticketing endpoints are stored in this browser only.</p></header>' +
+      '<p class="lede">SLA windows, ticketing endpoints, and Tenable API keys are stored in this browser only.</p></header>' +
       privSlim() +
       '<h2>Remediation SLA windows (days)</h2><div class="card"><div class="grid2">' +
       ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return '<div class="field"><label>' + s + '</label><input type="number" min="0" data-sla="' + s + '" value="' + esc(c.sla[s]) + '"></div>'; }).join('') +
@@ -502,6 +502,15 @@
       '<h2>ServiceNow</h2><div class="card">' +
       '<div class="field"><label>Base URL</label><input type="text" id="snowBase" value="' + esc(c.snowBase) + '" placeholder="https://yourorg.service-now.com"></div>' +
       '<div class="muted" style="font-size:12.5px">"Open SNOW incident" opens a new incident pre-filled with the finding. "Search ServiceNow" queries existing incidents for the CVE.</div></div>' +
+      '<h2>Tenable API keys</h2><div class="card">' +
+      '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Stored in <b>this browser only</b> — never uploaded. Note: Tenable.sc / Tenable.io block direct in-browser API calls (CORS), so these aren\'t used for live pulls yet; they\'re saved here for a future local connector. To bring data in today, use <a href="#/import">Import</a> with a Tenable export.</div>' +
+      '<div style="font-weight:600;font-size:13px;color:var(--soft);margin:2px 0 6px">Tenable.sc</div>' +
+      '<div class="field"><label>Tenable.sc URL</label><input type="text" id="tsUrl" value="' + esc(c.tsUrl) + '" placeholder="https://tenable-sc.yourorg.com"></div>' +
+      '<div class="grid2"><div class="field"><label>Access key</label><input type="password" id="tsAccess" autocomplete="off" value="' + esc(c.tsAccess) + '" placeholder="access key"></div>' +
+      '<div class="field"><label>Secret key</label><input type="password" id="tsSecret" autocomplete="off" value="' + esc(c.tsSecret) + '" placeholder="secret key"></div></div>' +
+      '<div style="font-weight:600;font-size:13px;color:var(--soft);margin:14px 0 6px">Tenable.io (cloud.tenable.com)</div>' +
+      '<div class="grid2"><div class="field"><label>Access key</label><input type="password" id="tioAccess" autocomplete="off" value="' + esc(c.tioAccess) + '" placeholder="access key"></div>' +
+      '<div class="field"><label>Secret key</label><input type="password" id="tioSecret" autocomplete="off" value="' + esc(c.tioSecret) + '" placeholder="secret key"></div></div></div>' +
       '<div class="toolbar"><button class="btn primary" id="saveCfg">Save settings</button><button class="btn" id="resetSla">Reset SLA to defaults</button></div>';
     document.getElementById('saveCfg').addEventListener('click', function () {
       [].forEach.call(document.querySelectorAll('[data-sla]'), function (i) { var v = parseInt(i.value, 10); if (!isNaN(v)) STATE.cfg.sla[i.getAttribute('data-sla')] = v; });
@@ -509,6 +518,11 @@
       STATE.cfg.jiraPid = document.getElementById('jiraPid').value.trim();
       STATE.cfg.jiraType = document.getElementById('jiraType').value.trim();
       STATE.cfg.snowBase = document.getElementById('snowBase').value.trim();
+      STATE.cfg.tsUrl = document.getElementById('tsUrl').value.trim();
+      STATE.cfg.tsAccess = document.getElementById('tsAccess').value.trim();
+      STATE.cfg.tsSecret = document.getElementById('tsSecret').value.trim();
+      STATE.cfg.tioAccess = document.getElementById('tioAccess').value.trim();
+      STATE.cfg.tioSecret = document.getElementById('tioSecret').value.trim();
       save('vmops-config', STATE.cfg); toast('Settings saved');
     });
     document.getElementById('resetSla').addEventListener('click', function () { STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla); save('vmops-config', STATE.cfg); viewSettings(); toast('SLA windows reset'); });
