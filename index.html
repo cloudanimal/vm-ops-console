@@ -1563,14 +1563,10 @@
   }
 
   // ---------- About / methodology ----------
-  // ---------- Ask AI (bring-your-own-key natural-language navigator) ----------
-  // The model never invents CVE data — it only maps a question to one of the app's
-  // real views/routes, which we validate against a whitelist before linking.
-  var ASK_KEY = 'cve-anthropic-key';
-  var ASK_MODEL = 'claude-haiku-4-5-20251001';
-  function askGetKey() { try { return localStorage.getItem(ASK_KEY) || ''; } catch (e) { return ''; } }
-  function askSetKey(k) { try { k ? localStorage.setItem(ASK_KEY, k) : localStorage.removeItem(ASK_KEY); } catch (e) {} }
-  function askMask(k) { return k ? k.slice(0, 7) + '…' + k.slice(-4) : ''; }
+  // ---------- Ask AI (on-device natural-language navigator) ----------
+  // A small embedding model runs in the browser (Transformers.js) and maps a question to
+  // one of the app's real views — NO API key, and nothing leaves the device. It never
+  // invents CVE data; it only routes to existing views, validated against a whitelist.
 
   // Route grammar the model is allowed to emit; each entry validates a proposed hash.
   var ASK_ROUTES = [
@@ -1594,78 +1590,93 @@
   ];
   function askValidRoute(r) { return typeof r === 'string' && ASK_ROUTES.some(function (x) { return x.re.test(r); }); }
 
-  var ASK_SYS =
-    'You are the navigation assistant embedded in "VM Ops Console", a vulnerability-management operations app. ' +
-    'It has TWO sides: (1) the user\'s OWN tracked findings — imported scan results with a remediation status, owner, and SLA — shown on the ops pages; and (2) public vulnerability intelligence (NVD, EPSS, CISA KEV, exploit feeds, NIST LEV). ' +
-    'Translate the user\'s question into 1-3 of the app\'s EXISTING views by emitting hash routes. ' +
-    'If the question is about the user\'s OWN remediation work (what THEY need to fix, what is overdue, their criticals, program status) use the ops routes; if it is about public CVE intel, use the CVE routes. ' +
-    'You must ONLY use these route shapes and nothing else:\n' +
-    '  #/dashboard                   VM Ops dashboard: the user\'s remediation program status (open/overdue/SLA/criticals)\n' +
-    '  #/findings?sev=Critical|High|Medium|Low&status=new|triaged|in_remediation|resolved|risk_accepted|false_positive&overdue=1&owner=<name>&q=<text>   the user\'s tracked findings, filtered (any params optional; for "what is overdue" use overdue=1)\n' +
-    '  #/import                      import scan findings\n' +
-    '  #/settings                    SLA windows + ticketing settings\n' +
-    '  #/cve/CVE-YYYY-NNNN            a specific CVE (only if the user named a real CVE id)\n' +
-    '  #/report                      Morning Report: today\'s new + newly-exploitable briefing (KEV adds, EPSS risers, fresh exploits, new criticals)\n' +
-    '  #/search/<keyword>            free-text or product/vendor search (URL-encode the keyword)\n' +
-    '  #/latest?days=1|7|14|30&mode=published|updated   newest CVEs\n' +
-    '  #/browse?year=YYYY&sev=CRITICAL|HIGH|MEDIUM|LOW&cwe=CWE-NN   filter the corpus\n' +
-    '  #/kev?due=overdue|due7|due30|ransom   or  #/kev?q=<text>     Exploited → CISA KEV catalog\n' +
-    '  #/exploited                   Exploited → aggregated known-exploited / public-PoC feed (all sources)\n' +
-    '  #/stats                       CVE Statistics → per-year trends\n' +
-    '  #/stats?tab=tte               CVE Statistics → time-to-exploit (disclosure→exploitation) analytics\n' +
-    '  #/triage                      paste a list of CVEs to bulk-triage\n' +
-    '  #/triage?view=compare         or  #/compare/CVE-...,CVE-...   compare specific CVEs side by side\n' +
-    '  #/about                       how it works + dataset provenance / freshness\n' +
-    '  #/faq                         FAQ / explainers (e.g. why LEV is monthly, what stays in the browser)\n' +
-    'Rules: NEVER invent CVE IDs, scores, vendors, or counts — if the user did not supply a CVE id, route to a search/browse/list view instead. ' +
-    'Pick the single best view first. Keep each "label" short (≤6 words) and each "why" to one sentence. ' +
-    'If nothing fits, return an empty actions array and explain in the "answer" field.';
+  // --- On-device intent router (Transformers.js embeddings) ---
+  // We embed the question + each intent's example phrasings and pick the nearest intent
+  // (cosine similarity). Parameters (CVE ids, year, severity, time window, overdue) are
+  // pulled out with light regex and folded into the route. Nothing is "generated" — the
+  // model only classifies which existing view to open, so the data shown is always real.
+  var ASK_EMB_MODEL = 'Xenova/all-MiniLM-L6-v2';
+  var ASK_EMB_LIB = 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3/+esm';
+  var _askPipe = null, _askPipeP = null, _askIntentVecs = null;
 
-  function askCall(question) {
-    var body = {
-      model: ASK_MODEL,
-      max_tokens: 600,
-      system: ASK_SYS,
-      tools: [{
-        name: 'open_views',
-        description: 'Open one to three of the app\'s existing views that best answer the question.',
-        input_schema: {
-          type: 'object',
-          properties: {
-            answer: { type: 'string', description: 'One short sentence framing what these views show (no fabricated data).' },
-            actions: {
-              type: 'array',
-              items: {
-                type: 'object',
-                properties: {
-                  label: { type: 'string' },
-                  route: { type: 'string', description: 'A hash route from the allowed list, e.g. #/kev?due=overdue' },
-                  why: { type: 'string' }
-                },
-                required: ['label', 'route', 'why']
-              }
-            }
-          },
-          required: ['answer', 'actions']
-        }
-      }],
-      tool_choice: { type: 'tool', name: 'open_views' },
-      messages: [{ role: 'user', content: question }]
-    };
-    return fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'x-api-key': askGetKey(),
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true'
-      },
-      body: JSON.stringify(body)
-    }).then(function (r) {
-      return r.json().then(function (j) {
-        if (!r.ok) throw new Error((j && j.error && j.error.message) || ('HTTP ' + r.status));
-        return j;
-      });
+  function askEnsureModel(onStatus) {
+    if (_askPipe) return Promise.resolve(_askPipe);
+    if (_askPipeP) return _askPipeP;
+    if (onStatus) onStatus();
+    _askPipeP = import(ASK_EMB_LIB)
+      .then(function (m) { return m.pipeline('feature-extraction', ASK_EMB_MODEL, { dtype: 'q8' }); })
+      .then(function (p) { _askPipe = p; return p; });
+    return _askPipeP;
+  }
+  function askEmbed(texts) {
+    return _askPipe(texts, { pooling: 'mean', normalize: true }).then(function (t) {
+      var n = t.dims[0], d = t.dims[1], out = [], i;
+      for (i = 0; i < n; i++) out.push(Array.prototype.slice.call(t.data, i * d, i * d + d));
+      return out;
+    });
+  }
+  function askDot(a, b) { var s = 0, i; for (i = 0; i < a.length; i++) s += a[i] * b[i]; return s; }
+
+  var ASK_SEV_LABEL = { CRITICAL: 'Critical', HIGH: 'High', MEDIUM: 'Medium', LOW: 'Low' };
+  function askSignals(q) {
+    var s = {};
+    s.cves = (q.toUpperCase().match(/CVE-\d{4}-\d{4,}/g) || []);
+    var y = q.match(/\b(?:19|20)\d\d\b/); s.year = y ? y[0] : '';
+    s.sev = /\bcritical\b/i.test(q) ? 'CRITICAL' : /\bhigh\b/i.test(q) ? 'HIGH' : /\bmedium\b/i.test(q) ? 'MEDIUM' : /\blow\b/i.test(q) ? 'LOW' : '';
+    s.overdue = /\b(overdue|past[- ]?due|past sla|breached|late)\b/i.test(q);
+    s.ransom = /\bransom/i.test(q);
+    s.updated = /\b(updated|modified|changed)\b/i.test(q);
+    s.days = /\b(24 ?h|today|last day|past day)\b/i.test(q) ? '1'
+      : /\b(7 ?days?|past week|this week|last week|week)\b/i.test(q) ? '7'
+      : /\b(14 ?days?|two weeks|fortnight)\b/i.test(q) ? '14'
+      : /\b(30 ?days?|this month|past month|month)\b/i.test(q) ? '30' : '';
+    return s;
+  }
+  var ASK_STOP = /\b(the|a|an|of|in|on|for|to|and|or|my|me|show|find|list|latest|recent|recently|vulnerabilit\w*|cve|cves|exploit\w*|known|that|are|is|with|which|what|how|need|fix|patch\w*|all|any|please|published|severity|critical|high|medium|low|overdue|past|due|kev|catalog|vendor|product)\b/gi;
+  function askKeyword(q) {
+    return q.replace(/CVE-\d{4}-\d{4,}/gi, ' ').replace(ASK_STOP, ' ').replace(/[^\w ]+/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+
+  var ASK_INTENTS = [
+    { label: 'Dashboard', route: '#/dashboard', phrases: ['how is my remediation program doing', 'program status overview', 'my vulnerability posture', 'summary of open findings and SLA', 'remediation dashboard'] },
+    { label: 'My findings', phrases: ['my findings', 'vulnerabilities I need to fix', 'my tracked findings', 'show my open findings', 'what do I have to remediate'],
+      build: function (q, s) { var p = []; if (s.sev) p.push('sev=' + ASK_SEV_LABEL[s.sev]); if (s.overdue) p.push('overdue=1'); return '#/findings' + (p.length ? '?' + p.join('&') : ''); } },
+    { label: 'Overdue findings', phrases: ['what is overdue', 'past due vulnerabilities', 'findings past their SLA', 'overdue remediation', 'late fixes', 'breached SLA'],
+      build: function (q, s) { var p = ['overdue=1']; if (s.sev) p.unshift('sev=' + ASK_SEV_LABEL[s.sev]); return '#/findings?' + p.join('&'); } },
+    { label: 'Morning Report', route: '#/report', phrases: ['what is new today', 'what became exploitable recently', 'daily briefing', 'morning report', 'newly exploitable vulnerabilities', "today's vulnerability news"] },
+    { label: 'CISA KEV', phrases: ['known exploited vulnerabilities', 'CISA KEV catalog', 'actively exploited per CISA', 'KEV list', 'ransomware linked exploited'],
+      build: function (q, s) { if (s.overdue) return '#/kev?due=overdue'; if (s.ransom) return '#/kev?due=ransom'; var kw = askKeyword(q); return kw ? '#/kev?q=' + encodeURIComponent(kw) : '#/kev'; } },
+    { label: 'Exploited (all sources)', route: '#/exploited', phrases: ['all known exploited vulnerabilities', 'public proof of concept exploits', 'exploitation intelligence all sources', 'what has exploits available'] },
+    { label: 'Latest CVEs', phrases: ['newest CVEs', 'recently published vulnerabilities', 'CVEs from the last week', 'latest vulnerabilities', 'what was published recently'],
+      build: function (q, s) { return '#/latest?days=' + (s.days || '7') + '&mode=' + (s.updated ? 'updated' : 'published'); } },
+    { label: 'Browse corpus', phrases: ['browse CVEs by year', 'CVEs from a specific year', 'filter the corpus by severity', 'browse vulnerabilities'],
+      build: function (q, s) { var p = []; if (s.year) p.push('year=' + s.year); if (s.sev) p.push('sev=' + s.sev); return '#/browse' + (p.length ? '?' + p.join('&') : ''); } },
+    { label: 'Statistics', route: '#/stats', phrases: ['CVE statistics', 'trends over time', 'how many CVEs per year', 'corpus statistics'] },
+    { label: 'Time to exploit', route: '#/stats?tab=tte', phrases: ['time to exploit', 'how fast are CVEs exploited after disclosure', 'exploitation timing', 'disclosure to exploitation gap'] },
+    { label: 'Triage a list', route: '#/triage', phrases: ['triage a list of CVEs', 'paste CVEs to triage', 'bulk triage', 'assess a list of vulnerabilities'] },
+    { label: 'NASL viewer', route: '#/nasl', phrases: ['view NASL plugin source', 'read a Nessus plugin', 'nasl viewer', 'plugin source code'] },
+    { label: 'Import findings', route: '#/import', phrases: ['import scan findings', 'upload my scan results', 'load a Tenable export', 'import vulnerabilities'] },
+    { label: 'Settings', route: '#/settings', phrases: ['SLA settings', 'ticketing configuration', 'configure SLA windows', 'jira or servicenow settings'] },
+    { label: 'About', route: '#/about', phrases: ['how does this work', 'data sources and freshness', 'where does the data come from', 'is my data private'] }
+  ];
+
+  function askEnsureIntentVecs() {
+    if (_askIntentVecs) return Promise.resolve(_askIntentVecs);
+    var phrases = [], map = [];
+    ASK_INTENTS.forEach(function (it, ii) { it.phrases.forEach(function (ph) { phrases.push(ph); map.push(ii); }); });
+    return askEmbed(phrases).then(function (vecs) { _askIntentVecs = { vecs: vecs, map: map }; return _askIntentVecs; });
+  }
+  // Resolve a question to a single validated route (CVE ids handled deterministically).
+  function askResolve(q) {
+    var s = askSignals(q);
+    if (s.cves.length >= 2) return Promise.resolve({ route: '#/compare/' + s.cves.slice(0, 6).join(','), label: 'Compare CVEs' });
+    if (s.cves.length === 1) return Promise.resolve({ route: '#/cve/' + s.cves[0], label: s.cves[0] });
+    return askEnsureModel().then(askEnsureIntentVecs).then(function () { return askEmbed([q]); }).then(function (qv) {
+      qv = qv[0]; var best = -1, bestI = 0;
+      _askIntentVecs.vecs.forEach(function (v, idx) { var sc = askDot(qv, v); if (sc > best) { best = sc; bestI = _askIntentVecs.map[idx]; } });
+      var it = ASK_INTENTS[bestI];
+      if (best < 0.30) { var kw = askKeyword(q); return kw ? { route: '#/search/' + encodeURIComponent(kw), label: 'Search “' + kw + '”', low: true } : { route: null }; }
+      return { route: typeof it.build === 'function' ? it.build(q, s) : it.route, label: it.label, score: best };
     });
   }
 
@@ -1681,14 +1692,13 @@
 
   function viewAsk() {
     setActive('ask');
-    var hasKey = !!askGetKey();
     app.innerHTML =
       '<header class="view"><div class="overline">Ask AI</div><h1>Ask in plain English</h1>' +
       '<p class="lede">Describe what you\'re looking for and the results load right here. ' +
-      'An AI assistant turns your question into the app\'s own searches and filters; it never makes up CVEs, ' +
-      'so every answer is real, validated data, with a link to the full view if you want more.</p></header>' +
+      'A small language model runs <strong>entirely on your device</strong> (it loads once, ~25&nbsp;MB, then works offline) — ' +
+      'no API key, and your question never leaves this browser. It maps your words to the app\'s own views over real data; ' +
+      'it never makes up CVEs.</p></header>' +
       '<div class="ask-wrap">' +
-        '<div id="askKeyBar"></div>' +
         '<form id="askForm" class="ask-box">' +
           '<textarea id="askQ" rows="1" placeholder="e.g. Exploitable vulnerabilities in the past 24 hours"></textarea>' +
           '<button class="ask-submit" type="submit">' +
@@ -1706,67 +1716,30 @@
     var qbox = document.getElementById('askQ');
     qbox.addEventListener('input', function () { askGrow(qbox); });
     qbox.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); askRun(); } });
-    askRenderKeyBar();
     document.getElementById('askForm').addEventListener('submit', function (e) { e.preventDefault(); askRun(); });
   }
   function askGrow(el) { el.style.height = 'auto'; el.style.height = Math.min(el.scrollHeight, 220) + 'px'; }
-
-  function askRenderKeyBar() {
-    var bar = document.getElementById('askKeyBar');
-    if (!bar) return;
-    var k = askGetKey();
-    if (k) {
-      bar.innerHTML = '<div class="ask-keynote">' +
-        '<span><span class="ok">✓</span> Using your key <code>' + esc(askMask(k)) + '</code> — stored only in this browser.</span>' +
-        '<button class="ask-chip" type="button" id="askKeyClear">Change key</button></div>';
-      document.getElementById('askKeyClear').addEventListener('click', function () { askSetKey(''); askRenderKeyBar(); });
-    } else {
-      bar.innerHTML =
-        '<div class="ask-keycard">' +
-        '<div class="ask-keylede">This feature uses the Anthropic API with <strong>your own key</strong> (model <code>' + esc(ASK_MODEL) + '</code>). ' +
-        'It\'s saved only in this browser\'s <code>localStorage</code> and sent only to <code>api.anthropic.com</code> — never to this site\'s host or anywhere else.</div>' +
-        '<form id="askKeyForm" style="display:flex;gap:8px;flex-wrap:wrap">' +
-        '<input id="askKeyInput" class="ask-keyinput" type="password" placeholder="sk-ant-…" autocomplete="off">' +
-        '<button class="ask-submit" type="submit">Save key</button></form>' +
-        '<div style="margin-top:10px;font-size:12.5px"><a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">Get a key →</a></div></div>';
-      document.getElementById('askKeyForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        var v = document.getElementById('askKeyInput').value.trim();
-        if (v) { askSetKey(v); askRenderKeyBar(); }
-      });
-    }
-  }
 
   function askRun() {
     var q = (document.getElementById('askQ').value || '').trim();
     var out = document.getElementById('askOut');
     if (!q) { out.innerHTML = ''; return; }
-    if (!askGetKey()) { out.innerHTML = errBox('Add your Anthropic API key above first.'); return; }
-    out.innerHTML = spinner('Thinking…');
-    askCall(q).then(function (j) {
-      var tool = (j.content || []).filter(function (b) { return b.type === 'tool_use'; })[0];
-      var data = (tool && tool.input) || {};
-      var acts = (data.actions || []).filter(function (a) { return askValidRoute(a.route); });
-      var h = '';
-      if (data.answer) h += '<p class="ask-answer">' + esc(data.answer) + '</p>';
-      if (!acts.length) {
-        h += errBox('No matching view for that — try rephrasing, or use Search/Browse directly.');
-        out.innerHTML = h; return;
+    var needsModel = askSignals(q).cves.length === 0;   // explicit CVE ids resolve without the model
+    out.innerHTML = spinner(needsModel && !_askPipe ? 'Loading the on-device model (~25 MB, one-time)…' : 'Thinking…');
+    askResolve(q).then(function (res) {
+      if (!res || !res.route || !askValidRoute(res.route)) {
+        out.innerHTML = errBox('Not sure which view fits that — try a "Try" example below, or use Search / Browse directly.');
+        return;
       }
-      var primary = acts[0];
-      h += '<div class="count-note" style="margin:2px 0 4px">' + esc(primary.label) +
-        ' · <a href="' + esc(primary.route) + '">open full view →</a></div>';
-      if (acts.length > 1) {
-        h += '<div class="examples" style="margin:6px 0 2px"><span>Also:</span>' +
-          acts.slice(1).map(function (a) { return '<a class="chip" href="' + esc(a.route) + '">' + esc(a.label) + '</a>'; }).join('') + '</div>';
-      }
-      h += '<div id="askResults" style="margin-top:14px"></div>';
+      var h = '<div class="count-note" style="margin:2px 0 4px">' + esc(res.label || 'Result') +
+        ' · <a href="' + esc(res.route) + '">open full view →</a>' +
+        (res.low ? ' <span class="muted">(best guess)</span>' : '') + '</div>' +
+        '<div id="askResults" style="margin-top:14px"></div>';
       out.innerHTML = h;
-      askLoadInto(primary.route, document.getElementById('askResults'));
+      askLoadInto(res.route, document.getElementById('askResults'));
     }).catch(function (e) {
-      var m = String(e.message || e);
-      if (/401|authentication|invalid x-api-key/i.test(m)) { out.innerHTML = errBox('That API key was rejected (401). Check the key and try again.'); askSetKey(''); askRenderKeyBar(); }
-      else out.innerHTML = errBox('Request failed: ' + m);
+      out.innerHTML = errBox('The on-device model could not load: ' + esc(String(e.message || e)) +
+        '. It downloads once from a public CDN — check your connection and retry.');
     });
   }
 
@@ -1789,7 +1762,12 @@
     if (route.indexOf('#/kev') === 0) return loadKev().then(function (d) { if (!d) { box.innerHTML = errBox('KEV data not built yet.'); return; } askRenderKev(box, p); });
     if (route === '#/exploited') return softJSON('data/exploited.json').then(function (d) { if (!d) { box.innerHTML = errBox('Exploited dataset not built yet.'); return; } askRenderExploited(box, d); });
     if ((m = route.match(/^#\/compare\/(.+)$/i))) return runCompareList(decodeURIComponent(m[1]), box);
-    // Full-page dashboards (report, statistics, triage form, about) open in place.
+    if (route === '#/report') {
+      var freshJSON = function (u) { return fetch(u, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); };
+      return Promise.all([loadKev(), freshJSON('data/epss_movers.json'), freshJSON('data/exploited.json'), freshJSON('data/tenable_latest.json')])
+        .then(function (r) { renderReport(r[0], r[1], r[2], r[3], box); });
+    }
+    // Remaining full-page views (statistics, triage form, about) open in place.
     box.innerHTML = '<div class="block"><a class="go" href="' + esc(route) + '" style="display:inline-block;text-decoration:none">Open this view →</a></div>';
   }
   function askRenderKev(box, p) {
@@ -1843,8 +1821,8 @@
       renderReport(r[0], r[1], r[2], r[3]);
     });
   }
-  function renderReport(kev, movers, expl, ten) {
-    var h = reportHead();
+  function renderReport(kev, movers, expl, ten, target) {
+    var h = target ? '' : reportHead();   // omit the big page header when embedding (e.g. inline on Ask AI)
 
     // 1. Newly added to CISA KEV — confirmed exploited in the wild
     var kr = ((kev && kev.entries) || []).filter(function (e) { var d = daysSince(e.added); return d != null && d <= REPORT_WIN; })
@@ -1913,7 +1891,7 @@
     h += reportSection('New critical CVEs <span class="muted" style="font-size:12px;font-weight:400">· last 24h</span>', null,
       'Critical-severity CVEs newly published to the NVD, ranked with the same risk signals as Search.', '<div id="repCrit"></div>');
 
-    app.innerHTML = h;
+    (target || app).innerHTML = h;
     runReportCriticals();
   }
   function runReportCriticals() {
