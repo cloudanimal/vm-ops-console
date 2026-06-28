@@ -79,6 +79,7 @@
   h1 { font-family:var(--serif); font-weight:400; font-size:36px; letter-spacing:-0.5px; }
   .lede { font-size:15.5px; color:var(--soft); margin-top:10px; max-width:600px; }
   .lede.wide { max-width:none; }   /* full-width one-liner (wraps only on narrow screens) */
+  .lede.w800 { max-width:800px; }  /* slightly wider reading measure (e.g. Ask AI intro) */
 
   form { display:flex; gap:10px; margin-top:24px; }
   input, select {
@@ -1758,7 +1759,7 @@
     setActive('ask');
     app.innerHTML =
       '<header class="view"><div class="overline">Ask AI</div><h1>Ask in plain English</h1>' +
-      '<p class="lede">Describe what you\'re looking for and the results load right here. ' +
+      '<p class="lede w800">Describe what you\'re looking for and the results load right here. ' +
       'A small language model runs <strong>entirely on your device</strong> (it loads once, ~25&nbsp;MB, then works offline) — ' +
       'no API key, and your question never leaves this browser. It maps your words to the app\'s own views over real data; ' +
       'it never makes up CVEs.</p></header>' +
