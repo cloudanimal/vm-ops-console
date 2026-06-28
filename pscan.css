@@ -1,0 +1,52 @@
+/* Prompt Scanner — native page styles, scoped under .pscan. */
+.pscan *{ box-sizing:border-box; margin:0; padding:0; }
+.pscan{ font-family:var(--sans); background:var(--paper); color:var(--ink); line-height:1.6; font-size:16px; -webkit-font-smoothing:antialiased; }
+.pscan .wrap{ max-width:880px; margin:0 auto; padding:0 28px 80px; }
+.pscan header.top{ padding:34px 0 8px; border-bottom:1px solid var(--line); }
+.pscan .brand{ font-family:var(--serif); font-size:28px; font-weight:600; color:var(--ink); letter-spacing:-0.3px; line-height:1.1; }
+.pscan .brand .play{ color:var(--accent); }
+.pscan .tagline{ color:var(--soft); margin-top:6px; font-size:15px; }
+.pscan .privacy{ margin-top:10px; font-size:13px; color:var(--faint); }
+.pscan .privacy b{ color:var(--soft); }
+.pscan .controls{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:24px 0 12px; }
+.pscan input#fname{ font-family:ui-monospace,monospace; font-size:13px; padding:8px 11px; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--ink); min-width:200px; }
+.pscan button{ font-family:var(--sans); font-size:14px; border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:8px; padding:9px 15px; cursor:pointer; transition:border-color .15s,background .15s; }
+.pscan button:hover{ border-color:var(--accent); }
+.pscan button.go{ background:var(--accent); color:#fff; border-color:var(--accent); font-weight:500; }
+.pscan button.go:hover{ filter:brightness(1.08); }
+.pscan .samples{ margin-left:auto; display:flex; gap:8px; }
+.pscan .samples span{ font-size:12px; color:var(--faint); align-self:center; }
+.pscan textarea{ width:100%; min-height:230px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:13px; line-height:1.55; padding:14px; border:1px solid var(--line); border-radius:10px; background:var(--surface); color:var(--ink); resize:vertical; }
+.pscan textarea.drag{ border-color:var(--accent); border-style:dashed; }
+.pscan .scorebar{ display:flex; align-items:center; gap:16px; margin:22px 0 6px; padding:16px 18px; border:1px solid var(--line); border-radius:12px; background:var(--surface); }
+.pscan .score{ font-family:var(--serif); font-size:38px; font-weight:600; line-height:1; }
+.pscan .band{ font-size:12px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; padding:4px 10px; border-radius:100px; border:1px solid currentColor; }
+.pscan .b-CRITICAL{color:var(--crit);}
+.pscan .b-ELEVATED{color:var(--high);}
+.pscan .b-LOW{color:var(--low);}
+.pscan .b-CLEAN{color:#2e8b57;}
+.pscan .scoremeta{ color:var(--soft); font-size:14px; }
+.pscan .surface-tag{ font-family:ui-monospace,monospace; font-size:12px; color:var(--faint); }
+.pscan .finding{ border:1px solid var(--line); border-left-width:4px; border-radius:8px; padding:13px 16px; margin-top:12px; background:var(--paper); }
+.pscan .f-CRITICAL{border-left-color:var(--crit);}
+.pscan .f-HIGH{border-left-color:var(--high);}
+.pscan .f-MEDIUM{border-left-color:var(--med);}
+.pscan .f-LOW{border-left-color:var(--low);}
+.pscan .f-INFO{border-left-color:var(--info);}
+.pscan .frow{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+.pscan .sev{ font-size:11px; font-weight:700; letter-spacing:.8px; padding:2px 7px; border-radius:5px; color:#fff; }
+.pscan .s-CRITICAL{background:var(--crit);}
+.pscan .s-HIGH{background:var(--high);}
+.pscan .s-MEDIUM{background:var(--med);}
+.pscan .s-LOW{background:var(--low);}
+.pscan .s-INFO{background:var(--info);}
+.pscan .rid{ font-family:ui-monospace,monospace; font-size:12px; color:var(--faint); }
+.pscan .ftitle{ font-weight:600; }
+.pscan .floc{ font-family:ui-monospace,monospace; font-size:12px; color:var(--soft); margin-left:auto; }
+.pscan .snippet{ font-family:ui-monospace,monospace; font-size:12.5px; background:var(--surface); border-radius:6px; padding:7px 10px; margin:9px 0; overflow-x:auto; white-space:pre-wrap; word-break:break-word; }
+.pscan .why{ font-size:14px; color:var(--soft); }
+.pscan .fix{ font-size:13.5px; color:var(--ink); margin-top:5px; }
+.pscan .fix b{ color:var(--accent); }
+.pscan .clean-msg{ margin-top:16px; padding:18px; border:1px solid var(--line); border-radius:10px; color:var(--soft); }
+.pscan footer{ margin-top:40px; padding-top:18px; border-top:1px solid var(--line); font-size:13px; color:var(--faint); }
+.pscan footer a{ color:var(--accent); text-decoration:none; }
