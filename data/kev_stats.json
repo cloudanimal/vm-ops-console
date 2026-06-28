@@ -1,0 +1,177 @@
+{
+  "updated": "2026-06-27",
+  "total": 1629,
+  "ransomware_count": 327,
+  "by_year": {
+    "2021": 311,
+    "2022": 555,
+    "2023": 187,
+    "2024": 186,
+    "2025": 245,
+    "2026": 145
+  },
+  "top_vendors": [
+    [
+      "Microsoft",
+      377
+    ],
+    [
+      "Cisco",
+      93
+    ],
+    [
+      "Apple",
+      93
+    ],
+    [
+      "Adobe",
+      79
+    ],
+    [
+      "Google",
+      72
+    ],
+    [
+      "Oracle",
+      44
+    ],
+    [
+      "Apache",
+      39
+    ],
+    [
+      "Ivanti",
+      35
+    ],
+    [
+      "Linux",
+      26
+    ],
+    [
+      "D-Link",
+      26
+    ],
+    [
+      "Fortinet",
+      26
+    ],
+    [
+      "VMware",
+      26
+    ],
+    [
+      "Citrix",
+      22
+    ],
+    [
+      "Synacor",
+      18
+    ],
+    [
+      "Android",
+      17
+    ],
+    [
+      "Palo Alto Networks",
+      15
+    ],
+    [
+      "Samsung",
+      15
+    ],
+    [
+      "SonicWall",
+      15
+    ],
+    [
+      "SAP",
+      14
+    ],
+    [
+      "Mozilla",
+      13
+    ]
+  ],
+  "top_products": [
+    [
+      "Microsoft Windows",
+      172
+    ],
+    [
+      "Apple Multiple Products",
+      53
+    ],
+    [
+      "Google Chromium V8",
+      39
+    ],
+    [
+      "Microsoft Internet Explorer",
+      36
+    ],
+    [
+      "Adobe Flash Player",
+      33
+    ],
+    [
+      "Microsoft Office",
+      29
+    ],
+    [
+      "Linux Kernel",
+      26
+    ],
+    [
+      "Microsoft Win32k",
+      25
+    ],
+    [
+      "Microsoft Exchange Server",
+      17
+    ],
+    [
+      "Synacor Zimbra Collaboration Suite (ZCS)",
+      16
+    ],
+    [
+      "Adobe ColdFusion",
+      15
+    ],
+    [
+      "Cisco IOS and IOS XE Software",
+      14
+    ],
+    [
+      "Adobe Acrobat and Reader",
+      13
+    ],
+    [
+      "Samsung Mobile Devices",
+      13
+    ],
+    [
+      "Oracle WebLogic Server",
+      12
+    ],
+    [
+      "Palo Alto Networks PAN-OS",
+      12
+    ],
+    [
+      "Qualcomm Multiple Chipsets",
+      11
+    ],
+    [
+      "Apple iOS, iPadOS, and macOS",
+      11
+    ],
+    [
+      "SAP NetWeaver",
+      10
+    ],
+    [
+      "VMware vCenter Server",
+      9
+    ]
+  ]
+}

@@ -1,0 +1,101 @@
+/* Agent Coverage Dashboard — native page styles, scoped under .acdapp. */
+.acdapp .savewrap{position:absolute;top:14px;right:14px;display:flex;align-items:center;gap:6px;z-index:5}
+.acdapp .savewrap select, .acdapp .savewrap button{font-size:11px;padding:4px 8px;border-radius:6px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);cursor:pointer}
+.acdapp .savewrap button{min-width:50px;text-align:center}
+.acdapp .savewrap button:hover{border-color:var(--accent)}
+.acdapp .acdtoast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);background:#0d0f14;color:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 16px;font-size:13px;z-index:200;opacity:0;transition:opacity .2s ease;pointer-events:none}
+.acdapp .acdtoast.show{opacity:1}
+:root{
+    --bg:#0f1117; --panel:#171a23; --panel2:#1f2330; --line:#2a2f3e; --txt:#e7e9ee;
+    --muted:#9aa3b2; --accent:#4f8cff; --crit:#e24b4a; --high:#ef9f27; --ok:#3bb273; --warn:#e0a500; --info:#888780;
+    /* agent identity + scan-health colours — overridden by the colour-blind palette selector */
+    --me:#b9770b; --ten:#003f73; --cs:#1f9d57; --noscan:#8b5cf6;
+  }
+html[data-theme="light"]{
+    --bg:#dfe3ea; --panel:#ffffff; --panel2:#eef1f6; --line:#c4ccd8; --txt:#1b1f27;
+    --muted:#566070; --accent:#2f6fe0; --crit:#c0392b; --high:#b9770b; --ok:#1f9d57; --warn:#b58100; --info:#6b7280;
+    --me:#8f6a13; --ten:#003f73; --cs:#1f9d57; --noscan:#7c3aed;
+  }
+html[data-theme="light"] .acdapp .card, html[data-theme="light"] .acdapp .panel{ box-shadow:0 1px 2px rgba(16,24,40,.06),0 2px 8px rgba(16,24,40,.05); }
+.acdapp *{box-sizing:border-box}
+.acdapp{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--txt);line-height:1.5}
+.acdapp header{padding:18px 28px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.acdapp header h1{font-size:19px;margin:0;font-weight:600}
+.acdapp header .sub{color:var(--muted);font-size:13px;margin-top:2px}
+.acdapp main{padding:18px 28px;max-width:1500px;margin:0 auto}
+.acdapp .priv{font-size:12px;color:var(--ok);border:1px solid color-mix(in srgb,var(--ok) 50%,transparent);border-radius:100px;padding:5px 12px;display:inline-flex;align-items:center;gap:6px}
+.acdapp .spacer{flex:1}
+.acdapp .btn{font-size:13px;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--txt);cursor:pointer}
+.acdapp .btn:hover{border-color:var(--accent)}
+.acdapp .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.acdapp .theme-toggle{background:none;border:1px solid var(--line);border-radius:100px;cursor:pointer;width:34px;height:34px;
+    display:inline-flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px}
+.acdapp .theme-toggle:hover{border-color:var(--accent);color:var(--txt)}
+.acdapp .drop{border:2px dashed var(--line);border-radius:12px;padding:24px;background:var(--panel)}
+.acdapp .drop h2{margin:0 0 4px;font-size:17px}
+.acdapp .slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0}
+.acdapp .slot{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:14px}
+.acdapp .slot .t{font-weight:600;font-size:14px;display:flex;align-items:center;gap:8px}
+.acdapp .slot .d{font-size:12px;color:var(--muted);margin:4px 0 10px;min-height:2.4em}
+.acdapp .slot.loaded{border-color:var(--ok)}
+.acdapp .slot .status{font-size:12px;margin-top:8px;color:var(--muted)}
+.acdapp .slot.loaded .status{color:var(--ok)}
+.acdapp .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.acdapp .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px;margin:22px 0}
+.acdapp .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.acdapp .card .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;min-height:2.4em;line-height:1.3}
+.acdapp .card .v{font-size:26px;font-weight:700;margin-top:6px}
+.acdapp .card .s{font-size:12px;color:var(--muted);margin-top:3px}
+.acdapp .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin:18px 0;position:relative}
+.acdapp .panel h3{margin:0 0 12px;font-size:16px}
+.acdapp .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:900px){.acdapp .grid2{grid-template-columns:1fr}}
+.acdapp .chartbox{position:relative;height:300px}
+.acdapp table{width:100%;border-collapse:collapse;font-size:13px}
+.acdapp th, .acdapp td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);white-space:nowrap}
+.acdapp th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em;cursor:pointer;position:sticky;top:0;background:var(--panel);z-index:1}
+.acdapp td.num, .acdapp th.num{text-align:right}
+.acdapp .scrollwrap{overflow:auto;max-height:460px;border:1px solid var(--line);border-radius:8px}
+.acdapp #mxBody tr{cursor:pointer}
+.acdapp #mxBody tr:hover td{background:color-mix(in srgb,var(--txt) 5%,transparent)}
+.acdapp #mxBody tr.sel td{background:color-mix(in srgb,var(--accent) 18%,transparent)}
+.acdapp .pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:100px;font-weight:600}
+.acdapp .pill.ok{background:color-mix(in srgb,var(--ok) 22%,transparent);color:var(--ok)}
+.acdapp .pill.gap{background:color-mix(in srgb,var(--crit) 22%,transparent);color:var(--crit)}
+.acdapp .pill.stale{background:color-mix(in srgb,var(--warn) 22%,transparent);color:var(--warn)}
+.acdapp .pill.noscan{background:color-mix(in srgb,var(--noscan) 24%,transparent);color:var(--noscan)}
+.acdapp .pill.muted{background:var(--panel2);color:var(--muted)}
+.acdapp .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.acdapp .controls select, .acdapp .controls input, .acdapp .adrule select, .acdapp .adrule input{background:var(--panel2);border:1px solid var(--line);color:var(--txt);border-radius:7px;padding:7px 10px;font-size:13px}
+.acdapp .sub{color:var(--muted);font-size:12px}
+.acdapp .hidden{display:none}
+.acdapp .bar{height:9px;border-radius:5px;background:var(--panel2);overflow:hidden;min-width:90px;display:inline-block;vertical-align:middle}
+.acdapp .bar > span{display:block;height:100%}
+.acdapp #loading{position:fixed;inset:0;background:color-mix(in srgb,var(--bg) 80%,transparent);display:none;align-items:center;justify-content:center;z-index:100;flex-direction:column;gap:12px}
+.acdapp .spin{width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:sp 0.8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.acdapp .foot{color:var(--muted);font-size:12px;text-align:center;margin:30px 0 12px}
+.acdapp .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-bottom:8px}
+.acdapp .legend span{display:flex;align-items:center;gap:5px}
+.acdapp .sw{width:11px;height:11px;border-radius:3px;display:inline-block}
+.acdapp .msel{position:relative;display:inline-block}
+.acdapp .msel-pop{position:absolute;top:calc(100% + 4px);left:0;z-index:30;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px;min-width:240px;max-width:360px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.acdapp .msel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;margin-bottom:6px}
+.acdapp .msel-head .modes label{margin-right:8px;cursor:pointer}
+.acdapp .msel-head a{cursor:pointer;color:var(--accent)}
+.acdapp .msel-list{max-height:240px;overflow:auto;display:flex;flex-direction:column;gap:1px}
+.acdapp .msel-list label{display:flex;align-items:center;gap:6px;font-size:12px;padding:3px 5px;border-radius:4px;cursor:pointer;white-space:nowrap}
+.acdapp .msel-list label:hover{background:var(--panel2)}
+.acdapp .msel-list label span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.acdapp .msel-search{width:100%;margin-bottom:6px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);border-radius:6px;padding:6px 8px;font-size:12px}
+.acdapp .pill.invalid{background:color-mix(in srgb,var(--high) 24%,transparent);color:var(--high)}
+.acdapp .ftoolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.acdapp .ftoolbar .fbtn{position:relative}
+.acdapp .fbadge{display:inline-block;margin-left:6px;font-size:10px;font-weight:700;padding:1px 6px;border-radius:100px;background:var(--accent);color:#fff}
+.acdapp .drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:190}
+.acdapp .drawer{position:fixed;top:0;right:0;height:100%;width:min(460px,94vw);background:var(--panel);border-left:1px solid var(--line);z-index:200;overflow:auto;padding:18px 20px;box-shadow:-8px 0 30px rgba(0,0,0,.35)}
+.acdapp .drawer h3{margin:0}
+.acdapp .drawer-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}
+.acdapp .drawer-close{background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;line-height:1}
+.acdapp .adrule select, .acdapp .adrule input, .acdapp .drawer select, .acdapp .drawer input{background:var(--panel2);border:1px solid var(--line);color:var(--txt);border-radius:7px;padding:7px 10px;font-size:13px}

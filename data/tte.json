@@ -1,0 +1,133 @@
+{
+  "updated": "2026-06-25",
+  "window_start": 2018,
+  "sources": {
+    "cisa_kev": 1629,
+    "vulncheck_kev": 4993,
+    "vulncheck_xdb": 0,
+    "cves_with_tte": 4541
+  },
+  "by_year": {
+    "2018": {
+      "n": 250,
+      "median": 1126,
+      "trimmed_mean": 1058.7,
+      "zero_day_pct": 0.144
+    },
+    "2019": {
+      "n": 275,
+      "median": 687,
+      "trimmed_mean": 797.9,
+      "zero_day_pct": 0.182
+    },
+    "2020": {
+      "n": 356,
+      "median": 557,
+      "trimmed_mean": 653.9,
+      "zero_day_pct": 0.169
+    },
+    "2021": {
+      "n": 498,
+      "median": 192,
+      "trimmed_mean": 395.1,
+      "zero_day_pct": 0.265
+    },
+    "2022": {
+      "n": 450,
+      "median": 205,
+      "trimmed_mean": 350.1,
+      "zero_day_pct": 0.276
+    },
+    "2023": {
+      "n": 512,
+      "median": 91,
+      "trimmed_mean": 207.9,
+      "zero_day_pct": 0.346
+    },
+    "2024": {
+      "n": 645,
+      "median": 13,
+      "trimmed_mean": 101.9,
+      "zero_day_pct": 0.416
+    },
+    "2025": {
+      "n": 553,
+      "median": 12,
+      "trimmed_mean": 53.2,
+      "zero_day_pct": 0.414
+    },
+    "2026": {
+      "n": 194,
+      "median": 1,
+      "trimmed_mean": 12.1,
+      "zero_day_pct": 0.479
+    }
+  },
+  "survival": [
+    {
+      "t": 0,
+      "pct": 0.691
+    },
+    {
+      "t": 1,
+      "pct": 0.681
+    },
+    {
+      "t": 7,
+      "pct": 0.649
+    },
+    {
+      "t": 30,
+      "pct": 0.598
+    },
+    {
+      "t": 90,
+      "pct": 0.522
+    },
+    {
+      "t": 180,
+      "pct": 0.453
+    },
+    {
+      "t": 365,
+      "pct": 0.365
+    },
+    {
+      "t": 730,
+      "pct": 0.254
+    }
+  ],
+  "milestones": [
+    {
+      "label": "1 year",
+      "year": 2021,
+      "reached": true
+    },
+    {
+      "label": "1 month",
+      "year": 2025,
+      "reached": true
+    },
+    {
+      "label": "1 week",
+      "year": 2026,
+      "reached": true
+    },
+    {
+      "label": "1 day",
+      "year": 2026,
+      "reached": true
+    },
+    {
+      "label": "1 hour",
+      "year": 2027,
+      "reached": false
+    },
+    {
+      "label": "1 minute",
+      "year": 2027,
+      "reached": false
+    }
+  ],
+  "note": "TTE = exploit signal (CISA KEV + VulnCheck KEV + VulnCheck XDB) minus CVE publication date (CVE List V5), days, by CVE-ID year. 10% trimmed mean above 20 CVEs. Recent cohorts right-censored."
+}

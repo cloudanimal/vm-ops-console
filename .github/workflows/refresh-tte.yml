@@ -1,0 +1,41 @@
+name: Refresh Time-to-Exploit data
+
+on:
+  schedule:
+    # 04:00 UTC on the 2nd of each month (TTE shifts slowly; NVD enrichment is cached)
+    - cron: "0 4 2 * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build Time-to-Exploit metrics
+        env:
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+          VULNCHECK_API_TOKEN: ${{ secrets.VULNCHECK_API_TOKEN }}
+        run: python scripts/build_tte.py
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/tte.json data/.tte_pubcache.json
+          if git diff --staged --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Refresh Time-to-Exploit data ($(date -u +%Y-%m-%d))"
+            # rebase onto any commits that landed during the (long) build, then push — retry to survive races
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin main && git push && break
+              echo "push attempt $i failed; retrying…"; sleep 5
+            done
+          fi

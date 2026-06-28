@@ -1,0 +1,1 @@
+{"CVE-2005-0116":{"priority":"medium","packages":[{"name":"awstats","releases":{"dapper":"released","edgy":"released","feisty":"released"}}]},"CVE-2005-4560":{"priority":"medium","packages":[{"name":"wine","releases":{"dapper":"released","edgy":"ignored","feisty":"ignored"}}]}}

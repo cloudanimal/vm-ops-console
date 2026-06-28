@@ -1,0 +1,53 @@
+name: Refresh CVE statistics
+
+on:
+  schedule:
+    # 04:00 UTC every Monday; corpus counts move slowly and this makes many
+    # rate-limited NVD calls, so weekly is plenty
+    - cron: "0 4 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify NVD API key
+        # Probe the key server-side and report only the HTTP status, so a bad
+        # secret fails in seconds instead of silently falling back to a ~70-min
+        # unauthenticated run. The key value is never printed.
+        env:
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+        run: |
+          if [ -z "$NVD_API_KEY" ]; then echo "::error::NVD_API_KEY secret is empty/unset."; exit 1; fi
+          code=$(curl -s -o /dev/null -w "%{http_code}" -H "apiKey: $NVD_API_KEY" "https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=1")
+          echo "NVD key check HTTP status: $code"
+          if [ "$code" != "200" ]; then echo "::error::NVD rejected the API key (HTTP $code). Re-set the NVD_API_KEY secret with the exact validated key."; exit 1; fi
+          echo "NVD API key is valid; proceeding in fast mode."
+
+      - name: Build corpus statistics
+        # NVD_API_KEY (if set as a repo secret) raises the rate limit and
+        # makes the run far faster; the script works without it too.
+        env:
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+        run: python scripts/build_stats.py
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/stats.json
+          if git diff --staged --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Refresh CVE statistics ($(date -u +%Y-%m-%d))"
+            git push
+          fi

@@ -1,0 +1,49 @@
+name: Refresh KEV + EPSS data
+
+on:
+  schedule:
+    # 13:00 UTC daily; CISA KEV and FIRST EPSS both update frequently
+    - cron: "0 13 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build KEV catalog and stats
+        run: python scripts/build_kev.py
+
+      - name: Build EPSS exploitability distribution
+        run: python scripts/build_epss_dist.py
+
+      - name: Build latest Tenable detections feed
+        run: python scripts/build_tenable.py
+
+      - name: Build EPSS movers (week-over-week)
+        run: python scripts/build_epss_movers.py
+
+      - name: Build CWE weakness counts
+        env:
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+        run: python scripts/build_cwe.py
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/kev.json data/kev_stats.json data/epss_dist.json data/tenable_latest.json data/epss_movers.json data/cwe.json
+          if git diff --staged --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Refresh KEV + EPSS data ($(date -u +%Y-%m-%d))"
+            git push
+          fi
