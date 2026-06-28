@@ -984,6 +984,18 @@ function buildJumpNav(){
 }
 
 
-    if(STATE && (STATE.cumulative.length || STATE.mitigated.length)) render();
+    // Preload from the shared unified importer (VMStore). If it has data, it is the source
+    // of truth (reset first to avoid duplicate concat); otherwise keep any in-session uploads.
+    (function(){
+      function rowsFrom(rec){ if(!rec||!rec.text) return null; try { if(rec.kind==='json'){ var d=JSON.parse(rec.text); if(!Array.isArray(d)) d=d.results||(d.response&&d.response.results)||[]; return d; } return Papa.parse(rec.text,{header:true,skipEmptyLines:true,dynamicTyping:false}).data; } catch(e){ return null; } }
+      function done(){ if(STATE && (STATE.cumulative.length || STATE.mitigated.length)) render(); }
+      if(!window.VMStore){ done(); return; }
+      Promise.all([window.VMStore.get('tvd:cumulative').catch(function(){return null;}), window.VMStore.get('tvd:mitigated').catch(function(){return null;})])
+        .then(function(r){
+          var cum=rowsFrom(r[0]), mit=rowsFrom(r[1]);
+          if(cum||mit){ STATE.cumulative=[]; STATE.mitigated=[]; if(cum)addRows(cum, (r[0]&&r[0].name)||'cumulative', 'cumulative'); if(mit)addRows(mit, (r[1]&&r[1].name)||'mitigated', 'mitigated'); if(typeof setState==='function') setState(); }
+          done();
+        }).catch(done);
+    })();
   }
 })();

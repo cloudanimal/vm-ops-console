@@ -52,10 +52,11 @@
   a { color:var(--accent); }
 
   /* ---- top nav ---- */
-  nav.top { display:flex; align-items:center; gap:2px; flex-wrap:nowrap; overflow-x:auto; padding:22px 0 4px; border-bottom:1px solid var(--line); scrollbar-width:none; }
+  nav.top { display:flex; align-items:center; gap:3px; flex-wrap:nowrap; overflow-x:auto; padding:22px 0 4px; border-bottom:1px solid var(--line); scrollbar-width:none; }
   nav.top::-webkit-scrollbar { display:none; }
-  nav.top .brand { font-family:var(--serif); font-size:19px; font-weight:500; margin-right:10px; text-decoration:none; color:var(--ink); white-space:nowrap; flex:0 0 auto; }
-  nav.top a.tab { font-size:13.5px; color:var(--soft); text-decoration:none; padding:7px 7px; border-radius:8px; white-space:nowrap; flex:0 0 auto; transition:background .15s ease,color .15s ease; }
+  nav.top .brand { font-family:var(--serif); font-size:19px; font-weight:500; margin-right:14px; text-decoration:none; color:var(--ink); white-space:nowrap; flex:0 0 auto; }
+  nav.top a.tab { font-size:13.5px; color:var(--soft); text-decoration:none; padding:7px 9px; border-radius:8px; white-space:nowrap; flex:0 0 auto; transition:background .15s ease,color .15s ease; }
+  nav.top .navsep { flex:0 0 auto; width:1px; height:16px; background:var(--line); margin:0 7px; }
   nav.top a.tab:hover { color:var(--ink); background:var(--surface); }
   nav.top a.tab.active { color:var(--ink); font-weight:500; background:var(--surface); }
   nav.top .theme { display:flex; align-items:center; gap:6px; font-family:var(--sans); font-size:13px; color:var(--soft); background:transparent; border:1px solid var(--line); border-radius:8px; padding:7px 10px; cursor:pointer; white-space:nowrap; flex:0 0 auto; transition:border-color .15s ease,color .15s ease; }
@@ -327,14 +328,18 @@
     <a class="brand" href="#/ask">VM Ops Console</a>
     <a class="tab" href="#/ask" data-route="ask">Ask&nbsp;AI</a>
     <a class="tab" href="#/report" data-route="report">Morning Report</a>
+    <span class="navsep" aria-hidden="true"></span>
     <a class="tab" href="#/dashboard" data-route="dashboard">Dashboard</a>
     <a class="tab" href="#/findings" data-route="findings">Findings</a>
     <a class="tab" href="#/agent-coverage" data-route="agent-coverage">Agent Coverage</a>
+    <span class="navsep" aria-hidden="true"></span>
     <a class="tab" href="#/search" data-route="search">Search</a>
     <a class="tab" href="#/exploited" data-route="exploited">Exploited</a>
     <a class="tab" href="#/stats" data-route="stats">Statistics</a>
+    <span class="navsep" aria-hidden="true"></span>
     <a class="tab" href="#/triage" data-route="triage">Triage</a>
     <a class="tab" href="#/analyze" data-route="tenable">Tenable</a>
+    <span class="navsep" aria-hidden="true"></span>
     <a class="tab" href="#/faq" data-route="faq">FAQ</a>
     <a class="tab" href="#/about" data-route="about">About</a>
     <a class="tab" href="#/settings" data-route="settings" style="margin-left:auto">Settings</a>
@@ -1791,34 +1796,39 @@
   }
   function askRenderExploited(box, d, days) {
     var all = (d.cves || []).slice();
+    if (!days) {
+      var rows = all.sort(function (a, b) { return (b.cve_date || '').localeCompare(a.cve_date || ''); }).slice(0, 60);
+      var h = '<div class="count-note">Showing ' + rows.length + ' of ' + (d.count || all.length) + ' known-exploited CVEs (' + (d.sources || []).length + ' sources).</div>' +
+        '<table class="ktable"><thead><tr><th>CVE</th><th>Product</th><th>Severity</th><th>TTE</th><th>Sources</th></tr></thead><tbody>';
+      rows.forEach(function (c) {
+        var sev = (c.severity || '').toUpperCase();
+        var sevCell = sev ? '<span class="badge ' + sevClassBadge(sev) + '">' + esc(sev.charAt(0) + sev.slice(1).toLowerCase()) + '</span>' : '<span class="muted">—</span>';
+        h += '<tr><td class="cid"><a href="#/cve/' + esc(c.cve) + '">' + esc(c.cve) + '</a></td><td style="white-space:normal;max-width:280px">' + esc(c.product || '') + '</td><td>' + sevCell + '</td><td>' + tteCell(c.tte) + '</td><td class="muted" style="font-size:12px">' + esc((c.sources || []).map(srcLabel).join(', ')) + '</td></tr>';
+      });
+      box.innerHTML = h + '</tbody></table>';
+      return;
+    }
+    // "became exploitable in the last N days" — use the freshest signals: CISA KEV additions
+    // (refreshed daily) + public-exploit feed first-exploit dates. Merge + dedupe by CVE.
     var winLbl = days === 1 ? '24 hours' : days + ' days';
-    var rows;
-    if (days) {
-      // "became exploitable in the last N days" — filter on first-exploit date
-      rows = all.filter(function (c) { var ds = daysSince(c.exploit_date); return ds != null && ds >= 0 && ds <= days; })
-                .sort(function (a, b) { return (b.exploit_date || '').localeCompare(a.exploit_date || ''); });
+    box.innerHTML = spinner('Checking what became exploitable…');
+    loadKev().then(function (kev) {
+      var byCve = {};
+      ((kev && kev.entries) || []).forEach(function (e) { var dd = daysSince(e.added); if (dd != null && dd >= 0 && dd <= days) byCve[e.id] = { cve: e.id, product: [e.vendor, e.product].filter(Boolean).join(' '), date: e.added, src: 'CISA KEV' + (e.ransomware ? ' · ransomware' : '') }; });
+      all.forEach(function (c) { var dd = daysSince(c.exploit_date); if (dd != null && dd >= 0 && dd <= days) { if (byCve[c.cve]) byCve[c.cve].src += ' · exploit'; else byCve[c.cve] = { cve: c.cve, product: c.product || '', date: c.exploit_date, src: ((c.sources || []).map(srcLabel).join(', ')) || 'exploit feed' }; } });
+      var rows = Object.keys(byCve).map(function (k) { return byCve[k]; }).sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); });
       if (!rows.length) {
-        box.innerHTML = '<div class="count-note">No CVEs became exploitable in the last ' + winLbl + ' in this dataset.</div>' +
-          '<div class="sub" style="margin-top:6px">The all-sources exploited dataset is rebuilt periodically' + (d.updated ? ' (last refreshed ' + esc(d.updated) + ')' : '') +
-          ', so it lags real time. For genuine last-24h exploitation signal, see the <a href="#/report">Morning&nbsp;Report</a>.</div>';
+        box.innerHTML = '<div class="count-note">Nothing became exploitable in the last ' + winLbl + '.</div>' +
+          '<div class="sub" style="margin:6px 0 10px">Sources: CISA KEV additions (refreshed daily) + public-exploit feeds — nothing was added in this window.</div>' +
+          '<div class="examples"><span>Try a wider window:</span><a class="chip ask-widen" data-days="7">last 7 days</a><a class="chip ask-widen" data-days="30">last 30 days</a></div>';
+        [].forEach.call(box.querySelectorAll('.ask-widen'), function (b) { b.style.cursor = 'pointer'; b.addEventListener('click', function () { askRenderExploited(box, d, parseInt(b.getAttribute('data-days'), 10)); }); });
         return;
       }
-    } else {
-      rows = all.sort(function (a, b) { return (b.cve_date || '').localeCompare(a.cve_date || ''); }).slice(0, 60);
-    }
-    var head = days
-      ? 'Became exploitable in the last ' + winLbl + ' — ' + rows.length + ' CVE' + (rows.length === 1 ? '' : 's') + '.'
-      : 'Showing ' + rows.length + ' of ' + (d.count || all.length) + ' known-exploited CVEs (' + (d.sources || []).length + ' sources).';
-    var dateCol = days ? '<th>Exploit date</th>' : '<th>TTE</th>';
-    var h = '<div class="count-note">' + head + '</div>' +
-      '<table class="ktable"><thead><tr><th>CVE</th><th>Product</th><th>Severity</th>' + dateCol + '<th>Sources</th></tr></thead><tbody>';
-    rows.forEach(function (c) {
-      var sev = (c.severity || '').toUpperCase();
-      var sevCell = sev ? '<span class="badge ' + sevClassBadge(sev) + '">' + esc(sev.charAt(0) + sev.slice(1).toLowerCase()) + '</span>' : '<span class="muted">—</span>';
-      var dCell = days ? '<td class="muted" style="font-size:12px">' + esc(c.exploit_date || '—') + '</td>' : '<td>' + tteCell(c.tte) + '</td>';
-      h += '<tr><td class="cid"><a href="#/cve/' + esc(c.cve) + '">' + esc(c.cve) + '</a></td><td style="white-space:normal;max-width:280px">' + esc(c.product || '') + '</td><td>' + sevCell + '</td>' + dCell + '<td class="muted" style="font-size:12px">' + esc((c.sources || []).map(srcLabel).join(', ')) + '</td></tr>';
-    });
-    box.innerHTML = h + '</tbody></table>';
+      var h = '<div class="count-note">Became exploitable in the last ' + winLbl + ' — ' + rows.length + ' CVE' + (rows.length === 1 ? '' : 's') + ' (CISA KEV additions + public-exploit feeds).</div>' +
+        '<table class="ktable"><thead><tr><th>CVE</th><th>Product</th><th>Date</th><th>Signal</th></tr></thead><tbody>';
+      rows.forEach(function (r) { h += '<tr><td class="cid"><a href="#/cve/' + esc(r.cve) + '">' + esc(r.cve) + '</a></td><td style="white-space:normal;max-width:300px">' + esc(r.product || '') + '</td><td class="muted" style="font-size:12px">' + esc(r.date || '') + '</td><td class="muted" style="font-size:12px">' + esc(r.src || '') + '</td></tr>'; });
+      box.innerHTML = h + '</tbody></table>';
+    }).catch(function () { box.innerHTML = errBox('Could not load exploitation data.'); });
   }
 
   // ---------- Morning Report (daily briefing, pulled from the pre-built feeds + live NVD) ----------

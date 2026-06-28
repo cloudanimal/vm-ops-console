@@ -400,37 +400,52 @@
 
   // ---------- import (load scan findings into the workbench) ----------
   // Unified importer: one slot per data source, persisted to the shared VMStore so the
-  // dashboards (Agent Coverage today) can read it. Findings also feed the Findings workbench.
-  var IMPORT_SOURCES = [
-    { id: 'findings', label: 'Scan findings', sub: 'Nessus / Tenable vulnerability CSV → Findings workbench', accept: '.csv,text/csv' },
-    { id: 'acd:ad', label: 'Active Directory (AD)', sub: 'Computer inventory → Agent Coverage denominator', accept: '.json,.csv' },
-    { id: 'acd:me', label: 'ManageEngine (ME)', sub: 'Endpoint Central agents → Agent Coverage', accept: '.json,.csv' },
-    { id: 'acd:tsc', label: 'Tenable.sc (TSC)', sub: 'Tenable.sc agents / assets → Agent Coverage', accept: '.json,.csv' },
-    { id: 'acd:tio', label: 'Tenable.io (TIO)', sub: 'Tenable.io agents / assets → Agent Coverage', accept: '.json,.csv' },
-    { id: 'acd:cs', label: 'CrowdStrike (CS)', sub: 'Falcon sensor inventory → Agent Coverage', accept: '.json,.csv' }
+  // dashboards can read it. Findings also feed the Findings workbench.
+  var IMPORT_GROUPS = [
+    { title: 'Findings', items: [
+      { id: 'findings', label: 'Scan findings', sub: 'Nessus / Tenable vulnerability CSV → Findings workbench', accept: '.csv,text/csv' }
+    ] },
+    { title: 'Agent coverage', items: [
+      { id: 'acd:ad', label: 'Active Directory (AD)', sub: 'Computer inventory → Agent Coverage denominator', accept: '.json,.csv' },
+      { id: 'acd:me', label: 'ManageEngine (ME)', sub: 'Endpoint Central agents → Agent Coverage', accept: '.json,.csv' },
+      { id: 'acd:tsc', label: 'Tenable.sc (TSC)', sub: 'Tenable.sc agents / assets → Agent Coverage', accept: '.json,.csv' },
+      { id: 'acd:tio', label: 'Tenable.io (TIO)', sub: 'Tenable.io agents / assets → Agent Coverage', accept: '.json,.csv' },
+      { id: 'acd:cs', label: 'CrowdStrike (CS)', sub: 'Falcon sensor inventory → Agent Coverage', accept: '.json,.csv' }
+    ] },
+    { title: 'Tenable vulnerability dashboard', items: [
+      { id: 'tvd:cumulative', label: 'Tenable vulns — Cumulative (open)', sub: 'vulndetails export, sourceType=cumulative → Tenable dashboard', accept: '.csv,.json' },
+      { id: 'tvd:mitigated', label: 'Tenable vulns — Mitigated', sub: 'vulndetails export, sourceType=patched → Tenable dashboard', accept: '.csv,.json' }
+    ] }
   ];
+  var IMPORT_SOON = [
+    { label: 'Wiz', sub: 'CNAPP cloud findings' },
+    { label: 'ManageEngine patch report', sub: 'Endpoint Central Detail-View patch status' }
+  ];
+  var IMPORT_SOURCES = IMPORT_GROUPS.reduce(function (a, g) { return a.concat(g.items); }, []);
   function stId(id) { return 'st-' + id.replace(/[^a-z0-9]/gi, '-'); }
+  function importCard(s) {
+    return '<div class="card import-src">' +
+      '<div class="src-title">' + esc(s.label) + '</div>' +
+      '<div class="muted src-sub">' + esc(s.sub) + '</div>' +
+      '<div class="src-status muted" id="' + stId(s.id) + '">…</div>' +
+      '<div class="toolbar" style="margin:0;gap:7px">' +
+      '<button class="btn sm src-pick" data-id="' + s.id + '">Choose file</button>' +
+      '<button class="btn sm src-clear" data-id="' + s.id + '">Clear</button>' +
+      '<input type="file" class="src-file" data-id="' + s.id + '" accept="' + s.accept + '" hidden>' +
+      '</div></div>';
+  }
   function viewImport() {
     setActive('settings');
     app.innerHTML =
       '<header class="view"><div class="overline">Settings · Data Import</div><h1>Data import</h1>' +
-      '<p class="lede">Bring in each data source once, here. Files are parsed in your browser and cached locally (IndexedDB) — nothing is uploaded. Agent-coverage sources feed the Agent Coverage dashboard; scan findings feed the Findings workbench. Re-importing findings merges and preserves your status, owner, and notes.</p></header>' +
+      '<p class="lede">Bring in each data source once, here. Files are parsed in your browser and cached locally (IndexedDB) — nothing is uploaded. Imported sources feed the matching dashboard; scan findings feed the Findings workbench. Re-importing findings merges and preserves your status, owner, and notes.</p></header>' +
       privSlim() +
       '<div class="toolbar"><a class="btn sm" href="#/settings">← Settings</a><span class="spacer"></span><button class="btn sm" id="loadSample">Load sample findings</button></div>' +
-      '<div class="importgrid">' +
-      IMPORT_SOURCES.map(function (s) {
-        return '<div class="card import-src">' +
-          '<div class="src-title">' + esc(s.label) + '</div>' +
-          '<div class="muted src-sub">' + esc(s.sub) + '</div>' +
-          '<div class="src-status muted" id="' + stId(s.id) + '">…</div>' +
-          '<div class="toolbar" style="margin:0;gap:7px">' +
-          '<button class="btn sm src-pick" data-id="' + s.id + '">Choose file</button>' +
-          '<button class="btn sm src-clear" data-id="' + s.id + '">Clear</button>' +
-          '<input type="file" class="src-file" data-id="' + s.id + '" accept="' + s.accept + '" hidden>' +
-          '</div></div>';
+      IMPORT_GROUPS.map(function (g) {
+        return '<h2 class="import-grouphdr">' + esc(g.title) + '</h2><div class="importgrid">' + g.items.map(importCard).join('') + '</div>';
       }).join('') +
-      '<div class="card import-src soon"><div class="src-title">Wiz</div><div class="muted src-sub">CNAPP cloud findings</div><div class="src-status muted">Coming soon</div></div>' +
-      '<div class="card import-src soon"><div class="src-title">ManageEngine patch report</div><div class="muted src-sub">Endpoint Central Detail-View patch status</div><div class="src-status muted">Coming soon</div></div>' +
+      '<h2 class="import-grouphdr">Coming soon</h2><div class="importgrid">' +
+      IMPORT_SOON.map(function (s) { return '<div class="card import-src soon"><div class="src-title">' + esc(s.label) + '</div><div class="muted src-sub">' + esc(s.sub) + '</div><div class="src-status muted">Coming soon</div></div>'; }).join('') +
       '</div>';
     document.getElementById('loadSample').addEventListener('click', function () { var _s = SAMPLE(); mergeFindings(_s); seedSampleOverrides(_s); if (window.VMStore) VMStore.put({ id: 'findings', name: 'sample (built-in)', text: '', kind: 'sample' }); toast('Loaded sample findings'); goDash(); });
     [].forEach.call(document.querySelectorAll('.src-pick'), function (b) { b.addEventListener('click', function () { document.querySelector('.src-file[data-id="' + b.getAttribute('data-id') + '"]').click(); }); });
@@ -456,7 +471,8 @@
         if (window.VMStore) VMStore.put({ id: 'findings', name: file.name, text: text, kind: 'csv' });
         toast('Imported ' + fs.length + ' findings'); refreshSourceStatus(id);
       } else if (window.VMStore) {
-        VMStore.put({ id: id, name: file.name, text: text, kind: kind }).then(function () { toast(file.name + ' imported — open Agent Coverage to view'); refreshSourceStatus(id); });
+        var dest = id.indexOf('tvd:') === 0 ? 'the Tenable dashboard' : 'Agent Coverage';
+        VMStore.put({ id: id, name: file.name, text: text, kind: kind }).then(function () { toast(file.name + ' imported — open ' + dest + ' to view'); refreshSourceStatus(id); });
       } else { toast('Browser storage unavailable'); }
     };
     r.readAsText(file);
