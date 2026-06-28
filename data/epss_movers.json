@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-27",
+  "updated": "2026-06-28",
   "source": "FIRST EPSS",
-  "current_date": "2026-06-27",
-  "previous_date": "2026-06-20",
+  "current_date": "2026-06-28",
+  "previous_date": "2026-06-21",
   "risers": [
     {
       "id": "CVE-2026-35273",
@@ -355,13 +355,6 @@
       "prev": 0.46999,
       "delta": 0.16277,
       "name": "PHP remote file inclusion vulnerability in admin.rssreader.php in the Simple RSS Reader (com_rssreader) 1.0 co"
-    },
-    {
-      "id": "CVE-2025-27007",
-      "now": 0.50191,
-      "prev": 0.38165,
-      "delta": 0.12026,
-      "name": "WordPress SureTriggers <= 1.0.82 - Privilege Escalation Vulnerability"
     },
     {
       "id": "CVE-2026-20127",
