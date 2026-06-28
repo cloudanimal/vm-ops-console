@@ -557,6 +557,11 @@
       '<h2>Data import</h2><div class="card">' +
       '<div class="muted" style="font-size:13px;margin-bottom:12px">Bring in each data source — Active Directory, ManageEngine, Tenable.sc / .io, CrowdStrike, and scan findings. Files are parsed and cached in your browser and feed the dashboards.</div>' +
       '<a class="btn primary" href="#/import">Open Data Import →</a></div>' +
+      '<h2>Theme</h2><div class="card">' +
+      '<div class="muted" style="font-size:12.5px;margin-bottom:10px">Auto follows your device; or force Light / Dark. Also on the ◐ button in the top bar.</div>' +
+      '<div class="toolbar" style="margin:0">' +
+      ['auto', 'light', 'dark'].map(function (m) { return '<button class="btn sm theme-opt" data-mode="' + m + '">' + (m.charAt(0).toUpperCase() + m.slice(1)) + '</button>'; }).join('') +
+      '</div></div>' +
       '<h2>Remediation SLA windows (days)</h2><div class="card"><div class="grid2">' +
       ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return '<div class="field"><label>' + s + '</label><input type="number" min="0" data-sla="' + s + '" value="' + esc(c.sla[s]) + '"></div>'; }).join('') +
       '</div><div class="muted" style="font-size:12.5px">SLA due = first-seen date + window. Drives overdue flags and SLA compliance.</div></div>' +
@@ -592,6 +597,9 @@
       save('vmops-config', STATE.cfg); toast('Settings saved');
     });
     document.getElementById('resetSla').addEventListener('click', function () { STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla); save('vmops-config', STATE.cfg); viewSettings(); toast('SLA windows reset'); });
+    function hiTheme() { var cur = window.VMTheme ? window.VMTheme.get() : 'auto'; [].forEach.call(document.querySelectorAll('.theme-opt'), function (b) { b.classList.toggle('primary', b.getAttribute('data-mode') === cur); }); }
+    [].forEach.call(document.querySelectorAll('.theme-opt'), function (b) { b.addEventListener('click', function () { if (window.VMTheme) window.VMTheme.set(b.getAttribute('data-mode')); hiTheme(); }); });
+    hiTheme();
   }
 
   // ---------- vendored same-origin sub-apps ----------
