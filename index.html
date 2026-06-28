@@ -394,7 +394,6 @@
     }
     btn.addEventListener('click', function () { var order = ['auto', 'light', 'dark']; set(order[(order.indexOf(current()) + 1) % 3]); });
     paint();
-    window.VMTheme = { set: set, get: current };   // so the Settings page can drive the theme too
   })();
 
   // ---------- tiny helpers ----------
