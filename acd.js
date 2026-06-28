@@ -934,6 +934,22 @@ buildExportMenu();
 
     // expose inline-onclick handlers (markup uses onclick="pick(..)" etc.)
     window.pick=pick; window.toggleSources=toggleSources; window.downloadFlat=downloadFlat; window.downloadFlatAd=downloadFlatAd;
-    if(STATE && STATE.ad && STATE.ad.length){ render(); }
+    // Preload source data from the shared unified importer (VMStore), parsing with this
+    // app's own logic so the format matches. Falls back to any in-session uploads.
+    (function(){
+      function parse(rec){ if(!rec||!rec.text) return null; try { return rec.kind==='json' ? flattenAd(rec.text) : Papa.parse(rec.text,{header:true,skipEmptyLines:true}).data; } catch(e){ return null; } }
+      function done(){ if(STATE && STATE.ad && STATE.ad.length){ render(); } }
+      if(!window.VMStore){ done(); return; }
+      Promise.all(['acd:ad','acd:me','acd:tsc','acd:tio','acd:cs'].map(function(id){ return window.VMStore.get(id).catch(function(){return null;}); }))
+        .then(function(r){
+          var ad=parse(r[0]), me=parse(r[1]), tsc=parse(r[2]), tio=parse(r[3]), cs=parse(r[4]);
+          if(ad){ STATE.ad=ad; STATE.adCols=unionCols(ad); STATE.src.ad=r[0].name; }
+          if(me){ STATE.me=me; STATE.src.me=r[1].name; }
+          var ten=[]; if(tsc)ten=ten.concat(tsc); if(tio)ten=ten.concat(tio);
+          if(ten.length){ STATE.ten=ten; STATE.src.ten=[tsc&&r[2].name, tio&&r[3].name].filter(Boolean).join(' + '); }
+          if(cs){ STATE.cs=cs; STATE.src.cs=r[4].name; }
+          done();
+        }).catch(done);
+    })();
   }
 })();

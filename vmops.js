@@ -399,25 +399,72 @@
   function needSettings(what) { toast('Set your ' + what + ' in Settings first'); location.hash = '#/settings'; }
 
   // ---------- import (load scan findings into the workbench) ----------
+  // Unified importer: one slot per data source, persisted to the shared VMStore so the
+  // dashboards (Agent Coverage today) can read it. Findings also feed the Findings workbench.
+  var IMPORT_SOURCES = [
+    { id: 'findings', label: 'Scan findings', sub: 'Nessus / Tenable vulnerability CSV → Findings workbench', accept: '.csv,text/csv' },
+    { id: 'acd:ad', label: 'Active Directory (AD)', sub: 'Computer inventory → Agent Coverage denominator', accept: '.json,.csv' },
+    { id: 'acd:me', label: 'ManageEngine (ME)', sub: 'Endpoint Central agents → Agent Coverage', accept: '.json,.csv' },
+    { id: 'acd:tsc', label: 'Tenable.sc (TSC)', sub: 'Tenable.sc agents / assets → Agent Coverage', accept: '.json,.csv' },
+    { id: 'acd:tio', label: 'Tenable.io (TIO)', sub: 'Tenable.io agents / assets → Agent Coverage', accept: '.json,.csv' },
+    { id: 'acd:cs', label: 'CrowdStrike (CS)', sub: 'Falcon sensor inventory → Agent Coverage', accept: '.json,.csv' }
+  ];
+  function stId(id) { return 'st-' + id.replace(/[^a-z0-9]/gi, '-'); }
   function viewImport() {
-    setActive('import');
+    setActive('settings');
     app.innerHTML =
-      '<header class="view"><div class="overline">Data Import</div><h1>Load scan findings</h1>' +
-      '<p class="lede">Drop a Tenable / Nessus CSV export. It is parsed entirely in your browser — each row becomes a finding keyed by CVE + host. Re-importing merges and preserves your status, owner, and notes.</p></header>' +
+      '<header class="view"><div class="overline">Settings · Data Import</div><h1>Data import</h1>' +
+      '<p class="lede">Bring in each data source once, here. Files are parsed in your browser and cached locally (IndexedDB) — nothing is uploaded. Agent-coverage sources feed the Agent Coverage dashboard; scan findings feed the Findings workbench. Re-importing findings merges and preserves your status, owner, and notes.</p></header>' +
       privSlim() +
-      '<label class="drop" id="drop"><input type="file" id="file" accept=".csv,text/csv" hidden>' +
-      '<span class="dm">Drop a Tenable / Nessus CSV here, or click to choose</span>' +
-      '<span class="ds">columns auto-detected: CVE · Severity/Risk · CVSS · Host/DNS/IP · Plugin · First Discovered</span></label>' +
-      '<div class="toolbar"><button class="btn" id="loadSample">Load sample data</button>' +
-      (STATE.findings.length ? '<span class="muted" style="font-size:12.5px">' + STATE.findings.length + ' findings loaded</span><span class="spacer"></span><button class="btn sm" id="clearAll">Clear all data</button>' : '') +
+      '<div class="toolbar"><a class="btn sm" href="#/settings">← Settings</a><span class="spacer"></span><button class="btn sm" id="loadSample">Load sample findings</button></div>' +
+      '<div class="importgrid">' +
+      IMPORT_SOURCES.map(function (s) {
+        return '<div class="card import-src">' +
+          '<div class="src-title">' + esc(s.label) + '</div>' +
+          '<div class="muted src-sub">' + esc(s.sub) + '</div>' +
+          '<div class="src-status muted" id="' + stId(s.id) + '">…</div>' +
+          '<div class="toolbar" style="margin:0;gap:7px">' +
+          '<button class="btn sm src-pick" data-id="' + s.id + '">Choose file</button>' +
+          '<button class="btn sm src-clear" data-id="' + s.id + '">Clear</button>' +
+          '<input type="file" class="src-file" data-id="' + s.id + '" accept="' + s.accept + '" hidden>' +
+          '</div></div>';
+      }).join('') +
+      '<div class="card import-src soon"><div class="src-title">Wiz</div><div class="muted src-sub">CNAPP cloud findings</div><div class="src-status muted">Coming soon</div></div>' +
+      '<div class="card import-src soon"><div class="src-title">ManageEngine patch report</div><div class="muted src-sub">Endpoint Central Detail-View patch status</div><div class="src-status muted">Coming soon</div></div>' +
       '</div>';
-    var inp = document.getElementById('file'), drop = document.getElementById('drop');
-    inp.addEventListener('change', function () { if (inp.files[0]) readFile(inp.files[0]); });
-    ['dragover', 'dragenter'].forEach(function (e) { drop.addEventListener(e, function (ev) { ev.preventDefault(); drop.classList.add('over'); }); });
-    ['dragleave', 'drop'].forEach(function (e) { drop.addEventListener(e, function (ev) { ev.preventDefault(); drop.classList.remove('over'); }); });
-    drop.addEventListener('drop', function (ev) { var f = ev.dataTransfer.files[0]; if (f) readFile(f); });
-    document.getElementById('loadSample').addEventListener('click', function () { var _s = SAMPLE(); mergeFindings(_s); seedSampleOverrides(_s); toast('Loaded sample findings'); goDash(); });
-    var clr = document.getElementById('clearAll'); if (clr) clr.addEventListener('click', function () { if (confirm('Clear all findings, status, owners, and notes from this browser?')) { STATE.findings = []; STATE.ov = {}; save('vmops-findings', []); save('vmops-overrides', {}); toast('Cleared'); viewImport(); } });
+    document.getElementById('loadSample').addEventListener('click', function () { var _s = SAMPLE(); mergeFindings(_s); seedSampleOverrides(_s); if (window.VMStore) VMStore.put({ id: 'findings', name: 'sample (built-in)', text: '', kind: 'sample' }); toast('Loaded sample findings'); goDash(); });
+    [].forEach.call(document.querySelectorAll('.src-pick'), function (b) { b.addEventListener('click', function () { document.querySelector('.src-file[data-id="' + b.getAttribute('data-id') + '"]').click(); }); });
+    [].forEach.call(document.querySelectorAll('.src-file'), function (inp) { inp.addEventListener('change', function () { if (inp.files[0]) handleSourceFile(inp.getAttribute('data-id'), inp.files[0]); inp.value = ''; }); });
+    [].forEach.call(document.querySelectorAll('.src-clear'), function (b) { b.addEventListener('click', function () { clearSource(b.getAttribute('data-id')); }); });
+    IMPORT_SOURCES.forEach(function (s) { refreshSourceStatus(s.id); });
+  }
+  function refreshSourceStatus(id) {
+    var el = document.getElementById(stId(id)); if (!el) return;
+    if (id === 'findings') { el.innerHTML = STATE.findings.length ? '<span class="ok-txt">✓ ' + STATE.findings.length + ' findings loaded</span>' : 'Not imported yet.'; return; }
+    if (!window.VMStore) { el.textContent = 'Browser storage unavailable.'; return; }
+    VMStore.get(id).then(function (rec) { el.innerHTML = rec ? '<span class="ok-txt">✓ ' + esc(rec.name) + '</span> · ' + esc(new Date(rec.importedAt).toLocaleString()) : 'Not imported yet.'; }).catch(function () { el.textContent = 'Not imported yet.'; });
+  }
+  function handleSourceFile(id, file) {
+    var r = new FileReader();
+    r.onload = function () {
+      var text = String(r.result || '');
+      var kind = (/\.json$/i.test(file.name) || /^\s*[\[{]/.test(text)) ? 'json' : 'csv';
+      if (id === 'findings') {
+        var fs; try { fs = parseCsv(text); } catch (e) { return toast('Parse error: ' + e.message); }
+        if (!fs.length) return toast('No CVE rows found in that CSV');
+        mergeFindings(fs);
+        if (window.VMStore) VMStore.put({ id: 'findings', name: file.name, text: text, kind: 'csv' });
+        toast('Imported ' + fs.length + ' findings'); refreshSourceStatus(id);
+      } else if (window.VMStore) {
+        VMStore.put({ id: id, name: file.name, text: text, kind: kind }).then(function () { toast(file.name + ' imported — open Agent Coverage to view'); refreshSourceStatus(id); });
+      } else { toast('Browser storage unavailable'); }
+    };
+    r.readAsText(file);
+  }
+  function clearSource(id) {
+    if (id === 'findings') { if (!confirm('Clear all findings, status, owners, and notes from this browser?')) return; STATE.findings = []; STATE.ov = {}; save('vmops-findings', []); save('vmops-overrides', {}); }
+    if (window.VMStore) VMStore.remove(id);
+    toast('Cleared'); refreshSourceStatus(id);
   }
   function readFile(file) { var r = new FileReader(); r.onload = function () { try { var fs = parseCsv(String(r.result || '')); if (!fs.length) return toast('No CVE rows found in that CSV'); mergeFindings(fs); toast('Imported ' + fs.length + ' findings'); goDash(); } catch (e) { toast('Parse error: ' + e.message); } }; r.readAsText(file); }
   function mergeFindings(incoming) {
@@ -491,6 +538,9 @@
       '<header class="view"><div class="overline">Settings</div><h1>Configuration</h1>' +
       '<p class="lede">SLA windows, ticketing endpoints, and Tenable API keys are stored in this browser only.</p></header>' +
       privSlim() +
+      '<h2>Data import</h2><div class="card">' +
+      '<div class="muted" style="font-size:13px;margin-bottom:12px">Bring in each data source — Active Directory, ManageEngine, Tenable.sc / .io, CrowdStrike, and scan findings. Files are parsed and cached in your browser and feed the dashboards.</div>' +
+      '<a class="btn primary" href="#/import">Open Data Import →</a></div>' +
       '<h2>Remediation SLA windows (days)</h2><div class="card"><div class="grid2">' +
       ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return '<div class="field"><label>' + s + '</label><input type="number" min="0" data-sla="' + s + '" value="' + esc(c.sla[s]) + '"></div>'; }).join('') +
       '</div><div class="muted" style="font-size:12.5px">SLA due = first-seen date + window. Drives overdue flags and SLA compliance.</div></div>' +
