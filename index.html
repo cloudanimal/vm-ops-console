@@ -57,6 +57,17 @@
   nav.top .brand { font-family:var(--serif); font-size:19px; font-weight:500; margin-right:14px; text-decoration:none; color:var(--ink); white-space:nowrap; flex:0 0 auto; }
   nav.top a.tab { font-size:13.5px; color:var(--soft); text-decoration:none; padding:7px 9px; border-radius:8px; white-space:nowrap; flex:0 0 auto; transition:background .15s ease,color .15s ease; }
   nav.top .navsep { flex:0 0 auto; width:1px; height:16px; background:var(--line); margin:0 7px; }
+  nav.top .navmenu { flex:0 0 auto; }
+  nav.top .navmenu-btn { font-family:var(--sans); font-size:13.5px; color:var(--soft); background:transparent; border:0; padding:7px 9px; border-radius:8px; white-space:nowrap; cursor:pointer; display:inline-flex; align-items:center; gap:5px; transition:background .15s ease,color .15s ease; }
+  nav.top .navmenu-btn:hover { color:var(--ink); background:var(--surface); }
+  nav.top .navmenu-btn .caret { font-size:10px; opacity:.7; }
+  nav.top .navmenu.menu-active > .navmenu-btn, nav.top .navmenu.open > .navmenu-btn { color:var(--ink); font-weight:500; background:var(--surface); }
+  nav.top .navmenu.open > .navmenu-btn .caret { transform:rotate(180deg); }
+  nav.top .navmenu-list { position:fixed; display:none; flex-direction:column; min-width:190px; background:var(--paper); border:1px solid var(--line); border-radius:11px; box-shadow:0 10px 30px rgba(0,0,0,.18); padding:6px; z-index:200; }
+  nav.top .navmenu.open .navmenu-list { display:flex; }
+  nav.top .navmenu-list a { display:block; padding:8px 12px; border-radius:7px; font-size:13.5px; color:var(--soft); text-decoration:none; white-space:nowrap; }
+  nav.top .navmenu-list a:hover { background:var(--surface); color:var(--ink); }
+  nav.top .navmenu-list a.active { color:var(--ink); font-weight:500; background:var(--surface); }
   nav.top a.tab:hover { color:var(--ink); background:var(--surface); }
   nav.top a.tab.active { color:var(--ink); font-weight:500; background:var(--surface); }
   nav.top .theme { display:flex; align-items:center; gap:6px; font-family:var(--sans); font-size:13px; color:var(--soft); background:transparent; border:1px solid var(--line); border-radius:8px; padding:7px 10px; cursor:pointer; white-space:nowrap; flex:0 0 auto; transition:border-color .15s ease,color .15s ease; }
@@ -335,13 +346,26 @@
     <a class="tab" href="#/agent-coverage" data-route="agent-coverage">Agent Coverage</a>
     <span class="navsep" aria-hidden="true"></span>
     <a class="tab" href="#/report" data-route="report">Morning Report</a>
-    <a class="tab" href="#/search" data-route="search">Search</a>
-    <a class="tab" href="#/exploited" data-route="exploited">Exploited</a>
-    <a class="tab" href="#/stats" data-route="stats">Statistics</a>
-    <span class="navsep" aria-hidden="true"></span>
-    <a class="tab" href="#/triage" data-route="triage">Triage</a>
-    <a class="tab" href="#/analyze" data-route="tenable">Tenable</a>
-    <a class="tab" href="#/prompt-scanner" data-route="prompt-scanner">AI&nbsp;Prompt&nbsp;Scanner</a>
+    <div class="navmenu" data-menu="intel">
+      <button class="navmenu-btn" type="button">CVE&nbsp;Intelligence <span class="caret">▾</span></button>
+      <div class="navmenu-list">
+        <a href="#/search" data-route="search">Search</a>
+        <a href="#/exploited" data-route="exploited">Exploited</a>
+        <a href="#/stats" data-route="stats">Statistics</a>
+        <a href="#/browse" data-route="browse">Browse the corpus</a>
+        <a href="#/latest" data-route="latest">Latest CVEs</a>
+        <a href="#/kev" data-route="kev">CISA KEV</a>
+      </div>
+    </div>
+    <div class="navmenu" data-menu="tools">
+      <button class="navmenu-btn" type="button">Tools <span class="caret">▾</span></button>
+      <div class="navmenu-list">
+        <a href="#/triage" data-route="triage">Triage</a>
+        <a href="#/analyze" data-route="tenable">Tenable</a>
+        <a href="#/prompt-scanner" data-route="prompt-scanner">AI Prompt Scanner</a>
+        <a href="#/nasl" data-route="nasl">NASL Viewer</a>
+      </div>
+    </div>
     <span class="navsep" aria-hidden="true"></span>
     <a class="tab" href="#/faq" data-route="faq">FAQ</a>
     <a class="tab" href="#/about" data-route="about">About</a>
@@ -396,6 +420,31 @@
     paint();
   })();
 
+  // ---------- nav dropdown menus (CVE Intelligence / Tools) ----------
+  (function () {
+    var menus = [].slice.call(document.querySelectorAll('nav.top .navmenu'));
+    function closeAll(except) { menus.forEach(function (m) { if (m !== except) m.classList.remove('open'); }); }
+    menus.forEach(function (m) {
+      var btn = m.querySelector('.navmenu-btn'), list = m.querySelector('.navmenu-list');
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var willOpen = !m.classList.contains('open');
+        closeAll(m); m.classList.toggle('open', willOpen);
+        if (willOpen) {                                  // position the fixed list under the trigger
+          var r = btn.getBoundingClientRect();
+          list.style.top = Math.round(r.bottom + 4) + 'px';
+          var left = Math.min(Math.round(r.left), window.innerWidth - list.offsetWidth - 8);
+          list.style.left = Math.max(8, left) + 'px';
+        }
+      });
+      list.addEventListener('click', function () { m.classList.remove('open'); });
+    });
+    document.addEventListener('click', function () { closeAll(null); });
+    window.addEventListener('hashchange', function () { closeAll(null); });
+    window.addEventListener('resize', function () { closeAll(null); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(null); });
+  })();
+
   // ---------- tiny helpers ----------
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]; }); }
   function el(html) { var d = document.createElement('div'); d.innerHTML = html; return d; }
@@ -408,8 +457,11 @@
     return getJSON(url).then(function (d) { try { sessionStorage.setItem(key, JSON.stringify(d)); } catch (e) {} return d; });
   }
   function setActive(route) {
-    [].forEach.call(document.querySelectorAll('nav.top .tab'), function (a) {
+    [].forEach.call(document.querySelectorAll('nav.top .tab, nav.top .navmenu-list a'), function (a) {
       a.classList.toggle('active', a.getAttribute('data-route') === route);
+    });
+    [].forEach.call(document.querySelectorAll('nav.top .navmenu'), function (m) {
+      m.classList.toggle('menu-active', !!m.querySelector('.navmenu-list a[data-route="' + route + '"]'));
     });
   }
   function spinner(msg) { return '<div id="status" class="spin">' + esc(msg || 'Loading…') + '</div>'; }
