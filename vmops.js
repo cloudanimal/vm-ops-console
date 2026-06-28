@@ -166,6 +166,30 @@
     }).join('') + '</div>';
   }
 
+  // Re-render whichever ops view is active (grid/drawer handlers call this after
+  // mutating state). Dispatches by route so it works from any VMOPS page.
+  function currentView() {
+    var h = (location.hash || '').split('?')[0];
+    if (h.indexOf('#/dashboard') === 0) return viewDashboard();
+    if (h.indexOf('#/settings') === 0) return viewSettings();
+    if (h.indexOf('#/import') === 0) return viewImport();
+    return viewFindings();
+  }
+
+  // ---------- bulk selection (Findings) ----------
+  var selKeys = {};                       // set of selected finding keys (keyOf)
+  function selectedFindings() { return Object.keys(selKeys).map(findByKey).filter(Boolean); }
+  function updateBulkBar() {
+    var bar = document.getElementById('bulkBar'); if (!bar) return;
+    var n = selectedFindings().length;    // prune-safe count (ignores stale keys)
+    bar.hidden = n === 0;
+    var nb = document.getElementById('bulkN'); if (nb) nb.textContent = n;
+    var boxes = document.querySelectorAll('table.grid .rowsel');
+    var checked = [].filter.call(boxes, function (b) { return b.checked; }).length;
+    var sa = document.getElementById('selAll');
+    if (sa) { sa.checked = boxes.length > 0 && checked === boxes.length; sa.indeterminate = checked > 0 && checked < boxes.length; }
+  }
+
   function viewFindings() {
     setActive('findings');
     (function(){ var q=(location.hash.split('?')[1]||''); if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', overdue:p.overdue==='1' }; })();
@@ -190,6 +214,15 @@
       '<span class="muted" style="font-size:12.5px">' + list.length + ' of ' + STATE.findings.length + '</span>' +
       '<button class="btn sm" id="fExport">Export CSV</button>' +
       '</div>' +
+      '<div class="bulkbar" id="bulkBar" hidden>' +
+      '<span class="bulkcount"><b id="bulkN">0</b> selected</span>' +
+      '<input type="text" id="bulkText" placeholder="Note / status update to apply to all selected…">' +
+      '<button class="btn sm" id="bulkNote">Append note</button>' +
+      '<button class="btn sm" id="bulkUpd">Add status update</button>' +
+      '<select id="bulkStatus" class="status" data-s=""><option value="">Set status…</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '">' + s.l + '</option>'; }).join('') + '</select>' +
+      '<span class="spacer"></span>' +
+      '<button class="btn sm" id="bulkClear">Clear selection</button>' +
+      '</div>' +
       (list.length ? gridTable(list) : '<div class="empty">No findings match these filters.</div>');
     document.getElementById('fq').addEventListener('input', function () { STATE.filt.q = this.value; rerenderGridOnly(); });
     document.getElementById('fStatus').addEventListener('change', function () { STATE.filt.status = this.value; viewFindings(); });
@@ -198,7 +231,37 @@
     var fRepo = document.getElementById('fRepo'); if (fRepo) fRepo.addEventListener('change', function () { STATE.filt.repo = this.value; viewFindings(); });
     document.getElementById('fOverdue').addEventListener('click', function () { STATE.filt.overdue = !STATE.filt.overdue; viewFindings(); });
     document.getElementById('fExport').addEventListener('click', exportCsv);
+    wireBulk();
     wireGrid();
+  }
+  function wireBulk() {
+    function need() { var fs = selectedFindings(); if (!fs.length) { toast('Select findings first'); } return fs; }
+    function txtVal() { var el = document.getElementById('bulkText'); return el ? el.value.trim() : ''; }
+    function clearTxt() { var el = document.getElementById('bulkText'); if (el) el.value = ''; }
+    var bn = document.getElementById('bulkNote');
+    if (bn) bn.addEventListener('click', function () {
+      var t = txtVal(); if (!t) { toast('Type a note first'); return; }
+      var fs = need(); if (!fs.length) return;
+      fs.forEach(function (f) { var ex = ovOf(f).notes || ''; setOverride(f, { notes: ex ? ex + '\n' + t : t }); });
+      clearTxt(); toast('Note appended to ' + fs.length + ' finding' + (fs.length > 1 ? 's' : ''));
+    });
+    var bu = document.getElementById('bulkUpd');
+    if (bu) bu.addEventListener('click', function () {
+      var t = txtVal(); if (!t) { toast('Type an update first'); return; }
+      var fs = need(); if (!fs.length) return;
+      fs.forEach(function (f) { addUpdate(f, t); });
+      clearTxt(); toast('Update added to ' + fs.length + ' finding' + (fs.length > 1 ? 's' : ''));
+    });
+    var bs = document.getElementById('bulkStatus');
+    if (bs) bs.addEventListener('change', function () {
+      var v = this.value; this.value = ''; if (!v) return;
+      var fs = need(); if (!fs.length) return;
+      fs.forEach(function (f) { setOverride(f, { status: v }); addUpdate(f, 'Status → ' + SLABEL[v]); });
+      toast('Status → ' + SLABEL[v] + ' for ' + fs.length + ' finding' + (fs.length > 1 ? 's' : ''));
+      currentView();
+    });
+    var bc = document.getElementById('bulkClear');
+    if (bc) bc.addEventListener('click', function () { selKeys = {}; currentView(); });
   }
   function rerenderGridOnly() {
     var list = visibleFindings(); var host = document.querySelector('#gridHost');
@@ -212,6 +275,7 @@
       var dueTxt = di == null ? '—' : (di < 0 ? Math.abs(di) + 'd over' : di + 'd left');
       var sevCls = (f.severity || '').toLowerCase();
       return '<tr data-key="' + esc(keyOf(f)) + '">' +
+        '<td class="selcol"><input type="checkbox" class="rowsel" aria-label="Select finding"' + (selKeys[keyOf(f)] ? ' checked' : '') + '></td>' +
         '<td class="cid"><a href="' + CVE_DETAIL + esc(f.cve) + '" target="_blank" rel="noopener" title="Open in CVE Explorer">' + esc(f.cve) + '</a></td>' +
         '<td class="host">' + esc(f.host) + '</td>' +
         '<td class="dcell" title="' + esc(f.desc || f.name || '') + '">' + (f.desc || f.name ? esc(f.desc || f.name) : '<span class="muted">—</span>') + '</td>' +
@@ -225,6 +289,7 @@
         '</tr>';
     }).join('');
     return '<table class="grid" id="gridHost"><thead><tr>' +
+      '<th class="selcol"><input type="checkbox" id="selAll" title="Select all shown" aria-label="Select all shown"></th>' +
       th('CVE', 'cve') + th('Host', 'host') + th('Description', 'desc') + th('Sev', 'sev') + th('Status', 'status') + th('SLA', 'due') + th('Owner', 'owner') + th('Repo', 'repo') + th('First seen', 'age') + '<th></th>' +
       '</tr></thead><tbody>' + rows + '</tbody></table>';
   }
@@ -236,14 +301,27 @@
     [].forEach.call(document.querySelectorAll('table.grid thead th[data-col]'), function (th) {
       th.addEventListener('click', function () { var c = th.getAttribute('data-col'); if (STATE.sort.col === c) STATE.sort.dir *= -1; else { STATE.sort.col = c; STATE.sort.dir = 1; } currentView(); });
     });
+    var selAll = document.getElementById('selAll');
+    if (selAll) selAll.addEventListener('change', function () {
+      var on = this.checked;
+      [].forEach.call(document.querySelectorAll('table.grid tbody tr'), function (tr) {
+        var k = tr.getAttribute('data-key'), cb = tr.querySelector('.rowsel');
+        if (on) selKeys[k] = true; else delete selKeys[k];
+        if (cb) cb.checked = on;
+      });
+      updateBulkBar();
+    });
     [].forEach.call(document.querySelectorAll('table.grid tbody tr'), function (tr) {
       var f = findByKey(tr.getAttribute('data-key'));
+      var cb = tr.querySelector('.rowsel');
+      if (cb) cb.addEventListener('change', function (e) { e.stopPropagation(); var k = tr.getAttribute('data-key'); if (this.checked) selKeys[k] = true; else delete selKeys[k]; updateBulkBar(); });
       var sel = tr.querySelector('.act-status');
       if (sel) sel.addEventListener('change', function (e) { e.stopPropagation(); setOverride(f, { status: this.value }); toast('Status → ' + SLABEL[this.value]); currentView(); });
       var btn = tr.querySelector('.act-detail');
       if (btn) btn.addEventListener('click', function (e) { e.stopPropagation(); openDrawer(f); });
-      tr.addEventListener('click', function (e) { if (e.target.closest('select,a,button')) return; openDrawer(f); });
+      tr.addEventListener('click', function (e) { if (e.target.closest('select,a,button,input,.selcol')) return; openDrawer(f); });
     });
+    updateBulkBar();
   }
 
   // ---------- finding drawer ----------
@@ -338,7 +416,7 @@
     ['dragover', 'dragenter'].forEach(function (e) { drop.addEventListener(e, function (ev) { ev.preventDefault(); drop.classList.add('over'); }); });
     ['dragleave', 'drop'].forEach(function (e) { drop.addEventListener(e, function (ev) { ev.preventDefault(); drop.classList.remove('over'); }); });
     drop.addEventListener('drop', function (ev) { var f = ev.dataTransfer.files[0]; if (f) readFile(f); });
-    document.getElementById('loadSample').addEventListener('click', function () { mergeFindings(SAMPLE()); toast('Loaded sample findings'); goDash(); });
+    document.getElementById('loadSample').addEventListener('click', function () { var _s = SAMPLE(); mergeFindings(_s); seedSampleOverrides(_s); toast('Loaded sample findings'); goDash(); });
     var clr = document.getElementById('clearAll'); if (clr) clr.addEventListener('click', function () { if (confirm('Clear all findings, status, owners, and notes from this browser?')) { STATE.findings = []; STATE.ov = {}; save('vmops-findings', []); save('vmops-overrides', {}); toast('Cleared'); viewImport(); } });
   }
   function readFile(file) { var r = new FileReader(); r.onload = function () { try { var fs = parseCsv(String(r.result || '')); if (!fs.length) return toast('No CVE rows found in that CSV'); mergeFindings(fs); toast('Imported ' + fs.length + ' findings'); goDash(); } catch (e) { toast('Parse error: ' + e.message); } }; r.readAsText(file); }
@@ -446,10 +524,55 @@
       '<p class="lede">Import a Tenable / Nessus CSV export, or load the sample data set, to start tracking remediation.</p></header>' +
       '<div class="toolbar"><button class="btn primary" id="goImport">Import findings</button><button class="btn" id="goSample">Load sample data</button></div>';
     document.getElementById('goImport').addEventListener('click', function () { location.hash = '#/import'; });
-    document.getElementById('goSample').addEventListener('click', function () { mergeFindings(SAMPLE()); toast('Loaded sample findings'); goDash(); });
+    document.getElementById('goSample').addEventListener('click', function () { var _s = SAMPLE(); mergeFindings(_s); seedSampleOverrides(_s); toast('Loaded sample findings'); goDash(); });
   }
 
   // ---------- sample data ----------
+  // A timestamp `days` ago, with a varied (deterministic) time-of-day for realism.
+  function agoISO(days, seed) {
+    var d = new Date(); d.setDate(d.getDate() - days);
+    d.setHours(9 + (seed % 8), (seed * 7) % 60, 0, 0);
+    return d.toISOString();
+  }
+  // Seed realistic triage overrides (status, owner, notes, dated status-update log) onto
+  // a spread of the sample findings, so the demo shows a populated workbench. Each scenario's
+  // updates are authored newest-first; never clobbers a finding that already has real triage.
+  function seedSampleOverrides(list) {
+    var scenarios = [
+      null,  // bucket 0 → left as "New" (untouched)
+      { status: 'triaged', owner: 'SecOps',
+        notes: 'Confirmed reachable from the DMZ segment; vendor advisory reviewed. Assigned for patching this sprint.',
+        upd: [[2, 'Triaged — owner assigned, targeting this sprint'], [3, 'Status → Triaged']] },
+      { status: 'in_remediation', owner: 'Platform Team',
+        notes: 'Vendor patch identified. Change request CHG-004821 raised; deploying in the next maintenance window.',
+        upd: [[1, 'Patch scheduled for Saturday maintenance window'], [4, 'Status → In Remediation'], [6, 'Status → Triaged']] },
+      { status: 'resolved', owner: 'Platform Team',
+        notes: 'Patched across all affected hosts and confirmed clean on rescan. Closing.',
+        upd: [[1, 'Status → Resolved'], [2, 'Rescan clean — no longer detected'], [5, 'Patch deployed to all affected hosts'], [9, 'Status → In Remediation'], [11, 'Status → Triaged']] },
+      { status: 'risk_accepted', owner: 'AppSec (Jane)',
+        notes: 'Not internet-facing; mitigated by network segmentation and a WAF rule. Risk accepted through Q3 — revisit at renewal.',
+        upd: [[3, 'Risk accepted — compensating controls documented (segmentation + WAF)'], [4, 'Status → Risk Accepted'], [7, 'Status → Triaged']] },
+      { status: 'false_positive', owner: 'AppSec (Jane)',
+        notes: 'Plugin flags the package version, but the vulnerable code path is not compiled into our build. Confirmed against the vendor advisory.',
+        upd: [[2, 'Confirmed false positive — vulnerable module not present'], [2, 'Status → False Positive']] },
+      { status: 'in_remediation', owner: 'Network Eng',
+        notes: 'Interim ACL mitigation applied as a stopgap; firmware upgrade tracked under NET-1182.',
+        upd: [[1, 'Interim ACL mitigation deployed; firmware upgrade pending'], [3, 'Status → In Remediation'], [5, 'Status → Triaged']] }
+    ];
+    list.forEach(function (f, i) {
+      var k = keyOf(f), cur = STATE.ov[k];
+      if (cur && (cur.status || cur.notes || (cur.updates && cur.updates.length))) return; // keep real triage
+      var sc = scenarios[i % scenarios.length];
+      if (!sc) return;
+      STATE.ov[k] = {
+        status: sc.status, owner: sc.owner, notes: sc.notes,
+        updates: sc.upd.map(function (u, j) { return { at: agoISO(u[0], i + j), text: u[1] }; }),
+        updated: agoISO(sc.upd[0][0], i)
+      };
+    });
+    save('vmops-overrides', STATE.ov);
+  }
+
   function SAMPLE() {
     var hosts = ['app01.corp.local', 'app02.corp.local', 'web01.corp.local', 'db01.corp.local', 'dc01.corp.local', 'vpn01.corp.local', 'mail01.corp.local', 'file01.corp.local', 'mft01.corp.local', 'fw01.corp.local'];
     var vulns = [
