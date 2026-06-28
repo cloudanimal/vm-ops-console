@@ -136,7 +136,7 @@
     var top = STATE.findings.filter(isOpen).slice().sort(function (a, b) { return riskScore(b) - riskScore(a); }).slice(0, 8);
     app.innerHTML =
       '<header class="view"><div class="overline">Operations dashboard</div><h1>Where the program stands</h1>' +
-      '<p class="lede">Live read-out over your imported scan findings — status, SLA pressure, and the highest-risk open work.</p></header>' +
+      '<p class="lede wide">Live read-out over your imported scan findings — status, SLA pressure, and the highest-risk open work.</p></header>' +
       privSlim() +
       '<div class="kpis">' +
       kpi('Open findings', k.open, k.total + ' total') +
