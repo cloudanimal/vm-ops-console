@@ -31,16 +31,11 @@ jobs:
       - name: Build EPSS movers (week-over-week)
         run: python scripts/build_epss_movers.py
 
-      - name: Build CWE weakness counts
-        env:
-          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
-        run: python scripts/build_cwe.py
-
       - name: Commit refreshed data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/kev.json data/kev_stats.json data/epss_dist.json data/tenable_latest.json data/epss_movers.json data/cwe.json
+          git add data/kev.json data/kev_stats.json data/epss_dist.json data/tenable_latest.json data/epss_movers.json
           if git diff --staged --quiet; then
             echo "No changes."
           else

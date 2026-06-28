@@ -1,7 +1,7 @@
 {
-  "updated": "2026-06-15",
-  "source": "NVD 2.0 API (totalResults)",
-  "note": "Severity buckets use CVSS v3; CVEs without a v3 score are absent from the split. KEV counts use the NVD hasKev flag.",
+  "updated": "2026-06-28",
+  "source": "fkie-cad NVD mirror (counted locally)",
+  "note": "NVD data via the fkie-cad GitHub mirror; no NVD API key. CVEs are bucketed by publication year. Severity buckets use the primary CVSS v3 base severity (CVEs without a v3 score are absent from the split). KEV counts use the CISA KEV enrichment (cisaExploitAdd) carried in the NVD record.",
   "dimensions": [
     "total",
     "CRITICAL",
@@ -10,242 +10,242 @@
     "LOW",
     "kev"
   ],
-  "grand_total": 357209,
+  "grand_total": 360799,
   "by_year": {
     "1999": {
       "total": 923,
+      "kev": 0,
       "CRITICAL": 2,
       "HIGH": 3,
       "MEDIUM": 1,
-      "LOW": 0,
-      "kev": 0
+      "LOW": 0
     },
     "2000": {
       "total": 1020,
+      "kev": 0,
       "CRITICAL": 2,
       "HIGH": 5,
       "MEDIUM": 3,
-      "LOW": 0,
-      "kev": 0
+      "LOW": 0
     },
     "2001": {
       "total": 1679,
+      "kev": 0,
       "CRITICAL": 12,
       "HIGH": 17,
       "MEDIUM": 6,
-      "LOW": 0,
-      "kev": 0
+      "LOW": 0
     },
     "2002": {
       "total": 2170,
+      "kev": 1,
       "CRITICAL": 10,
       "HIGH": 31,
       "MEDIUM": 11,
-      "LOW": 1,
-      "kev": 1
+      "LOW": 1
     },
     "2003": {
       "total": 1548,
+      "kev": 0,
       "CRITICAL": 9,
       "HIGH": 5,
       "MEDIUM": 2,
-      "LOW": 0,
-      "kev": 0
+      "LOW": 0
     },
     "2004": {
       "total": 2479,
+      "kev": 2,
       "CRITICAL": 10,
       "HIGH": 24,
       "MEDIUM": 8,
-      "LOW": 0,
-      "kev": 2
+      "LOW": 0
     },
     "2005": {
       "total": 5010,
+      "kev": 1,
       "CRITICAL": 13,
       "HIGH": 23,
       "MEDIUM": 18,
-      "LOW": 0,
-      "kev": 1
+      "LOW": 0
     },
     "2006": {
       "total": 6659,
+      "kev": 2,
       "CRITICAL": 0,
       "HIGH": 13,
       "MEDIUM": 5,
-      "LOW": 0,
-      "kev": 2
+      "LOW": 0
     },
     "2007": {
       "total": 6596,
+      "kev": 2,
       "CRITICAL": 6,
       "HIGH": 16,
       "MEDIUM": 6,
-      "LOW": 0,
-      "kev": 2
+      "LOW": 0
     },
     "2008": {
       "total": 5664,
+      "kev": 5,
       "CRITICAL": 13,
       "HIGH": 36,
       "MEDIUM": 10,
-      "LOW": 0,
-      "kev": 5
+      "LOW": 0
     },
     "2009": {
       "total": 5778,
+      "kev": 14,
       "CRITICAL": 10,
       "HIGH": 46,
       "MEDIUM": 21,
-      "LOW": 0,
-      "kev": 14
+      "LOW": 0
     },
     "2010": {
       "total": 4667,
+      "kev": 23,
       "CRITICAL": 23,
       "HIGH": 56,
       "MEDIUM": 15,
-      "LOW": 2,
-      "kev": 23
+      "LOW": 2
     },
     "2011": {
       "total": 4172,
+      "kev": 9,
       "CRITICAL": 3,
       "HIGH": 23,
-      "MEDIUM": 9,
-      "LOW": 0,
-      "kev": 9
+      "MEDIUM": 8,
+      "LOW": 0
     },
     "2012": {
       "total": 5351,
+      "kev": 22,
       "CRITICAL": 15,
       "HIGH": 30,
-      "MEDIUM": 35,
-      "LOW": 0,
-      "kev": 22
+      "MEDIUM": 34,
+      "LOW": 0
     },
     "2013": {
       "total": 5324,
+      "kev": 35,
       "CRITICAL": 17,
-      "HIGH": 27,
-      "MEDIUM": 16,
-      "LOW": 0,
-      "kev": 35
+      "HIGH": 26,
+      "MEDIUM": 11,
+      "LOW": 0
     },
     "2014": {
       "total": 8008,
+      "kev": 34,
       "CRITICAL": 18,
       "HIGH": 38,
-      "MEDIUM": 28,
-      "LOW": 3,
-      "kev": 34
+      "MEDIUM": 23,
+      "LOW": 3
     },
     "2015": {
       "total": 6595,
+      "kev": 43,
       "CRITICAL": 45,
       "HIGH": 99,
       "MEDIUM": 55,
-      "LOW": 6,
-      "kev": 43
+      "LOW": 6
     },
     "2016": {
       "total": 6517,
+      "kev": 53,
       "CRITICAL": 887,
       "HIGH": 2874,
       "MEDIUM": 2284,
-      "LOW": 186,
-      "kev": 53
+      "LOW": 186
     },
     "2017": {
       "total": 18113,
+      "kev": 89,
       "CRITICAL": 2110,
       "HIGH": 6602,
       "MEDIUM": 5697,
-      "LOW": 229,
-      "kev": 89
+      "LOW": 229
     },
     "2018": {
       "total": 18154,
+      "kev": 76,
       "CRITICAL": 2596,
       "HIGH": 7542,
       "MEDIUM": 6198,
-      "LOW": 167,
-      "kev": 76
+      "LOW": 167
     },
     "2019": {
       "total": 18938,
+      "kev": 128,
       "CRITICAL": 2625,
-      "HIGH": 7131,
+      "HIGH": 7130,
       "MEDIUM": 7075,
-      "LOW": 310,
-      "kev": 128
+      "LOW": 310
     },
     "2020": {
       "total": 19222,
+      "kev": 146,
       "CRITICAL": 2682,
       "HIGH": 7288,
       "MEDIUM": 7221,
-      "LOW": 398,
-      "kev": 146
+      "LOW": 398
     },
     "2021": {
       "total": 21950,
+      "kev": 213,
       "CRITICAL": 2545,
       "HIGH": 7455,
       "MEDIUM": 7821,
-      "LOW": 356,
-      "kev": 213
+      "LOW": 356
     },
     "2022": {
       "total": 26431,
-      "CRITICAL": 4154,
-      "HIGH": 9203,
-      "MEDIUM": 9385,
-      "LOW": 427,
-      "kev": 130
+      "kev": 130,
+      "CRITICAL": 4153,
+      "HIGH": 9198,
+      "MEDIUM": 9380,
+      "LOW": 427
     },
     "2023": {
       "total": 30949,
-      "CRITICAL": 4397,
-      "HIGH": 9902,
-      "MEDIUM": 11873,
-      "LOW": 370,
-      "kev": 163
+      "kev": 163,
+      "CRITICAL": 4396,
+      "HIGH": 9896,
+      "MEDIUM": 11863,
+      "LOW": 370
     },
     "2024": {
       "total": 40704,
-      "CRITICAL": 3037,
-      "HIGH": 8263,
-      "MEDIUM": 11525,
-      "LOW": 372,
-      "kev": 160
+      "kev": 160,
+      "CRITICAL": 3036,
+      "HIGH": 8257,
+      "MEDIUM": 11492,
+      "LOW": 372
     },
     "2025": {
       "total": 49972,
-      "CRITICAL": 3399,
-      "HIGH": 5089,
-      "MEDIUM": 8304,
-      "LOW": 247,
-      "kev": 194
+      "kev": 194,
+      "CRITICAL": 3365,
+      "HIGH": 4997,
+      "MEDIUM": 8078,
+      "LOW": 225
     },
     "2026": {
-      "total": 32616,
-      "CRITICAL": 2013,
-      "HIGH": 5886,
-      "MEDIUM": 6798,
-      "LOW": 447,
-      "kev": 74
+      "total": 36206,
+      "kev": 84,
+      "CRITICAL": 1629,
+      "HIGH": 3531,
+      "MEDIUM": 4488,
+      "LOW": 138
     }
   },
   "severity_totals": {
-    "CRITICAL": 30653,
-    "HIGH": 77727,
-    "MEDIUM": 84430,
-    "LOW": 3521
+    "CRITICAL": 30232,
+    "HIGH": 75261,
+    "MEDIUM": 81834,
+    "LOW": 3190
   },
   "profile": {
-    "network": 141572,
-    "wormable": 58141,
-    "kev_total": 1619
+    "network": 136681,
+    "wormable": 56541,
+    "kev_total": 1629
   }
 }

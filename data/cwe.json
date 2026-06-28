@@ -1,6 +1,6 @@
 {
-  "updated": "2026-06-27",
-  "source": "NVD 2.0 API (totalResults by cweId)",
+  "updated": "2026-06-28",
+  "source": "fkie-cad NVD mirror (counted locally, by cweId)",
   "weaknesses": [
     {
       "cwe": "CWE-79",
@@ -10,7 +10,7 @@
     {
       "cwe": "CWE-787",
       "name": "Out-of-bounds Write",
-      "count": 11758
+      "count": 11759
     },
     {
       "cwe": "CWE-89",
@@ -40,7 +40,7 @@
     {
       "cwe": "CWE-22",
       "name": "Path Traversal",
-      "count": 5683
+      "count": 5684
     },
     {
       "cwe": "CWE-416",
