@@ -76,6 +76,13 @@
   nav.top .theme svg { width:15px; height:15px; }
 
   header.view { padding:34px 0 8px; }
+  /* Ops Dashboard sub-nav tab strip (Overview / Findings / Agent Coverage / Tenable / Wiz) */
+  .ds-tabs { display:flex; gap:2px; border-bottom:1px solid var(--line); margin:10px 0 0; overflow-x:auto; scrollbar-width:none; }
+  .ds-tabs::-webkit-scrollbar { display:none; }
+  .ds-tabs a { font-size:14px; color:var(--soft); text-decoration:none; padding:11px 15px; border-bottom:2px solid transparent; white-space:nowrap; transition:color .15s ease, border-color .15s ease; }
+  .ds-tabs a:hover { color:var(--ink); }
+  .ds-tabs a.active { color:var(--ink); border-bottom-color:var(--accent); }
+  .ds-tabs[hidden] { display:none; }
   .overline { font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--faint); margin-bottom:12px; }
   h1 { font-family:var(--serif); font-weight:400; font-size:36px; letter-spacing:-0.5px; }
   .lede { font-size:15.5px; color:var(--soft); margin-top:10px; max-width:600px; }
@@ -343,9 +350,6 @@
     <span class="navsep" aria-hidden="true"></span>
     <a class="tab" href="#/report" data-route="report">Morning Report</a>
     <a class="tab" href="#/dashboard" data-route="dashboard">Ops&nbsp;Dashboard</a>
-    <a class="tab" href="#/agent-coverage" data-route="agent-coverage">Agent Coverage</a>
-    <a class="tab" href="#/tvd" data-route="tvd">Tenable&nbsp;Dashboard</a>
-    <a class="tab" href="#/findings" data-route="findings">Findings</a>
     <span class="navsep" aria-hidden="true"></span>
     <div class="navmenu" data-menu="intel">
       <button class="navmenu-btn" type="button" aria-haspopup="true" aria-expanded="false">CVE&nbsp;Intelligence <span class="caret">▾</span></button>
@@ -373,6 +377,7 @@
     <button class="theme" id="themeBtn" type="button" aria-label="Toggle color theme"></button>
   </nav>
 
+  <nav id="ds-tabs" class="ds-tabs" aria-label="Ops Dashboard sections" hidden></nav>
   <div id="app"></div>
 
   <footer>
@@ -465,6 +470,21 @@
     [].forEach.call(document.querySelectorAll('nav.top .navmenu'), function (m) {
       m.classList.toggle('menu-active', !!m.querySelector('.navmenu-list a[data-route="' + route + '"]'));
     });
+  }
+  // Ops Dashboard hub: a sub-nav tab strip shown across the operational dashboards.
+  var DASH_TABS = [
+    { k: 'dashboard', href: '#/dashboard', label: 'Overview' },
+    { k: 'findings', href: '#/findings', label: 'Findings' },
+    { k: 'agent-coverage', href: '#/agent-coverage', label: 'Agent&nbsp;Coverage' },
+    { k: 'tvd', href: '#/tvd', label: 'Tenable&nbsp;Vulnerabilities' },
+    { k: 'wiz', href: '#/wiz', label: 'Wiz' }
+  ];
+  function updateDashTabs(active) {
+    var bar = document.getElementById('ds-tabs'); if (!bar) return;
+    var inFamily = DASH_TABS.some(function (t) { return t.k === active; });
+    if (!inFamily) { bar.hidden = true; bar.innerHTML = ''; return; }
+    bar.hidden = false;
+    bar.innerHTML = DASH_TABS.map(function (t) { return '<a href="' + t.href + '"' + (t.k === active ? ' class="active"' : '') + '>' + t.label + '</a>'; }).join('');
   }
   function spinner(msg) { return '<div id="status" class="spin">' + esc(msg || 'Loading…') + '</div>'; }
   function errBox(msg) { return '<div id="status"><span class="err">' + esc(msg) + '</span></div>'; }
@@ -2724,10 +2744,11 @@
     var query = qpos > -1 ? hash.slice(qpos + 1) : '';
     var parts = path.split('/').filter(Boolean); // e.g. ['cve','CVE-...']
     window.scrollTo(0, 0);
+    updateDashTabs(parts[0]);   // show/hide the Ops Dashboard tab strip + mark the active section
     // VM Ops operational pages live in vmops.js; dispatch to them and scope #app to .vmops.
     if (window.VMOPS && window.VMOPS[parts[0]]) { setActive(parts[0]); window.VMOPS[parts[0]](); return; }
-    if (parts[0] === 'agent-coverage' && window.ACD) { setActive('agent-coverage'); window.ACD.open(); return; }
-    if (parts[0] === 'tvd' && window.TVD) { setActive('tvd'); window.TVD.open(); return; }
+    if (parts[0] === 'agent-coverage' && window.ACD) { setActive('dashboard'); window.ACD.open(); return; }
+    if (parts[0] === 'tvd' && window.TVD) { setActive('dashboard'); window.TVD.open(); return; }
     if (parts[0] === 'prompt-scanner' && window.PSCAN) { setActive('prompt-scanner'); window.PSCAN.open(); return; }
     var _appEl = document.getElementById('app'); if (_appEl) _appEl.className = '';
     if (parts.length === 0) return viewAsk();

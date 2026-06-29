@@ -200,7 +200,7 @@
   }
 
   function viewFindings() {
-    setActive('findings');
+    setActive('dashboard');
     // Apply a deep-link query (e.g. Ask AI -> #/findings?sev=Critical&overdue=1) ONLY when it actually
     // changes — otherwise the in-page filter handlers (which re-call viewFindings without touching the
     // hash) would re-parse the stale query every render and clobber the user's selection.
@@ -699,8 +699,20 @@
     return out;
   }
 
+  function viewWiz() {
+    setActive('dashboard');
+    app.innerHTML =
+      '<header class="view"><div class="overline">Operations Dashboard</div><h1>Wiz cloud findings</h1>' +
+      '<p class="lede">Cloud (CNAPP) findings from Wiz — issues, toxic combinations, public exposure, and SLA — alongside your Tenable findings and agent coverage, so every vulnerability from Tenable <i>and</i> Wiz lives in one place.</p></header>' +
+      privSlim() +
+      '<div class="card" style="text-align:center;padding:40px 24px">' +
+      '<div style="font-family:var(--serif);font-size:20px;margin-bottom:8px">Wiz isn’t connected yet</div>' +
+      '<div class="muted" style="max-width:560px;margin:0 auto 18px;font-size:14px;line-height:1.6">The Wiz connector is on the roadmap. Wiz uses a GraphQL API with OAuth2 service-account auth, so live pulls need a small local connector (the same one that will unlock Tenable.io / CrowdStrike). Once it lands, import your Wiz export on the Data Import page and this dashboard lights up — issues by cloud, by resource type, toxic combinations, and SLA.</div>' +
+      '<a class="btn primary" href="#/import">Open Data Import →</a></div>';
+  }
+
   function vmShow(fn){ return function(){ app.className='vmops'; return fn.apply(null, arguments); }; }
   function goDash() { if ((location.hash||'').indexOf('#/dashboard')===0){ app.className='vmops'; viewDashboard(); } else { location.hash='#/dashboard'; } }
   // Exposed to the host (CVE-Explorer-based) router, which dispatches the ops routes.
-  window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), import: vmShow(viewImport), settings: vmShow(viewSettings) };
+  window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz) };
 })();
