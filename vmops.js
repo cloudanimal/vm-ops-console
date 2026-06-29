@@ -664,7 +664,7 @@
 
   function viewEmpty(active) {
     setActive(active);
-    app.innerHTML = '<header class="view"><div class="overline">VM Ops Console</div><h1>No findings yet</h1>' +
+    app.innerHTML = '<header class="view"><div class="overline">' + esc(window.VM_BRAND || 'VM Ops Console') + '</div><h1>No findings yet</h1>' +
       '<p class="lede">Import a Tenable / Nessus CSV export, or load the sample data set, to start tracking remediation.</p></header>' +
       '<div class="toolbar"><button class="btn primary" id="goImport">Import findings</button><button class="btn" id="goSample">Load sample data</button></div>';
     document.getElementById('goImport').addEventListener('click', function () { location.hash = '#/import'; });

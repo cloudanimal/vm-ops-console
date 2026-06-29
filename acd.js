@@ -837,7 +837,7 @@ function matrixRows(){ const ad=STATE._inScope||[];
   const fld=(c,k)=>{ const co=c.cov[k]; return !co.present?'missing':co.stale?'stale':co.invalid?'invalid':co.unhealthy?'unhealthy':'present'; };
   const seen=(c,k)=>{ const co=c.cov[k]; if(!co.present) return ''; const s=STATE._M.sources[k].seen; return s?co.rec[s]:''; };
   return ad.map(c=>{ const o={ computer:c.name, segment:c.seg, domain:c.domain, ou:c.ou, os:c.os, type:c.type, enabled:c.enabled };
-    AGENTS.forEach(([k,label])=>{ const key=label.toLowerCase(); o[key]=fld(c,k); o[key+'_last_seen']=seen(c,k);
+    AGENTS.forEach(([k,label])=>{ const key=FLATNAME[k]||label.toLowerCase(); o[key]=fld(c,k); o[key+'_last_seen']=seen(c,k);
       o[key+'_health_days']=c.cov[k].present&&c.cov[k].healthDays!=null?Math.round(c.cov[k].healthDays):''; });
     o.agents=c.nAgents+'/'+AKEYS.length; return o; }); }
 function objCols(objs){ return objs.length? Object.keys(objs[0]) : []; }

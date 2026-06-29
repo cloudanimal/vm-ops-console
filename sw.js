@@ -1,8 +1,9 @@
 /* VM Ops Console service worker — offline support.
    - App shell + same-origin files: network-first (so deploys show immediately), fall back to cache offline.
    - Big immutable assets (vendor libs, gzipped sample data, fonts, the jsDelivr Transformers.js ESM,
-     and the Hugging Face Ask AI model files): cache-first, so the on-device LLM works fully offline
-     after the first run.
+     and the Hugging Face Ask AI model files): cache-first, so the on-device LLM works offline after
+     one full (uninterrupted) Ask AI run while online has populated the cache. (Transformers.js also
+     keeps its own Cache Storage copy of the model, so it won't re-download regardless.)
    - Live public-CVE APIs (NVD, EPSS, CISA, …): passthrough, network only (they need fresh data and a
      connection; offline simply fails for those, the rest of the app keeps working).
    Bump CACHE to invalidate old caches on the next visit. */
@@ -52,6 +53,10 @@ function networkFirst(req) {
 self.addEventListener('fetch', function (e) {
   var req = e.request;
   if (req.method !== 'GET') return;
+  // Honor the app's explicit freshness opt-out: the "Datasets & freshness" page fetches the live
+  // feed with cache:'no-store' to read a true Last-Modified. Never cache or serve those from the SW,
+  // so that check stays truthful (it fails honestly when offline rather than reporting stale-as-live).
+  if (req.cache === 'no-store' || req.cache === 'no-cache') return;
   var url;
   try { url = new URL(req.url); } catch (err) { return; }
   var sameOrigin = url.origin === self.location.origin;
