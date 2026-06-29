@@ -3,9 +3,10 @@
 (function(){
   var app=document.getElementById('app');
   var PSCAN_MARKUP='<div class="pscan">'+`<div class="wrap">
-  <header class="top">
-    <div class="brand">AI Prompt Scanner <span class="play">Playground</span></div>
-    <div class="tagline">Scan an AI agent skill, MCP server, hook, memory file, or prompt for prompt injection and malicious instructions.</div>
+  <header class="view">
+    <div class="overline">AI Prompt Scanner · Playground</div>
+    <h1>Scan agent instructions for prompt injection</h1>
+    <p class="lede">Check an AI agent skill, MCP server, hook, memory file, or prompt for prompt-injection and malicious instructions.</p>
     <div class="privacy">🔒 <b>Runs entirely in your browser.</b> Nothing you paste is uploaded or stored.</div>
   </header>
 

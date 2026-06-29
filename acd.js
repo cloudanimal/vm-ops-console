@@ -124,7 +124,8 @@ const nextPaint = () => new Promise(r=>setTimeout(r,30));
 
 // ---------- colour-blind-safe palettes (parallels the Tenable dashboard) ----------
 // Each mode remaps the agent-identity + state colours to a CB-safe set (per Paul Tol), dark/light tuned.
-const cssvar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const acdRoot = () => document.querySelector('.acdapp') || document.documentElement;
+const cssvar = n => getComputedStyle(acdRoot()).getPropertyValue(n).trim();
 const PALS_CB = {
   deuteranopia: {
     dark:  {me:'#ee7733', ten:'#0077bb', cs:'#009988', ok:'#009988', warn:'#ee7733', crit:'#cc3311', noscan:'#aa4499', accent:'#0077bb'},
@@ -139,10 +140,10 @@ const PALS_CB = {
     light: {me:'#bd5800', ten:'#0f5fa8', cs:'#006b67', ok:'#006b67', warn:'#bd5800', crit:'#b0144d', noscan:'#5e1a8a', accent:'#b0144d'}
   }
 };
-const curMode = () => document.documentElement.dataset.theme==='light' ? 'light' : 'dark';
+const curMode = () => { var t=document.documentElement.dataset.theme; if(t) return t==='light'?'light':'dark'; return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'; };
 function applyPalette(name){
   STATE.cbTheme = PALS_CB[name] ? name : 'default';
-  const root = document.documentElement.style;
+  const root = acdRoot().style;   // scope palette overrides to .acdapp so they never leak to the shell
   ['--me','--ten','--cs','--ok','--warn','--crit','--noscan','--accent'].forEach(k=>root.removeProperty(k));
   if(STATE.cbTheme!=='default'){ const p=PALS_CB[STATE.cbTheme][curMode()];
     Object.entries(p).forEach(([k,v])=>root.setProperty('--'+k, v)); }
@@ -283,7 +284,7 @@ function ruleRowHtml(rule,i,src){ const cols=srcCols(src); const t=rule.field?ad
     <select class="arField"><option value="">— field —</option>${cols.map(col=>`<option value="${escH(col)}"${rule.field===col?' selected':''}>${escH(col)}</option>`).join('')}</select>
     <select class="arOp">${ops.map(([v,l])=>`<option value="${v}"${rule.op===v?' selected':''}>${l}</option>`).join('')}</select>
     ${noVal?'':`<input class="arVal" type="${rule.op==='before'||rule.op==='after'?'date':'text'}" value="${escH(rule.value||'')}" placeholder="value" style="min-width:140px">`}
-    <button class="btn arDel" title="Remove rule" style="padding:4px 9px">✕</button>
+    <button class="btn arDel" title="Remove rule" aria-label="Remove rule" style="padding:4px 9px">✕</button>
   </div>`; }
 function openDrawer(src){ STATE._drawer=src; $('#acdDrawer').hidden=false; $('#acdDrawerBack').hidden=false; buildDrawer(src); }
 function closeDrawer(){ STATE._drawer=null; $('#acdDrawer').hidden=true; $('#acdDrawerBack').hidden=true; }
@@ -300,7 +301,7 @@ function buildDrawer(src){ const body=$('#acdDrawerBody'); if(!body || !STATE._d
         <label class="sub">Servers / RHEL <input class="hInp" data-profile="server" type="number" min="1" value="${STATE.health.server[src]}" style="width:58px"> days</label>
         <label class="sub">Workstations <input class="hInp" data-profile="workstation" type="number" min="1" value="${STATE.health.workstation[src]}" style="width:58px"> days</label>
       </div>`; }
-  body.innerHTML = `<div class="drawer-head"><h3>${escH(SRC_LABEL[src])} filters</h3><button class="drawer-close" id="drawerX" title="Close">✕</button></div>
+  body.innerHTML = `<div class="drawer-head"><h3>${escH(SRC_LABEL[src])} filters</h3><button class="drawer-close" id="acdDrawerX" title="Close" aria-label="Close">✕</button></div>
     <p class="sub">${intro}</p>
     ${qp.length?`<div class="sub" style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:4px">Quick picks: ${qp.map((q,i)=>`<button class="btn qpick" data-q="${i}" style="font-size:11px;padding:3px 9px">${escH(q[0])}</button>`).join('')}</div>`:''}
     <div id="ruleList">${rules.map((r,i)=>ruleRowHtml(r,i,src)).join('')||'<span class="sub">No rules yet.</span>'}</div>
@@ -576,8 +577,8 @@ function render(){
   toggleUploader(false);   // collapse the sources panel to a summary once built
 }
 
-function chartGrid(){ return getComputedStyle(document.documentElement).getPropertyValue('--line').trim()||'#2a2f3e'; }
-function chartTick(){ return getComputedStyle(document.documentElement).getPropertyValue('--muted').trim()||'#9aa3b2'; }
+function chartGrid(){ return cssvar('--line')||'#2a2f3e'; }
+function chartTick(){ return cssvar('--muted')||'#9aa3b2'; }
 // single per-(host,agent) status, same priority as the matrix cell — every visual derives from this
 function agentState(c,k){ const co=c.cov[k]; if(!co.present) return 'gap'; if(co.stale) return 'stale'; if(co.invalid) return 'invalid'; if(co.unhealthy) return 'unhealthy'; return 'healthy'; }
 const isHealthy = (c,k)=>agentState(c,k)==='healthy';
@@ -719,7 +720,7 @@ function makeSortable(table){
 // ---------- per-card save controls (PNG/JPEG/WEBP/GIF/clipboard image+text) ----------
 function toast(msg){ let t=document.querySelector('.acdtoast'); if(!t){ t=document.createElement('div'); t.className='acdtoast'; document.body.appendChild(t); }
   t.textContent=msg; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),1800); }
-function panelBg(){ return getComputedStyle(document.documentElement).getPropertyValue('--panel').trim()||'#171a23'; }
+function panelBg(){ return cssvar('--panel')||'#171a23'; }
 function attachSaveControls(){
   document.querySelectorAll('#dashboard .panel').forEach(p=>{
     if(!(p.querySelector('canvas')||p.querySelector('table')) || p.querySelector('.savewrap')) return;

@@ -5,21 +5,19 @@
 .acdapp .savewrap button:hover{border-color:var(--accent)}
 .acdapp .acdtoast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);background:#0d0f14;color:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 16px;font-size:13px;z-index:200;opacity:0;transition:opacity .2s ease;pointer-events:none}
 .acdapp .acdtoast.show{opacity:1}
-:root{
-    --bg:#0f1117; --panel:#171a23; --panel2:#1f2330; --line:#2a2f3e; --txt:#e7e9ee;
-    --muted:#9aa3b2; --accent:#4f8cff; --crit:#e24b4a; --high:#ef9f27; --ok:#3bb273; --warn:#e0a500; --info:#888780;
-    /* agent identity + scan-health colours — overridden by the colour-blind palette selector */
-    --me:#b9770b; --ten:#003f73; --cs:#1f9d57; --noscan:#8b5cf6;
-  }
-html[data-theme="light"]{
-    --bg:#dfe3ea; --panel:#ffffff; --panel2:#eef1f6; --line:#c4ccd8; --txt:#1b1f27;
-    --muted:#566070; --accent:#2f6fe0; --crit:#c0392b; --high:#b9770b; --ok:#1f9d57; --warn:#b58100; --info:#6b7280;
+/* All Agent Coverage chrome tokens are scoped to .acdapp so they never leak onto the shell.
+   --bg/--panel/--panel2/--txt/--muted remap onto the app's design tokens; --line/--accent/--crit/
+   --high inherit from the shell (so they auto-flip with the global theme). The agent-identity +
+   scan-health colours are acd-specific (light base here, dark override below) and can be replaced at
+   runtime by the colour-blind palette selector (applyPalette sets them inline on .acdapp). */
+.acdapp{
+    --bg:var(--paper); --panel:var(--surface); --panel2:color-mix(in srgb, var(--surface) 55%, var(--paper)); --txt:var(--ink); --muted:var(--soft);
+    --ok:#1f9d57; --warn:#b58100; --info:#6b7280;
     --me:#8f6a13; --ten:#003f73; --cs:#1f9d57; --noscan:#7c3aed;
   }
+:root[data-theme="dark"] .acdapp{ --ok:#3bb273; --warn:#e0a500; --info:#888780; --me:#b9770b; --noscan:#8b5cf6; }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .acdapp{ --ok:#3bb273; --warn:#e0a500; --info:#888780; --me:#b9770b; --noscan:#8b5cf6; } }
 html[data-theme="light"] .acdapp .card, html[data-theme="light"] .acdapp .panel{ box-shadow:0 1px 2px rgba(16,24,40,.06),0 2px 8px rgba(16,24,40,.05); }
-/* Match the rest of the console: remap Agent Coverage's chrome tokens to the app's design
-   tokens (auto-flips with the global light/dark theme). Agent/severity/palette colors keep theirs. */
-.acdapp{ --bg:var(--paper); --panel:var(--surface); --panel2:color-mix(in srgb, var(--surface) 55%, var(--paper)); --txt:var(--ink); --muted:var(--soft); }
 .acdapp *{box-sizing:border-box}
 .acdapp{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     background:var(--bg);color:var(--txt);line-height:1.5}

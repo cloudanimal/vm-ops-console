@@ -1,12 +1,9 @@
 /* Prompt Scanner — native page styles, scoped under .pscan. */
 .pscan *{ box-sizing:border-box; margin:0; padding:0; }
-.pscan{ font-family:var(--sans); background:var(--paper); color:var(--ink); line-height:1.6; font-size:16px; -webkit-font-smoothing:antialiased; }
+.pscan{ font-family:var(--sans); background:var(--paper); color:var(--ink); line-height:1.6; font-size:16px; -webkit-font-smoothing:antialiased; --info:var(--soft); }
 .pscan .wrap{ max-width:none; margin:0; padding:0 0 60px; }
-.pscan header.top{ padding:34px 0 8px; border-bottom:1px solid var(--line); }
-.pscan .brand{ font-family:var(--serif); font-size:28px; font-weight:600; color:var(--ink); letter-spacing:-0.3px; line-height:1.1; }
-.pscan .brand .play{ color:var(--accent); }
-.pscan .tagline{ color:var(--soft); margin-top:6px; font-size:15px; }
-.pscan .privacy{ margin-top:10px; font-size:13px; color:var(--faint); }
+.pscan header.view{ padding:18px 0 14px; }
+.pscan .privacy{ margin-top:12px; font-size:13px; color:var(--faint); }
 .pscan .privacy b{ color:var(--soft); }
 .pscan .controls{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:24px 0 12px; }
 .pscan input#fname{ font-family:ui-monospace,monospace; font-size:13px; padding:8px 11px; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--ink); min-width:200px; }

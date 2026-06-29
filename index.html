@@ -4,27 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VM Ops Console</title>
-<meta name="description" content="Search, browse, and analyze CVEs with modern risk signals: CVSS, EPSS, CISA KEV, NIST LEV, SSVC, plus patches and fixed versions. Built by Joe Cook.">
+<meta name="description" content="A browser-local vulnerability-management operations console: CVE intelligence, a findings workbench, a Tenable VM dashboard, and AD-vs-agent coverage — under one nav with a natural-language Ask AI. Built by Joe Cook.">
+<link rel="canonical" href="https://cloudanimal.github.io/vm-ops-console/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="CVE Explorer">
-<meta property="og:title" content="CVE Explorer">
-<meta property="og:description" content="A modern front end over the CVE corpus: search, browse, and triage vulnerabilities ranked by real risk — CVSS, EPSS, CISA KEV, NIST LEV, and SSVC, not just severity.">
-<meta property="og:url" content="https://cloudanimal.github.io/cve-explorer/">
-<meta property="og:image" content="https://cloudanimal.github.io/cve-explorer/assets/og-image.png">
+<meta property="og:site_name" content="VM Ops Console">
+<meta property="og:title" content="VM Ops Console">
+<meta property="og:description" content="A browser-local vulnerability-management operations console: CVE intelligence, a findings workbench, a Tenable VM dashboard, and AD-vs-agent coverage reconciler — one nav, one theme, a natural-language Ask AI. No backend.">
+<meta property="og:url" content="https://cloudanimal.github.io/vm-ops-console/">
+<meta property="og:image" content="https://cloudanimal.github.io/vm-ops-console/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CVE Explorer">
-<meta name="twitter:description" content="Search, browse, and triage vulnerabilities ranked by real risk — CVSS, EPSS, CISA KEV, NIST LEV, and SSVC.">
-<meta name="twitter:image" content="https://cloudanimal.github.io/cve-explorer/assets/og-image.png">
+<meta name="twitter:title" content="VM Ops Console">
+<meta name="twitter:description" content="A browser-local vulnerability-management operations console — CVE intelligence, findings workbench, Tenable dashboard, and agent coverage, with a natural-language Ask AI.">
+<meta name="twitter:image" content="https://cloudanimal.github.io/vm-ops-console/assets/og-image.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2328415d'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='34' fill='%23faf9f7' text-anchor='middle'%3EJC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper:#faf9f7; --ink:#1c1d1f; --soft:#5c6066; --faint:#9a9ea5; --line:#d9d5cb;
-    --accent:#28415d; --surface:#edeae1;
+    --paper:#faf9f7; --ink:#1c1d1f; --soft:#5c6066; --faint:#66696f; --line:#d9d5cb;
+    --accent:#28415d; --surface:#edeae1; --badge-ink:#ffffff; --hl:#e3b341; --hl-ink:#1c1d1f;
     --crit:#a32d2d; --high:#993c1d; --med:#854f0b; --low:#5f5e5a;
     /* NASL syntax tokens — GitHub-light palette (legible on the light surface) */
     --tok-s:#0a3069; --tok-k:#cf222e; --tok-f:#8250df; --tok-n:#0550ae;
@@ -32,8 +33,8 @@
   }
   /* Forced dark (theme switch set to Dark) */
   :root[data-theme="dark"] {
-    --paper:#14161a; --ink:#ececea; --soft:#a8aeb6; --faint:#6b7178; --line:#2a2e35;
-    --accent:#8fb3dd; --surface:#1a1d23;
+    --paper:#14161a; --ink:#ececea; --soft:#a8aeb6; --faint:#868d96; --line:#2a2e35;
+    --accent:#8fb3dd; --surface:#1a1d23; --badge-ink:#10131a; --hl:#e3b341; --hl-ink:#14161a;
     --crit:#e24b4a; --high:#d85a30; --med:#ef9f27; --low:#9a9ea5;
     --tok-s:#6cb6ff; --tok-k:#f0883e; --tok-f:#d2a8ff; --tok-n:#79c0ff;
   }
@@ -88,7 +89,9 @@
     transition:border-color .2s ease;
   }
   input { flex:1; }
-  input:focus, select:focus { border-color:var(--accent); }
+  input:focus, select:focus, textarea:focus { border-color:var(--accent); }
+  input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible, a:focus-visible {
+    outline:none; box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 30%, transparent); }
   input::placeholder { color:var(--faint); }
   button.go {
     font-family:var(--sans); font-size:15px; font-weight:500; color:var(--paper); background:var(--ink);
@@ -113,10 +116,10 @@
   .hit .desc { font-size:14px; color:var(--soft); margin-top:7px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
   .badges { display:flex; gap:7px; flex-wrap:wrap; margin-left:auto; }
   .badge { font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.4px; padding:2px 9px; border-radius:100px; border:1px solid var(--line); color:var(--soft); white-space:nowrap; }
-  .badge.crit { color:#fff; background:var(--crit); border-color:var(--crit); }
-  .badge.high { color:#fff; background:var(--high); border-color:var(--high); }
-  .badge.med  { color:#fff; background:var(--med); border-color:var(--med); }
-  .badge.kev  { color:#fff; background:var(--crit); border-color:var(--crit); }
+  .badge.crit { color:var(--badge-ink); background:var(--crit); border-color:var(--crit); }
+  .badge.high { color:var(--badge-ink); background:var(--high); border-color:var(--high); }
+  .badge.med  { color:var(--badge-ink); background:var(--med); border-color:var(--med); }
+  .badge.kev  { color:var(--badge-ink); background:var(--crit); border-color:var(--crit); }
   .badge.epss { color:var(--accent); }
 
   /* ---- detail (ported from cve-patch-lookup) ---- */
@@ -178,9 +181,9 @@
   .prose li { margin:4px 0; }
   .prose code { font-family:var(--mono); font-size:13px; background:var(--surface); border:1px solid var(--line); border-radius:5px; padding:1px 5px; }
   /* analyze (Tenable upload) */
-  .privacy { display:flex; gap:13px; align-items:flex-start; border:1px solid #3fb950; border-left:4px solid #3fb950; background:color-mix(in srgb, #3fb950 11%, var(--surface)); border-radius:12px; padding:15px 17px; margin:20px 0; font-size:14px; color:var(--soft); line-height:1.6; }
+  .privacy { display:flex; gap:13px; align-items:flex-start; border:1px solid var(--ok); border-left:4px solid var(--ok); background:color-mix(in srgb, var(--ok) 11%, var(--surface)); border-radius:12px; padding:15px 17px; margin:20px 0; font-size:14px; color:var(--soft); line-height:1.6; }
   .privacy b { color:var(--ink); }
-  .privacy .shield { flex:0 0 auto; width:22px; height:22px; color:#3fb950; margin-top:1px; }
+  .privacy .shield { flex:0 0 auto; width:22px; height:22px; color:var(--ok); margin-top:1px; }
   .privacy .mono, td.mono, .mono { font-family:var(--mono); font-size:13px; }
   .drop { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; border:2px dashed var(--line); border-radius:14px; padding:44px 20px; cursor:pointer; text-align:center; transition:border-color .15s ease, background .15s ease; }
   .drop:hover, .drop.over { border-color:var(--accent); background:var(--surface); }
@@ -265,7 +268,7 @@
   .nasl-ppath { flex:1; min-width:0; font-family:var(--mono); font-size:12.5px; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:6px 9px; overflow:auto; white-space:nowrap; }
   .nasl-copy { flex:0 0 auto; }
   .nasl-sub { font-family:var(--sans); font-weight:600; font-size:14px; color:var(--ink); margin:16px 0 7px; }
-  .nasl-note { font-size:14px; color:var(--soft); line-height:1.65; background:color-mix(in srgb, #e3b341 9%, var(--surface)); border:1px solid color-mix(in srgb, #e3b341 38%, var(--line)); border-radius:10px; padding:11px 14px; margin:8px 0 4px; }
+  .nasl-note { font-size:14px; color:var(--soft); line-height:1.65; background:color-mix(in srgb, var(--hl) 9%, var(--surface)); border:1px solid color-mix(in srgb, var(--hl) 38%, var(--line)); border-radius:10px; padding:11px 14px; margin:8px 0 4px; }
   .nasl-note b { color:var(--ink); }
   .nasl-note code { color:var(--ink); }
   .nasl-meta code { color:var(--ink); }
@@ -274,7 +277,7 @@
   .nasl-code { font-family:var(--mono); font-size:12.5px; line-height:1.55; border:1px solid var(--line); border-radius:10px; background:var(--surface); overflow:auto; max-height:70vh; counter-reset:none; }
   .nl-line { display:flex; }
   .nl-line:hover { background:color-mix(in srgb, var(--accent) 7%, transparent); }
-  .nl-line.hl { background:color-mix(in srgb, #e3b341 22%, transparent); }
+  .nl-line.hl { background:color-mix(in srgb, var(--hl) 22%, transparent); }
   .nl-num { flex:0 0 auto; width:54px; text-align:right; padding:1px 12px 1px 0; color:var(--faint); user-select:none; cursor:pointer; border-right:1px solid var(--line); }
   .nl-code { flex:1; padding:1px 0 1px 12px; white-space:pre; }
   .nl-code .nc { color:var(--faint); font-style:italic; }
@@ -282,9 +285,9 @@
   .nl-code .nk { color:var(--tok-k); font-weight:600; }
   .nl-code .nf { color:var(--tok-f); }
   .nl-code .nn { color:var(--tok-n); }
-  .nl-code mark { background:#e3b341; color:#1c1d1f; border-radius:2px; }
-  .live-dot { width:8px; height:8px; border-radius:50%; background:#3fb950; display:inline-block; box-shadow:0 0 0 0 rgba(63,185,80,.5); animation:livepulse 2s infinite; }
-  @keyframes livepulse { 0%{box-shadow:0 0 0 0 rgba(63,185,80,.5);} 70%{box-shadow:0 0 0 6px rgba(63,185,80,0);} 100%{box-shadow:0 0 0 0 rgba(63,185,80,0);} }
+  .nl-code mark { background:var(--hl); color:var(--hl-ink); border-radius:2px; }
+  .live-dot { width:8px; height:8px; border-radius:50%; background:var(--ok); display:inline-block; box-shadow:0 0 0 0 color-mix(in srgb, var(--ok) 55%, transparent); animation:livepulse 2s infinite; }
+  @keyframes livepulse { 0%{box-shadow:0 0 0 0 color-mix(in srgb, var(--ok) 55%, transparent);} 70%{box-shadow:0 0 0 6px color-mix(in srgb, var(--ok) 0%, transparent);} 100%{box-shadow:0 0 0 0 color-mix(in srgb, var(--ok) 0%, transparent);} }
   /* Ask AI page */
   .ask-wrap { max-width:100%; }
   .ask-priv { display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--soft); border:1px solid color-mix(in srgb,#2e8b57 45%,var(--line)); background:color-mix(in srgb,#2e8b57 9%,transparent); border-radius:100px; padding:7px 14px; margin-bottom:14px; }
@@ -351,8 +354,8 @@
     <a class="tab" href="#/findings" data-route="findings">Findings</a>
     <span class="navsep" aria-hidden="true"></span>
     <div class="navmenu" data-menu="intel">
-      <button class="navmenu-btn" type="button">CVE&nbsp;Intelligence <span class="caret">▾</span></button>
-      <div class="navmenu-list">
+      <button class="navmenu-btn" type="button" aria-haspopup="true" aria-expanded="false">CVE&nbsp;Intelligence <span class="caret">▾</span></button>
+      <div class="navmenu-list" role="menu">
         <a href="#/search" data-route="search">Search</a>
         <a href="#/exploited" data-route="exploited">Exploited</a>
         <a href="#/stats" data-route="stats">CVE Statistics</a>
@@ -362,8 +365,8 @@
       </div>
     </div>
     <div class="navmenu" data-menu="tools">
-      <button class="navmenu-btn" type="button">Tools <span class="caret">▾</span></button>
-      <div class="navmenu-list">
+      <button class="navmenu-btn" type="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret">▾</span></button>
+      <div class="navmenu-list" role="menu">
         <a href="#/analyze" data-route="tenable">Tenable</a>
         <a href="#/prompt-scanner" data-route="prompt-scanner">AI Prompt Scanner</a>
         <a href="#/nasl" data-route="nasl">NASL Viewer</a>
@@ -384,7 +387,7 @@
     <a href="https://osv.dev" target="_blank" rel="noopener">OSV.dev</a>, and the
     <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV catalog</a>.
     Built by <a href="https://cloudanimal.github.io" target="_blank" rel="noopener">Joe Cook</a>.
-    <div class="disclaimer">CVE Explorer is a read-only front end over public vulnerability data. Risk signals (CVSS, EPSS, KEV, LEV, SSVC) often disagree by design. Always confirm against the vendor before acting.</div>
+    <div class="disclaimer">VM Ops Console runs entirely in your browser — public CVE lookups are read-only, and your imported findings, scan data, and settings stay local. Risk signals (CVSS, EPSS, KEV, LEV, SSVC) often disagree by design. Always confirm against the vendor before acting.</div>
   </footer>
 
 </div>
@@ -426,13 +429,14 @@
   // ---------- nav dropdown menus (CVE Intelligence / Tools) ----------
   (function () {
     var menus = [].slice.call(document.querySelectorAll('nav.top .navmenu'));
-    function closeAll(except) { menus.forEach(function (m) { if (m !== except) m.classList.remove('open'); }); }
+    function closeAll(except) { menus.forEach(function (m) { if (m !== except) { m.classList.remove('open'); var b = m.querySelector('.navmenu-btn'); if (b) b.setAttribute('aria-expanded', 'false'); } }); }
     menus.forEach(function (m) {
       var btn = m.querySelector('.navmenu-btn'), list = m.querySelector('.navmenu-list');
       btn.addEventListener('click', function (e) {
         e.stopPropagation();
         var willOpen = !m.classList.contains('open');
         closeAll(m); m.classList.toggle('open', willOpen);
+        btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
         if (willOpen) {                                  // position the fixed list under the trigger
           var r = btn.getBoundingClientRect();
           list.style.top = Math.round(r.bottom + 4) + 'px';
@@ -440,11 +444,12 @@
           list.style.left = Math.max(8, left) + 'px';
         }
       });
-      list.addEventListener('click', function () { m.classList.remove('open'); });
+      list.addEventListener('click', function () { m.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
     });
     document.addEventListener('click', function () { closeAll(null); });
     window.addEventListener('hashchange', function () { closeAll(null); });
     window.addEventListener('resize', function () { closeAll(null); });
+    var navEl = document.querySelector('nav.top'); if (navEl) navEl.addEventListener('scroll', function () { closeAll(null); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(null); });
   })();
 
@@ -559,7 +564,7 @@
   function viewSearch(q) {
     setActive('search');
     app.innerHTML =
-      '<header class="view"><div class="overline">CVE Explorer</div>' +
+      '<header class="view"><div class="overline">CVE Search</div>' +
       '<h1>Search every CVE, ranked by real risk.</h1>' +
       '<p class="lede">A modern front end over the NVD, enriched with the signals that actually drive triage: EPSS, CISA KEV, NIST LEV, and SSVC, not just CVSS.</p>' +
       '<form id="sform" autocomplete="off"><input id="sq" placeholder="CVE-2021-44228 or keyword (e.g. Apache, log4j)" spellcheck="false" aria-label="Search"><button class="go" type="submit">Search</button></form>' +
@@ -2031,7 +2036,7 @@
       return s;
     }
     function lbl(x, y, t) { return '<text x="' + x + '" y="' + y + '" text-anchor="middle" font-family="var(--sans)" font-size="10.5" fill="var(--faint)">' + esc(t) + '</text>'; }
-    var a = '<svg viewBox="0 0 760 540" width="100%" style="max-width:760px;height:auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CVE Explorer architecture diagram">' +
+    var a = '<svg viewBox="0 0 760 540" width="100%" style="max-width:760px;height:auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VM Ops Console architecture diagram">' +
       '<defs><marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--soft)"/></marker></defs>';
     // sources — wider box + two wrapped lines so nothing overflows the border
     a += '<rect x="20" y="14" width="720" height="74" rx="9" fill="var(--surface)" stroke="var(--faint)" stroke-width="1.3"/>';
@@ -2044,7 +2049,7 @@
     a += box(40, 250, 330, 50, 'Scheduled GitHub Actions', 'daily · weekly · monthly');
     a += box(40, 348, 330, 50, 'Static datasets', 'data/*.json + manifest.json (committed)');
     // hosting + SPA
-    a += box(40, 440, 680, 50, 'CVE Explorer', 'single-page app · vanilla JS · hash-routed · GitHub Pages', true);
+    a += box(40, 440, 680, 50, 'VM Ops Console', 'single-page app · vanilla JS · hash-routed · GitHub Pages', true);
     // arrows (solid = build path, dashed = live)
     function arr(x1, y1, x2, y2, dash) { return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="var(--soft)" stroke-width="1.4"' + (dash ? ' stroke-dasharray="5 4"' : '') + ' marker-end="url(#ah)"/>'; }
     a += arr(205, 88, 205, 148);             // sources -> build scripts
@@ -2232,7 +2237,7 @@
       var loader = document.getElementById('nasl-loader'); if (loader) loader.style.display = 'none';
       var out = document.getElementById('nasl-out');
       out.innerHTML =
-        '<div class="count-note" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px"><span><span class="ok" style="color:#3fb950;font-weight:600">✓</span> Loaded ' + fmtNum(nasl.count) + ' plugins from <code>' + esc(label) + '</code> — entirely in your browser.</span>' +
+        '<div class="count-note" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px"><span><span class="ok" style="color:var(--ok);font-weight:600">✓</span> Loaded ' + fmtNum(nasl.count) + ' plugins from <code>' + esc(label) + '</code> — entirely in your browser.</span>' +
         '<a id="nasl-reload" style="cursor:pointer;color:var(--accent)">↺ Load a different DB</a></div>' +
         '<div class="nasl-tools"><input id="nasl-term" type="text" placeholder="Plugin ID, CVE (CVE-2021-44228), or filename keyword (log4j)…" spellcheck="false">' +
         '<button class="go" id="nasl-go" type="button">Open NASL</button></div>' +
@@ -2289,7 +2294,7 @@
     });
   }
   function viewNasl() {
-    setActive('tenable');
+    setActive('nasl');
     app.innerHTML =
       '<header class="view"><div class="overline">Nessus NASL viewer</div><h1>Review plugin NASL source</h1>' +
       '<p class="lede">Load your own Nessus plugin database (<code>agent-*.db</code> / <code>plugins.db</code>) or a single <code>.nasl</code> file, then read the plugin source with syntax highlighting — pin lines and highlight strings as you review. Everything happens in your browser.</p></header>' +
@@ -2308,13 +2313,13 @@
       '</div></div>' +
       '<details class="block" style="margin-top:16px"><summary>Don’t have a plugin DB? Get the latest from Tenable</summary>' +
       '<div class="nasl-note">License-gated ~2.5&nbsp;GB archive, all platforms (<b>no login</b> — the <code>i_agree_to_tenable_license_agreement=true</code> flag accepts the license). It’s a compressed <code>.tgz</code>. Two ways to use it: <b>heavyweight</b> — drop the whole <code>.tgz</code> above and the browser streams it (slow, memory-hungry); or <b>lightweight</b> — extract one platform’s <code>agent-*.db.gz</code> (one command below) and drop that <code>.gz</code> above.</div>' +
-      '<p style="margin:11px 0 4px"><a class="go" href="https://www.tenable.com/downloads/api/v1/public/pages/nessus-agents/downloads/29135/download?i_agree_to_tenable_license_agreement=true" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none">⬇ Download the archive ↗</a> <span class="sub">~2.5&nbsp;GB, opens in a new tab</span></p>' +
+      '<p style="margin:11px 0 4px"><a class="go" href="https://www.tenable.com/downloads/nessus-agents" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none">⬇ Get the plugin archive ↗</a> <span class="sub">~2.5&nbsp;GB — choose “Agent plugins” on Tenable’s downloads page</span></p>' +
       '<div class="nasl-cmd" style="margin-top:10px"># Lightweight: extract just the Windows DB.gz (swap WINDOWS for LINUX / DARWIN), then drop the .gz above:\n' +
       'tar -xzf Agent_plugins_expires_*.tgz agent-WINDOWS.db.gz\n' +
-      '# …or stream it without saving the 2.5 GB archive:\n' +
-      'curl -sL "https://www.tenable.com/downloads/api/v1/public/pages/nessus-agents/downloads/29135/download?i_agree_to_tenable_license_agreement=true" | tar -xzf - agent-WINDOWS.db.gz</div>' +
-      '<div class="nasl-prow" style="margin-top:10px"><span class="nasl-os">URL</span><code class="nasl-ppath">https://www.tenable.com/downloads/api/v1/public/pages/nessus-agents/downloads/29135/download?i_agree_to_tenable_license_agreement=true</code><button class="sx-btn nasl-copy" type="button">Copy</button></div>' +
-      '<p class="sub" style="margin-top:10px">If the link 404s, the id rotated — grab the current one from <a href="https://www.tenable.com/downloads/nessus-agents" target="_blank" rel="noopener">the downloads page</a>.</p></details>' +
+      '# …or stream it without saving the 2.5 GB archive — copy the current Agent-plugins .tgz link from the downloads page:\n' +
+      'curl -sL "<paste-the-Agent_plugins-.tgz-URL>" | tar -xzf - agent-WINDOWS.db.gz</div>' +
+      '<div class="nasl-prow" style="margin-top:10px"><span class="nasl-os">URL</span><code class="nasl-ppath">https://www.tenable.com/downloads/nessus-agents</code><button class="sx-btn nasl-copy" type="button">Copy</button></div>' +
+      '<p class="sub" style="margin-top:10px">On the downloads page choose <b>Agent plugins</b> (the <code>Agent_plugins_expires_*.tgz</code>) — no login required (the license is accepted at download).</p></details>' +
       '</div>' +
       '<div id="nasl-out" style="margin-top:18px"></div>';
     var inp = document.getElementById('nasl-file'), drop = document.getElementById('nasl-drop');
@@ -2417,7 +2422,7 @@
     setActive('tenable');
     app.innerHTML =
       '<header class="view"><div class="overline">Tenable plugin feed</div><h1>Latest Plugins</h1>' +
-      '<p class="lede">The newest Tenable Nessus plugins — the most recently scannable vulnerabilities — syndicated from Tenable’s public feed and cross-linked to CVE Explorer’s own detail pages.</p></header>' +
+      '<p class="lede">The newest Tenable Nessus plugins — the most recently scannable vulnerabilities — syndicated from Tenable’s public feed and cross-linked to VM Ops Console’s own CVE detail pages.</p></header>' +
       tenableSubnav('detections') +
       '<div id="latest">' + spinner('Loading the latest Tenable plugins…') + '</div>';
     renderLatestDetections();
@@ -2435,7 +2440,7 @@
       '<p class="lede">Upload a Tenable or Nessus export (CSV or .nessus) for an instant risk read-out — severity, exploitability, and overlap with CISA KEV — ranked for action.</p></header>' +
       tenableSubnav('analyze') +
       '<div class="privacy"><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>' +
-      '<div><b>100% local — your data never leaves your browser.</b> The file is parsed locally in JavaScript; nothing is uploaded. The only network request is for CVE Explorer’s own KEV reference list, used to cross-reference — your scan data is never sent anywhere. Verify it in your browser’s Network tab, and reloading the page discards everything.</div></div>' +
+      '<div><b>100% local — your data never leaves your browser.</b> The file is parsed locally in JavaScript; nothing is uploaded. The only network request is for VM Ops Console’s own KEV reference list, used to cross-reference — your scan data is never sent anywhere. Verify it in your browser’s Network tab, and reloading the page discards everything.</div></div>' +
       '<label class="drop" id="adrop"><input type="file" id="afile" accept=".csv,.nessus,.xml,text/csv,text/xml" hidden>' +
       '<span class="drop-main">Drop a Tenable export here, or click to choose</span>' +
       '<span class="drop-sub">CSV or .nessus — processed entirely on your device</span></label>' +

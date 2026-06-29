@@ -1,7 +1,8 @@
 (function () {
   'use strict';
   var app = document.getElementById('app');
-  var CVE_DETAIL = 'https://cloudanimal.github.io/cve-explorer/#/cve/';
+  var CVE_DETAIL = '#/cve/';                                                   // in-app CVE detail view
+  var CVE_DETAIL_ABS = 'https://cloudanimal.github.io/vm-ops-console/#/cve/';  // absolute, for copied ticket text
 
   // Theme + main nav are now provided by the shared global top bar (shared/topbar.js).
 
@@ -126,7 +127,12 @@
   function assetCount() { var s = {}; STATE.findings.forEach(function (f) { s[norm(f.host)] = 1; }); return Object.keys(s).length; }
 
   // ---------- views ----------
-  function setActive(r) { [].forEach.call(document.querySelectorAll('nav.top a.tab'), function (a) { a.classList.toggle('active', a.getAttribute('data-route') === r); }); }
+  // Mirror the shell's global setActive: reconcile top tabs AND dropdown items + .menu-active,
+  // so an intra-VMOPS re-render can't leave a stale CVE-Intelligence/Tools menu highlight.
+  function setActive(r) {
+    [].forEach.call(document.querySelectorAll('nav.top a.tab, nav.top .navmenu-list a'), function (a) { a.classList.toggle('active', a.getAttribute('data-route') === r); });
+    [].forEach.call(document.querySelectorAll('nav.top .navmenu'), function (m) { m.classList.toggle('menu-active', !!m.querySelector('.navmenu-list a.active')); });
+  }
 
   function viewDashboard() {
     setActive('dashboard');
@@ -195,7 +201,10 @@
 
   function viewFindings() {
     setActive('findings');
-    (function(){ var q=(location.hash.split('?')[1]||''); if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', overdue:p.overdue==='1', seen:p.seen||'' }; })();
+    // Apply a deep-link query (e.g. Ask AI -> #/findings?sev=Critical&overdue=1) ONLY when it actually
+    // changes — otherwise the in-page filter handlers (which re-call viewFindings without touching the
+    // hash) would re-parse the stale query every render and clobber the user's selection.
+    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', overdue:p.overdue==='1', seen:p.seen||'' }; })();
     if (!STATE.findings.length) return viewEmpty('findings');
     var list = visibleFindings();
     var statusOpts = '<option value="">All statuses</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '"' + (STATE.filt.status === s.k ? ' selected' : '') + '>' + s.l + '</option>'; }).join('');
@@ -205,7 +214,8 @@
     var repoOpts = '<option value="">All repos</option>' + repoList.map(function (o) { return '<option' + (STATE.filt.repo === o ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('');
     var seenOpts = [['', 'Any age'], ['1', 'First seen ≤ 24h'], ['7', 'First seen ≤ 7d'], ['30', 'First seen ≤ 30d']].map(function (o) { return '<option value="' + o[0] + '"' + (STATE.filt.seen === o[0] ? ' selected' : '') + '>' + o[1] + '</option>'; }).join('');
     app.innerHTML =
-      '<header class="view"><div class="overline">Findings workbench</div><h1>Vulnerability findings</h1></header>' +
+      '<header class="view"><div class="overline">Findings workbench</div><h1>Vulnerability findings</h1>' +
+      '<p class="lede">Triage your imported scan findings by status, owner, SLA, and recency — keep per-finding notes and a dated status log, and open Jira or ServiceNow tickets. Everything stays in your browser.</p></header>' +
       privSlim() +
       '<div class="toolbar">' +
       '<input type="text" id="fq" placeholder="Search CVE, host, description, repo, owner…" value="' + esc(STATE.filt.q) + '">' +
@@ -228,7 +238,7 @@
       '<span class="spacer"></span>' +
       '<button class="btn sm" id="bulkClear">Clear selection</button>' +
       '</div>' +
-      (list.length ? gridTable(list) : '<div class="empty">No findings match these filters.</div>');
+      (list.length ? '<div class="gridwrap">' + gridTable(list) + '</div>' : '<div class="empty">No findings match these filters.</div>');
     document.getElementById('fq').addEventListener('input', function () { STATE.filt.q = this.value; rerenderGridOnly(); });
     document.getElementById('fStatus').addEventListener('change', function () { STATE.filt.status = this.value; viewFindings(); });
     document.getElementById('fSev').addEventListener('change', function () { STATE.filt.sev = this.value; viewFindings(); });
@@ -282,7 +292,7 @@
       var sevCls = (f.severity || '').toLowerCase();
       return '<tr data-key="' + esc(keyOf(f)) + '">' +
         '<td class="selcol"><input type="checkbox" class="rowsel" aria-label="Select finding"' + (selKeys[keyOf(f)] ? ' checked' : '') + '></td>' +
-        '<td class="cid"><a href="' + CVE_DETAIL + esc(f.cve) + '" target="_blank" rel="noopener" title="Open in CVE Explorer">' + esc(f.cve) + '</a></td>' +
+        '<td class="cid"><a href="' + CVE_DETAIL + esc(f.cve) + '" title="Open CVE detail">' + esc(f.cve) + '</a></td>' +
         '<td class="host">' + esc(f.host) + '</td>' +
         '<td class="dcell" title="' + esc(f.desc || f.name || '') + '">' + (f.desc || f.name ? esc(f.desc || f.name) : '<span class="muted">—</span>') + '</td>' +
         '<td><span class="badge ' + (['crit', 'high', 'med', 'low'][SEV_ORDER[f.severity]] || 'low') + '">' + esc(f.severity) + '</span></td>' +
@@ -353,7 +363,7 @@
       '<textarea id="drUpdNew" placeholder="Add a status update… (logged with a timestamp)"></textarea>' +
       '<div style="margin-top:6px"><button class="btn sm" id="drAddUpd">Add update</button></div></div>' +
       '<div class="actions">' +
-      '<a class="btn primary" href="' + CVE_DETAIL + esc(f.cve) + '" target="_blank" rel="noopener">CVE detail ↗</a>' +
+      '<a class="btn primary" href="' + CVE_DETAIL + esc(f.cve) + '">CVE detail</a>' +
       '<button class="btn" id="drJira">Open Jira story</button>' +
       '<button class="btn" id="drSnow">Open SNOW incident</button>' +
       '</div>' +
@@ -381,7 +391,7 @@
   function ticketBody(f) {
     return 'Vulnerability: ' + f.cve + '\nHost: ' + f.host + '\nSeverity: ' + f.severity + (f.cvss != null ? ' (CVSS ' + f.cvss + ')' : '') +
       '\nPlugin: ' + (f.plugin || 'n/a') + ' (' + (f.source || 'scan') + ')\nFirst seen: ' + f.firstSeen +
-      '\nSLA due: ' + (dueDate(f) || 'n/a') + '\nRisk detail: ' + CVE_DETAIL + f.cve;
+      '\nSLA due: ' + (dueDate(f) || 'n/a') + '\nRisk detail: ' + CVE_DETAIL_ABS + f.cve;
   }
   function openTicket(kind, f) {
     var c = STATE.cfg;
@@ -603,8 +613,8 @@
   }
 
   // ---------- vendored same-origin sub-apps ----------
-  // CVE Explorer (cve/), Tenable VM Dashboard (tenable/), and Agent Coverage (agent-coverage/)
-  // are all vendored into this repo and linked from the nav as real same-origin pages — no iframes.
+  // The Tenable VM Dashboard and Agent Coverage dashboards are native same-origin views
+  // (acd.js / tvd.js, rendered into #app on their routes) — no iframes.
 
   function viewEmpty(active) {
     setActive(active);

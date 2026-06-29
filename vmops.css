@@ -1,6 +1,6 @@
 /* VM Ops operational pages (Dashboard / Findings / Import / Settings). Scoped under .vmops
-   (set on #app for these views, and on the drawer) so it can't collide with CVE Explorer's CSS.
-   Reuses CVE Explorer's design tokens; only adds the two it lacks. */
+   (set on #app for these views, and on the drawer) so it can't collide with the CVE-intelligence
+   views' CSS. Reuses the shell's design tokens; only adds the few it lacks (--ok/--info/--st-*). */
 :root { --ok:#2f6b3f; --info:#28415d; }
 :root[data-theme="dark"] { --ok:#5cba74; --info:#8fb3dd; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ok:#5cba74; --info:#8fb3dd; } }
@@ -22,6 +22,8 @@
 .vmops .toolbar input[type=text], .vmops .toolbar select { font-family:var(--sans); font-size:13.5px; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:8px 11px; outline:none; }
 .vmops .toolbar input[type=text] { min-width:230px; flex:1; }
 .vmops .toolbar input:focus, .vmops .toolbar select:focus { border-color:var(--accent); }
+/* visible focus ring for keyboard users (these fields set outline:none) */
+.vmops input:focus-visible, .vmops select:focus-visible, .vmops textarea:focus-visible, .drawer textarea:focus-visible { outline:none; border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 30%, transparent); }
 .vmops .spacer { flex:1; }
 
 /* bulk-action bar (shown when findings are selected) */
@@ -41,6 +43,7 @@
 .vmops .btn.primary:hover { background:var(--accent); border-color:var(--accent); }
 .vmops .btn.sm { font-size:12px; padding:5px 9px; }
 
+.vmops .gridwrap { overflow-x:auto; }
 .vmops table.grid { width:100%; border-collapse:collapse; font-size:13.5px; }
 .vmops table.grid th { text-align:left; font-size:11px; font-weight:600; letter-spacing:.6px; text-transform:uppercase; color:var(--faint); padding:8px 10px; border-bottom:1px solid var(--line); cursor:pointer; white-space:nowrap; user-select:none; }
 .vmops table.grid td { padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:middle; }
@@ -52,18 +55,18 @@
 .vmops .sortarrow { color:var(--accent); }
 
 .vmops .badge { display:inline-block; font-size:11px; font-weight:600; padding:2px 8px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
-.vmops .badge.crit { color:#fff; background:var(--crit); } .vmops .badge.high { color:#fff; background:var(--high); }
-.vmops .badge.med { color:#fff; background:var(--med); } .vmops .badge.low { color:#fff; background:var(--low); }
+.vmops .badge.crit { color:var(--badge-ink); background:var(--crit); } .vmops .badge.high { color:var(--badge-ink); background:var(--high); }
+.vmops .badge.med { color:var(--badge-ink); background:var(--med); } .vmops .badge.low { color:var(--badge-ink); background:var(--low); }
 .vmops .pill-sla { font-size:11.5px; font-weight:600; }
 .vmops .pill-sla.overdue { color:var(--crit); } .vmops .pill-sla.soon { color:var(--high); } .vmops .pill-sla.ok { color:var(--ok); } .vmops .pill-sla.done { color:var(--faint); }
 
 .vmops select.status { font-family:var(--sans); font-size:12px; font-weight:600; border-radius:100px; padding:3px 8px; border:1px solid var(--line); background:var(--surface); color:var(--ink); cursor:pointer; }
-.vmops select.status[data-s="new"] { color:var(--crit); border-color:color-mix(in srgb,var(--crit) 45%,var(--line)); }
-.vmops select.status[data-s="triaged"] { color:var(--med); }
-.vmops select.status[data-s="in_remediation"] { color:var(--info); }
-.vmops select.status[data-s="resolved"] { color:var(--ok); }
-.vmops select.status[data-s="risk_accepted"] { color:var(--soft); }
-.vmops select.status[data-s="false_positive"] { color:var(--faint); }
+.vmops select.status[data-s="new"] { color:var(--st-new); border-color:color-mix(in srgb,var(--st-new) 45%,var(--line)); }
+.vmops select.status[data-s="triaged"] { color:var(--st-triaged); }
+.vmops select.status[data-s="in_remediation"] { color:var(--st-rem); }
+.vmops select.status[data-s="resolved"] { color:var(--st-res); }
+.vmops select.status[data-s="risk_accepted"] { color:var(--st-risk); }
+.vmops select.status[data-s="false_positive"] { color:var(--st-fp); }
 
 .vmops .drop { display:block; border:1.5px dashed var(--line); border-radius:14px; padding:34px 20px; text-align:center; cursor:pointer; background:var(--surface); transition:border-color .15s ease; }
 .vmops .drop:hover, .vmops .drop.over { border-color:var(--accent); }
@@ -94,7 +97,7 @@
 .vmops .import-src .ok-txt { color:var(--ok); font-weight:600; }
 .vmops .import-src.soon { opacity:.6; }
 
-/* drawer + toast are body-level overlays; CVE Explorer has no such classes, so these are collision-free */
+/* drawer + toast are body-level overlays; the CVE-intelligence views have no such classes, so these are collision-free */
 .drawer-bg { position:fixed; inset:0; background:rgba(0,0,0,.34); z-index:80; display:none; }
 .drawer-bg.open { display:block; }
 .drawer { position:fixed; top:0; right:0; bottom:0; width:min(520px,94vw); background:var(--paper); border-left:1px solid var(--line); z-index:90; transform:translateX(100%); transition:transform .2s ease; overflow-y:auto; padding:24px; }

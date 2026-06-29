@@ -115,11 +115,12 @@ const PALS_CB = {
     light: {crit:'#b0144d', high:'#bd5800', med:'#5e1a8a', low:'#6b6b6b', info:'#8a8a8a', ok:'#006b67', accent:'#b0144d', bg:'#f1ecef', panel:'#ffffff'}
   }
 };
-const curMode = () => document.documentElement.dataset.theme==='light' ? 'light' : 'dark';
+const tvdRoot = () => document.querySelector('.tvdapp') || document.documentElement;
+const curMode = () => { var t=document.documentElement.dataset.theme; if(t) return t==='light'?'light':'dark'; return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'; };
 const PAL = () => STATE.cbTheme==='default' ? PALS_DEFAULT : PALS_CB[STATE.cbTheme][curMode()];
 function applyPalette(name){
   STATE.cbTheme = PALS_CB[name] ? name : 'default';
-  const root = document.documentElement.style;
+  const root = tvdRoot().style;   // scope palette overrides to .tvdapp so they never leak to the shell
   ['--crit','--high','--med','--low','--ok','--accent','--bg','--panel'].forEach(k=>root.removeProperty(k));
   if(STATE.cbTheme!=='default'){ const p=PAL();
     root.setProperty('--crit',p.crit); root.setProperty('--high',p.high); root.setProperty('--med',p.med);
@@ -157,8 +158,8 @@ applyPalette((function(){ try{ return localStorage.getItem('tvd-cb'); }catch(e){
 $('#cfgSla').addEventListener('click', ()=>{ const el=document.getElementById('slaConfig');
   if(el){ el.scrollIntoView({behavior:'smooth',block:'start'}); const inp=el.querySelector('.slainp'); if(inp) setTimeout(()=>inp.focus(),300); }
   else alert('Load your Tenable data first to configure SLAs.'); });
-function tc(){ return getComputedStyle(document.documentElement).getPropertyValue('--muted').trim()||'#9aa3b2'; }
-function gc(){ return document.documentElement.dataset.theme==='light'?'rgba(0,0,0,.10)':'#2a2f3e'; }
+function tc(){ return getComputedStyle(tvdRoot()).getPropertyValue('--muted').trim()||'#9aa3b2'; }
+function gc(){ return getComputedStyle(tvdRoot()).getPropertyValue('--line').trim()||(curMode()==='light'?'rgba(0,0,0,.10)':'#2a2f3e'); }
 function setState(){ const s=$('#loadState'); if(s) s.textContent =
   `Loaded: ${STATE.cumulative.length} open · ${STATE.mitigated.length} mitigated`; }
 
@@ -210,7 +211,7 @@ async function loadSample(){
   if(location.protocol==='file:'){
     warn('⚠️ The bundled sample can’t auto-load when this page is opened directly as a file (<code>file://</code>) — browsers block reading the local CSVs. '
        + 'Run a quick local server in this folder — <code>python3 -m http.server</code> — then reload, or drag your own Tenable exports into the buttons above (manual uploads work fine from <code>file://</code>). '
-       + 'The live demo also has it built in: <b>cloudanimal.github.io/tenable-vm-dashboard</b>');
+       + 'The live demo also has it built in: <b>cloudanimal.github.io/vm-ops-console</b>');
     return;
   }
   try{
@@ -637,7 +638,7 @@ function render(){
 }
 
 // ---------- save a card as an image (chart canvas fast-path, or html2canvas for HTML cards) ----------
-function panelBg(){ return getComputedStyle(document.documentElement).getPropertyValue('--panel').trim() || '#171a23'; }
+function panelBg(){ return getComputedStyle(tvdRoot()).getPropertyValue('--panel').trim() || '#171a23'; }
 
 function toast(msg){ let t=document.querySelector('.toast'); if(!t){ t=document.createElement('div'); t.className='toast'; document.body.appendChild(t); }
   t.textContent=msg; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),1800); }
