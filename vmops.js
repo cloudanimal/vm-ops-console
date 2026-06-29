@@ -15,8 +15,8 @@
   function norm(h) { return String(h || '').trim().split('.')[0].toUpperCase(); }
   var SHIELD = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>';
   function privSlim() { return '<div class="privacy slim">' + SHIELD + '<div><b>100% local.</b> Findings, status, owners, notes, and configuration stay in this browser — nothing is uploaded. Ticketing is via deep-links to your own Jira / ServiceNow.</div></div>'; }
-  // Honest notice for the Ask AI page: data stays local, but the typed question is sent to Anthropic.
-  function askPriv() { return '<div class="privacy slim info">' + SHIELD + '<div><b>Your scan data stays local.</b> Ask AI sends only your typed question (never your findings, hosts, or scores) to <code>api.anthropic.com</code> using your own key, and filters your data in the browser. Avoid putting secrets or sensitive identifiers in the question itself.</div></div>'; }
+  // Privacy notice for the Ask AI page: the model runs on-device, so nothing leaves the browser.
+  function askPriv() { return '<div class="privacy slim info">' + SHIELD + '<div><b>100% on-device.</b> Ask AI runs a small language model in your browser (Transformers.js) — your question and findings never leave this browser, and there’s no API key.</div></div>'; }
 
   // ---------- model / persistence ----------
   var STATUS = [

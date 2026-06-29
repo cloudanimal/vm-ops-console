@@ -8,11 +8,11 @@ A browser-local, backend-free **vulnerability-management operations console**. I
 
 The goal: track **every** vulnerability flowing from Tenable and Wiz in one place — from raw scan export to triaged, owned, ticketed, and resolved.
 
-Everything runs in your browser. Scan exports, findings, notes, and API keys stay in `localStorage`/`IndexedDB` and are never uploaded to this site's host. The only outbound calls are to public vulnerability data sources (NVD, CISA KEV, FIRST EPSS, OSV) and — only if you opt into Ask AI with your own key — directly to `api.anthropic.com`.
+Everything runs in your browser. Scan exports, findings, notes, and API keys stay in `localStorage`/`IndexedDB` and are never uploaded to this site's host. Ask AI runs a small language model **entirely on-device** (Transformers.js), so your questions never leave the browser and there's no API key — the only outbound calls are to public vulnerability data sources (NVD, CISA KEV, FIRST EPSS, OSV) and a one-time Ask AI model download from a public CDN.
 
 ## What's inside
 
-- **Ask AI** — describe what you want in plain English; an LLM maps it to the app's *own* searches and filters (never invents CVEs), then the app runs them against real data. BYO Anthropic key, stored locally.
+- **Ask AI** — describe what you want in plain English; a small **on-device** language model (Transformers.js, downloaded once from a public CDN) maps it to the app's *own* searches and filters (never invents CVEs), then the app runs them against real data. No API key, nothing leaves your browser.
 - **Findings workbench** — import scanner findings (Tenable today; more sources on the roadmap), triage by status/owner/SLA, keep per-finding notes and a dated **status-update log**, and open Jira/ServiceNow tickets.
 - **Tenable VM dashboard** — upload Tenable SC cumulative + mitigated exports for instant KPIs, severity/SLA breakdowns, top findings, and one-click report exports.
 - **Agent coverage dashboard** — reconcile Active Directory against ManageEngine, Tenable, and CrowdStrike agents to find coverage gaps.
