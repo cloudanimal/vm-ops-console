@@ -34,7 +34,9 @@ html[data-theme="light"] .acdapp .card, html[data-theme="light"] .acdapp .panel{
 .acdapp .theme-toggle:hover{border-color:var(--accent);color:var(--txt)}
 .acdapp .drop{border:2px dashed var(--line);border-radius:12px;padding:24px;background:var(--panel)}
 .acdapp .drop h2{margin:0 0 4px;font-size:17px}
-.acdapp .slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0}
+.acdapp .slots{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+@media(max-width:860px){.acdapp .slots{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.acdapp .slots{grid-template-columns:1fr}}
 .acdapp .slot{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:14px}
 .acdapp .slot .t{font-weight:600;font-size:14px;display:flex;align-items:center;gap:8px}
 .acdapp .slot .d{font-size:12px;color:var(--muted);margin:4px 0 10px;min-height:2.4em}
