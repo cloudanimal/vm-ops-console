@@ -286,7 +286,9 @@
   .live-dot { width:8px; height:8px; border-radius:50%; background:#3fb950; display:inline-block; box-shadow:0 0 0 0 rgba(63,185,80,.5); animation:livepulse 2s infinite; }
   @keyframes livepulse { 0%{box-shadow:0 0 0 0 rgba(63,185,80,.5);} 70%{box-shadow:0 0 0 6px rgba(63,185,80,0);} 100%{box-shadow:0 0 0 0 rgba(63,185,80,0);} }
   /* Ask AI page */
-  .ask-wrap { max-width:100%; }   /* fill the page width and auto-resize (page is capped by .wrap; .lede stays readable via its own cap) */
+  .ask-wrap { max-width:100%; }
+  .ask-priv { display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--soft); border:1px solid color-mix(in srgb,#2e8b57 45%,var(--line)); background:color-mix(in srgb,#2e8b57 9%,transparent); border-radius:100px; padding:7px 14px; margin-bottom:14px; }
+  .ask-priv b { color:var(--ink); }   /* fill the page width and auto-resize (page is capped by .wrap; .lede stays readable via its own cap) */
   .ask-box { display:flex; align-items:flex-end; gap:8px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:10px 10px 10px 18px; transition:border-color .15s ease, box-shadow .15s ease; }
   .ask-box:focus-within { border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 16%, transparent); }
   .ask-box textarea { flex:1; border:0; background:transparent; color:var(--ink); font:inherit; font-size:16px; line-height:1.55; resize:none; padding:9px 0; outline:none; max-height:220px; }
@@ -346,6 +348,7 @@
     <a class="tab" href="#/dashboard" data-route="dashboard">Ops&nbsp;Dashboard</a>
     <a class="tab" href="#/findings" data-route="findings">Findings</a>
     <a class="tab" href="#/agent-coverage" data-route="agent-coverage">Agent Coverage</a>
+    <a class="tab" href="#/tvd" data-route="tvd">Tenable&nbsp;Dashboard</a>
     <span class="navsep" aria-hidden="true"></span>
     <div class="navmenu" data-menu="intel">
       <button class="navmenu-btn" type="button">CVE&nbsp;Intelligence <span class="caret">▾</span></button>
@@ -1778,6 +1781,7 @@
       'no API key, and your question never leaves this browser. It maps your words to the app\'s own views over real data; ' +
       'it never makes up CVEs.</p></header>' +
       '<div class="ask-wrap">' +
+        '<div class="ask-priv">🔒 <span><b>100% on-device.</b> Your question and findings never leave this browser — the model runs locally.</span></div>' +
         '<form id="askForm" class="ask-box">' +
           '<textarea id="askQ" rows="1" placeholder="e.g. Exploitable vulnerabilities in the past 24 hours"></textarea>' +
           '<button class="ask-submit" type="submit">' +
@@ -2708,7 +2712,7 @@
     // VM Ops operational pages live in vmops.js; dispatch to them and scope #app to .vmops.
     if (window.VMOPS && window.VMOPS[parts[0]]) { setActive(parts[0]); window.VMOPS[parts[0]](); return; }
     if (parts[0] === 'agent-coverage' && window.ACD) { setActive('agent-coverage'); window.ACD.open(); return; }
-    if (parts[0] === 'tvd' && window.TVD) { setActive('tenable'); window.TVD.open(); return; }
+    if (parts[0] === 'tvd' && window.TVD) { setActive('tvd'); window.TVD.open(); return; }
     if (parts[0] === 'prompt-scanner' && window.PSCAN) { setActive('prompt-scanner'); window.PSCAN.open(); return; }
     var _appEl = document.getElementById('app'); if (_appEl) _appEl.className = '';
     if (parts.length === 0) return viewAsk();

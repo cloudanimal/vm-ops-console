@@ -2,12 +2,12 @@
    wraps the original app so its functions persist (STATE held across navigation). */
 (function(){
   var app=document.getElementById('app');
-  var TVD_MARKUP='<div class="tvdapp">'+`<header>
-  <div>
-    <h1>Tenable Vulnerability Dashboard</h1>
-    <div class="sub">Upload your Tenable SC exports → instant vulnerability reports</div>
+  var TVD_MARKUP='<div class="tvdapp">'+`<div class="tvdhead">
+    <div class="overline">Tenable Dashboard</div>
+    <h1>Your Tenable vulnerability program</h1>
+    <p class="lede">Upload your Tenable SC exports for instant KPIs, severity and SLA trends, top findings, and one-click reports — all in your browser.</p>
   </div>
-  <div class="row noprint">
+  <div class="tvdtools row noprint">
     <span class="priv">&#128274; 100% local — your data never leaves this browser</span>
     <select id="cbSel" class="hostinput" style="width:auto;padding:8px 10px" title="Color-blind-safe palette" aria-label="Color palette">
       <option value="default">Vivid</option>
@@ -38,7 +38,6 @@
     <button class="btn ghost" id="cfgSla">SLA</button>
     <button class="btn ghost" id="reset">Reset</button>
   </div>
-</header>
 <main>
   <div id="jumpBar" class="noprint" style="display:none;position:sticky;top:0;z-index:30;padding:10px 0;margin:0 0 10px;background:var(--bg);border-bottom:1px solid var(--line)">
     <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">

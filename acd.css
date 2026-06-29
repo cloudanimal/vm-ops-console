@@ -27,9 +27,9 @@ html[data-theme="light"] .acdapp .card, html[data-theme="light"] .acdapp .panel{
 .acdapp header h1{font-size:19px;margin:0;font-weight:600}
 .acdapp header .sub{color:var(--muted);font-size:13px;margin-top:2px}
 /* Ops-Dashboard-style header (overline + serif h1 + lede) + a controls toolbar below */
-.acdapp .acdhead{padding:14px 28px 4px}
-.acdapp .acdtools{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:0 28px 12px;border-bottom:1px solid var(--line)}
-.acdapp main{padding:18px 28px;max-width:1500px;margin:0 auto}
+.acdapp .acdhead{padding:14px 0 4px}
+.acdapp .acdtools{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:0 0 12px;border-bottom:1px solid var(--line)}
+.acdapp main{padding:18px 0;max-width:none;margin:0}
 .acdapp .priv{font-size:12px;color:var(--ok);border:1px solid color-mix(in srgb,var(--ok) 50%,transparent);border-radius:100px;padding:5px 12px;display:inline-flex;align-items:center;gap:6px}
 .acdapp .spacer{flex:1}
 .acdapp .btn{font-size:13px;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--txt);cursor:pointer}
