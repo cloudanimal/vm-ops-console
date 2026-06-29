@@ -408,17 +408,17 @@
   // Unified importer: one slot per data source, persisted to the shared VMStore so the
   // dashboards can read it. Findings also feed the Findings workbench.
   var IMPORT_GROUPS = [
-    { title: 'Findings', items: [
+    { title: 'Findings', open: { route: '#/findings', label: 'Open Findings →' }, items: [
       { id: 'findings', label: 'Scan findings', sub: 'Nessus / Tenable vulnerability CSV → Findings workbench', accept: '.csv,text/csv' }
     ] },
-    { title: 'Agent coverage', items: [
+    { title: 'Agent coverage', open: { route: '#/agent-coverage', label: 'Open Agent Coverage →' }, items: [
       { id: 'acd:ad', label: 'Active Directory (AD)', sub: 'Computer inventory → Agent Coverage denominator', accept: '.json,.csv' },
       { id: 'acd:me', label: 'ManageEngine (ME)', sub: 'Endpoint Central agents → Agent Coverage', accept: '.json,.csv' },
       { id: 'acd:tsc', label: 'Tenable.sc (TSC)', sub: 'Tenable.sc agents / assets → Agent Coverage', accept: '.json,.csv' },
       { id: 'acd:tio', label: 'Tenable.io (TIO)', sub: 'Tenable.io agents / assets → Agent Coverage', accept: '.json,.csv' },
       { id: 'acd:cs', label: 'CrowdStrike (CS)', sub: 'Falcon sensor inventory → Agent Coverage', accept: '.json,.csv' }
     ] },
-    { title: 'Tenable vulnerability dashboard', items: [
+    { title: 'Tenable vulnerability dashboard', open: { route: '#/tvd', label: 'Open Tenable dashboard →' }, items: [
       { id: 'tvd:cumulative', label: 'Tenable vulns — Cumulative (open)', sub: 'vulndetails export, sourceType=cumulative → Tenable dashboard', accept: '.csv,.json' },
       { id: 'tvd:mitigated', label: 'Tenable vulns — Mitigated', sub: 'vulndetails export, sourceType=patched → Tenable dashboard', accept: '.csv,.json' }
     ] }
@@ -448,7 +448,9 @@
       privSlim() +
       '<div class="toolbar"><a class="btn sm" href="#/settings">← Settings</a><span class="spacer"></span><button class="btn sm" id="loadSample">Load sample findings</button></div>' +
       IMPORT_GROUPS.map(function (g) {
-        return '<h2 class="import-grouphdr">' + esc(g.title) + '</h2><div class="importgrid">' + g.items.map(importCard).join('') + '</div>';
+        return '<div class="import-grouprow"><h2 class="import-grouphdr">' + esc(g.title) + '</h2>' +
+          (g.open ? '<a class="btn sm import-open" href="' + g.open.route + '">' + esc(g.open.label) + '</a>' : '') +
+          '</div><div class="importgrid">' + g.items.map(importCard).join('') + '</div>';
       }).join('') +
       '<h2 class="import-grouphdr">Coming soon</h2><div class="importgrid">' +
       IMPORT_SOON.map(function (s) { return '<div class="card import-src soon"><div class="src-title">' + esc(s.label) + '</div><div class="muted src-sub">' + esc(s.sub) + '</div><div class="src-status muted">Coming soon</div></div>'; }).join('') +

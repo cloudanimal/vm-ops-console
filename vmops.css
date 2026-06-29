@@ -82,6 +82,9 @@
 .vmops .empty { text-align:center; color:var(--faint); padding:50px 20px; font-size:14px; }
 
 /* unified data-import grid (one card per source) */
+.vmops .import-grouprow { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin:22px 0 2px; padding-bottom:4px; border-bottom:1px solid var(--line); }
+.vmops .import-grouprow .import-grouphdr { margin:0; padding:0; border:0; }
+.vmops .import-open { flex:0 0 auto; white-space:nowrap; }
 .vmops .import-grouphdr { font-family:var(--serif); font-weight:500; font-size:17px; margin:22px 0 2px; padding-bottom:4px; border-bottom:1px solid var(--line); }
 .vmops .importgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; margin:14px 0; }
 .vmops .import-src { margin:0; display:flex; flex-direction:column; }
