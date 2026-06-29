@@ -30,7 +30,6 @@
     </div>
     <div class="drop" id="dropZone">
       <h2>Load your sources</h2>
-      <p class="sub" style="margin:0">Active Directory is the source of truth (the denominator). Everything is matched back to it by hostname — all in your browser.</p>
       <div class="slots">
         <div class="slot" id="slot-ad">
           <div class="t"><span>① Active Directory</span></div>
