@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build data/exploited.json — the CVE Explorer dataset (zerodayclock.com/explorer style).
+"""Build data/exploited.json — the VM Ops Console CVE dataset (zerodayclock.com/explorer style).
 
 A per-CVE table of CVEs with known exploits/PoCs aggregated across multiple public
 sources, enriched with publication date, CVSS, severity, product, and time-to-exploit.

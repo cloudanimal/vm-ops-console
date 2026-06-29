@@ -4,7 +4,7 @@ catalog plus a few aggregate stats, written as static JSON the front end can
 load directly.
 
 The full KEV catalog is small enough (~1.3k entries) to ship in its own right,
-which is what lets CVE Explorer browse confirmed-exploited CVEs entirely
+which is what lets VM Ops Console browse confirmed-exploited CVEs entirely
 client side, with no backend.
 
 Source: https://www.cisa.gov/known-exploited-vulnerabilities-catalog

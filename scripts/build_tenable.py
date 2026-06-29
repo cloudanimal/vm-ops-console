@@ -5,7 +5,7 @@ RSS.
 Tenable's plugin database is proprietary, so this does not mirror it. It
 syndicates only the lightweight metadata an RSS feed exists to share, plugin
 ID, short title, severity, date, and the canonical link back to Tenable, plus
-the CVE IDs each plugin references so CVE Explorer can cross-link a detection
+the CVE IDs each plugin references so VM Ops Console can cross-link a detection
 to its own CVE pages. The descriptive prose in the feed is deliberately not
 stored.
 

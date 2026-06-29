@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build data/tte.json — Time-to-Exploit metrics for the CVE Explorer.
+"""Build data/tte.json — Time-to-Exploit metrics for VM Ops Console.
 
 TTE = (first confirmed in-the-wild exploitation signal) - (CVE publication date), in days.
 Exploitation signals: CISA KEV (always) + VulnCheck KEV (if VULNCHECK_API_TOKEN is set).
