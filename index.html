@@ -346,9 +346,9 @@
     <span class="navsep" aria-hidden="true"></span>
     <a class="tab" href="#/report" data-route="report">Morning Report</a>
     <a class="tab" href="#/dashboard" data-route="dashboard">Ops&nbsp;Dashboard</a>
-    <a class="tab" href="#/findings" data-route="findings">Findings</a>
     <a class="tab" href="#/agent-coverage" data-route="agent-coverage">Agent Coverage</a>
     <a class="tab" href="#/tvd" data-route="tvd">Tenable&nbsp;Dashboard</a>
+    <a class="tab" href="#/findings" data-route="findings">Findings</a>
     <span class="navsep" aria-hidden="true"></span>
     <div class="navmenu" data-menu="intel">
       <button class="navmenu-btn" type="button">CVE&nbsp;Intelligence <span class="caret">▾</span></button>
@@ -2347,14 +2347,14 @@
     setActive('about');
     app.innerHTML = '<header class="view"><div class="overline">About</div><h1>How VM Ops Console works</h1>' +
       '<p class="lede">A backend-free vulnerability-management operations console. It pairs a public-CVE intelligence front end with operational tooling — a findings workbench, a Tenable vulnerability dashboard, and an AD-vs-agent coverage reconciler — under one nav, one theme, and one natural-language Ask AI box. Your scan data, findings, notes, and keys stay in your browser; only public CVE lookups (and, if you opt in, your own Anthropic key) leave it.</p></header>' +
-      '<div class="block" id="sec-tools"><h3>The operational tools</h3><div class="prose">' +
-      '<p>Beyond CVE intelligence, the console runs your own program data — all client-side:</p>' +
-      '<ul><li><b>Findings workbench</b> — import scanner findings, triage by status/owner/SLA, keep per-finding notes and a dated status-update log, and open Jira/ServiceNow tickets.</li>' +
-      '<li><b>Tenable VM dashboard</b> — upload Tenable SC cumulative + mitigated exports for instant KPIs, severity/SLA breakdowns, top findings, and one-click report exports.</li>' +
-      '<li><b>Agent coverage</b> — reconcile Active Directory against ManageEngine, Tenable, and CrowdStrike agents to surface coverage gaps and orphaned hosts.</li></ul>' +
-      '<p>The goal: track <i>every</i> vulnerability flowing from Tenable and Wiz in one place. Import scan exports on the Data Import page (Settings); the dashboards read from a shared in-browser store.</p></div></div>' +
       '<div class="toc"><span class="toc-lab">On this page</span>' +
       ABOUT_SECTIONS.map(function (s) { return '<a class="toc-link" data-to="' + s[0] + '">' + esc(s[1]) + '</a>'; }).join('') + '</div>' +
+      '<div class="block" id="sec-tools"><h3>The operational tools</h3><div class="prose">' +
+      '<p>Beyond CVE intelligence, the console runs your own program data — all client-side:</p>' +
+      '<ul><li><b>Agent coverage</b> — reconcile Active Directory against ManageEngine, Tenable, and CrowdStrike agents to surface coverage gaps and orphaned hosts.</li>' +
+      '<li><b>Tenable VM dashboard</b> — upload Tenable SC cumulative + mitigated exports for instant KPIs, severity/SLA breakdowns, top findings, and one-click report exports.</li>' +
+      '<li><b>Findings workbench</b> — import scanner findings, triage by status/owner/SLA, filter by recency and SLA, keep per-finding notes and a dated status-update log, and open Jira/ServiceNow tickets.</li></ul>' +
+      '<p>The goal: track <i>every</i> vulnerability flowing from Tenable and Wiz in one place. Import scan exports on the Data Import page (Settings); the dashboards read from a shared in-browser store.</p></div></div>' +
       '<div class="block" id="sec-models"><h3>The five prioritization models</h3><div class="prose">' +
       '<p>Every CVE is shown through five lenses, because they routinely disagree and no single one is sufficient:</p>' +
       '<ul><li><b>CVSS severity</b> — the traditional, impact-driven score from NVD.</li>' +

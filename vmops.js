@@ -36,7 +36,7 @@
     ov: load('vmops-overrides', {}),       // key -> {status, owner, notes, updated}
     cfg: Object.assign({}, DEFAULT_CFG, load('vmops-config', {})),
     sort: { col: 'risk', dir: 1 },
-    filt: { q: '', status: '', sev: '', owner: '', repo: '', overdue: false }
+    filt: { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '' }
   };
   STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla, STATE.cfg.sla || {});
 
@@ -93,6 +93,7 @@
       if (f.owner && (ovOf(x).owner || '') !== f.owner) return false;
       if (f.repo && repoOf(x) !== f.repo) return false;
       if (f.overdue && slaState(x) !== 'overdue') return false;
+      if (f.seen) { var _ds = daysSince(x.firstSeen); if (_ds == null || _ds > +f.seen) return false; }
       if (f.q) { var q = f.q.toLowerCase(); if ((x.cve + ' ' + x.host + ' ' + (x.name || '') + ' ' + (x.desc || '') + ' ' + repoOf(x) + ' ' + (ovOf(x).owner || '')).toLowerCase().indexOf(q) === -1) return false; }
       return true;
     });
@@ -155,7 +156,7 @@
 
   function kpi(label, num, sub, cls) { return '<div class="kpi ' + (cls || '') + '"><div class="label">' + esc(label) + '</div><div class="num">' + esc(num) + '</div><div class="sub">' + esc(sub || '') + '</div></div>'; }
   // per-status bar colours (mirror the status pill colours)
-  var STATUS_BAR_COLOR = { new: 'crit', triaged: 'med', in_remediation: 'info', resolved: 'ok', risk_accepted: 'soft', false_positive: 'faint' };
+  var STATUS_BAR_COLOR = { new: 'st-new', triaged: 'st-triaged', in_remediation: 'st-rem', resolved: 'st-res', risk_accepted: 'st-risk', false_positive: 'st-fp' };
   function barRows(rows) {
     var max = Math.max.apply(null, rows.map(function (r) { return r.n; }).concat([1]));
     return '<div class="card" style="padding:14px 18px">' + rows.map(function (r) {
@@ -194,7 +195,7 @@
 
   function viewFindings() {
     setActive('findings');
-    (function(){ var q=(location.hash.split('?')[1]||''); if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', overdue:p.overdue==='1' }; })();
+    (function(){ var q=(location.hash.split('?')[1]||''); if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', overdue:p.overdue==='1', seen:p.seen||'' }; })();
     if (!STATE.findings.length) return viewEmpty('findings');
     var list = visibleFindings();
     var statusOpts = '<option value="">All statuses</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '"' + (STATE.filt.status === s.k ? ' selected' : '') + '>' + s.l + '</option>'; }).join('');
@@ -202,6 +203,7 @@
     var ownerOpts = '<option value="">All owners</option>' + owners().map(function (o) { return '<option' + (STATE.filt.owner === o ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('');
     var repoList = repos();
     var repoOpts = '<option value="">All repos</option>' + repoList.map(function (o) { return '<option' + (STATE.filt.repo === o ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('');
+    var seenOpts = [['', 'Any age'], ['1', 'First seen ≤ 24h'], ['7', 'First seen ≤ 7d'], ['30', 'First seen ≤ 30d']].map(function (o) { return '<option value="' + o[0] + '"' + (STATE.filt.seen === o[0] ? ' selected' : '') + '>' + o[1] + '</option>'; }).join('');
     app.innerHTML =
       '<header class="view"><div class="overline">Findings workbench</div><h1>Vulnerability findings</h1></header>' +
       privSlim() +
@@ -209,6 +211,7 @@
       '<input type="text" id="fq" placeholder="Search CVE, host, description, repo, owner…" value="' + esc(STATE.filt.q) + '">' +
       '<select id="fStatus">' + statusOpts + '</select>' +
       '<select id="fSev">' + sevOpts + '</select>' +
+      '<select id="fSeen">' + seenOpts + '</select>' +
       '<select id="fOwner">' + ownerOpts + '</select>' +
       (repoList.length ? '<select id="fRepo">' + repoOpts + '</select>' : '') +
       '<button class="btn sm" id="fOverdue" style="' + (STATE.filt.overdue ? 'border-color:var(--crit);color:var(--crit)' : '') + '">Overdue only</button>' +
@@ -229,6 +232,7 @@
     document.getElementById('fq').addEventListener('input', function () { STATE.filt.q = this.value; rerenderGridOnly(); });
     document.getElementById('fStatus').addEventListener('change', function () { STATE.filt.status = this.value; viewFindings(); });
     document.getElementById('fSev').addEventListener('change', function () { STATE.filt.sev = this.value; viewFindings(); });
+    document.getElementById('fSeen').addEventListener('change', function () { STATE.filt.seen = this.value; viewFindings(); });
     document.getElementById('fOwner').addEventListener('change', function () { STATE.filt.owner = this.value; viewFindings(); });
     var fRepo = document.getElementById('fRepo'); if (fRepo) fRepo.addEventListener('change', function () { STATE.filt.repo = this.value; viewFindings(); });
     document.getElementById('fOverdue').addEventListener('click', function () { STATE.filt.overdue = !STATE.filt.overdue; viewFindings(); });

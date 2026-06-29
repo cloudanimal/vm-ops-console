@@ -4,6 +4,12 @@
 :root { --ok:#2f6b3f; --info:#28415d; }
 :root[data-theme="dark"] { --ok:#5cba74; --info:#8fb3dd; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ok:#5cba74; --info:#8fb3dd; } }
+/* Per-status bar colors. Six distinct hues (red / amber / blue / green / violet / grey) rather
+   than blue + two near-identical greys, so the status breakdown stays legible for color-blind
+   viewers — only one neutral grey, and violet replaces the second grey. */
+:root { --st-new:#c0392b; --st-triaged:#b9770b; --st-rem:#2f6fe0; --st-res:#1f9d57; --st-risk:#7d4fd1; --st-fp:#8a8f98; }
+:root[data-theme="dark"] { --st-new:#e24b4a; --st-triaged:#ef9f27; --st-rem:#5aa9e6; --st-res:#5cba74; --st-risk:#b487f0; --st-fp:#7a818b; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --st-new:#e24b4a; --st-triaged:#ef9f27; --st-rem:#5aa9e6; --st-res:#5cba74; --st-risk:#b487f0; --st-fp:#7a818b; } }
 
 .vmops .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin:22px 0; }
 .vmops .kpi { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:15px 17px; }
