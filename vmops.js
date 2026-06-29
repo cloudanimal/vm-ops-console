@@ -132,7 +132,7 @@
     if (!STATE.findings.length) return viewEmpty('dashboard');
     var k = kpis();
     var bySev = ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return { s: s, n: STATE.findings.filter(function (f) { return f.severity === s && isOpen(f); }).length }; });
-    var byStatus = STATUS.map(function (st) { return { l: st.l, n: STATE.findings.filter(function (f) { return statusOf(f) === st.k; }).length }; });
+    var byStatus = STATUS.map(function (st) { return { l: st.l, k: st.k, n: STATE.findings.filter(function (f) { return statusOf(f) === st.k; }).length }; });
     var top = STATE.findings.filter(isOpen).slice().sort(function (a, b) { return riskScore(b) - riskScore(a); }).slice(0, 8);
     app.innerHTML =
       '<header class="view"><div class="overline">Operations dashboard</div><h1>Where the program stands</h1>' +
@@ -147,18 +147,20 @@
       kpi('Unassigned', k.unassigned, 'no owner set') +
       '</div>' +
       '<h2>Open by severity</h2>' + barRows(bySev.map(function (x) { return { l: x.s, n: x.n, cls: x.s.toLowerCase() }; })) +
-      '<h2>By status</h2>' + barRows(byStatus.map(function (x) { return { l: x.l, n: x.n }; })) +
+      '<h2>By status</h2>' + barRows(byStatus.map(function (x) { return { l: x.l, n: x.n, color: 'var(--' + (STATUS_BAR_COLOR[x.k] || 'accent') + ')' }; })) +
       '<h2>Highest-risk open findings</h2>' +
       (top.length ? gridTable(top) : '<div class="empty">Nothing open.</div>');
     wireGrid();
   }
 
   function kpi(label, num, sub, cls) { return '<div class="kpi ' + (cls || '') + '"><div class="label">' + esc(label) + '</div><div class="num">' + esc(num) + '</div><div class="sub">' + esc(sub || '') + '</div></div>'; }
+  // per-status bar colours (mirror the status pill colours)
+  var STATUS_BAR_COLOR = { new: 'crit', triaged: 'med', in_remediation: 'info', resolved: 'ok', risk_accepted: 'soft', false_positive: 'faint' };
   function barRows(rows) {
     var max = Math.max.apply(null, rows.map(function (r) { return r.n; }).concat([1]));
     return '<div class="card" style="padding:14px 18px">' + rows.map(function (r) {
       var w = Math.round(r.n / max * 100);
-      var color = r.cls ? 'var(--' + (r.cls === 'critical' ? 'crit' : r.cls === 'high' ? 'high' : r.cls === 'medium' ? 'med' : r.cls === 'low' ? 'low' : 'accent') + ')' : 'var(--accent)';
+      var color = r.color ? r.color : (r.cls ? 'var(--' + (r.cls === 'critical' ? 'crit' : r.cls === 'high' ? 'high' : r.cls === 'medium' ? 'med' : r.cls === 'low' ? 'low' : 'accent') + ')' : 'var(--accent)');
       return '<div style="display:flex;align-items:center;gap:12px;margin:7px 0;font-size:13.5px">' +
         '<div style="width:130px;color:var(--soft)">' + esc(r.l) + '</div>' +
         '<div style="flex:1;background:color-mix(in srgb,var(--line) 60%,transparent);border-radius:6px;height:18px"><div style="width:' + w + '%;min-width:2px;height:100%;background:' + color + ';border-radius:6px"></div></div>' +

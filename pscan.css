@@ -1,7 +1,7 @@
 /* Prompt Scanner — native page styles, scoped under .pscan. */
 .pscan *{ box-sizing:border-box; margin:0; padding:0; }
 .pscan{ font-family:var(--sans); background:var(--paper); color:var(--ink); line-height:1.6; font-size:16px; -webkit-font-smoothing:antialiased; }
-.pscan .wrap{ max-width:880px; margin:0 auto; padding:0 28px 80px; }
+.pscan .wrap{ max-width:none; margin:0; padding:0 0 60px; }
 .pscan header.top{ padding:34px 0 8px; border-bottom:1px solid var(--line); }
 .pscan .brand{ font-family:var(--serif); font-size:28px; font-weight:600; color:var(--ink); letter-spacing:-0.3px; line-height:1.1; }
 .pscan .brand .play{ color:var(--accent); }
