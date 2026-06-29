@@ -352,10 +352,9 @@
       <div class="navmenu-list">
         <a href="#/search" data-route="search">Search</a>
         <a href="#/exploited" data-route="exploited">Exploited</a>
-        <a href="#/stats" data-route="stats">Statistics</a>
+        <a href="#/stats" data-route="stats">CVE Statistics</a>
         <a href="#/browse" data-route="browse">Browse the corpus</a>
         <a href="#/latest" data-route="latest">Latest CVEs</a>
-        <a href="#/kev" data-route="kev">CISA KEV</a>
       </div>
     </div>
     <div class="navmenu" data-menu="tools">
@@ -962,6 +961,21 @@
     if (c) c.textContent = q ? (shown + ' of ' + hits.length + ' shown') : '';
   }
   function runLatest(days, mode, box) {
+    box = box || document.getElementById('results');
+    box.innerHTML = spinner('Loading latest CVEs…');
+    // Read the pre-built static feed (from the fkie-cad NVD mirror, refreshed daily)
+    // instead of the rate-limited live NVD API. Falls back to NVD if it isn't built.
+    softJSON('data/latest.json').then(function (d) {
+      if (!d || !d.cves) return runLatestNvd(days, mode, box);
+      var key = mode === 'modified' ? 'lastModified' : 'published';
+      var cutoff = new Date(Date.now() - parseInt(days, 10) * 86400000);
+      var list = d.cves.filter(function (c) { var t = new Date(c[key]); return !isNaN(t) && t >= cutoff; })
+        .sort(function (a, b) { return (b[key] || '').localeCompare(a[key] || ''); });
+      if (!list.length) { box.innerHTML = errBox('No CVEs ' + (mode === 'modified' ? 'updated' : 'published') + ' in that window. The latest feed refreshes daily, so very new CVEs may lag a few hours.'); return; }
+      enrichAndRenderHits(list.slice(0, 60), box, list.length);
+    });
+  }
+  function runLatestNvd(days, mode, box) {
     box = box || document.getElementById('results');
     box.innerHTML = spinner('Querying the NVD…');
     var end = new Date();
