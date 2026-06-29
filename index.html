@@ -298,7 +298,13 @@
   /* Ask AI page */
   .ask-wrap { max-width:100%; }
   .ask-priv { display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--soft); border:1px solid color-mix(in srgb,#2e8b57 45%,var(--line)); background:color-mix(in srgb,#2e8b57 9%,transparent); border-radius:100px; padding:7px 14px; margin-bottom:14px; }
-  .ask-priv b { color:var(--ink); }   /* fill the page width and auto-resize (page is capped by .wrap; .lede stays readable via its own cap) */
+  .ask-priv b { color:var(--ink); }
+  .ask-offline { margin:0 0 14px; }
+  .ask-off { font-size:12.5px; }
+  .ask-off.ok { color:var(--ok); }
+  .ask-off.btn { font-family:var(--sans); color:var(--soft); background:var(--surface); border:1px solid var(--line); border-radius:100px; padding:7px 14px; cursor:pointer; transition:border-color .15s ease, color .15s ease; }
+  .ask-off.btn:hover { border-color:var(--accent); color:var(--ink); }
+  .ask-off.btn.busy { cursor:default; opacity:.8; }   /* fill the page width and auto-resize (page is capped by .wrap; .lede stays readable via its own cap) */
   .ask-box { display:flex; align-items:flex-end; gap:8px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:10px 10px 10px 18px; transition:border-color .15s ease, box-shadow .15s ease; }
   .ask-box:focus-within { border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 16%, transparent); }
   .ask-box textarea { flex:1; border:0; background:transparent; color:var(--ink); font:inherit; font-size:16px; line-height:1.55; resize:none; padding:9px 0; outline:none; max-height:220px; }
@@ -1698,13 +1704,14 @@
   var ASK_EMB_LIB = 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3/+esm';
   var _askPipe = null, _askPipeP = null, _askIntentVecs = null;
 
-  function askEnsureModel(onStatus) {
+  function askEnsureModel(onStatus, onProgress) {
     if (_askPipe) return Promise.resolve(_askPipe);
     if (_askPipeP) return _askPipeP;
     if (onStatus) onStatus();
     _askPipeP = import(ASK_EMB_LIB)
-      .then(function (m) { return m.pipeline('feature-extraction', ASK_EMB_MODEL, { dtype: 'q8' }); })
-      .then(function (p) { _askPipe = p; return p; });
+      .then(function (m) { return m.pipeline('feature-extraction', ASK_EMB_MODEL, { dtype: 'q8', progress_callback: onProgress || undefined }); })
+      .then(function (p) { _askPipe = p; try { localStorage.setItem('ask-model-cached', '1'); } catch (e) {} return p; })
+      .catch(function (e) { _askPipeP = null; throw e; });   // reset so an interrupted/failed download can be retried
     return _askPipeP;
   }
   function askEmbed(texts) {
@@ -1801,6 +1808,7 @@
       'it never makes up CVEs.</p></header>' +
       '<div class="ask-wrap">' +
         '<div class="ask-priv">🔒 <span><b>100% on-device.</b> Your question and findings never leave this browser — the model runs locally.</span></div>' +
+        '<div class="ask-offline" id="askOffline"></div>' +
         '<form id="askForm" class="ask-box">' +
           '<textarea id="askQ" rows="1" placeholder="e.g. Exploitable vulnerabilities in the past 24 hours"></textarea>' +
           '<button class="ask-submit" type="submit">' +
@@ -1819,8 +1827,32 @@
     qbox.addEventListener('input', function () { askGrow(qbox); });
     qbox.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); askRun(); } });
     document.getElementById('askForm').addEventListener('submit', function (e) { e.preventDefault(); askRun(); });
+    renderAskOffline();
   }
   function askGrow(el) { el.style.height = 'auto'; el.style.height = Math.min(el.scrollHeight, 220) + 'px'; }
+
+  // Offline readiness for the on-device model: the ~25 MB model is only downloaded when Ask AI is
+  // first used (so visitors who never use it don't pay for it). This lets the user pre-download it
+  // deterministically — one click, fully cached, then Ask AI works with no connection.
+  function renderAskOffline() {
+    var el = document.getElementById('askOffline'); if (!el) return;
+    var cached = false; try { cached = localStorage.getItem('ask-model-cached') === '1'; } catch (e) {}
+    if (_askPipe || cached) {
+      el.innerHTML = '<span class="ask-off ok">✓ Available offline — the model is cached on this device.</span>';
+      return;
+    }
+    el.innerHTML = '<button class="ask-off btn" id="askDl" type="button">⬇ Make available offline (~25&nbsp;MB, one-time)</button>';
+    document.getElementById('askDl').addEventListener('click', function () {
+      var b = this; b.disabled = true; b.classList.add('busy'); b.innerHTML = 'Downloading the model… keep this tab open';
+      askEnsureModel(null, function (p) {
+        if (p && p.status === 'progress' && p.total) {
+          b.innerHTML = 'Downloading the model… ' + Math.round((p.loaded / p.total) * 100) + '%';
+        }
+      }).then(function () { renderAskOffline(); }).catch(function () {
+        b.disabled = false; b.classList.remove('busy'); b.innerHTML = '⬇ Download failed — check your connection and retry';
+      });
+    });
+  }
 
   function askRun() {
     var q = (document.getElementById('askQ').value || '').trim();
