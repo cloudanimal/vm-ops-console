@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>SharePoint Access Tester — VM Ops Console</title>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --panel2:#1d2129; --line:#2a2f3a; --ink:#e7e9ee;
+    --faint:#9aa3af; --accent:#5b8cff; --ok:#37b87a; --okbg:#10301f; --bad:#e5564a; --badbg:#34110d;
+    --warn:#d9a23a; --warnbg:#2e2410; --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;}
+  .wrap{max-width:980px;margin:0 auto;padding:26px 20px 80px;}
+  h1{font-size:20px;margin:0 0 4px;}
+  h2{font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);margin:26px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px;}
+  .lede{color:var(--faint);margin:0 0 18px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;margin:0 0 14px;}
+  label{display:block;font-weight:600;margin:10px 0 4px;font-size:13px;}
+  .hint{color:var(--faint);font-size:12px;font-weight:400;margin-top:2px;}
+  input[type=text],input[type=password],textarea{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:7px;color:var(--ink);padding:9px 10px;font:13px/1.4 var(--mono);}
+  textarea{resize:vertical;min-height:60px;}
+  button{background:var(--accent);color:#fff;border:0;border-radius:7px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:13px;}
+  button.ghost{background:transparent;border:1px solid var(--line);color:var(--ink);}
+  button:disabled{opacity:.5;cursor:not-allowed;}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px;}
+  .res{border:1px solid var(--line);border-radius:8px;margin:8px 0;overflow:hidden;}
+  .res .head{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--panel2);}
+  .res .title{font-weight:600;flex:1;}
+  .badge{font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em;}
+  .b-ok{background:var(--okbg);color:var(--ok);} .b-bad{background:var(--badbg);color:var(--bad);}
+  .b-warn{background:var(--warnbg);color:var(--warn);} .b-run{background:#1b2436;color:var(--accent);} .b-idle{background:#222;color:var(--faint);}
+  .res .body{padding:0 12px;max-height:0;overflow:hidden;transition:max-height .2s;}
+  .res.open .body{max-height:600px;overflow:auto;padding:10px 12px;}
+  .res pre{font:12px/1.45 var(--mono);white-space:pre-wrap;word-break:break-word;margin:6px 0;color:#cfd4dd;}
+  .kv{color:var(--faint);} .kv b{color:var(--ink);font-weight:600;}
+  code{font-family:var(--mono);background:var(--panel2);padding:1px 5px;border-radius:4px;font-size:12px;}
+  a{color:var(--accent);}
+  .pill{display:inline-block;font-size:11px;color:var(--faint);border:1px solid var(--line);border-radius:20px;padding:2px 9px;margin-left:6px;}
+  .warnbox{background:var(--warnbg);border:1px solid #4a3a16;border-radius:8px;padding:10px 12px;color:#e9d39b;font-size:12.5px;margin-top:10px;}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:7px;overflow:hidden;margin-top:6px;}
+  .seg button{background:transparent;border:0;border-right:1px solid var(--line);color:var(--faint);border-radius:0;padding:7px 12px;}
+  .seg button.on{background:var(--accent);color:#fff;}
+  .seg button:last-child{border-right:0;}
+  .mut{color:var(--faint);font-size:12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>SharePoint Access Tester <span class="pill">diagnostic · runs in your browser</span></h1>
+  <p class="lede">Pastes a SharePoint/OneDrive sharing link and tries several access methods, reporting which one actually returns the <b>file bytes</b> to JavaScript. Nothing is sent anywhere except Microsoft's own endpoints (graph.microsoft.com / your tenant). The link &amp; token stay in this tab; nothing is saved to the repo.</p>
+
+  <div class="card">
+    <label>SharePoint / OneDrive sharing link <span class="hint">paste the full URL (with <code>https://</code> and any <code>?e=</code> token)</span></label>
+    <textarea id="link" placeholder="https://yourtenant.sharepoint.com/:x:/s/Site/XXXX?e=YYYY" spellcheck="false"></textarea>
+    <div class="mut" id="decode" style="margin-top:8px"></div>
+  </div>
+
+  <h2>Method A — Anonymous (no sign-in)</h2>
+  <p class="mut">Expected to <b>fail to read bytes</b> for a SharePoint Online tenant: the download host sends no <code>Access-Control-Allow-Origin</code>. (Navigation/iframe/download still work — just not <code>fetch().arrayBuffer()</code>.)</p>
+  <div class="row">
+    <button id="runAnon">Run anonymous tests</button>
+    <button class="ghost" id="openTab">Open link in new tab (sanity check)</button>
+  </div>
+  <div id="anonResults"></div>
+
+  <h2>Method B — Authenticated via Microsoft Graph (no backend)</h2>
+  <p class="mut">The working pattern: <code>GET /shares/u!{id}/driveItem?select=…,@microsoft.graph.downloadUrl</code> <b>with</b> the token, then <code>fetch(downloadUrl)</code> <b>without</b> a header (pre-authenticated → no preflight → readable bytes).</p>
+
+  <div class="card">
+    <div class="seg" id="authMode">
+      <button class="on" data-m="token">Paste a Graph token</button>
+      <button data-m="msal">Sign in with MSAL</button>
+    </div>
+
+    <div id="tokenPane">
+      <label>Graph access token <span class="hint">fastest: open <a href="https://developer.microsoft.com/graph/graph-explorer" target="_blank" rel="noopener">Graph Explorer</a>, sign in, consent <code>Files.Read.All</code>+<code>Sites.Read.All</code>, copy the Access token tab. Short-lived (~1h), stays in this tab.</span></label>
+      <input id="token" type="password" placeholder="eyJ0eXAiOiJKV1Qi..." spellcheck="false" autocomplete="off">
+    </div>
+
+    <div id="msalPane" style="display:none">
+      <label>Entra app (client) ID <span class="hint">register a SPA app in your tenant; redirect URI shown below; no client secret</span></label>
+      <input id="clientId" type="text" placeholder="00000000-0000-0000-0000-000000000000" spellcheck="false">
+      <label>Tenant ID <span class="hint">your directory (tenant) ID, or <code>organizations</code></span></label>
+      <input id="tenantId" type="text" placeholder="your-tenant-guid or organizations" spellcheck="false">
+      <div class="warnbox">Register this exact <b>SPA redirect URI</b>: <code id="redirectUri"></code></div>
+      <div class="row"><button id="msalSignin">Sign in</button><span class="mut" id="msalWho"></span></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <button id="runGraph">Run Graph tests</button>
+  </div>
+  <div id="graphResults"></div>
+
+  <h2 style="margin-top:30px">Notes</h2>
+  <p class="mut">• A SharePoint Online ("anyone with the link") file <b>cannot</b> be byte-read anonymously from a browser — this tester will confirm that.<br>
+  • The Graph <code>downloadUrl</code> method <b>is</b> the no-backend path, but requires the signed-in user to have access to the file.<br>
+  • This page is a throwaway diagnostic — not committed/pushed unless you ask.</p>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const linkEl = $('#link');
+
+// ---- restore/persist inputs locally (this browser only) ----
+for (const id of ['link','clientId','tenantId']) {
+  const k = 'sptest-'+id, v = localStorage.getItem(k);
+  if (v) $('#'+id).value = v;
+  $('#'+id).addEventListener('input', e => localStorage.setItem(k, e.target.value));
+}
+$('#redirectUri').textContent = location.origin + location.pathname;
+
+// ---- helpers ----
+function encodeShareId(url){
+  // Graph share-id: "u!" + unpadded base64url of the sharing URL
+  const b64 = btoa(unescape(encodeURIComponent(url.trim())));
+  return 'u!' + b64.replace(/=+$/,'').replace(/\//g,'_').replace(/\+/g,'-');
+}
+function magic(buf){
+  const b = new Uint8Array(buf.slice(0,8));
+  const hex = [...b].map(x=>x.toString(16).padStart(2,'0')).join(' ');
+  const asc = [...b].map(x=> x>=32&&x<127 ? String.fromCharCode(x) : '·').join('');
+  let kind = 'unknown';
+  if (b[0]===0x50&&b[1]===0x4B) kind = 'PK (zip → xlsx/docx/pptx)';
+  else if (b[0]===0x25&&b[1]===0x50&&b[2]===0x44&&b[3]===0x46) kind = '%PDF';
+  else if (b[0]===0xD0&&b[1]===0xCF) kind = 'OLE2 (legacy xls/doc)';
+  return {hex, asc, kind};
+}
+function downloadTransform(url){
+  // modern share link -> raw download
+  return url + (url.includes('?') ? '&' : '?') + 'download=1';
+}
+let rid = 0;
+function addResult(container, title){
+  const id = 'r'+(++rid);
+  const el = document.createElement('div');
+  el.className = 'res open'; el.id = id;
+  el.innerHTML = `<div class="head"><span class="title">${title}</span><span class="badge b-run">running…</span></div><div class="body"><pre></pre></div>`;
+  el.querySelector('.head').onclick = () => el.classList.toggle('open');
+  $(container).appendChild(el);
+  return {
+    el,
+    set(badgeClass, badgeText, body){
+      const b = el.querySelector('.badge'); b.className = 'badge '+badgeClass; b.textContent = badgeText;
+      el.querySelector('pre').textContent = body;
+    }
+  };
+}
+function getLink(){
+  const v = linkEl.value.trim();
+  if (!v) { alert('Paste a sharing link first.'); throw new Error('no link'); }
+  return v;
+}
+
+// ---- decode the link structure (no network) ----
+linkEl.addEventListener('input', decode);
+function decode(){
+  const v = linkEl.value.trim(); const out = $('#decode');
+  if (!v){ out.textContent=''; return; }
+  let host='', kind='', site='';
+  try { const u = new URL(v); host = u.hostname;
+    const m = u.pathname.match(/\/:(\w):\//); const t = m && m[1];
+    kind = ({x:'Excel .xlsx',w:'Word',p:'PowerPoint',b:'PDF/binary',t:'text',o:'OneNote',f:'folder',v:'video'})[t] || (t?('type :'+t+':'):'');
+    const s = u.pathname.match(/\/(s|p|g|r)\/([^/]+)\//); site = s ? (s[1]==='s'?'site: ':'')+decodeURIComponent(s[2]) : '';
+  } catch(e){ out.textContent = 'not a valid URL yet'; return; }
+  const sp = /\.sharepoint\.com$/i.test(host) ? 'SharePoint Online / OneDrive-for-Business' : (/1drv\.ms|onedrive\.live\.com/i.test(host)?'Consumer OneDrive':'other');
+  out.innerHTML = `<span class="kv">host <b>${host}</b> · ${sp}</span>` + (kind?` &nbsp;·&nbsp; <span class="kv">file <b>${kind}</b></span>`:'') + (site?` &nbsp;·&nbsp; <span class="kv"><b>${site}</b></span>`:'') + `<br><span class="kv">share-id <b>${encodeShareId(v).slice(0,46)}…</b></span>`;
+}
+decode();
+
+$('#openTab').onclick = () => { const v = getLink(); window.open(v, '_blank', 'noopener'); };
+
+// ===== Method A: anonymous =====
+$('#runAnon').onclick = async () => {
+  const url = getLink();
+  // A1: direct cors fetch
+  (async()=>{ const r = addResult('#anonResults','A1 · direct fetch (mode:cors) on the share link');
+    try{ const res = await fetch(url, {mode:'cors'}); const txt = await res.text();
+      r.set('b-warn','reachable, but…', `HTTP ${res.status}\nRead ${txt.length} chars — but this is the HTML redirect/login page, not the file bytes.\nFirst 120 chars:\n${txt.slice(0,120)}`);
+    }catch(e){ r.set('b-bad','CORS blocked', `fetch failed: ${e.name}: ${e.message}\n→ The browser refused to read the response (no Access-Control-Allow-Origin).`); }
+  })();
+  // A2: download transform cors fetch
+  (async()=>{ const u = downloadTransform(url); const r = addResult('#anonResults','A2 · download transform (?download=1, mode:cors)');
+    try{ const res = await fetch(u, {mode:'cors'}); const buf = await res.arrayBuffer(); const m = magic(buf);
+      r.set('b-ok','BYTES READ ✓', `HTTP ${res.status}\nRead ${buf.byteLength} bytes — ${m.kind}\nmagic: ${m.hex}  (${m.asc})`);
+    }catch(e){ r.set('b-bad','CORS blocked', `fetch failed: ${e.name}: ${e.message}\n→ Download host sends no Access-Control-Allow-Origin for this origin.`); }
+  })();
+  // A3: no-cors opaque
+  (async()=>{ const r = addResult('#anonResults','A3 · no-cors opaque fetch (to prove it is unreadable)');
+    try{ const res = await fetch(url, {mode:'no-cors'}); let len=-1; try{ len=(await res.arrayBuffer()).byteLength; }catch(_){}
+      r.set('b-bad','opaque — unusable', `Response type: ${res.type}, status: ${res.status} (0 = opaque)\nBytes readable to JS: ${len<=0?'NO (opaque body)':len}\n→ no-cors "succeeds" but JS cannot read the bytes.`);
+    }catch(e){ r.set('b-bad','failed', `${e.name}: ${e.message}`); }
+  })();
+};
+
+// ===== auth mode toggle =====
+let authMode = 'token';
+$('#authMode').querySelectorAll('button').forEach(b => b.onclick = () => {
+  authMode = b.dataset.m;
+  $('#authMode').querySelectorAll('button').forEach(x=>x.classList.toggle('on', x===b));
+  $('#tokenPane').style.display = authMode==='token'?'block':'none';
+  $('#msalPane').style.display = authMode==='msal'?'block':'none';
+});
+
+// ===== MSAL sign-in =====
+let msalApp=null, msalAccount=null, msalToken=null;
+const SCOPES = ['https://graph.microsoft.com/Files.Read.All','https://graph.microsoft.com/Sites.Read.All'];
+$('#msalSignin').onclick = async () => {
+  const clientId = $('#clientId').value.trim(), tenantId = $('#tenantId').value.trim()||'organizations';
+  if(!clientId){ alert('Enter the Entra app (client) ID.'); return; }
+  $('#msalWho').textContent = 'loading MSAL…';
+  try{
+    const { PublicClientApplication } = await import('https://cdn.jsdelivr.net/npm/@azure/msal-browser@3/+esm');
+    msalApp = new PublicClientApplication({ auth:{ clientId, authority:`https://login.microsoftonline.com/${tenantId}`, redirectUri: location.origin+location.pathname }, cache:{ cacheLocation:'localStorage' } });
+    await msalApp.initialize();
+    const r = await msalApp.loginPopup({ scopes: SCOPES });
+    msalAccount = r.account;
+    const t = await msalApp.acquireTokenSilent({ account: msalAccount, scopes: SCOPES }).catch(()=>msalApp.acquireTokenPopup({ scopes: SCOPES }));
+    msalToken = t.accessToken;
+    $('#msalWho').textContent = '✓ signed in as '+(msalAccount.username||msalAccount.name);
+  }catch(e){ $('#msalWho').textContent = '✗ '+(e.errorCode||e.name)+': '+(e.errorMessage||e.message); }
+};
+
+function currentToken(){
+  if (authMode==='token'){ const t=$('#token').value.trim(); if(!t) throw new Error('Paste a Graph token (or switch to MSAL).'); return t; }
+  if (!msalToken) throw new Error('Sign in with MSAL first.'); return msalToken;
+}
+
+// ===== Method B: Graph =====
+$('#runGraph').onclick = async () => {
+  let url, token, shareId;
+  try{ url = getLink(); token = currentToken(); shareId = encodeShareId(url); }
+  catch(e){ alert(e.message); return; }
+  const G = 'https://graph.microsoft.com/v1.0/shares/'+shareId;
+
+  // B1: metadata (proves access, returns downloadUrl)
+  const r1 = addResult('#graphResults','B1 · GET /shares/u!{id}/driveItem  (metadata + downloadUrl)');
+  let item=null;
+  try{
+    const res = await fetch(G+'/driveItem?select=id,name,size,file,@microsoft.graph.downloadUrl', { headers:{ Authorization:'Bearer '+token } });
+    const j = await res.json();
+    if(!res.ok){ r1.set('b-bad','HTTP '+res.status, JSON.stringify(j.error||j,null,2)); }
+    else { item=j; const dl = j['@microsoft.graph.downloadUrl'];
+      r1.set('b-ok','ACCESS OK ✓', `name: ${j.name}\nsize: ${j.size} bytes\nmime: ${j.file&&j.file.mimeType||'-'}\ndownloadUrl: ${dl?dl.slice(0,80)+'…':'(none returned)'}`);
+    }
+  }catch(e){ r1.set('b-bad','failed', `${e.name}: ${e.message}\n→ If this is a CORS error, graph.microsoft.com should be open — check the token/scopes.`); }
+
+  // B2: the WORKING path — fetch downloadUrl with NO auth header
+  const r2 = addResult('#graphResults','B2 · fetch(@microsoft.graph.downloadUrl) — no header  ★ expected winner');
+  if (item && item['@microsoft.graph.downloadUrl']){
+    try{
+      const res = await fetch(item['@microsoft.graph.downloadUrl']); // no Authorization → no preflight
+      const buf = await res.arrayBuffer(); const m = magic(buf);
+      const blob = new Blob([buf]); const burl = URL.createObjectURL(blob);
+      r2.set('b-ok','BYTES READ ✓', `HTTP ${res.status}\nRead ${buf.byteLength} bytes — ${m.kind}\nmagic: ${m.hex}  (${m.asc})\n→ This is the no-backend pattern that works.`);
+      const a=document.createElement('a'); a.href=burl; a.download=item.name||'download'; a.textContent='⬇ download the bytes to confirm it is the right file'; a.style.cssText='display:inline-block;margin-top:8px';
+      r2.el.querySelector('.body').appendChild(a);
+    }catch(e){ r2.set('b-bad','blocked', `${e.name}: ${e.message}\n→ Unexpected: the pre-authenticated downloadUrl should be CORS-free.`); }
+  } else { r2.set('b-idle','skipped','No downloadUrl from B1 (fix access/scopes first).'); }
+
+  // B3: the KNOWN-FAIL path — /content (for contrast)
+  const r3 = addResult('#graphResults','B3 · GET /driveItem/content (with header) — expected to FAIL (302+preflight)');
+  try{
+    const res = await fetch(G+'/driveItem/content', { headers:{ Authorization:'Bearer '+token } });
+    const buf = await res.arrayBuffer(); const m = magic(buf);
+    r3.set('b-warn','unexpectedly read', `HTTP ${res.status}\nRead ${buf.byteLength} bytes — ${m.kind}\n(Your tenant's redirect host happens to allow this — downloadUrl is still the safer path.)`);
+  }catch(e){ r3.set('b-bad','blocked (as expected)', `${e.name}: ${e.message}\n→ /content 302-redirects to the download host, which a CORS preflight (Authorization header) forbids. Use B2 instead.`); }
+};
+</script>
+</body>
+</html>

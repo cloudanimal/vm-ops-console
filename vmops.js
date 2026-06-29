@@ -733,7 +733,7 @@
       '<header class="view"><div class="overline">Settings · Data Import</div><h1>Data import</h1>' +
       '<p class="lede">Bring in each data source once, here. Files are parsed in your browser and cached locally (IndexedDB) — nothing is uploaded. Imported sources feed the matching dashboard; scan findings feed the Findings workbench. Re-importing findings merges and preserves your status, owner, and notes.</p></header>' +
       privSlim() +
-      '<div class="toolbar"><a class="btn sm" href="#/settings">← Settings</a><span class="spacer"></span><button class="btn sm" id="loadSample">Load sample findings</button></div>' +
+      '<div class="toolbar"><a class="btn sm" href="#/settings">← Settings</a><span class="spacer"></span><a class="btn sm" href="sharepoint-test.html" target="_blank" rel="noopener">SharePoint tester ↗</a><button class="btn sm" id="loadSample">Load sample findings</button></div>' +
       IMPORT_GROUPS.map(function (g) {
         return '<div class="import-grouprow"><h2 class="import-grouphdr">' + esc(g.title) + '</h2>' +
           (g.open ? '<a class="btn sm import-open" href="' + g.open.route + '">' + esc(g.open.label) + '</a>' : '') +
@@ -902,6 +902,9 @@
       '<div class="field"><label>Server URL</label><input type="text" id="meUrl" value="' + esc(c.meUrl) + '" placeholder="https://endpoint-central.yourorg.com"></div>' +
       '<div class="grid2"><div class="field"><label>Client ID</label><input type="password" id="meClientId" autocomplete="off" value="' + esc(c.meClientId) + '" placeholder="client ID"></div>' +
       '<div class="field"><label>Client Secret</label><input type="password" id="meClientSecret" autocomplete="off" value="' + esc(c.meClientSecret) + '" placeholder="client secret"></div></div></div>' +
+      '<h2>SharePoint access tester</h2><div class="card">' +
+      '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Diagnostic: paste a SharePoint / OneDrive sharing link and test which method can read the file in-browser — anonymous (blocked) vs. Microsoft Graph (<code>downloadUrl</code>, works after sign-in). Opens in a new tab; your link &amp; token stay there, nothing is uploaded.</div>' +
+      '<a class="btn" href="sharepoint-test.html" target="_blank" rel="noopener">Open SharePoint Access Tester ↗</a></div>' +
       '<div class="toolbar"><button class="btn primary" id="saveCfg">Save settings</button><button class="btn" id="resetSla">Reset SLA to defaults</button></div>';
     document.getElementById('saveCfg').addEventListener('click', function () {
       STATE.cfg.brand = document.getElementById('brandName').value.trim();
