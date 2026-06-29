@@ -2,22 +2,23 @@
    wraps the original app so its functions persist (STATE held across navigation). */
 (function(){
   var app=document.getElementById('app');
-  var ACD_MARKUP='<div class="acdapp">'+`<header>
-  <div>
-    <h1>Agent Coverage Dashboard</h1>
-    <div class="sub">Reconcile Active Directory against your ManageEngine, Tenable &amp; CrowdStrike agents</div>
+  var ACD_MARKUP='<div class="acdapp">'+`<div class="acdhead">
+    <div class="overline">Agent Coverage</div>
+    <h1>Reconcile your agent coverage</h1>
+    <p class="lede">Active Directory is the source of truth (the denominator); every host is matched back to it by hostname across ManageEngine, Tenable, and CrowdStrike — all in your browser.</p>
   </div>
-  <span class="priv">🔒 100% local — your data never leaves this browser</span>
-  <div class="spacer"></div>
-  <select id="cbSel" class="btn" style="padding:8px 10px" title="Color-blind-safe palette" aria-label="Color palette">
-    <option value="default">Vivid</option>
-    <option value="deuteranopia">Deuteranopia-safe</option>
-    <option value="protanopia">Protanopia-safe</option>
-    <option value="tritanopia">Tritanopia-safe</option>
-  </select>
-  <select id="exportSel" class="btn" style="padding:8px 10px"></select>
-  <button class="btn" id="exportBtn">Export</button>
-  </header>
+  <div class="acdtools">
+    <span class="priv">🔒 100% local — your data never leaves this browser</span>
+    <div class="spacer"></div>
+    <select id="cbSel" class="btn" style="padding:8px 10px" title="Color-blind-safe palette" aria-label="Color palette">
+      <option value="default">Vivid</option>
+      <option value="deuteranopia">Deuteranopia-safe</option>
+      <option value="protanopia">Protanopia-safe</option>
+      <option value="tritanopia">Tritanopia-safe</option>
+    </select>
+    <select id="exportSel" class="btn" style="padding:8px 10px"></select>
+    <button class="btn" id="exportBtn">Export</button>
+  </div>
 <main>
   <section id="uploader">
     <div id="srcBar" class="hidden" style="background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px">
