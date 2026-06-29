@@ -39,9 +39,10 @@
     ov: load('vmops-overrides', {}),       // key -> {status, owner, notes, updated}
     cfg: Object.assign({}, DEFAULT_CFG, load('vmops-config', {})),
     sort: { col: 'risk', dir: 1 },
-    filt: { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '' }
+    filt: { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, group: '' }
   };
   STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla, STATE.cfg.sla || {});
+  STATE._newKeys = {}; try { (JSON.parse(localStorage.getItem('vmops-newkeys') || '[]') || []).forEach(function (k) { STATE._newKeys[k] = 1; }); } catch (e) {}
 
   // Custom branding: apply the configured app name to the nav brand + document title, and rebuild the
   // favicon (monogram + color) — all default to the VM Ops Console look when unset.
@@ -83,11 +84,40 @@
     var di = dueIn(f); if (di == null) return 'ok';
     if (di < 0) return 'overdue'; if (di <= 3) return 'soon'; return 'ok';
   }
-  function riskScore(f) { // simple v0 rank: severity + breach pressure + age
+  // ---------- CVE exploitation intel (reuses the app's own KEV + exploited datasets) ----------
+  var INTEL = { kev: null, expl: null, loaded: false, loading: null };
+  function ensureIntel() {
+    if (INTEL.loaded) return Promise.resolve();
+    if (INTEL.loading) return INTEL.loading;
+    INTEL.loading = Promise.all([
+      fetch('data/kev.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+      fetch('data/exploited.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+    ]).then(function (r) {
+      INTEL.kev = {}; (((r[0] || {}).entries) || []).forEach(function (e) { INTEL.kev[e.id] = { added: e.added, due: e.due, ransomware: !!e.ransomware }; });
+      INTEL.expl = {}; (((r[1] || {}).cves) || []).forEach(function (c) { INTEL.expl[c.cve] = { sources: c.sources || [], tte: c.tte, date: c.exploit_date }; });
+      INTEL.loaded = true;
+    });
+    return INTEL.loading;
+  }
+  function cveIntel(cve) {
+    var k = INTEL.kev && INTEL.kev[cve], x = INTEL.expl && INTEL.expl[cve];
+    return { kev: !!k, ransomware: !!(k && k.ransomware), kevDue: k && k.due, exploit: !!x, sources: (x && x.sources) || [], exploitDate: x && x.date };
+  }
+  // Priority verdict: confirmed/likely exploitation drives P1, else severity tiers (mirrors CVE Explorer).
+  function priorityOf(f) {
+    if (!isOpen(f)) return null;
+    var it = cveIntel(f.cve), sev = f.severity;
+    if (it.kev || it.ransomware || (it.exploit && (sev === 'Critical' || sev === 'High'))) return 'P1';
+    if (it.exploit || sev === 'Critical' || sev === 'High') return 'P2';
+    return 'P3';
+  }
+  function riskScore(f) { // severity + real exploitation (KEV/ransomware/PoC) + SLA pressure + age
     var s = (4 - (SEV_ORDER[f.severity] != null ? SEV_ORDER[f.severity] : 4)) * 100;
+    var it = cveIntel(f.cve);
+    if (it.kev) s += 600; if (it.ransomware) s += 250; if (it.exploit) s += 200;
     var di = dueIn(f); if (di != null && isOpen(f)) s += di < 0 ? 60 + Math.min(40, -di) : Math.max(0, 30 - di);
     s += Math.min(20, (daysSince(f.firstSeen) || 0) / 10);
-    if (!isOpen(f)) s -= 500;
+    if (!isOpen(f)) s -= 2000;   // resolved/accepted always rank below anything open
     return s;
   }
   function setOverride(f, patch) {
@@ -124,6 +154,8 @@
       if (f.owner && (ovOf(x).owner || '') !== f.owner) return false;
       if (f.repo && repoOf(x) !== f.repo) return false;
       if (f.overdue && slaState(x) !== 'overdue') return false;
+      if (f.exploited) { var it = cveIntel(x.cve); if (!it.kev && !it.exploit) return false; }
+      if (f.fresh && !isNewKey(keyOf(x))) return false;
       if (f.seen) { var _ds = daysSince(x.firstSeen); if (_ds == null || _ds > +f.seen) return false; }
       if (f.q) { var q = f.q.toLowerCase(); if ((x.cve + ' ' + x.host + ' ' + (x.name || '') + ' ' + (x.desc || '') + ' ' + repoOf(x) + ' ' + (ovOf(x).owner || '')).toLowerCase().indexOf(q) === -1) return false; }
       return true;
@@ -234,7 +266,7 @@
     // Apply a deep-link query (e.g. Ask AI -> #/findings?sev=Critical&overdue=1) ONLY when it actually
     // changes — otherwise the in-page filter handlers (which re-call viewFindings without touching the
     // hash) would re-parse the stale query every render and clobber the user's selection.
-    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', overdue:p.overdue==='1', seen:p.seen||'' }; })();
+    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', group:STATE.filt.group||'' }; })();
     if (!STATE.findings.length) return viewEmpty('findings');
     var list = visibleFindings();
     var statusOpts = '<option value="">All statuses</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '"' + (STATE.filt.status === s.k ? ' selected' : '') + '>' + s.l + '</option>'; }).join('');
@@ -255,6 +287,9 @@
       '<select id="fOwner">' + ownerOpts + '</select>' +
       (repoList.length ? '<select id="fRepo">' + repoOpts + '</select>' : '') +
       '<button class="btn sm" id="fOverdue" style="' + (STATE.filt.overdue ? 'border-color:var(--crit);color:var(--crit)' : '') + '">Overdue only</button>' +
+      '<button class="btn sm" id="fExploit" style="' + (STATE.filt.exploited ? 'border-color:var(--crit);color:var(--crit)' : '') + '" title="KEV-listed or with a public exploit">Exploited only</button>' +
+      (Object.keys(STATE._newKeys || {}).length ? '<button class="btn sm" id="fFresh" style="' + (STATE.filt.fresh ? 'border-color:var(--accent);color:var(--accent)' : '') + '" title="Added in the most recent scan">New only</button>' : '') +
+      '<select id="fGroup" title="Group findings"><option value="">No grouping</option><option value="cve"' + (STATE.filt.group === 'cve' ? ' selected' : '') + '>Group by CVE</option><option value="product"' + (STATE.filt.group === 'product' ? ' selected' : '') + '>Group by product / fix</option><option value="host"' + (STATE.filt.group === 'host' ? ' selected' : '') + '>Group by host</option></select>' +
       '<span class="spacer"></span>' +
       '<span class="muted" style="font-size:12.5px">' + list.length + ' of ' + STATE.findings.length + '</span>' +
       '<button class="btn sm" id="fExport">Export CSV</button>' +
@@ -268,7 +303,7 @@
       '<span class="spacer"></span>' +
       '<button class="btn sm" id="bulkClear">Clear selection</button>' +
       '</div>' +
-      (list.length ? '<div class="gridwrap">' + gridTable(list) + '</div>' : '<div class="empty">No findings match these filters.</div>');
+      (list.length ? '<div class="gridwrap">' + renderGrid(list) + '</div>' : '<div class="empty">No findings match these filters.</div>');
     document.getElementById('fq').addEventListener('input', function () { STATE.filt.q = this.value; rerenderGridOnly(); });
     document.getElementById('fStatus').addEventListener('change', function () { STATE.filt.status = this.value; viewFindings(); });
     document.getElementById('fSev').addEventListener('change', function () { STATE.filt.sev = this.value; viewFindings(); });
@@ -276,9 +311,14 @@
     document.getElementById('fOwner').addEventListener('change', function () { STATE.filt.owner = this.value; viewFindings(); });
     var fRepo = document.getElementById('fRepo'); if (fRepo) fRepo.addEventListener('change', function () { STATE.filt.repo = this.value; viewFindings(); });
     document.getElementById('fOverdue').addEventListener('click', function () { STATE.filt.overdue = !STATE.filt.overdue; viewFindings(); });
+    document.getElementById('fExploit').addEventListener('click', function () { STATE.filt.exploited = !STATE.filt.exploited; viewFindings(); });
+    var fFresh = document.getElementById('fFresh'); if (fFresh) fFresh.addEventListener('click', function () { STATE.filt.fresh = !STATE.filt.fresh; viewFindings(); });
+    document.getElementById('fGroup').addEventListener('change', function () { STATE.filt.group = this.value; viewFindings(); });
     document.getElementById('fExport').addEventListener('click', exportCsv);
     wireBulk();
     wireGrid();
+    // Enrich with KEV/exploit intel on first visit, then repaint so risk rank + chips are accurate.
+    if (!INTEL.loaded) ensureIntel().then(function () { if ((location.hash || '').indexOf('#/findings') === 0) viewFindings(); });
   }
   function wireBulk() {
     function need() { var fs = selectedFindings(); if (!fs.length) { toast('Select findings first'); } return fs; }
@@ -311,33 +351,87 @@
   }
   function rerenderGridOnly() {
     var list = visibleFindings(); var host = document.querySelector('#gridHost');
-    if (host) { host.outerHTML = list.length ? gridTable(list) : '<div class="empty" id="gridHost">No findings match these filters.</div>'; wireGrid(); }
+    if (host) { host.outerHTML = list.length ? renderGrid(list) : '<div class="empty" id="gridHost">No findings match these filters.</div>'; wireGrid(); }
   }
 
-  function gridTable(list) {
+  function sevBadge(sev) { return '<span class="badge ' + (['crit', 'high', 'med', 'low'][SEV_ORDER[sev]] || 'low') + '">' + esc(sev) + '</span>'; }
+  function isNewKey(k) { return !!(STATE._newKeys && STATE._newKeys[k]); }
+  function gridHead() {
     function th(label, col) { var a = STATE.sort.col === col ? (STATE.sort.dir === 1 ? ' <span class="sortarrow">▲</span>' : ' <span class="sortarrow">▼</span>') : ''; return '<th data-col="' + col + '">' + label + a + '</th>'; }
-    var rows = list.map(function (f) {
-      var st = statusOf(f), ss = slaState(f), di = dueIn(f);
-      var dueTxt = di == null ? '—' : (di < 0 ? Math.abs(di) + 'd over' : di + 'd left');
-      var sevCls = (f.severity || '').toLowerCase();
-      return '<tr data-key="' + esc(keyOf(f)) + '">' +
-        '<td class="selcol"><input type="checkbox" class="rowsel" aria-label="Select finding"' + (selKeys[keyOf(f)] ? ' checked' : '') + '></td>' +
-        '<td class="cid"><a href="' + CVE_DETAIL + esc(f.cve) + '" title="Open CVE detail">' + esc(f.cve) + '</a></td>' +
-        '<td class="host">' + esc(f.host) + '</td>' +
-        '<td class="dcell" title="' + esc(f.desc || f.name || '') + '">' + (f.desc || f.name ? esc(f.desc || f.name) : '<span class="muted">—</span>') + '</td>' +
-        '<td><span class="badge ' + (['crit', 'high', 'med', 'low'][SEV_ORDER[f.severity]] || 'low') + '">' + esc(f.severity) + '</span></td>' +
-        '<td>' + statusSelect(f, st) + '</td>' +
-        '<td><span class="pill-sla ' + ss + '">' + dueTxt + '</span></td>' +
-        '<td>' + (ovOf(f).owner ? esc(ovOf(f).owner) : '<span class="muted">—</span>') + '</td>' +
-        '<td>' + (repoOf(f) ? esc(repoOf(f)) : '<span class="muted">—</span>') + '</td>' +
-        '<td class="muted" style="font-size:12px">' + esc(f.firstSeen) + '</td>' +
-        '<td><button class="btn sm act-detail">Open</button></td>' +
-        '</tr>';
+    return '<thead><tr><th class="selcol"><input type="checkbox" id="selAll" title="Select all shown" aria-label="Select all shown"></th>' +
+      th('CVE', 'cve') + th('Host', 'host') + th('Description', 'desc') + th('Sev', 'sev') + th('Priority', 'risk') + th('Status', 'status') + th('SLA', 'due') + th('Owner', 'owner') + th('Repo', 'repo') + th('First seen', 'age') + '<th></th></tr></thead>';
+  }
+  function findingRow(f, gid) {
+    var st = statusOf(f), ss = slaState(f), di = dueIn(f);
+    var dueTxt = di == null ? '—' : (di < 0 ? Math.abs(di) + 'd over' : di + 'd left');
+    var attrs = 'data-key="' + esc(keyOf(f)) + '"' + (gid ? ' data-g="' + gid + '" class="childrow" style="display:none"' : '');
+    return '<tr ' + attrs + '>' +
+      '<td class="selcol"><input type="checkbox" class="rowsel" aria-label="Select finding"' + (selKeys[keyOf(f)] ? ' checked' : '') + '></td>' +
+      '<td class="cid"><a href="' + CVE_DETAIL + esc(f.cve) + '" title="Open CVE detail">' + esc(f.cve) + '</a>' + (isNewKey(keyOf(f)) ? '<span class="ichip new" title="New since last scan">NEW</span>' : '') + intelChips(f.cve) + '</td>' +
+      '<td class="host">' + esc(f.host) + '</td>' +
+      '<td class="dcell" title="' + esc(f.desc || f.name || '') + '">' + (f.desc || f.name ? esc(f.desc || f.name) : '<span class="muted">—</span>') + '</td>' +
+      '<td>' + sevBadge(f.severity) + '</td>' +
+      '<td>' + priChip(f) + '</td>' +
+      '<td>' + statusSelect(f, st) + '</td>' +
+      '<td><span class="pill-sla ' + ss + '">' + dueTxt + '</span></td>' +
+      '<td>' + (ovOf(f).owner ? esc(ovOf(f).owner) : '<span class="muted">—</span>') + '</td>' +
+      '<td>' + (repoOf(f) ? esc(repoOf(f)) : '<span class="muted">—</span>') + '</td>' +
+      '<td class="muted" style="font-size:12px">' + esc(f.firstSeen) + '</td>' +
+      '<td><button class="btn sm act-detail">Open</button></td></tr>';
+  }
+  function gridTable(list) {
+    return '<table class="grid" id="gridHost">' + gridHead() + '<tbody>' + list.map(function (f) { return findingRow(f); }).join('') + '</tbody></table>';
+  }
+  // Collapse the list by what you fix once: CVE (patch one, clear N hosts), product/vuln, or host.
+  function groupFindings(list, by) {
+    var keyFn = by === 'cve' ? function (f) { return f.cve; } : by === 'host' ? function (f) { return f.host; } : function (f) { return f.name || f.cve; };
+    var map = {}, order = [];
+    list.forEach(function (f) { var k = keyFn(f) || '—'; if (!map[k]) { map[k] = { id: 'g' + order.length, label: k, items: [] }; order.push(k); } map[k].items.push(f); });
+    var groups = order.map(function (k) {
+      var g = map[k], its = g.items, hosts = {};
+      its.forEach(function (f) { hosts[f.host] = 1; });
+      g.count = its.length; g.openCount = its.filter(isOpen).length; g.hostCount = Object.keys(hosts).length;
+      g.maxSev = its.map(function (f) { return f.severity; }).sort(function (a, b) { return SEV_ORDER[a] - SEV_ORDER[b]; })[0];
+      g.risk = its.reduce(function (m, f) { return Math.max(m, riskScore(f)); }, -1e9);
+      g.kev = its.some(function (f) { return cveIntel(f.cve).kev; });
+      g.ransomware = its.some(function (f) { return cveIntel(f.cve).ransomware; });
+      g.exploit = its.some(function (f) { return cveIntel(f.cve).exploit; });
+      g.pri = its.map(priorityOf).filter(Boolean).sort()[0] || null;
+      return g;
+    });
+    groups.sort(function (a, b) { return b.risk - a.risk; });
+    return groups;
+  }
+  function groupedTable(list, by) {
+    var body = groupFindings(list, by).map(function (g) {
+      var chips = (g.kev ? '<span class="ichip kev">KEV</span>' : '') + (g.ransomware ? '<span class="ichip rw">RW</span>' : '') + (!g.kev && g.exploit ? '<span class="ichip poc">PoC</span>' : '');
+      var unit = by === 'host' ? (g.count + ' finding' + (g.count > 1 ? 's' : '')) : (g.count + ' finding' + (g.count > 1 ? 's' : '') + ' · ' + g.hostCount + ' host' + (g.hostCount > 1 ? 's' : ''));
+      var head = '<tr class="grouprow" data-g="' + g.id + '">' +
+        '<td class="selcol"><input type="checkbox" class="gsel" aria-label="Select all in group"></td>' +
+        '<td colspan="3"><span class="gcaret">▸</span> <b>' + esc(g.label) + '</b> <span class="muted" style="font-size:12px">' + unit + '</span>' + (chips ? ' ' + chips : '') + '</td>' +
+        '<td>' + sevBadge(g.maxSev) + '</td>' +
+        '<td>' + (g.pri ? '<span class="pri ' + g.pri.toLowerCase() + '">' + g.pri + '</span>' : '<span class="muted">—</span>') + '</td>' +
+        '<td colspan="5" class="muted" style="font-size:12px">' + g.openCount + ' open / ' + g.count + '</td><td></td></tr>';
+      return head + g.items.map(function (f) { return findingRow(f, g.id); }).join('');
     }).join('');
-    return '<table class="grid" id="gridHost"><thead><tr>' +
-      '<th class="selcol"><input type="checkbox" id="selAll" title="Select all shown" aria-label="Select all shown"></th>' +
-      th('CVE', 'cve') + th('Host', 'host') + th('Description', 'desc') + th('Sev', 'sev') + th('Status', 'status') + th('SLA', 'due') + th('Owner', 'owner') + th('Repo', 'repo') + th('First seen', 'age') + '<th></th>' +
-      '</tr></thead><tbody>' + rows + '</tbody></table>';
+    return '<table class="grid" id="gridHost">' + gridHead() + '<tbody>' + body + '</tbody></table>';
+  }
+  function renderGrid(list) { return STATE.filt.group ? groupedTable(list, STATE.filt.group) : gridTable(list); }
+  function intelChips(cve) {
+    var it = cveIntel(cve), c = '';
+    if (it.kev) c += '<span class="ichip kev" title="CISA Known Exploited Vulnerability' + (it.kevDue ? ' — remediate by ' + it.kevDue : '') + '">KEV</span>';
+    if (it.ransomware) c += '<span class="ichip rw" title="Known ransomware campaign use">RW</span>';
+    if (!it.kev && it.exploit) c += '<span class="ichip poc" title="Public exploit / PoC available">PoC</span>';
+    return c ? ' ' + c : '';
+  }
+  function priChip(f) { var p = priorityOf(f); return p ? '<span class="pri ' + p.toLowerCase() + '">' + p + '</span>' : '<span class="muted">—</span>'; }
+  function drawerIntel(f) {
+    var it = cveIntel(f.cve), p = priorityOf(f), parts = [];
+    if (p) parts.push('<span class="pri ' + p.toLowerCase() + '">' + p + '</span>');
+    if (it.kev) parts.push('KEV' + (it.kevDue ? ' (due ' + esc(it.kevDue) + ')' : ''));
+    if (it.ransomware) parts.push('ransomware');
+    if (it.exploit) parts.push('public exploit' + (it.exploitDate ? ' (' + esc(it.exploitDate) + ')' : ''));
+    return parts.length ? parts.join(' · ') : '<span class="muted">no known exploitation</span>';
   }
   function statusSelect(f, st) {
     return '<select class="status act-status" data-s="' + st + '">' + STATUS.map(function (s) { return '<option value="' + s.k + '"' + (s.k === st ? ' selected' : '') + '>' + s.l + '</option>'; }).join('') + '</select>';
@@ -352,10 +446,31 @@
       var on = this.checked;
       [].forEach.call(document.querySelectorAll('table.grid tbody tr'), function (tr) {
         var k = tr.getAttribute('data-key'), cb = tr.querySelector('.rowsel');
+        if (!cb) return;   // skip group-header rows (no row checkbox)
         if (on) selKeys[k] = true; else delete selKeys[k];
-        if (cb) cb.checked = on;
+        cb.checked = on;
       });
       updateBulkBar();
+    });
+    // grouped view: expand/collapse a group, and select all its members
+    [].forEach.call(document.querySelectorAll('table.grid tr.grouprow'), function (gr) {
+      var gid = gr.getAttribute('data-g');
+      gr.addEventListener('click', function (e) {
+        if (e.target.closest('.gsel')) return;
+        var open = gr.classList.toggle('open');
+        var car = gr.querySelector('.gcaret'); if (car) car.textContent = open ? '▾' : '▸';
+        [].forEach.call(document.querySelectorAll('table.grid tr.childrow[data-g="' + gid + '"]'), function (cr) { cr.style.display = open ? '' : 'none'; });
+      });
+      var gs = gr.querySelector('.gsel');
+      if (gs) gs.addEventListener('click', function (e) {
+        e.stopPropagation(); var on = this.checked;
+        [].forEach.call(document.querySelectorAll('table.grid tr.childrow[data-g="' + gid + '"]'), function (cr) {
+          var k = cr.getAttribute('data-key'), cb = cr.querySelector('.rowsel');
+          if (on) selKeys[k] = true; else delete selKeys[k];
+          if (cb) cb.checked = on;
+        });
+        updateBulkBar();
+      });
     });
     [].forEach.call(document.querySelectorAll('table.grid tbody tr'), function (tr) {
       var f = findByKey(tr.getAttribute('data-key'));
@@ -380,6 +495,7 @@
       '<div class="muted" style="font-size:13px;margin:2px 0 14px">' + esc(f.desc || f.name || 'Vulnerability') + '</div>' +
       '<div class="row"><span class="k">Host</span><span class="host">' + esc(f.host) + '</span></div>' +
       '<div class="row"><span class="k">Severity</span><span><span class="badge ' + (['crit', 'high', 'med', 'low'][SEV_ORDER[f.severity]] || 'low') + '">' + esc(f.severity) + '</span></span></div>' +
+      '<div class="row"><span class="k">Exploitation</span><span>' + drawerIntel(f) + '</span></div>' +
       '<div class="row"><span class="k">CVSS</span><span>' + (f.cvss != null ? esc(f.cvss) : '—') + '</span></div>' +
       '<div class="row"><span class="k">Plugin</span><span>' + (f.plugin ? esc(f.plugin) : '—') + ' · ' + esc(f.source || '') + '</span></div>' +
       '<div class="row"><span class="k">First seen</span><span>' + esc(f.firstSeen) + ' (' + (daysSince(f.firstSeen) || 0) + 'd ago)</span></div>' +
@@ -515,9 +631,9 @@
       if (id === 'findings') {
         var fs; try { fs = parseCsv(text); } catch (e) { return toast('Parse error: ' + e.message); }
         if (!fs.length) return toast('No CVE rows found in that CSV');
-        mergeFindings(fs);
+        var sum = importScan(fs);
         if (window.VMStore) VMStore.put({ id: 'findings', name: file.name, text: text, kind: 'csv' });
-        toast('Imported ' + fs.length + ' findings'); refreshSourceStatus(id);
+        toast(sum.reimport ? ('Rescan: ' + sum.total + ' findings · ' + sum.added + ' new · ' + sum.fixed + ' auto-resolved (fixed)') : ('Imported ' + sum.total + ' findings')); refreshSourceStatus(id);
       } else if (window.VMStore) {
         var dest = id.indexOf('tvd:') === 0 ? 'the Tenable dashboard' : 'Agent Coverage';
         VMStore.put({ id: id, name: file.name, text: text, kind: kind }).then(function () { toast(file.name + ' imported — open ' + dest + ' to view'); refreshSourceStatus(id); });
@@ -533,8 +649,28 @@
   function readFile(file) { var r = new FileReader(); r.onload = function () { try { var fs = parseCsv(String(r.result || '')); if (!fs.length) return toast('No CVE rows found in that CSV'); mergeFindings(fs); toast('Imported ' + fs.length + ' findings'); goDash(); } catch (e) { toast('Parse error: ' + e.message); } }; r.readAsText(file); }
   function mergeFindings(incoming) {
     var idx = {}; STATE.findings.forEach(function (f, i) { idx[keyOf(f)] = i; });
-    incoming.forEach(function (f) { var k = keyOf(f); if (idx[k] != null) STATE.findings[idx[k]] = f; else { STATE.findings.push(f); idx[k] = STATE.findings.length - 1; } });
+    incoming.forEach(function (f) {
+      var k = keyOf(f);
+      if (idx[k] != null) { var old = STATE.findings[idx[k]]; if (old.firstSeen && (!f.firstSeen || old.firstSeen < f.firstSeen)) f.firstSeen = old.firstSeen; STATE.findings[idx[k]] = f; }
+      else { STATE.findings.push(f); idx[k] = STATE.findings.length - 1; }
+    });
     save('vmops-findings', STATE.findings);
+  }
+  // A re-import is a fresh scan: diff vs the current set, auto-resolve anything that's gone
+  // (no longer detected), and remember what's new — so you see progress, not a static list.
+  function importScan(incoming) {
+    var reimport = STATE.findings.length > 0;
+    var incKeys = {}, existing = {};
+    incoming.forEach(function (f) { incKeys[keyOf(f)] = 1; });
+    STATE.findings.forEach(function (f) { existing[keyOf(f)] = 1; });
+    var added = 0; incoming.forEach(function (f) { if (!existing[keyOf(f)]) added++; });
+    var fixed = 0;
+    STATE.findings.forEach(function (f) { if (isOpen(f) && !incKeys[keyOf(f)]) { setOverride(f, { status: 'resolved' }); addUpdate(f, 'Rescan: no longer detected — auto-resolved'); fixed++; } });
+    STATE._newKeys = {}; if (reimport) incoming.forEach(function (f) { var k = keyOf(f); if (!existing[k]) STATE._newKeys[k] = 1; });
+    try { localStorage.setItem('vmops-newkeys', JSON.stringify(Object.keys(STATE._newKeys))); } catch (e) {}
+    var today = todayISO();
+    mergeFindings(incoming.map(function (f) { f.lastSeen = today; return f; }));
+    return { added: added, fixed: fixed, total: incoming.length, reimport: reimport };
   }
 
   function parseCsv(text) {
