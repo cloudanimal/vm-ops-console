@@ -262,6 +262,18 @@
     if (sa) { sa.checked = boxes.length > 0 && checked === boxes.length; sa.indeterminate = checked > 0 && checked < boxes.length; }
   }
 
+  // ---------- saved + preset views (one-click filter sets) ----------
+  function defaultFilt() { return { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, group: '' }; }
+  var PRESET_VIEWS = [
+    { id: 'exploited', name: 'Exploited (KEV / PoC)', filt: { exploited: true } },
+    { id: 'overdue', name: 'Overdue', filt: { overdue: true } },
+    { id: 'overduecrit', name: 'Overdue critical', filt: { sev: 'Critical', overdue: true } },
+    { id: 'newscan', name: 'New this scan', filt: { fresh: true } },
+    { id: 'bypatch', name: 'Group by product / fix', filt: { group: 'product' } }
+  ];
+  function loadViews() { try { return JSON.parse(localStorage.getItem('vmops-views') || '[]') || []; } catch (e) { return []; } }
+  function saveViews(v) { try { localStorage.setItem('vmops-views', JSON.stringify(v)); } catch (e) {} }
+  function applyView(filt) { STATE.filt = Object.assign(defaultFilt(), filt || {}); STATE._viewSig = JSON.stringify(STATE.filt); }
   function viewFindings() {
     setActive('findings');
     // Apply a deep-link query (e.g. Ask AI -> #/findings?sev=Critical&overdue=1) ONLY when it actually
@@ -276,6 +288,11 @@
     var repoList = repos();
     var repoOpts = '<option value="">All repos</option>' + repoList.map(function (o) { return '<option' + (STATE.filt.repo === o ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('');
     var seenOpts = [['', 'Any age'], ['1', 'First seen ≤ 24h'], ['7', 'First seen ≤ 7d'], ['30', 'First seen ≤ 30d']].map(function (o) { return '<option value="' + o[0] + '"' + (STATE.filt.seen === o[0] ? ' selected' : '') + '>' + o[1] + '</option>'; }).join('');
+    var savedViews = loadViews();
+    var activeView = (STATE._view && JSON.stringify(STATE.filt) === STATE._viewSig) ? STATE._view : '';
+    var viewOpts = '<option value="">Views…</option><optgroup label="Presets">' +
+      PRESET_VIEWS.map(function (v) { return '<option value="preset:' + v.id + '"' + (activeView === 'preset:' + v.id ? ' selected' : '') + '>' + esc(v.name) + '</option>'; }).join('') + '</optgroup>' +
+      (savedViews.length ? '<optgroup label="Saved">' + savedViews.map(function (v) { return '<option value="saved:' + esc(v.name) + '"' + (activeView === 'saved:' + v.name ? ' selected' : '') + '>' + esc(v.name) + '</option>'; }).join('') + '</optgroup>' : '');
     app.innerHTML =
       '<header class="view"><div class="overline">Findings workbench</div><h1>Vulnerability findings</h1>' +
       '<p class="lede">Triage your imported scan findings by status, owner, SLA, and recency — keep per-finding notes and a dated status log, and open Jira or ServiceNow tickets. Everything stays in your browser.</p></header>' +
@@ -291,6 +308,9 @@
       '<button class="btn sm" id="fExploit" style="' + (STATE.filt.exploited ? 'border-color:var(--crit);color:var(--crit)' : '') + '" title="KEV-listed or with a public exploit">Exploited only</button>' +
       (Object.keys(STATE._newKeys || {}).length ? '<button class="btn sm" id="fFresh" style="' + (STATE.filt.fresh ? 'border-color:var(--accent);color:var(--accent)' : '') + '" title="Added in the most recent scan">New only</button>' : '') +
       '<select id="fGroup" title="Group findings"><option value="">No grouping</option><option value="cve"' + (STATE.filt.group === 'cve' ? ' selected' : '') + '>Group by CVE</option><option value="product"' + (STATE.filt.group === 'product' ? ' selected' : '') + '>Group by product / fix</option><option value="host"' + (STATE.filt.group === 'host' ? ' selected' : '') + '>Group by host</option></select>' +
+      '<select id="fView" title="Saved & preset views">' + viewOpts + '</select>' +
+      '<button class="btn sm" id="fViewSave" title="Save the current filters as a view">Save view</button>' +
+      '<button class="btn sm" id="fViewDel" title="Delete the active saved view"' + (activeView.indexOf('saved:') === 0 ? '' : ' style="display:none"') + '>Delete view</button>' +
       '<span class="spacer"></span>' +
       '<span class="muted" style="font-size:12.5px">' + list.length + ' of ' + STATE.findings.length + '</span>' +
       '<button class="btn sm" id="fExport">Export CSV</button>' +
@@ -301,6 +321,8 @@
       '<button class="btn sm" id="bulkNote">Append note</button>' +
       '<button class="btn sm" id="bulkUpd">Add status update</button>' +
       '<select id="bulkStatus" class="status" data-s=""><option value="">Set status…</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '">' + s.l + '</option>'; }).join('') + '</select>' +
+      '<button class="btn sm" id="bulkJira" title="One Jira ticket covering all selected">Jira ticket</button>' +
+      '<button class="btn sm" id="bulkSnow" title="One ServiceNow incident covering all selected">SNOW ticket</button>' +
       '<span class="spacer"></span>' +
       '<button class="btn sm" id="bulkClear">Clear selection</button>' +
       '</div>' +
@@ -315,6 +337,22 @@
     document.getElementById('fExploit').addEventListener('click', function () { STATE.filt.exploited = !STATE.filt.exploited; viewFindings(); });
     var fFresh = document.getElementById('fFresh'); if (fFresh) fFresh.addEventListener('click', function () { STATE.filt.fresh = !STATE.filt.fresh; viewFindings(); });
     document.getElementById('fGroup').addEventListener('change', function () { STATE.filt.group = this.value; viewFindings(); });
+    document.getElementById('fView').addEventListener('change', function () {
+      var v = this.value; if (!v) return;
+      if (v.indexOf('preset:') === 0) { var p = PRESET_VIEWS.filter(function (x) { return 'preset:' + x.id === v; })[0]; if (p) applyView(p.filt); }
+      else if (v.indexOf('saved:') === 0) { var sv = loadViews().filter(function (x) { return 'saved:' + x.name === v; })[0]; if (sv) applyView(sv.filt); }
+      STATE._view = v; STATE._viewSig = JSON.stringify(STATE.filt); viewFindings();
+    });
+    document.getElementById('fViewSave').addEventListener('click', function () {
+      var nm = (prompt('Save the current filters as a view named:') || '').trim(); if (!nm) return;
+      var vs = loadViews().filter(function (x) { return x.name !== nm; }); vs.push({ name: nm, filt: Object.assign({}, STATE.filt) }); saveViews(vs);
+      STATE._view = 'saved:' + nm; STATE._viewSig = JSON.stringify(STATE.filt); toast('Saved view “' + nm + '”'); viewFindings();
+    });
+    var fvd = document.getElementById('fViewDel'); if (fvd) fvd.addEventListener('click', function () {
+      if ((STATE._view || '').indexOf('saved:') !== 0) return; var nm = STATE._view.slice(6);
+      if (!confirm('Delete saved view “' + nm + '”?')) return;
+      saveViews(loadViews().filter(function (x) { return x.name !== nm; })); STATE._view = ''; toast('Deleted view'); viewFindings();
+    });
     document.getElementById('fExport').addEventListener('click', exportCsv);
     wireBulk();
     wireGrid();
@@ -347,6 +385,8 @@
       toast('Status → ' + SLABEL[v] + ' for ' + fs.length + ' finding' + (fs.length > 1 ? 's' : ''));
       currentView();
     });
+    var bj = document.getElementById('bulkJira'); if (bj) bj.addEventListener('click', function () { var fs = need(); if (fs.length) ticketGroup('jira', fs); });
+    var bsn = document.getElementById('bulkSnow'); if (bsn) bsn.addEventListener('click', function () { var fs = need(); if (fs.length) ticketGroup('snow', fs); });
     var bc = document.getElementById('bulkClear');
     if (bc) bc.addEventListener('click', function () { selKeys = {}; currentView(); });
   }
@@ -581,20 +621,30 @@
       '\nPlugin: ' + (f.plugin || 'n/a') + ' (' + (f.source || 'scan') + ')\nFirst seen: ' + f.firstSeen +
       '\nSLA due: ' + (dueDate(f) || 'n/a') + '\nRisk detail: ' + CVE_DETAIL_ABS + f.cve;
   }
-  function openTicket(kind, f) {
+  // Build a pre-filled create-ticket deep-link (shared by single + group/bulk ticketing).
+  function ticketUrl(kind, summary, body) {
     var c = STATE.cfg;
     if (kind === 'jira') {
-      if (!c.jiraBase) return needSettings('Jira base URL');
-      var url;
-      if (c.jiraPid && c.jiraType) url = c.jiraBase.replace(/\/$/, '') + '/secure/CreateIssueDetails!init.jspa?pid=' + encodeURIComponent(c.jiraPid) + '&issuetype=' + encodeURIComponent(c.jiraType) + '&summary=' + encodeURIComponent(ticketSummary(f)) + '&description=' + encodeURIComponent(ticketBody(f));
-      else { url = c.jiraBase.replace(/\/$/, '') + '/secure/CreateIssue!default.jspa'; toast('Set Jira project + issue-type IDs in Settings to pre-fill'); }
-      window.open(url, '_blank', 'noopener');
-    } else {
-      if (!c.snowBase) return needSettings('ServiceNow base URL');
-      var q = 'short_description=' + ticketSummary(f) + '^description=' + ticketBody(f);
-      window.open(c.snowBase.replace(/\/$/, '') + '/incident.do?sys_id=-1&sysparm_query=' + encodeURIComponent(q), '_blank', 'noopener');
+      if (!c.jiraBase) { needSettings('Jira base URL'); return null; }
+      if (c.jiraPid && c.jiraType) return c.jiraBase.replace(/\/$/, '') + '/secure/CreateIssueDetails!init.jspa?pid=' + encodeURIComponent(c.jiraPid) + '&issuetype=' + encodeURIComponent(c.jiraType) + '&summary=' + encodeURIComponent(summary) + '&description=' + encodeURIComponent(body);
+      toast('Set Jira project + issue-type IDs in Settings to pre-fill'); return c.jiraBase.replace(/\/$/, '') + '/secure/CreateIssue!default.jspa';
     }
+    if (!c.snowBase) { needSettings('ServiceNow base URL'); return null; }
+    return c.snowBase.replace(/\/$/, '') + '/incident.do?sys_id=-1&sysparm_query=' + encodeURIComponent('short_description=' + summary + '^description=' + body);
   }
+  function openTicket(kind, f) { var u = ticketUrl(kind, ticketSummary(f), ticketBody(f)); if (u) window.open(u, '_blank', 'noopener'); }
+  // One ticket covering a whole selection/group (deep-link → a single ticket listing every host).
+  function groupSummary(fs) {
+    var cves = {}, hosts = {}; fs.forEach(function (f) { cves[f.cve] = 1; hosts[f.host] = 1; });
+    var nc = Object.keys(cves).length, nh = Object.keys(hosts).length;
+    return nc === 1 ? ('[' + fs[0].severity + '] ' + fs[0].cve + ' on ' + nh + ' host' + (nh > 1 ? 's' : ''))
+      : (nc + ' vulnerabilities across ' + nh + ' host' + (nh > 1 ? 's' : ''));
+  }
+  function groupBody(fs) {
+    var lines = fs.map(function (f) { return '- ' + f.cve + ' | ' + f.host + ' | ' + f.severity + (priorityOf(f) ? ' | ' + priorityOf(f) : '') + (cveIntel(f.cve).kev ? ' | KEV' : ''); });
+    return 'Remediation ticket covering ' + fs.length + ' finding(s):\n' + lines.join('\n') + '\n\nGenerated by ' + (window.VM_BRAND || 'VM Ops Console') + '.';
+  }
+  function ticketGroup(kind, fs) { if (!fs.length) return; var u = ticketUrl(kind, groupSummary(fs), groupBody(fs)); if (u) window.open(u, '_blank', 'noopener'); }
   function searchTicket(kind, f) {
     var c = STATE.cfg;
     if (kind === 'jira') { if (!c.jiraBase) return needSettings('Jira base URL'); window.open(c.jiraBase.replace(/\/$/, '') + '/issues/?jql=' + encodeURIComponent('text ~ "' + f.cve + '"'), '_blank', 'noopener'); }
