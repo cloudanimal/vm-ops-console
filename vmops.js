@@ -121,6 +121,22 @@
     if (!isOpen(f)) s -= 2000;   // resolved/accepted always rank below anything open
     return s;
   }
+  // ---------- the other prioritization models, per CVE (for the drawer): EPSS, NIST LEV, SSVC ----------
+  // Same sources the CVE detail page uses: EPSS live from FIRST, LEV from the local data/lev/<year>.json,
+  // SSVC the simplified Act/Attend/Track derived from exploitation + impact (CISA's authoritative SSVC is on the detail page).
+  function pct(x) { return Math.round((x || 0) * 100) + '%'; }
+  function isHigh(cvss) { return cvss != null && !isNaN(cvss) && cvss >= 7; }
+  function epssVerdict(e) { if (e == null) return { v: 'No data', why: '' }; if (e >= 0.5) return { v: 'High', why: pct(e) + ' chance in 30 days' }; if (e >= 0.1) return { v: 'Elevated', why: pct(e) + ' chance in 30 days' }; return { v: 'Low', why: pct(e) + ' chance in 30 days' }; }
+  function levVerdict(l) { if (l == null) return { v: 'No data', why: '' }; if (l >= 0.5) return { v: 'Likely exploited', why: pct(l) + ' lower-bound it was already exploited' }; if (l >= 0.1) return { v: 'Possibly', why: pct(l) + ' lower-bound' }; return { v: 'Unlikely', why: pct(l) + ' lower-bound' }; }
+  function ssvcVerdict(kev, exploit, cvss) { var a = kev || exploit, t = isHigh(cvss); if (a && t) return { v: 'Act', why: 'active exploitation · high impact' }; if (a) return { v: 'Attend', why: 'active exploitation' }; if (t) return { v: 'Attend', why: 'high impact' }; return { v: 'Track', why: 'no active exploitation · limited impact' }; }
+  function epssFor(cve) { return fetch('https://api.first.org/data/v1/epss?cve=' + encodeURIComponent(cve)).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) { var r = d && d.data && d.data[0]; return r ? parseFloat(r.epss) : null; }); }
+  var LEV_CACHE = {};
+  function levFor(cve) {
+    var y = (cve.match(/CVE-(\d{4})-/) || [])[1]; if (!y) return Promise.resolve(null);
+    if (LEV_CACHE[y]) return Promise.resolve(LEV_CACHE[y][cve] != null ? LEV_CACHE[y][cve] : null);
+    return fetch('data/lev/' + y + '.json').then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; })
+      .then(function (m) { LEV_CACHE[y] = m || {}; return LEV_CACHE[y][cve] != null ? LEV_CACHE[y][cve] : null; });
+  }
   function setOverride(f, patch) {
     var k = keyOf(f), o = STATE.ov[k] || {};
     Object.assign(o, patch, { updated: new Date().toISOString() });
@@ -579,6 +595,9 @@
       '<div class="row"><span class="k">Severity</span><span><span class="badge ' + (['crit', 'high', 'med', 'low'][SEV_ORDER[f.severity]] || 'low') + '">' + esc(f.severity) + '</span></span></div>' +
       '<div class="row"><span class="k">Exploitation</span><span>' + drawerIntel(f) + '</span></div>' +
       '<div class="row"><span class="k">CVSS</span><span>' + (f.cvss != null ? esc(f.cvss) : '—') + '</span></div>' +
+      '<div class="row"><span class="k">EPSS</span><span id="drEpss" class="muted">…</span></div>' +
+      '<div class="row"><span class="k">NIST LEV</span><span id="drLev" class="muted">…</span></div>' +
+      '<div class="row"><span class="k">SSVC</span><span id="drSsvc"></span></div>' +
       '<div class="row"><span class="k">Plugin</span><span>' + (f.plugin ? esc(f.plugin) : '—') + ' · ' + esc(f.source || '') + '</span></div>' +
       '<div class="row"><span class="k">First seen</span><span>' + esc(f.firstSeen) + ' (' + (daysSince(f.firstSeen) || 0) + 'd ago)</span></div>' +
       '<div class="row"><span class="k">SLA due</span><span class="pill-sla ' + ss + '">' + (dd ? esc(dd) + (di == null ? '' : ' · ' + (di < 0 ? Math.abs(di) + 'd overdue' : di + 'd left')) : '—') + '</span></div>' +
@@ -600,6 +619,13 @@
       '<button class="btn sm" id="drSnowQ">Search ServiceNow</button>' +
       '</div>';
     bg.classList.add('open'); dr.classList.add('open');
+    // Fill the remaining prioritization models: SSVC is derived (instant); EPSS (live) + LEV (local) load async.
+    (function () {
+      var it = cveIntel(f.cve), sv = ssvcVerdict(it.kev, it.exploit, f.cvss);
+      var se = document.getElementById('drSsvc'); if (se) se.innerHTML = '<b>' + sv.v + '</b>' + (sv.why ? ' · ' + esc(sv.why) : '');
+      epssFor(f.cve).then(function (e) { var el = document.getElementById('drEpss'); if (!el) return; el.className = ''; var v = epssVerdict(e); el.innerHTML = e == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); });
+      levFor(f.cve).then(function (l) { var el = document.getElementById('drLev'); if (!el) return; el.className = ''; var v = levVerdict(l); el.innerHTML = l == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); });
+    })();
     function close() { bg.classList.remove('open'); dr.classList.remove('open'); }
     document.getElementById('drClose').addEventListener('click', close);
     bg.onclick = close;
