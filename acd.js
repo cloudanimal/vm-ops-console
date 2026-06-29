@@ -532,6 +532,8 @@ function render(){
     <label class="sub" style="display:flex;align-items:center;gap:6px" title="Excludes objects with no OperatingSystem or a cluster service principal name (cluster name objects, aliases)"><input type="checkbox" id="realChk"${STATE.excludeNonReal?' checked':''}> Real systems only</label>
     <label class="sub" style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="logonChk"${STATE.logonFilter?' checked':''}> Logged on within <input id="logonDays" type="number" min="1" value="${STATE.logonDays}" style="width:58px"> days</label>
     <label class="sub">Stale threshold <input id="staleInp" type="number" min="1" value="${STATE.staleDays}" style="width:64px"> days</label>
+  </div>
+  <div class="controls" style="margin-top:8px">
     ${mselHtml({id:'ou', btnLabel:ouLabel, mode:STATE.ouMode, sel:STATE.ouSel, values:allOus, noun:'OUs'})}
     ${mselHtml({id:'grp', btnLabel:grpLabel, mode:STATE.grpMode, sel:STATE.grpSel, values:allGroups, noun:'groups'})}
   </div><div class="sub" style="margin-top:8px">Scope = ${fmt(denom)} of ${fmt(M.ad.length)} AD objects (excluded: ${STATE.excludeNonReal?fmt(nNonReal)+' cluster/alias':'none'}${STATE.logonFilter?', plus anything not logged on in '+STATE.logonDays+'d':''}${ouNote}${grpNote}). An agent is “stale” if its last <em>contact</em> is older than the stale threshold.</div>`;
