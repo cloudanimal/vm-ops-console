@@ -27,7 +27,8 @@
   var SLABEL = {}; STATUS.forEach(function (s) { SLABEL[s.k] = s.l; });
   var OPEN_STATES = STATUS.filter(function (s) { return s.open; }).map(function (s) { return s.k; });
   var SEV_ORDER = { Critical: 0, High: 1, Medium: 2, Low: 3, Info: 4 };
-  var DEFAULT_CFG = { sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tsUrl: '', tsAccess: '', tsSecret: '', tioAccess: '', tioSecret: '' };
+  var DEFAULT_CFG = { brand: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tsUrl: '', tsAccess: '', tsSecret: '', tioAccess: '', tioSecret: '' };
+  var DEFAULT_BRAND = 'VM Ops Console';
 
   function load(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
   function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
@@ -40,6 +41,14 @@
     filt: { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '' }
   };
   STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla, STATE.cfg.sla || {});
+
+  // Custom branding: apply the configured app name to the nav brand + document title (default if unset).
+  function applyBrand() {
+    var name = (STATE.cfg.brand || '').trim() || DEFAULT_BRAND;
+    var el = document.querySelector('nav.top .brand'); if (el) el.textContent = name;
+    try { document.title = name; } catch (e) {}
+  }
+  applyBrand();   // vmops.js loads after the nav, so the brand element already exists
 
   function keyOf(f) { return f.cve + '|' + norm(f.host); }
   function ovOf(f) { return STATE.ov[keyOf(f)] || {}; }
@@ -570,8 +579,11 @@
     var c = STATE.cfg;
     app.innerHTML =
       '<header class="view"><div class="overline">Settings</div><h1>Configuration</h1>' +
-      '<p class="lede">SLA windows, ticketing endpoints, and Tenable API keys are stored in this browser only.</p></header>' +
+      '<p class="lede">Branding, SLA windows, ticketing endpoints, and Tenable API keys are stored in this browser only.</p></header>' +
       privSlim() +
+      '<h2>Branding</h2><div class="card">' +
+      '<div class="field"><label>App name</label><input type="text" id="brandName" value="' + esc(c.brand || '') + '" placeholder="' + esc(DEFAULT_BRAND) + '"></div>' +
+      '<div class="muted" style="font-size:12.5px">Sets the name shown in the top nav and the browser tab. Leave blank to use “' + esc(DEFAULT_BRAND) + '”.</div></div>' +
       '<h2>Data import</h2><div class="card">' +
       '<div class="muted" style="font-size:13px;margin-bottom:12px">Bring in each data source — Active Directory, ManageEngine, Tenable.sc / .io, CrowdStrike, and scan findings. Files are parsed and cached in your browser and feed the dashboards.</div>' +
       '<a class="btn primary" href="#/import">Open Data Import →</a></div>' +
@@ -597,6 +609,7 @@
       '<div class="field"><label>Secret key</label><input type="password" id="tioSecret" autocomplete="off" value="' + esc(c.tioSecret) + '" placeholder="secret key"></div></div></div>' +
       '<div class="toolbar"><button class="btn primary" id="saveCfg">Save settings</button><button class="btn" id="resetSla">Reset SLA to defaults</button></div>';
     document.getElementById('saveCfg').addEventListener('click', function () {
+      STATE.cfg.brand = document.getElementById('brandName').value.trim();
       [].forEach.call(document.querySelectorAll('[data-sla]'), function (i) { var v = parseInt(i.value, 10); if (!isNaN(v)) STATE.cfg.sla[i.getAttribute('data-sla')] = v; });
       STATE.cfg.jiraBase = document.getElementById('jiraBase').value.trim();
       STATE.cfg.jiraPid = document.getElementById('jiraPid').value.trim();
@@ -607,7 +620,7 @@
       STATE.cfg.tsSecret = document.getElementById('tsSecret').value.trim();
       STATE.cfg.tioAccess = document.getElementById('tioAccess').value.trim();
       STATE.cfg.tioSecret = document.getElementById('tioSecret').value.trim();
-      save('vmops-config', STATE.cfg); toast('Settings saved');
+      save('vmops-config', STATE.cfg); applyBrand(); toast('Settings saved');
     });
     document.getElementById('resetSla').addEventListener('click', function () { STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla); save('vmops-config', STATE.cfg); viewSettings(); toast('SLA windows reset'); });
   }
