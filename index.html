@@ -2368,8 +2368,10 @@
       '<li><b>NIST LEV</b> — a lower-bound estimate (CSWP 41) of the probability a CVE has <i>already</i> been exploited, derived from EPSS history.</li>' +
       '<li><b>SSVC</b> — a simplified version of CISA’s Act / Attend / Track decision tree; the CVE detail page also shows CISA’s authoritative SSVC decision points (Exploitation / Automatable / Technical Impact) where published.</li></ul>' +
       '<p>The headline verdict (Patch now / this cycle / standard cadence) is a composite: confirmed exploitation or high likelihood drives P1, high severity or elevated likelihood drives P2, everything else is P3.</p></div></div>' +
-      '<div class="block" id="sec-ask"><h3>Ask AI &amp; the Morning Report</h3><div class="prose">' +
-      '<p><b>Ask AI</b> lets you describe what you want in plain English; a bring-your-own-key Anthropic model maps it onto the app’s own searches and filters and loads the results inline — it never invents CVE data, and your key stays in your browser, sent only to Anthropic. The <b>Morning Report</b> is a daily briefing that leads with what became exploitable in the last 24 hours — new CISA KEV additions, the biggest EPSS risers, and fresh public exploits — then new critical CVEs.</p></div></div>' +
+      '<div class="block" id="sec-ask"><h3>Ask AI</h3><div class="prose">' +
+      '<p><b>Ask AI</b> lets you describe what you want in plain English; a bring-your-own-key Anthropic model maps it onto the app’s own searches and filters and loads the results inline — it never invents CVE data, and your key stays in your browser, sent only to Anthropic.</p></div></div>' +
+      '<div class="block" id="sec-report"><h3>The Morning Report</h3><div class="prose">' +
+      '<p>The <b>Morning Report</b> is a daily briefing that leads with what became exploitable in the last 24 hours — new CISA KEV additions, the biggest EPSS risers, and fresh public exploits — then new critical CVEs and the newest Tenable plugins. On Mondays it rolls up the whole weekend, covering everything released since Friday.</p></div></div>' +
       '<div class="block" id="sec-data"><h3>Where the data comes from</h3><div class="prose">' +
       '<p>Every record is assembled from public sources, grouped by what they tell you:</p><ul>' +
       '<li><b>Scoring &amp; weakness</b> — NVD (CVE records, CVSS, CWE, corpus counts), FIRST EPSS (exploitation probability + the full daily distribution), NIST LEV, and CISA’s SSVC “Vulnrichment” decision points from the CVE List.</li>' +
@@ -2402,7 +2404,7 @@
   }
   var ABOUT_SECTIONS = [
     ['sec-tools', 'Operational tools'],
-    ['sec-models', 'Prioritization models'], ['sec-ask', 'Ask AI & Morning Report'], ['sec-data', 'Data sources'],
+    ['sec-models', 'Prioritization models'], ['sec-ask', 'Ask AI'], ['sec-report', 'Morning Report'], ['sec-data', 'Data sources'],
     ['sec-backend', 'Backend-free'], ['sec-arch', 'Architecture'], ['sec-caveats', 'Caveats'], ['dataProvenance', 'Datasets & freshness']
   ];
   var aboutScroll = null;
