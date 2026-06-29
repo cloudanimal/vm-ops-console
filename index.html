@@ -1909,12 +1909,19 @@
   }
 
   // ---------- Morning Report (daily briefing, pulled from the pre-built feeds + live NVD) ----------
-  var REPORT_WIN = 1; // "new" window in days (past 24h) for KEV additions and fresh exploits
+  // Window for "newly exploitable / newly published". Normally the last 24h, but on Mondays we
+  // roll up the whole weekend — everything released since Friday — so nothing that landed Fri–Sun
+  // is missed. getDay(): Sun=0…Sat=6; Monday=1 → look back 3 calendar days (Fri, Sat, Sun).
+  var REPORT_MONDAY = new Date().getDay() === 1;
+  var REPORT_WIN = REPORT_MONDAY ? 3 : 1; // "new" window in days for KEV additions and fresh exploits
+  var REPORT_WIN_LBL = REPORT_MONDAY ? 'since Friday' : 'in the last 24 hours';
+  var REPORT_WIN_SHORT = REPORT_MONDAY ? 'since Fri' : 'last 24h';
   function daysSince(s) { if (!s) return null; var d = new Date(String(s).slice(0, 10) + 'T00:00:00Z'); if (isNaN(d)) return null; var n = new Date(); var t0 = Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate()); return Math.round((t0 - d.getTime()) / 86400000); }
   function reportHead() {
     var today = new Date().toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-    return '<header class="view"><div class="overline">Morning Report</div><h1>Today\'s vulnerability briefing</h1>' +
-      '<p class="lede">' + esc(today) + ' — what\'s newly exploitable and what\'s newly published, compiled from CISA KEV, FIRST EPSS, public exploit feeds, and the NVD. Newly exploitable leads, because that\'s what moves a patch queue.</p></header>';
+    return '<header class="view"><div class="overline">Morning Report' + (REPORT_MONDAY ? ' · Weekend roundup' : '') + '</div><h1>Today\'s vulnerability briefing</h1>' +
+      '<p class="lede">' + esc(today) + ' — what\'s newly exploitable and what\'s newly published, compiled from CISA KEV, FIRST EPSS, public exploit feeds, and the NVD. Newly exploitable leads, because that\'s what moves a patch queue.' +
+      (REPORT_MONDAY ? ' <b>It\'s Monday — this is a weekend roundup covering everything released since Friday.</b>' : '') + '</p></header>';
   }
   function reportSection(title, count, sub, body) {
     var c = count != null ? ' <span class="count-note" style="font-weight:400;font-size:14px">' + count + '</span>' : '';
@@ -1943,8 +1950,8 @@
           return '<tr><td class="cid"><a href="#/cve/' + esc(e.id) + '">' + esc(e.id) + '</a>' + (e.ransomware ? ' <span class="rw" title="Known ransomware use">RW</span>' : '') + '</td>' +
             '<td>' + esc(e.vendor) + '</td><td>' + esc(e.product) + '</td><td>' + esc(e.added) + '</td><td>' + dueCell + '</td></tr>';
         }).join('') + '</tbody></table>'
-      : '<div class="sub">No new KEV additions in the last 24 hours.</div>';
-    h += reportSection('Newly added to CISA KEV', kr.length, 'Confirmed exploited in the wild, added by CISA in the last 24 hours — patch these first.', kbody);
+      : '<div class="sub">No new KEV additions ' + REPORT_WIN_LBL + '.</div>';
+    h += reportSection('Newly added to CISA KEV', kr.length, 'Confirmed exploited in the wild, added by CISA ' + REPORT_WIN_LBL + ' — patch these first.', kbody);
 
     // 2. Biggest EPSS risers — exploitation probability that jumped this week
     var risers = ((movers && movers.risers) || []).slice(0, 12);
@@ -1970,8 +1977,8 @@
             '<td style="white-space:normal;max-width:280px">' + esc(c.product || '') + '</td><td>' + sevCell + '</td><td>' + tteCell(c.tte) + '</td>' +
             '<td class="muted" style="font-size:12px">' + esc((c.sources || []).map(srcLabel).join(', ')) + '</td><td>' + esc(c.exploit_date || '') + '</td></tr>';
         }).join('') + '</tbody></table>'
-      : '<div class="sub">No fresh public exploits in the last 24 hours.</div>';
-    h += reportSection('Fresh public exploits', ex.length, 'New entries across Exploit-DB, Metasploit, VulnCheck, and other public sources in the last 24 hours — earliest exploit signal per CVE.', ebody);
+      : '<div class="sub">No fresh public exploits ' + REPORT_WIN_LBL + '.</div>';
+    h += reportSection('Fresh public exploits', ex.length, 'New entries across Exploit-DB, Metasploit, VulnCheck, and other public sources ' + REPORT_WIN_LBL + ' — earliest exploit signal per CVE.', ebody);
 
     // 4. Newest Tenable plugins — only those published in the past 24h of the public feed.
     // Dates are RFC-822 ("Sat, 27 Jun 2026 …"); parse directly. Anchor the window to the
@@ -1980,7 +1987,7 @@
     // (< 24h) so only the freshest publish batch shows, not the prior day.
     var tenT = ((ten && ten.items) || []).map(function (it) { var t = new Date(it.date); return { it: it, t: isNaN(t) ? null : t.getTime() }; }).filter(function (x) { return x.t != null; });
     var tenRef = tenT.reduce(function (m, x) { return x.t > m ? x.t : m; }, 0);
-    var tp = tenT.filter(function (x) { return tenRef - x.t < 864e5; }).map(function (x) { return x.it; }).slice(0, 25);
+    var tp = tenT.filter(function (x) { return tenRef - x.t < REPORT_WIN * 864e5; }).map(function (x) { return x.it; }).slice(0, 25);
     var sevCls = { Critical: 'crit', High: 'high', Medium: 'med', Low: '', Info: '' };
     var tbody = tp.length
       ? '<table class="ktable"><thead><tr><th>Plugin</th><th>Severity</th><th>CVEs</th><th>Plugin&nbsp;ID</th></tr></thead><tbody>' +
@@ -1992,12 +1999,12 @@
             '<td>' + sev + '</td><td style="white-space:normal;max-width:240px">' + (cves ? cves + more : '<span class="muted">—</span>') + '</td>' +
             '<td class="muted" style="font-family:var(--mono);font-size:12px">' + esc(it.id || '') + '</td></tr>';
         }).join('') + '</tbody></table>'
-      : '<div class="sub">No new Tenable plugins in the last 24 hours.</div>';
+      : '<div class="sub">No new Tenable plugins ' + REPORT_WIN_LBL + '.</div>';
     // New critical CVEs (NVD) — placed above the Tenable plugins feed
-    h += reportSection('New critical CVEs <span class="muted" style="font-size:12px;font-weight:400">· last 24h</span>', null,
+    h += reportSection('New critical CVEs <span class="muted" style="font-size:12px;font-weight:400">· ' + REPORT_WIN_SHORT + '</span>', null,
       'Critical-severity CVEs newly published to the NVD, ranked with the same risk signals as Search.', '<div id="repCrit"></div>');
 
-    h += reportSection('Newest Tenable plugins', tp.length, 'The most recently scannable vulnerabilities — newest Nessus plugins from Tenable’s public feed in the last 24 hours. <a href="#/detections">See all →</a>', tbody);
+    h += reportSection('Newest Tenable plugins', tp.length, 'The most recently scannable vulnerabilities — newest Nessus plugins from Tenable’s public feed ' + REPORT_WIN_LBL + '. <a href="#/detections">See all →</a>', tbody);
 
     (target || app).innerHTML = h;
     runReportCriticals();
@@ -2006,12 +2013,12 @@
     var box = document.getElementById('repCrit');
     if (!box) return;
     box.innerHTML = spinner('Querying the NVD for new criticals…');
-    var end = new Date(), start = new Date(end.getTime() - 86400000);
+    var end = new Date(), start = new Date(end.getTime() - REPORT_WIN * 86400000);
     var qs = 'pubStartDate=' + nvdDate(start) + '&pubEndDate=' + nvdDate(end) + '&cvssV3Severity=CRITICAL&resultsPerPage=30';
     getJSON(NVD + '?' + qs).then(function (d) {
       var list = (d.vulnerabilities || []).map(function (v) { return v.cve; })
         .sort(function (a, b) { return (b.published || '').localeCompare(a.published || ''); });
-      if (!list.length) { box.innerHTML = '<div class="sub">No new critical CVEs published in the last 24 hours.</div>'; return; }
+      if (!list.length) { box.innerHTML = '<div class="sub">No new critical CVEs published ' + REPORT_WIN_LBL + '.</div>'; return; }
       enrichAndRenderHits(list, box, d.totalResults);
     }).catch(function (e) { box.innerHTML = errBox('NVD query failed (' + e.message + '). It rate-limits unauthenticated requests; wait a few seconds and retry.'); });
   }
@@ -2338,8 +2345,14 @@
 
   function viewAbout() {
     setActive('about');
-    app.innerHTML = '<header class="view"><div class="overline">About</div><h1>How CVE Explorer works</h1>' +
-      '<p class="lede">A read-only, backend-free front end over public vulnerability data — built to lead with prioritization rather than severity alone. Ask in plain English, get a morning briefing on what’s newly exploitable, and open any CVE for a verdict drawn from a dozen-plus public sources.</p></header>' +
+    app.innerHTML = '<header class="view"><div class="overline">About</div><h1>How VM Ops Console works</h1>' +
+      '<p class="lede">A backend-free vulnerability-management operations console. It pairs a public-CVE intelligence front end with operational tooling — a findings workbench, a Tenable vulnerability dashboard, and an AD-vs-agent coverage reconciler — under one nav, one theme, and one natural-language Ask AI box. Your scan data, findings, notes, and keys stay in your browser; only public CVE lookups (and, if you opt in, your own Anthropic key) leave it.</p></header>' +
+      '<div class="block" id="sec-tools"><h3>The operational tools</h3><div class="prose">' +
+      '<p>Beyond CVE intelligence, the console runs your own program data — all client-side:</p>' +
+      '<ul><li><b>Findings workbench</b> — import scanner findings, triage by status/owner/SLA, keep per-finding notes and a dated status-update log, and open Jira/ServiceNow tickets.</li>' +
+      '<li><b>Tenable VM dashboard</b> — upload Tenable SC cumulative + mitigated exports for instant KPIs, severity/SLA breakdowns, top findings, and one-click report exports.</li>' +
+      '<li><b>Agent coverage</b> — reconcile Active Directory against ManageEngine, Tenable, and CrowdStrike agents to surface coverage gaps and orphaned hosts.</li></ul>' +
+      '<p>The goal: track <i>every</i> vulnerability flowing from Tenable and Wiz in one place. Import scan exports on the Data Import page (Settings); the dashboards read from a shared in-browser store.</p></div></div>' +
       '<div class="toc"><span class="toc-lab">On this page</span>' +
       ABOUT_SECTIONS.map(function (s) { return '<a class="toc-link" data-to="' + s[0] + '">' + esc(s[1]) + '</a>'; }).join('') + '</div>' +
       '<div class="block" id="sec-models"><h3>The five prioritization models</h3><div class="prose">' +
@@ -2367,7 +2380,7 @@
       '<div class="block" id="dataProvenance"><h3>Datasets &amp; freshness</h3>' +
       '<div class="sub" style="margin-bottom:12px">Every pre-built dataset behind the explorer, what it powers, and when it was last refreshed — plus the live API sources queried on demand.</div>' +
       '<div id="dataFresh">' + spinner('Checking dataset freshness…') + '</div></div>' +
-      '<div class="block"><a class="muted" href="https://github.com/cloudanimal/cve-explorer" target="_blank" rel="noopener">Source on GitHub &rarr;</a></div>' +
+      '<div class="block"><a class="muted" href="https://github.com/cloudanimal/vm-ops-console" target="_blank" rel="noopener">Source on GitHub &rarr;</a></div>' +
       '<button class="to-top" id="toTop" type="button" aria-label="Back to top">↑ Top</button>';
     refreshDataFreshness();
     clearInterval(freshTimer);
@@ -2383,6 +2396,7 @@
     aboutScroll();
   }
   var ABOUT_SECTIONS = [
+    ['sec-tools', 'Operational tools'],
     ['sec-models', 'Prioritization models'], ['sec-ask', 'Ask AI & Morning Report'], ['sec-data', 'Data sources'],
     ['sec-backend', 'Backend-free'], ['sec-arch', 'Architecture'], ['sec-caveats', 'Caveats'], ['dataProvenance', 'Datasets & freshness']
   ];

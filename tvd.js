@@ -74,7 +74,7 @@
   <section id="dashboard" class="hidden"></section>
   <div class="foot">
     Built for security teams who can't send scan data to a SaaS. Open the Network tab — there are no uploads.
-    &nbsp;·&nbsp; <a href="https://github.com/cloudanimal/tenable-vm-dashboard" target="_blank" rel="noopener noreferrer">source on GitHub</a>
+    &nbsp;·&nbsp; <a href="https://github.com/cloudanimal/vm-ops-console" target="_blank" rel="noopener noreferrer">source on GitHub</a>
   </div>
 </main>
 <div id="tt" class="noprint" style="position:fixed;z-index:1000;pointer-events:none;max-width:340px;background:#0d1016;color:#f4f5f8;border:1px solid rgba(255,255,255,.16);border-radius:8px;padding:10px 13px;font-size:13.5px;font-weight:400;line-height:1.5;box-shadow:0 8px 26px rgba(0,0,0,.45);opacity:0;transition:opacity .1s;display:none"></div>

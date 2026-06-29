@@ -72,7 +72,7 @@
     </div>
   </section>
   <section id="dashboard"></section>
-  <div class="foot">Built for teams who can't send asset data to a SaaS. Open the Network tab — there are no uploads. · <a href="https://github.com/cloudanimal/agent-coverage-dashboard" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">source on GitHub</a></div>
+  <div class="foot">Built for teams who can't send asset data to a SaaS. Open the Network tab — there are no uploads. · <a href="https://github.com/cloudanimal/vm-ops-console" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">source on GitHub</a></div>
 </main>
 <div id="loading"><div class="spin"></div><div id="loadingMsg" class="sub">Working…</div></div>
 <div class="drawer-backdrop" id="acdDrawerBack" hidden></div>

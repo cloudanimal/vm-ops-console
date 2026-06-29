@@ -4,6 +4,10 @@ A browser-local, backend-free **vulnerability-management operations console**. I
 
 **Live:** https://cloudanimal.github.io/vm-ops-console/
 
+![VM Ops Console — Ops Dashboard: a live read-out over imported scan findings with open/overdue/critical KPIs, severity and status breakdowns, and the highest-risk open work.](docs/ops-dashboard.png)
+
+The goal: track **every** vulnerability flowing from Tenable and Wiz in one place — from raw scan export to triaged, owned, ticketed, and resolved.
+
 Everything runs in your browser. Scan exports, findings, notes, and API keys stay in `localStorage`/`IndexedDB` and are never uploaded to this site's host. The only outbound calls are to public vulnerability data sources (NVD, CISA KEV, FIRST EPSS, OSV) and — only if you opt into Ask AI with your own key — directly to `api.anthropic.com`.
 
 ## What's inside
@@ -12,7 +16,7 @@ Everything runs in your browser. Scan exports, findings, notes, and API keys sta
 - **Findings workbench** — import scanner findings (Tenable today; more sources on the roadmap), triage by status/owner/SLA, keep per-finding notes and a dated **status-update log**, and open Jira/ServiceNow tickets.
 - **Tenable VM dashboard** — upload Tenable SC cumulative + mitigated exports for instant KPIs, severity/SLA breakdowns, top findings, and one-click report exports.
 - **Agent coverage dashboard** — reconcile Active Directory against ManageEngine, Tenable, and CrowdStrike agents to find coverage gaps.
-- **CVE intelligence** — search, browse, KEV/EPSS/exploit signals, statistics, and a daily Morning Report on what's newly exploitable.
+- **CVE intelligence** — search, browse, KEV/EPSS/exploit signals, statistics, and a daily Morning Report on what's newly exploitable (on Mondays it rolls up the whole weekend — everything released since Friday).
 
 ## Tech
 
