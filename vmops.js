@@ -39,7 +39,7 @@
     ov: load('vmops-overrides', {}),       // key -> {status, owner, notes, updated}
     cfg: Object.assign({}, DEFAULT_CFG, load('vmops-config', {})),
     sort: { col: 'risk', dir: 1 },
-    filt: { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, group: '' }
+    filt: { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, group: '' }
   };
   STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla, STATE.cfg.sla || {});
   STATE._newKeys = {}; try { (JSON.parse(localStorage.getItem('vmops-newkeys') || '[]') || []).forEach(function (k) { STATE._newKeys[k] = 1; }); } catch (e) {}
@@ -92,17 +92,20 @@
     if (INTEL.loading) return INTEL.loading;
     INTEL.loading = Promise.all([
       fetch('data/kev.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
-      fetch('data/exploited.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+      fetch('data/exploited.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+      fetch('data/epss.json.gz').then(function (r) { return r.ok ? new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).json() : null; }).catch(function () { return null; })
     ]).then(function (r) {
       INTEL.kev = {}; (((r[0] || {}).entries) || []).forEach(function (e) { INTEL.kev[e.id] = { added: e.added, due: e.due, ransomware: !!e.ransomware }; });
       INTEL.expl = {}; (((r[1] || {}).cves) || []).forEach(function (c) { INTEL.expl[c.cve] = { sources: c.sources || [], tte: c.tte, date: c.exploit_date }; });
+      INTEL.epss = (r[2] && r[2].scores) || {};
       INTEL.loaded = true;
     });
     return INTEL.loading;
   }
   function cveIntel(cve) {
     var k = INTEL.kev && INTEL.kev[cve], x = INTEL.expl && INTEL.expl[cve];
-    return { kev: !!k, ransomware: !!(k && k.ransomware), kevDue: k && k.due, exploit: !!x, sources: (x && x.sources) || [], exploitDate: x && x.date };
+    var e = INTEL.epss && INTEL.epss[cve];
+    return { kev: !!k, ransomware: !!(k && k.ransomware), kevDue: k && k.due, exploit: !!x, sources: (x && x.sources) || [], exploitDate: x && x.date, epss: (e != null ? e : null) };
   }
   // Priority verdict: confirmed/likely exploitation drives P1, else severity tiers (mirrors CVE Explorer).
   function priorityOf(f) {
@@ -116,6 +119,7 @@
     var s = (4 - (SEV_ORDER[f.severity] != null ? SEV_ORDER[f.severity] : 4)) * 100;
     var it = cveIntel(f.cve);
     if (it.kev) s += 600; if (it.ransomware) s += 250; if (it.exploit) s += 200;
+    if (it.epss != null) s += Math.round(it.epss * 300);   // EPSS probability folds in (0 → +300)
     var di = dueIn(f); if (di != null && isOpen(f)) s += di < 0 ? 60 + Math.min(40, -di) : Math.max(0, 30 - di);
     s += Math.min(20, (daysSince(f.firstSeen) || 0) / 10);
     if (!isOpen(f)) s -= 2000;   // resolved/accepted always rank below anything open
@@ -172,6 +176,7 @@
       if (f.repo && repoOf(x) !== f.repo) return false;
       if (f.overdue && slaState(x) !== 'overdue') return false;
       if (f.exploited) { var it = cveIntel(x.cve); if (!it.kev && !it.exploit) return false; }
+      if (f.epssHi) { var ee = cveIntel(x.cve).epss; if (ee == null || ee < 0.5) return false; }
       if (f.fresh && !isNewKey(keyOf(x))) return false;
       if (f.seen) { var _ds = daysSince(x.firstSeen); if (_ds == null || _ds > +f.seen) return false; }
       if (f.q) { var q = f.q.toLowerCase(); if ((x.cve + ' ' + x.host + ' ' + (x.name || '') + ' ' + (x.desc || '') + ' ' + repoOf(x) + ' ' + (ovOf(x).owner || '')).toLowerCase().indexOf(q) === -1) return false; }
@@ -185,6 +190,7 @@
       else if (c === 'due') { va = dueIn(a); vb = dueIn(b); va = va == null ? 1e9 : va; vb = vb == null ? 1e9 : vb; }
       else if (c === 'status') { va = SLABEL[statusOf(a)]; vb = SLABEL[statusOf(b)]; }
       else if (c === 'age') { va = daysSince(a.firstSeen) || 0; vb = daysSince(b.firstSeen) || 0; }
+      else if (c === 'epss') { va = cveIntel(b.cve).epss || 0; vb = cveIntel(a.cve).epss || 0; }   // high → low by default
       else if (c === 'owner') { va = (ovOf(a).owner || '~'); vb = (ovOf(b).owner || '~'); }
       else if (c === 'repo') { va = (repoOf(a) || '~'); vb = (repoOf(b) || '~'); }
       else { va = (a[c] || ''); vb = (b[c] || ''); }
@@ -279,9 +285,10 @@
   }
 
   // ---------- saved + preset views (one-click filter sets) ----------
-  function defaultFilt() { return { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, group: '' }; }
+  function defaultFilt() { return { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, group: '' }; }
   var PRESET_VIEWS = [
     { id: 'exploited', name: 'Exploited (KEV / PoC)', filt: { exploited: true } },
+    { id: 'epsshi', name: 'EPSS ≥ 50%', filt: { epssHi: true } },
     { id: 'overdue', name: 'Overdue', filt: { overdue: true } },
     { id: 'overduecrit', name: 'Overdue critical', filt: { sev: 'Critical', overdue: true } },
     { id: 'newscan', name: 'New this scan', filt: { fresh: true } },
@@ -295,7 +302,7 @@
     // Apply a deep-link query (e.g. Ask AI -> #/findings?sev=Critical&overdue=1) ONLY when it actually
     // changes — otherwise the in-page filter handlers (which re-call viewFindings without touching the
     // hash) would re-parse the stale query every render and clobber the user's selection.
-    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', group:STATE.filt.group||'' }; })();
+    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', epssHi:p.epssHi==='1', group:STATE.filt.group||'' }; })();
     if (!STATE.findings.length) return viewEmpty('findings');
     var list = visibleFindings();
     var statusOpts = '<option value="">All statuses</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '"' + (STATE.filt.status === s.k ? ' selected' : '') + '>' + s.l + '</option>'; }).join('');
@@ -322,6 +329,7 @@
       (repoList.length ? '<select id="fRepo">' + repoOpts + '</select>' : '') +
       '<button class="btn sm" id="fOverdue" style="' + (STATE.filt.overdue ? 'border-color:var(--crit);color:var(--crit)' : '') + '">Overdue only</button>' +
       '<button class="btn sm" id="fExploit" style="' + (STATE.filt.exploited ? 'border-color:var(--crit);color:var(--crit)' : '') + '" title="KEV-listed or with a public exploit">Exploited only</button>' +
+      '<button class="btn sm" id="fEpssHi" style="' + (STATE.filt.epssHi ? 'border-color:var(--crit);color:var(--crit)' : '') + '" title="EPSS ≥ 50% (high near-term exploitation probability)">EPSS ≥ 50%</button>' +
       (Object.keys(STATE._newKeys || {}).length ? '<button class="btn sm" id="fFresh" style="' + (STATE.filt.fresh ? 'border-color:var(--accent);color:var(--accent)' : '') + '" title="Added in the most recent scan">New only</button>' : '') +
       '<select id="fGroup" title="Group findings"><option value="">No grouping</option><option value="cve"' + (STATE.filt.group === 'cve' ? ' selected' : '') + '>Group by CVE</option><option value="product"' + (STATE.filt.group === 'product' ? ' selected' : '') + '>Group by product / fix</option><option value="host"' + (STATE.filt.group === 'host' ? ' selected' : '') + '>Group by host</option></select>' +
       '<select id="fView" title="Saved & preset views">' + viewOpts + '</select>' +
@@ -351,6 +359,7 @@
     var fRepo = document.getElementById('fRepo'); if (fRepo) fRepo.addEventListener('change', function () { STATE.filt.repo = this.value; viewFindings(); });
     document.getElementById('fOverdue').addEventListener('click', function () { STATE.filt.overdue = !STATE.filt.overdue; viewFindings(); });
     document.getElementById('fExploit').addEventListener('click', function () { STATE.filt.exploited = !STATE.filt.exploited; viewFindings(); });
+    document.getElementById('fEpssHi').addEventListener('click', function () { STATE.filt.epssHi = !STATE.filt.epssHi; viewFindings(); });
     var fFresh = document.getElementById('fFresh'); if (fFresh) fFresh.addEventListener('click', function () { STATE.filt.fresh = !STATE.filt.fresh; viewFindings(); });
     document.getElementById('fGroup').addEventListener('change', function () { STATE.filt.group = this.value; viewFindings(); });
     document.getElementById('fView').addEventListener('change', function () {
@@ -421,6 +430,7 @@
     { id: 'desc', w: 300, label: 'Description', sort: 'desc', resize: true },
     { id: 'sev', w: 95, label: 'Sev', sort: 'sev', resize: true },
     { id: 'pri', w: 85, label: 'Priority', sort: 'risk', resize: true },
+    { id: 'epss', w: 80, label: 'EPSS', sort: 'epss', resize: true },
     { id: 'status', w: 140, label: 'Status', sort: 'status', resize: true },
     { id: 'sla', w: 85, label: 'SLA', sort: 'due', resize: true },
     { id: 'owner', w: 120, label: 'Owner', sort: 'owner', resize: true },
@@ -448,6 +458,7 @@
       '<td class="dcell" title="' + esc(f.desc || f.name || '') + '">' + (f.desc || f.name ? esc(f.desc || f.name) : '<span class="muted">—</span>') + '</td>' +
       '<td>' + sevBadge(f.severity) + '</td>' +
       '<td>' + priChip(f) + '</td>' +
+      '<td>' + epssCell(f) + '</td>' +
       '<td>' + statusSelect(f, st) + '</td>' +
       '<td><span class="pill-sla ' + ss + '">' + dueTxt + '</span></td>' +
       '<td>' + (ovOf(f).owner ? esc(ovOf(f).owner) : '<span class="muted">—</span>') + '</td>' +
@@ -501,6 +512,7 @@
     return c ? ' ' + c : '';
   }
   function priChip(f) { var p = priorityOf(f); return p ? '<span class="pri ' + p.toLowerCase() + '">' + p + '</span>' : '<span class="muted">—</span>'; }
+  function epssCell(f) { var e = cveIntel(f.cve).epss; if (e == null) return '<span class="muted">—</span>'; return '<span class="epss ' + (e >= 0.5 ? 'hi' : e >= 0.1 ? 'mid' : '') + '">' + Math.round(e * 100) + '%</span>'; }
   function drawerIntel(f) {
     var it = cveIntel(f.cve), p = priorityOf(f), parts = [];
     if (p) parts.push('<span class="pri ' + p.toLowerCase() + '">' + p + '</span>');
@@ -623,7 +635,8 @@
     (function () {
       var it = cveIntel(f.cve), sv = ssvcVerdict(it.kev, it.exploit, f.cvss);
       var se = document.getElementById('drSsvc'); if (se) se.innerHTML = '<b>' + sv.v + '</b>' + (sv.why ? ' · ' + esc(sv.why) : '');
-      epssFor(f.cve).then(function (e) { var el = document.getElementById('drEpss'); if (!el) return; el.className = ''; var v = epssVerdict(e); el.innerHTML = e == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); });
+      var setEpss = function (e) { var el = document.getElementById('drEpss'); if (!el) return; el.className = ''; var v = epssVerdict(e); el.innerHTML = e == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); };
+      if (it.epss != null) setEpss(it.epss); else epssFor(f.cve).then(setEpss);   // prefer the loaded feed; fall back to a live lookup
       levFor(f.cve).then(function (l) { var el = document.getElementById('drLev'); if (!el) return; el.className = ''; var v = levVerdict(l); el.innerHTML = l == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); });
     })();
     function close() { bg.classList.remove('open'); dr.classList.remove('open'); }
