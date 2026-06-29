@@ -220,9 +220,12 @@ async function loadSample(){
       const rows = Papa.parse(text, {header:true, skipEmptyLines:true, dynamicTyping:false}).data;
       addRows(rows, kind, kind);
     };
+    // Samples are vendored gzipped in this repo (sample-data/tvd/*.gz) and decompressed in-browser
+    // (DecompressionStream) — full-scale demo data without a multi-MB repo or a cross-repo fetch.
+    const gz = u => fetch(u).then(r => { if(!r.ok) throw new Error(u+' '+r.status); return new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).text(); });
     const [cum, mit] = await Promise.all([
-      fetch('https://cloudanimal.github.io/tenable-vm-dashboard/sample-data/cumulative.csv').then(r=>r.text()),
-      fetch('https://cloudanimal.github.io/tenable-vm-dashboard/sample-data/mitigated.csv').then(r=>r.text())
+      gz('sample-data/tvd/cumulative.csv.gz'),
+      gz('sample-data/tvd/mitigated.csv.gz')
     ]);
     showLoading('Parsing findings…'); await nextPaint();
     parseCsv(cum, 'cumulative'); parseCsv(mit, 'mitigated');

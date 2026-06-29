@@ -803,12 +803,14 @@ async function loadSample(build){
   try{
     STATE._loadingSample = true;
     showLoading('Loading sample data…'); await nextPaint();
-    const noStore = { cache:'no-store' };   // always pull the current sample, never a stale cached copy
+    // Samples are vendored gzipped in this repo (sample-data/acd/*.gz) and decompressed in-browser
+    // (DecompressionStream) — keeps the full-scale demo data without a multi-MB repo or a cross-repo fetch.
+    const gz = u => fetch(u).then(r => { if(!r.ok) throw new Error(u+' '+r.status); return new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).text(); });
     const [adTxt, meTxt, tenTxt, csTxt] = await Promise.all([
-      fetch('https://cloudanimal.github.io/agent-coverage-dashboard/sample-data/ad-computers.json', noStore).then(r=>r.text()),
-      fetch('https://cloudanimal.github.io/agent-coverage-dashboard/sample-data/manageengine.csv', noStore).then(r=>r.text()),
-      fetch('https://cloudanimal.github.io/agent-coverage-dashboard/sample-data/tenable-agents.csv', noStore).then(r=>r.text()),
-      fetch('https://cloudanimal.github.io/agent-coverage-dashboard/sample-data/crowdstrike.csv', noStore).then(r=>r.text()) ]);
+      gz('sample-data/acd/ad-computers.json.gz'),
+      gz('sample-data/acd/manageengine.csv.gz'),
+      gz('sample-data/acd/tenable-agents.csv.gz'),
+      gz('sample-data/acd/crowdstrike.csv.gz') ]);
     STATE.ad = flattenAd(adTxt); STATE.adCols = unionCols(STATE.ad); STATE.src.ad='ad-computers.json'; markLoaded('ad','ad-computers.json (sample)');
     STATE.me = Papa.parse(meTxt,{header:true,skipEmptyLines:true}).data; STATE.src.me='manageengine.csv'; markLoaded('me','manageengine.csv (sample)');
     STATE.ten = Papa.parse(tenTxt,{header:true,skipEmptyLines:true}).data; STATE.src.ten='tenable-agents.csv'; markLoaded('ten','tenable-agents.csv (sample)');
