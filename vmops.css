@@ -45,6 +45,14 @@
 
 .vmops .gridwrap { overflow-x:auto; }
 .vmops table.grid { width:100%; border-collapse:collapse; font-size:13.5px; }
+/* resizable columns: fixed layout so per-column widths are honored; cells clip with ellipsis */
+.vmops table.grid.resizable { table-layout:fixed; }
+.vmops table.grid.resizable th, .vmops table.grid.resizable td { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.vmops table.grid.resizable td.cid { white-space:normal; }   /* let CVE id + chips wrap */
+.vmops table.grid.resizable td.dcell { max-width:none; }
+.vmops table.grid th { position:relative; }
+.vmops .col-resize { position:absolute; top:0; right:0; width:9px; height:100%; cursor:col-resize; user-select:none; }
+.vmops .col-resize:hover { background:color-mix(in srgb, var(--accent) 45%, transparent); }
 .vmops table.grid th { text-align:left; font-size:11px; font-weight:600; letter-spacing:.6px; text-transform:uppercase; color:var(--faint); padding:8px 10px; border-bottom:1px solid var(--line); cursor:pointer; white-space:nowrap; user-select:none; }
 .vmops table.grid td { padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:middle; }
 .vmops table.grid tr:hover td { background:color-mix(in srgb, var(--accent) 5%, transparent); }

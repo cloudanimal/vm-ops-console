@@ -43,6 +43,7 @@
   };
   STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla, STATE.cfg.sla || {});
   STATE._newKeys = {}; try { (JSON.parse(localStorage.getItem('vmops-newkeys') || '[]') || []).forEach(function (k) { STATE._newKeys[k] = 1; }); } catch (e) {}
+  STATE._colW = {}; try { STATE._colW = JSON.parse(localStorage.getItem('vmops-colw') || '{}') || {}; } catch (e) {}
 
   // Custom branding: apply the configured app name to the nav brand + document title, and rebuild the
   // favicon (monogram + color) — all default to the VM Ops Console look when unset.
@@ -356,10 +357,29 @@
 
   function sevBadge(sev) { return '<span class="badge ' + (['crit', 'high', 'med', 'low'][SEV_ORDER[sev]] || 'low') + '">' + esc(sev) + '</span>'; }
   function isNewKey(k) { return !!(STATE._newKeys && STATE._newKeys[k]); }
+  // Column definitions drive the header, default widths, and resizing. id = width key (persisted).
+  var COL_DEFS = [
+    { id: 'sel', w: 36, label: '<input type="checkbox" id="selAll" title="Select all shown" aria-label="Select all shown">', cls: 'selcol' },
+    { id: 'cve', w: 165, label: 'CVE', sort: 'cve', resize: true },
+    { id: 'host', w: 150, label: 'Host', sort: 'host', resize: true },
+    { id: 'desc', w: 300, label: 'Description', sort: 'desc', resize: true },
+    { id: 'sev', w: 95, label: 'Sev', sort: 'sev', resize: true },
+    { id: 'pri', w: 85, label: 'Priority', sort: 'risk', resize: true },
+    { id: 'status', w: 140, label: 'Status', sort: 'status', resize: true },
+    { id: 'sla', w: 85, label: 'SLA', sort: 'due', resize: true },
+    { id: 'owner', w: 120, label: 'Owner', sort: 'owner', resize: true },
+    { id: 'repo', w: 120, label: 'Repo', sort: 'repo', resize: true },
+    { id: 'age', w: 110, label: 'First seen', sort: 'age', resize: true },
+    { id: 'act', w: 72, label: '' }
+  ];
+  function colW(c) { var v = STATE._colW && STATE._colW[c.id]; return (v && +v) || c.w; }
+  function totalW() { return COL_DEFS.reduce(function (s, c) { return s + colW(c); }, 0); }
   function gridHead() {
-    function th(label, col) { var a = STATE.sort.col === col ? (STATE.sort.dir === 1 ? ' <span class="sortarrow">▲</span>' : ' <span class="sortarrow">▼</span>') : ''; return '<th data-col="' + col + '">' + label + a + '</th>'; }
-    return '<thead><tr><th class="selcol"><input type="checkbox" id="selAll" title="Select all shown" aria-label="Select all shown"></th>' +
-      th('CVE', 'cve') + th('Host', 'host') + th('Description', 'desc') + th('Sev', 'sev') + th('Priority', 'risk') + th('Status', 'status') + th('SLA', 'due') + th('Owner', 'owner') + th('Repo', 'repo') + th('First seen', 'age') + '<th></th></tr></thead>';
+    return '<thead><tr>' + COL_DEFS.map(function (c) {
+      var arr = c.sort && STATE.sort.col === c.sort ? (STATE.sort.dir === 1 ? ' <span class="sortarrow">▲</span>' : ' <span class="sortarrow">▼</span>') : '';
+      var rsz = c.resize ? '<span class="col-resize" aria-hidden="true"></span>' : '';
+      return '<th data-cw="' + c.id + '" style="width:' + colW(c) + 'px"' + (c.sort ? ' data-col="' + c.sort + '"' : '') + (c.cls ? ' class="' + c.cls + '"' : '') + '>' + c.label + arr + rsz + '</th>';
+    }).join('') + '</tr></thead>';
   }
   function findingRow(f, gid) {
     var st = statusOf(f), ss = slaState(f), di = dueIn(f);
@@ -380,7 +400,7 @@
       '<td><button class="btn sm act-detail">Open</button></td></tr>';
   }
   function gridTable(list) {
-    return '<table class="grid" id="gridHost">' + gridHead() + '<tbody>' + list.map(function (f) { return findingRow(f); }).join('') + '</tbody></table>';
+    return '<table class="grid resizable" id="gridHost" style="width:' + totalW() + 'px">' + gridHead() + '<tbody>' + list.map(function (f) { return findingRow(f); }).join('') + '</tbody></table>';
   }
   // Collapse the list by what you fix once: CVE (patch one, clear N hosts), product/vuln, or host.
   function groupFindings(list, by) {
@@ -414,7 +434,7 @@
         '<td colspan="5" class="muted" style="font-size:12px">' + g.openCount + ' open / ' + g.count + '</td><td></td></tr>';
       return head + g.items.map(function (f) { return findingRow(f, g.id); }).join('');
     }).join('');
-    return '<table class="grid" id="gridHost">' + gridHead() + '<tbody>' + body + '</tbody></table>';
+    return '<table class="grid resizable" id="gridHost" style="width:' + totalW() + 'px">' + gridHead() + '<tbody>' + body + '</tbody></table>';
   }
   function renderGrid(list) { return STATE.filt.group ? groupedTable(list, STATE.filt.group) : gridTable(list); }
   function intelChips(cve) {
@@ -437,10 +457,32 @@
     return '<select class="status act-status" data-s="' + st + '">' + STATUS.map(function (s) { return '<option value="' + s.k + '"' + (s.k === st ? ' selected' : '') + '>' + s.l + '</option>'; }).join('') + '</select>';
   }
   function findByKey(k) { for (var i = 0; i < STATE.findings.length; i++) if (keyOf(STATE.findings[i]) === k) return STATE.findings[i]; return null; }
+  // Drag-to-resize columns; widths persist (STATE._colW + localStorage) across re-renders.
+  function wireResizers() {
+    var tbl = document.getElementById('gridHost'); if (!tbl) return;
+    function recalc() { var s = 0; [].forEach.call(tbl.querySelectorAll('thead th'), function (th) { s += th.offsetWidth; }); tbl.style.width = s + 'px'; }
+    [].forEach.call(tbl.querySelectorAll('th .col-resize'), function (h) {
+      h.addEventListener('click', function (e) { e.stopPropagation(); });
+      h.addEventListener('mousedown', function (e) {
+        e.preventDefault(); e.stopPropagation();
+        var th = h.parentNode, id = th.getAttribute('data-cw'), startX = e.clientX, startW = th.offsetWidth;
+        function mm(ev) { th.style.width = Math.max(48, startW + (ev.clientX - startX)) + 'px'; recalc(); }
+        function mu() {
+          document.removeEventListener('mousemove', mm); document.removeEventListener('mouseup', mu);
+          document.body.style.cursor = ''; document.body.style.userSelect = '';
+          STATE._colW = STATE._colW || {}; STATE._colW[id] = th.offsetWidth;
+          try { localStorage.setItem('vmops-colw', JSON.stringify(STATE._colW)); } catch (e) {}
+        }
+        document.addEventListener('mousemove', mm); document.addEventListener('mouseup', mu);
+        document.body.style.cursor = 'col-resize'; document.body.style.userSelect = 'none';
+      });
+    });
+  }
   function wireGrid() {
     [].forEach.call(document.querySelectorAll('table.grid thead th[data-col]'), function (th) {
-      th.addEventListener('click', function () { var c = th.getAttribute('data-col'); if (STATE.sort.col === c) STATE.sort.dir *= -1; else { STATE.sort.col = c; STATE.sort.dir = 1; } currentView(); });
+      th.addEventListener('click', function (e) { if (e.target.closest('.col-resize')) return; var c = th.getAttribute('data-col'); if (STATE.sort.col === c) STATE.sort.dir *= -1; else { STATE.sort.col = c; STATE.sort.dir = 1; } currentView(); });
     });
+    wireResizers();
     var selAll = document.getElementById('selAll');
     if (selAll) selAll.addEventListener('change', function () {
       var on = this.checked;
