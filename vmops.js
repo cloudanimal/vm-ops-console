@@ -27,8 +27,9 @@
   var SLABEL = {}; STATUS.forEach(function (s) { SLABEL[s.k] = s.l; });
   var OPEN_STATES = STATUS.filter(function (s) { return s.open; }).map(function (s) { return s.k; });
   var SEV_ORDER = { Critical: 0, High: 1, Medium: 2, Low: 3, Info: 4 };
-  var DEFAULT_CFG = { brand: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tsUrl: '', tsAccess: '', tsSecret: '', tioAccess: '', tioSecret: '' };
+  var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tsUrl: '', tsAccess: '', tsSecret: '', tioAccess: '', tioSecret: '' };
   var DEFAULT_BRAND = 'VM Ops Console';
+  var DEFAULT_ICON_COLOR = '#28415d';
 
   function load(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
   function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
@@ -42,11 +43,29 @@
   };
   STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla, STATE.cfg.sla || {});
 
-  // Custom branding: apply the configured app name to the nav brand + document title (default if unset).
+  // Custom branding: apply the configured app name to the nav brand + document title, and rebuild the
+  // favicon (monogram + color) — all default to the VM Ops Console look when unset.
+  function brandInitials(s) {
+    var w = String(s || '').trim().split(/\s+/).filter(Boolean);
+    if (!w.length) return 'VM';
+    if (/^[A-Z0-9]{2,3}$/.test(w[0])) return w[0].slice(0, 3);   // leading acronym, e.g. "VM"
+    if (w.length === 1) return w[0].slice(0, 2).toUpperCase();
+    return (w[0].charAt(0) + w[1].charAt(0)).toUpperCase();
+  }
+  function faviconURI(mono, col) {
+    var fs = mono.length >= 3 ? 24 : 34;
+    var svg = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='" + col +
+      "'/><text x='32' y='45' font-family='Georgia,serif' font-size='" + fs + "' fill='#faf9f7' text-anchor='middle'>" + mono + "</text></svg>";
+    return 'data:image/svg+xml,' + encodeURIComponent(svg);
+  }
   function applyBrand() {
     var name = (STATE.cfg.brand || '').trim() || DEFAULT_BRAND;
     var el = document.querySelector('nav.top .brand'); if (el) el.textContent = name;
     try { document.title = name; } catch (e) {}
+    var mono = ((STATE.cfg.brandIcon || '').trim() || brandInitials(name)).slice(0, 3);
+    var col = (STATE.cfg.brandIconColor || '').trim() || DEFAULT_ICON_COLOR;
+    var link = document.getElementById('favicon');
+    if (link) { var nw = link.cloneNode(false); nw.setAttribute('href', faviconURI(mono, col)); link.parentNode.replaceChild(nw, link); }
   }
   applyBrand();   // vmops.js loads after the nav, so the brand element already exists
 
@@ -583,7 +602,9 @@
       privSlim() +
       '<h2>Branding</h2><div class="card">' +
       '<div class="field"><label>App name</label><input type="text" id="brandName" value="' + esc(c.brand || '') + '" placeholder="' + esc(DEFAULT_BRAND) + '"></div>' +
-      '<div class="muted" style="font-size:12.5px">Sets the name shown in the top nav and the browser tab. Leave blank to use “' + esc(DEFAULT_BRAND) + '”.</div></div>' +
+      '<div class="grid2"><div class="field"><label>Icon monogram</label><input type="text" id="brandIcon" maxlength="3" value="' + esc(c.brandIcon || '') + '" placeholder="' + esc(brandInitials((c.brand || '').trim() || DEFAULT_BRAND)) + '"></div>' +
+      '<div class="field"><label>Icon color</label><input type="color" id="brandIconColor" value="' + esc((c.brandIconColor || '').trim() || DEFAULT_ICON_COLOR) + '" style="width:60px;padding:3px;height:38px"></div></div>' +
+      '<div class="muted" style="font-size:12.5px">Sets the name in the top nav + browser tab and the page icon (favicon) — 1–3 letters on a colored tile. Leave the name blank to use “' + esc(DEFAULT_BRAND) + '”; leave the monogram blank to derive it from the name.</div></div>' +
       '<h2>Data import</h2><div class="card">' +
       '<div class="muted" style="font-size:13px;margin-bottom:12px">Bring in each data source — Active Directory, ManageEngine, Tenable.sc / .io, CrowdStrike, and scan findings. Files are parsed and cached in your browser and feed the dashboards.</div>' +
       '<a class="btn primary" href="#/import">Open Data Import →</a></div>' +
@@ -610,6 +631,8 @@
       '<div class="toolbar"><button class="btn primary" id="saveCfg">Save settings</button><button class="btn" id="resetSla">Reset SLA to defaults</button></div>';
     document.getElementById('saveCfg').addEventListener('click', function () {
       STATE.cfg.brand = document.getElementById('brandName').value.trim();
+      STATE.cfg.brandIcon = document.getElementById('brandIcon').value.trim();
+      STATE.cfg.brandIconColor = document.getElementById('brandIconColor').value.trim();
       [].forEach.call(document.querySelectorAll('[data-sla]'), function (i) { var v = parseInt(i.value, 10); if (!isNaN(v)) STATE.cfg.sla[i.getAttribute('data-sla')] = v; });
       STATE.cfg.jiraBase = document.getElementById('jiraBase').value.trim();
       STATE.cfg.jiraPid = document.getElementById('jiraPid').value.trim();
