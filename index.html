@@ -355,12 +355,12 @@
         <a href="#/stats" data-route="stats">CVE Statistics</a>
         <a href="#/browse" data-route="browse">Browse the corpus</a>
         <a href="#/latest" data-route="latest">Latest CVEs</a>
+        <a href="#/triage" data-route="triage">Triage</a>
       </div>
     </div>
     <div class="navmenu" data-menu="tools">
       <button class="navmenu-btn" type="button">Tools <span class="caret">▾</span></button>
       <div class="navmenu-list">
-        <a href="#/triage" data-route="triage">Triage</a>
         <a href="#/analyze" data-route="tenable">Tenable</a>
         <a href="#/prompt-scanner" data-route="prompt-scanner">AI Prompt Scanner</a>
         <a href="#/nasl" data-route="nasl">NASL Viewer</a>
@@ -1989,11 +1989,11 @@
             '<td class="muted" style="font-family:var(--mono);font-size:12px">' + esc(it.id || '') + '</td></tr>';
         }).join('') + '</tbody></table>'
       : '<div class="sub">No new Tenable plugins in the last 24 hours.</div>';
-    h += reportSection('Newest Tenable plugins', tp.length, 'The most recently scannable vulnerabilities — newest Nessus plugins from Tenable’s public feed in the last 24 hours. <a href="#/detections">See all →</a>', tbody);
-
-    // 5. New critical CVEs — live from the NVD (last 48h)
+    // New critical CVEs (NVD) — placed above the Tenable plugins feed
     h += reportSection('New critical CVEs <span class="muted" style="font-size:12px;font-weight:400">· last 24h</span>', null,
       'Critical-severity CVEs newly published to the NVD, ranked with the same risk signals as Search.', '<div id="repCrit"></div>');
+
+    h += reportSection('Newest Tenable plugins', tp.length, 'The most recently scannable vulnerabilities — newest Nessus plugins from Tenable’s public feed in the last 24 hours. <a href="#/detections">See all →</a>', tbody);
 
     (target || app).innerHTML = h;
     runReportCriticals();
