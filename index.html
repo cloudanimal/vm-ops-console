@@ -350,6 +350,7 @@
     <span class="navsep" aria-hidden="true"></span>
     <a class="tab" href="#/report" data-route="report">Morning Report</a>
     <a class="tab" href="#/dashboard" data-route="dashboard">Ops&nbsp;Dashboard</a>
+    <a class="tab" href="#/findings" data-route="findings">Findings</a>
     <span class="navsep" aria-hidden="true"></span>
     <div class="navmenu" data-menu="intel">
       <button class="navmenu-btn" type="button" aria-haspopup="true" aria-expanded="false">CVE&nbsp;Intelligence <span class="caret">▾</span></button>
@@ -386,7 +387,7 @@
     <a href="https://osv.dev" target="_blank" rel="noopener">OSV.dev</a>, and the
     <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV catalog</a>.
     Built by <a href="https://cloudanimal.github.io" target="_blank" rel="noopener">Joe Cook</a>.
-    <div class="disclaimer">VM Ops Console runs entirely in your browser — public CVE lookups are read-only, and your imported findings, scan data, and settings stay local. Risk signals (CVSS, EPSS, KEV, LEV, SSVC) often disagree by design. Always confirm against the vendor before acting.</div>
+    <div class="disclaimer"><span class="brandname">VM Ops Console</span> runs entirely in your browser — public CVE lookups are read-only, and your imported findings, scan data, and settings stay local. Risk signals (CVSS, EPSS, KEV, LEV, SSVC) often disagree by design. Always confirm against the vendor before acting.</div>
   </footer>
 
 </div>
@@ -474,7 +475,6 @@
   // Ops Dashboard hub: a sub-nav tab strip shown across the operational dashboards.
   var DASH_TABS = [
     { k: 'dashboard', href: '#/dashboard', label: 'Overview' },
-    { k: 'findings', href: '#/findings', label: 'Findings' },
     { k: 'agent-coverage', href: '#/agent-coverage', label: 'Agent&nbsp;Coverage' },
     { k: 'tvd', href: '#/tvd', label: 'Tenable' },
     { k: 'wiz', href: '#/wiz', label: 'Wiz' }
@@ -2050,7 +2050,7 @@
       return s;
     }
     function lbl(x, y, t) { return '<text x="' + x + '" y="' + y + '" text-anchor="middle" font-family="var(--sans)" font-size="10.5" fill="var(--faint)">' + esc(t) + '</text>'; }
-    var a = '<svg viewBox="0 0 760 540" width="100%" style="max-width:760px;height:auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VM Ops Console architecture diagram">' +
+    var a = '<svg viewBox="0 0 760 540" width="100%" style="max-width:760px;height:auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + esc(window.VM_BRAND || 'VM Ops Console') + ' architecture diagram">' +
       '<defs><marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--soft)"/></marker></defs>';
     // sources — wider box + two wrapped lines so nothing overflows the border
     a += '<rect x="20" y="14" width="720" height="74" rx="9" fill="var(--surface)" stroke="var(--faint)" stroke-width="1.3"/>';
@@ -2063,7 +2063,7 @@
     a += box(40, 250, 330, 50, 'Scheduled GitHub Actions', 'daily · weekly · monthly');
     a += box(40, 348, 330, 50, 'Static datasets', 'data/*.json + manifest.json (committed)');
     // hosting + SPA
-    a += box(40, 440, 680, 50, 'VM Ops Console', 'single-page app · vanilla JS · hash-routed · GitHub Pages', true);
+    a += box(40, 440, 680, 50, (window.VM_BRAND || 'VM Ops Console'), 'single-page app · vanilla JS · hash-routed · GitHub Pages', true);
     // arrows (solid = build path, dashed = live)
     function arr(x1, y1, x2, y2, dash) { return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="var(--soft)" stroke-width="1.4"' + (dash ? ' stroke-dasharray="5 4"' : '') + ' marker-end="url(#ah)"/>'; }
     a += arr(205, 88, 205, 148);             // sources -> build scripts
@@ -2364,7 +2364,7 @@
 
   function viewAbout() {
     setActive('about');
-    app.innerHTML = '<header class="view"><div class="overline">About</div><h1>How VM Ops Console works</h1>' +
+    app.innerHTML = '<header class="view"><div class="overline">About</div><h1>How ' + esc(window.VM_BRAND || 'VM Ops Console') + ' works</h1>' +
       '<p class="lede">A backend-free vulnerability-management operations console. It pairs a public-CVE intelligence front end with operational tooling — a findings workbench, a Tenable vulnerability dashboard, and an AD-vs-agent coverage reconciler — under one nav, one theme, and one natural-language Ask AI box that runs on-device. Your scan data, findings, notes, and keys stay in your browser; the only outbound calls are public CVE lookups.</p></header>' +
       '<div class="toc"><span class="toc-lab">On this page</span>' +
       ABOUT_SECTIONS.map(function (s) { return '<a class="toc-link" data-to="' + s[0] + '">' + esc(s[1]) + '</a>'; }).join('') + '</div>' +
@@ -2438,7 +2438,7 @@
     setActive('tenable');
     app.innerHTML =
       '<header class="view"><div class="overline">Tenable plugin feed</div><h1>Latest Plugins</h1>' +
-      '<p class="lede">The newest Tenable Nessus plugins — the most recently scannable vulnerabilities — syndicated from Tenable’s public feed and cross-linked to VM Ops Console’s own CVE detail pages.</p></header>' +
+      '<p class="lede">The newest Tenable Nessus plugins — the most recently scannable vulnerabilities — syndicated from Tenable’s public feed and cross-linked to ' + esc(window.VM_BRAND || 'VM Ops Console') + '’s own CVE detail pages.</p></header>' +
       tenableSubnav('detections') +
       '<div id="latest">' + spinner('Loading the latest Tenable plugins…') + '</div>';
     renderLatestDetections();
@@ -2456,7 +2456,7 @@
       '<p class="lede">Upload a Tenable or Nessus export (CSV or .nessus) for an instant risk read-out — severity, exploitability, and overlap with CISA KEV — ranked for action.</p></header>' +
       tenableSubnav('analyze') +
       '<div class="privacy"><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>' +
-      '<div><b>100% local — your data never leaves your browser.</b> The file is parsed locally in JavaScript; nothing is uploaded. The only network request is for VM Ops Console’s own KEV reference list, used to cross-reference — your scan data is never sent anywhere. Verify it in your browser’s Network tab, and reloading the page discards everything.</div></div>' +
+      '<div><b>100% local — your data never leaves your browser.</b> The file is parsed locally in JavaScript; nothing is uploaded. The only network request is for ' + esc(window.VM_BRAND || 'VM Ops Console') + '’s own KEV reference list, used to cross-reference — your scan data is never sent anywhere. Verify it in your browser’s Network tab, and reloading the page discards everything.</div></div>' +
       '<label class="drop" id="adrop"><input type="file" id="afile" accept=".csv,.nessus,.xml,text/csv,text/xml" hidden>' +
       '<span class="drop-main">Drop a Tenable export here, or click to choose</span>' +
       '<span class="drop-sub">CSV or .nessus — processed entirely on your device</span></label>' +
@@ -2784,6 +2784,13 @@
   });
   route();
 })();
+</script>
+<script>
+  /* Offline support: cache the app shell + the on-device Ask AI model so it runs without a network
+     after the first visit. Safe no-op if service workers are unavailable. */
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+  }
 </script>
 </body>
 </html>

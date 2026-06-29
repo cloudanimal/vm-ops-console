@@ -446,7 +446,7 @@ function buildModel(){
 
 // Intune temporarily removed — needs a different inventory-model approach (AD ∪ Intune), to be reintroduced.
 // colours are CSS-var names so the colour-blind palette can remap them live
-const AGENTS = [ ['me','ManageEngine','--me'], ['ten','Tenable','--ten'], ['cs','CrowdStrike','--cs'] ];
+const AGENTS = [ ['me','ManageEngine','--me'], ['ten','Tenable','--ten'], ['cs','CS','--cs'] ];
 const AKEYS = AGENTS.map(a=>a[0]);
 const AGENT_NAME = Object.fromEntries(AGENTS.map(a=>[a[0],a[1]]));
 
@@ -510,7 +510,7 @@ function render(){
   });
   cards += kpi('Fully covered', pct(fully,denom)+'%', `${fmt(fully)} on all ${AKEYS.length} agents`, 'var(--ok)');
   cards += kpi('No coverage', fmt(none), 'in-scope, 0 agents', none? 'var(--crit)':null);
-  cards += kpi('No EDR (CrowdStrike)', fmt(noEdr), pct(noEdr,denom)+'% of in-scope', noEdr? 'var(--crit)':null);
+  cards += kpi('No EDR (CS)', fmt(noEdr), pct(noEdr,denom)+'% of in-scope', noEdr? 'var(--crit)':null);
   cards += kpi('Single-agent hosts', fmt(single), `only 1 of ${AKEYS.length} agents`, single? 'var(--warn)':null);
   if(newServers!=null) cards += kpi('New servers (30d)', fmt(newServers), 'servers created in the last 30 days', newServers? 'var(--accent)':null);
   cards += kpi('Unhealthy agents', fmt(unhealthy), `present but scan / check-in past threshold`, unhealthy? 'var(--noscan)':null);

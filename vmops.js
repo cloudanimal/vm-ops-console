@@ -27,7 +27,7 @@
   var SLABEL = {}; STATUS.forEach(function (s) { SLABEL[s.k] = s.l; });
   var OPEN_STATES = STATUS.filter(function (s) { return s.open; }).map(function (s) { return s.k; });
   var SEV_ORDER = { Critical: 0, High: 1, Medium: 2, Low: 3, Info: 4 };
-  var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tsUrl: '', tsAccess: '', tsSecret: '', tioAccess: '', tioSecret: '' };
+  var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tsUrl: '', tsAccess: '', tsSecret: '', tioAccess: '', tioSecret: '', meUrl: '', meClientId: '', meClientSecret: '' };
   var DEFAULT_BRAND = 'VM Ops Console';
   var DEFAULT_ICON_COLOR = '#28415d';
 
@@ -60,7 +60,9 @@
   }
   function applyBrand() {
     var name = (STATE.cfg.brand || '').trim() || DEFAULT_BRAND;
+    window.VM_BRAND = name;   // read by the CVE-shell views (About, footer, diagram, ledes)
     var el = document.querySelector('nav.top .brand'); if (el) el.textContent = name;
+    [].forEach.call(document.querySelectorAll('.brandname'), function (s) { s.textContent = name; });
     try { document.title = name; } catch (e) {}
     var mono = ((STATE.cfg.brandIcon || '').trim() || brandInitials(name)).slice(0, 3);
     var col = (STATE.cfg.brandIconColor || '').trim() || DEFAULT_ICON_COLOR;
@@ -228,7 +230,7 @@
   }
 
   function viewFindings() {
-    setActive('dashboard');
+    setActive('findings');
     // Apply a deep-link query (e.g. Ask AI -> #/findings?sev=Critical&overdue=1) ONLY when it actually
     // changes — otherwise the in-page filter handlers (which re-call viewFindings without touching the
     // hash) would re-parse the stale query every render and clobber the user's selection.
@@ -628,6 +630,11 @@
       '<div style="font-weight:600;font-size:13px;color:var(--soft);margin:14px 0 6px">Tenable.io (cloud.tenable.com)</div>' +
       '<div class="grid2"><div class="field"><label>Access key</label><input type="password" id="tioAccess" autocomplete="off" value="' + esc(c.tioAccess) + '" placeholder="access key"></div>' +
       '<div class="field"><label>Secret key</label><input type="password" id="tioSecret" autocomplete="off" value="' + esc(c.tioSecret) + '" placeholder="secret key"></div></div></div>' +
+      '<h2>ManageEngine API</h2><div class="card">' +
+      '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Endpoint Central / Vulnerability Manager Plus uses <b>OAuth2</b> (Zoho self-client). Stored in <b>this browser only</b>. Like Tenable.io / CrowdStrike, ManageEngine doesn\'t send CORS headers to a static origin, so these aren\'t used for live in-browser pulls yet — they\'re saved for a future local connector. To bring data in today, use <a href="#/import">Import</a> with a ManageEngine export.</div>' +
+      '<div class="field"><label>Server URL</label><input type="text" id="meUrl" value="' + esc(c.meUrl) + '" placeholder="https://endpoint-central.yourorg.com"></div>' +
+      '<div class="grid2"><div class="field"><label>Client ID</label><input type="password" id="meClientId" autocomplete="off" value="' + esc(c.meClientId) + '" placeholder="client ID"></div>' +
+      '<div class="field"><label>Client Secret</label><input type="password" id="meClientSecret" autocomplete="off" value="' + esc(c.meClientSecret) + '" placeholder="client secret"></div></div></div>' +
       '<div class="toolbar"><button class="btn primary" id="saveCfg">Save settings</button><button class="btn" id="resetSla">Reset SLA to defaults</button></div>';
     document.getElementById('saveCfg').addEventListener('click', function () {
       STATE.cfg.brand = document.getElementById('brandName').value.trim();
@@ -643,6 +650,9 @@
       STATE.cfg.tsSecret = document.getElementById('tsSecret').value.trim();
       STATE.cfg.tioAccess = document.getElementById('tioAccess').value.trim();
       STATE.cfg.tioSecret = document.getElementById('tioSecret').value.trim();
+      STATE.cfg.meUrl = document.getElementById('meUrl').value.trim();
+      STATE.cfg.meClientId = document.getElementById('meClientId').value.trim();
+      STATE.cfg.meClientSecret = document.getElementById('meClientSecret').value.trim();
       save('vmops-config', STATE.cfg); applyBrand(); toast('Settings saved');
     });
     document.getElementById('resetSla').addEventListener('click', function () { STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla); save('vmops-config', STATE.cfg); viewSettings(); toast('SLA windows reset'); });
