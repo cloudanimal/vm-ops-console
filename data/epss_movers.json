@@ -1,14 +1,14 @@
 {
-  "updated": "2026-06-28",
+  "updated": "2026-06-29",
   "source": "FIRST EPSS",
-  "current_date": "2026-06-28",
-  "previous_date": "2026-06-21",
+  "current_date": "2026-06-29",
+  "previous_date": "2026-06-22",
   "risers": [
     {
       "id": "CVE-2026-35273",
-      "now": 0.89793,
+      "now": 0.9233,
       "prev": 0.07511,
-      "delta": 0.82282,
+      "delta": 0.84819,
       "name": "Oracle Corporation PeopleSoft Enterprise PeopleTools"
     },
     {
@@ -66,6 +66,13 @@
       "prev": 0.1648,
       "delta": 0.53516,
       "name": "Ghost has a SQL Injection in its Content API"
+    },
+    {
+      "id": "CVE-2025-29635",
+      "now": 0.87239,
+      "prev": 0.3515,
+      "delta": 0.52089,
+      "name": "A command injection vulnerability in D-Link DIR-823X 240126 and 240802 allows an authorized attacker to execut"
     },
     {
       "id": "CVE-2026-9082",
@@ -180,13 +187,6 @@
       "name": "Google Chrome"
     },
     {
-      "id": "CVE-2023-32434",
-      "now": 0.51517,
-      "prev": 0.19217,
-      "delta": 0.323,
-      "name": "Apple macOS"
-    },
-    {
       "id": "CVE-2017-6737",
       "now": 0.42632,
       "prev": 0.1055,
@@ -218,9 +218,9 @@
   "newly_high": [
     {
       "id": "CVE-2026-35273",
-      "now": 0.89793,
+      "now": 0.9233,
       "prev": 0.07511,
-      "delta": 0.82282,
+      "delta": 0.84819,
       "name": "Oracle Corporation PeopleSoft Enterprise PeopleTools"
     },
     {
@@ -280,6 +280,13 @@
       "name": "Ghost has a SQL Injection in its Content API"
     },
     {
+      "id": "CVE-2025-29635",
+      "now": 0.87239,
+      "prev": 0.3515,
+      "delta": 0.52089,
+      "name": "A command injection vulnerability in D-Link DIR-823X 240126 and 240802 allows an authorized attacker to execut"
+    },
+    {
       "id": "CVE-2026-9082",
       "now": 0.84631,
       "prev": 0.33665,
@@ -322,13 +329,6 @@
       "name": "Atlassian Atlassian OAuth Plugin"
     },
     {
-      "id": "CVE-2023-32434",
-      "now": 0.51517,
-      "prev": 0.19217,
-      "delta": 0.323,
-      "name": "Apple macOS"
-    },
-    {
       "id": "CVE-2026-50751",
       "now": 0.71051,
       "prev": 0.41152,
@@ -350,18 +350,18 @@
       "name": "Windows Netlogon Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2008-5053",
-      "now": 0.63276,
-      "prev": 0.46999,
-      "delta": 0.16277,
-      "name": "PHP remote file inclusion vulnerability in admin.rssreader.php in the Simple RSS Reader (com_rssreader) 1.0 co"
-    },
-    {
       "id": "CVE-2026-20127",
       "now": 0.57793,
       "prev": 0.48158,
       "delta": 0.09635,
       "name": "Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability"
+    },
+    {
+      "id": "CVE-2023-3450",
+      "now": 0.50085,
+      "prev": 0.4609,
+      "delta": 0.03995,
+      "name": "Ruijie RG-BCR860 Network Diagnostic Page os command injection"
     },
     {
       "id": "CVE-2025-24367",
