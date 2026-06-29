@@ -228,6 +228,7 @@ async function loadSample(){
       gz('sample-data/tvd/mitigated.csv.gz')
     ]);
     showLoading('Parsing findings…'); await nextPaint();
+    STATE.cumulative = []; STATE.mitigated = [];   // replace, don't append — clicking "Load sample" gives a clean sample
     parseCsv(cum, 'cumulative'); parseCsv(mit, 'mitigated');
     setState();
     showLoading('Building dashboard…'); await nextPaint();
