@@ -120,6 +120,7 @@
     var it = cveIntel(f.cve);
     if (it.kev) s += 600; if (it.ransomware) s += 250; if (it.exploit) s += 200;
     if (it.epss != null) s += Math.round(it.epss * 300);   // EPSS probability folds in (0 → +300)
+    if (f.vpr != null) s += Math.round(f.vpr * 20);         // Tenable VPR folds in (0 → +200)
     var di = dueIn(f); if (di != null && isOpen(f)) s += di < 0 ? 60 + Math.min(40, -di) : Math.max(0, 30 - di);
     s += Math.min(20, (daysSince(f.firstSeen) || 0) / 10);
     if (!isOpen(f)) s -= 2000;   // resolved/accepted always rank below anything open
@@ -191,6 +192,7 @@
       else if (c === 'status') { va = SLABEL[statusOf(a)]; vb = SLABEL[statusOf(b)]; }
       else if (c === 'age') { va = daysSince(a.firstSeen) || 0; vb = daysSince(b.firstSeen) || 0; }
       else if (c === 'epss') { va = cveIntel(b.cve).epss || 0; vb = cveIntel(a.cve).epss || 0; }   // high → low by default
+      else if (c === 'vpr') { va = b.vpr || 0; vb = a.vpr || 0; }                                   // high → low by default
       else if (c === 'owner') { va = (ovOf(a).owner || '~'); vb = (ovOf(b).owner || '~'); }
       else if (c === 'repo') { va = (repoOf(a) || '~'); vb = (repoOf(b) || '~'); }
       else { va = (a[c] || ''); vb = (b[c] || ''); }
@@ -431,6 +433,7 @@
     { id: 'sev', w: 95, label: 'Sev', sort: 'sev', resize: true },
     { id: 'pri', w: 85, label: 'Priority', sort: 'risk', resize: true },
     { id: 'epss', w: 80, label: 'EPSS', sort: 'epss', resize: true },
+    { id: 'vpr', w: 70, label: 'VPR', sort: 'vpr', resize: true },
     { id: 'status', w: 140, label: 'Status', sort: 'status', resize: true },
     { id: 'sla', w: 85, label: 'SLA', sort: 'due', resize: true },
     { id: 'owner', w: 120, label: 'Owner', sort: 'owner', resize: true },
@@ -459,6 +462,7 @@
       '<td>' + sevBadge(f.severity) + '</td>' +
       '<td>' + priChip(f) + '</td>' +
       '<td>' + epssCell(f) + '</td>' +
+      '<td>' + vprCell(f) + '</td>' +
       '<td>' + statusSelect(f, st) + '</td>' +
       '<td><span class="pill-sla ' + ss + '">' + dueTxt + '</span></td>' +
       '<td>' + (ovOf(f).owner ? esc(ovOf(f).owner) : '<span class="muted">—</span>') + '</td>' +
@@ -498,7 +502,7 @@
         '<td colspan="3"><span class="gcaret">▸</span> <b>' + esc(g.label) + '</b> <span class="muted" style="font-size:12px">' + unit + '</span>' + (chips ? ' ' + chips : '') + '</td>' +
         '<td>' + sevBadge(g.maxSev) + '</td>' +
         '<td>' + (g.pri ? '<span class="pri ' + g.pri.toLowerCase() + '">' + g.pri + '</span>' : '<span class="muted">—</span>') + '</td>' +
-        '<td colspan="5" class="muted" style="font-size:12px">' + g.openCount + ' open / ' + g.count + '</td><td></td></tr>';
+        '<td colspan="6" class="muted" style="font-size:12px">' + g.openCount + ' open / ' + g.count + '</td><td></td></tr>';
       return head + g.items.map(function (f) { return findingRow(f, g.id); }).join('');
     }).join('');
     return '<table class="grid resizable" id="gridHost" style="width:' + totalW() + 'px">' + gridHead() + '<tbody>' + body + '</tbody></table>';
@@ -513,6 +517,8 @@
   }
   function priChip(f) { var p = priorityOf(f); return p ? '<span class="pri ' + p.toLowerCase() + '">' + p + '</span>' : '<span class="muted">—</span>'; }
   function epssCell(f) { var e = cveIntel(f.cve).epss; if (e == null) return '<span class="muted">—</span>'; return '<span class="epss ' + (e >= 0.5 ? 'hi' : e >= 0.1 ? 'mid' : '') + '">' + Math.round(e * 100) + '%</span>'; }
+  function vprBand(v) { return v >= 9 ? 'crit' : v >= 7 ? 'hi' : v >= 4 ? 'mid' : ''; }
+  function vprCell(f) { var v = f.vpr; if (v == null) return '<span class="muted">—</span>'; return '<span class="vpr ' + vprBand(v) + '" title="Tenable VPR">' + v.toFixed(1) + '</span>'; }
   function drawerIntel(f) {
     var it = cveIntel(f.cve), p = priorityOf(f), parts = [];
     if (p) parts.push('<span class="pri ' + p.toLowerCase() + '">' + p + '</span>');
@@ -607,6 +613,7 @@
       '<div class="row"><span class="k">Severity</span><span><span class="badge ' + (['crit', 'high', 'med', 'low'][SEV_ORDER[f.severity]] || 'low') + '">' + esc(f.severity) + '</span></span></div>' +
       '<div class="row"><span class="k">Exploitation</span><span>' + drawerIntel(f) + '</span></div>' +
       '<div class="row"><span class="k">CVSS</span><span>' + (f.cvss != null ? esc(f.cvss) : '—') + '</span></div>' +
+      '<div class="row"><span class="k">VPR <span class="muted" style="font-weight:400;font-size:11px">Tenable</span></span><span>' + (f.vpr != null ? '<span class="vpr ' + vprBand(f.vpr) + '">' + f.vpr.toFixed(1) + '</span>' : '<span class="muted">—</span>') + '</span></div>' +
       '<div class="row"><span class="k">EPSS</span><span id="drEpss" class="muted">…</span></div>' +
       '<div class="row"><span class="k">NIST LEV</span><span id="drLev" class="muted">…</span></div>' +
       '<div class="row"><span class="k">SSVC</span><span id="drSsvc"></span></div>' +
@@ -820,7 +827,8 @@
       iHost = col([/dns\s*name/i, /^host$/i, /hostname/i, /^name$/i, /ip\s*address/i]), iName = col([/plugin\s*name/i, /^name$/i, /synopsis/i]),
       iDesc = col([/^description$/i, /\bdescription\b/i, /synopsis/i]),
       iRepo = col([/^repo(sitory)?$/i, /\brepositor/i, /application/i, /\bapp\b/i]),
-      iPid = col([/plugin\s*id/i]), iSeen = col([/first\s*(discovered|seen)/i, /plugin\s*publication/i, /discovered/i]);
+      iPid = col([/plugin\s*id/i]), iSeen = col([/first\s*(discovered|seen)/i, /plugin\s*publication/i, /discovered/i]),
+      iVpr = col([/vpr.*score/i, /\bvpr\b/i]);
     if (iCve === -1) return [];
     var out = [];
     rows.forEach(function (r) {
@@ -830,11 +838,12 @@
       var host = iHost > -1 ? (r[iHost] || '').trim() : 'unknown';
       var sev = normSev(iSev > -1 ? r[iSev] : '', iCvss > -1 ? parseFloat(r[iCvss]) : null);
       var cvss = iCvss > -1 && r[iCvss] ? parseFloat(r[iCvss]) : null;
+      var vpr = iVpr > -1 && r[iVpr] ? parseFloat(r[iVpr]) : null;
       var seen = iSeen > -1 && r[iSeen] ? toISO(r[iSeen]) : todayISO();
       var nm = iName > -1 ? (r[iName] || '').trim() : '';
       var ds = iDesc > -1 ? (r[iDesc] || '').trim() : '';
       var rp = iRepo > -1 ? (r[iRepo] || '').trim() : '';
-      cves.forEach(function (cve) { out.push({ cve: cve.toUpperCase(), host: host || 'unknown', severity: sev, cvss: isNaN(cvss) ? null : cvss, plugin: iPid > -1 ? (r[iPid] || '').trim() : '', name: nm, desc: ds || nm, repo: rp, source: 'Tenable', firstSeen: seen }); });
+      cves.forEach(function (cve) { out.push({ cve: cve.toUpperCase(), host: host || 'unknown', severity: sev, cvss: isNaN(cvss) ? null : cvss, vpr: (vpr == null || isNaN(vpr)) ? null : vpr, plugin: iPid > -1 ? (r[iPid] || '').trim() : '', name: nm, desc: ds || nm, repo: rp, source: 'Tenable', firstSeen: seen }); });
     });
     return out;
   }
@@ -851,10 +860,10 @@
 
   function exportCsv() {
     var list = visibleFindings();
-    var head = ['CVE', 'Host', 'Description', 'Severity', 'CVSS', 'Status', 'Owner', 'Repo', 'FirstSeen', 'SLA_Due', 'Days_To_Due', 'Plugin', 'Source', 'Notes'];
+    var head = ['CVE', 'Host', 'Description', 'Severity', 'CVSS', 'VPR', 'Status', 'Owner', 'Repo', 'FirstSeen', 'SLA_Due', 'Days_To_Due', 'Plugin', 'Source', 'Notes'];
     var lines = [head.join(',')].concat(list.map(function (f) {
       var o = ovOf(f);
-      return [f.cve, f.host, f.desc || f.name || '', f.severity, f.cvss == null ? '' : f.cvss, SLABEL[statusOf(f)], o.owner || '', repoOf(f), f.firstSeen, dueDate(f) || '', dueIn(f) == null ? '' : dueIn(f), f.plugin || '', f.source || '', (o.notes || '').replace(/\s+/g, ' ')]
+      return [f.cve, f.host, f.desc || f.name || '', f.severity, f.cvss == null ? '' : f.cvss, f.vpr == null ? '' : f.vpr, SLABEL[statusOf(f)], o.owner || '', repoOf(f), f.firstSeen, dueDate(f) || '', dueIn(f) == null ? '' : dueIn(f), f.plugin || '', f.source || '', (o.notes || '').replace(/\s+/g, ' ')]
         .map(function (v) { v = String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }).join(',');
     }));
     var blob = new Blob([lines.join('\n')], { type: 'text/csv' }), a = document.createElement('a');
@@ -1009,7 +1018,8 @@
       var n = 2 + (vi % 4);
       for (var h = 0; h < n; h++) {
         var age = (vi * 13 + h * 7) % 200; // 0..200 days back -> varied SLA states
-        out.push({ cve: v[0], host: hosts[(vi + h) % hosts.length], severity: v[2], cvss: v[3], plugin: String(pid++), name: v[1], desc: v[4], repo: repoList[(vi + h) % repoList.length], source: 'Tenable', firstSeen: addDays(todayISO(), -age) });
+        var svpr = Math.round(Math.max(1, Math.min(10, (v[3] || 5) + (((vi * 3 + h) % 7) - 3) * 0.6)) * 10) / 10;
+        out.push({ cve: v[0], host: hosts[(vi + h) % hosts.length], severity: v[2], cvss: v[3], vpr: svpr, plugin: String(pid++), name: v[1], desc: v[4], repo: repoList[(vi + h) % repoList.length], source: 'Tenable', firstSeen: addDays(todayISO(), -age) });
       }
     });
     return out;
