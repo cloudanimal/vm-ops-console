@@ -1,72 +1,9 @@
 {
-  "updated": "2026-06-29",
+  "updated": "2026-06-30",
   "source": "FIRST EPSS",
-  "current_date": "2026-06-29",
-  "previous_date": "2026-06-22",
+  "current_date": "2026-06-30",
+  "previous_date": "2026-06-23",
   "risers": [
-    {
-      "id": "CVE-2026-35273",
-      "now": 0.9233,
-      "prev": 0.07511,
-      "delta": 0.84819,
-      "name": "Oracle Corporation PeopleSoft Enterprise PeopleTools"
-    },
-    {
-      "id": "CVE-2026-20253",
-      "now": 0.88171,
-      "prev": 0.10035,
-      "delta": 0.78136,
-      "name": "Unauthenticated Arbitrary File Creation and Truncation in a PostgreSQL Sidecar Service End"
-    },
-    {
-      "id": "CVE-2026-34910",
-      "now": 0.78555,
-      "prev": 0.04509,
-      "delta": 0.74046,
-      "name": "Ubiquiti Inc UniFi OS Server"
-    },
-    {
-      "id": "CVE-2026-48907",
-      "now": 0.80425,
-      "prev": 0.06854,
-      "delta": 0.73571,
-      "name": "Joomla Extension - joomlacontenteditor.net - Remote Code Execution in JCE extension for Jo"
-    },
-    {
-      "id": "CVE-2026-2041",
-      "now": 0.74605,
-      "prev": 0.05517,
-      "delta": 0.69088,
-      "name": "Nagios Host zabbixagent_configwizard_func Command Injection Remote Code Execution Vulnerab"
-    },
-    {
-      "id": "CVE-2026-0257",
-      "now": 0.86678,
-      "prev": 0.18583,
-      "delta": 0.68095,
-      "name": "PAN-OS: GlobalProtect Authentication Bypass Vulnerabilities"
-    },
-    {
-      "id": "CVE-2026-45498",
-      "now": 0.63076,
-      "prev": 0.025,
-      "delta": 0.60576,
-      "name": "Microsoft Defender Denial of Service Vulnerability"
-    },
-    {
-      "id": "CVE-2025-34291",
-      "now": 0.7889,
-      "prev": 0.25153,
-      "delta": 0.53737,
-      "name": "Langflow <= 1.6.9 CORS Misconfiguration to Token Hijack & RCE"
-    },
-    {
-      "id": "CVE-2026-26980",
-      "now": 0.69996,
-      "prev": 0.1648,
-      "delta": 0.53516,
-      "name": "Ghost has a SQL Injection in its Content API"
-    },
     {
       "id": "CVE-2025-29635",
       "now": 0.87239,
@@ -75,210 +12,210 @@
       "name": "A command injection vulnerability in D-Link DIR-823X 240126 and 240802 allows an authorized attacker to execut"
     },
     {
-      "id": "CVE-2026-9082",
-      "now": 0.84631,
-      "prev": 0.33665,
-      "delta": 0.50966,
-      "name": "Drupal core - Highly critical - SQL injection - SA-CORE-2026-004"
+      "id": "CVE-2026-34910",
+      "now": 0.78555,
+      "prev": 0.33615,
+      "delta": 0.4494,
+      "name": "Ubiquiti Inc UniFi OS Server"
     },
     {
-      "id": "CVE-2026-49160",
-      "now": 0.48438,
-      "prev": 0.00969,
-      "delta": 0.47469,
-      "name": "HTTP.sys Denial of Service Vulnerability"
-    },
-    {
-      "id": "CVE-2026-32202",
-      "now": 0.64095,
-      "prev": 0.19985,
-      "delta": 0.4411,
-      "name": "Windows Shell Spoofing Vulnerability"
-    },
-    {
-      "id": "CVE-2026-10523",
-      "now": 0.4719,
-      "prev": 0.04815,
-      "delta": 0.42375,
-      "name": "ivanti Sentry"
+      "id": "CVE-2022-35977",
+      "now": 0.33269,
+      "prev": 0.11789,
+      "delta": 0.2148,
+      "name": "Integer overflow in certain command arguments can drive Redis to OOM panic"
     },
     {
       "id": "CVE-2026-20230",
       "now": 0.41694,
-      "prev": 0.00566,
-      "delta": 0.41128,
+      "prev": 0.20442,
+      "delta": 0.21252,
       "name": "Cisco Cisco Unified Communications Manager"
     },
     {
-      "id": "CVE-2026-10520",
-      "now": 0.98937,
-      "prev": 0.59524,
-      "delta": 0.39413,
-      "name": "ivanti Sentry"
+      "id": "CVE-2026-27654",
+      "now": 0.21621,
+      "prev": 0.07865,
+      "delta": 0.13756,
+      "name": "NGINX ngx_http_dav_module vulnerability"
+    },
+    {
+      "id": "CVE-2026-21710",
+      "now": 0.26356,
+      "prev": 0.13066,
+      "delta": 0.1329,
+      "name": "nodejs node"
+    },
+    {
+      "id": "CVE-2024-6886",
+      "now": 0.40321,
+      "prev": 0.28228,
+      "delta": 0.12093,
+      "name": "Inproper Sanitation of field leading to stored XSS"
+    },
+    {
+      "id": "CVE-2025-2011",
+      "now": 0.46724,
+      "prev": 0.35077,
+      "delta": 0.11647,
+      "name": "Slider & Popup Builder by Depicter <= 3.6.1 - Unauthenticated SQL Injection via 's' Parame"
+    },
+    {
+      "id": "CVE-2025-0133",
+      "now": 0.43517,
+      "prev": 0.32139,
+      "delta": 0.11378,
+      "name": "PAN-OS: Reflected Cross-Site Scripting (XSS) Vulnerability in GlobalProtect Gateway and Po"
+    },
+    {
+      "id": "CVE-2022-28171",
+      "now": 0.49858,
+      "prev": 0.39333,
+      "delta": 0.10525,
+      "name": "hikvision DS-A71024/48/72R,DS-A80624S,DS-A81016S,DS-A72024/72R,DS-A80316S,DS-A82024D"
+    },
+    {
+      "id": "CVE-2025-31140",
+      "now": 0.26623,
+      "prev": 0.16852,
+      "delta": 0.09771,
+      "name": "JetBrains TeamCity"
+    },
+    {
+      "id": "CVE-2025-6965",
+      "now": 0.73495,
+      "prev": 0.64893,
+      "delta": 0.08602,
+      "name": "Integer Truncation on SQLite"
+    },
+    {
+      "id": "CVE-2022-2274",
+      "now": 0.44881,
+      "prev": 0.36513,
+      "delta": 0.08368,
+      "name": "RSA implementation bug in AVX512IFMA instructions"
     },
     {
       "id": "CVE-2026-42945",
       "now": 0.61469,
-      "prev": 0.23018,
-      "delta": 0.38451,
+      "prev": 0.5331,
+      "delta": 0.08159,
       "name": "NGINX ngx_http_rewrite_module vulnerability"
     },
     {
-      "id": "CVE-2021-30119",
-      "now": 0.59632,
-      "prev": 0.22281,
-      "delta": 0.37351,
-      "name": "Authenticated Authenticated reflective XSS in Kaseya VSA <= v9.5.6"
+      "id": "CVE-2022-35737",
+      "now": 0.19193,
+      "prev": 0.11431,
+      "delta": 0.07762,
+      "name": "SQLite 1.0.12 through 3.39.x before 3.39.2 sometimes allows an array-bounds overflow if billions of bytes are "
     },
     {
-      "id": "CVE-2026-4020",
-      "now": 0.39704,
-      "prev": 0.0298,
-      "delta": 0.36724,
-      "name": "Gravity SMTP <= 2.1.4 - Unauthenticated Sensitive Information Exposure via REST API"
+      "id": "CVE-1999-1223",
+      "now": 0.23055,
+      "prev": 0.15722,
+      "delta": 0.07333,
+      "name": "IIS 3.0 allows remote attackers to cause a denial of service via a request to an ASP page in which the URL con"
     },
     {
-      "id": "CVE-2026-3300",
-      "now": 0.40992,
-      "prev": 0.04756,
-      "delta": 0.36236,
-      "name": "Everest Forms Pro <= 1.9.12 - Unauthenticated Remote Code Execution via Calculation Field"
+      "id": "CVE-2022-3062",
+      "now": 0.44095,
+      "prev": 0.37405,
+      "delta": 0.0669,
+      "name": "Simple File List < 4.4.12 - Reflected Cross-Site Scripting"
     },
     {
-      "id": "CVE-2026-23918",
-      "now": 0.42802,
-      "prev": 0.06759,
-      "delta": 0.36043,
-      "name": "Apache HTTP Server: http2: double free and possible RCE on early reset"
+      "id": "CVE-2025-2748",
+      "now": 0.59066,
+      "prev": 0.5245,
+      "delta": 0.06616,
+      "name": "Kentico Xperience stored cross-site scripting in multiple-file upload functionality"
     },
     {
-      "id": "CVE-2001-0846",
-      "now": 0.40962,
-      "prev": 0.05735,
-      "delta": 0.35227,
-      "name": "Lotus Domino 5.x allows remote attackers to read files or execute arbitrary code by requesting the ReplicaID o"
+      "id": "CVE-2001-0877",
+      "now": 0.43764,
+      "prev": 0.37178,
+      "delta": 0.06586,
+      "name": "Universal Plug and Play (UPnP) on Windows 98, 98SE, ME, and XP allows remote attackers to cause a denial of se"
     },
     {
-      "id": "CVE-2026-44578",
-      "now": 0.37756,
-      "prev": 0.02829,
-      "delta": 0.34927,
-      "name": "Next.js: Server-side request forgery in applications using WebSocket upgrades"
+      "id": "CVE-2023-35719",
+      "now": 0.26426,
+      "prev": 0.1994,
+      "delta": 0.06486,
+      "name": "ManageEngine ADSelfService Plus GINA Client Insufficient Verification of Data Authenticity"
     },
     {
-      "id": "CVE-2026-33824",
-      "now": 0.5585,
-      "prev": 0.21074,
-      "delta": 0.34776,
-      "name": "Windows Internet Key Exchange (IKE) Service Extensions Remote Code Execution Vulnerability"
+      "id": "CVE-2026-20262",
+      "now": 0.07683,
+      "prev": 0.01371,
+      "delta": 0.06312,
+      "name": "Cisco Catalyst SD-WAN Manager Arbitrary File Write Vulnerability"
     },
     {
-      "id": "CVE-2017-9506",
-      "now": 0.71601,
-      "prev": 0.36995,
-      "delta": 0.34606,
-      "name": "Atlassian Atlassian OAuth Plugin"
+      "id": "CVE-2018-17283",
+      "now": 0.66347,
+      "prev": 0.60097,
+      "delta": 0.0625,
+      "name": "Zoho ManageEngine OpManager before 12.3 Build 123196 does not require authentication for /oputilsServlet reque"
     },
     {
-      "id": "CVE-2023-6702",
-      "now": 0.43238,
-      "prev": 0.10715,
-      "delta": 0.32523,
-      "name": "Google Chrome"
+      "id": "CVE-2026-33526",
+      "now": 0.08942,
+      "prev": 0.02738,
+      "delta": 0.06204,
+      "name": "Squid vulnerable to Denial of Service in ICP Request handling"
     },
     {
-      "id": "CVE-2017-6737",
-      "now": 0.42632,
-      "prev": 0.1055,
-      "delta": 0.32082,
-      "name": "Cisco IOS"
+      "id": "CVE-2026-32748",
+      "now": 0.08931,
+      "prev": 0.02734,
+      "delta": 0.06197,
+      "name": "Squid has Denial of Service in ICP Response handling"
     },
     {
-      "id": "CVE-2026-24858",
-      "now": 0.85844,
-      "prev": 0.55125,
-      "delta": 0.30719,
-      "name": "Fortinet FortiWeb"
+      "id": "CVE-2022-31101",
+      "now": 0.24146,
+      "prev": 0.17963,
+      "delta": 0.06183,
+      "name": "SQL Injection in prestashop/blockwishlist"
     },
     {
-      "id": "CVE-2026-50751",
-      "now": 0.71051,
-      "prev": 0.41152,
-      "delta": 0.29899,
-      "name": "User Authentication Bypass in VPN Remote Access and Mobile Access"
+      "id": "CVE-2006-3911",
+      "now": 0.16031,
+      "prev": 0.09923,
+      "delta": 0.06108,
+      "name": "PHP remote file inclusion vulnerability in OSI Codes PHP Live! 3.2.1 and earlier allows remote attackers to ex"
     },
     {
-      "id": "CVE-2025-6514",
-      "now": 0.76637,
-      "prev": 0.47209,
-      "delta": 0.29428,
-      "name": "OS command injection in mcp-remote when connecting to untrusted MCP servers"
+      "id": "CVE-2001-0663",
+      "now": 0.36791,
+      "prev": 0.30875,
+      "delta": 0.05916,
+      "name": "Terminal Server in Windows NT and Windows 2000 allows remote attackers to cause a denial of service via a sequ"
+    },
+    {
+      "id": "CVE-2022-45365",
+      "now": 0.49315,
+      "prev": 0.43437,
+      "delta": 0.05878,
+      "name": "WordPress Stock Ticker Plugin <= 3.23.2 is vulnerable to Cross Site Scripting (XSS)"
+    },
+    {
+      "id": "CVE-2009-4189",
+      "now": 0.78531,
+      "prev": 0.72716,
+      "delta": 0.05815,
+      "name": "HP Operations Manager has a default password of OvW*busr1 for the ovwebusr account, which allows remote attack"
+    },
+    {
+      "id": "CVE-2024-24401",
+      "now": 0.45884,
+      "prev": 0.40093,
+      "delta": 0.05791,
+      "name": "SQL Injection vulnerability in Nagios XI 2024R1.01 allows a remote attacker to execute arbitrary code via a cr"
     }
   ],
   "newly_high": [
-    {
-      "id": "CVE-2026-35273",
-      "now": 0.9233,
-      "prev": 0.07511,
-      "delta": 0.84819,
-      "name": "Oracle Corporation PeopleSoft Enterprise PeopleTools"
-    },
-    {
-      "id": "CVE-2026-20253",
-      "now": 0.88171,
-      "prev": 0.10035,
-      "delta": 0.78136,
-      "name": "Unauthenticated Arbitrary File Creation and Truncation in a PostgreSQL Sidecar Service End"
-    },
-    {
-      "id": "CVE-2026-34910",
-      "now": 0.78555,
-      "prev": 0.04509,
-      "delta": 0.74046,
-      "name": "Ubiquiti Inc UniFi OS Server"
-    },
-    {
-      "id": "CVE-2026-48907",
-      "now": 0.80425,
-      "prev": 0.06854,
-      "delta": 0.73571,
-      "name": "Joomla Extension - joomlacontenteditor.net - Remote Code Execution in JCE extension for Jo"
-    },
-    {
-      "id": "CVE-2026-2041",
-      "now": 0.74605,
-      "prev": 0.05517,
-      "delta": 0.69088,
-      "name": "Nagios Host zabbixagent_configwizard_func Command Injection Remote Code Execution Vulnerab"
-    },
-    {
-      "id": "CVE-2026-0257",
-      "now": 0.86678,
-      "prev": 0.18583,
-      "delta": 0.68095,
-      "name": "PAN-OS: GlobalProtect Authentication Bypass Vulnerabilities"
-    },
-    {
-      "id": "CVE-2026-45498",
-      "now": 0.63076,
-      "prev": 0.025,
-      "delta": 0.60576,
-      "name": "Microsoft Defender Denial of Service Vulnerability"
-    },
-    {
-      "id": "CVE-2025-34291",
-      "now": 0.7889,
-      "prev": 0.25153,
-      "delta": 0.53737,
-      "name": "Langflow <= 1.6.9 CORS Misconfiguration to Token Hijack & RCE"
-    },
-    {
-      "id": "CVE-2026-26980",
-      "now": 0.69996,
-      "prev": 0.1648,
-      "delta": 0.53516,
-      "name": "Ghost has a SQL Injection in its Content API"
-    },
     {
       "id": "CVE-2025-29635",
       "now": 0.87239,
@@ -287,74 +224,11 @@
       "name": "A command injection vulnerability in D-Link DIR-823X 240126 and 240802 allows an authorized attacker to execut"
     },
     {
-      "id": "CVE-2026-9082",
-      "now": 0.84631,
-      "prev": 0.33665,
-      "delta": 0.50966,
-      "name": "Drupal core - Highly critical - SQL injection - SA-CORE-2026-004"
-    },
-    {
-      "id": "CVE-2026-32202",
-      "now": 0.64095,
-      "prev": 0.19985,
-      "delta": 0.4411,
-      "name": "Windows Shell Spoofing Vulnerability"
-    },
-    {
-      "id": "CVE-2026-42945",
-      "now": 0.61469,
-      "prev": 0.23018,
-      "delta": 0.38451,
-      "name": "NGINX ngx_http_rewrite_module vulnerability"
-    },
-    {
-      "id": "CVE-2021-30119",
-      "now": 0.59632,
-      "prev": 0.22281,
-      "delta": 0.37351,
-      "name": "Authenticated Authenticated reflective XSS in Kaseya VSA <= v9.5.6"
-    },
-    {
-      "id": "CVE-2026-33824",
-      "now": 0.5585,
-      "prev": 0.21074,
-      "delta": 0.34776,
-      "name": "Windows Internet Key Exchange (IKE) Service Extensions Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2017-9506",
-      "now": 0.71601,
-      "prev": 0.36995,
-      "delta": 0.34606,
-      "name": "Atlassian Atlassian OAuth Plugin"
-    },
-    {
-      "id": "CVE-2026-50751",
-      "now": 0.71051,
-      "prev": 0.41152,
-      "delta": 0.29899,
-      "name": "User Authentication Bypass in VPN Remote Access and Mobile Access"
-    },
-    {
-      "id": "CVE-2025-6514",
-      "now": 0.76637,
-      "prev": 0.47209,
-      "delta": 0.29428,
-      "name": "OS command injection in mcp-remote when connecting to untrusted MCP servers"
-    },
-    {
-      "id": "CVE-2026-41089",
-      "now": 0.72253,
-      "prev": 0.43788,
-      "delta": 0.28465,
-      "name": "Windows Netlogon Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2026-20127",
-      "now": 0.57793,
-      "prev": 0.48158,
-      "delta": 0.09635,
-      "name": "Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability"
+      "id": "CVE-2026-34910",
+      "now": 0.78555,
+      "prev": 0.33615,
+      "delta": 0.4494,
+      "name": "Ubiquiti Inc UniFi OS Server"
     },
     {
       "id": "CVE-2023-3450",
@@ -369,6 +243,20 @@
       "prev": 0.49088,
       "delta": 0.024,
       "name": "Cacti allows Arbitrary File Creation leading to RCE"
+    },
+    {
+      "id": "CVE-2025-30220",
+      "now": 0.50825,
+      "prev": 0.49165,
+      "delta": 0.0166,
+      "name": "GeoTools, GeoServer, and GeoNetwork XML External Entity (XXE) Processing Vulnerability in "
+    },
+    {
+      "id": "CVE-2022-22956",
+      "now": 0.50694,
+      "prev": 0.49899,
+      "delta": 0.00795,
+      "name": "VMware Workspace ONE Access"
     },
     {
       "id": "CVE-2017-16720",
