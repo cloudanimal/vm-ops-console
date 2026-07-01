@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-30",
+  "updated": "2026-07-01",
   "source": "FIRST EPSS",
-  "current_date": "2026-06-30",
-  "previous_date": "2026-06-23",
+  "current_date": "2026-07-01",
+  "previous_date": "2026-06-24",
   "risers": [
     {
       "id": "CVE-2025-29635",
@@ -10,13 +10,6 @@
       "prev": 0.3515,
       "delta": 0.52089,
       "name": "A command injection vulnerability in D-Link DIR-823X 240126 and 240802 allows an authorized attacker to execut"
-    },
-    {
-      "id": "CVE-2026-34910",
-      "now": 0.78555,
-      "prev": 0.33615,
-      "delta": 0.4494,
-      "name": "Ubiquiti Inc UniFi OS Server"
     },
     {
       "id": "CVE-2022-35977",
@@ -28,8 +21,8 @@
     {
       "id": "CVE-2026-20230",
       "now": 0.41694,
-      "prev": 0.20442,
-      "delta": 0.21252,
+      "prev": 0.25853,
+      "delta": 0.15841,
       "name": "Cisco Cisco Unified Communications Manager"
     },
     {
@@ -55,24 +48,10 @@
     },
     {
       "id": "CVE-2025-2011",
-      "now": 0.46724,
+      "now": 0.47002,
       "prev": 0.35077,
-      "delta": 0.11647,
+      "delta": 0.11925,
       "name": "Slider & Popup Builder by Depicter <= 3.6.1 - Unauthenticated SQL Injection via 's' Parame"
-    },
-    {
-      "id": "CVE-2025-0133",
-      "now": 0.43517,
-      "prev": 0.32139,
-      "delta": 0.11378,
-      "name": "PAN-OS: Reflected Cross-Site Scripting (XSS) Vulnerability in GlobalProtect Gateway and Po"
-    },
-    {
-      "id": "CVE-2022-28171",
-      "now": 0.49858,
-      "prev": 0.39333,
-      "delta": 0.10525,
-      "name": "hikvision DS-A71024/48/72R,DS-A80624S,DS-A81016S,DS-A72024/72R,DS-A80316S,DS-A82024D"
     },
     {
       "id": "CVE-2025-31140",
@@ -138,11 +117,11 @@
       "name": "Universal Plug and Play (UPnP) on Windows 98, 98SE, ME, and XP allows remote attackers to cause a denial of se"
     },
     {
-      "id": "CVE-2023-35719",
-      "now": 0.26426,
-      "prev": 0.1994,
-      "delta": 0.06486,
-      "name": "ManageEngine ADSelfService Plus GINA Client Insufficient Verification of Data Authenticity"
+      "id": "CVE-2026-8037",
+      "now": 0.0819,
+      "prev": 0.01869,
+      "delta": 0.06321,
+      "name": "OS Command Injection Remote Code Execution Vulnerability in Progress LoadMaster, ECS Conne"
     },
     {
       "id": "CVE-2026-20262",
@@ -159,6 +138,13 @@
       "name": "Zoho ManageEngine OpManager before 12.3 Build 123196 does not require authentication for /oputilsServlet reque"
     },
     {
+      "id": "CVE-2023-35719",
+      "now": 0.26426,
+      "prev": 0.20189,
+      "delta": 0.06237,
+      "name": "ManageEngine ADSelfService Plus GINA Client Insufficient Verification of Data Authenticity"
+    },
+    {
       "id": "CVE-2026-33526",
       "now": 0.08942,
       "prev": 0.02738,
@@ -171,13 +157,6 @@
       "prev": 0.02734,
       "delta": 0.06197,
       "name": "Squid has Denial of Service in ICP Response handling"
-    },
-    {
-      "id": "CVE-2022-31101",
-      "now": 0.24146,
-      "prev": 0.17963,
-      "delta": 0.06183,
-      "name": "SQL Injection in prestashop/blockwishlist"
     },
     {
       "id": "CVE-2006-3911",
@@ -213,6 +192,27 @@
       "prev": 0.40093,
       "delta": 0.05791,
       "name": "SQL Injection vulnerability in Nagios XI 2024R1.01 allows a remote attacker to execute arbitrary code via a cr"
+    },
+    {
+      "id": "CVE-2026-40217",
+      "now": 0.06496,
+      "prev": 0.00724,
+      "delta": 0.05772,
+      "name": "BerriAI LiteLLM"
+    },
+    {
+      "id": "CVE-2026-1207",
+      "now": 0.09436,
+      "prev": 0.03779,
+      "delta": 0.05657,
+      "name": "Potential SQL injection via raster lookups on PostGIS"
+    },
+    {
+      "id": "CVE-2020-9999",
+      "now": 0.08491,
+      "prev": 0.02888,
+      "delta": 0.05603,
+      "name": "Apple macOS"
     }
   ],
   "newly_high": [
@@ -222,13 +222,6 @@
       "prev": 0.3515,
       "delta": 0.52089,
       "name": "A command injection vulnerability in D-Link DIR-823X 240126 and 240802 allows an authorized attacker to execut"
-    },
-    {
-      "id": "CVE-2026-34910",
-      "now": 0.78555,
-      "prev": 0.33615,
-      "delta": 0.4494,
-      "name": "Ubiquiti Inc UniFi OS Server"
     },
     {
       "id": "CVE-2023-3450",
