@@ -1,10 +1,30 @@
 {
-  "updated": "2026-07-01",
+  "updated": "2026-07-02",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
+    {
+      "id": null,
+      "title": "SCA: security update for @acastellon/auth (GHSA-gfj5-979r-92pw)",
+      "severity": "Critical",
+      "date": "Wed, 01 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444194",
+      "cves": [
+        "CVE-2026-58399"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @acastellon/auth (GHSA-gfj5-979r-92pw)",
+      "severity": "Critical",
+      "date": "Wed, 01 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444194",
+      "cves": [
+        "CVE-2026-58399"
+      ]
+    },
     {
       "id": null,
       "title": "SCA: security update for pyfory (GHSA-m5gw-83w2-7749)",
@@ -551,26 +571,6 @@
       "link": "https://www.tenable.com/plugins/cloud-security/444178",
       "cves": [
         "CVE-2026-48805"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for twig/twig (GHSA-p42q-9prx-q5wq)",
-      "severity": "Critical",
-      "date": "Tue, 30 Jun 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444178",
-      "cves": [
-        "CVE-2026-48805"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for twig/twig (GHSA-h8vq-8gpg-mhcg)",
-      "severity": "Critical",
-      "date": "Tue, 30 Jun 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444177",
-      "cves": [
-        "CVE-2026-48808"
       ]
     }
   ]

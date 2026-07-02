@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-01",
+  "updated": "2026-07-02",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-01",
-  "previous_date": "2026-06-24",
+  "current_date": "2026-07-02",
+  "previous_date": "2026-06-25",
   "risers": [
     {
       "id": "CVE-2025-29635",
@@ -12,6 +12,13 @@
       "name": "A command injection vulnerability in D-Link DIR-823X 240126 and 240802 allows an authorized attacker to execut"
     },
     {
+      "id": "CVE-2026-8037",
+      "now": 0.29641,
+      "prev": 0.01869,
+      "delta": 0.27772,
+      "name": "OS Command Injection Remote Code Execution Vulnerability in Progress LoadMaster, ECS Conne"
+    },
+    {
       "id": "CVE-2022-35977",
       "now": 0.33269,
       "prev": 0.11789,
@@ -19,11 +26,11 @@
       "name": "Integer overflow in certain command arguments can drive Redis to OOM panic"
     },
     {
-      "id": "CVE-2026-20230",
-      "now": 0.41694,
-      "prev": 0.25853,
-      "delta": 0.15841,
-      "name": "Cisco Cisco Unified Communications Manager"
+      "id": "CVE-2026-20245",
+      "now": 0.25323,
+      "prev": 0.09922,
+      "delta": 0.15401,
+      "name": "Cisco Catalyst SD-WAN Controller Authenticated Privilege Escalation Vulnerability"
     },
     {
       "id": "CVE-2026-27654",
@@ -89,6 +96,13 @@
       "name": "SQLite 1.0.12 through 3.39.x before 3.39.2 sometimes allows an array-bounds overflow if billions of bytes are "
     },
     {
+      "id": "CVE-2026-20230",
+      "now": 0.41694,
+      "prev": 0.34157,
+      "delta": 0.07537,
+      "name": "Cisco Unified Communications Manager Server-Side Request Forgery Vulnerability"
+    },
+    {
       "id": "CVE-1999-1223",
       "now": 0.23055,
       "prev": 0.15722,
@@ -103,32 +117,11 @@
       "name": "Simple File List < 4.4.12 - Reflected Cross-Site Scripting"
     },
     {
-      "id": "CVE-2025-2748",
-      "now": 0.59066,
-      "prev": 0.5245,
-      "delta": 0.06616,
-      "name": "Kentico Xperience stored cross-site scripting in multiple-file upload functionality"
-    },
-    {
       "id": "CVE-2001-0877",
       "now": 0.43764,
       "prev": 0.37178,
       "delta": 0.06586,
       "name": "Universal Plug and Play (UPnP) on Windows 98, 98SE, ME, and XP allows remote attackers to cause a denial of se"
-    },
-    {
-      "id": "CVE-2026-8037",
-      "now": 0.0819,
-      "prev": 0.01869,
-      "delta": 0.06321,
-      "name": "OS Command Injection Remote Code Execution Vulnerability in Progress LoadMaster, ECS Conne"
-    },
-    {
-      "id": "CVE-2026-20262",
-      "now": 0.07683,
-      "prev": 0.01371,
-      "delta": 0.06312,
-      "name": "Cisco Catalyst SD-WAN Manager Arbitrary File Write Vulnerability"
     },
     {
       "id": "CVE-2018-17283",
@@ -159,13 +152,6 @@
       "name": "Squid has Denial of Service in ICP Response handling"
     },
     {
-      "id": "CVE-2006-3911",
-      "now": 0.16031,
-      "prev": 0.09923,
-      "delta": 0.06108,
-      "name": "PHP remote file inclusion vulnerability in OSI Codes PHP Live! 3.2.1 and earlier allows remote attackers to ex"
-    },
-    {
       "id": "CVE-2001-0663",
       "now": 0.36791,
       "prev": 0.30875,
@@ -187,13 +173,6 @@
       "name": "HP Operations Manager has a default password of OvW*busr1 for the ovwebusr account, which allows remote attack"
     },
     {
-      "id": "CVE-2024-24401",
-      "now": 0.45884,
-      "prev": 0.40093,
-      "delta": 0.05791,
-      "name": "SQL Injection vulnerability in Nagios XI 2024R1.01 allows a remote attacker to execute arbitrary code via a cr"
-    },
-    {
       "id": "CVE-2026-40217",
       "now": 0.06496,
       "prev": 0.00724,
@@ -213,6 +192,27 @@
       "prev": 0.02888,
       "delta": 0.05603,
       "name": "Apple macOS"
+    },
+    {
+      "id": "CVE-2001-0540",
+      "now": 0.71247,
+      "prev": 0.65787,
+      "delta": 0.0546,
+      "name": "Memory leak in Terminal servers in Windows NT and Windows 2000 allows remote attackers to cause a denial of se"
+    },
+    {
+      "id": "CVE-2019-5129",
+      "now": 0.38531,
+      "prev": 0.33157,
+      "delta": 0.05374,
+      "name": "YouPHPTube"
+    },
+    {
+      "id": "CVE-2026-42271",
+      "now": 0.80188,
+      "prev": 0.74993,
+      "delta": 0.05195,
+      "name": "LiteLLM: Authenticated command execution via MCP stdio test endpoints"
     }
   ],
   "newly_high": [
@@ -231,13 +231,6 @@
       "name": "Ruijie RG-BCR860 Network Diagnostic Page os command injection"
     },
     {
-      "id": "CVE-2025-24367",
-      "now": 0.51488,
-      "prev": 0.49088,
-      "delta": 0.024,
-      "name": "Cacti allows Arbitrary File Creation leading to RCE"
-    },
-    {
       "id": "CVE-2025-30220",
       "now": 0.50825,
       "prev": 0.49165,
@@ -250,13 +243,6 @@
       "prev": 0.49899,
       "delta": 0.00795,
       "name": "VMware Workspace ONE Access"
-    },
-    {
-      "id": "CVE-2017-16720",
-      "now": 0.50321,
-      "prev": 0.49667,
-      "delta": 0.00654,
-      "name": "Advantech WebAccess"
     }
   ]
 }
