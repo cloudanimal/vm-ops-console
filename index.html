@@ -126,6 +126,46 @@
   .badge.crit { color:var(--badge-ink); background:var(--crit); border-color:var(--crit); }
   .badge.high { color:var(--badge-ink); background:var(--high); border-color:var(--high); }
   .badge.med  { color:var(--badge-ink); background:var(--med); border-color:var(--med); }
+  .eoltable { width:100%; border-collapse:collapse; font-size:13.5px; }
+  .eoltable th { text-align:left; color:var(--soft); font-weight:500; font-size:11px; text-transform:uppercase; letter-spacing:.05em; padding:8px 10px; border-bottom:1px solid var(--line); }
+  .eoltable td { padding:8px 10px; border-bottom:1px solid var(--line); }
+  .eol-dead { color:var(--crit); font-weight:600; }
+  .eol-soon { color:var(--med); font-weight:600; }
+  .eol-ok { color:var(--soft); }
+  a.eol-link { color:var(--accent); text-decoration:none; } a.eol-link:hover { text-decoration:underline; }
+  .eol-layout { display:flex; gap:22px; align-items:flex-start; }
+  .eol-nav { flex:0 0 244px; width:244px; border:1px solid var(--line); border-radius:10px; padding:8px; background:var(--surface); position:sticky; top:12px; max-height:calc(100vh - 40px); overflow:auto; }
+  .eol-content { flex:1 1 auto; min-width:0; }
+  .eol-navtitle { font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--soft); padding:6px 8px 4px; }
+  .eol-navall { display:block; padding:7px 8px; border-radius:7px; text-decoration:none; color:var(--ink); font-size:13.5px; font-weight:600; }
+  .eol-navall:hover, .eol-navall.active { background:var(--hl); }
+  details.eol-cat { border-top:1px solid var(--line); }
+  details.eol-cat > summary { list-style:none; cursor:pointer; padding:8px; font-size:13.5px; font-weight:600; color:var(--accent); display:flex; justify-content:space-between; align-items:center; }
+  details.eol-cat > summary::-webkit-details-marker { display:none; }
+  details.eol-cat > summary::after { content:"›"; font-size:15px; line-height:1; transform:rotate(90deg); color:var(--faint); transition:transform .15s; }
+  details.eol-cat[open] > summary::after { transform:rotate(-90deg); }
+  .eol-count { font-size:11px; font-weight:500; color:var(--faint); background:var(--hl); border-radius:10px; padding:1px 7px; }
+  .eol-catlist, .eol-tags { padding:0 4px 8px; }
+  .eol-catlist a, .eol-tags a { display:block; padding:5px 10px; border-radius:6px; text-decoration:none; color:var(--soft); font-size:12.5px; }
+  .eol-catlist a:hover, .eol-tags a:hover { background:var(--hl); color:var(--ink); }
+  .eol-catlist a.on, .eol-tags a.on { background:var(--accent); color:#fff; }
+  .eol-tags { display:flex; flex-wrap:wrap; gap:4px; }
+  .eol-tags a { display:inline-flex; gap:5px; align-items:center; border:1px solid var(--line); }
+  .eol-meta { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0; }
+  .eol-chip { font-size:11.5px; padding:2px 9px; border-radius:11px; background:var(--hl); color:var(--soft); text-decoration:none; border:1px solid var(--line); }
+  a.eol-chip.tag:hover { background:var(--accent); color:#fff; }
+  .eol-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:8px; }
+  a.eol-card { display:flex; flex-direction:column; gap:2px; padding:10px 12px; border:1px solid var(--line); border-radius:9px; text-decoration:none; color:var(--ink); background:var(--surface); }
+  a.eol-card:hover { border-color:var(--accent); } a.eol-card .muted { font-size:11.5px; }
+  th.eol-sortable { cursor:pointer; user-select:none; white-space:nowrap; }
+  th.eol-sortable:hover { color:var(--ink); }
+  th.eol-sortable::after { content:"\2195"; opacity:.3; font-size:9px; margin-left:4px; }
+  th.eol-sortable[data-sort=asc]::after { content:"\25B2"; opacity:.9; }
+  th.eol-sortable[data-sort=desc]::after { content:"\25BC"; opacity:.9; }
+  .eol-filterrow th { padding:4px 6px; border-bottom:1px solid var(--line); }
+  .eol-filterrow input { width:100%; min-width:52px; box-sizing:border-box; font-size:11px; padding:3px 6px; border:1px solid var(--line); border-radius:5px; background:var(--paper); color:var(--ink); font-family:inherit; text-transform:none; letter-spacing:normal; font-weight:400; }
+  .eol-filterrow input::placeholder { color:var(--faint); text-transform:none; letter-spacing:0; }
+  @media (max-width:820px) { .eol-layout { flex-direction:column; } .eol-nav { position:static; width:100%; flex-basis:auto; max-height:340px; } }
   .badge.kev  { color:var(--badge-ink); background:var(--crit); border-color:var(--crit); }
   .badge.epss { color:var(--accent); }
 
@@ -252,9 +292,10 @@
   .toolbar input { flex:1; min-width:200px; }
   .count-note { font-size:13px; color:var(--faint); margin-top:8px; }
   .subnav { display:flex; gap:8px; margin:-4px 0 20px; flex-wrap:wrap; }
-  .toc { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:4px 0 24px; padding:14px 16px; border:1px solid var(--line); border-radius:12px; background:var(--surface); }
-  .toc-lab { font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:var(--faint); margin-right:4px; }
-  .toc-link { font-family:var(--sans); font-size:13px; color:var(--soft); text-decoration:none; padding:5px 12px; border:1px solid var(--line); border-radius:100px; cursor:pointer; transition:color .15s ease, border-color .15s ease; }
+  .toc { display:flex; flex-wrap:nowrap; overflow-x:auto; gap:6px; align-items:center; margin:4px 0 24px; padding:12px 16px; border:1px solid var(--line); border-radius:12px; background:var(--surface); scrollbar-width:thin; }
+  .toc::-webkit-scrollbar { height:6px; } .toc::-webkit-scrollbar-thumb { background:var(--line); border-radius:3px; }
+  .toc-lab { font-size:11px; text-transform:uppercase; letter-spacing:1.2px; color:var(--faint); margin-right:2px; flex-shrink:0; white-space:nowrap; }
+  .toc-link { font-family:var(--sans); font-size:12.5px; color:var(--soft); text-decoration:none; padding:4px 11px; border:1px solid var(--line); border-radius:100px; cursor:pointer; white-space:nowrap; flex-shrink:0; transition:color .15s ease, border-color .15s ease; }
   .toc-link:hover { color:var(--ink); border-color:var(--accent); }
   .to-top { position:fixed; right:22px; bottom:22px; z-index:60; display:none; align-items:center; gap:6px; background:var(--accent); color:var(--paper); border:0; border-radius:100px; padding:9px 15px; font-family:var(--sans); font-size:13px; font-weight:600; cursor:pointer; box-shadow:0 4px 16px rgba(0,0,0,.28); }
   .to-top.show { display:inline-flex; }
@@ -367,6 +408,7 @@
         <a href="#/browse" data-route="browse">Browse the corpus</a>
         <a href="#/latest" data-route="latest">Latest CVEs</a>
         <a href="#/triage" data-route="triage">Triage</a>
+        <a href="#/eol" data-route="eol">End of Life</a>
       </div>
     </div>
     <div class="navmenu" data-menu="tools">
@@ -1027,7 +1069,21 @@
   }
 
   // ---------- KEV catalog ----------
-  var kevData = null, kevIndex = null, kevSort = { key: 'added', dir: -1 }, kevFilter = '', kevDue = '';
+  var kevData = null, kevIndex = null, kevSort = { key: 'added', dir: -1 }, kevFilter = '', kevDue = '', kevColf = {};
+  // Shared per-column filter row for .ktable list views (KEV, Exploited).
+  function colFilterRow(cols, store, cls) {
+    return '<tr class="eol-filterrow">' + cols.map(function (c) { return '<th><input type="text" class="' + cls + '" data-cf="' + c + '" placeholder="filter" value="' + esc((store && store[c]) || '') + '" aria-label="Filter column"></th>'; }).join('') + '</tr>';
+  }
+  function wireColFilters(cls, store, rerender) {
+    [].forEach.call(document.querySelectorAll('input.' + cls), function (inp) {
+      inp.addEventListener('input', function () {
+        store[this.getAttribute('data-cf')] = this.value;
+        var key = this.getAttribute('data-cf'), pos = this.selectionStart;
+        rerender();
+        var n = document.querySelector('input.' + cls + '[data-cf="' + key + '"]'); if (n) { n.focus(); try { n.setSelectionRange(pos, pos); } catch (e) {} }
+      });
+    });
+  }
   // Shared loader so both the catalog view and Triage can use the KEV data.
   function loadKev() {
     if (kevData) return Promise.resolve(kevData);
@@ -1058,6 +1114,7 @@
     var f = kevFilter.toLowerCase();
     var rows = d.entries.filter(function (e) {
       if (f && (e.id + ' ' + (e.vendor || '') + ' ' + (e.product || '') + ' ' + (e.name || '')).toLowerCase().indexOf(f) === -1) return false;
+      for (var _kf in kevColf) { if (kevColf[_kf] && String(e[_kf] == null ? '' : e[_kf]).toLowerCase().indexOf(kevColf[_kf].toLowerCase()) < 0) return false; }
       if (kevDue === 'ransom') return e.ransomware;
       if (kevDue) {
         var du = daysUntil(e.due);
@@ -1078,7 +1135,8 @@
     h += '<div class="toolbar"><input id="kq" placeholder="Filter by CVE, vendor, product, or name…" value="' + esc(kevFilter) + '"></div>';
     h += '<div class="count-note">Showing ' + shown.length + ' of ' + rows.length + (f || kevDue ? ' matching' : '') + '.</div>';
     h += '<table class="ktable"><thead><tr>' +
-      th('id', 'CVE') + th('vendor', 'Vendor') + th('product', 'Product') + th('added', 'Added') + th('due', 'Due') + '</tr></thead><tbody>';
+      th('id', 'CVE') + th('vendor', 'Vendor') + th('product', 'Product') + th('added', 'Added') + th('due', 'Due') + '</tr>' +
+      colFilterRow(['id', 'vendor', 'product', 'added', 'due'], kevColf, 'kf') + '</thead><tbody>';
     shown.forEach(function (e) {
       var du = daysUntil(e.due);
       var dueCell = esc(e.due || '');
@@ -1090,8 +1148,9 @@
     app.innerHTML = h;
     var kq = document.getElementById('kq');
     kq.addEventListener('input', function () { kevFilter = kq.value; var pos = kq.selectionStart; renderKev(); var n = document.getElementById('kq'); n.focus(); try { n.setSelectionRange(pos, pos); } catch (e) {} });
+    wireColFilters('kf', kevColf, renderKev);
     [].forEach.call(document.querySelectorAll('[data-due]'), function (b) { b.addEventListener('click', function () { kevDue = b.getAttribute('data-due'); location.hash = '#/kev' + (kevDue ? '?due=' + kevDue : ''); renderKev(); }); });
-    [].forEach.call(document.querySelectorAll('.ktable th'), function (t) {
+    [].forEach.call(document.querySelectorAll('.ktable th[data-k]'), function (t) {
       t.addEventListener('click', function () { var key = t.getAttribute('data-k'); if (kevSort.key === key) kevSort.dir *= -1; else { kevSort.key = key; kevSort.dir = 1; } renderKev(); });
     });
   }
@@ -1099,7 +1158,19 @@
 
   // ---------- Explorer (CVEs with known exploits across multiple sources) ----------
   var explData = null;
-  var expl = { sev: '', src: {}, q: '', sort: { key: 'cve_date', dir: -1 }, limit: 300 };
+  var expl = { sev: '', src: {}, q: '', colf: {}, sort: { key: 'cve_date', dir: -1 }, limit: 300 };
+  function explColfVal(key, r) {
+    switch (key) {
+      case 'cve': return r.cve + ' ' + (r.product || '');
+      case 'cve_date': return (r.cve_date || '').slice(0, 10);
+      case 'exploit_date': return (r.exploit_date || '').slice(0, 10);
+      case 'cvss': return r.cvss == null ? '' : String(r.cvss);
+      case 'severity': return r.severity || '';
+      case 'tte': return r.tte == null ? '' : String(r.tte);
+      case 'sources': return r.sources.map(srcLabel).join(' ');
+      default: return '';
+    }
+  }
   var SEVCHIPS = [['CRITICAL', 'Critical'], ['HIGH', 'High'], ['MEDIUM', 'Medium'], ['LOW', 'Low'], ['WEAPONIZED', 'Weaponized']];
   function srcLabel(s) { return s.replace(/-/g, ' '); }
   function explConfirmed(srcs) { return srcs.indexOf('cisa-kev') >= 0 || srcs.indexOf('vulncheck-kev') >= 0 || srcs.indexOf('vulncheck-xdb') >= 0; }
@@ -1120,6 +1191,7 @@
     var srcSel = Object.keys(expl.src).filter(function (k) { return expl.src[k]; });
     var rows = d.cves.filter(function (r) {
       if (q && (r.cve + ' ' + (r.product || '')).toLowerCase().indexOf(q) === -1) return false;
+      for (var _ef in expl.colf) { if (expl.colf[_ef] && String(explColfVal(_ef, r)).toLowerCase().indexOf(expl.colf[_ef].toLowerCase()) < 0) return false; }
       if (expl.sev === 'WEAPONIZED') { if (!explConfirmed(r.sources)) return false; }
       else if (expl.sev && (r.severity || '').toUpperCase() !== expl.sev) return false;
       if (srcSel.length && !srcSel.some(function (s) { return r.sources.indexOf(s) >= 0; })) return false;
@@ -1145,7 +1217,8 @@
     h += '<div class="count-note">Showing ' + shown.length + ' of ' + fmtNum(rows.length) + (q || expl.sev || srcSel.length ? ' matching' : '') + '.</div>';
     h += '<table class="ktable"><thead><tr>' +
       explTh('cve', 'CVE / Product') + explTh('cve_date', 'CVE Date') + explTh('exploit_date', 'Exploit Date') +
-      explTh('cvss', 'CVSS') + explTh('severity', 'Severity') + explTh('tte', 'TTE') + explTh('sources', 'Src') + '</tr></thead><tbody>';
+      explTh('cvss', 'CVSS') + explTh('severity', 'Severity') + explTh('tte', 'TTE') + explTh('sources', 'Src') + '</tr>' +
+      colFilterRow(['cve', 'cve_date', 'exploit_date', 'cvss', 'severity', 'tte', 'sources'], expl.colf, 'exf') + '</thead><tbody>';
     shown.forEach(function (r) {
       var sev = (r.severity || '').toUpperCase();
       var badge = explConfirmed(r.sources) ? '<span class="rw" title="Confirmed exploited in the wild (KEV)">KEV</span>' : '<span class="badge">PoC</span>';
@@ -1162,6 +1235,7 @@
     app.innerHTML = h;
     var exq = document.getElementById('exq');
     exq.addEventListener('input', function () { expl.q = exq.value; var p = exq.selectionStart; renderExplorer(); var n = document.getElementById('exq'); n.focus(); try { n.setSelectionRange(p, p); } catch (e) {} });
+    wireColFilters('exf', expl.colf, renderExplorer);
     [].forEach.call(document.querySelectorAll('[data-sev]'), function (b) { b.addEventListener('click', function () { var s = b.getAttribute('data-sev'); expl.sev = expl.sev === s ? '' : s; renderExplorer(); }); });
     [].forEach.call(document.querySelectorAll('[data-src]'), function (b) { b.addEventListener('click', function () { var s = b.getAttribute('data-src'); expl.src[s] = !expl.src[s]; renderExplorer(); }); });
     [].forEach.call(document.querySelectorAll('.ktable th[data-ek]'), function (t) {
@@ -1691,7 +1765,8 @@
     { re: /^#\/about$/i, hint: 'about + dataset provenance/freshness' },
     { re: /^#\/faq$/i, hint: 'FAQ / explainers (LEV cadence, data privacy, model disagreement)' },
     { re: /^#\/nasl$/i, hint: 'NASL viewer — read your own Nessus plugin source in-browser' },
-    { re: /^#\/prompt-scanner$/i, hint: 'Prompt Scanner — scan agent instructions/prompts for injection & malicious content' }
+    { re: /^#\/prompt-scanner$/i, hint: 'Prompt Scanner — scan agent instructions/prompts for injection & malicious content' },
+    { re: /^#\/eol(\/[^/?]+|\?tag=[^&]+)?$/i, hint: 'End of Life — software lifecycle / end-of-support dates, browsable by category or tag (optionally /product)' }
   ];
   function askValidRoute(r) { return typeof r === 'string' && ASK_ROUTES.some(function (x) { return x.re.test(r); }); }
 
@@ -1763,6 +1838,8 @@
     { label: 'Triage a list', route: '#/triage', phrases: ['triage a list of CVEs', 'paste CVEs to triage', 'bulk triage', 'assess a list of vulnerabilities'] },
     { label: 'NASL viewer', route: '#/nasl', phrases: ['view NASL plugin source', 'read a Nessus plugin', 'nasl viewer', 'plugin source code'] },
     { label: 'AI Prompt Scanner', route: '#/prompt-scanner', phrases: ['scan a prompt for prompt injection', 'check an agent skill or MCP config for malicious instructions', 'scan for prompt injection', 'is this prompt safe', 'detect malicious instructions in agent files'] },
+    { label: 'End of Life', phrases: ['is this software end of life', 'end of support date for windows server', 'when does ubuntu reach end of life', 'unsupported or end-of-life software versions', 'software lifecycle and EOL dates', 'is my operating system still supported', 'products past end of support', 'end of life software'],
+      build: function (q, s) { var kw = askKeyword(q).toLowerCase().replace(/\b(end|life|eol|support|supported|maintenance|maintained|software|lifecycle|version|versions|reach\w*|still|unsupported|out|when|does|do|did|will|going|go|no|longer|date|dates|os|operating|system|systems)\b/gi, ' ').replace(/\s+/g, ' ').trim(); return kw ? '#/eol/' + encodeURIComponent(kw.replace(/\s+/g, '-')) : '#/eol'; } },
     { label: 'Import findings', route: '#/import', phrases: ['import scan findings', 'upload my scan results', 'load a Tenable export', 'import vulnerabilities'] },
     { label: 'Settings', route: '#/settings', phrases: ['SLA settings', 'ticketing configuration', 'configure SLA windows', 'jira or servicenow settings'] },
     { label: 'About', route: '#/about', phrases: ['how does this work', 'data sources and freshness', 'where does the data come from', 'is my data private'] }
@@ -2391,13 +2468,14 @@
       '<details class="faq"><summary>Does my data ever leave my browser?</summary><div class="prose"><p>No. The Tenable Analyzer parses your scan export entirely in JavaScript, and Ask AI runs a small language model on-device (Transformers.js) — your question and findings never leave the browser, and there’s no API key. The only Ask AI network use is a one-time model download (~25&nbsp;MB) from a public CDN. Everything else is public CVE data, fetched live or shipped as static files.</p></div></details>' +
       '<details class="faq"><summary>Why do the five models disagree on the same CVE?</summary><div class="prose"><p>They measure different things: CVSS is impact severity, EPSS is near-term exploitation probability, CISA KEV is confirmed in-the-wild exploitation, NIST LEV is the probability it has <i>already</i> been exploited, and SSVC is a decision tree. A high-CVSS bug with low EPSS and no KEV is common — and so is the reverse. Showing all five plus a composite verdict is the whole point: prioritization is exactly where they diverge.</p></div></details>' +
       '<details class="faq"><summary>How current is the data?</summary><div class="prose"><p>Search, Browse, Latest, and the detail page hit live APIs, so they’re always current. Pre-built datasets refresh on schedules via GitHub Actions (KEV and EPSS daily, statistics weekly, LEV / exploited / Ubuntu monthly). The <a href="#/about">Datasets &amp; freshness</a> table on the About page shows the exact last-refreshed time for each and auto-updates while you watch.</p></div></details>' +
-      '<details class="faq"><summary>Why isn’t there a Nessus/Qualys scanner result embedded?</summary><div class="prose"><p>Scanner plugin/QID databases are proprietary and licensed, so rather than redistribute them the detail page deep-links each CVE to every vendor’s own lookup, where a practitioner can pivot to detection content.</p></div></details>';
+      '<details class="faq"><summary>Why isn’t there a Nessus/Qualys scanner result embedded?</summary><div class="prose"><p>Scanner plugin/QID databases are proprietary and licensed, so rather than redistribute them the detail page deep-links each CVE to every vendor’s own lookup, where a practitioner can pivot to detection content.</p></div></details>' +
+      '<details class="faq"><summary>What does end-of-life software mean for a vulnerability?</summary><div class="prose"><p>If the affected product is past its end-of-life / end-of-support date, no vendor patch is coming — the vulnerability is <b>unpatchable</b> by definition, so the response shifts to mitigate, isolate, upgrade, or replace. The <a href="#/eol">End of Life</a> page (under CVE Intelligence) tracks lifecycle dates for every product on <a href="https://endoflife.date" target="_blank" rel="noopener">endoflife.date</a> — browsable by category or tag with full release history — and the CVE detail page flags when an affected product is already EOL.</p></div></details>';
   }
 
   function viewAbout() {
     setActive('about');
     app.innerHTML = '<header class="view"><div class="overline">About</div><h1>How ' + esc(window.VM_BRAND || 'VM Ops Console') + ' works</h1>' +
-      '<p class="lede">A backend-free vulnerability-management operations console. It pairs a public-CVE intelligence front end with operational tooling — a findings workbench, a Tenable vulnerability dashboard, and an AD-vs-agent coverage reconciler — under one nav, one theme, and one natural-language Ask AI box that runs on-device. Your scan data, findings, notes, and keys stay in your browser; the only outbound calls are public CVE lookups.</p></header>' +
+      '<p class="lede">A vulnerability-management operations console. It pairs a public-CVE intelligence front end with operational tooling — a findings workbench, a Tenable vulnerability dashboard, and an AD-vs-agent coverage reconciler — under one nav, one theme, and one natural-language Ask AI box that runs on-device. Backend-free by default: your scan data, findings, notes, and keys stay in your browser, and the only outbound calls are public CVE lookups. At scale, an optional on-prem connector adds live Tenable / ManageEngine / AD data through Power BI and two-way ServiceNow / Jira ticketing.</p></header>' +
       '<div class="toc"><span class="toc-lab">On this page</span>' +
       ABOUT_SECTIONS.map(function (s) { return '<a class="toc-link" data-to="' + s[0] + '">' + esc(s[1]) + '</a>'; }).join('') + '</div>' +
       '<div class="block" id="sec-tools"><h3>The operational tools</h3><div class="prose">' +
@@ -2414,25 +2492,28 @@
       '<li><b>NIST LEV</b> — a lower-bound estimate (CSWP 41) of the probability a CVE has <i>already</i> been exploited, derived from EPSS history.</li>' +
       '<li><b>SSVC</b> — a simplified version of CISA’s Act / Attend / Track decision tree; the CVE detail page also shows CISA’s authoritative SSVC decision points (Exploitation / Automatable / Technical Impact) where published.</li></ul>' +
       '<p>The headline verdict (Patch now / this cycle / standard cadence) is a composite: confirmed exploitation or high likelihood drives P1, high severity or elevated likelihood drives P2, everything else is P3.</p></div></div>' +
-      '<div class="block" id="sec-ask"><h3>Ask AI</h3><div class="prose">' +
-      '<p><b>Ask AI</b> lets you describe what you want in plain English; a small language model that runs <b>entirely on-device</b> (Transformers.js, loaded once from a public CDN) maps it onto the app’s own searches and filters and loads the results inline — it never invents CVE data, needs no API key, and your question never leaves the browser.</p></div></div>' +
+      '<div class="block" id="sec-eol"><h3>Software end of life</h3><div class="prose">' +
+      '<p>The <b>End of Life</b> page (under CVE Intelligence) mirrors <a href="https://endoflife.date" target="_blank" rel="noopener">endoflife.date</a> inside the console: browse every tracked product by <b>category</b> or <b>tag</b>, or search by name, and read the full release history — release dates, LTS windows, active-support / end-of-life / extended-support dates (shown in each vendor’s own terms), the latest version, and CPE identifiers. Tables sort and filter per column and default to the most recent EOL date. It matters for triage because a vulnerability on end-of-life software is <b>unpatchable</b> — no vendor fix is coming — so it needs mitigate / replace / isolate, not "patch."</p></div></div>' +
       '<div class="block" id="sec-report"><h3>The Morning Report</h3><div class="prose">' +
       '<p>The <b>Morning Report</b> is a daily briefing that leads with what became exploitable in the last 24 hours — new CISA KEV additions, the biggest EPSS risers, and fresh public exploits — then new critical CVEs and the newest Tenable plugins. On Mondays it rolls up the whole weekend, covering everything released since Friday.</p></div></div>' +
+      '<div class="block" id="sec-ask"><h3>Ask AI</h3><div class="prose">' +
+      '<p><b>Ask AI</b> lets you describe what you want in plain English; a small language model that runs <b>entirely on-device</b> (Transformers.js, loaded once from a public CDN) maps it onto the app’s own searches and filters and loads the results inline — it never invents CVE data, needs no API key, and your question never leaves the browser.</p></div></div>' +
       '<div class="block" id="sec-data"><h3>Where the data comes from</h3><div class="prose">' +
       '<p>Every record is assembled from public sources, grouped by what they tell you:</p><ul>' +
       '<li><b>Scoring &amp; weakness</b> — NVD (CVE records, CVSS, CWE, corpus counts), FIRST EPSS (exploitation probability + the full daily distribution), NIST LEV, and CISA’s SSVC “Vulnrichment” decision points from the CVE List.</li>' +
       '<li><b>Exploitation in the wild</b> — CISA KEV and VulnCheck KEV (confirmed), plus public exploits and PoCs aggregated from Exploit-DB, Metasploit, Google Project Zero, and Nomi-sec PoC-in-GitHub.</li>' +
       '<li><b>Remediation &amp; fix state</b> — OSV.dev (open-source fixed versions), MSRC (Microsoft KBs), Red Hat Security Data (errata + per-product fix state), the Ubuntu CVE Tracker (per-release package status), and endoflife.date (whether the affected product is past end-of-life).</li>' +
       '<li><b>Detection</b> — deep-links to each scanner vendor’s own lookup (Tenable, Qualys, Rapid7, …), since plugin/QID databases are proprietary.</li></ul></div></div>' +
-      '<div class="block" id="sec-backend"><h3>How it stays free and backend-free</h3><div class="prose">' +
-      '<p>Search, Browse, Latest, and the detail page hit public APIs live; Ask AI runs its language model on-device, so it needs no backend at all. Statistics never mirror the ~357k-CVE corpus: the NVD API returns a <code>totalResults</code> count for any filter, so per-year and per-severity figures come from a few hundred metadata-only calls (chunked under NVD’s 120-day range limit) rather than downloading everything. Larger or CORS-blocked feeds — the KEV catalog, the aggregated exploited-CVE dataset, the EPSS distribution, time-to-exploit, and the Ubuntu fix-status data — are pre-built by Python scripts and committed. Scheduled GitHub Actions refresh each dataset, and a manifest auto-indexes them, so the static data never goes stale and new datasets surface automatically on this page.</p></div></div>' +
       '<div class="block" id="sec-arch"><h3>Architecture</h3>' +
-      '<div class="sub" style="margin-bottom:14px">No backend, no build step. Two data paths feed one static single-page app — pre-built datasets refreshed on a schedule, plus live API calls straight from your browser.</div>' +
+      '<div class="sub" style="margin-bottom:14px">No build step. In standalone mode, two data paths feed one static single-page app — pre-built datasets refreshed on a schedule, plus live API calls straight from your browser. At enterprise scale, an optional on-prem connector adds a Power BI read path and ServiceNow / Jira ticketing (see “Standalone, or connected”).</div>' +
       archSvg() + '</div>' +
-      '<div class="block" id="sec-caveats"><h3>Caveats</h3><div class="prose"><p>This is an analysis aid, not an authority. The models disagree by design, scanner plugin/QID data is proprietary so it is linked rather than embedded, and you should always confirm against the vendor before acting.</p></div></div>' +
+      '<div class="block" id="sec-backend"><h3>Standalone, or connected</h3><div class="prose">' +
+      '<p>By default the console is <b>backend-free</b>. Search, Browse, Latest, and the detail page hit public APIs live; Ask AI runs its language model on-device; and your imported scan data, findings, and notes stay in the browser. Statistics never mirror the ~357k-CVE corpus: the NVD API returns a <code>totalResults</code> count for any filter, so per-year and per-severity figures come from a few hundred metadata-only calls (chunked under NVD’s 120-day range limit) rather than downloading everything. Larger or CORS-blocked feeds — the KEV catalog, the aggregated exploited-CVE dataset, the EPSS distribution, time-to-exploit, and the Ubuntu fix-status data — are pre-built by Python scripts, committed, and refreshed by scheduled GitHub Actions, so the static data never goes stale and new datasets surface automatically on this page.</p>' +
+      '<p>For a team running this at scale, an <b>optional connector</b> adds live enterprise data without turning the app into a backend it has to host. A small PowerShell / Python job on an on-prem server pulls Tenable, ManageEngine, and Active Directory, lands it in <b>Power BI</b> via dataflows, and the browser reads Power BI directly through Entra sign-in. The same connector can poll ServiceNow / Jira for ticket status — surfaced back through Power BI — and, later, expose a thin endpoint the console calls to open tickets and change requests. Credentials live on the connector, never in the browser.</p></div></div>' +
       '<div class="block" id="dataProvenance"><h3>Datasets &amp; freshness</h3>' +
       '<div class="sub" style="margin-bottom:12px">Every pre-built dataset behind the explorer, what it powers, and when it was last refreshed — plus the live API sources queried on demand.</div>' +
       '<div id="dataFresh">' + spinner('Checking dataset freshness…') + '</div></div>' +
+      '<div class="block" id="sec-caveats"><h3>Caveats</h3><div class="prose"><p>This is an analysis aid, not an authority. The models disagree by design, scanner plugin/QID data is proprietary so it is linked rather than embedded, and you should always confirm against the vendor before acting.</p></div></div>' +
       '<div class="block"><a class="muted" href="https://github.com/cloudanimal/vm-ops-console" target="_blank" rel="noopener">Source on GitHub &rarr;</a></div>' +
       '<button class="to-top" id="toTop" type="button" aria-label="Back to top">↑ Top</button>';
     refreshDataFreshness();
@@ -2449,9 +2530,8 @@
     aboutScroll();
   }
   var ABOUT_SECTIONS = [
-    ['sec-tools', 'Operational tools'],
-    ['sec-models', 'Prioritization models'], ['sec-ask', 'Ask AI'], ['sec-report', 'Morning Report'], ['sec-data', 'Data sources'],
-    ['sec-backend', 'Backend-free'], ['sec-arch', 'Architecture'], ['sec-caveats', 'Caveats'], ['dataProvenance', 'Datasets & freshness']
+    ['sec-tools', 'Tools'], ['sec-models', 'Models'], ['sec-eol', 'End of life'], ['sec-report', 'Report'], ['sec-ask', 'Ask AI'],
+    ['sec-data', 'Data'], ['sec-arch', 'Architecture'], ['sec-backend', 'Backend'], ['dataProvenance', 'Datasets'], ['sec-caveats', 'Caveats']
   ];
   var aboutScroll = null;
 
@@ -2767,6 +2847,195 @@
   function serialize(o) { return Object.keys(o).filter(function (k) { return o[k]; }).map(function (k) { return k + '=' + encodeURIComponent(o[k]); }).join('&'); }
   function parseQuery(s) { var o = {}; (s || '').split('&').forEach(function (kv) { if (!kv) return; var i = kv.indexOf('='); o[kv.slice(0, i)] = decodeURIComponent(kv.slice(i + 1)); }); return o; }
 
+  // ---------- End of Life (endoflife.date v1 API — full data + category selector, CORS-open, no key) ----------
+  var EOL_WATCH = ['windows', 'windows-server', 'macos', 'ubuntu', 'debian', 'rhel', 'centos', 'sles', 'python', 'nodejs', 'php', 'dotnet', 'mssqlserver', 'mysql', 'postgresql', 'mongodb', 'redis', 'nginx', 'apache', 'kubernetes'];
+  var EOL_CATLABEL = { app: 'Applications', database: 'Databases', device: 'Devices', 'server-app': 'Server Applications', framework: 'Frameworks', lang: 'Languages', os: 'Operating Systems', service: 'Services', standard: 'Standards' };
+  var eolIndex = null;   // /api/v1/products result: [{name,label,category,tags,aliases}]
+  function eolV1(path) { return softJSON('https://endoflife.date/api/v1/' + path).then(function (d) { return (d && d.result !== undefined) ? d.result : d; }); }
+  function eolIndexLoad() { return eolIndex ? Promise.resolve(eolIndex) : eolV1('products').then(function (l) { eolIndex = l || []; return eolIndex; }); }
+  function eolFind(slug) { return (eolIndex || []).filter(function (p) { return p.name === slug; })[0]; }
+  function eolCatName(slug) { return EOL_CATLABEL[slug] || (slug ? slug.replace(/-/g, ' ').replace(/(^|\s)\w/g, function (m) { return m.toUpperCase(); }) : 'Other'); }
+  function eolResolveSlug(v) {
+    var q = (v || '').toLowerCase().trim(), list = eolIndex || [], i;
+    for (i = 0; i < list.length; i++) { if ((list[i].label || '').toLowerCase() === q || list[i].name === q) return list[i].name; }
+    for (i = 0; i < list.length; i++) { if ((list[i].aliases || []).some(function (a) { return String(a).toLowerCase() === q; })) return list[i].name; }
+    return q.replace(/\s+/g, '-');
+  }
+  function eolDays(d) { if (!d || typeof d !== 'string') return null; var t = new Date(d + 'T00:00:00Z'); return isNaN(t) ? null : Math.round((t - new Date()) / 86400000); }
+  function eolWhen(d) { return d == null ? '' : (d < 0 ? Math.abs(d) + 'd ago' : 'in ' + d + 'd'); }
+  function eolRelStatus(rel) {   // status from a v1 release object
+    if (rel.isEol === true) return { k: 'dead', label: 'EOL', days: (typeof rel.eolFrom === 'string' ? eolDays(rel.eolFrom) : null) };
+    if (typeof rel.eolFrom === 'string') { var d = eolDays(rel.eolFrom); if (d != null) { if (d < 0) return { k: 'dead', label: 'EOL', days: d }; if (d <= 180) return { k: 'soon', label: 'EOL soon', days: d }; return { k: 'ok', label: 'Supported', days: d }; } }
+    if (rel.isMaintained === false) return { k: 'dead', label: 'Unmaintained', days: null };
+    if (rel.isMaintained === true) return { k: 'ok', label: 'Maintained', days: null };
+    return { k: 'ok', label: '—', days: null };
+  }
+  function eolDateCell(x) { return typeof x === 'string' ? esc(x) : (x === true ? '<span class="eol-dead">ended</span>' : (x === false ? '<span class="muted">active</span>' : '—')); }
+  function eolPhaseCell(isPast, dateStr) {   // renders a lifecycle phase: date + relative + status colour
+    if (typeof dateStr === 'string') { var d = eolDays(dateStr); var cls = (isPast === true || (d != null && d < 0)) ? 'eol-dead' : (d != null && d <= 180 ? 'eol-soon' : ''); return '<span class="' + cls + '">' + esc(dateStr) + '</span>' + (d != null ? ' <span class="muted" style="font-size:11px">(' + esc(eolWhen(d)) + ')</span>' : ''); }
+    if (isPast === true) return '<span class="eol-dead">ended</span>';
+    if (isPast === false) return '<span class="muted">active</span>';
+    return '—';
+  }
+  function eolCellVal(text) {   // comparable value for sorting: dates→yyyymmdd, "Xd ago"/"in Xd"→signed days, numbers→number, else lowercased text
+    text = (text || '').trim();
+    var m = text.match(/(\d{4})-(\d{2})-(\d{2})/); if (m) return +(m[1] + m[2] + m[3]);
+    var ago = text.match(/(\d+)\s*d ago/); if (ago) return -parseInt(ago[1], 10);
+    var inf = text.match(/in\s*(\d+)\s*d/); if (inf) return parseInt(inf[1], 10);
+    if (/^-?\d+(\.\d+)?$/.test(text)) return parseFloat(text);
+    return text.toLowerCase();
+  }
+  function eolEnhanceTable(table) {   // adds clickable column sort + a per-column filter row
+    if (!table || !table.tHead || !table.tBodies[0]) return;
+    var thead = table.tHead, tbody = table.tBodies[0], headRow = thead.rows[0];
+    var allRows = [].slice.call(tbody.rows), sortCol = -1, sortDir = 1;
+    var cellText = function (row, i) { return row.cells[i] ? row.cells[i].textContent.trim() : ''; };
+    var frow = document.createElement('tr'); frow.className = 'eol-filterrow';
+    function applyFilter() {
+      var inputs = frow.querySelectorAll('input');
+      allRows.forEach(function (row) {
+        var show = true;
+        [].forEach.call(inputs, function (inp, i) { var v = inp.value.trim().toLowerCase(); if (v && cellText(row, i).toLowerCase().indexOf(v) < 0) show = false; });
+        row.style.display = show ? '' : 'none';
+      });
+    }
+    function applySort() {
+      allRows.slice().sort(function (a, b) {
+        var va = eolCellVal(cellText(a, sortCol)), vb = eolCellVal(cellText(b, sortCol)), cmp;
+        if (typeof va === 'number' && typeof vb === 'number') cmp = va - vb;
+        else cmp = String(va) < String(vb) ? -1 : (String(va) > String(vb) ? 1 : 0);
+        return cmp * sortDir;
+      }).forEach(function (r) { tbody.appendChild(r); });
+      [].forEach.call(headRow.cells, function (th, i) { th.setAttribute('data-sort', i === sortCol ? (sortDir > 0 ? 'asc' : 'desc') : ''); });
+      applyFilter();
+    }
+    [].forEach.call(headRow.cells, function (th, i) {
+      th.classList.add('eol-sortable');
+      th.addEventListener('click', function () { if (sortCol === i) sortDir = -sortDir; else { sortCol = i; sortDir = 1; } applySort(); });
+      var fth = document.createElement('th'), inp = document.createElement('input');
+      inp.type = 'text'; inp.placeholder = 'filter'; inp.setAttribute('aria-label', 'Filter ' + th.textContent.trim());
+      inp.addEventListener('input', applyFilter);
+      fth.appendChild(inp); frow.appendChild(fth);
+    });
+    thead.appendChild(frow);
+    var def = headRow.querySelector('th[data-sortdefault]');
+    if (def) { sortCol = def.cellIndex; sortDir = def.getAttribute('data-sortdefault') === 'asc' ? 1 : -1; applySort(); }
+  }
+  function viewEol(params) {
+    setActive('eol'); params = params || {};
+    app.innerHTML =
+      '<header class="view"><div class="overline">Software Lifecycle</div><h1>End of Life</h1>' +
+      '<p class="lede">End-of-life / end-of-support dates from <a href="https://endoflife.date" target="_blank" rel="noopener">endoflife.date</a> — all products, full release history, browsable by category. A vulnerability on EOL software is <b>unpatchable</b> — no vendor fix is coming — so it needs mitigate / replace / isolate, not "patch."</p></header>' +
+      '<form id="eolForm" class="toolbar" style="margin-bottom:14px"><input type="text" id="eolq" list="eolList" placeholder="Search a product… (e.g. Windows Server, Ubuntu, Python)" style="min-width:340px"><datalist id="eolList"></datalist><button class="chip" type="submit">Look up</button></form>' +
+      '<div class="eol-layout"><aside id="eolNav" class="eol-nav">' + spinner('Loading catalog…') + '</aside><div id="eolBox" class="eol-content">' + spinner('Loading lifecycle data…') + '</div></div>';
+    eolIndexLoad().then(function (list) {
+      var dl = document.getElementById('eolList'); if (dl) dl.innerHTML = list.map(function (p) { return '<option value="' + esc(p.label || p.name) + '">'; }).join('');
+      eolRenderNav(list, params);
+    }).catch(function () { var n = document.getElementById('eolNav'); if (n) n.innerHTML = errBox('Catalog unavailable.'); });
+    document.getElementById('eolForm').addEventListener('submit', function (e) { e.preventDefault(); var v = (document.getElementById('eolq').value || '').trim(); if (v) location.hash = '#/eol/' + encodeURIComponent(eolResolveSlug(v)); });
+    if (params.product) return eolRenderProduct(params.product);
+    if (params.tag) return eolRenderTag(params.tag);
+    return eolRenderOverview();
+  }
+  function eolRenderNav(list, params) {
+    var nav = document.getElementById('eolNav'); if (!nav) return;
+    var byCat = {}; list.forEach(function (p) { var c = p.category || 'other'; (byCat[c] = byCat[c] || []).push(p); });
+    var cats = Object.keys(byCat).sort(function (a, b) { return eolCatName(a).localeCompare(eolCatName(b)); });
+    var activeCat = params.product ? (eolFind(params.product) || {}).category : '';
+    var html = '<div class="eol-navtitle">Browse</div>' +
+      '<a class="eol-navall' + (!params.product && !params.tag ? ' active' : '') + '" href="#/eol">★ Watchlist &amp; upcoming</a>';
+    cats.forEach(function (c) {
+      var items = byCat[c].slice().sort(function (a, b) { return (a.label || a.name).localeCompare(b.label || b.name); });
+      html += '<details class="eol-cat"' + (c === activeCat ? ' open' : '') + '><summary>' + esc(eolCatName(c)) + '<span class="eol-count">' + items.length + '</span></summary><div class="eol-catlist">' +
+        items.map(function (p) { return '<a' + (params.product === p.name ? ' class="on"' : '') + ' href="#/eol/' + encodeURIComponent(p.name) + '">' + esc(p.label || p.name) + '</a>'; }).join('') + '</div></details>';
+    });
+    var tagCount = {}; list.forEach(function (p) { (p.tags || []).forEach(function (t) { tagCount[t] = (tagCount[t] || 0) + 1; }); });
+    var tags = Object.keys(tagCount).sort();
+    html += '<details class="eol-cat"' + (params.tag ? ' open' : '') + '><summary>All tags<span class="eol-count">' + tags.length + '</span></summary><div class="eol-tags">' +
+      tags.map(function (t) { return '<a' + (params.tag === t ? ' class="on"' : '') + ' href="#/eol?tag=' + encodeURIComponent(t) + '">' + esc(t) + '<span class="eol-count">' + tagCount[t] + '</span></a>'; }).join('') + '</div></details>';
+    nav.innerHTML = html;
+  }
+  function eolRenderOverview() {
+    var box = document.getElementById('eolBox'); if (!box) return;
+    box.innerHTML = spinner('Loading watchlist…');
+    eolIndexLoad().then(function (list) {
+      var have = {}; list.forEach(function (p) { have[p.name] = p; });
+      var set = EOL_WATCH.filter(function (s) { return have[s]; });
+      return Promise.all(set.map(function (s) { return eolV1('products/' + encodeURIComponent(s)).then(function (r) { return { slug: s, prod: r }; }).catch(function () { return { slug: s, prod: null }; }); }));
+    }).then(function (prods) {
+      var rows = [];
+      prods.forEach(function (pr) { if (!pr.prod) return; var label = pr.prod.label || pr.slug; (pr.prod.releases || []).forEach(function (rel) { var s = eolRelStatus(rel); if (s.days != null && s.days >= -1095 && s.days <= 730) rows.push({ slug: pr.slug, label: label, rel: rel, s: s }); }); });
+      rows.sort(function (a, b) { return a.s.days - b.s.days; });
+      var html = '<h2>Watchlist <span class="muted" style="font-size:12px;font-weight:400">(recently expired or expiring soon)</span></h2>';
+      if (!rows.length) html += '<div class="empty">Nothing EOL or expiring within the window across the watchlist.</div>';
+      else html += '<table class="eoltable"><thead><tr><th>Product</th><th>Release</th><th data-sortdefault="desc">EOL date</th><th>When</th><th>Status</th></tr></thead><tbody>' +
+        rows.map(function (r) { return '<tr><td><a class="eol-link" href="#/eol/' + encodeURIComponent(r.slug) + '">' + esc(r.label) + '</a></td><td>' + esc(r.rel.label || r.rel.name) + '</td><td>' + eolDateCell(r.rel.eolFrom) + '</td><td class="eol-' + r.s.k + '">' + esc(eolWhen(r.s.days)) + '</td><td class="eol-' + r.s.k + '">' + esc(r.s.label) + '</td></tr>'; }).join('') +
+        '</tbody></table>';
+      html += '<p class="muted" style="margin-top:12px;font-size:12.5px">Common-product watchlist. Pick a category on the left, or search, for any of ' + ((eolIndex || []).length || 460) + ' products — full release history included.</p>';
+      box.innerHTML = html;
+      eolEnhanceTable(box.querySelector('table.eoltable'));
+    }).catch(function () { box.innerHTML = errBox('Could not reach endoflife.date.'); });
+  }
+  function eolRenderTag(tag) {
+    var box = document.getElementById('eolBox'); if (!box) return;
+    box.innerHTML = spinner('Loading tag…');
+    eolIndexLoad().then(function (list) {
+      var items = list.filter(function (p) { return (p.tags || []).indexOf(tag) >= 0; }).sort(function (a, b) { return (a.label || a.name).localeCompare(b.label || b.name); });
+      var html = '<h2>Tag: ' + esc(tag) + ' <span class="muted" style="font-size:13px;font-weight:400">(' + items.length + ' products)</span> <a class="eol-link" href="#/eol" style="font-size:13px;font-weight:400">← all</a></h2>' +
+        '<div class="eol-cards">' + items.map(function (p) { return '<a class="eol-card" href="#/eol/' + encodeURIComponent(p.name) + '"><b>' + esc(p.label || p.name) + '</b><span class="muted">' + esc(eolCatName(p.category)) + '</span></a>'; }).join('') + '</div>';
+      box.innerHTML = html;
+    }).catch(function () { box.innerHTML = errBox('Could not load tag.'); });
+  }
+  function eolRenderProduct(product) {
+    var box = document.getElementById('eolBox'); if (!box) return;
+    box.innerHTML = spinner('Loading ' + esc(product) + '…');
+    eolV1('products/' + encodeURIComponent(product)).then(function (r) {
+      if (!r || !r.releases) { box.innerHTML = errBox('No lifecycle data for “' + esc(product) + '”. Try the search or the category browser on the left.'); return; }
+      var q = document.getElementById('eolq'); if (q) q.value = r.label || product;
+      var lbl = r.labels || {}, links = r.links || {}, rels = r.releases || [];
+      var meta = '<div class="eol-meta">' + (r.category ? '<span class="eol-chip">' + esc(eolCatName(r.category)) + '</span>' : '') +
+        (r.tags || []).map(function (t) { return '<a class="eol-chip tag" href="#/eol?tag=' + encodeURIComponent(t) + '">' + esc(t) + '</a>'; }).join('') + '</div>';
+      var sub = [];
+      if (r.aliases && r.aliases.length) sub.push('Aliases: ' + r.aliases.map(esc).join(', '));
+      if (r.versionCommand) sub.push('Version check: <code>' + esc(r.versionCommand) + '</code>');
+      if (r.identifiers && r.identifiers.length) sub.push('Identifiers: ' + r.identifiers.map(function (id) { return esc(typeof id === 'object' ? ((id.type ? id.type + ':' : '') + (id.id || '')) : id); }).join(', '));
+      var linkbits = [];
+      if (links.html) linkbits.push('<a href="' + esc(links.html) + '" target="_blank" rel="noopener">endoflife.date page ↗</a>');
+      if (links.releasePolicy) linkbits.push('<a href="' + esc(links.releasePolicy) + '" target="_blank" rel="noopener">Vendor release policy ↗</a>');
+      var showCode = rels.some(function (x) { return x.codename; });
+      var showLts = rels.some(function (x) { return x.isLts; });
+      var showEoas = rels.some(function (x) { return x.eoasFrom != null || x.isEoas != null; });
+      var showEoes = rels.some(function (x) { return x.eoesFrom != null || x.isEoes != null; });
+      var showCustom = rels.some(function (x) { return x.custom != null; });
+      var head = '<tr><th>Release</th>' + (showCode ? '<th>Codename</th>' : '') + '<th>Released</th>' + (showLts ? '<th>LTS</th>' : '') +
+        (showEoas ? '<th title="' + esc(lbl.eoas || 'Active support') + '">' + esc(lbl.eoas || 'Active support') + ' ends</th>' : '') +
+        '<th title="' + esc(lbl.eol || 'End of life') + '" data-sortdefault="desc">' + esc(lbl.eol || 'EOL') + '</th>' +
+        (showEoes ? '<th title="' + esc(lbl.eoes || 'Extended support') + '">' + esc(lbl.eoes || 'Extended') + '</th>' : '') +
+        '<th>Latest</th>' + (showCustom ? '<th>More</th>' : '') + '<th>Status</th></tr>';
+      var body = rels.map(function (rel) {
+        var s = eolRelStatus(rel), latest = rel.latest || {};
+        var latestCell = latest.name ? ((latest.link ? '<a href="' + esc(latest.link) + '" target="_blank" rel="noopener">' + esc(latest.name) + '</a>' : esc(latest.name)) + (latest.date ? ' <span class="muted" style="font-size:11px">' + esc(latest.date) + '</span>' : '')) : '—';
+        var customCell = (rel.custom && typeof rel.custom === 'object') ? Object.keys(rel.custom).map(function (k) { var v = rel.custom[k]; return esc(k) + ': ' + esc(typeof v === 'object' ? JSON.stringify(v) : String(v)); }).join('<br>') : '';
+        return '<tr>' +
+          '<td><b>' + esc(rel.label || rel.name) + '</b>' + (rel.label && rel.label !== rel.name ? ' <span class="muted" style="font-size:11px">' + esc(rel.name) + '</span>' : '') + (rel.isMaintained === false ? ' <span class="eol-dead" style="font-size:11px">unmaintained</span>' : '') + '</td>' +
+          (showCode ? '<td class="muted">' + esc(rel.codename || '') + '</td>' : '') +
+          '<td class="muted">' + esc(rel.releaseDate || '') + '</td>' +
+          (showLts ? '<td>' + (rel.isLts ? '<span class="badge">LTS</span>' + (typeof rel.ltsFrom === 'string' ? ' <span class="muted" style="font-size:11px">' + esc(rel.ltsFrom) + '</span>' : '') : '') + '</td>' : '') +
+          (showEoas ? '<td>' + eolPhaseCell(rel.isEoas, rel.eoasFrom) + '</td>' : '') +
+          '<td>' + eolPhaseCell(rel.isEol, rel.eolFrom) + '</td>' +
+          (showEoes ? '<td>' + eolPhaseCell(rel.isEoes, rel.eoesFrom) + '</td>' : '') +
+          '<td>' + latestCell + '</td>' +
+          (showCustom ? '<td class="muted" style="font-size:11.5px">' + customCell + '</td>' : '') +
+          '<td class="eol-' + s.k + '">' + esc(s.label) + (s.days != null ? ' <span class="muted" style="font-weight:400;font-size:11px">(' + esc(eolWhen(s.days)) + ')</span>' : '') + '</td>' +
+          '</tr>';
+      }).join('');
+      box.innerHTML = '<h2 style="margin-bottom:4px">' + esc(r.label || product) + ' <a class="eol-link" href="#/eol" style="font-size:13px;font-weight:400">← all</a></h2>' +
+        meta + (sub.length ? '<p class="muted" style="font-size:12.5px;margin:6px 0">' + sub.join(' &nbsp;·&nbsp; ') + '</p>' : '') +
+        '<div class="gridwrap"><table class="eoltable"><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>' +
+        (linkbits.length ? '<p style="margin-top:10px">' + linkbits.join(' &nbsp;·&nbsp; ') + '</p>' : '');
+      eolEnhanceTable(box.querySelector('table.eoltable'));
+    }).catch(function () { box.innerHTML = errBox('Could not load ' + esc(product) + '.'); });
+  }
   function route() {
     clearInterval(freshTimer);   // stop the freshness auto-refresh when leaving About
     if (aboutScroll) { window.removeEventListener('scroll', aboutScroll); aboutScroll = null; }
@@ -2798,6 +3067,7 @@
     if (parts[0] === 'exploited') return viewExplorer();
     if (parts[0] === 'stats') return viewStats(parseQuery(query));
     if (parts[0] === 'tte') return viewStats({ tab: 'tte' });
+    if (parts[0] === 'eol') return viewEol({ product: parts[1] ? decodeURIComponent(parts[1]) : '', tag: parseQuery(query).tag || '' });
     if (parts[0] === 'data') return viewAbout();
     if (parts[0] === 'ask') return viewAsk();
     if (parts[0] === 'about') return viewAbout();

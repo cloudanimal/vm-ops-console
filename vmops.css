@@ -55,6 +55,10 @@
 .vmops .col-resize:hover { background:color-mix(in srgb, var(--accent) 45%, transparent); }
 .vmops table.grid th { text-align:left; font-size:11px; font-weight:600; letter-spacing:.6px; text-transform:uppercase; color:var(--faint); padding:8px 10px; border-bottom:1px solid var(--line); cursor:pointer; white-space:nowrap; user-select:none; }
 .vmops table.grid td { padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:middle; }
+.vmops table.grid .grid-filterrow th { padding:3px 6px; cursor:default; border-bottom:1px solid var(--line); }
+.vmops table.grid .grid-filterrow input { width:100%; box-sizing:border-box; font-family:inherit; font-size:11px; font-weight:400; letter-spacing:normal; text-transform:none; padding:3px 6px; border:1px solid var(--line); border-radius:5px; background:var(--surface); color:var(--ink); }
+.vmops table.grid .grid-filterrow input:focus { outline:none; border-color:var(--accent); }
+.vmops table.grid .grid-filterrow input::placeholder { color:var(--faint); }
 .vmops table.grid tr:hover td { background:color-mix(in srgb, var(--accent) 5%, transparent); }
 .vmops table.grid .cid a { font-family:var(--mono); font-size:12.5px; text-decoration:none; }
 .vmops table.grid .host { font-family:var(--mono); font-size:12px; color:var(--soft); }
@@ -97,6 +101,18 @@
 .vmops select.status[data-s="resolved"] { color:var(--st-res); }
 .vmops select.status[data-s="risk_accepted"] { color:var(--st-risk); }
 .vmops select.status[data-s="false_positive"] { color:var(--st-fp); }
+.vmops .statuskey { margin:0 0 14px; }
+.vmops .statuskey > summary { cursor:pointer; font-size:12.5px; color:var(--soft); width:max-content; padding:2px 0; }
+.vmops .statuskey > summary:hover { text-decoration:underline; }
+.vmops .statuskey-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(245px,1fr)); gap:10px 20px; margin:10px 0 8px; }
+.vmops .statuskey-item { display:flex; gap:8px; align-items:flex-start; }
+.vmops .st-dot { width:10px; height:10px; border-radius:50%; flex:none; margin-top:4px; }
+.vmops .st-oc { font-size:10px; text-transform:uppercase; letter-spacing:.04em; color:var(--faint); border:1px solid var(--line); border-radius:20px; padding:0 6px; margin-left:4px; }
+.vmops .statuskey-d { font-size:12px; margin-top:2px; }
+.vmops .statuskey-note { font-size:12px; margin-top:4px; }
+.vmops .tkt { font-size:12px; font-variant-numeric:tabular-nums; }
+.vmops a.tkt { color:var(--accent); text-decoration:none; }
+.vmops a.tkt:hover { text-decoration:underline; }
 
 .vmops .drop { display:block; border:1.5px dashed var(--line); border-radius:14px; padding:34px 20px; text-align:center; cursor:pointer; background:var(--surface); transition:border-color .15s ease; }
 .vmops .drop:hover, .vmops .drop.over { border-color:var(--accent); }

@@ -20,9 +20,12 @@
 
   // ---------- model / persistence ----------
   var STATUS = [
-    { k: 'new', l: 'New', open: true }, { k: 'triaged', l: 'Triaged', open: true },
-    { k: 'in_remediation', l: 'In Remediation', open: true }, { k: 'resolved', l: 'Resolved', open: false },
-    { k: 'risk_accepted', l: 'Risk Accepted', open: false }, { k: 'false_positive', l: 'False Positive', open: false }
+    { k: 'new', l: 'New', open: true, d: 'Freshly imported — not yet reviewed.' },
+    { k: 'triaged', l: 'Triaged', open: true, d: 'Reviewed & assessed (owner/priority set); fix not started.' },
+    { k: 'in_remediation', l: 'In Remediation', open: true, d: 'Actively being fixed — patch/config in progress.' },
+    { k: 'resolved', l: 'Resolved', open: false, d: 'Fixed/remediated. Auto-set when a rescan no longer detects it.' },
+    { k: 'risk_accepted', l: 'Risk Accepted', open: false, d: 'Deliberately accepted — won’t fix now; documented & tracked.' },
+    { k: 'false_positive', l: 'False Positive', open: false, d: 'Not a real vulnerability — scanner misdetection; dismissed.' }
   ];
   var SLABEL = {}; STATUS.forEach(function (s) { SLABEL[s.k] = s.l; });
   var OPEN_STATES = STATUS.filter(function (s) { return s.open; }).map(function (s) { return s.k; });
@@ -39,7 +42,7 @@
     ov: load('vmops-overrides', {}),       // key -> {status, owner, notes, updated}
     cfg: Object.assign({}, DEFAULT_CFG, load('vmops-config', {})),
     sort: { col: 'risk', dir: 1 },
-    filt: { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, group: '' }
+    filt: { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, noTicket: false, group: '' }
   };
   STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla, STATE.cfg.sla || {});
   STATE._newKeys = {}; try { (JSON.parse(localStorage.getItem('vmops-newkeys') || '[]') || []).forEach(function (k) { STATE._newKeys[k] = 1; }); } catch (e) {}
@@ -178,9 +181,11 @@
       if (f.overdue && slaState(x) !== 'overdue') return false;
       if (f.exploited) { var it = cveIntel(x.cve); if (!it.kev && !it.exploit) return false; }
       if (f.epssHi) { var ee = cveIntel(x.cve).epss; if (ee == null || ee < 0.5) return false; }
+      if (f.noTicket) { if (ticketOf(x)) return false; if (!isOpen(x)) return false; }
       if (f.fresh && !isNewKey(keyOf(x))) return false;
       if (f.seen) { var _ds = daysSince(x.firstSeen); if (_ds == null || _ds > +f.seen) return false; }
       if (f.q) { var q = f.q.toLowerCase(); if ((x.cve + ' ' + x.host + ' ' + (x.name || '') + ' ' + (x.desc || '') + ' ' + repoOf(x) + ' ' + (ovOf(x).owner || '')).toLowerCase().indexOf(q) === -1) return false; }
+      if (f.colf) { for (var _cid in f.colf) { if (f.colf[_cid] && String(colfVal(_cid, x)).toLowerCase().indexOf(f.colf[_cid].toLowerCase()) < 0) return false; } }
       return true;
     });
     var c = STATE.sort.col, d = STATE.sort.dir;
@@ -193,6 +198,7 @@
       else if (c === 'age') { va = daysSince(a.firstSeen) || 0; vb = daysSince(b.firstSeen) || 0; }
       else if (c === 'epss') { va = cveIntel(b.cve).epss || 0; vb = cveIntel(a.cve).epss || 0; }   // high → low by default
       else if (c === 'vpr') { va = b.vpr || 0; vb = a.vpr || 0; }                                   // high → low by default
+      else if (c === 'ticket') { va = (ticketOf(a) && ticketOf(a).key) || '~'; vb = (ticketOf(b) && ticketOf(b).key) || '~'; }   // linked first, no-ticket last
       else if (c === 'owner') { va = (ovOf(a).owner || '~'); vb = (ovOf(b).owner || '~'); }
       else if (c === 'repo') { va = (repoOf(a) || '~'); vb = (repoOf(b) || '~'); }
       else { va = (a[c] || ''); vb = (b[c] || ''); }
@@ -209,7 +215,7 @@
     var inSla = withSla.filter(function (f) { return slaState(f) !== 'overdue'; });
     var comp = withSla.length ? Math.round(inSla.length / withSla.length * 100) : 100;
     var crit = open.filter(function (f) { return f.severity === 'Critical'; });
-    return { total: STATE.findings.length, open: open.length, overdue: overdue.length, comp: comp, crit: crit.length, assets: assetCount(), unassigned: open.filter(function (f) { return !ovOf(f).owner; }).length };
+    return { total: STATE.findings.length, open: open.length, overdue: overdue.length, comp: comp, crit: crit.length, assets: assetCount(), unassigned: open.filter(function (f) { return !ovOf(f).owner; }).length, noTicket: open.filter(function (f) { return !ticketOf(f); }).length };
   }
   function assetCount() { var s = {}; STATE.findings.forEach(function (f) { s[norm(f.host)] = 1; }); return Object.keys(s).length; }
 
@@ -239,6 +245,7 @@
       kpi('Open critical', k.crit, 'severity = Critical', k.crit ? 'crit' : '') +
       kpi('Assets', k.assets, 'distinct hosts') +
       kpi('Unassigned', k.unassigned, 'no owner set') +
+      kpi('No ticket', k.noTicket, 'open findings, none linked', k.noTicket ? '' : 'ok') +
       '</div>' +
       '<h2>Open by severity</h2>' + barRows(bySev.map(function (x) { return { l: x.s, n: x.n, cls: x.s.toLowerCase() }; })) +
       '<h2>By status</h2>' + barRows(byStatus.map(function (x) { return { l: x.l, n: x.n, color: 'var(--' + (STATUS_BAR_COLOR[x.k] || 'accent') + ')' }; })) +
@@ -287,7 +294,7 @@
   }
 
   // ---------- saved + preset views (one-click filter sets) ----------
-  function defaultFilt() { return { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, group: '' }; }
+  function defaultFilt() { return { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, noTicket: false, colf: {}, group: '' }; }
   var PRESET_VIEWS = [
     { id: 'exploited', name: 'Exploited (KEV / PoC)', filt: { exploited: true } },
     { id: 'epsshi', name: 'EPSS ≥ 50%', filt: { epssHi: true } },
@@ -304,7 +311,7 @@
     // Apply a deep-link query (e.g. Ask AI -> #/findings?sev=Critical&overdue=1) ONLY when it actually
     // changes — otherwise the in-page filter handlers (which re-call viewFindings without touching the
     // hash) would re-parse the stale query every render and clobber the user's selection.
-    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', epssHi:p.epssHi==='1', group:STATE.filt.group||'' }; })();
+    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', epssHi:p.epssHi==='1', noTicket:p.noTicket==='1', colf:{}, group:STATE.filt.group||'' }; })();
     if (!STATE.findings.length) return viewEmpty('findings');
     var list = visibleFindings();
     var statusOpts = '<option value="">All statuses</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '"' + (STATE.filt.status === s.k ? ' selected' : '') + '>' + s.l + '</option>'; }).join('');
@@ -332,6 +339,7 @@
       '<button class="btn sm" id="fOverdue" style="' + (STATE.filt.overdue ? 'border-color:var(--crit);color:var(--crit)' : '') + '">Overdue only</button>' +
       '<button class="btn sm" id="fExploit" style="' + (STATE.filt.exploited ? 'border-color:var(--crit);color:var(--crit)' : '') + '" title="KEV-listed or with a public exploit">Exploited only</button>' +
       '<button class="btn sm" id="fEpssHi" style="' + (STATE.filt.epssHi ? 'border-color:var(--crit);color:var(--crit)' : '') + '" title="EPSS ≥ 50% (high near-term exploitation probability)">EPSS ≥ 50%</button>' +
+      '<button class="btn sm" id="fNoTicket" style="' + (STATE.filt.noTicket ? 'border-color:var(--high);color:var(--high)' : '') + '" title="Open findings with no linked ticket — needs a ticket">No ticket</button>' +
       (Object.keys(STATE._newKeys || {}).length ? '<button class="btn sm" id="fFresh" style="' + (STATE.filt.fresh ? 'border-color:var(--accent);color:var(--accent)' : '') + '" title="Added in the most recent scan">New only</button>' : '') +
       '<select id="fGroup" title="Group findings"><option value="">No grouping</option><option value="cve"' + (STATE.filt.group === 'cve' ? ' selected' : '') + '>Group by CVE</option><option value="product"' + (STATE.filt.group === 'product' ? ' selected' : '') + '>Group by product / fix</option><option value="host"' + (STATE.filt.group === 'host' ? ' selected' : '') + '>Group by host</option></select>' +
       '<select id="fView" title="Saved & preset views">' + viewOpts + '</select>' +
@@ -341,6 +349,7 @@
       '<span class="muted" style="font-size:12.5px">' + list.length + ' of ' + STATE.findings.length + '</span>' +
       '<button class="btn sm" id="fExport">Export CSV</button>' +
       '</div>' +
+      statusLegend() +
       '<div class="bulkbar" id="bulkBar" hidden>' +
       '<span class="bulkcount"><b id="bulkN">0</b> selected</span>' +
       '<input type="text" id="bulkText" placeholder="Note / status update to apply to all selected…">' +
@@ -349,10 +358,11 @@
       '<select id="bulkStatus" class="status" data-s=""><option value="">Set status…</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '">' + s.l + '</option>'; }).join('') + '</select>' +
       '<button class="btn sm" id="bulkJira" title="One Jira ticket covering all selected">Jira ticket</button>' +
       '<button class="btn sm" id="bulkSnow" title="One ServiceNow incident covering all selected">SNOW ticket</button>' +
+      '<button class="btn sm" id="bulkTicket" title="Link one ticket key to all selected findings">Link ticket…</button>' +
       '<span class="spacer"></span>' +
       '<button class="btn sm" id="bulkClear">Clear selection</button>' +
       '</div>' +
-      (list.length ? '<div class="gridwrap">' + renderGrid(list) + '</div>' : '<div class="empty">No findings match these filters.</div>');
+      '<div class="gridwrap">' + gridOrEmpty(list) + '</div>';
     document.getElementById('fq').addEventListener('input', function () { STATE.filt.q = this.value; rerenderGridOnly(); });
     document.getElementById('fStatus').addEventListener('change', function () { STATE.filt.status = this.value; viewFindings(); });
     document.getElementById('fSev').addEventListener('change', function () { STATE.filt.sev = this.value; viewFindings(); });
@@ -362,6 +372,7 @@
     document.getElementById('fOverdue').addEventListener('click', function () { STATE.filt.overdue = !STATE.filt.overdue; viewFindings(); });
     document.getElementById('fExploit').addEventListener('click', function () { STATE.filt.exploited = !STATE.filt.exploited; viewFindings(); });
     document.getElementById('fEpssHi').addEventListener('click', function () { STATE.filt.epssHi = !STATE.filt.epssHi; viewFindings(); });
+    document.getElementById('fNoTicket').addEventListener('click', function () { STATE.filt.noTicket = !STATE.filt.noTicket; viewFindings(); });
     var fFresh = document.getElementById('fFresh'); if (fFresh) fFresh.addEventListener('click', function () { STATE.filt.fresh = !STATE.filt.fresh; viewFindings(); });
     document.getElementById('fGroup').addEventListener('change', function () { STATE.filt.group = this.value; viewFindings(); });
     document.getElementById('fView').addEventListener('change', function () {
@@ -404,6 +415,14 @@
       fs.forEach(function (f) { addUpdate(f, t); });
       clearTxt(); toast('Update added to ' + fs.length + ' finding' + (fs.length > 1 ? 's' : ''));
     });
+    var btk = document.getElementById('bulkTicket');
+    if (btk) btk.addEventListener('click', function () {
+      var fs = need(); if (!fs.length) return;
+      var key = (prompt('Ticket key to link to ' + fs.length + ' finding' + (fs.length > 1 ? 's' : '') + ' (Jira key or SNOW number):') || '').trim();
+      if (!key) return;
+      fs.forEach(function (f) { setTicket(f, key); });
+      toast('Linked ' + key + ' to ' + fs.length + ' finding' + (fs.length > 1 ? 's' : '')); currentView();
+    });
     var bs = document.getElementById('bulkStatus');
     if (bs) bs.addEventListener('change', function () {
       var v = this.value; this.value = ''; if (!v) return;
@@ -417,9 +436,14 @@
     var bc = document.getElementById('bulkClear');
     if (bc) bc.addEventListener('click', function () { selKeys = {}; currentView(); });
   }
+  function gridOrEmpty(list) {
+    if (list.length) return renderGrid(list);
+    // keep the header + filter row so column filters can still be adjusted/cleared when nothing matches
+    return '<table class="grid resizable" id="gridHost" style="width:' + totalW() + 'px">' + gridHead() + '<tbody><tr><td colspan="' + COL_DEFS.length + '" class="empty" style="padding:18px">No findings match these filters.</td></tr></tbody></table>';
+  }
   function rerenderGridOnly() {
     var list = visibleFindings(); var host = document.querySelector('#gridHost');
-    if (host) { host.outerHTML = list.length ? renderGrid(list) : '<div class="empty" id="gridHost">No findings match these filters.</div>'; wireGrid(); }
+    if (host) { host.outerHTML = gridOrEmpty(list); wireGrid(); }
   }
 
   function sevBadge(sev) { return '<span class="badge ' + (['crit', 'high', 'med', 'low'][SEV_ORDER[sev]] || 'low') + '">' + esc(sev) + '</span>'; }
@@ -435,6 +459,7 @@
     { id: 'epss', w: 80, label: 'EPSS', sort: 'epss', resize: true },
     { id: 'vpr', w: 70, label: 'VPR', sort: 'vpr', resize: true },
     { id: 'status', w: 140, label: 'Status', sort: 'status', resize: true },
+    { id: 'ticket', w: 110, label: 'Ticket', sort: 'ticket', resize: true },
     { id: 'sla', w: 85, label: 'SLA', sort: 'due', resize: true },
     { id: 'owner', w: 120, label: 'Owner', sort: 'owner', resize: true },
     { id: 'repo', w: 120, label: 'Repo', sort: 'repo', resize: true },
@@ -443,12 +468,39 @@
   ];
   function colW(c) { var v = STATE._colW && STATE._colW[c.id]; return (v && +v) || c.w; }
   function totalW() { return COL_DEFS.reduce(function (s, c) { return s + colW(c); }, 0); }
+  // Per-column filter: which columns get a filter box, and the text value each is matched against.
+  var COLF_COLS = { cve: 1, host: 1, desc: 1, sev: 1, pri: 1, epss: 1, vpr: 1, status: 1, ticket: 1, sla: 1, owner: 1, repo: 1, age: 1 };
+  function colfVal(cid, f) {
+    switch (cid) {
+      case 'cve': return f.cve || '';
+      case 'host': return f.host || '';
+      case 'desc': return f.desc || f.name || '';
+      case 'sev': return f.severity || '';
+      case 'pri': return priorityOf(f) || '';
+      case 'epss': var e = cveIntel(f.cve).epss; return e == null ? '' : (Math.round(e * 100) + '%');
+      case 'vpr': return f.vpr == null ? '' : f.vpr.toFixed(1);
+      case 'status': return SLABEL[statusOf(f)] || statusOf(f) || '';
+      case 'ticket': var t = ticketOf(f); return (t && t.key) ? t.key : '';
+      case 'sla': var di = dueIn(f); return di == null ? '' : (di < 0 ? (Math.abs(di) + 'd over') : (di + 'd left'));
+      case 'owner': return ovOf(f).owner || '';
+      case 'repo': return repoOf(f) || '';
+      case 'age': return f.firstSeen || '';
+      default: return '';
+    }
+  }
   function gridHead() {
     return '<thead><tr>' + COL_DEFS.map(function (c) {
       var arr = c.sort && STATE.sort.col === c.sort ? (STATE.sort.dir === 1 ? ' <span class="sortarrow">▲</span>' : ' <span class="sortarrow">▼</span>') : '';
       var rsz = c.resize ? '<span class="col-resize" aria-hidden="true"></span>' : '';
       return '<th data-cw="' + c.id + '" style="width:' + colW(c) + 'px"' + (c.sort ? ' data-col="' + c.sort + '"' : '') + (c.cls ? ' class="' + c.cls + '"' : '') + '>' + c.label + arr + rsz + '</th>';
-    }).join('') + '</tr></thead>';
+    }).join('') + '</tr>' + gridFilterRow() + '</thead>';
+  }
+  function gridFilterRow() {
+    var cf = (STATE.filt && STATE.filt.colf) || {};
+    return '<tr class="grid-filterrow">' + COL_DEFS.map(function (c) {
+      if (COLF_COLS[c.id]) return '<th class="cfcell"><input type="text" class="colf" data-cf="' + c.id + '" placeholder="filter" value="' + esc(cf[c.id] || '') + '" aria-label="Filter ' + (typeof c.label === 'string' ? c.label.replace(/<[^>]+>/g, '') : c.id) + '"></th>';
+      return '<th' + (c.cls ? ' class="' + c.cls + '"' : '') + '></th>';
+    }).join('') + '</tr>';
   }
   function findingRow(f, gid) {
     var st = statusOf(f), ss = slaState(f), di = dueIn(f);
@@ -464,6 +516,7 @@
       '<td>' + epssCell(f) + '</td>' +
       '<td>' + vprCell(f) + '</td>' +
       '<td>' + statusSelect(f, st) + '</td>' +
+      '<td>' + ticketCell(f) + '</td>' +
       '<td><span class="pill-sla ' + ss + '">' + dueTxt + '</span></td>' +
       '<td>' + (ovOf(f).owner ? esc(ovOf(f).owner) : '<span class="muted">—</span>') + '</td>' +
       '<td>' + (repoOf(f) ? esc(repoOf(f)) : '<span class="muted">—</span>') + '</td>' +
@@ -502,7 +555,7 @@
         '<td colspan="3"><span class="gcaret">▸</span> <b>' + esc(g.label) + '</b> <span class="muted" style="font-size:12px">' + unit + '</span>' + (chips ? ' ' + chips : '') + '</td>' +
         '<td>' + sevBadge(g.maxSev) + '</td>' +
         '<td>' + (g.pri ? '<span class="pri ' + g.pri.toLowerCase() + '">' + g.pri + '</span>' : '<span class="muted">—</span>') + '</td>' +
-        '<td colspan="6" class="muted" style="font-size:12px">' + g.openCount + ' open / ' + g.count + '</td><td></td></tr>';
+        '<td colspan="7" class="muted" style="font-size:12px">' + g.openCount + ' open / ' + g.count + '</td><td></td></tr>';
       return head + g.items.map(function (f) { return findingRow(f, g.id); }).join('');
     }).join('');
     return '<table class="grid resizable" id="gridHost" style="width:' + totalW() + 'px">' + gridHead() + '<tbody>' + body + '</tbody></table>';
@@ -528,7 +581,15 @@
     return parts.length ? parts.join(' · ') : '<span class="muted">no known exploitation</span>';
   }
   function statusSelect(f, st) {
-    return '<select class="status act-status" data-s="' + st + '">' + STATUS.map(function (s) { return '<option value="' + s.k + '"' + (s.k === st ? ' selected' : '') + '>' + s.l + '</option>'; }).join('') + '</select>';
+    return '<select class="status act-status" data-s="' + st + '" title="Triage status — see “What do the statuses mean?” on the Findings page">' + STATUS.map(function (s) { return '<option value="' + s.k + '" title="' + esc(s.d || '') + '"' + (s.k === st ? ' selected' : '') + '>' + s.l + '</option>'; }).join('') + '</select>';
+  }
+  function statusLegend() {
+    return '<details class="statuskey"><summary>What do the statuses mean?</summary>' +
+      '<div class="statuskey-grid">' + STATUS.map(function (s) {
+        return '<div class="statuskey-item"><span class="st-dot" style="background:var(--' + (STATUS_BAR_COLOR[s.k] || 'accent') + ')"></span>' +
+          '<div><b>' + s.l + '</b> <span class="st-oc">' + (s.open ? 'open' : 'closed') + '</span><div class="muted statuskey-d">' + esc(s.d) + '</div></div></div>';
+      }).join('') + '</div>' +
+      '<div class="muted statuskey-note"><b>Open</b> (New · Triaged · In Remediation) = active work — the SLA clock runs and they rank highest. <b>Closed</b> (Resolved · Risk Accepted · False Positive) = off the worklist — no SLA, ranked last.</div></details>';
   }
   function findByKey(k) { for (var i = 0; i < STATE.findings.length; i++) if (keyOf(STATE.findings[i]) === k) return STATE.findings[i]; return null; }
   // Drag-to-resize columns; widths persist (STATE._colW + localStorage) across re-renders.
@@ -553,6 +614,17 @@
     });
   }
   function wireGrid() {
+    [].forEach.call(document.querySelectorAll('table.grid thead input.colf'), function (inp) {
+      inp.addEventListener('click', function (e) { e.stopPropagation(); });
+      inp.addEventListener('input', function () {
+        STATE.filt.colf = STATE.filt.colf || {};
+        STATE.filt.colf[this.getAttribute('data-cf')] = this.value;
+        var cid = this.getAttribute('data-cf'), pos = this.selectionStart;
+        rerenderGridOnly();
+        var again = document.querySelector('table.grid thead input.colf[data-cf="' + cid + '"]');
+        if (again) { again.focus(); try { again.setSelectionRange(pos, pos); } catch (e) {} }
+      });
+    });
     [].forEach.call(document.querySelectorAll('table.grid thead th[data-col]'), function (th) {
       th.addEventListener('click', function (e) { if (e.target.closest('.col-resize')) return; var c = th.getAttribute('data-col'); if (STATE.sort.col === c) STATE.sort.dir *= -1; else { STATE.sort.col = c; STATE.sort.dir = 1; } currentView(); });
     });
@@ -623,6 +695,7 @@
       '<div style="margin-top:16px"><label style="font-size:12px;font-weight:600;color:var(--soft)">Status</label><br>' + statusSelect(f, st).replace('act-status', 'dr-status') + '</div>' +
       '<div class="field"><label>Owner</label><input type="text" id="drOwner" value="' + esc(o.owner || '') + '" placeholder="team or person" style="max-width:none"></div>' +
       '<div class="field"><label>Repo / application</label><input type="text" id="drRepo" value="' + esc(o.repo || f.repo || '') + '" placeholder="e.g. storefront-web" style="max-width:none"></div>' +
+      '<div class="field"><label>Ticket <span class="muted" style="font-weight:400;font-size:11px">Jira key or SNOW number — paste after you create it</span></label><input type="text" id="drTicket" value="' + esc(ticketOf(f) ? ticketOf(f).key : '') + '" placeholder="e.g. VULN-123 or INC0012345" style="max-width:none">' + (function () { var t = ticketOf(f), u = t && ticketLink(t.sys, t.key); return u ? ' <a class="tkt" href="' + esc(u) + '" target="_blank" rel="noopener" style="font-size:12px">open ↗</a>' : ''; })() + '</div>' +
       '<div><label style="font-size:12px;font-weight:600;color:var(--soft)">Notes</label><textarea id="drNotes" placeholder="Triage notes, remediation plan, risk-acceptance justification…">' + esc(o.notes || '') + '</textarea></div>' +
       '<div style="margin-top:14px"><label style="font-size:12px;font-weight:600;color:var(--soft)">Status updates</label>' +
       '<div id="drUpd" style="margin:8px 0">' + renderUpdates(f) + '</div>' +
@@ -653,6 +726,7 @@
     document.getElementById('drAddUpd').addEventListener('click', function () { var ta = document.getElementById('drUpdNew'); var t = ta.value.trim(); if (!t) { toast('Type an update first'); return; } addUpdate(f, t); ta.value = ''; document.getElementById('drUpd').innerHTML = renderUpdates(f); toast('Update added'); });
     document.getElementById('drOwner').addEventListener('change', function () { setOverride(f, { owner: this.value.trim() }); toast('Owner saved'); currentView(); });
     document.getElementById('drRepo').addEventListener('change', function () { setOverride(f, { repo: this.value.trim() }); toast('Repo saved'); currentView(); });
+    document.getElementById('drTicket').addEventListener('change', function () { setTicket(f, this.value); toast(this.value.trim() ? 'Ticket linked' : 'Ticket cleared'); currentView(); openDrawer(f); });
     document.getElementById('drNotes').addEventListener('change', function () { setOverride(f, { notes: this.value }); toast('Notes saved'); });
     document.getElementById('drJira').addEventListener('click', function () { openTicket('jira', f); });
     document.getElementById('drSnow').addEventListener('click', function () { openTicket('snow', f); });
@@ -695,6 +769,23 @@
     var c = STATE.cfg;
     if (kind === 'jira') { if (!c.jiraBase) return needSettings('Jira base URL'); window.open(c.jiraBase.replace(/\/$/, '') + '/issues/?jql=' + encodeURIComponent('text ~ "' + f.cve + '"'), '_blank', 'noopener'); }
     else { if (!c.snowBase) return needSettings('ServiceNow base URL'); window.open(c.snowBase.replace(/\/$/, '') + '/incident_list.do?sysparm_query=' + encodeURIComponent('short_descriptionLIKE' + f.cve + '^ORdescriptionLIKE' + f.cve), '_blank', 'noopener'); }
+  }
+  // ---------- ticket linkage (capture the created ticket key on the finding; status sync comes later via the proxy) ----------
+  function ticketOf(f) { return ovOf(f).ticket || null; }
+  function ticketSys(key) { return /^[A-Za-z][A-Za-z0-9]*-\d+$/.test(key) ? 'jira' : 'snow'; }   // ABC-123 = Jira; INC0012345 etc = ServiceNow
+  function ticketLink(sys, key) { var c = STATE.cfg; if (sys === 'jira') return c.jiraBase ? c.jiraBase.replace(/\/$/, '') + '/browse/' + encodeURIComponent(key) : null; return c.snowBase ? c.snowBase.replace(/\/$/, '') + '/incident.do?sysparm_query=number=' + encodeURIComponent(key) : null; }
+  function setTicket(f, keyRaw) {
+    var key = (keyRaw || '').trim();
+    if (!key) { setOverride(f, { ticket: null }); return; }
+    var sys = ticketSys(key), prev = ticketOf(f) || {};
+    setOverride(f, { ticket: { sys: sys, key: key, url: ticketLink(sys, key), status: prev.status || null, synced: prev.synced || null } });
+    if (!prev.key || prev.key !== key) addUpdate(f, 'Ticket linked: ' + key + ' (' + sys.toUpperCase() + ')');
+  }
+  function ticketCell(f) {
+    var t = ticketOf(f); if (!t) return '<span class="muted">—</span>';
+    var url = ticketLink(t.sys, t.key);   // resolve from current Settings each render (base URL may be set later)
+    var tip = (t.sys || '').toUpperCase() + (t.status ? ' · ' + t.status : '');
+    return url ? '<a class="tkt" href="' + esc(url) + '" target="_blank" rel="noopener" title="' + esc(tip) + '">' + esc(t.key) + '</a>' : '<span class="tkt" title="' + esc(tip) + '">' + esc(t.key) + '</span>';
   }
   function needSettings(what) { toast('Set your ' + what + ' in Settings first'); location.hash = '#/settings'; }
 
@@ -860,10 +951,11 @@
 
   function exportCsv() {
     var list = visibleFindings();
-    var head = ['CVE', 'Host', 'Description', 'Severity', 'CVSS', 'VPR', 'Status', 'Owner', 'Repo', 'FirstSeen', 'SLA_Due', 'Days_To_Due', 'Plugin', 'Source', 'Notes'];
+    var head = ['CVE', 'Host', 'Description', 'Severity', 'CVSS', 'VPR', 'EPSS', 'Status', 'Ticket', 'Owner', 'Repo', 'FirstSeen', 'LastSeen', 'SLA_Due', 'Days_To_Due', 'Plugin', 'Source', 'Notes', 'Updates'];
     var lines = [head.join(',')].concat(list.map(function (f) {
-      var o = ovOf(f);
-      return [f.cve, f.host, f.desc || f.name || '', f.severity, f.cvss == null ? '' : f.cvss, f.vpr == null ? '' : f.vpr, SLABEL[statusOf(f)], o.owner || '', repoOf(f), f.firstSeen, dueDate(f) || '', dueIn(f) == null ? '' : dueIn(f), f.plugin || '', f.source || '', (o.notes || '').replace(/\s+/g, ' ')]
+      var o = ovOf(f), ep = cveIntel(f.cve).epss;
+      var ups = updatesOf(f).map(function (u) { return (u.at || '').slice(0, 10) + ' ' + (u.text || '').replace(/\s+/g, ' '); }).join(' | ');
+      return [f.cve, f.host, f.desc || f.name || '', f.severity, f.cvss == null ? '' : f.cvss, f.vpr == null ? '' : f.vpr, ep == null ? '' : ep, SLABEL[statusOf(f)], (ticketOf(f) ? ticketOf(f).key : ''), o.owner || '', repoOf(f), f.firstSeen, f.lastSeen || '', dueDate(f) || '', dueIn(f) == null ? '' : dueIn(f), f.plugin || '', f.source || '', (o.notes || '').replace(/\s+/g, ' '), ups]
         .map(function (v) { v = String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }).join(',');
     }));
     var blob = new Blob([lines.join('\n')], { type: 'text/csv' }), a = document.createElement('a');

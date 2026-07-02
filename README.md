@@ -17,6 +17,7 @@ Everything runs in your browser. Scan exports, findings, notes, and API keys sta
 - **Tenable VM dashboard** — upload Tenable SC cumulative + mitigated exports for instant KPIs, severity/SLA breakdowns, top findings, and one-click report exports.
 - **Agent coverage dashboard** — reconcile Active Directory against ManageEngine, Tenable, and CrowdStrike agents to find coverage gaps.
 - **CVE intelligence** — search, browse, KEV/EPSS/exploit signals, statistics, and a daily Morning Report on what's newly exploitable (on Mondays it rolls up the whole weekend — everything released since Friday).
+- **Software End of Life** — a built-in mirror of [endoflife.date](https://endoflife.date): browse every tracked product by category or tag, or search by name, for full release history — release/LTS/EOL/extended-support dates (in each vendor's own terms), latest version, and CPE identifiers. Sortable, per-column filterable, defaulting to the most recent EOL date. A vulnerability on EOL software is unpatchable, so it flags mitigate/replace/isolate work.
 
 ## Tech
 
