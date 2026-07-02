@@ -1,133 +1,133 @@
 {
-  "updated": "2026-06-25",
-  "window_start": 2018,
-  "sources": {
-    "cisa_kev": 1629,
-    "vulncheck_kev": 4993,
-    "vulncheck_xdb": 0,
-    "cves_with_tte": 4541
+ "updated": "2026-07-02",
+ "window_start": 2018,
+ "sources": {
+  "cisa_kev": 1631,
+  "vulncheck_kev": 0,
+  "vulncheck_xdb": 0,
+  "cves_with_tte": 1601
+ },
+ "by_year": {
+  "2018": {
+   "n": 89,
+   "median": 1383,
+   "trimmed_mean": 1371.6,
+   "zero_day_pct": 0.0
   },
-  "by_year": {
-    "2018": {
-      "n": 250,
-      "median": 1126,
-      "trimmed_mean": 1058.7,
-      "zero_day_pct": 0.144
-    },
-    "2019": {
-      "n": 275,
-      "median": 687,
-      "trimmed_mean": 797.9,
-      "zero_day_pct": 0.182
-    },
-    "2020": {
-      "n": 356,
-      "median": 557,
-      "trimmed_mean": 653.9,
-      "zero_day_pct": 0.169
-    },
-    "2021": {
-      "n": 498,
-      "median": 192,
-      "trimmed_mean": 395.1,
-      "zero_day_pct": 0.265
-    },
-    "2022": {
-      "n": 450,
-      "median": 205,
-      "trimmed_mean": 350.1,
-      "zero_day_pct": 0.276
-    },
-    "2023": {
-      "n": 512,
-      "median": 91,
-      "trimmed_mean": 207.9,
-      "zero_day_pct": 0.346
-    },
-    "2024": {
-      "n": 645,
-      "median": 13,
-      "trimmed_mean": 101.9,
-      "zero_day_pct": 0.416
-    },
-    "2025": {
-      "n": 553,
-      "median": 12,
-      "trimmed_mean": 53.2,
-      "zero_day_pct": 0.414
-    },
-    "2026": {
-      "n": 194,
-      "median": 1,
-      "trimmed_mean": 12.1,
-      "zero_day_pct": 0.479
-    }
+  "2019": {
+   "n": 117,
+   "median": 939,
+   "trimmed_mean": 982.8,
+   "zero_day_pct": 0.0
   },
-  "survival": [
-    {
-      "t": 0,
-      "pct": 0.691
-    },
-    {
-      "t": 1,
-      "pct": 0.681
-    },
-    {
-      "t": 7,
-      "pct": 0.649
-    },
-    {
-      "t": 30,
-      "pct": 0.598
-    },
-    {
-      "t": 90,
-      "pct": 0.522
-    },
-    {
-      "t": 180,
-      "pct": 0.453
-    },
-    {
-      "t": 365,
-      "pct": 0.365
-    },
-    {
-      "t": 730,
-      "pct": 0.254
-    }
-  ],
-  "milestones": [
-    {
-      "label": "1 year",
-      "year": 2021,
-      "reached": true
-    },
-    {
-      "label": "1 month",
-      "year": 2025,
-      "reached": true
-    },
-    {
-      "label": "1 week",
-      "year": 2026,
-      "reached": true
-    },
-    {
-      "label": "1 day",
-      "year": 2026,
-      "reached": true
-    },
-    {
-      "label": "1 hour",
-      "year": 2027,
-      "reached": false
-    },
-    {
-      "label": "1 minute",
-      "year": 2027,
-      "reached": false
-    }
-  ],
-  "note": "TTE = exploit signal (CISA KEV + VulnCheck KEV + VulnCheck XDB) minus CVE publication date (CVE List V5), days, by CVE-ID year. 10% trimmed mean above 20 CVEs. Recent cohorts right-censored."
+  "2020": {
+   "n": 146,
+   "median": 567,
+   "trimmed_mean": 614.6,
+   "zero_day_pct": 0.0
+  },
+  "2021": {
+   "n": 213,
+   "median": 194,
+   "trimmed_mean": 293.4,
+   "zero_day_pct": 0.033
+  },
+  "2022": {
+   "n": 129,
+   "median": 21,
+   "trimmed_mean": 116.5,
+   "zero_day_pct": 0.279
+  },
+  "2023": {
+   "n": 163,
+   "median": 6,
+   "trimmed_mean": 76.9,
+   "zero_day_pct": 0.288
+  },
+  "2024": {
+   "n": 164,
+   "median": 16,
+   "trimmed_mean": 64.6,
+   "zero_day_pct": 0.226
+  },
+  "2025": {
+   "n": 183,
+   "median": 6,
+   "trimmed_mean": 33.6,
+   "zero_day_pct": 0.262
+  },
+  "2026": {
+   "n": 80,
+   "median": 3,
+   "trimmed_mean": 8.2,
+   "zero_day_pct": 0.3
+  }
+ },
+ "survival": [
+  {
+   "t": 0,
+   "pct": 0.876
+  },
+  {
+   "t": 1,
+   "pct": 0.846
+  },
+  {
+   "t": 7,
+   "pct": 0.768
+  },
+  {
+   "t": 30,
+   "pct": 0.698
+  },
+  {
+   "t": 90,
+   "pct": 0.621
+  },
+  {
+   "t": 180,
+   "pct": 0.554
+  },
+  {
+   "t": 365,
+   "pct": 0.467
+  },
+  {
+   "t": 730,
+   "pct": 0.367
+  }
+ ],
+ "milestones": [
+  {
+   "label": "1 year",
+   "year": 2021,
+   "reached": true
+  },
+  {
+   "label": "1 month",
+   "year": 2025,
+   "reached": true
+  },
+  {
+   "label": "1 week",
+   "year": 2023,
+   "reached": true
+  },
+  {
+   "label": "1 day",
+   "year": 2027,
+   "reached": false
+  },
+  {
+   "label": "1 hour",
+   "year": 2027,
+   "reached": false
+  },
+  {
+   "label": "1 minute",
+   "year": 2027,
+   "reached": false
+  }
+ ],
+ "note": "TTE = exploit signal (CISA KEV) minus CVE publication date (CVE List V5), days, by CVE-ID year. 10% trimmed mean above 20 CVEs. Recent cohorts right-censored."
 }
