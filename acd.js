@@ -366,15 +366,18 @@ function wireMsel(cfg){   // cfg: {id, sel, setMode, valuesLen}
 function adField(r, names){ for(const n of names){ if(r[n]!=null && r[n]!=='') return r[n]; } return ''; }
 
 // column maps per source (tolerant of naming drift)
+// Hostname column across real exports — DNS/FQDN/NetBIOS first, then the various vendor "…name" labels.
+// norm() strips the domain, so any of these normalise to the same short name and match AD.
+const HOST_PATS = [/dnshostname/i,/dns.?name/i,/\bfqdn\b/i,/host.?name/i,/^hostname$/i,/net.?bios/i,/computer.?name/i,/machine.?name/i,/device.?name/i,/resource.?name/i,/endpoint.?name/i,/system.?name/i,/asset.?name/i,/^host$/i,/^name$/i,/^cn$/i];
 function colsFor(kind){
   const c = unionCols(STATE[kind]);
-  if(kind==='me') return { name:findCol(c,[/^computer.?name$/i,/computer.?name/i,/host.?name/i,/^machine.?name/i,/^device.?name/i,/^name$/i]),
+  if(kind==='me') return { name:findCol(c,HOST_PATS),
     seen:findCol(c,[/last.?contact/i,/last.?seen/i,/last.?communicat/i]), ver:findCol(c,[/agent.?version/i,/version/i]),
     scan:findCol(c,[/last.?success.*scan/i,/last.?scan/i]), patch:findCol(c,[/last.?patch/i]), group:findCol(c,[/custom.?group/i,/group/i]) };
-  if(kind==='ten') return { name:findCol(c,[/host.?name/i,/^name$/i,/computer/i]),
+  if(kind==='ten') return { name:findCol(c,HOST_PATS),
     seen:findCol(c,[/last.?connect/i,/last.?seen/i,/lastconnectutc/i]), scan:findCol(c,[/last.?scan/i,/lastscannedutc/i]),
     group:findCol(c,[/^groups?$/i,/group/i]), ver:null };
-  if(kind==='cs') return { name:findCol(c,[/host.?name/i,/^host$/i,/^name$/i,/computer/i]),
+  if(kind==='cs') return { name:findCol(c,HOST_PATS),
     seen:findCol(c,[/last.?seen/i,/last.?contact/i]), ver:findCol(c,[/sensor.?version/i,/agent.?version/i,/version/i]),
     status:findCol(c,[/status/i,/rfm/i,/reduced/i]), group:findCol(c,[/^ou$/i,/group/i]) };
 }
@@ -383,7 +386,7 @@ function colsFor(kind){
 function buildModel(){
   const STALE = STATE.staleDays;
   for(const k in _adTypeCache) delete _adTypeCache[k];   // re-detect field types fresh each build (data may have changed)
-  const adNameCol = findCol(STATE.adCols,[/^name$/i,/^cn$/i,/computer.?name/i]) || STATE.adCols[0];
+  const adNameCol = findCol(STATE.adCols,[/^name$/i,/^cn$/i,/computer.?name/i,/dnshostname/i,/dns.?name/i,/host.?name/i]) || STATE.adCols[0];
   const adDnsCol  = findCol(STATE.adCols,[/dnshostname/i,/^dns/i]);
   const adEnCol   = findCol(STATE.adCols,[/^enabled$/i]);
   const adOsCol   = findCol(STATE.adCols,[/^operatingsystem$/i,/^os$/i]);
@@ -517,6 +520,13 @@ function render(){
   if(anyAgentRules) cards += kpi('Invalid agents', fmt(invalidN), `present but failing a source validity rule`, invalidN? 'var(--high)':null);
   cards += kpi('Orphan agents', fmt(M.orphans.length), 'agents with no AD match', M.orphans.length?'var(--warn)':null);
   d.insertAdjacentHTML('beforeend', `<div class="cards">${cards}</div>`);
+
+  // hostname match-key transparency — which column each loaded source was joined on (and a loud warning if detection fell back to the first column, which silently breaks matching)
+  const _loaded = AKEYS.filter(k=>(STATE[k]||[]).length);
+  const _mapBits = [`AD → <b>${escH(M.adNameCol||'?')}</b>`].concat(_loaded.map(k=>{ const col=M.sources[k].name;
+    return col ? `${escH(AGENT_NAME[k])} → <b>${escH(col)}</b>` : `${escH(AGENT_NAME[k])} → <span style="color:var(--crit)">⚠ hostname column not detected</span>`; }));
+  const _fellBack = _loaded.some(k=>!M.sources[k].name);
+  d.insertAdjacentHTML('beforeend', `<div class="sub" style="margin-top:-2px;margin-bottom:12px">Matched on hostname — ${_mapBits.join(' · ')}.${_fellBack?` <b style="color:var(--crit)">A source’s hostname column wasn’t detected, so it’s matching on the first column and that source’s coverage is wrong — check the export’s headers.</b>`:''}</div>`);
 
   // scope + stale controls
   const allOus=[...new Set(M.ad.map(c=>c.ou))].filter(Boolean).sort();

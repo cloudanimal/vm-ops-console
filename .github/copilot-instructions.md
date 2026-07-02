@@ -21,8 +21,16 @@ Static, backend-free vulnerability-management console. Vanilla JS, **no build st
 - Per-column table filter rows are a recent pattern: Findings (`vmops.js`: `gridFilterRow` / `COLF_COLS` / `colfVal`), KEV + Exploited (`index.html`: `colFilterRow` / `wireColFilters`), End of Life (`eolEnhanceTable`).
 - Keep the `Co-Authored-By` trailer on commits (owner preference). Don't commit secrets — API keys live in `localStorage` only.
 
-## ⚠️ CURRENT TASK — real Tenable export numbers don't match Tenable
-When a real export is uploaded, the counts differ from what Tenable shows. Most likely causes, in order:
+## ⚠️ CURRENT TASK — real-export numbers
+
+### Agent Coverage dashboard (`acd.js`) — where the wrong numbers were seen
+Root cause (fixed 2026-07-02, verify with real data): coverage is computed by matching AD hosts to each agent export **by hostname** (`norm()` = short name, uppercased). The hostname column in each agent export is auto-detected by `colsFor()`. The old patterns were too narrow — real **Tenable** exports label the host column `DNS Name` / `NetBIOS Name` (not `Hostname`), and **ManageEngine** may use `Resource Name` — so detection missed them and **silently fell back to the first column**, breaking every match → wrong coverage %.
+- Fix applied: broadened detection to a shared `HOST_PATS` list (DNS/FQDN/NetBIOS/computer/machine/device/resource/… name); broadened the AD name column too.
+- Added a **"Matched on hostname — AD → … · ManageEngine → … · Tenable → …"** line under the KPI cards. **When you upload real data, read that line first**: if a source shows a red "hostname column not detected" warning or the wrong column, that's the bug — add its exact header to `HOST_PATS` in `acd.js`. If every source shows the right column and numbers are still off, the issue is elsewhere (health/stale thresholds, denominator, or dedup on duplicate short-names across domains).
+- Key spots: `colsFor()` + `HOST_PATS`, `norm()`, `buildModel()` (the `idx`/match loop), and the render's KPI section (all in `acd.js`).
+
+### Findings / Tenable-dashboard imports (not yet checked by the owner)
+If the Findings workbench or the `#/tvd` dashboard numbers also look off, the likely causes there, in order:
 
 1. **One row explodes into one finding PER CVE.** `parseCsv` (`vmops.js` ~line 925) does `cves.forEach(...)`, so a plugin listing N CVEs becomes N findings. Tenable counts plugin×host *instances*, not CVE×host — so totals diverge. **Probably the biggest discrepancy.** Decide whether to count instances (one row = one finding, CVEs as a list) or keep CVE-centric and reconcile the KPI labels.
 2. **Rows with no CVE are dropped** — `if (!cves.length) return;`. Tenable "vulnerabilities" include plugins with no CVE (info / local checks); those vanish here, lowering totals.
