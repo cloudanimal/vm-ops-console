@@ -2,6 +2,10 @@
 
 Static, backend-free vulnerability-management console. Vanilla JS, **no build step**, hash routing, deployed on GitHub Pages. Live: https://cloudanimal.github.io/vm-ops-console/
 
+> **Full spec: [`docs/`](../docs/README.md).** It documents the architecture, file map, routes, data model,
+> data pipeline, styling/conventions, the optional backend connector, and a step-by-step rebuild guide —
+> enough to reconstruct the app from scratch. Read `docs/README.md` first for anything non-trivial.
+
 ## Run it locally (needed to test real data uploads)
 - Must be served over **HTTP, not `file://`** — the app uses `fetch` + a service worker.
 - `python3 -m http.server 8799` in the repo root → open http://localhost:8799/ — or use the VS Code **Live Server** extension.
