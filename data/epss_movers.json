@@ -1,14 +1,14 @@
 {
-  "updated": "2026-07-02",
+  "updated": "2026-07-03",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-02",
-  "previous_date": "2026-06-25",
+  "current_date": "2026-07-03",
+  "previous_date": "2026-06-26",
   "risers": [
     {
       "id": "CVE-2025-29635",
       "now": 0.87239,
-      "prev": 0.3515,
-      "delta": 0.52089,
+      "prev": 0.35401,
+      "delta": 0.51838,
       "name": "A command injection vulnerability in D-Link DIR-823X 240126 and 240802 allows an authorized attacker to execut"
     },
     {
@@ -24,6 +24,13 @@
       "prev": 0.11789,
       "delta": 0.2148,
       "name": "Integer overflow in certain command arguments can drive Redis to OOM panic"
+    },
+    {
+      "id": "CVE-2022-22733",
+      "now": 0.37594,
+      "prev": 0.20902,
+      "delta": 0.16692,
+      "name": "Access-Token in ElasticJob UI causes password disclosure"
     },
     {
       "id": "CVE-2026-20245",
@@ -54,11 +61,18 @@
       "name": "Inproper Sanitation of field leading to stored XSS"
     },
     {
-      "id": "CVE-2025-2011",
-      "now": 0.47002,
-      "prev": 0.35077,
-      "delta": 0.11925,
-      "name": "Slider & Popup Builder by Depicter <= 3.6.1 - Unauthenticated SQL Injection via 's' Parame"
+      "id": "CVE-2024-46506",
+      "now": 0.62307,
+      "prev": 0.50233,
+      "delta": 0.12074,
+      "name": "NetAlertX NetAlertX"
+    },
+    {
+      "id": "CVE-2024-48766",
+      "now": 0.68076,
+      "prev": 0.56951,
+      "delta": 0.11125,
+      "name": "NetAlertX NetAlertX"
     },
     {
       "id": "CVE-2025-31140",
@@ -66,6 +80,13 @@
       "prev": 0.16852,
       "delta": 0.09771,
       "name": "JetBrains TeamCity"
+    },
+    {
+      "id": "CVE-2022-31126",
+      "now": 0.49937,
+      "prev": 0.40984,
+      "delta": 0.08953,
+      "name": "Unauthenticated Remote Code Execution in Roxy-wi"
     },
     {
       "id": "CVE-2025-6965",
@@ -89,6 +110,13 @@
       "name": "NGINX ngx_http_rewrite_module vulnerability"
     },
     {
+      "id": "CVE-2022-33980",
+      "now": 0.42646,
+      "prev": 0.34819,
+      "delta": 0.07827,
+      "name": "Apache Commons Configuration insecure interpolation defaults"
+    },
+    {
       "id": "CVE-2022-35737",
       "now": 0.19193,
       "prev": 0.11431,
@@ -96,18 +124,18 @@
       "name": "SQLite 1.0.12 through 3.39.x before 3.39.2 sometimes allows an array-bounds overflow if billions of bytes are "
     },
     {
-      "id": "CVE-2026-20230",
-      "now": 0.41694,
-      "prev": 0.34157,
-      "delta": 0.07537,
-      "name": "Cisco Unified Communications Manager Server-Side Request Forgery Vulnerability"
-    },
-    {
       "id": "CVE-1999-1223",
       "now": 0.23055,
       "prev": 0.15722,
       "delta": 0.07333,
       "name": "IIS 3.0 allows remote attackers to cause a denial of service via a request to an ASP page in which the URL con"
+    },
+    {
+      "id": "CVE-2006-3990",
+      "now": 0.18385,
+      "prev": 0.11423,
+      "delta": 0.06962,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in Paul M. Jones Savant2, possibly when used with the com_m"
     },
     {
       "id": "CVE-2022-3062",
@@ -152,6 +180,13 @@
       "name": "Squid has Denial of Service in ICP Response handling"
     },
     {
+      "id": "CVE-2025-30676",
+      "now": 0.65347,
+      "prev": 0.59266,
+      "delta": 0.06081,
+      "name": "Apache OFBiz: Stored XSS Vulnerability"
+    },
+    {
       "id": "CVE-2001-0663",
       "now": 0.36791,
       "prev": 0.30875,
@@ -178,49 +213,14 @@
       "prev": 0.00724,
       "delta": 0.05772,
       "name": "BerriAI LiteLLM"
-    },
-    {
-      "id": "CVE-2026-1207",
-      "now": 0.09436,
-      "prev": 0.03779,
-      "delta": 0.05657,
-      "name": "Potential SQL injection via raster lookups on PostGIS"
-    },
-    {
-      "id": "CVE-2020-9999",
-      "now": 0.08491,
-      "prev": 0.02888,
-      "delta": 0.05603,
-      "name": "Apple macOS"
-    },
-    {
-      "id": "CVE-2001-0540",
-      "now": 0.71247,
-      "prev": 0.65787,
-      "delta": 0.0546,
-      "name": "Memory leak in Terminal servers in Windows NT and Windows 2000 allows remote attackers to cause a denial of se"
-    },
-    {
-      "id": "CVE-2019-5129",
-      "now": 0.38531,
-      "prev": 0.33157,
-      "delta": 0.05374,
-      "name": "YouPHPTube"
-    },
-    {
-      "id": "CVE-2026-42271",
-      "now": 0.80188,
-      "prev": 0.74993,
-      "delta": 0.05195,
-      "name": "LiteLLM: Authenticated command execution via MCP stdio test endpoints"
     }
   ],
   "newly_high": [
     {
       "id": "CVE-2025-29635",
       "now": 0.87239,
-      "prev": 0.3515,
-      "delta": 0.52089,
+      "prev": 0.35401,
+      "delta": 0.51838,
       "name": "A command injection vulnerability in D-Link DIR-823X 240126 and 240802 allows an authorized attacker to execut"
     },
     {
