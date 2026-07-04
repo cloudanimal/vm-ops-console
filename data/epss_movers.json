@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-03",
+  "updated": "2026-07-04",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-03",
-  "previous_date": "2026-06-26",
+  "current_date": "2026-07-04",
+  "previous_date": "2026-06-27",
   "risers": [
     {
       "id": "CVE-2025-29635",
@@ -38,6 +38,13 @@
       "prev": 0.09922,
       "delta": 0.15401,
       "name": "Cisco Catalyst SD-WAN Controller Authenticated Privilege Escalation Vulnerability"
+    },
+    {
+      "id": "CVE-2023-5217",
+      "now": 0.49013,
+      "prev": 0.34401,
+      "delta": 0.14612,
+      "name": "Google Chrome"
     },
     {
       "id": "CVE-2026-27654",
@@ -89,13 +96,6 @@
       "name": "Unauthenticated Remote Code Execution in Roxy-wi"
     },
     {
-      "id": "CVE-2025-6965",
-      "now": 0.73495,
-      "prev": 0.64893,
-      "delta": 0.08602,
-      "name": "Integer Truncation on SQLite"
-    },
-    {
       "id": "CVE-2022-2274",
       "now": 0.44881,
       "prev": 0.36513,
@@ -103,11 +103,11 @@
       "name": "RSA implementation bug in AVX512IFMA instructions"
     },
     {
-      "id": "CVE-2026-42945",
-      "now": 0.61469,
-      "prev": 0.5331,
-      "delta": 0.08159,
-      "name": "NGINX ngx_http_rewrite_module vulnerability"
+      "id": "CVE-2022-25046",
+      "now": 0.53515,
+      "prev": 0.45314,
+      "delta": 0.08201,
+      "name": "A path traversal vulnerability in loader.php of CWP v0.9.8.1122 allows attackers to execute arbitrary code via"
     },
     {
       "id": "CVE-2022-33980",
@@ -129,6 +129,13 @@
       "prev": 0.15722,
       "delta": 0.07333,
       "name": "IIS 3.0 allows remote attackers to cause a denial of service via a request to an ASP page in which the URL con"
+    },
+    {
+      "id": "CVE-2022-31854",
+      "now": 0.32233,
+      "prev": 0.24939,
+      "delta": 0.07294,
+      "name": "Codoforum v5.1 was discovered to contain an arbitrary file upload vulnerability via the logo change option in "
     },
     {
       "id": "CVE-2006-3990",
@@ -166,6 +173,13 @@
       "name": "ManageEngine ADSelfService Plus GINA Client Insufficient Verification of Data Authenticity"
     },
     {
+      "id": "CVE-2024-36465",
+      "now": 0.2926,
+      "prev": 0.23028,
+      "delta": 0.06232,
+      "name": "SQL injection in Zabbix API"
+    },
+    {
       "id": "CVE-2026-33526",
       "now": 0.08942,
       "prev": 0.02738,
@@ -199,20 +213,6 @@
       "prev": 0.43437,
       "delta": 0.05878,
       "name": "WordPress Stock Ticker Plugin <= 3.23.2 is vulnerable to Cross Site Scripting (XSS)"
-    },
-    {
-      "id": "CVE-2009-4189",
-      "now": 0.78531,
-      "prev": 0.72716,
-      "delta": 0.05815,
-      "name": "HP Operations Manager has a default password of OvW*busr1 for the ovwebusr account, which allows remote attack"
-    },
-    {
-      "id": "CVE-2026-40217",
-      "now": 0.06496,
-      "prev": 0.00724,
-      "delta": 0.05772,
-      "name": "BerriAI LiteLLM"
     }
   ],
   "newly_high": [
@@ -224,11 +224,25 @@
       "name": "A command injection vulnerability in D-Link DIR-823X 240126 and 240802 allows an authorized attacker to execut"
     },
     {
+      "id": "CVE-2022-25046",
+      "now": 0.53515,
+      "prev": 0.45314,
+      "delta": 0.08201,
+      "name": "A path traversal vulnerability in loader.php of CWP v0.9.8.1122 allows attackers to execute arbitrary code via"
+    },
+    {
       "id": "CVE-2023-3450",
       "now": 0.50085,
       "prev": 0.4609,
       "delta": 0.03995,
       "name": "Ruijie RG-BCR860 Network Diagnostic Page os command injection"
+    },
+    {
+      "id": "CVE-2023-27823",
+      "now": 0.52515,
+      "prev": 0.49833,
+      "delta": 0.02682,
+      "name": "An authentication bypass in Optoma 1080PSTX C02 allows an attacker to access the administration console withou"
     },
     {
       "id": "CVE-2025-30220",
