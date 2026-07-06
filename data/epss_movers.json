@@ -1,16 +1,9 @@
 {
-  "updated": "2026-07-05",
+  "updated": "2026-07-06",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-05",
-  "previous_date": "2026-06-28",
+  "current_date": "2026-07-06",
+  "previous_date": "2026-06-29",
   "risers": [
-    {
-      "id": "CVE-2025-29635",
-      "now": 0.87239,
-      "prev": 0.35401,
-      "delta": 0.51838,
-      "name": "A command injection vulnerability in D-Link DIR-823X 240126 and 240802 allows an authorized attacker to execut"
-    },
     {
       "id": "CVE-2026-8037",
       "now": 0.29641,
@@ -61,13 +54,6 @@
       "name": "nodejs node"
     },
     {
-      "id": "CVE-2024-6886",
-      "now": 0.40321,
-      "prev": 0.28228,
-      "delta": 0.12093,
-      "name": "Inproper Sanitation of field leading to stored XSS"
-    },
-    {
       "id": "CVE-2024-46506",
       "now": 0.62307,
       "prev": 0.50233,
@@ -87,6 +73,13 @@
       "prev": 0.40984,
       "delta": 0.08953,
       "name": "Unauthenticated Remote Code Execution in Roxy-wi"
+    },
+    {
+      "id": "CVE-2025-57201",
+      "now": 0.15359,
+      "prev": 0.07135,
+      "delta": 0.08224,
+      "name": "AVTECH SECURITY Corporation DGM1104 FullImg-1015-1004-1006-1003 was discovered to contain an authenticated com"
     },
     {
       "id": "CVE-2022-25046",
@@ -173,13 +166,6 @@
       "name": "WordPress Stock Ticker Plugin <= 3.23.2 is vulnerable to Cross Site Scripting (XSS)"
     },
     {
-      "id": "CVE-2009-4189",
-      "now": 0.78531,
-      "prev": 0.72716,
-      "delta": 0.05815,
-      "name": "HP Operations Manager has a default password of OvW*busr1 for the ovwebusr account, which allows remote attack"
-    },
-    {
       "id": "CVE-2026-40217",
       "now": 0.06496,
       "prev": 0.00724,
@@ -194,18 +180,11 @@
       "name": "Potential SQL injection via raster lookups on PostGIS"
     },
     {
-      "id": "CVE-2025-57201",
-      "now": 0.12773,
-      "prev": 0.07135,
-      "delta": 0.05638,
-      "name": "AVTECH SECURITY Corporation DGM1104 FullImg-1015-1004-1006-1003 was discovered to contain an authenticated com"
-    },
-    {
-      "id": "CVE-2020-9999",
-      "now": 0.08491,
-      "prev": 0.02888,
-      "delta": 0.05603,
-      "name": "Apple macOS"
+      "id": "CVE-2025-47916",
+      "now": 0.84803,
+      "prev": 0.79174,
+      "delta": 0.05629,
+      "name": "invisioncommunity Invision Power Board"
     },
     {
       "id": "CVE-2019-5129",
@@ -213,16 +192,30 @@
       "prev": 0.33157,
       "delta": 0.05374,
       "name": "YouPHPTube"
+    },
+    {
+      "id": "CVE-2003-0129",
+      "now": 0.11614,
+      "prev": 0.06292,
+      "delta": 0.05322,
+      "name": "Ximian Evolution Mail User Agent 1.2.2 and earlier allows remote attackers to cause a denial of service (memor"
+    },
+    {
+      "id": "CVE-2026-42271",
+      "now": 0.80188,
+      "prev": 0.74993,
+      "delta": 0.05195,
+      "name": "LiteLLM: Authenticated command execution via MCP stdio test endpoints"
+    },
+    {
+      "id": "CVE-2023-34260",
+      "now": 0.73163,
+      "prev": 0.67994,
+      "delta": 0.05169,
+      "name": "Kyocera TASKalfa 4053ci printers through 2VG_S000.002.561 allow a denial of service (service outage) via /wlmd"
     }
   ],
   "newly_high": [
-    {
-      "id": "CVE-2025-29635",
-      "now": 0.87239,
-      "prev": 0.35401,
-      "delta": 0.51838,
-      "name": "A command injection vulnerability in D-Link DIR-823X 240126 and 240802 allows an authorized attacker to execut"
-    },
     {
       "id": "CVE-2022-25046",
       "now": 0.53515,
@@ -238,11 +231,11 @@
       "name": "Multiple buffer overflows in Novell iPrint Client before 5.06 allow remote attackers to execute arbitrary code"
     },
     {
-      "id": "CVE-2023-3450",
-      "now": 0.50085,
-      "prev": 0.4609,
-      "delta": 0.03995,
-      "name": "Ruijie RG-BCR860 Network Diagnostic Page os command injection"
+      "id": "CVE-2023-35924",
+      "now": 0.52381,
+      "prev": 0.49425,
+      "delta": 0.02956,
+      "name": "GLPI vulnerable to SQL injection via inventory agent request"
     },
     {
       "id": "CVE-2023-27823",
