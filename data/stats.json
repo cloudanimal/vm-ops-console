@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28",
+  "updated": "2026-07-06",
   "source": "fkie-cad NVD mirror (counted locally)",
   "note": "NVD data via the fkie-cad GitHub mirror; no NVD API key. CVEs are bucketed by publication year. Severity buckets use the primary CVSS v3 base severity (CVEs without a v3 score are absent from the split). KEV counts use the CISA KEV enrichment (cisaExploitAdd) carried in the NVD record.",
   "dimensions": [
@@ -10,7 +10,7 @@
     "LOW",
     "kev"
   ],
-  "grand_total": 360799,
+  "grand_total": 362699,
   "by_year": {
     "1999": {
       "total": 923,
@@ -192,8 +192,8 @@
       "total": 21950,
       "kev": 213,
       "CRITICAL": 2545,
-      "HIGH": 7455,
-      "MEDIUM": 7821,
+      "HIGH": 7454,
+      "MEDIUM": 7822,
       "LOW": 356
     },
     "2022": {
@@ -217,35 +217,35 @@
       "kev": 160,
       "CRITICAL": 3036,
       "HIGH": 8257,
-      "MEDIUM": 11492,
+      "MEDIUM": 11493,
       "LOW": 372
     },
     "2025": {
       "total": 49972,
       "kev": 194,
       "CRITICAL": 3365,
-      "HIGH": 4997,
-      "MEDIUM": 8078,
+      "HIGH": 4996,
+      "MEDIUM": 8079,
       "LOW": 225
     },
     "2026": {
-      "total": 36206,
-      "kev": 84,
-      "CRITICAL": 1629,
-      "HIGH": 3531,
-      "MEDIUM": 4488,
-      "LOW": 138
+      "total": 38106,
+      "kev": 86,
+      "CRITICAL": 1688,
+      "HIGH": 3739,
+      "MEDIUM": 4673,
+      "LOW": 165
     }
   },
   "severity_totals": {
-    "CRITICAL": 30232,
-    "HIGH": 75261,
-    "MEDIUM": 81834,
-    "LOW": 3190
+    "CRITICAL": 30291,
+    "HIGH": 75467,
+    "MEDIUM": 82022,
+    "LOW": 3217
   },
   "profile": {
-    "network": 136681,
-    "wormable": 56541,
-    "kev_total": 1629
+    "network": 137056,
+    "wormable": 56676,
+    "kev_total": 1631
   }
 }
