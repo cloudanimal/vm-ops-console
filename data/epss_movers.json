@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-06",
+  "updated": "2026-07-07",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-06",
-  "previous_date": "2026-06-29",
+  "current_date": "2026-07-07",
+  "previous_date": "2026-06-30",
   "risers": [
     {
       "id": "CVE-2026-8037",
@@ -12,18 +12,18 @@
       "name": "OS Command Injection Remote Code Execution Vulnerability in Progress LoadMaster, ECS Conne"
     },
     {
-      "id": "CVE-2022-35977",
-      "now": 0.33269,
-      "prev": 0.11789,
-      "delta": 0.2148,
-      "name": "Integer overflow in certain command arguments can drive Redis to OOM panic"
-    },
-    {
       "id": "CVE-2022-22733",
       "now": 0.37594,
       "prev": 0.20902,
       "delta": 0.16692,
       "name": "Access-Token in ElasticJob UI causes password disclosure"
+    },
+    {
+      "id": "CVE-2021-25297",
+      "now": 0.58742,
+      "prev": 0.42935,
+      "delta": 0.15807,
+      "name": "Nagios XI version xi-5.7.5 is affected by OS command injection. The vulnerability exists in the file /usr/loca"
     },
     {
       "id": "CVE-2026-20245",
@@ -38,20 +38,6 @@
       "prev": 0.34401,
       "delta": 0.14612,
       "name": "Google Chrome"
-    },
-    {
-      "id": "CVE-2026-27654",
-      "now": 0.21621,
-      "prev": 0.07865,
-      "delta": 0.13756,
-      "name": "NGINX ngx_http_dav_module vulnerability"
-    },
-    {
-      "id": "CVE-2026-21710",
-      "now": 0.26356,
-      "prev": 0.13066,
-      "delta": 0.1329,
-      "name": "nodejs node"
     },
     {
       "id": "CVE-2024-46506",
@@ -75,6 +61,13 @@
       "name": "Unauthenticated Remote Code Execution in Roxy-wi"
     },
     {
+      "id": "CVE-2022-20828",
+      "now": 0.4831,
+      "prev": 0.39862,
+      "delta": 0.08448,
+      "name": "Cisco FirePOWER Software for ASA FirePOWER Module Command Injection Vulnerability"
+    },
+    {
       "id": "CVE-2025-57201",
       "now": 0.15359,
       "prev": 0.07135,
@@ -89,6 +82,20 @@
       "name": "A path traversal vulnerability in loader.php of CWP v0.9.8.1122 allows attackers to execute arbitrary code via"
     },
     {
+      "id": "CVE-2009-2629",
+      "now": 0.75079,
+      "prev": 0.669,
+      "delta": 0.08179,
+      "name": "Buffer underflow in src/http/ngx_http_parse.c in nginx 0.1.0 through 0.5.37, 0.6.x before 0.6.39, 0.7.x before"
+    },
+    {
+      "id": "CVE-2006-5205",
+      "now": 0.10676,
+      "prev": 0.02731,
+      "delta": 0.07945,
+      "name": "Directory traversal vulnerability in Invision Gallery 2.0.7 allows remote attackers to read arbitrary files vi"
+    },
+    {
       "id": "CVE-2022-33980",
       "now": 0.42646,
       "prev": 0.34819,
@@ -96,11 +103,11 @@
       "name": "Apache Commons Configuration insecure interpolation defaults"
     },
     {
-      "id": "CVE-2022-35737",
-      "now": 0.19193,
-      "prev": 0.11431,
-      "delta": 0.07762,
-      "name": "SQLite 1.0.12 through 3.39.x before 3.39.2 sometimes allows an array-bounds overflow if billions of bytes are "
+      "id": "CVE-2024-20353",
+      "now": 0.70686,
+      "prev": 0.63272,
+      "delta": 0.07414,
+      "name": "Cisco Cisco Adaptive Security Appliance (ASA) Software"
     },
     {
       "id": "CVE-2022-31854",
@@ -124,32 +131,11 @@
       "name": "Multiple PHP remote file inclusion vulnerabilities in Paul M. Jones Savant2, possibly when used with the com_m"
     },
     {
-      "id": "CVE-2018-17283",
-      "now": 0.66347,
-      "prev": 0.60097,
-      "delta": 0.0625,
-      "name": "Zoho ManageEngine OpManager before 12.3 Build 123196 does not require authentication for /oputilsServlet reque"
-    },
-    {
       "id": "CVE-2024-36465",
       "now": 0.2926,
       "prev": 0.23028,
       "delta": 0.06232,
       "name": "SQL injection in Zabbix API"
-    },
-    {
-      "id": "CVE-2026-33526",
-      "now": 0.08942,
-      "prev": 0.02738,
-      "delta": 0.06204,
-      "name": "Squid vulnerable to Denial of Service in ICP Request handling"
-    },
-    {
-      "id": "CVE-2026-32748",
-      "now": 0.08931,
-      "prev": 0.02734,
-      "delta": 0.06197,
-      "name": "Squid has Denial of Service in ICP Response handling"
     },
     {
       "id": "CVE-2025-30676",
@@ -159,27 +145,6 @@
       "name": "Apache OFBiz: Stored XSS Vulnerability"
     },
     {
-      "id": "CVE-2022-45365",
-      "now": 0.49315,
-      "prev": 0.43437,
-      "delta": 0.05878,
-      "name": "WordPress Stock Ticker Plugin <= 3.23.2 is vulnerable to Cross Site Scripting (XSS)"
-    },
-    {
-      "id": "CVE-2026-40217",
-      "now": 0.06496,
-      "prev": 0.00724,
-      "delta": 0.05772,
-      "name": "BerriAI LiteLLM"
-    },
-    {
-      "id": "CVE-2026-1207",
-      "now": 0.09436,
-      "prev": 0.03779,
-      "delta": 0.05657,
-      "name": "Potential SQL injection via raster lookups on PostGIS"
-    },
-    {
       "id": "CVE-2025-47916",
       "now": 0.84803,
       "prev": 0.79174,
@@ -187,11 +152,11 @@
       "name": "invisioncommunity Invision Power Board"
     },
     {
-      "id": "CVE-2019-5129",
-      "now": 0.38531,
-      "prev": 0.33157,
-      "delta": 0.05374,
-      "name": "YouPHPTube"
+      "id": "CVE-2026-40217",
+      "now": 0.06496,
+      "prev": 0.01059,
+      "delta": 0.05437,
+      "name": "BerriAI LiteLLM"
     },
     {
       "id": "CVE-2003-0129",
@@ -201,11 +166,11 @@
       "name": "Ximian Evolution Mail User Agent 1.2.2 and earlier allows remote attackers to cause a denial of service (memor"
     },
     {
-      "id": "CVE-2026-42271",
-      "now": 0.80188,
-      "prev": 0.74993,
-      "delta": 0.05195,
-      "name": "LiteLLM: Authenticated command execution via MCP stdio test endpoints"
+      "id": "CVE-2025-30401",
+      "now": 0.21096,
+      "prev": 0.15844,
+      "delta": 0.05252,
+      "name": "Facebook WhatsApp Desktop for Windows"
     },
     {
       "id": "CVE-2023-34260",
@@ -213,9 +178,51 @@
       "prev": 0.67994,
       "delta": 0.05169,
       "name": "Kyocera TASKalfa 4053ci printers through 2VG_S000.002.561 allow a denial of service (service outage) via /wlmd"
+    },
+    {
+      "id": "CVE-2021-39935",
+      "now": 0.35649,
+      "prev": 0.30496,
+      "delta": 0.05153,
+      "name": "GitLab GitLab"
+    },
+    {
+      "id": "CVE-2025-22037",
+      "now": 0.28222,
+      "prev": 0.23278,
+      "delta": 0.04944,
+      "name": "ksmbd: fix null pointer dereference in alloc_preauth_hash()"
+    },
+    {
+      "id": "CVE-2003-0128",
+      "now": 0.16522,
+      "prev": 0.11743,
+      "delta": 0.04779,
+      "name": "The try_uudecoding function in mail-format.c for Ximian Evolution Mail User Agent 1.2.2 and earlier allows rem"
+    },
+    {
+      "id": "CVE-2008-2431",
+      "now": 0.51053,
+      "prev": 0.46334,
+      "delta": 0.04719,
+      "name": "Multiple buffer overflows in Novell iPrint Client before 5.06 allow remote attackers to execute arbitrary code"
+    },
+    {
+      "id": "CVE-2003-0130",
+      "now": 0.10335,
+      "prev": 0.05778,
+      "delta": 0.04557,
+      "name": "The handle_image function in mail-format.c for Ximian Evolution Mail User Agent 1.2.2 and earlier does not pro"
     }
   ],
   "newly_high": [
+    {
+      "id": "CVE-2021-25297",
+      "now": 0.58742,
+      "prev": 0.42935,
+      "delta": 0.15807,
+      "name": "Nagios XI version xi-5.7.5 is affected by OS command injection. The vulnerability exists in the file /usr/loca"
+    },
     {
       "id": "CVE-2022-25046",
       "now": 0.53515,
@@ -245,25 +252,11 @@
       "name": "An authentication bypass in Optoma 1080PSTX C02 allows an attacker to access the administration console withou"
     },
     {
-      "id": "CVE-2025-30220",
-      "now": 0.50825,
-      "prev": 0.49165,
-      "delta": 0.0166,
-      "name": "GeoTools, GeoServer, and GeoNetwork XML External Entity (XXE) Processing Vulnerability in "
-    },
-    {
       "id": "CVE-2020-35131",
       "now": 0.51299,
       "prev": 0.49938,
       "delta": 0.01361,
       "name": "Cockpit before 0.6.1 allows an attacker to inject custom PHP code and achieve Remote Command Execution via reg"
-    },
-    {
-      "id": "CVE-2022-22956",
-      "now": 0.50694,
-      "prev": 0.49899,
-      "delta": 0.00795,
-      "name": "VMware Workspace ONE Access"
     }
   ]
 }
