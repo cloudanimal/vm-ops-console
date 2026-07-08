@@ -1,14 +1,14 @@
 {
-  "updated": "2026-07-07",
+  "updated": "2026-07-08",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-07",
-  "previous_date": "2026-06-30",
+  "current_date": "2026-07-08",
+  "previous_date": "2026-07-01",
   "risers": [
     {
       "id": "CVE-2026-8037",
       "now": 0.29641,
-      "prev": 0.01869,
-      "delta": 0.27772,
+      "prev": 0.0819,
+      "delta": 0.21451,
       "name": "OS Command Injection Remote Code Execution Vulnerability in Progress LoadMaster, ECS Conne"
     },
     {
@@ -138,11 +138,32 @@
       "name": "SQL injection in Zabbix API"
     },
     {
+      "id": "CVE-2006-4052",
+      "now": 0.16119,
+      "prev": 0.09979,
+      "delta": 0.0614,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in Turnkey Web Tools PHP Simple Shop 2.0 and earlier allow "
+    },
+    {
       "id": "CVE-2025-30676",
       "now": 0.65347,
       "prev": 0.59266,
       "delta": 0.06081,
       "name": "Apache OFBiz: Stored XSS Vulnerability"
+    },
+    {
+      "id": "CVE-2022-1952",
+      "now": 0.23487,
+      "prev": 0.17572,
+      "delta": 0.05915,
+      "name": "eaSYNC < 1.1.16 - Unauthenticated Arbitrary File Upload"
+    },
+    {
+      "id": "CVE-2006-4059",
+      "now": 0.15253,
+      "prev": 0.0943,
+      "delta": 0.05823,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in USOLVED NEWSolved Lite 1.9.2, and possibly earlier, allo"
     },
     {
       "id": "CVE-2025-47916",
@@ -152,11 +173,11 @@
       "name": "invisioncommunity Invision Power Board"
     },
     {
-      "id": "CVE-2026-40217",
-      "now": 0.06496,
-      "prev": 0.01059,
-      "delta": 0.05437,
-      "name": "BerriAI LiteLLM"
+      "id": "CVE-2023-34260",
+      "now": 0.73354,
+      "prev": 0.67994,
+      "delta": 0.0536,
+      "name": "Kyocera TASKalfa 4053ci printers through 2VG_S000.002.561 allow a denial of service (service outage) via /wlmd"
     },
     {
       "id": "CVE-2003-0129",
@@ -166,6 +187,13 @@
       "name": "Ximian Evolution Mail User Agent 1.2.2 and earlier allows remote attackers to cause a denial of service (memor"
     },
     {
+      "id": "CVE-2026-23744",
+      "now": 0.43671,
+      "prev": 0.38374,
+      "delta": 0.05297,
+      "name": "REC in MCPJam inspector due to HTTP Endpoint exposes"
+    },
+    {
       "id": "CVE-2025-30401",
       "now": 0.21096,
       "prev": 0.15844,
@@ -173,11 +201,11 @@
       "name": "Facebook WhatsApp Desktop for Windows"
     },
     {
-      "id": "CVE-2023-34260",
-      "now": 0.73163,
-      "prev": 0.67994,
-      "delta": 0.05169,
-      "name": "Kyocera TASKalfa 4053ci printers through 2VG_S000.002.561 allow a denial of service (service outage) via /wlmd"
+      "id": "CVE-2012-5321",
+      "now": 0.1291,
+      "prev": 0.07679,
+      "delta": 0.05231,
+      "name": "tiki-featured_link.php in TikiWiki CMS/Groupware 8.3 allows remote attackers to load arbitrary web site pages "
     },
     {
       "id": "CVE-2021-39935",
@@ -185,34 +213,6 @@
       "prev": 0.30496,
       "delta": 0.05153,
       "name": "GitLab GitLab"
-    },
-    {
-      "id": "CVE-2025-22037",
-      "now": 0.28222,
-      "prev": 0.23278,
-      "delta": 0.04944,
-      "name": "ksmbd: fix null pointer dereference in alloc_preauth_hash()"
-    },
-    {
-      "id": "CVE-2003-0128",
-      "now": 0.16522,
-      "prev": 0.11743,
-      "delta": 0.04779,
-      "name": "The try_uudecoding function in mail-format.c for Ximian Evolution Mail User Agent 1.2.2 and earlier allows rem"
-    },
-    {
-      "id": "CVE-2008-2431",
-      "now": 0.51053,
-      "prev": 0.46334,
-      "delta": 0.04719,
-      "name": "Multiple buffer overflows in Novell iPrint Client before 5.06 allow remote attackers to execute arbitrary code"
-    },
-    {
-      "id": "CVE-2003-0130",
-      "now": 0.10335,
-      "prev": 0.05778,
-      "delta": 0.04557,
-      "name": "The handle_image function in mail-format.c for Ximian Evolution Mail User Agent 1.2.2 and earlier does not pro"
     }
   ],
   "newly_high": [
@@ -243,13 +243,6 @@
       "prev": 0.49425,
       "delta": 0.02956,
       "name": "GLPI vulnerable to SQL injection via inventory agent request"
-    },
-    {
-      "id": "CVE-2023-27823",
-      "now": 0.52515,
-      "prev": 0.49833,
-      "delta": 0.02682,
-      "name": "An authentication bypass in Optoma 1080PSTX C02 allows an attacker to access the administration console withou"
     },
     {
       "id": "CVE-2020-35131",

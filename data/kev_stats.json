@@ -1,14 +1,14 @@
 {
-  "updated": "2026-07-07",
-  "total": 1631,
-  "ransomware_count": 328,
+  "updated": "2026-07-08",
+  "total": 1635,
+  "ransomware_count": 329,
   "by_year": {
     "2021": 311,
     "2022": 555,
     "2023": 187,
     "2024": 186,
     "2025": 245,
-    "2026": 147
+    "2026": 151
   },
   "top_vendors": [
     [
@@ -25,7 +25,7 @@
     ],
     [
       "Adobe",
-      79
+      80
     ],
     [
       "Google",
@@ -130,12 +130,12 @@
       17
     ],
     [
-      "Synacor Zimbra Collaboration Suite (ZCS)",
+      "Adobe ColdFusion",
       16
     ],
     [
-      "Adobe ColdFusion",
-      15
+      "Synacor Zimbra Collaboration Suite (ZCS)",
+      16
     ],
     [
       "Cisco IOS and IOS XE Software",
