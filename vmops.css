@@ -152,6 +152,20 @@
 .drawer .overline { font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--faint); }
 .drawer .row { display:flex; justify-content:space-between; gap:12px; padding:9px 0; border-bottom:1px solid var(--line); font-size:13.5px; }
 .drawer .row .k { color:var(--soft); } .drawer .actions { display:flex; flex-wrap:wrap; gap:9px; margin-top:16px; }
+.drawer .remed { margin:16px 0 4px; padding-top:14px; border-top:1px solid var(--line); }
+.drawer .remed-h { display:flex; align-items:center; gap:8px; }
+.drawer .remed-h .k { font-size:12px; font-weight:600; color:var(--soft); }
+.drawer .remed-copy { margin-left:auto; }
+.drawer .remed-note { font-size:11px; color:var(--soft); margin-top:7px; }
+/* shared by the drawer and the CVE-detail page */
+.remed-badge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:.03em; text-transform:uppercase; padding:2px 7px; border-radius:5px; background:var(--accent); color:#fff; vertical-align:middle; }
+.remed-badge.gen { background:#8a8f98; }
+.remed-title { font-size:13px; font-weight:600; margin:9px 0 6px; color:var(--ink); }
+.remed-code { background:#0f1420; color:#e6edf3; border-radius:8px; padding:12px 13px; margin:0; overflow:auto; max-height:340px; font:12px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; white-space:pre; -webkit-overflow-scrolling:touch; }
+#cveRemedCopy { font:inherit; font-size:12px; color:var(--soft); background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:5px 13px; cursor:pointer; transition:border-color .15s ease, color .15s ease; }
+#cveRemedCopy:hover { border-color:var(--accent); color:var(--ink); }
+.vmops .remed-row { display:flex; align-items:center; gap:8px; padding:8px 0; border-bottom:1px solid var(--line); font-size:13px; }
+.vmops .remed-row .remed-acts { margin-left:auto; display:flex; gap:6px; flex-shrink:0; }
 .drawer textarea { width:100%; min-height:90px; font-family:var(--sans); font-size:13.5px; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:10px; outline:none; resize:vertical; margin-top:6px; }
 .drawer .x { float:right; background:none; border:0; font-size:22px; color:var(--faint); cursor:pointer; line-height:1; }
 .toast { position:fixed; bottom:22px; left:50%; transform:translateX(-50%); background:var(--ink); color:var(--paper); font-size:13.5px; padding:10px 18px; border-radius:100px; z-index:120; opacity:0; transition:opacity .2s ease; pointer-events:none; }

@@ -12,6 +12,8 @@
   function daysSince(iso) { if (!iso) return null; var d = new Date(iso + 'T00:00:00'); if (isNaN(d)) return null; return Math.floor((Date.now() - d.getTime()) / 86400000); }
   function addDays(iso, n) { var d = new Date(iso + 'T00:00:00'); d.setDate(d.getDate() + n); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
   function toast(m) { var t = document.getElementById('toast'); if(!t){ t=document.createElement('div'); t.id='toast'; t.className='toast vmops'; document.body.appendChild(t); } t.textContent = m; t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(function () { t.classList.remove('show'); }, 2200); }
+  function legacyCopy(t) { var ta = document.createElement('textarea'); ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.focus(); ta.select(); try { document.execCommand('copy'); toast('Copied'); } catch (e) {} document.body.removeChild(ta); }
+  function copyText(t) { if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(t).then(function () { toast('Copied'); }, function () { legacyCopy(t); }); } else { legacyCopy(t); } }
   function norm(h) { return String(h || '').trim().split('.')[0].toUpperCase(); }
   var SHIELD = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>';
   function privSlim() { return '<div class="privacy slim">' + SHIELD + '<div><b>100% local.</b> Findings, status, owners, notes, and configuration stay in this browser — nothing is uploaded. Ticketing is via deep-links to your own Jira / ServiceNow.</div></div>'; }
@@ -35,7 +37,7 @@
   var DEFAULT_ICON_COLOR = '#28415d';
 
   function load(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
-  function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } }
 
   var STATE = {
     findings: load('vmops-findings', []),
@@ -673,6 +675,61 @@
     updateBulkBar();
   }
 
+  // ---------- remediation script samples (shipped data/remediation.json + user-added) ----------
+  var PLAYBOOK_BASE = 'https://github.com/cloudanimal/remediation-playbooks/tree/main/';
+  var REMED = { shipped: null, data: null, loading: null };
+  function remedUser() { var u = load('vmops-remediation', null) || {}; return { cve: u.cve || {}, class: u.class || [] }; }
+  function remedMerge(shipped, user) {
+    shipped = shipped || { cve: {}, class: [], generic: null };
+    return {
+      cve: Object.assign({}, shipped.cve, user.cve),          // user CVE entries win
+      class: (user.class || []).concat(shipped.class || []),  // user classes are checked first
+      generic: shipped.generic
+    };
+  }
+  function remedReload() { if (REMED.shipped) REMED.data = remedMerge(REMED.shipped, remedUser()); return REMED.data; }
+  function ensureRemed() {
+    if (REMED.data) return Promise.resolve(REMED.data);
+    if (REMED.loading) return REMED.loading;
+    REMED.loading = fetch('data/remediation.json').then(function (r) { return r.ok ? r.json() : null; })
+      .catch(function () { return null; })
+      .then(function (d) { REMED.shipped = d || { cve: {}, class: [], generic: null }; REMED.data = remedMerge(REMED.shipped, remedUser()); return REMED.data; });
+    return REMED.loading;
+  }
+  // Guess the platform from the finding text, to pick the right generic fallback.
+  function osOf(f) {
+    var hay = ((f.name || '') + ' ' + (f.desc || '') + ' ' + (f.cve || '')).toLowerCase();
+    if (/citrix|netscaler|fortios|fortinet|fortigate|forti|palo alto|pan-os|\bf5\b|big-ip|sonicwall|\badc\b|ios xe|junos|appliance|firmware/.test(hay)) return 'appliance';
+    if (/linux|unix|ubuntu|debian|red ?hat|rhel|centos|rocky|alma|suse|\bsudo\b|openssh|apache|nginx|glibc|\bkernel\b|systemd|\bbash\b|samba/.test(hay)) return 'linux';
+    return 'windows';
+  }
+  // Optional per-entry constraints: an entry only applies if its OS and severity conditions are met.
+  function remedMatches(entry, f) {
+    if (entry.os && entry.os !== 'any' && osOf(f) !== entry.os) return false;
+    if (entry.sev && entry.sev !== 'any' && (f.severity || '') !== entry.sev) return false;
+    return true;
+  }
+  // Match a finding to a sample script: exact CVE → keyword class → per-OS generic fallback.
+  function remediationFor(f) {
+    var d = REMED.data; if (!d) return null;
+    var hit = null, generic = false;
+    var cveHit = d.cve && d.cve[f.cve];
+    if (cveHit && remedMatches(cveHit, f)) hit = cveHit;
+    if (!hit) {
+      var hay = ((f.name || '') + ' ' + (f.desc || '') + ' ' + (f.cve || '')).toLowerCase();
+      for (var i = 0; i < (d.class || []).length; i++) {
+        var c = d.class[i], reOk = true;
+        if (c.match) { try { reOk = new RegExp(c.match, 'i').test(hay); } catch (e) { reOk = false; } }
+        if (reOk && remedMatches(c, f)) { hit = c; break; }
+      }
+    }
+    if (!hit) { var g = d.generic || {}; hit = g[osOf(f)] || g.windows; generic = true; }
+    if (!hit) return null;
+    var script = (Array.isArray(hit.script) ? hit.script.join('\n') : (hit.script || ''))
+      .replace(/\{CVE\}/g, f.cve || '').replace(/\{HOST\}/g, f.host || 'this host').replace(/\{NAME\}/g, f.name || 'this vulnerability');
+    return { title: hit.title || 'Remediation', script: script, lang: hit.lang || 'PowerShell', generic: generic, playbook: hit.playbook ? PLAYBOOK_BASE + hit.playbook : null };
+  }
+
   // ---------- finding drawer ----------
   function openDrawer(f) {
     var bg = document.getElementById('drawerBg'), dr = document.getElementById('drawer');
@@ -692,6 +749,7 @@
       '<div class="row"><span class="k">Plugin</span><span>' + (f.plugin ? esc(f.plugin) : '—') + ' · ' + esc(f.source || '') + '</span></div>' +
       '<div class="row"><span class="k">First seen</span><span>' + esc(f.firstSeen) + ' (' + (daysSince(f.firstSeen) || 0) + 'd ago)</span></div>' +
       '<div class="row"><span class="k">SLA due</span><span class="pill-sla ' + ss + '">' + (dd ? esc(dd) + (di == null ? '' : ' · ' + (di < 0 ? Math.abs(di) + 'd overdue' : di + 'd left')) : '—') + '</span></div>' +
+      '<div id="drRemed" class="remed"></div>' +
       '<div style="margin-top:16px"><label style="font-size:12px;font-weight:600;color:var(--soft)">Status</label><br>' + statusSelect(f, st).replace('act-status', 'dr-status') + '</div>' +
       '<div class="field"><label>Owner</label><input type="text" id="drOwner" value="' + esc(o.owner || '') + '" placeholder="team or person" style="max-width:none"></div>' +
       '<div class="field"><label>Repo / application</label><input type="text" id="drRepo" value="' + esc(o.repo || f.repo || '') + '" placeholder="e.g. storefront-web" style="max-width:none"></div>' +
@@ -719,6 +777,21 @@
       if (it.epss != null) setEpss(it.epss); else epssFor(f.cve).then(setEpss);   // prefer the loaded feed; fall back to a live lookup
       levFor(f.cve).then(function (l) { var el = document.getElementById('drLev'); if (!el) return; el.className = ''; var v = levVerdict(l); el.innerHTML = l == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); });
     })();
+    // Fill the remediation sample (loads data/remediation.json once, then it's instant).
+    ensureRemed().then(function () {
+      var el = document.getElementById('drRemed'); if (!el) return;
+      var r = remediationFor(f); if (!r) return;
+      el.innerHTML =
+        '<div class="remed-h"><span class="k">Remediation</span>' +
+        '<span class="remed-badge' + (r.generic ? ' gen' : '') + '">' + esc(r.lang) + (r.generic ? ' · generic' : '') + '</span>' +
+        '<button class="btn sm remed-copy" type="button">Copy</button></div>' +
+        '<div class="remed-title">' + esc(r.title) + '</div>' +
+        '<pre class="remed-code">' + esc(r.script) + '</pre>' +
+        (r.playbook ? '<div class="remed-note"><a href="' + esc(r.playbook) + '" target="_blank" rel="noopener">Full playbook ↗</a></div>' : '') +
+        '<div class="remed-note">Sample for guidance — review &amp; test in a pilot ring before running.</div>';
+      var cb = el.querySelector('.remed-copy');
+      if (cb) cb.addEventListener('click', function () { copyText(r.script); });
+    });
     function close() { bg.classList.remove('open'); dr.classList.remove('open'); }
     document.getElementById('drClose').addEventListener('click', close);
     bg.onclick = close;
@@ -963,6 +1036,124 @@
   }
 
   // ---------- settings ----------
+  // Settings → Remediation samples: list + add/edit/delete + export/import (localStorage 'vmops-remediation').
+  var remedEditing = null;
+  function remedFormReset() {
+    remedEditing = null;
+    var a = document.getElementById('remAdd'); if (a) a.textContent = 'Add sample';
+    var c = document.getElementById('remCancelEdit'); if (c) c.style.display = 'none';
+    ['remMatch', 'remTitle', 'remLang', 'remScript'].forEach(function (id) { var el = document.getElementById(id); if (el) el.value = ''; });
+    var os = document.getElementById('remOs'); if (os) os.value = 'any';
+    var sv = document.getElementById('remSev'); if (sv) sv.value = 'any';
+  }
+  function fillRemedForm(kind, key) {
+    var u = remedUser(), e = kind === 'cve' ? u.cve[key] : u.class[parseInt(key, 10)];
+    if (!e) return;
+    var typeSel = document.getElementById('remType');
+    typeSel.value = kind === 'cve' ? 'cve' : 'class';
+    typeSel.dispatchEvent(new Event('change'));
+    document.getElementById('remMatch').value = kind === 'cve' ? key : (e.match || '');
+    document.getElementById('remTitle').value = e.title || '';
+    document.getElementById('remLang').value = e.lang || '';
+    document.getElementById('remScript').value = (e.script || []).join('\n');
+    document.getElementById('remOs').value = e.os || 'any';
+    document.getElementById('remSev').value = e.sev || 'any';
+    remedEditing = { kind: kind, key: key };
+    document.getElementById('remAdd').textContent = 'Update sample';
+    document.getElementById('remCancelEdit').style.display = '';
+    document.getElementById('remMatch').focus();
+  }
+  function renderRemedList() {
+    var el = document.getElementById('remedList'); if (!el) return;
+    var u = remedUser(), items = [];
+    Object.keys(u.cve).forEach(function (k) { items.push({ kind: 'cve', key: k, e: u.cve[k] }); });
+    u.class.forEach(function (c, i) { items.push({ kind: 'class', key: String(i), e: c }); });
+    if (!items.length) { el.innerHTML = '<div class="muted" style="font-size:12.5px;margin-bottom:10px">No custom samples yet — add one below.</div>'; return; }
+    el.innerHTML = items.map(function (it) {
+      var e = it.e, scope = [it.kind === 'cve' ? it.key : 'match: ' + (e.match || '(any)')];
+      if (e.os && e.os !== 'any') scope.push('OS: ' + e.os);
+      if (e.sev && e.sev !== 'any') scope.push(e.sev);
+      return '<div class="remed-row"><span class="remed-badge">' + esc(e.lang || 'PowerShell') + '</span> <b>' + esc(e.title || '(untitled)') + '</b> ' +
+        '<span class="muted" style="font-size:12px">' + esc(scope.join(' · ')) + '</span>' +
+        '<span class="remed-acts"><button class="btn sm remed-edit" data-kind="' + it.kind + '" data-key="' + esc(it.key) + '">Edit</button>' +
+        '<button class="btn sm remed-del" data-kind="' + it.kind + '" data-key="' + esc(it.key) + '">Delete</button></span></div>';
+    }).join('');
+    [].forEach.call(el.querySelectorAll('.remed-edit'), function (b) {
+      b.addEventListener('click', function () { fillRemedForm(b.getAttribute('data-kind'), b.getAttribute('data-key')); });
+    });
+    [].forEach.call(el.querySelectorAll('.remed-del'), function (b) {
+      b.addEventListener('click', function () {
+        var kind = b.getAttribute('data-kind'), key = b.getAttribute('data-key'), u = remedUser();
+        if (kind === 'cve') { delete u.cve[key]; } else { u.class.splice(parseInt(key, 10), 1); }
+        if (remedEditing && remedEditing.kind === kind && remedEditing.key === key) remedFormReset();
+        save('vmops-remediation', u); remedReload(); renderRemedList(); toast('Sample removed');
+      });
+    });
+  }
+  function wireRemedSettings() {
+    var typeSel = document.getElementById('remType'); if (!typeSel) return;
+    remedEditing = null;   // fresh Settings render always starts in add-mode (not stale edit-mode)
+    var lbl = document.getElementById('remMatchLabel'), matchInp = document.getElementById('remMatch');
+    typeSel.addEventListener('change', function () {
+      if (this.value === 'cve') { lbl.textContent = 'CVE ID'; matchInp.placeholder = 'CVE-2024-1234'; }
+      else { lbl.textContent = 'Keyword pattern (regex)'; matchInp.placeholder = 'e.g. acme|acme agent'; }
+    });
+    document.getElementById('remAdd').addEventListener('click', function () {
+      var type = typeSel.value, match = matchInp.value.trim(),
+          title = document.getElementById('remTitle').value.trim(),
+          lang = document.getElementById('remLang').value.trim() || 'PowerShell',
+          scriptText = document.getElementById('remScript').value,
+          os = document.getElementById('remOs').value, sev = document.getElementById('remSev').value;
+      if (type === 'cve' && !match) { toast('Enter a CVE ID'); return; }
+      if (type === 'class' && !match && os === 'any' && sev === 'any') { toast('Enter a keyword pattern, or set an OS / severity'); return; }
+      if (!scriptText.trim()) { toast('Enter a script'); return; }
+      if (type === 'class' && match) { try { new RegExp(match, 'i'); } catch (e) { toast('Invalid regex pattern'); return; } }
+      var entry = { title: title, lang: lang, script: scriptText.replace(/\r/g, '').split('\n') };
+      if (os !== 'any') entry.os = os;
+      if (sev !== 'any') entry.sev = sev;
+      var u = remedUser();
+      if (remedEditing) { if (remedEditing.kind === 'cve') delete u.cve[remedEditing.key]; else u.class.splice(parseInt(remedEditing.key, 10), 1); }
+      if (type === 'cve') { u.cve[match.toUpperCase()] = entry; } else { if (match) entry.match = match; u.class.push(entry); }
+      if (!save('vmops-remediation', u)) { toast('Could not save — browser storage may be full'); return; }
+      remedReload();
+      var wasEditing = !!remedEditing; remedFormReset();
+      renderRemedList(); toast(wasEditing ? 'Sample updated' : 'Sample added — open a matching finding to see it');
+    });
+    document.getElementById('remCancelEdit').addEventListener('click', function () { remedFormReset(); });
+    document.getElementById('remExport').addEventListener('click', function () {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([JSON.stringify(remedUser(), null, 2)], { type: 'application/json' }));
+      a.download = 'remediation-custom.json';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a); setTimeout(function () { URL.revokeObjectURL(a.href); }, 0);
+    });
+    var fileInp = document.getElementById('remFile');
+    document.getElementById('remImport').addEventListener('click', function () { fileInp.click(); });
+    fileInp.addEventListener('change', function () {
+      var f = fileInp.files && fileInp.files[0]; if (!f) return;
+      var rd = new FileReader();
+      rd.onload = function () {
+        try {
+          var inc = JSON.parse(rd.result), u = remedUser();
+          u.cve = Object.assign({}, u.cve, inc.cve || {});
+          u.class = u.class.concat(inc.class || []);
+          var seen = {};   // drop exact-duplicate keyword samples so re-import doesn't pile up
+          u.class = u.class.filter(function (c) { var s = JSON.stringify([c.match || '', c.os || '', c.sev || '', c.title || '', c.script || []]); if (seen[s]) return false; seen[s] = 1; return true; });
+          if (!save('vmops-remediation', u)) { toast('Could not save — browser storage may be full'); return; }
+          remedReload(); renderRemedList();
+          toast('Imported ' + (Object.keys(inc.cve || {}).length + (inc.class || []).length) + ' sample(s)');
+        } catch (e) { toast('Import failed — invalid JSON'); }
+        fileInp.value = '';
+      };
+      rd.readAsText(f);
+    });
+    document.getElementById('remReset').addEventListener('click', function () {
+      if (!confirm('Remove all your custom remediation samples? The built-in samples stay in place.')) return;
+      try { localStorage.removeItem('vmops-remediation'); } catch (e) {}
+      remedReload(); remedFormReset(); renderRemedList(); toast('Custom samples cleared — built-ins restored');
+    });
+    renderRemedList();
+  }
+
   function viewSettings() {
     setActive('settings');
     var c = STATE.cfg;
@@ -1006,6 +1197,18 @@
       '<h2>SharePoint access tester</h2><div class="card">' +
       '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Diagnostic: paste a SharePoint / OneDrive sharing link and test which method can read the file in-browser — anonymous (blocked) vs. Microsoft Graph (<code>downloadUrl</code>, works after sign-in). Opens in a new tab; your link &amp; token stay there, nothing is uploaded.</div>' +
       '<a class="btn" href="sharepoint-test.html" target="_blank" rel="noopener">Open SharePoint Access Tester ↗</a></div>' +
+      '<h2>Remediation samples</h2><div class="card">' +
+      '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Add your own remediation scripts — they appear in the finding drawer and CVE detail under “Remediation”. Saved in <b>this browser only</b> and merged with the built-in samples (yours take priority). Match a <b>specific CVE</b>, or a <b>keyword pattern</b> tested against the finding name/description. Placeholders <code>{CVE}</code> <code>{HOST}</code> <code>{NAME}</code> are substituted. <b>Export</b> gives you a JSON blob to fold into the shipped set.</div>' +
+      '<div id="remedList"></div>' +
+      '<div class="grid2"><div class="field"><label>Match by</label><select id="remType"><option value="cve">Specific CVE</option><option value="class">Keyword pattern</option></select></div>' +
+      '<div class="field"><label id="remMatchLabel">CVE ID</label><input type="text" id="remMatch" placeholder="CVE-2024-1234"></div></div>' +
+      '<div class="grid2"><div class="field"><label>Title</label><input type="text" id="remTitle" placeholder="e.g. Update Acme Agent"></div>' +
+      '<div class="field"><label>Language (badge)</label><input type="text" id="remLang" placeholder="PowerShell"></div></div>' +
+      '<div class="grid2"><div class="field"><label>Applies to OS <span class="muted" style="font-weight:400;font-size:11px">(optional)</span></label><select id="remOs"><option value="any">Any OS</option><option value="windows">Windows</option><option value="linux">Linux</option><option value="appliance">Appliance</option></select></div>' +
+      '<div class="field"><label>Only for severity <span class="muted" style="font-weight:400;font-size:11px">(optional)</span></label><select id="remSev"><option value="any">Any severity</option><option value="Critical">Critical</option><option value="High">High</option><option value="Medium">Medium</option><option value="Low">Low</option></select></div></div>' +
+      '<div class="muted" style="font-size:11.5px;margin:-4px 0 4px">Tip: set an OS/severity with <b>no keyword</b> to match broadly (e.g. every Critical finding). Broad samples take priority over the built-ins for those findings.</div>' +
+      '<div class="field"><label>Script <span class="muted" style="font-weight:400;font-size:11px">— one line per row</span></label><textarea id="remScript" rows="8" placeholder="#Requires -RunAsAdministrator&#10;# {CVE} - {NAME} on {HOST}&#10;winget upgrade --id Acme.Agent --silent"></textarea></div>' +
+      '<div class="toolbar"><button class="btn primary" id="remAdd">Add sample</button><button class="btn" id="remCancelEdit" style="display:none">Cancel edit</button><button class="btn" id="remExport">Export JSON</button><button class="btn" id="remImport">Import JSON</button><button class="btn" id="remReset">Reset to built-ins</button><input type="file" id="remFile" accept="application/json,.json" hidden></div></div>' +
       '<div class="toolbar"><button class="btn primary" id="saveCfg">Save settings</button><button class="btn" id="resetSla">Reset SLA to defaults</button></div>';
     document.getElementById('saveCfg').addEventListener('click', function () {
       STATE.cfg.brand = document.getElementById('brandName').value.trim();
@@ -1027,6 +1230,7 @@
       save('vmops-config', STATE.cfg); applyBrand(); toast('Settings saved');
     });
     document.getElementById('resetSla').addEventListener('click', function () { STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla); save('vmops-config', STATE.cfg); viewSettings(); toast('SLA windows reset'); });
+    wireRemedSettings();
   }
 
   // ---------- vendored same-origin sub-apps ----------
@@ -1132,5 +1336,6 @@
   function vmShow(fn){ return function(){ app.className='vmops'; return fn.apply(null, arguments); }; }
   function goDash() { if ((location.hash||'').indexOf('#/dashboard')===0){ app.className='vmops'; viewDashboard(); } else { location.hash='#/dashboard'; } }
   // Exposed to the host (CVE-Explorer-based) router, which dispatches the ops routes.
-  window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz) };
+  window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz),
+    remediation: { ensure: ensureRemed, for: remediationFor, copy: copyText } };
 })();

@@ -1,0 +1,461 @@
+{
+  "_note": "Remediation snippets for the VMOps finding drawer + CVE detail page. Matched most-specific first: exact CVE -> keyword class -> per-OS generic. {CVE} {HOST} {NAME} are substituted at render. 'lang' sets the badge; 'os'/'sev' are optional constraints; 'playbook' is a repo-relative path turned into a clickable link (base: github.com/cloudanimal/remediation-playbooks). Many entries are distilled from real playbooks in that repo - the link points to the full detect/fix/validate/rollback version. Samples - review & test before running.",
+  "cve": {
+    "CVE-2017-0144": {
+      "title": "Disable SMBv1 (MS17-010 / EternalBlue)",
+      "playbook": "cves/smbv1-removal-ms17-010/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: remove the legacy SMBv1 protocol (exploited by WannaCry / NotPetya).",
+        "# TEST first: confirm nothing on {HOST} still depends on SMBv1 (old NAS, XP/2003).",
+        "$ErrorActionPreference = 'Stop'",
+        "Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol -NoRestart",
+        "Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force",
+        "Get-SmbServerConfiguration | Select-Object EnableSMB1Protocol   # verify, then reboot {HOST}"
+      ]
+    },
+    "CVE-2020-1472": {
+      "title": "Zerologon - patch the DC and enforce secure Netlogon RPC",
+      "playbook": "cves/cve-2020-1472-zerologon/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: {HOST} is a domain controller. Schedule a maintenance window.",
+        "$ErrorActionPreference = 'Stop'",
+        "if (-not (Get-Module -ListAvailable PSWindowsUpdate)) { Install-Module PSWindowsUpdate -Force -Scope AllUsers }",
+        "Import-Module PSWindowsUpdate",
+        "Get-WindowsUpdate -MicrosoftUpdate -Install -AcceptAll -IgnoreReboot",
+        "$p = 'HKLM:\\SYSTEM\\CurrentControlSet\\Services\\Netlogon\\Parameters'",
+        "New-ItemProperty -Path $p -Name 'FullSecureChannelProtection' -Value 1 -PropertyType DWord -Force | Out-Null",
+        "Write-Host 'Patched + enforcement enabled. Reboot {HOST} within the window.'"
+      ]
+    },
+    "CVE-2021-26855": {
+      "title": "Exchange ProxyLogon - apply the security update",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: run from an elevated Exchange Management Shell. Back up first,",
+        "# and check {HOST} for prior compromise (webshells) before closing the finding.",
+        "$ErrorActionPreference = 'Stop'",
+        "Get-Command ExSetup.exe | ForEach-Object { $_.FileVersionInfo.ProductVersion }   # match SU to this build",
+        "# Install the matching SU: Start-Process msiexec.exe -Wait -ArgumentList '/update <ExchangeSU>.msp /quiet /norestart'",
+        "# Then run the Exchange Health Checker and rescan {HOST}."
+      ]
+    },
+    "CVE-2021-44228": {
+      "title": "Log4Shell - find and remediate vulnerable Log4j 2",
+      "playbook": "cves/cve-2021-44228-log4shell/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: the real fix is upgrading log4j-core to >= 2.17.1 (or a vendor patch).",
+        "$ErrorActionPreference = 'Continue'",
+        "Get-ChildItem -Path C:\\ -Recurse -Filter 'log4j-core-*.jar' -ErrorAction SilentlyContinue |",
+        "  Select-Object FullName, @{n='Version';e={ $_.Name -replace 'log4j-core-|\\.jar','' }}",
+        "[Environment]::SetEnvironmentVariable('LOG4J_FORMAT_MSG_NO_LOOKUPS','true','Machine')  # interim only",
+        "Write-Host 'Flag set. UPGRADE log4j-core to 2.17.1+ - the env var is only a stopgap.'"
+      ]
+    },
+    "CVE-2016-2183": {
+      "title": "SWEET32 - disable 3DES / weak Schannel ciphers",
+      "playbook": "windows/schannel-cipher-hardening/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: disable 3DES and other weak ciphers in Schannel.",
+        "# TEST first: ensure clients/partners of {HOST} support AES; very old systems may break.",
+        "$ErrorActionPreference = 'Stop'",
+        "$weak = 'Triple DES 168','RC4 128/128','RC4 40/128','RC4 56/128','DES 56/56'",
+        "foreach ($c in $weak) {",
+        "  $p = \"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\$c\"",
+        "  New-Item -Path $p -Force | Out-Null",
+        "  New-ItemProperty -Path $p -Name 'Enabled' -Value 0 -PropertyType DWord -Force | Out-Null",
+        "}",
+        "Write-Host 'Weak ciphers disabled. Reboot {HOST} to apply, then rescan.'"
+      ]
+    },
+    "CVE-2022-30190": {
+      "title": "Follina - remove the ms-msdt: protocol handler",
+      "playbook": "cves/cve-2022-30190-follina/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: remove the ms-msdt: handler (backs up first). The patch is the real fix; this cuts attack surface.",
+        "$ErrorActionPreference = 'Stop'",
+        "$backup = \"$env:SystemRoot\\Temp\\ms-msdt-backup.reg\"",
+        "if (Test-Path 'Registry::HKEY_CLASSES_ROOT\\ms-msdt') {",
+        "  reg export 'HKCR\\ms-msdt' $backup /y | Out-Null",
+        "  reg delete 'HKCR\\ms-msdt' /f | Out-Null",
+        "  Write-Host \"ms-msdt handler removed (backup: $backup). Restore: reg import $backup\"",
+        "} else { Write-Host 'ms-msdt handler already absent.' }"
+      ]
+    },
+    "CVE-2023-23397": {
+      "title": "Outlook NTLM leak - disable WebClient + block outbound SMB",
+      "playbook": "cves/cve-2023-23397-outlook/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: cut the NTLM-leak path on {HOST}. Also apply the Outlook security update.",
+        "$ErrorActionPreference = 'Stop'",
+        "Stop-Service WebClient -Force -ErrorAction SilentlyContinue",
+        "Set-Service WebClient -StartupType Disabled",
+        "New-NetFirewallRule -DisplayName 'Block outbound SMB to internet (NTLM leak)' -Direction Outbound -Action Block -Protocol TCP -RemotePort 445 -ErrorAction SilentlyContinue | Out-Null"
+      ]
+    },
+    "CVE-2013-3900": {
+      "title": "WinVerifyTrust - enable Authenticode padding check",
+      "playbook": "cves/cve-2013-3900-winverifytrust/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: the value MUST be a STRING \"1\" (REG_SZ), not a DWORD - the #1 reason scanners keep flagging it.",
+        "$ErrorActionPreference = 'Stop'",
+        "$keys = 'HKLM:\\SOFTWARE\\Microsoft\\Cryptography\\Wintrust\\Config',",
+        "        'HKLM:\\SOFTWARE\\Wow6432Node\\Microsoft\\Cryptography\\Wintrust\\Config'",
+        "foreach ($k in $keys) {",
+        "  New-Item -Path $k -Force | Out-Null",
+        "  New-ItemProperty -Path $k -Name 'EnableCertPaddingCheck' -Value '1' -PropertyType String -Force | Out-Null",
+        "}"
+      ]
+    },
+    "CVE-2025-53779": {
+      "title": "BadSuccessor - patch + audit OU CreateChild grants",
+      "playbook": "cves/cve-2025-53779-badsuccessor/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: apply the patch, then audit non-privileged principals holding CreateChild on OUs (dMSA path).",
+        "# Read-only audit; run on a DC with the ActiveDirectory module.",
+        "$ErrorActionPreference = 'Stop'",
+        "Import-Module ActiveDirectory",
+        "foreach ($ou in Get-ADOrganizationalUnit -Filter *) {",
+        "  (Get-Acl \"AD:\\$($ou.DistinguishedName)\").Access |",
+        "    Where-Object { $_.ActiveDirectoryRights -match 'CreateChild' -and $_.AccessControlType -eq 'Allow' } |",
+        "    Select-Object @{n='OU';e={$ou.DistinguishedName}}, IdentityReference",
+        "}"
+      ]
+    },
+    "CVE-2021-34527": {
+      "title": "PrintNightmare - patch + restrict Point-and-Print",
+      "playbook": "windows/print-spooler-hardening/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: apply the patch, then restrict Point-and-Print (or disable Spooler where printing isn't needed).",
+        "$ErrorActionPreference = 'Stop'",
+        "$pp = 'HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Printers\\PointAndPrint'",
+        "New-Item -Path $pp -Force | Out-Null",
+        "New-ItemProperty -Path $pp -Name 'RestrictDriverInstallationToAdministrators' -Value 1 -PropertyType DWord -Force | Out-Null",
+        "# No print role? Stop-Service Spooler; Set-Service Spooler -StartupType Disabled"
+      ]
+    }
+  },
+  "class": [
+    {
+      "id": "smb1",
+      "match": "smbv1|smb1|ms17-010|eternalblue",
+      "title": "Disable SMBv1",
+      "playbook": "cves/smbv1-removal-ms17-010/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: disable the legacy SMBv1 protocol on {HOST}.",
+        "$ErrorActionPreference = 'Stop'",
+        "Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol -NoRestart",
+        "Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force",
+        "Get-SmbServerConfiguration | Select-Object EnableSMB1Protocol   # verify, then reboot"
+      ]
+    },
+    {
+      "id": "citrix",
+      "match": "citrix|netscaler|\\badc\\b|\\bgateway\\b",
+      "title": "Citrix ADC / Gateway - apply the vendor fix",
+      "lang": "Shell / CLI",
+      "script": [
+        "# {CVE} - {NAME}: Citrix ADC / Gateway (NetScaler) is an appliance - remediate via the vendor, not a host script.",
+        "show version                       # confirm the current build",
+        "# 1) Apply Citrix's published interim mitigation for {CVE} (responder/rewrite policy per the bulletin).",
+        "# 2) Upgrade to the fixed build listed in the Citrix advisory, in a maintenance window.",
+        "# 3) If SSL-VPN/Gateway was internet-facing, rotate secrets and kill active sessions: kill vpn session -all",
+        "# 4) Rescan {HOST} to confirm the fixed build."
+      ]
+    },
+    {
+      "id": "fortinet",
+      "match": "fortios|fortinet|fortigate|forti|ssl-vpn",
+      "title": "FortiOS / FortiGate - upgrade firmware",
+      "lang": "FortiOS CLI",
+      "script": [
+        "# {CVE} - {NAME}: FortiGate/FortiOS is an appliance - fix via firmware, from the FortiOS CLI.",
+        "get system status                  # confirm the current firmware version",
+        "# 1) Find the fixed build in the Fortinet PSIRT advisory for {CVE}.",
+        "# 2) Install it (GUI, or via CLI from a TFTP server): execute restore image tftp <fixed-build>.out <tftp-ip>",
+        "# 3) Reboot when prompted, then re-check 'get system status'.",
+        "# 4) If SSL-VPN was exposed, rotate VPN credentials and review logs for prior access."
+      ]
+    },
+    {
+      "id": "openssl",
+      "match": "openssl|libcrypto|libssl",
+      "title": "Update OpenSSL",
+      "script": [
+        "# {CVE} - {NAME}: update OpenSSL to a patched release on {HOST}.",
+        "$ErrorActionPreference = 'Stop'",
+        "winget upgrade --name OpenSSL --silent --accept-source-agreements --accept-package-agreements",
+        "# App-bundled OpenSSL (e.g. an app's libcrypto-3.dll)? Upgrade the parent application instead."
+      ]
+    },
+    {
+      "id": "log4j",
+      "match": "log4j|log4shell",
+      "title": "Find & mitigate Log4j",
+      "playbook": "cves/cve-2021-44228-log4shell/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: locate log4j-core on {HOST}; upgrade to >= 2.17.1 for the real fix.",
+        "$ErrorActionPreference = 'Continue'",
+        "Get-ChildItem -Path C:\\ -Recurse -Filter 'log4j-core-*.jar' -ErrorAction SilentlyContinue | Select-Object FullName",
+        "[Environment]::SetEnvironmentVariable('LOG4J_FORMAT_MSG_NO_LOOKUPS','true','Machine')  # interim only"
+      ]
+    },
+    {
+      "id": "exchange",
+      "match": "exchange|proxylogon|proxyshell|\\bowa\\b",
+      "title": "Apply the Exchange security update",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: from an elevated Exchange Management Shell on {HOST}.",
+        "$ErrorActionPreference = 'Stop'",
+        "Get-Command ExSetup.exe | ForEach-Object { $_.FileVersionInfo.ProductVersion }   # match SU to this build",
+        "# Install the matching SU, back up first, check for webshells, run Health Checker, then rescan."
+      ]
+    },
+    {
+      "id": "tls",
+      "match": "sweet32|3des|rc4[ /_-]?(128|56|40|md5|cipher)|poodle|beast|tls 1\\.0|tls 1\\.1|sslv3|ssl v3|weak cipher|schannel|cipher suite",
+      "title": "Harden TLS / disable weak ciphers (Schannel)",
+      "playbook": "windows/schannel-cipher-hardening/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: disable weak ciphers/protocols in Schannel on {HOST}. TEST for client support first.",
+        "$ErrorActionPreference = 'Stop'",
+        "$weak = 'Triple DES 168','RC4 128/128','RC4 40/128','RC4 56/128','DES 56/56'",
+        "foreach ($c in $weak) {",
+        "  $p = \"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\$c\"",
+        "  New-Item -Path $p -Force | Out-Null",
+        "  New-ItemProperty -Path $p -Name 'Enabled' -Value 0 -PropertyType DWord -Force | Out-Null",
+        "}",
+        "Write-Host 'Done. Reboot {HOST} to apply.'"
+      ]
+    },
+    {
+      "id": "llmnr",
+      "match": "llmnr|nbt-ns|netbios name|responder|multicast name",
+      "title": "Disable LLMNR + NetBIOS name resolution",
+      "playbook": "windows/llmnr-netbios-disable/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: kill Responder-class name poisoning on {HOST}.",
+        "$ErrorActionPreference = 'Stop'",
+        "$dns = 'HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\DNSClient'",
+        "New-Item -Path $dns -Force | Out-Null",
+        "New-ItemProperty -Path $dns -Name 'EnableMulticast' -Value 0 -PropertyType DWord -Force | Out-Null",
+        "Get-ChildItem 'HKLM:\\SYSTEM\\CurrentControlSet\\Services\\NetBT\\Parameters\\Interfaces' | ForEach-Object {",
+        "  Set-ItemProperty -Path $_.PSPath -Name 'NetbiosOptions' -Value 2 }   # NetBIOS-over-TCP off"
+      ]
+    },
+    {
+      "id": "wdigest",
+      "match": "wdigest|cleartext cred|cleartext password",
+      "title": "Disable WDigest cleartext credentials",
+      "playbook": "windows/wdigest-cleartext-disable/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: stop WDigest caching cleartext creds in LSASS on {HOST}.",
+        "$ErrorActionPreference = 'Stop'",
+        "$p = 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\WDigest'",
+        "New-ItemProperty -Path $p -Name 'UseLogonCredential' -Value 0 -PropertyType DWord -Force | Out-Null",
+        "Write-Host 'UseLogonCredential=0. Reboot {HOST} to clear cached secrets.'"
+      ]
+    },
+    {
+      "id": "ldap-signing",
+      "match": "ldap signing|channel binding|ldap.*integrity",
+      "title": "Enforce LDAP signing + channel binding",
+      "playbook": "windows/ldap-signing-channel-binding/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: enforce LDAP signing + channel binding on the DC {HOST}. Audit clients for unsigned binds first.",
+        "$ErrorActionPreference = 'Stop'",
+        "$p = 'HKLM:\\SYSTEM\\CurrentControlSet\\Services\\NTDS\\Parameters'",
+        "New-ItemProperty -Path $p -Name 'LDAPServerIntegrity' -Value 2 -PropertyType DWord -Force | Out-Null",
+        "New-ItemProperty -Path $p -Name 'LdapEnforceChannelBinding' -Value 2 -PropertyType DWord -Force | Out-Null"
+      ]
+    },
+    {
+      "id": "lsass",
+      "match": "lsass|runasppl|credential.*dump|mimikatz",
+      "title": "Protect LSASS (RunAsPPL)",
+      "playbook": "windows/lsass-protection/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: run LSASS as a protected process on {HOST} (blocks Mimikatz-style dumping).",
+        "$ErrorActionPreference = 'Stop'",
+        "New-ItemProperty -Path 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Lsa' -Name 'RunAsPPL' -Value 1 -PropertyType DWord -Force | Out-Null",
+        "Write-Host 'RunAsPPL=1 set. Reboot {HOST}; verify no security plugins/drivers break under PPL.'"
+      ]
+    },
+    {
+      "id": "kerberos-rc4",
+      "match": "kerberos.*rc4|kerberoast|encryption type|\\bdes\\b.*kerberos",
+      "title": "Kerberos: AES-only encryption types",
+      "playbook": "windows/kerberos-rc4-disable/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: drop RC4/DES Kerberos etypes to AES-only on {HOST} (anti-Kerberoasting).",
+        "$ErrorActionPreference = 'Stop'",
+        "$p = 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Kerberos\\Parameters'",
+        "New-Item -Path $p -Force | Out-Null",
+        "New-ItemProperty -Path $p -Name 'SupportedEncryptionTypes' -Value 0x18 -PropertyType DWord -Force | Out-Null",
+        "Write-Host 'AES-only etypes set. Confirm no legacy services rely on RC4 first.'"
+      ]
+    },
+    {
+      "id": "rdp",
+      "match": "\\brdp\\b|remote desktop|network level auth|\\bnla\\b|terminal server",
+      "title": "RDP: require NLA + strong encryption",
+      "playbook": "windows/rdp-hardening/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: require NLA + strong RDP encryption on {HOST}.",
+        "$ErrorActionPreference = 'Stop'",
+        "$p = 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\RDP-Tcp'",
+        "Set-ItemProperty -Path $p -Name 'UserAuthentication' -Value 1   # NLA required",
+        "Set-ItemProperty -Path $p -Name 'SecurityLayer' -Value 2        # TLS",
+        "Set-ItemProperty -Path $p -Name 'MinEncryptionLevel' -Value 3   # High"
+      ]
+    },
+    {
+      "id": "winrm",
+      "match": "winrm|windows remote management",
+      "title": "Harden WinRM (no Basic / unencrypted)",
+      "playbook": "windows/winrm-hardening/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: disable Basic + unencrypted WinRM auth on {HOST}.",
+        "$ErrorActionPreference = 'Stop'",
+        "$p = 'HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\WinRM\\Service'",
+        "New-Item -Path $p -Force | Out-Null",
+        "New-ItemProperty -Path $p -Name 'AllowBasic' -Value 0 -PropertyType DWord -Force | Out-Null",
+        "New-ItemProperty -Path $p -Name 'AllowUnencryptedTraffic' -Value 0 -PropertyType DWord -Force | Out-Null"
+      ]
+    },
+    {
+      "id": "office-macro",
+      "match": "macro|office.*macro|\\bvba\\b",
+      "title": "Block Office macros from the internet",
+      "playbook": "windows/office-macro-hardening/",
+      "script": [
+        "# {CVE} - {NAME}: block internet-sourced Office macros on {HOST} (per-user policy).",
+        "$ErrorActionPreference = 'Stop'",
+        "foreach ($app in 'word','excel','powerpoint','outlook','access') {",
+        "  $p = \"HKCU:\\SOFTWARE\\Policies\\Microsoft\\office\\16.0\\$app\\security\"",
+        "  New-Item -Path $p -Force | Out-Null",
+        "  New-ItemProperty -Path $p -Name 'blockcontentexecutionfrominternet' -Value 1 -PropertyType DWord -Force | Out-Null",
+        "}",
+        "# Deploy per-user (HKCU) via GPO/Intune at scale."
+      ]
+    },
+    {
+      "id": "smb-signing",
+      "match": "smb signing|signing (is )?not required|require.*security signature",
+      "title": "Enforce SMB signing",
+      "playbook": "windows/smb-signing-enforcement/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: require SMB signing (server + client) on {HOST}.",
+        "$ErrorActionPreference = 'Stop'",
+        "Set-ItemProperty 'HKLM:\\SYSTEM\\CurrentControlSet\\Services\\LanManServer\\Parameters' -Name 'RequireSecuritySignature' -Value 1",
+        "Set-ItemProperty 'HKLM:\\SYSTEM\\CurrentControlSet\\Services\\LanManWorkstation\\Parameters' -Name 'RequireSecuritySignature' -Value 1",
+        "Write-Host 'SMB signing required. Watch for legacy clients that cannot sign.'"
+      ]
+    },
+    {
+      "id": "restrict-anon",
+      "match": "null session|anonymous enumeration|restrictanonymous|anonymous.*(share|access)",
+      "title": "Restrict anonymous (null session)",
+      "playbook": "windows/restrict-anonymous/",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: block anonymous (null-session) enumeration on {HOST}.",
+        "$ErrorActionPreference = 'Stop'",
+        "$p = 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Lsa'",
+        "Set-ItemProperty -Path $p -Name 'RestrictAnonymous' -Value 1",
+        "Set-ItemProperty -Path $p -Name 'RestrictAnonymousSAM' -Value 1",
+        "Set-ItemProperty -Path $p -Name 'EveryoneIncludesAnonymous' -Value 0"
+      ]
+    },
+    {
+      "id": "linux",
+      "match": "linux|unix|ubuntu|debian|red ?hat|rhel|centos|rocky|alma|suse|\\bsudo\\b|openssh|apache|nginx|glibc|\\bkernel\\b|systemd|\\bbash\\b|samba",
+      "title": "Patch the affected package (Linux)",
+      "lang": "Bash",
+      "script": [
+        "#!/usr/bin/env bash",
+        "# {CVE} - {NAME}: update the affected package on {HOST} (Linux). Run with sudo.",
+        "set -euo pipefail",
+        "# Debian / Ubuntu:",
+        "sudo apt-get update && sudo apt-get install --only-upgrade -y <package>",
+        "# RHEL / CentOS / Rocky / Alma:",
+        "#   sudo dnf upgrade -y <package>      # or: sudo yum update -y <package>",
+        "# Verify the fixed version, then restart the affected service (or reboot if it's the kernel/glibc)."
+      ]
+    },
+    {
+      "id": "msrc",
+      "match": "windows|microsoft|netlogon|zerologon|\\bsmb\\b|\\brdp\\b|\\bkb\\d{6,7}\\b|msrc|\\.net|hyper-v|print spooler|printnightmare",
+      "title": "Install the Microsoft security update (MSRC / KB)",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: install the applicable Microsoft security update on {HOST}.",
+        "$ErrorActionPreference = 'Stop'",
+        "if (-not (Get-Module -ListAvailable PSWindowsUpdate)) { Install-Module PSWindowsUpdate -Force -Scope AllUsers }",
+        "Import-Module PSWindowsUpdate",
+        "Get-WindowsUpdate -MicrosoftUpdate -Category 'Security Updates'          # review",
+        "Get-WindowsUpdate -MicrosoftUpdate -Install -AcceptAll -IgnoreReboot     # install",
+        "Get-HotFix | Sort-Object InstalledOn -Descending | Select-Object -First 5   # verify"
+      ]
+    }
+  ],
+  "generic": {
+    "windows": {
+      "title": "Generic patch workflow (Windows Update + winget)",
+      "script": [
+        "#Requires -RunAsAdministrator",
+        "# {CVE} - {NAME}: no tailored script yet - general Windows patch workflow for {HOST}.",
+        "$ErrorActionPreference = 'Stop'",
+        "if (-not (Get-Module -ListAvailable PSWindowsUpdate)) { Install-Module PSWindowsUpdate -Force -Scope AllUsers }",
+        "Import-Module PSWindowsUpdate",
+        "Get-WindowsUpdate -MicrosoftUpdate -Install -AcceptAll -IgnoreReboot",
+        "winget upgrade --all --silent --accept-source-agreements --accept-package-agreements",
+        "Get-HotFix | Sort-Object InstalledOn -Descending | Select-Object -First 5"
+      ]
+    },
+    "linux": {
+      "title": "Generic patch workflow (Linux)",
+      "lang": "Bash",
+      "script": [
+        "#!/usr/bin/env bash",
+        "# {CVE} - {NAME}: no tailored script yet - general Linux patch workflow for {HOST}. Run with sudo.",
+        "set -euo pipefail",
+        "if   command -v apt-get >/dev/null; then sudo apt-get update && sudo apt-get -y upgrade;",
+        "elif command -v dnf     >/dev/null; then sudo dnf -y upgrade;",
+        "elif command -v yum     >/dev/null; then sudo yum -y update; fi",
+        "# Reboot if the kernel or core libraries (glibc/openssl) were updated."
+      ]
+    },
+    "appliance": {
+      "title": "Remediate via the vendor (appliance)",
+      "lang": "Guidance",
+      "script": [
+        "# {CVE} - {NAME}: {HOST} looks like a network / security appliance - there is no host script.",
+        "#   1. Identify the exact model & firmware (admin UI, or CLI 'show version' / 'get system status').",
+        "#   2. Find the vendor PSIRT / security advisory for {CVE} and its fixed build.",
+        "#   3. Apply any interim mitigation from the advisory, then upgrade firmware in a window.",
+        "#   4. Rotate credentials / sessions if the flaw was remotely exploitable, and rescan."
+      ]
+    }
+  }
+}

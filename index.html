@@ -897,6 +897,8 @@
     h.push(redhatBlock(rh));
     h.push(ubuntuBlock(ubu, cve.id));
 
+    h.push('<div class="block" id="cveRemedBlock" style="display:none"><h3>Remediation sample &nbsp;<span class="remed-badge" id="cveRemedLang">PowerShell</span></h3><div class="sub">A starting-point script for a typical affected host — review &amp; test before running.</div><div id="cveRemedBody"></div></div>');
+
     var eolMatched = eolMatch(eolCandidates(cve, cl), eolSlugs);
     if (eolMatched.length) {
       h.push('<div class="block"><h3>Product lifecycle</h3><div class="sub">End-of-life status for affected products, via endoflife.date — EOL software won\'t receive vendor patches.</div><div id="eolBody">' + spinner('Checking product lifecycle…') + '</div></div>');
@@ -930,6 +932,17 @@
     h.push('<div class="block"><a class="muted" href="https://nvd.nist.gov/vuln/detail/' + esc(cve.id) + '" target="_blank" rel="noopener">View full record on NVD &rarr;</a></div>');
     app.innerHTML = h.join('');
     if (eolMatched.length) eolFill(eolMatched);
+    if (window.VMOPS && VMOPS.remediation) VMOPS.remediation.ensure().then(function () {
+      var r = VMOPS.remediation.for({ cve: cve.id, name: '', desc: desc, host: '' });
+      var blk = document.getElementById('cveRemedBlock'), body = document.getElementById('cveRemedBody'), lang = document.getElementById('cveRemedLang');
+      if (!r || !blk || !body) return;
+      if (lang) { lang.textContent = r.lang + (r.generic ? ' · generic' : ''); lang.className = 'remed-badge' + (r.generic ? ' gen' : ''); }
+      body.innerHTML = '<div class="remed-title">' + esc(r.title) + '</div><pre class="remed-code">' + esc(r.script) + '</pre>' +
+        (r.playbook ? '<div style="margin:8px 0"><a href="' + esc(r.playbook) + '" target="_blank" rel="noopener">Full playbook ↗</a></div>' : '') +
+        '<div style="margin-top:10px"><button class="btn sm" id="cveRemedCopy" type="button">Copy</button></div>';
+      blk.style.display = '';
+      var cb = document.getElementById('cveRemedCopy'); if (cb) cb.addEventListener('click', function () { VMOPS.remediation.copy(r.script); });
+    });
   }
 
   // ---------- Browse ----------
