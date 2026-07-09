@@ -945,7 +945,9 @@
   // drawer's left edge, so it doesn't scroll away with the drawer's own content. Double-click resets.
   var _drH = null, DRAWER_MINW = 360;
   function drawerMaxW() { return Math.max(DRAWER_MINW, window.innerWidth - 40); }
-  function positionDrawerHandle() { var dr = document.getElementById('drawer'); if (_drH && dr) _drH.style.left = dr.getBoundingClientRect().left + 'px'; }
+  // The drawer is right-anchored, so its left edge = viewport - width. Deriving from offsetWidth
+  // (layout width, unaffected by the open slide transform) is reliable even mid-transition.
+  function positionDrawerHandle() { var dr = document.getElementById('drawer'); if (_drH && dr) _drH.style.left = (window.innerWidth - dr.offsetWidth) + 'px'; }
   function ensureDrawerHandle() {
     if (_drH) return _drH;
     var dr = document.getElementById('drawer'); if (!dr) return null;

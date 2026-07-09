@@ -293,7 +293,7 @@ function closeDrawer(){ STATE._drawer=null; $('#acdDrawer').hidden=true; $('#acd
 // 'acd-drawer-w'); mirrors the vmops finding-drawer behaviour. Double-click resets to default.
 let _acdH=null; const ACD_MINW=340;
 function acdMaxW(){ return Math.max(ACD_MINW, window.innerWidth-40); }
-function positionAcdHandle(){ const dr=$('#acdDrawer'); if(_acdH && dr) _acdH.style.left=dr.getBoundingClientRect().left+'px'; }
+function positionAcdHandle(){ const dr=$('#acdDrawer'); if(_acdH && dr) _acdH.style.left=(window.innerWidth - dr.offsetWidth)+'px'; }
 function ensureAcdHandle(){
   if(_acdH) return _acdH;
   const dr=$('#acdDrawer'); if(!dr) return null;
