@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-08",
+  "updated": "2026-07-09",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,411 +7,476 @@
   "items": [
     {
       "id": null,
-      "title": "SCA: security update for chainguard.dev/melange (GHSA-7rp8-r62p-q6wc)",
+      "title": "SCA: security update for pip (GHSA-wf93-45jw-7689)",
       "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444484",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444547",
       "cves": [
-        "CVE-2026-29049"
+        "CVE-2026-8643"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for chainguard.dev/melange (GHSA-7rp8-r62p-q6wc)",
+      "title": "SCA: security update for pip (GHSA-wf93-45jw-7689)",
       "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444484",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444547",
       "cves": [
-        "CVE-2026-29049"
+        "CVE-2026-8643"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/QuantumNous/new-api (GHSA-26v7-h57m-gh9m)",
-      "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444483",
+      "title": "SCA: security update for org.apache.fluss:fluss-common (GHSA-4c39-fwgj-4vq7)",
+      "severity": "High",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444546",
       "cves": [
-        "CVE-2026-44342"
+        "CVE-2026-49361"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/QuantumNous/new-api (GHSA-26v7-h57m-gh9m)",
-      "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444483",
+      "title": "SCA: security update for org.apache.fluss:fluss-common (GHSA-4c39-fwgj-4vq7)",
+      "severity": "High",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444546",
       "cves": [
-        "CVE-2026-44342"
+        "CVE-2026-49361"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for open-webui (GHSA-vjm7-m4xh-7wrc)",
+      "title": "SCA: security update for apache-airflow (GHSA-vr7m-c6v4-8cx8)",
       "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444482",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444545",
       "cves": [
-        "CVE-2026-26193"
+        "CVE-2025-57735",
+        "CVE-2026-48726"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for open-webui (GHSA-vjm7-m4xh-7wrc)",
+      "title": "SCA: security update for apache-airflow (GHSA-vr7m-c6v4-8cx8)",
       "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444482",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444545",
       "cves": [
-        "CVE-2026-26193"
+        "CVE-2025-57735",
+        "CVE-2026-48726"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for io.netty:netty-resolver-dns (GHSA-676x-f7gg-47vc)",
+      "title": "SCA: security update for apache-airflow-core (GHSA-5j6p-jrrm-6x94)",
+      "severity": "High",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444544",
+      "cves": [
+        "CVE-2026-27173",
+        "CVE-2026-49298"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for apache-airflow-core (GHSA-5j6p-jrrm-6x94)",
+      "severity": "High",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444544",
+      "cves": [
+        "CVE-2026-27173",
+        "CVE-2026-49298"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for org.apache.fesod:fesod-sheet (GHSA-vqc2-c9jh-3jjv)",
+      "severity": "Medium",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444543",
+      "cves": [
+        "CVE-2026-49328"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for org.apache.fesod:fesod-sheet (GHSA-vqc2-c9jh-3jjv)",
+      "severity": "Medium",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444543",
+      "cves": [
+        "CVE-2026-49328"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for ch.qos.logback:logback-core (GHSA-jhq6-gfmj-v8fx)",
+      "severity": "Medium",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444542",
+      "cves": [
+        "CVE-2026-10532"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for ch.qos.logback:logback-core (GHSA-jhq6-gfmj-v8fx)",
+      "severity": "Medium",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444542",
+      "cves": [
+        "CVE-2026-10532"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/zalando/skipper (GHSA-659f-rgp5-w4wf)",
       "severity": "Critical",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444481",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444541",
       "cves": [
-        "CVE-2026-45674"
+        "CVE-2026-50197"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for io.netty:netty-resolver-dns (GHSA-676x-f7gg-47vc)",
+      "title": "SCA: security update for github.com/zalando/skipper (GHSA-659f-rgp5-w4wf)",
       "severity": "Critical",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444481",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444541",
       "cves": [
-        "CVE-2026-45674"
+        "CVE-2026-50197"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for io.netty:netty-resolver-dns (GHSA-5pvg-856g-cp85)",
+      "title": "SCA: security update for github.com/nuclio/nuclio (GHSA-v5px-423j-pf7p)",
       "severity": "Critical",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444480",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444540",
       "cves": [
-        "CVE-2026-47691"
+        "CVE-2026-52831"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for io.netty:netty-resolver-dns (GHSA-5pvg-856g-cp85)",
+      "title": "SCA: security update for github.com/nuclio/nuclio (GHSA-v5px-423j-pf7p)",
       "severity": "Critical",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444480",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444540",
       "cves": [
-        "CVE-2026-47691"
+        "CVE-2026-52831"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for archivebox (GHSA-cr45-98w9-gwqx)",
+      "title": "SCA: security update for org.dspace:dspace-api (GHSA-9x82-rm84-c6x7)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444479",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444539",
       "cves": [
-        "CVE-2023-45815"
+        "CVE-2026-49832"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for archivebox (GHSA-cr45-98w9-gwqx)",
+      "title": "SCA: security update for org.dspace:dspace-api (GHSA-9x82-rm84-c6x7)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444479",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444539",
       "cves": [
-        "CVE-2023-45815"
+        "CVE-2026-49832"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for 9router (GHSA-g6g7-pvmx-m74p)",
+      "title": "SCA: security update for org.dspace:dspace-api (GHSA-v66x-68f2-pxf5)",
+      "severity": "Medium",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444538",
+      "cves": [
+        "CVE-2026-49831"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for org.dspace:dspace-api (GHSA-v66x-68f2-pxf5)",
+      "severity": "Medium",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444538",
+      "cves": [
+        "CVE-2026-49831"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/BishopFox/joro (GHSA-xqhv-chqm-fhcc)",
       "severity": "Critical",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444478",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444537",
       "cves": [
-        "CVE-2026-59800"
+        "CVE-2026-53649"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for 9router (GHSA-g6g7-pvmx-m74p)",
+      "title": "SCA: security update for github.com/BishopFox/joro (GHSA-xqhv-chqm-fhcc)",
       "severity": "Critical",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444478",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444537",
       "cves": [
-        "CVE-2026-59800"
+        "CVE-2026-53649"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for open-webui (GHSA-8gh5-qqh8-hq3x)",
+      "title": "SCA: security update for waku (GHSA-75w3-gmqx-993q)",
       "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444477",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444536",
       "cves": [
-        "CVE-2025-46571"
+        "CVE-2026-49455"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for open-webui (GHSA-8gh5-qqh8-hq3x)",
+      "title": "SCA: security update for waku (GHSA-75w3-gmqx-993q)",
       "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444477",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444536",
       "cves": [
-        "CVE-2025-46571"
+        "CVE-2026-49455"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/QuantumNous/new-api (GHSA-6qcr-qxgr-m7fv)",
+      "title": "SCA: security update for nl.nl-portal:taak (GHSA-6h3c-r723-7fx3)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444476",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444535",
       "cves": [
-        "CVE-2026-33655"
+        "CVE-2026-49464"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/QuantumNous/new-api (GHSA-6qcr-qxgr-m7fv)",
+      "title": "SCA: security update for nl.nl-portal:taak (GHSA-6h3c-r723-7fx3)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444476",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444535",
       "cves": [
-        "CVE-2026-33655"
+        "CVE-2026-49464"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for org.xwiki.platform:xwiki-platform-oldcore (GHSA-qj4x-9g63-25g6)",
+      "title": "SCA: security update for lxml_html_clean (GHSA-4jhm-jv67-739f)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444475",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444534",
       "cves": [
-        "CVE-2026-34151"
+        "CVE-2026-49825"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for org.xwiki.platform:xwiki-platform-oldcore (GHSA-qj4x-9g63-25g6)",
+      "title": "SCA: security update for lxml_html_clean (GHSA-4jhm-jv67-739f)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444475",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444534",
       "cves": [
-        "CVE-2026-34151"
+        "CVE-2026-49825"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for egroupware/egroupware (GHSA-8737-2x9g-xjj7)",
+      "title": "SCA: security update for code16/sharp (GHSA-vmwx-m75v-qvch)",
+      "severity": "Medium",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444533",
+      "cves": [
+        "CVE-2026-53634"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for code16/sharp (GHSA-vmwx-m75v-qvch)",
+      "severity": "Medium",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444533",
+      "cves": [
+        "CVE-2026-53634"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for org.dspace:dspace-api (GHSA-c827-pw3m-67w7)",
+      "severity": "Medium",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444532",
+      "cves": [
+        "CVE-2026-49830"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for org.dspace:dspace-api (GHSA-c827-pw3m-67w7)",
+      "severity": "Medium",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444532",
+      "cves": [
+        "CVE-2026-49830"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for org.dspace:dspace-api (GHSA-9qm4-rh6w-pq5x)",
+      "severity": "Medium",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444531",
+      "cves": [
+        "CVE-2026-49833"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for org.dspace:dspace-api (GHSA-9qm4-rh6w-pq5x)",
+      "severity": "Medium",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444531",
+      "cves": [
+        "CVE-2026-49833"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for waku (GHSA-43fc-v873-qw85)",
+      "severity": "Low",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444530",
+      "cves": [
+        "CVE-2026-49456"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for waku (GHSA-43fc-v873-qw85)",
+      "severity": "Low",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444530",
+      "cves": [
+        "CVE-2026-49456"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for nl.nl-portal:besluiten, nl.nl-portal:documenten-api (GHSA-qpm9-h556-mwxm)",
+      "severity": "Medium",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444529",
+      "cves": [
+        "CVE-2026-49463"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for nl.nl-portal:besluiten, nl.nl-portal:documenten-api (GHSA-qpm9-h556-mwxm)",
+      "severity": "Medium",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444529",
+      "cves": [
+        "CVE-2026-49463"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for serena-agent (GHSA-37h2-6p4f-mp3q)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444474",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444528",
       "cves": [
-        "CVE-2026-40187"
+        "CVE-2026-49471"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for egroupware/egroupware (GHSA-8737-2x9g-xjj7)",
+      "title": "SCA: security update for serena-agent (GHSA-37h2-6p4f-mp3q)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444474",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444528",
       "cves": [
-        "CVE-2026-40187"
+        "CVE-2026-49471"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for egroupware/egroupware (GHSA-c8m7-r2jv-rw63)",
+      "title": "Alpine: multiple py3-django packages: security update to 5.2.16-r0",
       "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444473",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444527",
       "cves": [
-        "CVE-2026-45016"
+        "CVE-2026-48588",
+        "CVE-2026-53877",
+        "CVE-2026-53878"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for egroupware/egroupware (GHSA-c8m7-r2jv-rw63)",
+      "title": "Alpine: multiple py3-django packages: security update to 5.2.16-r0",
       "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444473",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444527",
       "cves": [
-        "CVE-2026-45016"
+        "CVE-2026-48588",
+        "CVE-2026-53877",
+        "CVE-2026-53878"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for onnx (GHSA-hwpq-hmq9-wj77)",
-      "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444472",
-      "cves": [
-        "CVE-2026-44512"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for onnx (GHSA-hwpq-hmq9-wj77)",
-      "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444472",
-      "cves": [
-        "CVE-2026-44512"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for open-webui (GHSA-9f4f-jv96-8766)",
-      "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444471",
-      "cves": [
-        "CVE-2025-46719"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for open-webui (GHSA-9f4f-jv96-8766)",
-      "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444471",
-      "cves": [
-        "CVE-2025-46719"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for open-webui (GHSA-xc8p-9rr6-97r2)",
-      "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444470",
-      "cves": [
-        "CVE-2026-26192"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for open-webui (GHSA-xc8p-9rr6-97r2)",
-      "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444470",
-      "cves": [
-        "CVE-2026-26192"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for egroupware/egroupware (GHSA-h9qx-v5xp-ph8p)",
+      "title": "Alpine: multiple c-ares packages: security update to 1.34.8-r0",
       "severity": "Critical",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444469",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444526",
       "cves": [
-        "CVE-2026-27823"
+        "CVE-2026-33630"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for egroupware/egroupware (GHSA-h9qx-v5xp-ph8p)",
+      "title": "Alpine: multiple c-ares packages: security update to 1.34.8-r0",
       "severity": "Critical",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444469",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444526",
       "cves": [
-        "CVE-2026-27823"
+        "CVE-2026-33630"
       ]
     },
     {
-      "id": null,
-      "title": "Alpine: multiple clamav packages, multiple freshclam packages: security update to 1.4.5-r0",
+      "id": "325772",
+      "title": "Oracle Linux 8 : container-tools:ol8 (ELSA-2026-35833)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444468",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325772",
       "cves": [
-        "CVE-2026-20213",
-        "CVE-2026-20214",
-        "CVE-2026-20215",
-        "CVE-2026-20216",
-        "CVE-2026-20244"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple clamav packages, multiple freshclam packages: security update to 1.4.5-r0",
-      "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444468",
-      "cves": [
-        "CVE-2026-20213",
-        "CVE-2026-20214",
-        "CVE-2026-20215",
-        "CVE-2026-20216",
-        "CVE-2026-20244"
-      ]
-    },
-    {
-      "id": "325503",
-      "title": "AlmaLinux 8 : libreoffice (ALSA-2026:35839)",
-      "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325503",
-      "cves": [
-        "CVE-2026-8357"
-      ]
-    },
-    {
-      "id": "325502",
-      "title": "AlmaLinux 9 : nodejs:22 (ALSA-2026:35892)",
-      "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325502",
-      "cves": [
-        "CVE-2026-11525",
-        "CVE-2026-12151",
-        "CVE-2026-42338",
-        "CVE-2026-48615",
-        "CVE-2026-48618",
-        "CVE-2026-48619",
-        "CVE-2026-48928",
-        "CVE-2026-48930",
-        "CVE-2026-48933",
-        "CVE-2026-48934",
-        "CVE-2026-48935",
-        "CVE-2026-6733",
-        "CVE-2026-9678"
-      ]
-    },
-    {
-      "id": "325501",
-      "title": "AlmaLinux 9 : python-markdown (ALSA-2026:19366)",
-      "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325501",
-      "cves": [
-        "CVE-2025-69534"
-      ]
-    },
-    {
-      "id": "325500",
-      "title": "AlmaLinux 8 : perl-HTTP-Daemon (ALSA-2026:36188)",
-      "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325500",
-      "cves": [
-        "CVE-2026-8450"
-      ]
-    },
-    {
-      "id": "325499",
-      "title": "AlmaLinux 8 : container-tools:rhel8 (ALSA-2026:35833)",
-      "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325499",
-      "cves": [
+        "CVE-2020-10756",
+        "CVE-2020-1983",
+        "CVE-2021-3592",
+        "CVE-2021-3593",
+        "CVE-2021-3594",
+        "CVE-2021-3595",
+        "CVE-2024-1394",
+        "CVE-2025-22871",
+        "CVE-2025-31133",
+        "CVE-2025-47913",
+        "CVE-2025-52565",
+        "CVE-2025-52881",
+        "CVE-2025-58183",
+        "CVE-2025-61729",
+        "CVE-2025-68121",
+        "CVE-2026-25679",
+        "CVE-2026-32281",
         "CVE-2026-34986",
         "CVE-2026-39829",
         "CVE-2026-39830",
@@ -420,258 +485,166 @@
       ]
     },
     {
-      "id": "325498",
-      "title": "AlmaLinux 8 : kernel-rt (ALSA-2026:36049)",
+      "id": "325771",
+      "title": "Oracle Linux 9 : aardvark-dns (ELSA-2026-36318)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325498",
-      "cves": [
-        "CVE-2026-23216",
-        "CVE-2026-45984",
-        "CVE-2026-46189"
-      ]
-    },
-    {
-      "id": "325497",
-      "title": "AlmaLinux 9 : opentelemetry-collector (ALSA-2026:34359)",
-      "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325497",
-      "cves": [
-        "CVE-2026-25681",
-        "CVE-2026-27145",
-        "CVE-2026-33811",
-        "CVE-2026-39821",
-        "CVE-2026-42151",
-        "CVE-2026-42154"
-      ]
-    },
-    {
-      "id": "325496",
-      "title": "AlmaLinux 10 : opentelemetry-collector (ALSA-2026:34357)",
-      "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325496",
-      "cves": [
-        "CVE-2026-25681",
-        "CVE-2026-27145",
-        "CVE-2026-33811",
-        "CVE-2026-39821",
-        "CVE-2026-42151",
-        "CVE-2026-42154"
-      ]
-    },
-    {
-      "id": "325495",
-      "title": "AlmaLinux 9 : nodejs:24 (ALSA-2026:35891)",
-      "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325495",
-      "cves": [
-        "CVE-2026-11525",
-        "CVE-2026-12151",
-        "CVE-2026-42338",
-        "CVE-2026-48615",
-        "CVE-2026-48618",
-        "CVE-2026-48619",
-        "CVE-2026-48928",
-        "CVE-2026-48930",
-        "CVE-2026-48933",
-        "CVE-2026-48934",
-        "CVE-2026-48935",
-        "CVE-2026-6733",
-        "CVE-2026-6734",
-        "CVE-2026-9678",
-        "CVE-2026-9697"
-      ]
-    },
-    {
-      "id": "325494",
-      "title": "FreeBSD : xrdp -- multiple vulnerabilities (a3a34818-79a0-11f1-b295-98b78501ef2a)",
-      "severity": "Critical",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325494",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325771",
       "cves": []
     },
     {
-      "id": "325493",
-      "title": "FreeBSD : zeek -- potential DoS vulnerabilities (d47e608f-2e2a-4366-ad17-ce2480bf912d)",
+      "id": "325770",
+      "title": "AlmaLinux 8 : kernel (ALSA-2026:36366)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325493",
-      "cves": []
-    },
-    {
-      "id": "325492",
-      "title": "MiracleLinux 9 : opentelemetry-collector-0.144.0-2.el9_8 (AXSA:2026-1213:03)",
-      "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325492",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325770",
       "cves": [
-        "CVE-2026-25679",
-        "CVE-2026-32280",
-        "CVE-2026-32281",
-        "CVE-2026-32282",
-        "CVE-2026-32283",
-        "CVE-2026-33186",
-        "CVE-2026-33810",
-        "CVE-2026-34986"
+        "CVE-2026-43112"
       ]
     },
     {
-      "id": "325491",
-      "title": "Oracle Linux 8 : grafana-pcp (ELSA-2026-35831)",
+      "id": "325769",
+      "title": "AlmaLinux 9 : aardvark-dns (ALSA-2026:36318)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325491",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325769",
+      "cves": [
+        "CVE-2026-35406"
+      ]
+    },
+    {
+      "id": "325768",
+      "title": "AlmaLinux 9 : freeipmi (ALSA-2026:36210)",
+      "severity": "High",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325768",
+      "cves": [
+        "CVE-2026-50031"
+      ]
+    },
+    {
+      "id": "325767",
+      "title": "AlmaLinux 8 : freeipmi (ALSA-2026:36307)",
+      "severity": "High",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325767",
+      "cves": [
+        "CVE-2026-50031"
+      ]
+    },
+    {
+      "id": "325766",
+      "title": "AlmaLinux 9 : postgresql:18 (ALSA-2026:26204)",
+      "severity": "High",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325766",
+      "cves": [
+        "CVE-2026-6473",
+        "CVE-2026-6475",
+        "CVE-2026-6477",
+        "CVE-2026-6478"
+      ]
+    },
+    {
+      "id": "325765",
+      "title": "AlmaLinux 9 : grafana (ALSA-2026:35828)",
+      "severity": "High",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325765",
       "cves": [
         "CVE-2026-39821"
       ]
     },
     {
-      "id": "325490",
-      "title": "RHEL 8 : 389-ds:1.4 (RHSA-2026:36206)",
+      "id": "325764",
+      "title": "AlmaLinux 8 : kernel (ALSA-2026:36349)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325490",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325764",
       "cves": [
-        "CVE-2026-11610",
-        "CVE-2026-11774"
+        "CVE-2025-10263",
+        "CVE-2026-43198",
+        "CVE-2026-43450",
+        "CVE-2026-46209",
+        "CVE-2026-46227",
+        "CVE-2026-46259"
       ]
     },
     {
-      "id": "325489",
-      "title": "RHEL 10 : buildah (RHSA-2026:36199)",
+      "id": "325763",
+      "title": "AlmaLinux 10 : frr (ALSA-2026:24347)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325489",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325763",
       "cves": [
-        "CVE-2026-39829",
-        "CVE-2026-39830",
-        "CVE-2026-39832",
-        "CVE-2026-39835"
+        "CVE-2026-37457",
+        "CVE-2026-37459"
       ]
     },
     {
-      "id": "325488",
-      "title": "RHEL 8 : redhat-ds:11 (RHSA-2026:36204)",
+      "id": "325762",
+      "title": "AlmaLinux 8 : kernel-rt (ALSA-2026:36365)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325488",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325762",
       "cves": [
-        "CVE-2026-11610",
-        "CVE-2026-11774"
+        "CVE-2026-43112"
       ]
     },
     {
-      "id": "325487",
-      "title": "RHEL 8 : 389-ds:1.4 (RHSA-2026:36202)",
-      "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325487",
-      "cves": [
-        "CVE-2026-11610",
-        "CVE-2026-11774"
-      ]
-    },
-    {
-      "id": "325486",
-      "title": "RHEL 9 : python3.14-pip (RHSA-2026:36315)",
+      "id": "325761",
+      "title": "AlmaLinux 10 : python3.14-pip (ALSA-2026:36193)",
       "severity": "Medium",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325486",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325761",
       "cves": [
         "CVE-2026-8643"
       ]
     },
     {
-      "id": "325485",
-      "title": "RHEL 8 : 389-ds:1.4 (RHSA-2026:36201)",
-      "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325485",
+      "id": "325760",
+      "title": "AlmaLinux 9 : pcs (ALSA-2026:19167)",
+      "severity": "Critical",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325760",
       "cves": [
-        "CVE-2026-11610",
-        "CVE-2026-11774"
+        "CVE-2026-4800"
       ]
     },
     {
-      "id": "325484",
-      "title": "RHEL 8 : redhat-ds:11 (RHSA-2026:36208)",
+      "id": "325759",
+      "title": "AlmaLinux 9 : skopeo (ALSA-2026:36317)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325484",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325759",
       "cves": [
-        "CVE-2026-11610",
-        "CVE-2026-11774"
+        "CVE-2026-25679",
+        "CVE-2026-27145"
       ]
     },
     {
-      "id": "325483",
-      "title": "RHEL 9 : 389-ds-base (RHSA-2026:36198)",
-      "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325483",
+      "id": "325758",
+      "title": "AlmaLinux 10 : gnutls (ALSA-2026:20613)",
+      "severity": "Critical",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325758",
       "cves": [
-        "CVE-2026-11610",
-        "CVE-2026-11774"
+        "CVE-2026-33845",
+        "CVE-2026-33846",
+        "CVE-2026-3833",
+        "CVE-2026-42009",
+        "CVE-2026-42010",
+        "CVE-2026-42011"
       ]
     },
     {
-      "id": "325482",
-      "title": "RHEL 10 : freerdp (RHSA-2026:36203)",
+      "id": "325757",
+      "title": "AlmaLinux 8 : compat-openssl10 (ALSA-2026:36215)",
       "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325482",
+      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/325757",
       "cves": [
-        "CVE-2026-40033",
-        "CVE-2026-44420",
-        "CVE-2026-44421",
-        "CVE-2026-44422",
-        "CVE-2026-45700"
-      ]
-    },
-    {
-      "id": "325481",
-      "title": "RHEL 8 : 389-ds:1.4 (RHSA-2026:36197)",
-      "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325481",
-      "cves": [
-        "CVE-2026-11610",
-        "CVE-2026-11774"
-      ]
-    },
-    {
-      "id": "325480",
-      "title": "RHEL 7 : kernel (RHSA-2026:36216)",
-      "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325480",
-      "cves": [
-        "CVE-2026-43198",
-        "CVE-2026-46181"
-      ]
-    },
-    {
-      "id": "325479",
-      "title": "RHEL 7 : 389-ds-base (RHSA-2026:36205)",
-      "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325479",
-      "cves": [
-        "CVE-2026-11610",
-        "CVE-2026-11774"
-      ]
-    },
-    {
-      "id": "325478",
-      "title": "RHEL 8 : freeipmi (RHSA-2026:36307)",
-      "severity": "High",
-      "date": "Tue, 07 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325478",
-      "cves": [
-        "CVE-2026-50031"
+        "CVE-2026-45447"
       ]
     }
   ]
