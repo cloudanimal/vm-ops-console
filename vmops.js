@@ -53,7 +53,7 @@
     ov: load('vmops-overrides', {}),       // key -> {status, owner, notes, updated}
     cfg: Object.assign({}, DEFAULT_CFG, load('vmops-config', {})),
     sort: { col: 'risk', dir: 1 },
-    filt: { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, noTicket: false, group: '' }
+    filt: { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, noTicket: false, noowner: false, group: '' }
   };
   STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla, STATE.cfg.sla || {});
   STATE._newKeys = {}; try { (JSON.parse(localStorage.getItem('vmops-newkeys') || '[]') || []).forEach(function (k) { STATE._newKeys[k] = 1; }); } catch (e) {}
@@ -194,6 +194,7 @@
       if (f.exploited) { var it = cveIntel(x.cve); if (!it.kev && !it.exploit) return false; }
       if (f.epssHi) { var ee = cveIntel(x.cve).epss; if (ee == null || ee < 0.5) return false; }
       if (f.noTicket) { if (ticketOf(x)) return false; if (!isOpen(x)) return false; }
+      if (f.noowner) { if (ovOf(x).owner) return false; if (!isOpen(x)) return false; }
       if (f.fresh && !isNewKey(keyOf(x))) return false;
       if (f.seen) { var _ds = daysSince(x.firstSeen); if (_ds == null || _ds > +f.seen) return false; }
       if (f.q) { var q = f.q.toLowerCase(); if ((x.cve + ' ' + x.host + ' ' + (x.name || '') + ' ' + (x.desc || '') + ' ' + repoOf(x) + ' ' + (ovOf(x).owner || '')).toLowerCase().indexOf(q) === -1) return false; }
@@ -227,7 +228,18 @@
     var inSla = withSla.filter(function (f) { return slaState(f) !== 'overdue'; });
     var comp = withSla.length ? Math.round(inSla.length / withSla.length * 100) : 100;
     var crit = open.filter(function (f) { return f.severity === 'Critical'; });
-    return { total: STATE.findings.length, open: open.length, overdue: overdue.length, comp: comp, crit: crit.length, assets: assetCount(), unassigned: open.filter(function (f) { return !ovOf(f).owner; }).length, noTicket: open.filter(function (f) { return !ticketOf(f); }).length };
+    var exploited = open.filter(function (f) { var it = cveIntel(f.cve); return it.kev || it.exploit; });
+    var epssHi = open.filter(function (f) { var e = cveIntel(f.cve).epss; return e != null && e >= 0.5; });
+    var newScan = STATE.findings.filter(function (f) { return isNewKey(keyOf(f)); });
+    // MTTR: mean days from first-seen to resolution, across resolved findings
+    var mttrVals = STATE.findings.filter(function (f) { return statusOf(f) === 'resolved'; }).map(function (f) {
+      var ups = updatesOf(f), r = null;
+      for (var i = 0; i < ups.length; i++) { if (/resolv/i.test(ups[i].text || '')) { r = ups[i].at; break; } }
+      r = r || ovOf(f).updated; if (!f.firstSeen || !r) return null;
+      var d = (new Date(r) - new Date(f.firstSeen)) / 86400000; return d >= 0 ? d : null;
+    }).filter(function (v) { return v != null; });
+    var mttr = mttrVals.length ? Math.round(mttrVals.reduce(function (a, b) { return a + b; }, 0) / mttrVals.length) : null;
+    return { total: STATE.findings.length, open: open.length, overdue: overdue.length, comp: comp, crit: crit.length, assets: assetCount(), unassigned: open.filter(function (f) { return !ovOf(f).owner; }).length, noTicket: open.filter(function (f) { return !ticketOf(f); }).length, exploited: exploited.length, epssHi: epssHi.length, newScan: newScan.length, mttr: mttr };
   }
   function assetCount() { var s = {}; STATE.findings.forEach(function (f) { s[norm(f.host)] = 1; }); return Object.keys(s).length; }
 
@@ -251,13 +263,17 @@
       '<p class="lede wide">Live read-out over your imported scan findings — status, SLA pressure, and the highest-risk open work.</p></header>' +
       privSlim() +
       '<div class="kpis">' +
-      kpi('Open findings', k.open, k.total + ' total') +
-      kpi('Overdue (SLA)', k.overdue, 'past remediation window', k.overdue ? 'crit' : 'ok') +
+      kpiL('Open findings', k.open, k.total + ' total', '', '#/findings') +
+      kpiL('Overdue (SLA)', k.overdue, 'past remediation window', k.overdue ? 'crit' : 'ok', '#/findings?overdue=1') +
+      kpiL('KEV / exploited', k.exploited, 'actively exploited, open', k.exploited ? 'crit' : 'ok', '#/findings?exploited=1') +
+      kpiL('EPSS ≥ 50%', k.epssHi, 'high exploit probability', k.epssHi ? '' : 'ok', '#/findings?epssHi=1') +
+      kpiL('Open critical', k.crit, 'severity = Critical', k.crit ? 'crit' : '', '#/findings?sev=Critical') +
+      kpiL('New this scan', k.newScan, 'added since last import', '', '#/findings?fresh=1') +
+      kpi('MTTR', k.mttr == null ? '—' : k.mttr + 'd', 'avg days to remediate') +
       kpi('SLA compliance', k.comp + '%', 'open findings within window', k.comp >= 90 ? 'ok' : '') +
-      kpi('Open critical', k.crit, 'severity = Critical', k.crit ? 'crit' : '') +
+      kpiL('Unassigned', k.unassigned, 'no owner set', '', '#/findings?noowner=1') +
+      kpiL('No ticket', k.noTicket, 'open findings, none linked', k.noTicket ? '' : 'ok', '#/findings?noTicket=1') +
       kpi('Assets', k.assets, 'distinct hosts') +
-      kpi('Unassigned', k.unassigned, 'no owner set') +
-      kpi('No ticket', k.noTicket, 'open findings, none linked', k.noTicket ? '' : 'ok') +
       '</div>' +
       dashCampaigns() +
       '<h2>Open by severity</h2>' + barRows(bySev.map(function (x) { return { l: x.s, n: x.n, cls: x.s.toLowerCase() }; })) +
@@ -265,9 +281,12 @@
       '<h2>Highest-risk open findings</h2>' +
       (top.length ? '<div style="overflow-x:auto">' + gridTable(top) + '</div>' : '<div class="empty">Nothing open.</div>');
     wireGrid();
+    // KEV / EPSS KPIs need the exploitation intel; load it and re-render once ready.
+    if (!INTEL.loaded) ensureIntel().then(function () { if ((location.hash || '').indexOf('#/dashboard') === 0) viewDashboard(); });
   }
 
   function kpi(label, num, sub, cls) { return '<div class="kpi ' + (cls || '') + '"><div class="label">' + esc(label) + '</div><div class="num">' + esc(num) + '</div><div class="sub">' + esc(sub || '') + '</div></div>'; }
+  function kpiL(label, num, sub, cls, href) { var c = kpi(label, num, sub, cls); return href ? '<a class="kpilink" href="' + href + '">' + c + '</a>' : c; }
   // per-status bar colours (mirror the status pill colours)
   var STATUS_BAR_COLOR = { new: 'st-new', triaged: 'st-triaged', in_remediation: 'st-rem', resolved: 'st-res', risk_accepted: 'st-risk', false_positive: 'st-fp' };
   function barRows(rows) {
@@ -307,7 +326,7 @@
   }
 
   // ---------- saved + preset views (one-click filter sets) ----------
-  function defaultFilt() { return { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, noTicket: false, colf: {}, group: '' }; }
+  function defaultFilt() { return { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, noTicket: false, noowner: false, colf: {}, group: '' }; }
   var PRESET_VIEWS = [
     { id: 'exploited', name: 'Exploited (KEV / PoC)', filt: { exploited: true } },
     { id: 'epsshi', name: 'EPSS ≥ 50%', filt: { epssHi: true } },
@@ -324,7 +343,7 @@
     // Apply a deep-link query (e.g. Ask AI -> #/findings?sev=Critical&overdue=1) ONLY when it actually
     // changes — otherwise the in-page filter handlers (which re-call viewFindings without touching the
     // hash) would re-parse the stale query every render and clobber the user's selection.
-    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', epssHi:p.epssHi==='1', noTicket:p.noTicket==='1', colf:{}, group:STATE.filt.group||'' }; })();
+    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', epssHi:p.epssHi==='1', noTicket:p.noTicket==='1', noowner:p.noowner==='1', colf:{}, group:STATE.filt.group||'' }; })();
     if (!STATE.findings.length) return viewEmpty('findings');
     var list = visibleFindings();
     var statusOpts = '<option value="">All statuses</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '"' + (STATE.filt.status === s.k ? ' selected' : '') + '>' + s.l + '</option>'; }).join('');
