@@ -14,6 +14,15 @@
   function toast(m) { var t = document.getElementById('toast'); if(!t){ t=document.createElement('div'); t.id='toast'; t.className='toast vmops'; document.body.appendChild(t); } t.textContent = m; t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(function () { t.classList.remove('show'); }, 2200); }
   function legacyCopy(t) { var ta = document.createElement('textarea'); ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.focus(); ta.select(); try { document.execCommand('copy'); toast('Copied'); } catch (e) {} document.body.removeChild(ta); }
   function copyText(t) { if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(t).then(function () { toast('Copied'); }, function () { legacyCopy(t); }); } else { legacyCopy(t); } }
+  // ---- undo for bulk / status changes (snapshot the affected findings' overrides) ----
+  function snapOv(fs) { return fs.map(function (f) { var k = keyOf(f); return { k: k, ov: STATE.ov[k] ? JSON.parse(JSON.stringify(STATE.ov[k])) : null }; }); }
+  function undoOv(snap) { snap.forEach(function (s) { if (s.ov) STATE.ov[s.k] = s.ov; else delete STATE.ov[s.k]; }); save('vmops-overrides', STATE.ov); currentView(); toast('Undone'); }
+  function toastUndo(msg, snap) {
+    var t = document.getElementById('toast'); if (!t) { t = document.createElement('div'); t.id = 'toast'; t.className = 'toast vmops'; document.body.appendChild(t); }
+    t.innerHTML = esc(msg) + ' <a href="#" class="toast-undo">Undo</a>';
+    t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(function () { t.classList.remove('show'); }, 6000);
+    var u = t.querySelector('.toast-undo'); if (u) u.onclick = function (e) { e.preventDefault(); undoOv(snap); t.classList.remove('show'); };
+  }
   function norm(h) { return String(h || '').trim().split('.')[0].toUpperCase(); }
   var SHIELD = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>';
   function privSlim() { return '<div class="privacy slim">' + SHIELD + '<div><b>100% local.</b> Findings, status, owners, notes, and configuration stay in this browser — nothing is uploaded. Ticketing is via deep-links to your own Jira / ServiceNow.</div></div>'; }
@@ -360,10 +369,13 @@
       '<button class="btn sm" id="bulkNote">Append note</button>' +
       '<button class="btn sm" id="bulkUpd">Add status update</button>' +
       '<select id="bulkStatus" class="status" data-s=""><option value="">Set status…</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '">' + s.l + '</option>'; }).join('') + '</select>' +
+      '<button class="btn sm" id="bulkOwner" title="Assign an owner to all selected">Set owner…</button>' +
       '<button class="btn sm" id="bulkJira" title="One Jira ticket covering all selected">Jira ticket</button>' +
       '<button class="btn sm" id="bulkSnow" title="One ServiceNow incident covering all selected">SNOW ticket</button>' +
       '<button class="btn sm" id="bulkTicket" title="Link one ticket key to all selected findings">Link ticket…</button>' +
       '<button class="btn sm" id="bulkCamp" title="Create a campaign scoped to the selected findings">Create campaign</button>' +
+      '<select id="bulkAddCamp" title="Add the selected findings to an existing static campaign"><option value="">Add to campaign…</option>' + loadCampaigns().filter(function (c) { return c.scope && c.scope.dynamic === false; }).map(function (c) { return '<option value="' + esc(c.id) + '">' + esc(c.name) + '</option>'; }).join('') + '</select>' +
+      '<button class="btn sm" id="bulkExport" title="Export the selected findings to CSV">Export CSV</button>' +
       '<span class="spacer"></span>' +
       '<button class="btn sm" id="bulkClear">Clear selection</button>' +
       '</div>' +
@@ -414,8 +426,9 @@
     if (bn) bn.addEventListener('click', function () {
       var t = txtVal(); if (!t) { toast('Type a note first'); return; }
       var fs = need(); if (!fs.length) return;
+      var snap = snapOv(fs);
       fs.forEach(function (f) { var ex = ovOf(f).notes || ''; setOverride(f, { notes: ex ? ex + '\n' + t : t }); });
-      clearTxt(); toast('Note appended to ' + fs.length + ' finding' + (fs.length > 1 ? 's' : ''));
+      clearTxt(); toastUndo('Note appended to ' + fs.length + ' finding' + (fs.length > 1 ? 's' : ''), snap);
     });
     var bu = document.getElementById('bulkUpd');
     if (bu) bu.addEventListener('click', function () {
@@ -436,13 +449,35 @@
     if (bs) bs.addEventListener('change', function () {
       var v = this.value; this.value = ''; if (!v) return;
       var fs = need(); if (!fs.length) return;
+      var snap = snapOv(fs);
       fs.forEach(function (f) { setOverride(f, { status: v }); addUpdate(f, 'Status → ' + SLABEL[v]); });
-      toast('Status → ' + SLABEL[v] + ' for ' + fs.length + ' finding' + (fs.length > 1 ? 's' : ''));
       currentView();
+      toastUndo('Status → ' + SLABEL[v] + ' for ' + fs.length + ' finding' + (fs.length > 1 ? 's' : ''), snap);
     });
     var bj = document.getElementById('bulkJira'); if (bj) bj.addEventListener('click', function () { var fs = need(); if (fs.length) ticketGroup('jira', fs); });
     var bsn = document.getElementById('bulkSnow'); if (bsn) bsn.addEventListener('click', function () { var fs = need(); if (fs.length) ticketGroup('snow', fs); });
     var bcp = document.getElementById('bulkCamp'); if (bcp) bcp.addEventListener('click', function () { var fs = need(); if (fs.length) { _campSeed = { dynamic: false, staticKeys: fs.map(keyOf), filt: {} }; location.hash = '#/campaigns'; } });
+    var bo = document.getElementById('bulkOwner');
+    if (bo) bo.addEventListener('click', function () {
+      var fs = need(); if (!fs.length) return;
+      var raw = prompt('Assign owner (team or person) to ' + fs.length + ' finding' + (fs.length > 1 ? 's' : '') + ' — blank to clear:'); if (raw === null) return;
+      var owner = raw.trim(), snap = snapOv(fs);
+      fs.forEach(function (f) { setOverride(f, { owner: owner }); }); currentView();
+      toastUndo((owner ? 'Owner → ' + owner : 'Owner cleared') + ' for ' + fs.length + ' finding' + (fs.length > 1 ? 's' : ''), snap);
+    });
+    var bx = document.getElementById('bulkExport'); if (bx) bx.addEventListener('click', function () { var fs = need(); if (fs.length) exportCsv(fs); });
+    var bac = document.getElementById('bulkAddCamp');
+    if (bac) bac.addEventListener('change', function () {
+      var id = this.value; this.value = ''; if (!id) return;
+      var fs = need(); if (!fs.length) return;
+      var camps = loadCampaigns(), c = camps.filter(function (x) { return x.id === id; })[0];
+      if (!c || !c.scope || c.scope.dynamic !== false) { toast('Pick a static campaign'); return; }
+      c.scope.staticKeys = c.scope.staticKeys || [];
+      var set = {}; c.scope.staticKeys.forEach(function (k) { set[k] = 1; });
+      var added = 0; fs.forEach(function (f) { var k = keyOf(f); if (!set[k]) { c.scope.staticKeys.push(k); set[k] = 1; added++; } });
+      saveCampaigns(camps);
+      toast('Added ' + added + ' finding' + (added !== 1 ? 's' : '') + ' to “' + c.name + '”');
+    });
     var bc = document.getElementById('bulkClear');
     if (bc) bc.addEventListener('click', function () { selKeys = {}; currentView(); });
   }
@@ -602,6 +637,29 @@
       '<div class="muted statuskey-note"><b>Open</b> (New · Triaged · In Remediation) = active work — the SLA clock runs and they rank highest. <b>Closed</b> (Resolved · Risk Accepted · False Positive) = off the worklist — no SLA, ranked last.</div></details>';
   }
   function findByKey(k) { for (var i = 0; i < STATE.findings.length; i++) if (keyOf(STATE.findings[i]) === k) return STATE.findings[i]; return null; }
+
+  // ---------- Findings keyboard nav (j/k move · Enter open · x select · Esc close) ----------
+  var _focusKey = null;
+  function _visRows() { return [].filter.call(document.querySelectorAll('#gridHost tbody tr[data-key]'), function (tr) { return tr.offsetParent !== null; }); }
+  function _paintFocus() { _visRows().forEach(function (tr) { tr.classList.toggle('rowfocus', tr.getAttribute('data-key') === _focusKey); }); }
+  function _moveFocus(delta) {
+    var rows = _visRows(); if (!rows.length) return;
+    var idx = -1; for (var i = 0; i < rows.length; i++) { if (rows[i].getAttribute('data-key') === _focusKey) { idx = i; break; } }
+    idx = idx < 0 ? (delta > 0 ? 0 : rows.length - 1) : Math.max(0, Math.min(rows.length - 1, idx + delta));
+    _focusKey = rows[idx].getAttribute('data-key'); _paintFocus(); rows[idx].scrollIntoView({ block: 'nearest' });
+  }
+  document.addEventListener('keydown', function (e) {
+    if ((location.hash || '').indexOf('#/findings') !== 0) return;
+    var t = e.target; if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable)) return;
+    if (document.querySelector('.cmdk-overlay.show')) return;
+    var dr = document.getElementById('drawer'), drawerOpen = dr && dr.classList.contains('open');
+    if (e.key === 'Escape') { if (drawerOpen) { var bg = document.getElementById('drawerBg'); if (bg) bg.classList.remove('open'); dr.classList.remove('open'); } return; }
+    if (drawerOpen) return;
+    if (e.key === 'j' || e.key === 'ArrowDown') { e.preventDefault(); _moveFocus(1); }
+    else if (e.key === 'k' || e.key === 'ArrowUp') { e.preventDefault(); _moveFocus(-1); }
+    else if (e.key === 'Enter' || e.key === 'o') { var f = _focusKey && findByKey(_focusKey); if (f) { e.preventDefault(); openDrawer(f); } }
+    else if (e.key === 'x') { var f2 = _focusKey && findByKey(_focusKey); if (f2) { e.preventDefault(); var k = keyOf(f2); if (selKeys[k]) delete selKeys[k]; else selKeys[k] = 1; currentView(); _paintFocus(); } }
+  });
   // Drag-to-resize columns; widths persist (STATE._colW + localStorage) across re-renders.
   function wireResizers() {
     var tbl = document.getElementById('gridHost'); if (!tbl) return;
@@ -1030,8 +1088,8 @@
   }
   function toISO(s) { var d = new Date(s); if (isNaN(d)) return todayISO(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
 
-  function exportCsv() {
-    var list = visibleFindings();
+  function exportCsv(list) {
+    list = (list && list.length) ? list : visibleFindings();
     var head = ['CVE', 'Host', 'Description', 'Severity', 'CVSS', 'VPR', 'EPSS', 'Status', 'Ticket', 'Owner', 'Repo', 'FirstSeen', 'LastSeen', 'SLA_Due', 'Days_To_Due', 'Plugin', 'Source', 'Notes', 'Updates'];
     var lines = [head.join(',')].concat(list.map(function (f) {
       var o = ovOf(f), ep = cveIntel(f.cve).epss;
