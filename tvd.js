@@ -196,28 +196,46 @@ function parseJsonMaybeLines(text){
 }
 function tioDate(x){ if(x==null||x==='') return ''; if(typeof x==='number') return new Date(x<1e12?x*1000:x).toISOString(); return String(x); }
 function tioToScRow(v){
-  const a=v.asset||{}, p=v.plugin||{}, port=v.port||{};
+  const a=v.asset||{}, p=v.plugin||{}, port=v.port||{}, vpr=p.vpr||{};
   const cap = s => s ? String(s).charAt(0).toUpperCase()+String(s).slice(1).toLowerCase() : '';
-  const os = Array.isArray(a.operating_system)?a.operating_system[0]:(a.operating_system||'');
-  const vpr = (p.vpr&&p.vpr.score!=null)?p.vpr.score:(p.vpr_score!=null?p.vpr_score:'');
+  const arr = x => Array.isArray(x)?x:(x!=null&&x!==''?[x]:[]);
+  const os = arr(a.operating_system)[0]||'';
+  const vec = o => (o&&typeof o==='object') ? (o.raw||'') : (o||'');   // io cvss vectors are objects w/ .raw
+  const smod = String(v.severity_modification_type||'').toUpperCase();
+  const fw=[]; if(p.exploit_framework_metasploit)fw.push('Metasploit'); if(p.exploit_framework_core)fw.push('CORE Impact');
+  if(p.exploit_framework_canvas)fw.push('CANVAS'); if(p.exploit_framework_d2_elliot)fw.push('D2 Elliot'); if(p.exploit_framework_exploithub)fw.push('ExploitHub');
   return {
-    pluginID: p.id!=null?String(p.id):'', pluginName: p.name||'', family: p.family||'',
-    severity: cap(v.severity||''), severityID: v.severity_id!=null?String(v.severity_id):'',
-    vprScore: vpr!==''?String(vpr):'', baseScore: p.cvss_base_score!=null?String(p.cvss_base_score):'',
-    cvssV3BaseScore: p.cvss3_base_score!=null?String(p.cvss3_base_score):'',
-    exploitAvailable: p.exploit_available?'Yes':'No', exploitEase: p.exploitability_ease||'',
-    cve: Array.isArray(p.cve)?p.cve.join(','):(p.cve||''), riskFactor: p.risk_factor||'',
-    ip: a.ipv4||'', uuid: a.uuid||v.asset_uuid||'', hostUUID: a.uuid||'',
+    pluginID: p.id!=null?String(p.id):'', pluginName: p.name||'',
+    pluginInfo: (p.id!=null?p.id+' ('+(port.port!=null?port.port:'')+'/'+(port.protocol||'')+') ':'')+(p.name||''),
+    family: p.family||'', familyID: p.family_id!=null?String(p.family_id):'',
+    severity: cap(v.severity||''), severityID: v.severity_id!=null?String(v.severity_id):'', severityDescription: cap(v.severity||''),
+    vprScore: vpr.score!=null?String(vpr.score):'', vprContext: '', keyDrivers: vpr.drivers?JSON.stringify(vpr.drivers):'',
+    riskFactor: p.risk_factor||'', stigSeverity: p.stig_severity||'',
+    baseScore: p.cvss_base_score!=null?String(p.cvss_base_score):'', temporalScore: p.cvss_temporal_score!=null?String(p.cvss_temporal_score):'',
+    cvssVector: vec(p.cvss_vector), cvssV3BaseScore: p.cvss3_base_score!=null?String(p.cvss3_base_score):'',
+    cvssV3TemporalScore: p.cvss3_temporal_score!=null?String(p.cvss3_temporal_score):'', cvssV3Vector: vec(p.cvss3_vector),
+    exploitAvailable: p.exploit_available?'Yes':'No', exploitEase: p.exploitability_ease||'', exploitFrameworks: fw.join(', '),
+    cve: arr(p.cve).join(','),
+    bid: arr(p.xrefs).filter(x=>x&&x.type==='BID').map(x=>x.id).join(', '),
+    xref: arr(p.xrefs).map(x=>x&&(x.type+':'+x.id)).filter(Boolean).join(', '),
+    cpe: arr(p.cpe).join(', '),
+    ip: a.ipv4||'', uuid: a.uuid||v.finding_id||'', hostUUID: a.uuid||a.bios_uuid||'',
     dnsName: a.hostname||a.fqdn||a.netbios_name||'', netbiosName: a.netbios_name||'',
-    macAddress: (Array.isArray(a.mac_address)?a.mac_address[0]:a.mac_address)||'',
-    operatingSystem: os, port: port.port!=null?String(port.port):'', protocol: port.protocol||'',
+    macAddress: arr(a.mac_address)[0]||(typeof a.mac_address==='string'?a.mac_address:''), operatingSystem: os,
+    port: port.port!=null?String(port.port):'', protocol: port.protocol||'',
+    repository: v.source||'', repositoryID: '',
     firstSeen: tioDate(v.first_found), lastSeen: tioDate(v.last_found),
     vulnPubDate: tioDate(p.vuln_publication_date), patchPubDate: tioDate(p.patch_publication_date),
-    pluginPubDate: tioDate(p.plugin_publication_date), pluginModDate: tioDate(p.plugin_modification_date),
+    pluginPubDate: tioDate(p.publication_date), pluginModDate: tioDate(p.modification_date),
     hasBeenMitigated: (String(v.state).toUpperCase()==='FIXED')?'Yes':'No',
+    recastRisk: smod==='RECASTED'?'Yes':'No', recastRiskRuleComment: v.recast_reason||'',
+    acceptRisk: (smod==='ACCEPTED'||String(v.state).toUpperCase()==='ACCEPTED')?'Yes':'No', acceptRiskRuleComment: '',
     acrScore: a.acr_score!=null?String(a.acr_score):'', assetExposureScore: a.exposure_score!=null?String(a.exposure_score):'',
-    checkType: p.type||'', synopsis: p.synopsis||'', description: p.description||'', solution: p.solution||'',
-    seeAlso: Array.isArray(p.see_also)?p.see_also.join('\n'):(p.see_also||''), pluginText: v.output||'', dataFormat:'IPv4'
+    checkType: p.type||'', version: p.version!=null?String(p.version):'',
+    synopsis: p.synopsis||'', description: p.description||'', solution: p.solution||'',
+    seeAlso: arr(p.see_also).join('\n'), pluginText: v.output||'',
+    hostUniqueness: '', uniqueness: '', vulnUniqueness: '', vulnUUID: v.finding_id||'',
+    dataFormat: (a.ipv6&&!a.ipv4)?'IPv6':'IPv4'
   };
 }
 function ingestTio(records){
