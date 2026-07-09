@@ -186,6 +186,7 @@
   function visibleFindings() {
     var f = STATE.filt;
     var list = STATE.findings.filter(function (x) {
+      if (f.open && !isOpen(x)) return false;
       if (f.status && statusOf(x) !== f.status) return false;
       if (f.sev && x.severity !== f.sev) return false;
       if (f.owner && (ovOf(x).owner || '') !== f.owner) return false;
@@ -278,11 +279,11 @@
       workflowStrip(k) +
       privSlim() +
       '<div class="kpis">' +
-      kpiL('Open findings', k.open, k.total + ' total', '', '#/findings') +
+      kpiL('Open findings', k.open, k.total + ' total', '', '#/findings?open=1') +
       kpiL('Overdue (SLA)', k.overdue, 'past remediation window', k.overdue ? 'crit' : 'ok', '#/findings?overdue=1') +
-      kpiL('KEV / exploited', k.exploited, 'actively exploited, open', k.exploited ? 'crit' : 'ok', '#/findings?exploited=1') +
-      kpiL('EPSS ≥ 50%', k.epssHi, 'high exploit probability', k.epssHi ? '' : 'ok', '#/findings?epssHi=1') +
-      kpiL('Open critical', k.crit, 'severity = Critical', k.crit ? 'crit' : '', '#/findings?sev=Critical') +
+      kpiL('KEV / exploited', k.exploited, 'actively exploited, open', k.exploited ? 'crit' : 'ok', '#/findings?exploited=1&open=1') +
+      kpiL('EPSS ≥ 50%', k.epssHi, 'high exploit probability', k.epssHi ? '' : 'ok', '#/findings?epssHi=1&open=1') +
+      kpiL('Open critical', k.crit, 'severity = Critical', k.crit ? 'crit' : '', '#/findings?sev=Critical&open=1') +
       kpiL('New this scan', k.newScan, 'added since last import', '', '#/findings?fresh=1') +
       kpi('MTTR', k.mttr == null ? '—' : k.mttr + 'd', 'avg days to remediate') +
       kpi('SLA compliance', k.comp + '%', 'open findings within window', k.comp >= 90 ? 'ok' : '') +
@@ -291,12 +292,12 @@
       kpi('Assets', k.assets, 'distinct hosts') +
       '</div>' +
       dashCampaigns() +
-      '<h2>Open by severity</h2>' + barRows(bySev.map(function (x) { return { l: x.s, n: x.n, cls: x.s.toLowerCase(), href: '#/findings?sev=' + x.s }; })) +
+      '<h2>Open by severity</h2>' + barRows(bySev.map(function (x) { return { l: x.s, n: x.n, cls: x.s.toLowerCase(), href: '#/findings?sev=' + x.s + '&open=1' }; })) +
       '<h2>By status</h2>' + barRows(byStatus.map(function (x) { return { l: x.l, n: x.n, color: 'var(--' + (STATUS_BAR_COLOR[x.k] || 'accent') + ')', href: '#/findings?status=' + x.k }; })) +
       '<h2>Highest-risk open findings</h2>' +
       (top.length ? '<div style="overflow-x:auto">' + gridTable(top) + '</div>' : '<div class="empty">Nothing open.</div>') +
       '<h2>Systems with the most open findings</h2>' +
-      (hosts.length ? barRows(hosts.map(function (h) { return { l: h.host + (h.crit ? '  ·  ' + h.crit + ' crit' : ''), title: h.host + ' — ' + h.n + ' open' + (h.crit ? ', ' + h.crit + ' critical' : ''), n: h.n, color: h.crit ? 'var(--crit)' : 'var(--accent)', href: '#/findings?q=' + encodeURIComponent(h.host) }; })) : '<div class="empty">Nothing open.</div>');
+      (hosts.length ? barRows(hosts.map(function (h) { return { l: h.host + (h.crit ? '  ·  ' + h.crit + ' crit' : ''), title: h.host + ' — ' + h.n + ' open' + (h.crit ? ', ' + h.crit + ' critical' : ''), n: h.n, color: h.crit ? 'var(--crit)' : 'var(--accent)', href: '#/findings?q=' + encodeURIComponent(h.host) + '&open=1' }; })) : '<div class="empty">Nothing open.</div>');
     wireGrid();
     var wfT = document.getElementById('wfToggle');
     if (wfT) wfT.addEventListener('click', function () { save('vmops-wfstrip', !load('vmops-wfstrip', false)); viewDashboard(); });
@@ -406,7 +407,7 @@
   }
 
   // ---------- saved + preset views (one-click filter sets) ----------
-  function defaultFilt() { return { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, noTicket: false, noowner: false, colf: {}, group: '' }; }
+  function defaultFilt() { return { q: '', status: '', sev: '', owner: '', repo: '', open: false, overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, noTicket: false, noowner: false, colf: {}, group: '' }; }
   var PRESET_VIEWS = [
     { id: 'exploited', name: 'Exploited (KEV / PoC)', filt: { exploited: true } },
     { id: 'epsshi', name: 'EPSS ≥ 50%', filt: { epssHi: true } },
@@ -423,7 +424,7 @@
     // Apply a deep-link query (e.g. Ask AI -> #/findings?sev=Critical&overdue=1) ONLY when it actually
     // changes — otherwise the in-page filter handlers (which re-call viewFindings without touching the
     // hash) would re-parse the stale query every render and clobber the user's selection.
-    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', epssHi:p.epssHi==='1', noTicket:p.noTicket==='1', noowner:p.noowner==='1', colf:{}, group:STATE.filt.group||'' }; })();
+    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', open:p.open==='1', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', epssHi:p.epssHi==='1', noTicket:p.noTicket==='1', noowner:p.noowner==='1', colf:{}, group:STATE.filt.group||'' }; })();
     if (!STATE.findings.length) return viewEmpty('findings');
     var list = visibleFindings();
     var statusOpts = '<option value="">All statuses</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '"' + (STATE.filt.status === s.k ? ' selected' : '') + '>' + s.l + '</option>'; }).join('');
@@ -449,6 +450,7 @@
       '<select id="fSeen">' + seenOpts + '</select>' +
       '<select id="fOwner">' + ownerOpts + '</select>' +
       (repoList.length ? '<select id="fRepo">' + repoOpts + '</select>' : '') +
+      '<button class="btn sm" id="fOpen" style="' + (STATE.filt.open ? 'border-color:var(--accent);color:var(--accent)' : '') + '" title="Only open findings (excludes resolved, risk-accepted, and false-positive)">Open only</button>' +
       '<button class="btn sm" id="fOverdue" style="' + (STATE.filt.overdue ? 'border-color:var(--crit);color:var(--crit)' : '') + '">Overdue only</button>' +
       '<button class="btn sm" id="fExploit" style="' + (STATE.filt.exploited ? 'border-color:var(--crit);color:var(--crit)' : '') + '" title="KEV-listed or with a public exploit">Exploited only</button>' +
       '<button class="btn sm" id="fEpssHi" style="' + (STATE.filt.epssHi ? 'border-color:var(--crit);color:var(--crit)' : '') + '" title="EPSS ≥ 50% (high near-term exploitation probability)">EPSS ≥ 50%</button>' +
@@ -491,6 +493,7 @@
     document.getElementById('fSeen').addEventListener('change', function () { STATE.filt.seen = this.value; viewFindings(); });
     document.getElementById('fOwner').addEventListener('change', function () { STATE.filt.owner = this.value; viewFindings(); });
     var fRepo = document.getElementById('fRepo'); if (fRepo) fRepo.addEventListener('change', function () { STATE.filt.repo = this.value; viewFindings(); });
+    document.getElementById('fOpen').addEventListener('click', function () { STATE.filt.open = !STATE.filt.open; viewFindings(); });
     document.getElementById('fOverdue').addEventListener('click', function () { STATE.filt.overdue = !STATE.filt.overdue; viewFindings(); });
     document.getElementById('fExploit').addEventListener('click', function () { STATE.filt.exploited = !STATE.filt.exploited; viewFindings(); });
     document.getElementById('fEpssHi').addEventListener('click', function () { STATE.filt.epssHi = !STATE.filt.epssHi; viewFindings(); });
