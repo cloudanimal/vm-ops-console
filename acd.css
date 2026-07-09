@@ -100,7 +100,7 @@ html[data-theme="light"] .acdapp .card, html[data-theme="light"] .acdapp .panel{
 .acdapp .ftoolbar .fbtn{position:relative}
 .acdapp .fbadge{display:inline-block;margin-left:6px;font-size:10px;font-weight:700;padding:1px 6px;border-radius:100px;background:var(--accent);color:#fff}
 .acdapp .drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:190}
-.acdapp .drawer{position:fixed;top:0;right:0;height:100%;width:min(460px,94vw);background:var(--panel);border-left:1px solid var(--line);z-index:200;overflow:auto;padding:18px 20px;box-shadow:-8px 0 30px rgba(0,0,0,.35)}
+.acdapp .drawer{position:fixed;top:0;right:0;height:100%;width:min(460px,94vw);background:var(--panel);border-left:1px solid var(--line);z-index:200;overflow:auto;padding:18px 20px;box-shadow:-8px 0 30px rgba(0,0,0,.35);transform:none}
 .acdapp .drawer h3{margin:0}
 .acdapp .drawer-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}
 .acdapp .drawer-close{background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;line-height:1}

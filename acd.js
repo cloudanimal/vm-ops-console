@@ -286,8 +286,39 @@ function ruleRowHtml(rule,i,src){ const cols=srcCols(src); const t=rule.field?ad
     ${noVal?'':`<input class="arVal" type="${rule.op==='before'||rule.op==='after'?'date':'text'}" value="${escH(rule.value||'')}" placeholder="value" style="min-width:140px">`}
     <button class="btn arDel" title="Remove rule" aria-label="Remove rule" style="padding:4px 9px">✕</button>
   </div>`; }
-function openDrawer(src){ STATE._drawer=src; $('#acdDrawer').hidden=false; $('#acdDrawerBack').hidden=false; buildDrawer(src); }
-function closeDrawer(){ STATE._drawer=null; $('#acdDrawer').hidden=true; $('#acdDrawerBack').hidden=true; }
+function openDrawer(src){ STATE._drawer=src; $('#acdDrawer').hidden=false; $('#acdDrawerBack').hidden=false; buildDrawer(src); showAcdHandle(); }
+function closeDrawer(){ STATE._drawer=null; $('#acdDrawer').hidden=true; $('#acdDrawerBack').hidden=true; hideAcdHandle(); }
+
+// Left-edge drag handle so the filter drawer is resizable (width persists in localStorage
+// 'acd-drawer-w'); mirrors the vmops finding-drawer behaviour. Double-click resets to default.
+let _acdH=null; const ACD_MINW=340;
+function acdMaxW(){ return Math.max(ACD_MINW, window.innerWidth-40); }
+function positionAcdHandle(){ const dr=$('#acdDrawer'); if(_acdH && dr) _acdH.style.left=dr.getBoundingClientRect().left+'px'; }
+function ensureAcdHandle(){
+  if(_acdH) return _acdH;
+  const dr=$('#acdDrawer'); if(!dr) return null;
+  const h=document.createElement('div'); h.className='drawer-resize'; h.style.zIndex='210'; // above the acd drawer (z 200)
+  h.title='Drag to resize · double-click to reset';
+  h.setAttribute('role','separator'); h.setAttribute('aria-orientation','vertical'); h.setAttribute('aria-label','Resize panel');
+  document.body.appendChild(h);
+  h.addEventListener('pointerdown',e=>{
+    e.preventDefault(); try{h.setPointerCapture(e.pointerId);}catch(_){}
+    h.classList.add('dragging'); document.body.style.userSelect='none';
+    const move=ev=>{ dr.style.width=Math.min(Math.max(window.innerWidth-ev.clientX,ACD_MINW),acdMaxW())+'px'; positionAcdHandle(); };
+    const up=()=>{ h.classList.remove('dragging'); h.removeEventListener('pointermove',move); h.removeEventListener('pointerup',up); document.body.style.userSelect=''; const w=parseInt(dr.style.width,10); if(w){ try{ localStorage.setItem('acd-drawer-w',String(w)); }catch(_){} } };
+    h.addEventListener('pointermove',move); h.addEventListener('pointerup',up);
+  });
+  h.addEventListener('dblclick',()=>{ dr.style.width=''; try{ localStorage.setItem('acd-drawer-w','0'); }catch(_){} positionAcdHandle(); });
+  _acdH=h; return h;
+}
+function showAcdHandle(){
+  const dr=$('#acdDrawer'); if(!dr) return;
+  let w=0; try{ w=parseInt(localStorage.getItem('acd-drawer-w')||'0',10)||0; }catch(_){}
+  dr.style.width = w ? (Math.min(Math.max(w,ACD_MINW),acdMaxW())+'px') : '';   // '' → CSS default
+  const h=ensureAcdHandle(); if(h){ h.classList.add('open'); positionAcdHandle(); }
+}
+function hideAcdHandle(){ if(_acdH) _acdH.classList.remove('open'); }
+window.addEventListener('resize',()=>{ const dr=$('#acdDrawer'); if(!dr || dr.hidden) return; const w=parseInt(dr.style.width,10); if(w && w>acdMaxW()) dr.style.width=acdMaxW()+'px'; positionAcdHandle(); });
 function buildDrawer(src){ const body=$('#acdDrawerBody'); if(!body || !STATE._drawer) return;
   const rules=STATE.srcFilters[src]||[]; const qp=quickPicks(src); const isAgent=src!=='ad';
   const intro = isAgent
