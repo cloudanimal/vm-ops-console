@@ -5,7 +5,7 @@
   var TVD_MARKUP='<div class="tvdapp">'+`<div class="tvdhead">
     <div class="overline">Tenable Dashboard</div>
     <h1>Your Tenable vulnerability program</h1>
-    <p class="lede">Upload your Tenable SC exports for instant KPIs, severity and SLA trends, top findings, and one-click reports — all in your browser.</p>
+    <p class="lede">Upload a Tenable.io vulnerability export (or Tenable.sc cumulative + mitigated) for instant KPIs, severity and SLA trends, top findings, and one-click reports — all in your browser.</p>
   </div>
   <div class="tvdtools row noprint">
     <span class="priv">&#128274; 100% local — your data never leaves this browser</span>
@@ -49,12 +49,13 @@
   </div>
   <section id="uploader">
     <div class="drop" id="drop">
-      <h2>Load your Tenable SC analysis exports</h2>
-      <p>Two CSV exports from the <code>/analysis</code> vulndetails view — one with <b>sourceType=cumulative</b> (open),
-         one with <b>sourceType=patched</b> (mitigated). Or a single Excel workbook with both sheets.</p>
+      <h2>Load your Tenable exports</h2>
+      <p><b>Tenable.io:</b> one vulnerability export (JSON / JSONL — from the export API or <code>tio_client.py</code>); it's auto-split into open/fixed by <code>state</code>.
+         &nbsp;·&nbsp; <b>Tenable.sc:</b> two <code>/analysis</code> CSVs (<b>cumulative</b> = open, <b>patched</b> = mitigated), or a workbook with both sheets.</p>
       <div class="row">
-        <button class="btn" id="pickCum">Cumulative (open) CSV</button>
-        <button class="btn" id="pickMit">Mitigated CSV</button>
+        <button class="btn" id="pickTio">Tenable.io export (JSON)</button>
+        <button class="btn" id="pickCum">Tenable.sc cumulative CSV</button>
+        <button class="btn" id="pickMit">Tenable.sc mitigated CSV</button>
         <button class="btn xlsx" id="pickWb">Workbook (.xlsx)</button>
         <button class="btn sample" id="loadSample">Load sample data</button>
       </div>
@@ -66,9 +67,10 @@
         work but parse and render more slowly; close other heavy tabs first. <code>.xlsx</code>
         workbooks parse slower than CSV at the same row count.
       </p>
-      <input type="file" id="fileCum" accept=".csv,.json" class="hidden" />
-      <input type="file" id="fileMit" accept=".csv,.json" class="hidden" />
-      <input type="file" id="fileWb" multiple accept=".xlsx,.xls,.csv,.json" class="hidden" />
+      <input type="file" id="fileTio" accept=".json,.jsonl,.ndjson" class="hidden" />
+      <input type="file" id="fileCum" accept=".csv,.json,.jsonl" class="hidden" />
+      <input type="file" id="fileMit" accept=".csv,.json,.jsonl" class="hidden" />
+      <input type="file" id="fileWb" multiple accept=".xlsx,.xls,.csv,.json,.jsonl" class="hidden" />
     </div>
   </section>
   <section id="dashboard" class="hidden"></section>
@@ -139,6 +141,8 @@ const drop = $('#drop');
 ['dragover','dragenter'].forEach(e=>drop.addEventListener(e,ev=>{ev.preventDefault();drop.classList.add('hover')}));
 ['dragleave','drop'].forEach(e=>drop.addEventListener(e,ev=>{ev.preventDefault();drop.classList.remove('hover')}));
 drop.addEventListener('drop', ev => handleFiles(ev.dataTransfer.files));
+$('#pickTio').addEventListener('click', ()=>$('#fileTio').click());
+$('#fileTio').addEventListener('change', e=>handleFiles(e.target.files));
 $('#pickCum').addEventListener('click', ()=>$('#fileCum').click());
 $('#pickMit').addEventListener('click', ()=>$('#fileMit').click());
 $('#pickWb').addEventListener('click', ()=>$('#fileWb').click());
@@ -178,6 +182,50 @@ function addRows(rows, name, forcedKind){
   const kind = forcedKind || classify(rows, name);
   STATE[kind] = STATE[kind].concat(rows);
 }
+
+// ---- Tenable.io adapter --------------------------------------------------
+// tio_client.py / the Tenable.io vuln export API emit nested records
+// ({asset:{…}, plugin:{…}, severity, state, …}) as JSON or JSONL. Map each to
+// the flat Tenable.sc /analysis shape this dashboard reads, and split by `state`
+// (OPEN/REOPENED → cumulative, FIXED → mitigated) so one file feeds both planes.
+function isTioRecord(r){ return r && typeof r==='object' && r.plugin && typeof r.plugin==='object' && r.asset && typeof r.asset==='object'; }
+function parseJsonMaybeLines(text){
+  const t=(text||'').trim(); if(!t) return [];
+  try{ const d=JSON.parse(t); if(Array.isArray(d)) return d; return d.results || (d.response&&d.response.results) || d.vulnerabilities || (typeof d==='object'?[d]:[]); }
+  catch(e){ return t.split('\n').map(l=>l.trim()).filter(Boolean).map(l=>{ try{return JSON.parse(l);}catch(_){return null;} }).filter(Boolean); }
+}
+function tioDate(x){ if(x==null||x==='') return ''; if(typeof x==='number') return new Date(x<1e12?x*1000:x).toISOString(); return String(x); }
+function tioToScRow(v){
+  const a=v.asset||{}, p=v.plugin||{}, port=v.port||{};
+  const cap = s => s ? String(s).charAt(0).toUpperCase()+String(s).slice(1).toLowerCase() : '';
+  const os = Array.isArray(a.operating_system)?a.operating_system[0]:(a.operating_system||'');
+  const vpr = (p.vpr&&p.vpr.score!=null)?p.vpr.score:(p.vpr_score!=null?p.vpr_score:'');
+  return {
+    pluginID: p.id!=null?String(p.id):'', pluginName: p.name||'', family: p.family||'',
+    severity: cap(v.severity||''), severityID: v.severity_id!=null?String(v.severity_id):'',
+    vprScore: vpr!==''?String(vpr):'', baseScore: p.cvss_base_score!=null?String(p.cvss_base_score):'',
+    cvssV3BaseScore: p.cvss3_base_score!=null?String(p.cvss3_base_score):'',
+    exploitAvailable: p.exploit_available?'Yes':'No', exploitEase: p.exploitability_ease||'',
+    cve: Array.isArray(p.cve)?p.cve.join(','):(p.cve||''), riskFactor: p.risk_factor||'',
+    ip: a.ipv4||'', uuid: a.uuid||v.asset_uuid||'', hostUUID: a.uuid||'',
+    dnsName: a.hostname||a.fqdn||a.netbios_name||'', netbiosName: a.netbios_name||'',
+    macAddress: (Array.isArray(a.mac_address)?a.mac_address[0]:a.mac_address)||'',
+    operatingSystem: os, port: port.port!=null?String(port.port):'', protocol: port.protocol||'',
+    firstSeen: tioDate(v.first_found), lastSeen: tioDate(v.last_found),
+    vulnPubDate: tioDate(p.vuln_publication_date), patchPubDate: tioDate(p.patch_publication_date),
+    pluginPubDate: tioDate(p.plugin_publication_date), pluginModDate: tioDate(p.plugin_modification_date),
+    hasBeenMitigated: (String(v.state).toUpperCase()==='FIXED')?'Yes':'No',
+    acrScore: a.acr_score!=null?String(a.acr_score):'', assetExposureScore: a.exposure_score!=null?String(a.exposure_score):'',
+    checkType: p.type||'', synopsis: p.synopsis||'', description: p.description||'', solution: p.solution||'',
+    seeAlso: Array.isArray(p.see_also)?p.see_also.join('\n'):(p.see_also||''), pluginText: v.output||'', dataFormat:'IPv4'
+  };
+}
+function ingestTio(records){
+  const mapped = records.filter(isTioRecord).map(tioToScRow);
+  STATE.cumulative = STATE.cumulative.concat(mapped.filter(r=>r.hasBeenMitigated!=='Yes'));
+  STATE.mitigated  = STATE.mitigated.concat(mapped.filter(r=>r.hasBeenMitigated==='Yes'));
+  return mapped.length;
+}
 async function handleFiles(fileList, forcedKind){
   if(!fileList || !fileList.length) return;
   showLoading('Reading file…'); await nextPaint();
@@ -193,10 +241,10 @@ async function handleFiles(fileList, forcedKind){
     } else if(ext==='csv'){
       const rows = Papa.parse(await f.text(), {header:true, skipEmptyLines:true, dynamicTyping:false}).data;
       addRows(rows, f.name, forcedKind);
-    } else if(ext==='json'){
-      let data = JSON.parse(await f.text());
-      if(!Array.isArray(data)) data = data.results || data.response?.results || [];
-      addRows(data, f.name, forcedKind);
+    } else if(ext==='json' || ext==='jsonl' || ext==='ndjson'){
+      const data = parseJsonMaybeLines(await f.text());
+      if(data.length && isTioRecord(data[0])) ingestTio(data);   // Tenable.io export → map + auto-split by state
+      else addRows(data, f.name, forcedKind);
     }
   }
   setState();
