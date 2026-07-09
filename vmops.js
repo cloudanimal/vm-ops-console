@@ -53,7 +53,7 @@
     ov: load('vmops-overrides', {}),       // key -> {status, owner, notes, updated}
     cfg: Object.assign({}, DEFAULT_CFG, load('vmops-config', {})),
     sort: { col: 'risk', dir: 1 },
-    filt: { q: '', status: '', sev: '', owner: '', repo: '', overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, noTicket: false, noowner: false, group: '' }
+    filt: defaultFilt()
   };
   STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla, STATE.cfg.sla || {});
   STATE._newKeys = {}; try { (JSON.parse(localStorage.getItem('vmops-newkeys') || '[]') || []).forEach(function (k) { STATE._newKeys[k] = 1; }); } catch (e) {}
@@ -419,6 +419,13 @@
   function loadViews() { try { return JSON.parse(localStorage.getItem('vmops-views') || '[]') || []; } catch (e) { return []; } }
   function saveViews(v) { try { localStorage.setItem('vmops-views', JSON.stringify(v)); } catch (e) {} }
   function applyView(filt) { STATE.filt = Object.assign(defaultFilt(), filt || {}); STATE._viewSig = JSON.stringify(STATE.filt); }
+  // True when any finding filter is set (so the toolbar can offer "Clear filters").
+  function filtActive() {
+    var f = STATE.filt, d = defaultFilt();
+    var keys = ['q', 'status', 'sev', 'owner', 'repo', 'open', 'overdue', 'seen', 'exploited', 'fresh', 'epssHi', 'noTicket', 'noowner', 'group'];
+    for (var i = 0; i < keys.length; i++) { if (f[keys[i]] !== d[keys[i]]) return true; }
+    return !!(f.colf && Object.keys(f.colf).length);
+  }
   function viewFindings() {
     setActive('findings');
     // Apply a deep-link query (e.g. Ask AI -> #/findings?sev=Critical&overdue=1) ONLY when it actually
@@ -465,6 +472,7 @@
       '</div></details>' +
       '<button class="btn sm" id="fViewDel" title="Delete the active saved view"' + (activeView.indexOf('saved:') === 0 ? '' : ' style="display:none"') + '>Delete view</button>' +
       '<span class="spacer"></span>' +
+      (filtActive() ? '<button class="btn sm" id="fClear" title="Clear all active filters">Clear filters</button>' : '') +
       '<span class="muted" style="font-size:12.5px">' + list.length + ' of ' + STATE.findings.length + '</span>' +
       '<button class="btn sm" id="fExport">Export CSV</button>' +
       '</div>' +
@@ -494,6 +502,10 @@
     document.getElementById('fOwner').addEventListener('change', function () { STATE.filt.owner = this.value; viewFindings(); });
     var fRepo = document.getElementById('fRepo'); if (fRepo) fRepo.addEventListener('change', function () { STATE.filt.repo = this.value; viewFindings(); });
     document.getElementById('fOpen').addEventListener('click', function () { STATE.filt.open = !STATE.filt.open; viewFindings(); });
+    (function () { var fc = document.getElementById('fClear'); if (!fc) return; fc.addEventListener('click', function () {
+      STATE.filt = defaultFilt(); STATE._view = ''; STATE._viewSig = '';
+      if ((location.hash || '').indexOf('?') > -1) { STATE._findingsQuery = ''; location.hash = '#/findings'; } else viewFindings();
+    }); })();
     document.getElementById('fOverdue').addEventListener('click', function () { STATE.filt.overdue = !STATE.filt.overdue; viewFindings(); });
     document.getElementById('fExploit').addEventListener('click', function () { STATE.filt.exploited = !STATE.filt.exploited; viewFindings(); });
     document.getElementById('fEpssHi').addEventListener('click', function () { STATE.filt.epssHi = !STATE.filt.epssHi; viewFindings(); });
