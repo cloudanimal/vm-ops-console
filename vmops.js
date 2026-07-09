@@ -363,6 +363,7 @@
       '<button class="btn sm" id="bulkJira" title="One Jira ticket covering all selected">Jira ticket</button>' +
       '<button class="btn sm" id="bulkSnow" title="One ServiceNow incident covering all selected">SNOW ticket</button>' +
       '<button class="btn sm" id="bulkTicket" title="Link one ticket key to all selected findings">Link ticket…</button>' +
+      '<button class="btn sm" id="bulkCamp" title="Create a campaign scoped to the selected findings">Create campaign</button>' +
       '<span class="spacer"></span>' +
       '<button class="btn sm" id="bulkClear">Clear selection</button>' +
       '</div>' +
@@ -391,7 +392,8 @@
       STATE._view = 'saved:' + nm; STATE._viewSig = JSON.stringify(STATE.filt); toast('Saved view “' + nm + '”'); viewFindings();
     });
     var fcb = document.getElementById('fCamp'); if (fcb) fcb.addEventListener('click', function () {
-      _campSeed = Object.assign({}, STATE.filt); location.hash = '#/campaigns';
+      _campSeed = { dynamic: true, filt: { sev: STATE.filt.sev || '', status: STATE.filt.status || '', q: STATE.filt.q || '', exploited: !!STATE.filt.exploited, overdue: !!STATE.filt.overdue } };
+      location.hash = '#/campaigns';
     });
     var fvd = document.getElementById('fViewDel'); if (fvd) fvd.addEventListener('click', function () {
       if ((STATE._view || '').indexOf('saved:') !== 0) return; var nm = STATE._view.slice(6);
@@ -440,6 +442,7 @@
     });
     var bj = document.getElementById('bulkJira'); if (bj) bj.addEventListener('click', function () { var fs = need(); if (fs.length) ticketGroup('jira', fs); });
     var bsn = document.getElementById('bulkSnow'); if (bsn) bsn.addEventListener('click', function () { var fs = need(); if (fs.length) ticketGroup('snow', fs); });
+    var bcp = document.getElementById('bulkCamp'); if (bcp) bcp.addEventListener('click', function () { var fs = need(); if (fs.length) { _campSeed = { dynamic: false, staticKeys: fs.map(keyOf), filt: {} }; location.hash = '#/campaigns'; } });
     var bc = document.getElementById('bulkClear');
     if (bc) bc.addEventListener('click', function () { selKeys = {}; currentView(); });
   }
@@ -1462,8 +1465,8 @@
         : '<div class="card" style="text-align:center;padding:34px 20px"><div class="muted">No campaigns yet — create one to start tracking a remediation push.</div></div>');
     document.getElementById('campNew').addEventListener('click', function () { renderCampForm(null, 'campForm'); document.getElementById('campForm').scrollIntoView({ block: 'nearest' }); });
     document.getElementById('campSample').addEventListener('click', loadSampleCampaigns);
-    if (_campSeed) {   // arrived via "+ Campaign" on the Findings page — open the form pre-scoped
-      renderCampForm({ scope: { dynamic: true, filt: { sev: _campSeed.sev || '', status: _campSeed.status || '', q: _campSeed.q || '', exploited: !!_campSeed.exploited, overdue: !!_campSeed.overdue } } }, 'campForm');
+    if (_campSeed) {   // arrived via "+ Campaign" (filter) or "Create campaign" (selection) on Findings
+      renderCampForm({ scope: _campSeed }, 'campForm');
       _campSeed = null;
     }
     [].forEach.call(document.querySelectorAll('.camprow'), function (tr) {
@@ -1474,6 +1477,7 @@
   function renderCampForm(c, targetId) {
     c = c || {};
     var sc = c.scope || { dynamic: true, filt: {} }, f = sc.filt || {};
+    var seededStatic = (sc.dynamic === false && Array.isArray(sc.staticKeys)) ? sc.staticKeys : null;  // hand-picked selection
     var el = document.getElementById(targetId); if (!el) return;
     el.innerHTML = '<div class="card"><h3 style="margin-top:0">' + (c.id ? 'Edit campaign' : 'New campaign') + '</h3>' +
       '<div class="grid2"><div class="field"><label>Name</label><input id="cName" value="' + esc(c.name || '') + '" placeholder="e.g. Q3 internet-facing criticals"></div>' +
@@ -1495,9 +1499,17 @@
       '<div class="muted" id="cDueHint" style="font-size:11.5px;margin-top:3px"></div>' +
       '<div class="toolbar"><button class="btn primary" id="cSave">' + (c.id ? 'Save changes' : 'Create campaign') + '</button><button class="btn" id="cCancel">Cancel</button></div></div>';
     function curFilt() { return { sev: campVal('cSev'), status: campVal('cFstatus'), q: campVal('cQ').trim(), exploited: document.getElementById('cExpl').checked, overdue: document.getElementById('cOver').checked }; }
+    function noFilterSet() { var f = curFilt(); return !f.sev && !f.status && !f.q && !f.exploited && !f.overdue; }
     function updCount() {
-      var fs = campaignFindings({ scope: { dynamic: true, filt: curFilt() } });
-      document.getElementById('cCount').textContent = fs.length + ' finding(s) currently match this scope.';
+      var fs, cc = document.getElementById('cCount');
+      if (seededStatic && noFilterSet()) {
+        var set = {}; seededStatic.forEach(function (k) { set[k] = 1; });
+        fs = STATE.findings.filter(function (x) { return set[keyOf(x)]; });
+        cc.textContent = fs.length + ' hand-picked finding(s) — frozen as a static campaign.';
+      } else {
+        fs = campaignFindings({ scope: { dynamic: true, filt: curFilt() } });
+        cc.textContent = fs.length + ' finding(s) currently match this scope.';
+      }
       var sug = campSuggestDue(fs), hint = document.getElementById('cDueHint');
       if (sug) { hint.innerHTML = 'Suggested target: <b>' + sug.date + '</b> · ' + (sug.kev ? 'KEV/exploited in scope → ' + sug.days + 'd' : sug.days + 'd (severity SLA)') + ' <a href="#" id="cDueUse">Use →</a>'; var u = document.getElementById('cDueUse'); if (u) u.onclick = function (e) { e.preventDefault(); document.getElementById('cDue').value = sug.date; }; }
       else { hint.innerHTML = ''; }
@@ -1515,7 +1527,8 @@
     document.getElementById('cSave').addEventListener('click', function () {
       var name = campVal('cName').trim(); if (!name) { toast('Name the campaign'); return; }
       var filt = curFilt(), isStatic = document.getElementById('cStatic').checked;
-      var scope = isStatic ? { dynamic: false, staticKeys: campaignFindings({ scope: { dynamic: true, filt: filt } }).map(keyOf), filt: filt } : { dynamic: true, filt: filt };
+      var staticKeys = (seededStatic && noFilterSet()) ? seededStatic : campaignFindings({ scope: { dynamic: true, filt: filt } }).map(keyOf);
+      var scope = isStatic ? { dynamic: false, staticKeys: staticKeys, filt: filt } : { dynamic: true, filt: filt };
       var camps = loadCampaigns(), rec = c.id ? camps.filter(function (x) { return x.id === c.id; })[0] : null;
       var data = { name: name, owner: campVal('cOwner').trim(), team: campVal('cTeam').trim(), priority: campVal('cPrio'), dueDate: campVal('cDue'), status: campVal('cStatus'), ticketRef: campVal('cTicket').trim(), scope: scope };
       if (rec) { Object.assign(rec, data); } else { data.id = 'c' + Date.now().toString(36); data.notes = ''; data.created = todayISO(); camps.push(data); }
