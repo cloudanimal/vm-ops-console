@@ -32,7 +32,7 @@
   var SLABEL = {}; STATUS.forEach(function (s) { SLABEL[s.k] = s.l; });
   var OPEN_STATES = STATUS.filter(function (s) { return s.open; }).map(function (s) { return s.k; });
   var SEV_ORDER = { Critical: 0, High: 1, Medium: 2, Low: 3, Info: 4 };
-  var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tsUrl: '', tsAccess: '', tsSecret: '', tioAccess: '', tioSecret: '', meUrl: '', meClientId: '', meClientSecret: '' };
+  var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tioAccess: '', tioSecret: '', meUrl: '', meClientId: '', meClientSecret: '' };
   var DEFAULT_BRAND = 'VM Ops Console';
   var DEFAULT_ICON_COLOR = '#28415d';
 
@@ -249,10 +249,11 @@
       kpi('Unassigned', k.unassigned, 'no owner set') +
       kpi('No ticket', k.noTicket, 'open findings, none linked', k.noTicket ? '' : 'ok') +
       '</div>' +
+      dashCampaigns() +
       '<h2>Open by severity</h2>' + barRows(bySev.map(function (x) { return { l: x.s, n: x.n, cls: x.s.toLowerCase() }; })) +
       '<h2>By status</h2>' + barRows(byStatus.map(function (x) { return { l: x.l, n: x.n, color: 'var(--' + (STATUS_BAR_COLOR[x.k] || 'accent') + ')' }; })) +
       '<h2>Highest-risk open findings</h2>' +
-      (top.length ? gridTable(top) : '<div class="empty">Nothing open.</div>');
+      (top.length ? '<div style="overflow-x:auto">' + gridTable(top) + '</div>' : '<div class="empty">Nothing open.</div>');
     wireGrid();
   }
 
@@ -346,6 +347,7 @@
       '<select id="fGroup" title="Group findings"><option value="">No grouping</option><option value="cve"' + (STATE.filt.group === 'cve' ? ' selected' : '') + '>Group by CVE</option><option value="product"' + (STATE.filt.group === 'product' ? ' selected' : '') + '>Group by product / fix</option><option value="host"' + (STATE.filt.group === 'host' ? ' selected' : '') + '>Group by host</option></select>' +
       '<select id="fView" title="Saved & preset views">' + viewOpts + '</select>' +
       '<button class="btn sm" id="fViewSave" title="Save the current filters as a view">Save view</button>' +
+      '<button class="btn sm" id="fCamp" title="Start a remediation campaign from the current filters">+ Campaign</button>' +
       '<button class="btn sm" id="fViewDel" title="Delete the active saved view"' + (activeView.indexOf('saved:') === 0 ? '' : ' style="display:none"') + '>Delete view</button>' +
       '<span class="spacer"></span>' +
       '<span class="muted" style="font-size:12.5px">' + list.length + ' of ' + STATE.findings.length + '</span>' +
@@ -387,6 +389,9 @@
       var nm = (prompt('Save the current filters as a view named:') || '').trim(); if (!nm) return;
       var vs = loadViews().filter(function (x) { return x.name !== nm; }); vs.push({ name: nm, filt: Object.assign({}, STATE.filt) }); saveViews(vs);
       STATE._view = 'saved:' + nm; STATE._viewSig = JSON.stringify(STATE.filt); toast('Saved view “' + nm + '”'); viewFindings();
+    });
+    var fcb = document.getElementById('fCamp'); if (fcb) fcb.addEventListener('click', function () {
+      _campSeed = Object.assign({}, STATE.filt); location.hash = '#/campaigns';
     });
     var fvd = document.getElementById('fViewDel'); if (fvd) fvd.addEventListener('click', function () {
       if ((STATE._view || '').indexOf('saved:') !== 0) return; var nm = STATE._view.slice(6);
@@ -872,7 +877,7 @@
     { title: 'Agent coverage', open: { route: '#/agent-coverage', label: 'Open Agent Coverage →' }, items: [
       { id: 'acd:ad', label: 'Active Directory (AD)', sub: 'Computer inventory → Agent Coverage denominator', accept: '.json,.csv' },
       { id: 'acd:me', label: 'ManageEngine (ME)', sub: 'Endpoint Central agents → Agent Coverage', accept: '.json,.csv' },
-      { id: 'acd:tsc', label: 'Tenable.sc (TSC)', sub: 'Tenable.sc agents / assets → Agent Coverage', accept: '.json,.csv' },
+      { id: 'acd:tsc', label: 'Tenable.io', sub: 'Tenable.io agents / assets → Agent Coverage', accept: '.json,.csv' },
       { id: 'acd:tio', label: 'Tenable.io (TIO)', sub: 'Tenable.io agents / assets → Agent Coverage', accept: '.json,.csv' },
       { id: 'acd:cs', label: 'CrowdStrike (CS)', sub: 'Falcon sensor inventory → Agent Coverage', accept: '.json,.csv' }
     ] },
@@ -1167,7 +1172,7 @@
       '<div class="field"><label>Icon color</label><input type="color" id="brandIconColor" value="' + esc((c.brandIconColor || '').trim() || DEFAULT_ICON_COLOR) + '" style="width:60px;padding:3px;height:38px"></div></div>' +
       '<div class="muted" style="font-size:12.5px">Sets the name in the top nav + browser tab and the page icon (favicon) — 1–3 letters on a colored tile. Leave the name blank to use “' + esc(DEFAULT_BRAND) + '”; leave the monogram blank to derive it from the name.</div></div>' +
       '<h2>Data import</h2><div class="card">' +
-      '<div class="muted" style="font-size:13px;margin-bottom:12px">Bring in each data source — Active Directory, ManageEngine, Tenable.sc / .io, CrowdStrike, and scan findings. Files are parsed and cached in your browser and feed the dashboards.</div>' +
+      '<div class="muted" style="font-size:13px;margin-bottom:12px">Bring in each data source — Active Directory, ManageEngine, Tenable.io, CrowdStrike, and scan findings. Files are parsed and cached in your browser and feed the dashboards.</div>' +
       '<a class="btn primary" href="#/import">Open Data Import →</a></div>' +
       '<h2>Remediation SLA windows (days)</h2><div class="card"><div class="grid2">' +
       ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return '<div class="field"><label>' + s + '</label><input type="number" min="0" data-sla="' + s + '" value="' + esc(c.sla[s]) + '"></div>'; }).join('') +
@@ -1180,13 +1185,8 @@
       '<h2>ServiceNow</h2><div class="card">' +
       '<div class="field"><label>Base URL</label><input type="text" id="snowBase" value="' + esc(c.snowBase) + '" placeholder="https://yourorg.service-now.com"></div>' +
       '<div class="muted" style="font-size:12.5px">"Open SNOW incident" opens a new incident pre-filled with the finding. "Search ServiceNow" queries existing incidents for the CVE.</div></div>' +
-      '<h2>Tenable API keys</h2><div class="card">' +
-      '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Stored in <b>this browser only</b> — never uploaded. Note: Tenable.sc / Tenable.io block direct in-browser API calls (CORS), so these aren\'t used for live pulls yet; they\'re saved here for a future local connector. To bring data in today, use <a href="#/import">Import</a> with a Tenable export.</div>' +
-      '<div style="font-weight:600;font-size:13px;color:var(--soft);margin:2px 0 6px">Tenable.sc</div>' +
-      '<div class="field"><label>Tenable.sc URL</label><input type="text" id="tsUrl" value="' + esc(c.tsUrl) + '" placeholder="https://tenable-sc.yourorg.com"></div>' +
-      '<div class="grid2"><div class="field"><label>Access key</label><input type="password" id="tsAccess" autocomplete="off" value="' + esc(c.tsAccess) + '" placeholder="access key"></div>' +
-      '<div class="field"><label>Secret key</label><input type="password" id="tsSecret" autocomplete="off" value="' + esc(c.tsSecret) + '" placeholder="secret key"></div></div>' +
-      '<div style="font-weight:600;font-size:13px;color:var(--soft);margin:14px 0 6px">Tenable.io (cloud.tenable.com)</div>' +
+      '<h2>Tenable.io API keys</h2><div class="card">' +
+      '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Stored in <b>this browser only</b> — never uploaded. Tenable.io (cloud.tenable.com) blocks direct in-browser API calls (CORS), so these aren\'t used for live pulls yet; they\'re saved for a future local connector. To bring data in today, use <a href="#/import">Import</a> with a Tenable.io export.</div>' +
       '<div class="grid2"><div class="field"><label>Access key</label><input type="password" id="tioAccess" autocomplete="off" value="' + esc(c.tioAccess) + '" placeholder="access key"></div>' +
       '<div class="field"><label>Secret key</label><input type="password" id="tioSecret" autocomplete="off" value="' + esc(c.tioSecret) + '" placeholder="secret key"></div></div></div>' +
       '<h2>ManageEngine API</h2><div class="card">' +
@@ -1219,9 +1219,6 @@
       STATE.cfg.jiraPid = document.getElementById('jiraPid').value.trim();
       STATE.cfg.jiraType = document.getElementById('jiraType').value.trim();
       STATE.cfg.snowBase = document.getElementById('snowBase').value.trim();
-      STATE.cfg.tsUrl = document.getElementById('tsUrl').value.trim();
-      STATE.cfg.tsAccess = document.getElementById('tsAccess').value.trim();
-      STATE.cfg.tsSecret = document.getElementById('tsSecret').value.trim();
       STATE.cfg.tioAccess = document.getElementById('tioAccess').value.trim();
       STATE.cfg.tioSecret = document.getElementById('tioSecret').value.trim();
       STATE.cfg.meUrl = document.getElementById('meUrl').value.trim();
@@ -1333,9 +1330,239 @@
       '<a class="btn primary" href="#/import">Open Data Import →</a></div>';
   }
 
+  // ========================= Remediation Campaigns =========================
+  // Org-level layer above per-finding triage: group findings (by a saved filter or a static
+  // snapshot), give them an owner/due/target, and track them to closure. Stored in localStorage.
+  var CAMP_STATUS = [
+    { k: 'planning', l: 'Planning' }, { k: 'active', l: 'Active' }, { k: 'paused', l: 'Paused' },
+    { k: 'completed', l: 'Completed' }, { k: 'cancelled', l: 'Cancelled' }
+  ];
+  var CAMP_PRIO = ['P1', 'P2', 'P3', 'P4'];
+  var _campSeed = null;   // a Findings filter handed off via the "+ Campaign" button
+  function loadCampaigns() { try { return JSON.parse(localStorage.getItem('vmops-campaigns') || '[]') || []; } catch (e) { return []; } }
+  function saveCampaigns(list) { return save('vmops-campaigns', list); }
+  function campStatusLabel(k) { for (var i = 0; i < CAMP_STATUS.length; i++) if (CAMP_STATUS[i].k === k) return CAMP_STATUS[i].l; return k; }
+  function campVal(id) { var e = document.getElementById(id); return e ? e.value : ''; }
+  function campOpts(arr, sel) { return arr.map(function (o) { return '<option' + (o === sel ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join(''); }
+
+  // The findings a campaign covers: static snapshot (frozen keys) or dynamic (a saved filter).
+  function campaignFindings(c) {
+    var s = (c && c.scope) || {};
+    if (s.dynamic === false && s.staticKeys) {
+      var set = {}; s.staticKeys.forEach(function (k) { set[k] = 1; });
+      return STATE.findings.filter(function (x) { return set[keyOf(x)]; });
+    }
+    var f = s.filt || {};
+    return STATE.findings.filter(function (x) {
+      if (f.sev && x.severity !== f.sev) return false;
+      if (f.status && statusOf(x) !== f.status) return false;
+      if (f.overdue && slaState(x) !== 'overdue') return false;
+      if (f.exploited) { var it = cveIntel(x.cve); if (!it.kev && !it.exploit) return false; }
+      if (f.owner && (ovOf(x).owner || '') !== f.owner) return false;
+      if (f.q) { var q = f.q.toLowerCase(); if ((x.cve + ' ' + x.host + ' ' + (x.name || '') + ' ' + (x.desc || '') + ' ' + repoOf(x)).toLowerCase().indexOf(q) === -1) return false; }
+      return true;
+    });
+  }
+  function campaignStats(c) {
+    var fs = campaignFindings(c), total = fs.length;
+    var resolved = fs.filter(function (x) { return !isOpen(x); }).length;
+    var overdue = fs.filter(function (x) { return isOpen(x) && slaState(x) === 'overdue'; }).length;
+    return { total: total, resolved: resolved, open: total - resolved, overdue: overdue, pct: total ? Math.round(resolved / total * 100) : 0 };
+  }
+  function campScopeText(c) {
+    var s = (c && c.scope) || {};
+    if (s.dynamic === false) return 'Static · ' + ((s.staticKeys || []).length) + ' findings';
+    var f = s.filt || {}, bits = [];
+    if (f.sev) bits.push(f.sev); if (f.status) bits.push(SLABEL[f.status] || f.status);
+    if (f.exploited) bits.push('Exploited'); if (f.overdue) bits.push('Overdue'); if (f.q) bits.push('“' + f.q + '”');
+    return 'Dynamic' + (bits.length ? ' · ' + bits.join(', ') : ' · all findings');
+  }
+  function pbar(pct) { return '<span class="pbar"><span class="pbar-fill" style="width:' + pct + '%"></span></span> <span class="pbar-num">' + pct + '%</span>'; }
+  // Compact "Active campaigns" section for the Ops Dashboard ('' when there are none).
+  function dashCampaigns() {
+    var camps = loadCampaigns().filter(function (c) { return c.status !== 'completed' && c.status !== 'cancelled'; });
+    if (!camps.length) return '';
+    return '<h2>Active campaigns</h2><div class="card" style="padding:0;overflow-x:auto"><table class="grid"><thead><tr><th>Name</th><th>Owner</th><th>Progress</th><th>Overdue</th><th>Due</th><th>Status</th></tr></thead><tbody>' +
+      camps.map(function (c) {
+        var st = campaignStats(c);
+        return '<tr><td><a href="#/campaigns/' + esc(c.id) + '"><b>' + esc(c.name) + '</b></a></td>' +
+          '<td>' + esc(c.owner || '—') + '</td>' +
+          '<td>' + pbar(st.pct) + ' <span class="muted" style="font-size:11px">' + st.resolved + '/' + st.total + '</span></td>' +
+          '<td>' + (st.overdue ? '<span class="badge crit">' + st.overdue + '</span>' : '<span class="muted">—</span>') + '</td>' +
+          '<td>' + (c.dueDate ? esc(c.dueDate) : '—') + '</td>' +
+          '<td><span class="stbadge st-' + esc(c.status) + '">' + esc(campStatusLabel(c.status)) + '</span></td></tr>';
+      }).join('') + '</tbody></table></div>';
+  }
+
+  // Risk-tiered target date (CISA BOD 26-04 flavour): exploited/KEV in scope → urgent, else severity SLA.
+  function campSuggestDue(fs) {
+    var open = fs.filter(isOpen); if (!open.length) return null;
+    var kev = open.some(function (f) { var it = cveIntel(f.cve); return it.kev || it.exploit; });
+    var rank = Math.min.apply(null, open.map(function (f) { return SEV_ORDER[f.severity]; }));
+    var sla = STATE.cfg.sla || {};
+    var days = kev ? Math.min(14, sla.Critical || 14) : ([sla.Critical, sla.High, sla.Medium, sla.Low][rank] || sla.Medium || 30);
+    return { date: addDays(todayISO(), days), kev: kev, days: days };
+  }
+  function sparkline(hist) {
+    if (!hist || hist.length < 2) return '<span class="muted" style="font-size:12px">Trend appears after a day of history.</span>';
+    var w = 200, h = 32, n = hist.length;
+    var pts = hist.map(function (p, i) { return ((i / (n - 1)) * w).toFixed(1) + ',' + (h - (Math.max(0, Math.min(100, p.pct)) / 100) * h).toFixed(1); }).join(' ');
+    return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none" style="vertical-align:middle"><polyline fill="none" stroke="var(--accent)" stroke-width="2" points="' + pts + '"/></svg> <span class="muted" style="font-size:11px">' + hist[0].pct + '% → ' + hist[n - 1].pct + '% over ' + n + ' days</span>';
+  }
+
+  function viewCampaigns() {
+    setActive('campaigns');
+    var parts = (location.hash.replace(/^#/, '') || '').split('/').filter(Boolean); // ['campaigns', id?]
+    if (parts[1]) return campaignDetail(decodeURIComponent(parts[1]));
+    return campaignList();
+  }
+
+  function campaignList() {
+    var camps = loadCampaigns();
+    app.innerHTML =
+      '<header class="view"><div class="overline">Operations</div><h1>Remediation Campaigns</h1>' +
+      '<p class="lede">Group findings into campaigns with an owner, due date, and target — then track them to closure. The org-level layer above per-finding triage.</p></header>' +
+      privSlim() +
+      '<div class="toolbar"><button class="btn primary" id="campNew">+ New campaign</button></div>' +
+      '<div id="campForm"></div>' +
+      (camps.length
+        ? '<div class="card" style="padding:0;overflow-x:auto"><table class="grid"><thead><tr><th>Name</th><th>Scope</th><th>Owner</th><th>Priority</th><th>Progress</th><th>SLA</th><th>Due</th><th>Status</th></tr></thead><tbody>' +
+          camps.map(function (c) {
+            var st = campaignStats(c);
+            return '<tr class="camprow" data-id="' + esc(c.id) + '">' +
+              '<td><a href="#/campaigns/' + esc(c.id) + '"><b>' + esc(c.name) + '</b></a></td>' +
+              '<td class="muted" style="font-size:12px">' + esc(campScopeText(c)) + '</td>' +
+              '<td>' + esc(c.owner || '—') + '</td>' +
+              '<td>' + esc(c.priority || '—') + '</td>' +
+              '<td>' + pbar(st.pct) + ' <span class="muted" style="font-size:11px">' + st.resolved + '/' + st.total + '</span></td>' +
+              '<td>' + (st.overdue ? '<span class="badge crit">' + st.overdue + '</span>' : '<span class="muted">—</span>') + '</td>' +
+              '<td>' + (c.dueDate ? esc(c.dueDate) : '—') + '</td>' +
+              '<td><span class="stbadge st-' + esc(c.status) + '">' + esc(campStatusLabel(c.status)) + '</span></td></tr>';
+          }).join('') + '</tbody></table></div>'
+        : '<div class="card" style="text-align:center;padding:34px 20px"><div class="muted">No campaigns yet — create one to start tracking a remediation push.</div></div>');
+    document.getElementById('campNew').addEventListener('click', function () { renderCampForm(null, 'campForm'); document.getElementById('campForm').scrollIntoView({ block: 'nearest' }); });
+    if (_campSeed) {   // arrived via "+ Campaign" on the Findings page — open the form pre-scoped
+      renderCampForm({ scope: { dynamic: true, filt: { sev: _campSeed.sev || '', status: _campSeed.status || '', q: _campSeed.q || '', exploited: !!_campSeed.exploited, overdue: !!_campSeed.overdue } } }, 'campForm');
+      _campSeed = null;
+    }
+    [].forEach.call(document.querySelectorAll('.camprow'), function (tr) {
+      tr.addEventListener('click', function (e) { if (e.target.closest('a')) return; location.hash = '#/campaigns/' + tr.getAttribute('data-id'); });
+    });
+  }
+
+  function renderCampForm(c, targetId) {
+    c = c || {};
+    var sc = c.scope || { dynamic: true, filt: {} }, f = sc.filt || {};
+    var el = document.getElementById(targetId); if (!el) return;
+    el.innerHTML = '<div class="card"><h3 style="margin-top:0">' + (c.id ? 'Edit campaign' : 'New campaign') + '</h3>' +
+      '<div class="grid2"><div class="field"><label>Name</label><input id="cName" value="' + esc(c.name || '') + '" placeholder="e.g. Q3 internet-facing criticals"></div>' +
+      '<div class="field"><label>Owner</label><input id="cOwner" value="' + esc(c.owner || '') + '" placeholder="team or person"></div></div>' +
+      '<div class="grid2"><div class="field"><label>Team</label><input id="cTeam" value="' + esc(c.team || '') + '"></div>' +
+      '<div class="field"><label>Priority</label><select id="cPrio"><option value=""></option>' + campOpts(CAMP_PRIO, c.priority) + '</select></div></div>' +
+      '<div class="grid2"><div class="field"><label>Due date</label><input type="date" id="cDue" value="' + esc(c.dueDate || '') + '"></div>' +
+      '<div class="field"><label>Status</label><select id="cStatus">' + CAMP_STATUS.map(function (s) { return '<option value="' + s.k + '"' + ((c.status || 'planning') === s.k ? ' selected' : '') + '>' + s.l + '</option>'; }).join('') + '</select></div></div>' +
+      '<div class="field"><label>Ticket <span class="muted" style="font-weight:400;font-size:11px">Jira / SNOW key (optional)</span></label><input id="cTicket" value="' + esc(c.ticketRef || '') + '" placeholder="e.g. VULN-42 or INC0012345"></div>' +
+      '<div style="font-weight:600;font-size:13px;color:var(--soft);margin:10px 0 6px">Scope — which findings this campaign covers</div>' +
+      (loadViews().length ? '<div class="field"><label>Start from a saved view (optional)</label><select id="cViewPick"><option value="">—</option>' + loadViews().map(function (v) { return '<option value="' + esc(v.name) + '">' + esc(v.name) + '</option>'; }).join('') + '</select></div>' : '') +
+      '<div class="grid2"><div class="field"><label>Severity</label><select id="cSev"><option value="">Any</option>' + campOpts(['Critical', 'High', 'Medium', 'Low'], f.sev) + '</select></div>' +
+      '<div class="field"><label>Status</label><select id="cFstatus"><option value="">Any</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '"' + (f.status === s.k ? ' selected' : '') + '>' + s.l + '</option>'; }).join('') + '</select></div></div>' +
+      '<div class="field"><label>Search (CVE / host / product)</label><input id="cQ" value="' + esc(f.q || '') + '"></div>' +
+      '<label style="font-size:13px;margin-right:14px"><input type="checkbox" id="cExpl"' + (f.exploited ? ' checked' : '') + '> Exploited only (KEV / PoC)</label>' +
+      '<label style="font-size:13px"><input type="checkbox" id="cOver"' + (f.overdue ? ' checked' : '') + '> Overdue only</label>' +
+      '<div style="margin-top:8px"><label style="font-size:13px"><input type="checkbox" id="cStatic"' + (sc.dynamic === false ? ' checked' : '') + '> Static snapshot — freeze the matching findings now (won\'t absorb new discoveries)</label></div>' +
+      '<div class="muted" id="cCount" style="font-size:12px;margin-top:8px"></div>' +
+      '<div class="muted" id="cDueHint" style="font-size:11.5px;margin-top:3px"></div>' +
+      '<div class="toolbar"><button class="btn primary" id="cSave">' + (c.id ? 'Save changes' : 'Create campaign') + '</button><button class="btn" id="cCancel">Cancel</button></div></div>';
+    function curFilt() { return { sev: campVal('cSev'), status: campVal('cFstatus'), q: campVal('cQ').trim(), exploited: document.getElementById('cExpl').checked, overdue: document.getElementById('cOver').checked }; }
+    function updCount() {
+      var fs = campaignFindings({ scope: { dynamic: true, filt: curFilt() } });
+      document.getElementById('cCount').textContent = fs.length + ' finding(s) currently match this scope.';
+      var sug = campSuggestDue(fs), hint = document.getElementById('cDueHint');
+      if (sug) { hint.innerHTML = 'Suggested target: <b>' + sug.date + '</b> · ' + (sug.kev ? 'KEV/exploited in scope → ' + sug.days + 'd' : sug.days + 'd (severity SLA)') + ' <a href="#" id="cDueUse">Use →</a>'; var u = document.getElementById('cDueUse'); if (u) u.onclick = function (e) { e.preventDefault(); document.getElementById('cDue').value = sug.date; }; }
+      else { hint.innerHTML = ''; }
+    }
+    ['cSev', 'cFstatus', 'cQ', 'cExpl', 'cOver'].forEach(function (id) { var e = document.getElementById(id); e.addEventListener('input', updCount); e.addEventListener('change', updCount); });
+    var vp = document.getElementById('cViewPick');
+    if (vp) vp.addEventListener('change', function () {
+      var s = loadViews().filter(function (x) { return x.name === vp.value; })[0]; if (!s) return; var ff = s.filt || {};
+      document.getElementById('cSev').value = ff.sev || ''; document.getElementById('cFstatus').value = ff.status || '';
+      document.getElementById('cQ').value = ff.q || ''; document.getElementById('cExpl').checked = !!ff.exploited; document.getElementById('cOver').checked = !!ff.overdue;
+      updCount();
+    });
+    updCount();
+    document.getElementById('cCancel').addEventListener('click', function () { el.innerHTML = ''; });
+    document.getElementById('cSave').addEventListener('click', function () {
+      var name = campVal('cName').trim(); if (!name) { toast('Name the campaign'); return; }
+      var filt = curFilt(), isStatic = document.getElementById('cStatic').checked;
+      var scope = isStatic ? { dynamic: false, staticKeys: campaignFindings({ scope: { dynamic: true, filt: filt } }).map(keyOf), filt: filt } : { dynamic: true, filt: filt };
+      var camps = loadCampaigns(), rec = c.id ? camps.filter(function (x) { return x.id === c.id; })[0] : null;
+      var data = { name: name, owner: campVal('cOwner').trim(), team: campVal('cTeam').trim(), priority: campVal('cPrio'), dueDate: campVal('cDue'), status: campVal('cStatus'), ticketRef: campVal('cTicket').trim(), scope: scope };
+      if (rec) { Object.assign(rec, data); } else { data.id = 'c' + Date.now().toString(36); data.notes = ''; data.created = todayISO(); camps.push(data); }
+      if (!saveCampaigns(camps)) { toast('Could not save — browser storage may be full'); return; }
+      toast(c.id ? 'Campaign updated' : 'Campaign created');
+      if (c.id) campaignDetail(c.id); else campaignList();
+    });
+  }
+
+  function campaignDetail(id) {
+    var camps = loadCampaigns(), c = camps.filter(function (x) { return x.id === id; })[0];
+    if (!c) { app.innerHTML = '<header class="view"><a class="btn sm" href="#/campaigns">← Campaigns</a><h1 style="margin-top:12px">Campaign not found</h1></header>'; return; }
+    var st = campaignStats(c), dirty = false;
+    if (c.scope && c.scope.dynamic === false && st.total && st.pct === 100 && c.status === 'active') { c.status = 'completed'; dirty = true; }
+    var today = todayISO(); c.history = c.history || [];   // one progress snapshot per day, for the trend
+    if (!c.history.length || c.history[c.history.length - 1].d !== today) { c.history.push({ d: today, pct: st.pct }); if (c.history.length > 60) c.history = c.history.slice(-60); dirty = true; }
+    if (dirty) saveCampaigns(camps);
+    var fs = campaignFindings(c);
+    app.innerHTML =
+      '<header class="view"><a class="btn sm" href="#/campaigns">← Campaigns</a>' +
+      '<div class="overline" style="margin-top:10px">Campaign</div><h1>' + esc(c.name) + '</h1></header>' +
+      '<div class="kpis">' +
+        kpi('Progress', st.pct + '%', st.resolved + ' of ' + st.total + ' resolved') +
+        kpi('Open', st.open, 'still to fix') +
+        kpi('Overdue (SLA)', st.overdue, 'past due', st.overdue ? 'crit' : 'ok') +
+        kpi('Due', c.dueDate || '—', campStatusLabel(c.status)) +
+      '</div>' +
+      '<div class="card"><div class="camp-meta">' +
+        '<div><span class="k">Owner</span>' + esc(c.owner || '—') + (c.team ? ' · ' + esc(c.team) : '') + '</div>' +
+        '<div><span class="k">Priority</span>' + esc(c.priority || '—') + '</div>' +
+        '<div><span class="k">Scope</span>' + esc(campScopeText(c)) + '</div>' +
+        '<div><span class="k">Status</span><span class="stbadge st-' + esc(c.status) + '">' + esc(campStatusLabel(c.status)) + '</span></div>' +
+        (c.ticketRef ? '<div><span class="k">Ticket</span>' + (function () { var sys = /^INC/i.test(c.ticketRef) ? 'snow' : 'jira'; var u = ticketLink(sys, c.ticketRef); return u ? '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(c.ticketRef) + '</a>' : esc(c.ticketRef); })() + '</div>' : '') +
+        '<div><span class="k">Trend</span>' + sparkline(c.history) + '</div></div>' +
+        '<div style="margin-top:12px"><label style="display:block;font-size:12px;font-weight:600;color:var(--soft);margin-bottom:5px">Notes</label><textarea id="campNotes" style="width:100%;min-height:70px" placeholder="Plan, blockers, decisions…">' + esc(c.notes || '') + '</textarea></div>' +
+        '<div class="toolbar"><button class="btn" id="campEdit">Edit</button><button class="btn" id="campJira" title="One ticket covering the open findings in this campaign">Open Jira story</button><button class="btn" id="campSnow" title="One incident covering the open findings in this campaign">Open SNOW incident</button><button class="btn" id="campDelete">Delete</button></div></div>' +
+      '<div id="campEditForm"></div>' +
+      '<h2>Findings (' + fs.length + ')</h2>' +
+      (fs.length
+        ? '<div class="card" style="padding:0;overflow-x:auto"><table class="grid"><thead><tr><th>CVE</th><th>Host</th><th>Severity</th><th>Status</th><th>SLA due</th></tr></thead><tbody>' +
+          fs.slice(0, 500).map(function (f) {
+            var ss = slaState(f), dd = dueDate(f);
+            return '<tr class="campfind" data-key="' + esc(keyOf(f)) + '" style="cursor:pointer">' +
+              '<td><a href="' + CVE_DETAIL + esc(f.cve) + '">' + esc(f.cve) + '</a></td>' +
+              '<td class="host">' + esc(f.host) + '</td>' +
+              '<td><span class="badge ' + (['crit', 'high', 'med', 'low'][SEV_ORDER[f.severity]] || 'low') + '">' + esc(f.severity) + '</span></td>' +
+              '<td>' + esc(SLABEL[statusOf(f)] || statusOf(f)) + '</td>' +
+              '<td><span class="pill-sla ' + ss + '">' + (dd ? esc(dd) : '—') + '</span></td></tr>';
+          }).join('') + '</tbody></table></div>'
+        : '<div class="card"><span class="muted">No findings currently match this campaign\'s scope.</span></div>');
+    var nt = document.getElementById('campNotes');
+    nt.addEventListener('input', function () { var cc = loadCampaigns(), r = cc.filter(function (x) { return x.id === id; })[0]; if (r) { r.notes = nt.value; saveCampaigns(cc); } });
+    document.getElementById('campEdit').addEventListener('click', function () { renderCampForm(c, 'campEditForm'); document.getElementById('campEditForm').scrollIntoView({ block: 'nearest' }); });
+    document.getElementById('campJira').addEventListener('click', function () { var op = fs.filter(isOpen); if (!op.length) { toast('No open findings to ticket'); return; } ticketGroup('jira', op); });
+    document.getElementById('campSnow').addEventListener('click', function () { var op = fs.filter(isOpen); if (!op.length) { toast('No open findings to ticket'); return; } ticketGroup('snow', op); });
+    document.getElementById('campDelete').addEventListener('click', function () {
+      if (!confirm('Delete campaign “' + c.name + '”? (The findings themselves are untouched.)')) return;
+      saveCampaigns(loadCampaigns().filter(function (x) { return x.id !== id; })); toast('Campaign deleted'); location.hash = '#/campaigns';
+    });
+    var byKey = {}; fs.forEach(function (f) { byKey[keyOf(f)] = f; });
+    [].forEach.call(document.querySelectorAll('.campfind'), function (tr) {
+      tr.addEventListener('click', function (e) { if (e.target.closest('a')) return; var f = byKey[tr.getAttribute('data-key')]; if (f) openDrawer(f); });
+    });
+  }
+
   function vmShow(fn){ return function(){ app.className='vmops'; return fn.apply(null, arguments); }; }
   function goDash() { if ((location.hash||'').indexOf('#/dashboard')===0){ app.className='vmops'; viewDashboard(); } else { location.hash='#/dashboard'; } }
   // Exposed to the host (CVE-Explorer-based) router, which dispatches the ops routes.
-  window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz),
+  window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), campaigns: vmShow(viewCampaigns), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz),
     remediation: { ensure: ensureRemed, for: remediationFor, copy: copyText } };
 })();
