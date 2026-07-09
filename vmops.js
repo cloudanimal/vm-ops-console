@@ -1410,11 +1410,31 @@
     return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none" style="vertical-align:middle"><polyline fill="none" stroke="var(--accent)" stroke-width="2" points="' + pts + '"/></svg> <span class="muted" style="font-size:11px">' + hist[0].pct + '% → ' + hist[n - 1].pct + '% over ' + n + ' days</span>';
   }
 
+  // A few realistic demo campaigns over the sample findings (parallels "Load sample data").
+  function SAMPLE_CAMPAIGNS() {
+    var hist = function (pcts) { return pcts.map(function (p, i) { return { d: addDays(todayISO(), -(pcts.length - i)), pct: p }; }); };
+    return [
+      { id: 'sample-kev', sample: true, name: 'Critical severity remediation — Q3', owner: 'SecOps', team: 'Security', priority: 'P1', status: 'active', dueDate: addDays(todayISO(), 10), ticketRef: 'VULN-1041', created: addDays(todayISO(), -21), notes: 'Board-visible push on the critical backlog. Weekly check-in on Fridays.', scope: { dynamic: true, filt: { sev: 'Critical' } }, history: hist([12, 20, 33, 41]) },
+      { id: 'sample-web', sample: true, name: 'Internet-facing web servers', owner: 'Platform Team', team: 'Infrastructure', priority: 'P2', status: 'active', dueDate: addDays(todayISO(), 25), created: addDays(todayISO(), -14), notes: 'Coordinate change windows with the app owners.', scope: { dynamic: true, filt: { q: 'web' } }, history: hist([0, 15, 28]) },
+      { id: 'sample-smb', sample: true, name: 'Legacy SMB / EternalBlue eradication', owner: 'Network Eng', team: 'Infrastructure', priority: 'P2', status: 'paused', dueDate: addDays(todayISO(), 30), created: addDays(todayISO(), -30), notes: 'Disable SMBv1 fleet-wide — see the PowerShell remediation samples on each finding.', scope: { dynamic: true, filt: { q: 'smb' } }, history: hist([40, 55, 70]) },
+      { id: 'sample-priv', sample: true, name: 'Linux privilege-escalation backlog', owner: 'AppSec (Jane)', team: 'Security', priority: 'P3', status: 'planning', dueDate: addDays(todayISO(), 45), created: addDays(todayISO(), -7), notes: 'Sudo / kernel local privesc across the Linux estate.', scope: { dynamic: true, filt: { q: 'sudo' } }, history: hist([0, 5]) }
+    ];
+  }
+  function loadSampleCampaigns() {
+    if (!STATE.findings.length) { var _s = SAMPLE(); mergeFindings(_s); seedSampleOverrides(_s); }
+    var camps = loadCampaigns();
+    if (camps.some(function (c) { return c.sample; })) { toast('Sample campaigns already loaded'); campaignList(); return; }
+    saveCampaigns(camps.concat(SAMPLE_CAMPAIGNS()));
+    toast('Loaded sample campaigns'); campaignList();
+  }
+
   function viewCampaigns() {
     setActive('campaigns');
     var parts = (location.hash.replace(/^#/, '') || '').split('/').filter(Boolean); // ['campaigns', id?]
-    if (parts[1]) return campaignDetail(decodeURIComponent(parts[1]));
-    return campaignList();
+    var go = parts[1] ? function () { campaignDetail(decodeURIComponent(parts[1])); } : campaignList;
+    go();
+    // "exploited only" scopes depend on the KEV/exploit intel; load it and re-render once ready.
+    if (!INTEL.loaded) ensureIntel().then(function () { if ((location.hash || '').indexOf('#/campaigns') === 0) go(); });
   }
 
   function campaignList() {
@@ -1423,7 +1443,7 @@
       '<header class="view"><div class="overline">Operations</div><h1>Remediation Campaigns</h1>' +
       '<p class="lede">Group findings into campaigns with an owner, due date, and target — then track them to closure. The org-level layer above per-finding triage.</p></header>' +
       privSlim() +
-      '<div class="toolbar"><button class="btn primary" id="campNew">+ New campaign</button></div>' +
+      '<div class="toolbar"><button class="btn primary" id="campNew">+ New campaign</button><button class="btn" id="campSample">Load sample campaigns</button></div>' +
       '<div id="campForm"></div>' +
       (camps.length
         ? '<div class="card" style="padding:0;overflow-x:auto"><table class="grid"><thead><tr><th>Name</th><th>Scope</th><th>Owner</th><th>Priority</th><th>Progress</th><th>SLA</th><th>Due</th><th>Status</th></tr></thead><tbody>' +
@@ -1441,6 +1461,7 @@
           }).join('') + '</tbody></table></div>'
         : '<div class="card" style="text-align:center;padding:34px 20px"><div class="muted">No campaigns yet — create one to start tracking a remediation push.</div></div>');
     document.getElementById('campNew').addEventListener('click', function () { renderCampForm(null, 'campForm'); document.getElementById('campForm').scrollIntoView({ block: 'nearest' }); });
+    document.getElementById('campSample').addEventListener('click', loadSampleCampaigns);
     if (_campSeed) {   // arrived via "+ Campaign" on the Findings page — open the form pre-scoped
       renderCampForm({ scope: { dynamic: true, filt: { sev: _campSeed.sev || '', status: _campSeed.status || '', q: _campSeed.q || '', exploited: !!_campSeed.exploited, overdue: !!_campSeed.overdue } } }, 'campForm');
       _campSeed = null;
