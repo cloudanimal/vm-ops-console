@@ -58,6 +58,7 @@
   STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla, STATE.cfg.sla || {});
   STATE._newKeys = {}; try { (JSON.parse(localStorage.getItem('vmops-newkeys') || '[]') || []).forEach(function (k) { STATE._newKeys[k] = 1; }); } catch (e) {}
   STATE._colW = {}; try { STATE._colW = JSON.parse(localStorage.getItem('vmops-colw') || '{}') || {}; } catch (e) {}
+  STATE._colHidden = {}; try { STATE._colHidden = JSON.parse(localStorage.getItem('vmops-colhidden') || '{}') || {}; } catch (e) {}
 
   // Custom branding: apply the configured app name to the nav brand + document title, and rebuild the
   // favicon (monogram + color) — all default to the VM Ops Console look when unset.
@@ -357,6 +358,9 @@
       '<select id="fView" title="Saved & preset views">' + viewOpts + '</select>' +
       '<button class="btn sm" id="fViewSave" title="Save the current filters as a view">Save view</button>' +
       '<button class="btn sm" id="fCamp" title="Start a remediation campaign from the current filters">+ Campaign</button>' +
+      '<details class="colmenu"><summary class="btn sm" title="Show / hide columns">Columns &#9662;</summary><div class="colmenu-pop">' +
+      COL_DEFS.filter(function (c) { return c.id !== 'sel' && c.id !== 'act'; }).map(function (c) { var lbl = (typeof c.label === 'string' ? c.label.replace(/<[^>]+>/g, '') : c.id) || c.id; return '<label><input type="checkbox" class="coltoggle" data-col="' + c.id + '"' + (STATE._colHidden[c.id] ? '' : ' checked') + '> ' + esc(lbl) + '</label>'; }).join('') +
+      '</div></details>' +
       '<button class="btn sm" id="fViewDel" title="Delete the active saved view"' + (activeView.indexOf('saved:') === 0 ? '' : ' style="display:none"') + '>Delete view</button>' +
       '<span class="spacer"></span>' +
       '<span class="muted" style="font-size:12.5px">' + list.length + ' of ' + STATE.findings.length + '</span>' +
@@ -376,6 +380,7 @@
       '<button class="btn sm" id="bulkCamp" title="Create a campaign scoped to the selected findings">Create campaign</button>' +
       '<select id="bulkAddCamp" title="Add the selected findings to an existing static campaign"><option value="">Add to campaign…</option>' + loadCampaigns().filter(function (c) { return c.scope && c.scope.dynamic === false; }).map(function (c) { return '<option value="' + esc(c.id) + '">' + esc(c.name) + '</option>'; }).join('') + '</select>' +
       '<button class="btn sm" id="bulkExport" title="Export the selected findings to CSV">Export CSV</button>' +
+      '<button class="btn sm" id="bulkRemed" title="Copy one combined remediation script for all selected">Copy remediation</button>' +
       '<span class="spacer"></span>' +
       '<button class="btn sm" id="bulkClear">Clear selection</button>' +
       '</div>' +
@@ -406,6 +411,13 @@
     var fcb = document.getElementById('fCamp'); if (fcb) fcb.addEventListener('click', function () {
       _campSeed = { dynamic: true, filt: { sev: STATE.filt.sev || '', status: STATE.filt.status || '', q: STATE.filt.q || '', exploited: !!STATE.filt.exploited, overdue: !!STATE.filt.overdue } };
       location.hash = '#/campaigns';
+    });
+    [].forEach.call(document.querySelectorAll('.coltoggle'), function (cb) {
+      cb.addEventListener('change', function () {
+        var id = cb.getAttribute('data-col'); if (cb.checked) delete STATE._colHidden[id]; else STATE._colHidden[id] = 1;
+        try { localStorage.setItem('vmops-colhidden', JSON.stringify(STATE._colHidden)); } catch (e) {}
+        injectColHide(); var gh = document.getElementById('gridHost'); if (gh) gh.style.width = totalW() + 'px';
+      });
     });
     var fvd = document.getElementById('fViewDel'); if (fvd) fvd.addEventListener('click', function () {
       if ((STATE._view || '').indexOf('saved:') !== 0) return; var nm = STATE._view.slice(6);
@@ -466,6 +478,15 @@
       toastUndo((owner ? 'Owner → ' + owner : 'Owner cleared') + ' for ' + fs.length + ' finding' + (fs.length > 1 ? 's' : ''), snap);
     });
     var bx = document.getElementById('bulkExport'); if (bx) bx.addEventListener('click', function () { var fs = need(); if (fs.length) exportCsv(fs); });
+    var brm = document.getElementById('bulkRemed');
+    if (brm) brm.addEventListener('click', function () {
+      var fs = need(); if (!fs.length) return;
+      ensureRemed().then(function () {
+        var parts = fs.map(function (f) { var r = remediationFor(f); return r ? '# ===== ' + f.cve + ' · ' + (f.name || f.host) + ' · ' + f.host + '  [' + r.lang + '] =====\n' + r.script : null; }).filter(Boolean);
+        if (!parts.length) { toast('No remediation samples matched the selection'); return; }
+        copyText('# Combined remediation — ' + parts.length + ' of ' + fs.length + ' selected finding(s).\n# Review & test in a pilot ring before running; scripts run elevated.\n\n' + parts.join('\n\n'));
+      });
+    });
     var bac = document.getElementById('bulkAddCamp');
     if (bac) bac.addEventListener('change', function () {
       var id = this.value; this.value = ''; if (!id) return;
@@ -512,7 +533,13 @@
     { id: 'act', w: 72, label: '' }
   ];
   function colW(c) { var v = STATE._colW && STATE._colW[c.id]; return (v && +v) || c.w; }
-  function totalW() { return COL_DEFS.reduce(function (s, c) { return s + colW(c); }, 0); }
+  function totalW() { return COL_DEFS.reduce(function (s, c) { return s + (STATE._colHidden[c.id] ? 0 : colW(c)); }, 0); }
+  // Column show/hide: inject nth-child display:none for hidden columns (rows are positional).
+  function injectColHide() {
+    var sel = COL_DEFS.map(function (c, i) { return STATE._colHidden[c.id] ? ('#gridHost th:nth-child(' + (i + 1) + '),#gridHost td:nth-child(' + (i + 1) + ')') : null; }).filter(Boolean).join(',');
+    var st = document.getElementById('colHideStyle'); if (!st) { st = document.createElement('style'); st.id = 'colHideStyle'; document.head.appendChild(st); }
+    st.textContent = sel ? (sel + '{display:none!important}') : '';
+  }
   // Per-column filter: which columns get a filter box, and the text value each is matched against.
   var COLF_COLS = { cve: 1, host: 1, desc: 1, sev: 1, pri: 1, epss: 1, vpr: 1, status: 1, ticket: 1, sla: 1, owner: 1, repo: 1, age: 1 };
   function colfVal(cid, f) {
@@ -682,6 +709,7 @@
     });
   }
   function wireGrid() {
+    injectColHide();
     [].forEach.call(document.querySelectorAll('table.grid thead input.colf'), function (inp) {
       inp.addEventListener('click', function (e) { e.stopPropagation(); });
       inp.addEventListener('input', function () {
@@ -833,6 +861,7 @@
       '<div class="actions" style="margin-top:8px">' +
       '<button class="btn sm" id="drJiraQ">Search Jira</button>' +
       '<button class="btn sm" id="drSnowQ">Search ServiceNow</button>' +
+      '<button class="btn sm" id="drCopy" title="Copy a text summary of this finding">Copy summary</button>' +
       '</div>';
     bg.classList.add('open'); dr.classList.add('open');
     // Fill the remaining prioritization models: SSVC is derived (instant); EPSS (live) + LEV (local) load async.
@@ -871,6 +900,7 @@
     document.getElementById('drSnow').addEventListener('click', function () { openTicket('snow', f); });
     document.getElementById('drJiraQ').addEventListener('click', function () { searchTicket('jira', f); });
     document.getElementById('drSnowQ').addEventListener('click', function () { searchTicket('snow', f); });
+    document.getElementById('drCopy').addEventListener('click', function () { copyText(ticketSummary(f) + '\n\n' + ticketBody(f)); });
   }
 
   // ---------- ticketing deep-links (Path A: pre-filled create, no API/secrets) ----------
