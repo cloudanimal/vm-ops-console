@@ -18,6 +18,32 @@
 .vmops .kpi .sub { font-size:12.5px; color:var(--soft); }
 .vmops .kpi.crit .num { color:var(--crit); } .vmops .kpi.ok .num { color:var(--ok); }
 
+/* "Start here" workflow strip (Ops dashboard) — horizontal stage bar, each stage links into its view */
+.vmops .wfstrip { border:1px solid var(--line); border-radius:12px; background:color-mix(in srgb, var(--accent) 4%, var(--surface)); padding:12px 14px; margin:20px 0; }
+.vmops .wfstrip-hd { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.vmops .wfstrip-title { font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--faint); }
+.vmops .wfstrip-actions { display:flex; align-items:center; gap:10px; }
+.vmops .wfstrip-x { font-size:12px; color:var(--soft); background:none; border:none; cursor:pointer; padding:2px 4px; }
+.vmops .wfstrip-x:hover { color:var(--accent); }
+.vmops .wfstrip-actions #wfTour { color:var(--accent); }
+.vmops .wfstrip.collapsed { padding:9px 14px; }
+.vmops .wfstrip-row { display:flex; align-items:stretch; gap:4px; margin-top:11px; overflow-x:auto; }
+.vmops .wfstage { flex:1 1 0; min-width:104px; display:flex; flex-direction:column; gap:2px; text-decoration:none; color:inherit; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:11px 12px; transition:border-color .12s, transform .12s; }
+.vmops .wfstage:hover { border-color:var(--accent); transform:translateY(-1px); }
+.vmops .wfstage-top { display:flex; align-items:center; gap:7px; }
+.vmops .wfstage-n { flex:none; width:18px; height:18px; border-radius:50%; background:color-mix(in srgb, var(--accent) 15%, transparent); color:var(--accent); font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+.vmops .wfstage-l { font-size:12.5px; font-weight:600; color:var(--ink); }
+.vmops .wfstage-num { font-family:var(--serif); font-size:23px; line-height:1.1; margin-top:3px; }
+.vmops .wfstage-num.ok { color:var(--ok); } .vmops .wfstage-num.warn { color:var(--high); }
+.vmops .wfstage-sub { font-size:11.5px; color:var(--soft); }
+.vmops .wfarrow { flex:none; align-self:center; color:var(--faint); font-size:18px; padding:0 1px; }
+.vmops a.backlink { display:inline-flex; align-items:center; gap:5px; font-size:13px; color:var(--soft); text-decoration:none; margin:0 0 14px; }
+.vmops a.backlink:hover { color:var(--accent); }
+.vmops a.barrow { cursor:pointer; }
+.vmops a.barrow:hover .barlabel { color:var(--accent); }
+.vmops a.barrow:hover .barfill { filter:brightness(1.12); }
+@media (max-width:640px){ .vmops .wfstage { min-width:92px; } .vmops .wfarrow { display:none; } }
+
 .vmops .toolbar { display:flex; flex-wrap:wrap; gap:9px; align-items:center; margin:16px 0 12px; }
 .vmops .toolbar input[type=text], .vmops .toolbar select { font-family:var(--sans); font-size:13.5px; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:8px 11px; outline:none; }
 .vmops .toolbar input[type=text] { min-width:230px; flex:1; }

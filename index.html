@@ -3109,6 +3109,7 @@
       { label: 'Data Import', hash: '#/import' },
       { label: 'Settings', hash: '#/settings' },
       { label: 'Datasets & freshness', hash: '#/data' },
+      { label: 'Guided tour', hint: 'Walk through the workflow', action: function () { if (window.startTour) window.startTour(); } },
       { label: 'FAQ', hash: '#/faq' }
     ];
     var overlay, input, list, items = [], sel = 0, open = false;
@@ -3156,12 +3157,138 @@
       else if (e.key === 'Escape') { e.preventDefault(); close(); }
     }
     function sc() { var el = list.querySelector('.cmdk-item.on'); if (el) el.scrollIntoView({ block: 'nearest' }); }
-    function run(c) { if (!c) return; close(); location.hash = c.hash; }
+    function run(c) { if (!c) return; close(); if (typeof c.action === 'function') { c.action(); return; } location.hash = c.hash; }
     function openP() { if (!overlay) build(); open = true; overlay.classList.add('show'); input.value = ''; render(); setTimeout(function () { input.focus(); }, 0); }
     function close() { open = false; if (overlay) overlay.classList.remove('show'); }
     document.addEventListener('keydown', function (e) {
       if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) { e.preventDefault(); open ? close() : openP(); }
     });
+  })();
+
+  // ---------- Guided tour (opt-in) — coachmark walkthrough of the VM workflow ----------
+  (function () {
+    // The tour walks the workflow strip on the dashboard — each stage is always in view, so no
+    // step ever points off-screen. A step highlights a real element (or is centered when sel is
+    // null); `route` names the page it needs; the tour navigates there and waits for the target.
+    var DASH = '#/dashboard';
+    var STEPS = [
+      { sel: null, route: DASH, title: 'The VM workflow in 60 seconds', body: 'This quick tour walks the vulnerability-management lifecycle, stage by stage, right on your dashboard. Everything runs locally in your browser — nothing is uploaded.' },
+      { sel: '.vmops .wfstage[data-wf="1"]', route: DASH, title: '1 · Inventory', body: 'It starts with knowing what you have. Inventory is every asset you track — pulled together from your imports. Click any stage to jump straight into it.' },
+      { sel: '.vmops .wfstage[data-wf="2"]', route: DASH, title: '2 · Findings', body: 'Import your Tenable.io scan results and they land here as findings — filter by severity, SLA, owner, and KEV / exploited status.' },
+      { sel: '.vmops .wfstage[data-wf="3"]', route: DASH, title: '3 · Triage', body: 'Decide what matters. Assign an owner, set a status, and open a Jira or ServiceNow ticket. This count flags findings still needing an owner.' },
+      { sel: '.vmops .wfstage[data-wf="4"]', route: DASH, title: '4 · Campaign', body: 'Group related findings into a remediation campaign with an owner, a due date, and live progress against your SLA.' },
+      { sel: '.vmops .wfstage[data-wf="5"]', route: DASH, title: '5 · Remediate', body: 'Track the fix through to done — the PowerShell remediation samples on each finding help your teams patch faster.' },
+      { sel: '.vmops .wfstage[data-wf="6"]', route: DASH, title: '6 · Report', body: 'Close the loop. The Morning Report and SLA compliance roll the whole program up into a shareable status read-out.' },
+      { sel: null, route: DASH, title: 'That’s the loop', body: 'Inventory → findings → triage → campaign → remediate → report. Press ⌘K / Ctrl-K anytime to jump anywhere, and replay this tour from the “Take a tour” button whenever you like.' }
+    ];
+    var ring, pop, i = 0, active = false, styled = false;
+    function css() {
+      if (styled) return; styled = true;
+      var s = document.createElement('style');
+      s.textContent = '.tour-ring{position:fixed;border-radius:9px;box-shadow:0 0 0 9999px rgba(0,0,0,.55);z-index:1200;pointer-events:none;transition:left .2s ease,top .2s ease,width .2s ease,height .2s ease}'
+        + '.tour-ring.hide{display:none}'
+        + '.tour-pop{position:fixed;z-index:1201;width:min(340px,92vw);background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:0 24px 60px rgba(0,0,0,.4);padding:15px 17px;box-sizing:border-box}'
+        + '.tour-step{font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--soft)}'
+        + '.tour-title{font-family:var(--serif);font-size:19px;margin:4px 0 8px;color:var(--ink)}'
+        + '.tour-body{font-size:13.5px;color:var(--ink);line-height:1.55}'
+        + '.tour-foot{display:flex;align-items:center;justify-content:space-between;margin-top:15px;gap:10px}'
+        + '.tour-dots{display:flex;gap:5px}'
+        + '.tour-dot{width:6px;height:6px;border-radius:50%;background:var(--line)}'
+        + '.tour-dot.on{background:var(--accent)}'
+        + '.tour-btns{display:flex;gap:8px;align-items:center}'
+        + '.tour-btn{font-family:var(--sans);font-size:12.5px;padding:6px 13px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}'
+        + '.tour-btn:hover{border-color:var(--accent)}'
+        + '.tour-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}'
+        + '.tour-skip{font-family:var(--sans);font-size:12px;color:var(--soft);background:none;border:none;cursor:pointer;padding:6px 2px}'
+        + '.tour-skip:hover{color:var(--ink)}';
+      document.head.appendChild(s);
+    }
+    function build() {
+      css();
+      ring = document.createElement('div'); ring.className = 'tour-ring hide';
+      ring.style.position = 'fixed'; ring.style.boxSizing = 'border-box'; document.body.appendChild(ring);
+      pop = document.createElement('div'); pop.className = 'tour-pop'; pop.style.display = 'none'; document.body.appendChild(pop);
+    }
+    function done() {
+      active = false;
+      if (ring) ring.classList.add('hide');
+      if (pop) pop.style.display = 'none';
+      window.removeEventListener('resize', reflow, true);
+      window.removeEventListener('scroll', reflow, true);
+      try { localStorage.setItem('vmops-tour-done', 'true'); } catch (e) {}
+    }
+    function place(target) {
+      var margin = 14;
+      if (!target) {
+        ring.classList.add('hide');
+        pop.style.left = '50%'; pop.style.top = '22vh'; pop.style.transform = 'translateX(-50%)';
+        return;
+      }
+      var r = target.getBoundingClientRect();
+      ring.classList.remove('hide');
+      ring.style.left = (r.left - 6) + 'px'; ring.style.top = (r.top - 6) + 'px';
+      ring.style.width = (r.width + 12) + 'px'; ring.style.height = (r.height + 12) + 'px';
+      pop.style.transform = 'none';
+      var pw = pop.offsetWidth || 340, ph = pop.offsetHeight || 160;
+      var left = Math.min(Math.max(8, r.left), window.innerWidth - pw - 8);
+      var top = r.bottom + margin;
+      if (top + ph > window.innerHeight - 8) { var above = r.top - margin - ph; top = above > 8 ? above : Math.max(8, window.innerHeight - ph - 8); }
+      pop.style.left = left + 'px'; pop.style.top = top + 'px';
+    }
+    function reflow() { if (active) place(document.querySelector(STEPS[i].sel || 'x-none')); }
+    function render() {
+      var s = STEPS[i], n = STEPS.length;
+      pop.style.display = 'block';
+      pop.innerHTML = '<div class="tour-step">Step ' + (i + 1) + ' of ' + n + '</div>'
+        + '<div class="tour-title">' + s.title + '</div>'
+        + '<div class="tour-body">' + s.body + '</div>'
+        + '<div class="tour-foot"><div class="tour-dots">' + STEPS.map(function (_, j) { return '<span class="tour-dot' + (j === i ? ' on' : '') + '"></span>'; }).join('') + '</div>'
+        + '<div class="tour-btns">' + (i > 0 ? '<button class="tour-btn" data-act="back">Back</button>' : '<button class="tour-skip" data-act="skip">Skip</button>')
+        + '<button class="tour-btn primary" data-act="next">' + (i === n - 1 ? 'Done' : 'Next') + '</button></div></div>';
+      [].forEach.call(pop.querySelectorAll('[data-act]'), function (b) {
+        b.addEventListener('click', function () { var a = b.getAttribute('data-act'); if (a === 'next') go(i + 1); else if (a === 'back') go(i - 1); else done(); });
+      });
+    }
+    // Wait (briefly) for a selector to exist, then place; falls back to centered if it never shows.
+    function waitFor(sel, cb) {
+      var tries = 0;
+      (function poll() {
+        var el = sel ? document.querySelector(sel) : null;
+        if (el || !sel || tries > 24) { cb(el); return; }
+        tries++; setTimeout(poll, 50);
+      })();
+    }
+    function go(n) {
+      if (n < 0) return; if (n >= STEPS.length) { done(); return; }
+      i = n; var s = STEPS[i];
+      if (s.route && (location.hash || '').indexOf(s.route) !== 0) { location.hash = s.route; }
+      render();
+      waitFor(s.sel, function (el) { if (active) place(el); });
+    }
+    function start() {
+      if (!pop) build();
+      // Land on the dashboard with the strip expanded so every stage target exists and is visible.
+      try {
+        var onDash = (location.hash || '').indexOf('#/dashboard') === 0;
+        var collapsed = localStorage.getItem('vmops-wfstrip') === 'true';
+        if (onDash) { if (collapsed) { var t = document.getElementById('wfToggle'); if (t) t.click(); } }
+        else { if (collapsed) localStorage.setItem('vmops-wfstrip', 'false'); location.hash = '#/dashboard'; }
+      } catch (e) {}
+      active = true; i = 0;
+      window.addEventListener('resize', reflow, true);
+      window.addEventListener('scroll', reflow, true);
+      go(0);
+    }
+    document.addEventListener('keydown', function (e) { if (active && e.key === 'Escape') { e.preventDefault(); done(); } });
+    window.startTour = start;
+    // Opt-in first-visit autoplay (Settings → "Guided tour"): only when explicitly enabled.
+    setTimeout(function () {
+      try {
+        if (localStorage.getItem('vmops-tour-auto') === 'true' && localStorage.getItem('vmops-tour-done') !== 'true') {
+          var h = location.hash || ''; if (h === '' || h === '#/' || h.indexOf('#/dashboard') === 0) start();
+        }
+      } catch (e) {}
+    }, 1000);
   })();
   // "/" focuses the search box (when not already typing in a field)
   document.addEventListener('keydown', function (e) {

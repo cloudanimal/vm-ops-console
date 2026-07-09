@@ -242,6 +242,19 @@
     return { total: STATE.findings.length, open: open.length, overdue: overdue.length, comp: comp, crit: crit.length, assets: assetCount(), unassigned: open.filter(function (f) { return !ovOf(f).owner; }).length, noTicket: open.filter(function (f) { return !ticketOf(f); }).length, exploited: exploited.length, epssHi: epssHi.length, newScan: newScan.length, mttr: mttr };
   }
   function assetCount() { var s = {}; STATE.findings.forEach(function (f) { s[norm(f.host)] = 1; }); return Object.keys(s).length; }
+  // Rank systems (by normalized short hostname) with the most OPEN findings, for the dashboard.
+  function topHosts(limit) {
+    var m = {};
+    STATE.findings.filter(isOpen).forEach(function (f) {
+      var k = norm(f.host); if (!k) return;
+      var e = m[k] || (m[k] = { host: k, n: 0, crit: 0, risk: -1e9 });
+      e.n++; if (f.severity === 'Critical') e.crit++;
+      var r = riskScore(f); if (r > e.risk) e.risk = r;
+    });
+    return Object.keys(m).map(function (k) { return m[k]; })
+      .sort(function (a, b) { return b.n - a.n || b.crit - a.crit || b.risk - a.risk; })
+      .slice(0, limit || 8);
+  }
 
   // ---------- views ----------
   // Mirror the shell's global setActive: reconcile top tabs AND dropdown items + .menu-active,
@@ -258,9 +271,11 @@
     var bySev = ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return { s: s, n: STATE.findings.filter(function (f) { return f.severity === s && isOpen(f); }).length }; });
     var byStatus = STATUS.map(function (st) { return { l: st.l, k: st.k, n: STATE.findings.filter(function (f) { return statusOf(f) === st.k; }).length }; });
     var top = STATE.findings.filter(isOpen).slice().sort(function (a, b) { return riskScore(b) - riskScore(a); }).slice(0, 8);
+    var hosts = topHosts(8);
     app.innerHTML =
       '<header class="view"><div class="overline">Operations dashboard</div><h1>Where the program stands</h1>' +
       '<p class="lede wide">Live read-out over your imported scan findings — status, SLA pressure, and the highest-risk open work.</p></header>' +
+      workflowStrip(k) +
       privSlim() +
       '<div class="kpis">' +
       kpiL('Open findings', k.open, k.total + ' total', '', '#/findings') +
@@ -276,17 +291,55 @@
       kpi('Assets', k.assets, 'distinct hosts') +
       '</div>' +
       dashCampaigns() +
-      '<h2>Open by severity</h2>' + barRows(bySev.map(function (x) { return { l: x.s, n: x.n, cls: x.s.toLowerCase() }; })) +
-      '<h2>By status</h2>' + barRows(byStatus.map(function (x) { return { l: x.l, n: x.n, color: 'var(--' + (STATUS_BAR_COLOR[x.k] || 'accent') + ')' }; })) +
+      '<h2>Open by severity</h2>' + barRows(bySev.map(function (x) { return { l: x.s, n: x.n, cls: x.s.toLowerCase(), href: '#/findings?sev=' + x.s }; })) +
+      '<h2>By status</h2>' + barRows(byStatus.map(function (x) { return { l: x.l, n: x.n, color: 'var(--' + (STATUS_BAR_COLOR[x.k] || 'accent') + ')', href: '#/findings?status=' + x.k }; })) +
       '<h2>Highest-risk open findings</h2>' +
-      (top.length ? '<div style="overflow-x:auto">' + gridTable(top) + '</div>' : '<div class="empty">Nothing open.</div>');
+      (top.length ? '<div style="overflow-x:auto">' + gridTable(top) + '</div>' : '<div class="empty">Nothing open.</div>') +
+      '<h2>Systems with the most open findings</h2>' +
+      (hosts.length ? barRows(hosts.map(function (h) { return { l: h.host + (h.crit ? '  ·  ' + h.crit + ' crit' : ''), title: h.host + ' — ' + h.n + ' open' + (h.crit ? ', ' + h.crit + ' critical' : ''), n: h.n, color: h.crit ? 'var(--crit)' : 'var(--accent)', href: '#/findings?q=' + encodeURIComponent(h.host) }; })) : '<div class="empty">Nothing open.</div>');
     wireGrid();
+    var wfT = document.getElementById('wfToggle');
+    if (wfT) wfT.addEventListener('click', function () { save('vmops-wfstrip', !load('vmops-wfstrip', false)); viewDashboard(); });
+    var wfTour = document.getElementById('wfTour');
+    if (wfTour) wfTour.addEventListener('click', function () { if (window.startTour) window.startTour(); });
     // KEV / EPSS KPIs need the exploitation intel; load it and re-render once ready.
     if (!INTEL.loaded) ensureIntel().then(function () { if ((location.hash || '').indexOf('#/dashboard') === 0) viewDashboard(); });
   }
 
   function kpi(label, num, sub, cls) { return '<div class="kpi ' + (cls || '') + '"><div class="label">' + esc(label) + '</div><div class="num">' + esc(num) + '</div><div class="sub">' + esc(sub || '') + '</div></div>'; }
   function kpiL(label, num, sub, cls, href) { var c = kpi(label, num, sub, cls); return href ? '<a class="kpilink" href="' + href + '">' + c + '</a>' : c; }
+
+  // "Start here" — the vulnerability-management program as a horizontal stage strip on the
+  // dashboard. Each stage links into its view; the counts are live off STATE. Collapsible
+  // (persisted in localStorage 'vmops-wfstrip'), so it can fold to a one-line header.
+  function wfComma(n) { return (n == null ? '—' : ('' + n).replace(/\B(?=(\d{3})+(?!\d))/g, ',')); }
+  function workflowStrip(k) {
+    var collapsed = load('vmops-wfstrip', false);
+    var camps = loadCampaigns().filter(function (c) { return c.status !== 'completed' && c.status !== 'cancelled'; }).length;
+    var inRem = STATE.findings.filter(function (f) { return statusOf(f) === 'in_remediation'; }).length;
+    var stages = [
+      { n: 1, l: 'Inventory', num: wfComma(k.assets), sub: 'assets', href: '#/import' },
+      { n: 2, l: 'Findings', num: wfComma(k.open), sub: 'open', href: '#/findings' },
+      { n: 3, l: 'Triage', num: wfComma(k.unassigned), sub: 'need owner', href: '#/findings?noowner=1', cls: k.unassigned ? 'warn' : 'ok' },
+      { n: 4, l: 'Campaign', num: wfComma(camps), sub: 'active', href: '#/campaigns' },
+      { n: 5, l: 'Remediate', num: wfComma(inRem), sub: 'in progress', href: '#/findings?status=in_remediation' },
+      { n: 6, l: 'Report', num: k.comp + '%', sub: 'SLA met', href: '#/report', cls: k.comp >= 90 ? 'ok' : '' }
+    ];
+    return '<div class="wfstrip' + (collapsed ? ' collapsed' : '') + '">' +
+      '<div class="wfstrip-hd"><span class="wfstrip-title">Start here — the vulnerability-management workflow</span>' +
+      '<span class="wfstrip-actions"><button class="wfstrip-x" id="wfTour">Take a tour</button>' +
+      '<button class="wfstrip-x" id="wfToggle" aria-expanded="' + (!collapsed) + '">' + (collapsed ? 'Show' : 'Hide') + '</button></span></div>' +
+      (collapsed ? '' :
+        '<div class="wfstrip-row">' +
+        stages.map(function (s, i) {
+          return (i ? '<span class="wfarrow" aria-hidden="true">›</span>' : '') +
+            '<a class="wfstage" data-wf="' + s.n + '" href="' + s.href + '">' +
+            '<span class="wfstage-top"><span class="wfstage-n">' + s.n + '</span><span class="wfstage-l">' + esc(s.l) + '</span></span>' +
+            '<span class="wfstage-num ' + (s.cls || '') + '">' + s.num + '</span>' +
+            '<span class="wfstage-sub">' + esc(s.sub) + '</span></a>';
+        }).join('') +
+        '</div>');
+  }
   // per-status bar colours (mirror the status pill colours)
   var STATUS_BAR_COLOR = { new: 'st-new', triaged: 'st-triaged', in_remediation: 'st-rem', resolved: 'st-res', risk_accepted: 'st-risk', false_positive: 'st-fp' };
   function barRows(rows) {
@@ -294,10 +347,13 @@
     return '<div class="card" style="padding:14px 18px">' + rows.map(function (r) {
       var w = Math.round(r.n / max * 100);
       var color = r.color ? r.color : (r.cls ? 'var(--' + (r.cls === 'critical' ? 'crit' : r.cls === 'high' ? 'high' : r.cls === 'medium' ? 'med' : r.cls === 'low' ? 'low' : 'accent') + ')' : 'var(--accent)');
-      return '<div style="display:flex;align-items:center;gap:12px;margin:7px 0;font-size:13.5px">' +
-        '<div style="width:130px;color:var(--soft)">' + esc(r.l) + '</div>' +
-        '<div style="flex:1;background:color-mix(in srgb,var(--line) 60%,transparent);border-radius:6px;height:18px"><div style="width:' + w + '%;min-width:2px;height:100%;background:' + color + ';border-radius:6px"></div></div>' +
-        '<div style="width:48px;text-align:right;font-family:var(--mono);font-size:12.5px">' + r.n + '</div></div>';
+      var inner = '<div class="barlabel" style="width:150px;flex:none;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis"' + (r.title ? ' title="' + esc(r.title) + '"' : '') + '>' + esc(r.l) + '</div>' +
+        '<div style="flex:1;background:color-mix(in srgb,var(--line) 60%,transparent);border-radius:6px;height:18px"><div class="barfill" style="width:' + w + '%;min-width:2px;height:100%;background:' + color + ';border-radius:6px"></div></div>' +
+        '<div style="width:48px;text-align:right;font-family:var(--mono);font-size:12.5px">' + r.n + '</div>';
+      var style = 'display:flex;align-items:center;gap:12px;margin:7px 0;font-size:13.5px';
+      return r.href
+        ? '<a class="barrow" href="' + r.href + '" title="View these findings" style="' + style + ';text-decoration:none;color:inherit">' + inner + '</a>'
+        : '<div style="' + style + '">' + inner + '</div>';
     }).join('') + '</div>';
   }
 
@@ -309,6 +365,30 @@
     if (h.indexOf('#/settings') === 0) return viewSettings();
     if (h.indexOf('#/import') === 0) return viewImport();
     return viewFindings();
+  }
+
+  // ---------- drilldown "back" affordance ----------
+  // Remember where we came from so a deep-linked (drilldown) Findings view can offer a way back.
+  // HashChangeEvent.oldURL is captured before the router re-renders, so it's order-independent.
+  var _prevHash = '';
+  window.addEventListener('hashchange', function (e) {
+    try { var i = (e.oldURL || '').indexOf('#'); _prevHash = i >= 0 ? e.oldURL.substring(i) : ''; } catch (_) { _prevHash = ''; }
+  });
+  function routeLabel(hash) {
+    var h = (hash || '').split('?')[0];
+    var map = { '#/dashboard': 'the Ops Dashboard', '#/findings': 'Findings', '#/campaigns': 'Campaigns', '#/report': 'the Morning Report', '#/import': 'Data import', '#/settings': 'Settings' };
+    if (map[h]) return map[h];
+    if (h.indexOf('#/campaigns/') === 0) return 'the campaign';
+    if (h.indexOf('#/cve/') === 0) return 'the CVE detail';
+    return 'the previous page';
+  }
+  // A "← Back to …" link, shown only when the current view was reached via a deep-link query
+  // (i.e. a drilldown). Returns to the exact previous page when known, else the dashboard.
+  function backLink() {
+    var cur = location.hash || '';
+    if ((cur.split('?')[1] || '') === '') return '';   // no query → arrived normally, no back link
+    var prev = (_prevHash && _prevHash !== cur) ? _prevHash : '#/dashboard';
+    return '<a class="backlink" href="' + esc(prev) + '">&larr; Back to ' + esc(routeLabel(prev)) + '</a>';
   }
 
   // ---------- bulk selection (Findings) ----------
@@ -358,6 +438,7 @@
       PRESET_VIEWS.map(function (v) { return '<option value="preset:' + v.id + '"' + (activeView === 'preset:' + v.id ? ' selected' : '') + '>' + esc(v.name) + '</option>'; }).join('') + '</optgroup>' +
       (savedViews.length ? '<optgroup label="Saved">' + savedViews.map(function (v) { return '<option value="saved:' + esc(v.name) + '"' + (activeView === 'saved:' + v.name ? ' selected' : '') + '>' + esc(v.name) + '</option>'; }).join('') + '</optgroup>' : '');
     app.innerHTML =
+      backLink() +
       '<header class="view"><div class="overline">Findings workbench</div><h1>Vulnerability findings</h1>' +
       '<p class="lede">Triage your imported scan findings by status, owner, SLA, and recency — keep per-finding notes and a dated status log, and open Jira or ServiceNow tickets. Everything stays in your browser.</p></header>' +
       privSlim() +
@@ -1304,6 +1385,10 @@
       '<div class="field"><label>Server URL</label><input type="text" id="meUrl" value="' + esc(c.meUrl) + '" placeholder="https://endpoint-central.yourorg.com"></div>' +
       '<div class="grid2"><div class="field"><label>Client ID</label><input type="password" id="meClientId" autocomplete="off" value="' + esc(c.meClientId) + '" placeholder="client ID"></div>' +
       '<div class="field"><label>Client Secret</label><input type="password" id="meClientSecret" autocomplete="off" value="' + esc(c.meClientSecret) + '" placeholder="client secret"></div></div></div>' +
+      '<h2>Guided tour</h2><div class="card">' +
+      '<label style="display:flex;align-items:center;gap:9px;font-size:13.5px;cursor:pointer"><input type="checkbox" id="tourAuto"' + (load('vmops-tour-auto', false) ? ' checked' : '') + '> Show the guided tour automatically on first visit</label>' +
+      '<div class="muted" style="font-size:12.5px;margin:9px 0 12px">A quick coachmark walkthrough of the workflow — the dashboard strip, findings, campaigns, and reporting. Replay it anytime from the “Take a tour” button on the Ops Dashboard, or with ⌘K / Ctrl-K → “Guided tour”.</div>' +
+      '<button class="btn" id="tourStart">Start tour now</button></div>' +
       '<h2>SharePoint access tester</h2><div class="card">' +
       '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Diagnostic: paste a SharePoint / OneDrive sharing link and test which method can read the file in-browser — anonymous (blocked) vs. Microsoft Graph (<code>downloadUrl</code>, works after sign-in). Opens in a new tab; your link &amp; token stay there, nothing is uploaded.</div>' +
       '<a class="btn" href="sharepoint-test.html" target="_blank" rel="noopener">Open SharePoint Access Tester ↗</a></div>' +
@@ -1337,6 +1422,10 @@
       save('vmops-config', STATE.cfg); applyBrand(); toast('Settings saved');
     });
     document.getElementById('resetSla').addEventListener('click', function () { STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla); save('vmops-config', STATE.cfg); viewSettings(); toast('SLA windows reset'); });
+    var ta = document.getElementById('tourAuto');
+    if (ta) ta.addEventListener('change', function () { save('vmops-tour-auto', ta.checked); toast(ta.checked ? 'Tour will show on first visit' : 'Auto tour turned off'); });
+    var tstart = document.getElementById('tourStart');
+    if (tstart) tstart.addEventListener('click', function () { if (window.startTour) window.startTour(); });
     wireRemedSettings();
   }
 
