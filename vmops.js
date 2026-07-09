@@ -795,7 +795,7 @@
     var t = e.target; if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable)) return;
     if (document.querySelector('.cmdk-overlay.show')) return;
     var dr = document.getElementById('drawer'), drawerOpen = dr && dr.classList.contains('open');
-    if (e.key === 'Escape') { if (drawerOpen) { var bg = document.getElementById('drawerBg'); if (bg) bg.classList.remove('open'); dr.classList.remove('open'); } return; }
+    if (e.key === 'Escape') { if (drawerOpen) { var bg = document.getElementById('drawerBg'); if (bg) bg.classList.remove('open'); dr.classList.remove('open'); hideDrawerHandle(); } return; }
     if (drawerOpen) return;
     if (e.key === 'j' || e.key === 'ArrowDown') { e.preventDefault(); _moveFocus(1); }
     else if (e.key === 'k' || e.key === 'ArrowUp') { e.preventDefault(); _moveFocus(-1); }
@@ -939,6 +939,42 @@
     return { title: hit.title || 'Remediation', script: script, lang: hit.lang || 'PowerShell', generic: generic, playbook: hit.playbook ? PLAYBOOK_BASE + hit.playbook : null };
   }
 
+  // ---------- resizable drawer ----------
+  // A left-edge drag handle lets the user widen/narrow the finding drawer; the width persists
+  // (localStorage 'vmops-drawer-w'). The handle is a body-level fixed element pinned to the
+  // drawer's left edge, so it doesn't scroll away with the drawer's own content. Double-click resets.
+  var _drH = null, DRAWER_MINW = 360;
+  function drawerMaxW() { return Math.max(DRAWER_MINW, window.innerWidth - 40); }
+  function positionDrawerHandle() { var dr = document.getElementById('drawer'); if (_drH && dr) _drH.style.left = dr.getBoundingClientRect().left + 'px'; }
+  function ensureDrawerHandle() {
+    if (_drH) return _drH;
+    var dr = document.getElementById('drawer'); if (!dr) return null;
+    var h = document.createElement('div'); h.className = 'drawer-resize'; h.title = 'Drag to resize · double-click to reset';
+    h.setAttribute('role', 'separator'); h.setAttribute('aria-orientation', 'vertical'); h.setAttribute('aria-label', 'Resize panel');
+    document.body.appendChild(h);
+    h.addEventListener('pointerdown', function (e) {
+      e.preventDefault(); try { h.setPointerCapture(e.pointerId); } catch (_) {}
+      h.classList.add('dragging'); document.body.style.userSelect = 'none'; dr.style.transition = 'none';
+      function move(ev) { dr.style.width = Math.min(Math.max(window.innerWidth - ev.clientX, DRAWER_MINW), drawerMaxW()) + 'px'; positionDrawerHandle(); }
+      function up() { h.classList.remove('dragging'); h.removeEventListener('pointermove', move); h.removeEventListener('pointerup', up); document.body.style.userSelect = ''; dr.style.transition = ''; var w = parseInt(dr.style.width, 10); if (w) save('vmops-drawer-w', w); }
+      h.addEventListener('pointermove', move); h.addEventListener('pointerup', up);
+    });
+    h.addEventListener('dblclick', function () { dr.style.width = ''; save('vmops-drawer-w', 0); positionDrawerHandle(); });
+    _drH = h; return h;
+  }
+  function showDrawerHandle() {
+    var dr = document.getElementById('drawer'); if (!dr) return;
+    var w = parseInt(load('vmops-drawer-w', 0), 10) || 0;
+    dr.style.width = w ? (Math.min(Math.max(w, DRAWER_MINW), drawerMaxW()) + 'px') : '';   // '' → CSS default
+    var h = ensureDrawerHandle(); if (h) { h.classList.add('open'); positionDrawerHandle(); }
+  }
+  function hideDrawerHandle() { if (_drH) _drH.classList.remove('open'); }
+  window.addEventListener('resize', function () {
+    var dr = document.getElementById('drawer'); if (!dr || !dr.classList.contains('open')) return;
+    var w = parseInt(dr.style.width, 10); if (w && w > drawerMaxW()) dr.style.width = drawerMaxW() + 'px';
+    positionDrawerHandle();
+  });
+
   // ---------- finding drawer ----------
   function openDrawer(f) {
     var bg = document.getElementById('drawerBg'), dr = document.getElementById('drawer');
@@ -978,7 +1014,7 @@
       '<button class="btn sm" id="drSnowQ">Search ServiceNow</button>' +
       '<button class="btn sm" id="drCopy" title="Copy a text summary of this finding">Copy summary</button>' +
       '</div>';
-    bg.classList.add('open'); dr.classList.add('open');
+    bg.classList.add('open'); dr.classList.add('open'); showDrawerHandle();
     // Fill the remaining prioritization models: SSVC is derived (instant); EPSS (live) + LEV (local) load async.
     (function () {
       var it = cveIntel(f.cve), sv = ssvcVerdict(it.kev, it.exploit, f.cvss);
@@ -1002,7 +1038,7 @@
       var cb = el.querySelector('.remed-copy');
       if (cb) cb.addEventListener('click', function () { copyText(r.script); });
     });
-    function close() { bg.classList.remove('open'); dr.classList.remove('open'); }
+    function close() { bg.classList.remove('open'); dr.classList.remove('open'); hideDrawerHandle(); }
     document.getElementById('drClose').addEventListener('click', close);
     bg.onclick = close;
     dr.querySelector('.dr-status').addEventListener('change', function () { setOverride(f, { status: this.value }); addUpdate(f, 'Status → ' + SLABEL[this.value]); toast('Status → ' + SLABEL[this.value]); currentView(); openDrawer(f); });
