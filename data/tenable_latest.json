@@ -1,650 +1,853 @@
 {
-  "updated": "2026-07-09",
+  "updated": "2026-07-10",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
     {
-      "id": null,
-      "title": "SCA: security update for pip (GHSA-wf93-45jw-7689)",
+      "id": "505541",
+      "title": "Siemens SIPROTEC 5 Unrestricted Upload of File with Dangerous Type (CVE-2025-40808)",
       "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444547",
-      "cves": [
-        "CVE-2026-8643"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for pip (GHSA-wf93-45jw-7689)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444547",
-      "cves": [
-        "CVE-2026-8643"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.apache.fluss:fluss-common (GHSA-4c39-fwgj-4vq7)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444546",
-      "cves": [
-        "CVE-2026-49361"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.apache.fluss:fluss-common (GHSA-4c39-fwgj-4vq7)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444546",
-      "cves": [
-        "CVE-2026-49361"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for apache-airflow (GHSA-vr7m-c6v4-8cx8)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444545",
-      "cves": [
-        "CVE-2025-57735",
-        "CVE-2026-48726"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for apache-airflow (GHSA-vr7m-c6v4-8cx8)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444545",
-      "cves": [
-        "CVE-2025-57735",
-        "CVE-2026-48726"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for apache-airflow-core (GHSA-5j6p-jrrm-6x94)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444544",
-      "cves": [
-        "CVE-2026-27173",
-        "CVE-2026-49298"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for apache-airflow-core (GHSA-5j6p-jrrm-6x94)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444544",
-      "cves": [
-        "CVE-2026-27173",
-        "CVE-2026-49298"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.apache.fesod:fesod-sheet (GHSA-vqc2-c9jh-3jjv)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444543",
-      "cves": [
-        "CVE-2026-49328"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.apache.fesod:fesod-sheet (GHSA-vqc2-c9jh-3jjv)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444543",
-      "cves": [
-        "CVE-2026-49328"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for ch.qos.logback:logback-core (GHSA-jhq6-gfmj-v8fx)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444542",
-      "cves": [
-        "CVE-2026-10532"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for ch.qos.logback:logback-core (GHSA-jhq6-gfmj-v8fx)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444542",
-      "cves": [
-        "CVE-2026-10532"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/zalando/skipper (GHSA-659f-rgp5-w4wf)",
-      "severity": "Critical",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444541",
-      "cves": [
-        "CVE-2026-50197"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/zalando/skipper (GHSA-659f-rgp5-w4wf)",
-      "severity": "Critical",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444541",
-      "cves": [
-        "CVE-2026-50197"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/nuclio/nuclio (GHSA-v5px-423j-pf7p)",
-      "severity": "Critical",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444540",
-      "cves": [
-        "CVE-2026-52831"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/nuclio/nuclio (GHSA-v5px-423j-pf7p)",
-      "severity": "Critical",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444540",
-      "cves": [
-        "CVE-2026-52831"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.dspace:dspace-api (GHSA-9x82-rm84-c6x7)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444539",
-      "cves": [
-        "CVE-2026-49832"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.dspace:dspace-api (GHSA-9x82-rm84-c6x7)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444539",
-      "cves": [
-        "CVE-2026-49832"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.dspace:dspace-api (GHSA-v66x-68f2-pxf5)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444538",
-      "cves": [
-        "CVE-2026-49831"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.dspace:dspace-api (GHSA-v66x-68f2-pxf5)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444538",
-      "cves": [
-        "CVE-2026-49831"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/BishopFox/joro (GHSA-xqhv-chqm-fhcc)",
-      "severity": "Critical",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444537",
-      "cves": [
-        "CVE-2026-53649"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/BishopFox/joro (GHSA-xqhv-chqm-fhcc)",
-      "severity": "Critical",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444537",
-      "cves": [
-        "CVE-2026-53649"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for waku (GHSA-75w3-gmqx-993q)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444536",
-      "cves": [
-        "CVE-2026-49455"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for waku (GHSA-75w3-gmqx-993q)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444536",
-      "cves": [
-        "CVE-2026-49455"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for nl.nl-portal:taak (GHSA-6h3c-r723-7fx3)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444535",
-      "cves": [
-        "CVE-2026-49464"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for nl.nl-portal:taak (GHSA-6h3c-r723-7fx3)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444535",
-      "cves": [
-        "CVE-2026-49464"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for lxml_html_clean (GHSA-4jhm-jv67-739f)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444534",
-      "cves": [
-        "CVE-2026-49825"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for lxml_html_clean (GHSA-4jhm-jv67-739f)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444534",
-      "cves": [
-        "CVE-2026-49825"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for code16/sharp (GHSA-vmwx-m75v-qvch)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444533",
-      "cves": [
-        "CVE-2026-53634"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for code16/sharp (GHSA-vmwx-m75v-qvch)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444533",
-      "cves": [
-        "CVE-2026-53634"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.dspace:dspace-api (GHSA-c827-pw3m-67w7)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444532",
-      "cves": [
-        "CVE-2026-49830"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.dspace:dspace-api (GHSA-c827-pw3m-67w7)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444532",
-      "cves": [
-        "CVE-2026-49830"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.dspace:dspace-api (GHSA-9qm4-rh6w-pq5x)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444531",
-      "cves": [
-        "CVE-2026-49833"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.dspace:dspace-api (GHSA-9qm4-rh6w-pq5x)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444531",
-      "cves": [
-        "CVE-2026-49833"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for waku (GHSA-43fc-v873-qw85)",
-      "severity": "Low",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444530",
-      "cves": [
-        "CVE-2026-49456"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for waku (GHSA-43fc-v873-qw85)",
-      "severity": "Low",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444530",
-      "cves": [
-        "CVE-2026-49456"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for nl.nl-portal:besluiten, nl.nl-portal:documenten-api (GHSA-qpm9-h556-mwxm)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444529",
-      "cves": [
-        "CVE-2026-49463"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for nl.nl-portal:besluiten, nl.nl-portal:documenten-api (GHSA-qpm9-h556-mwxm)",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444529",
-      "cves": [
-        "CVE-2026-49463"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for serena-agent (GHSA-37h2-6p4f-mp3q)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444528",
-      "cves": [
-        "CVE-2026-49471"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for serena-agent (GHSA-37h2-6p4f-mp3q)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444528",
-      "cves": [
-        "CVE-2026-49471"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple py3-django packages: security update to 5.2.16-r0",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444527",
-      "cves": [
-        "CVE-2026-48588",
-        "CVE-2026-53877",
-        "CVE-2026-53878"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple py3-django packages: security update to 5.2.16-r0",
-      "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444527",
-      "cves": [
-        "CVE-2026-48588",
-        "CVE-2026-53877",
-        "CVE-2026-53878"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple c-ares packages: security update to 1.34.8-r0",
-      "severity": "Critical",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/444526",
-      "cves": [
-        "CVE-2026-33630"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple c-ares packages: security update to 1.34.8-r0",
-      "severity": "Critical",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/444526",
-      "cves": [
-        "CVE-2026-33630"
-      ]
-    },
-    {
-      "id": "325772",
-      "title": "Oracle Linux 8 : container-tools:ol8 (ELSA-2026-35833)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325772",
-      "cves": [
-        "CVE-2020-10756",
-        "CVE-2020-1983",
-        "CVE-2021-3592",
-        "CVE-2021-3593",
-        "CVE-2021-3594",
-        "CVE-2021-3595",
-        "CVE-2024-1394",
-        "CVE-2025-22871",
-        "CVE-2025-31133",
-        "CVE-2025-47913",
-        "CVE-2025-52565",
-        "CVE-2025-52881",
-        "CVE-2025-58183",
-        "CVE-2025-61729",
-        "CVE-2025-68121",
-        "CVE-2026-25679",
-        "CVE-2026-32281",
-        "CVE-2026-34986",
-        "CVE-2026-39829",
-        "CVE-2026-39830",
-        "CVE-2026-39832",
-        "CVE-2026-42508"
-      ]
-    },
-    {
-      "id": "325771",
-      "title": "Oracle Linux 9 : aardvark-dns (ELSA-2026-36318)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325771",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/505541",
       "cves": []
     },
     {
-      "id": "325770",
-      "title": "AlmaLinux 8 : kernel (ALSA-2026:36366)",
+      "id": "326226",
+      "title": "RockyLinux 8 : tomcat (RLSA-2026:37137)",
       "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325770",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326226",
       "cves": [
-        "CVE-2026-43112"
+        "CVE-2026-29146",
+        "CVE-2026-34486"
       ]
     },
     {
-      "id": "325769",
-      "title": "AlmaLinux 9 : aardvark-dns (ALSA-2026:36318)",
+      "id": "326225",
+      "title": "RockyLinux 8 : gstreamer1-plugins-bad-free (RLSA-2026:37130)",
       "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325769",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326225",
       "cves": [
-        "CVE-2026-35406"
+        "CVE-2026-52720",
+        "CVE-2026-52722"
       ]
     },
     {
-      "id": "325768",
-      "title": "AlmaLinux 9 : freeipmi (ALSA-2026:36210)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325768",
-      "cves": [
-        "CVE-2026-50031"
-      ]
-    },
-    {
-      "id": "325767",
-      "title": "AlmaLinux 8 : freeipmi (ALSA-2026:36307)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325767",
-      "cves": [
-        "CVE-2026-50031"
-      ]
-    },
-    {
-      "id": "325766",
-      "title": "AlmaLinux 9 : postgresql:18 (ALSA-2026:26204)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325766",
-      "cves": [
-        "CVE-2026-6473",
-        "CVE-2026-6475",
-        "CVE-2026-6477",
-        "CVE-2026-6478"
-      ]
-    },
-    {
-      "id": "325765",
-      "title": "AlmaLinux 9 : grafana (ALSA-2026:35828)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325765",
-      "cves": [
-        "CVE-2026-39821"
-      ]
-    },
-    {
-      "id": "325764",
-      "title": "AlmaLinux 8 : kernel (ALSA-2026:36349)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325764",
-      "cves": [
-        "CVE-2025-10263",
-        "CVE-2026-43198",
-        "CVE-2026-43450",
-        "CVE-2026-46209",
-        "CVE-2026-46227",
-        "CVE-2026-46259"
-      ]
-    },
-    {
-      "id": "325763",
-      "title": "AlmaLinux 10 : frr (ALSA-2026:24347)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325763",
-      "cves": [
-        "CVE-2026-37457",
-        "CVE-2026-37459"
-      ]
-    },
-    {
-      "id": "325762",
-      "title": "AlmaLinux 8 : kernel-rt (ALSA-2026:36365)",
-      "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325762",
-      "cves": [
-        "CVE-2026-43112"
-      ]
-    },
-    {
-      "id": "325761",
-      "title": "AlmaLinux 10 : python3.14-pip (ALSA-2026:36193)",
+      "id": "326224",
+      "title": "EulerOS 2.0 SP12 : avahi (EulerOS-SA-2026-2519)",
       "severity": "Medium",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325761",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326224",
       "cves": [
-        "CVE-2026-8643"
+        "CVE-2026-34933"
       ]
     },
     {
-      "id": "325760",
-      "title": "AlmaLinux 9 : pcs (ALSA-2026:19167)",
-      "severity": "Critical",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325760",
-      "cves": [
-        "CVE-2026-4800"
-      ]
-    },
-    {
-      "id": "325759",
-      "title": "AlmaLinux 9 : skopeo (ALSA-2026:36317)",
+      "id": "326223",
+      "title": "EulerOS 2.0 SP12 : httpd (EulerOS-SA-2026-2533)",
       "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325759",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326223",
       "cves": [
-        "CVE-2026-25679",
-        "CVE-2026-27145"
+        "CVE-2026-24072",
+        "CVE-2026-28780",
+        "CVE-2026-29168",
+        "CVE-2026-29169",
+        "CVE-2026-33006",
+        "CVE-2026-34059"
       ]
     },
     {
-      "id": "325758",
-      "title": "AlmaLinux 10 : gnutls (ALSA-2026:20613)",
+      "id": "326222",
+      "title": "EulerOS 2.0 SP12 : kernel (EulerOS-SA-2026-2535)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326222",
+      "cves": [
+        "CVE-2025-68313",
+        "CVE-2025-68795",
+        "CVE-2025-68822",
+        "CVE-2026-23119",
+        "CVE-2026-23240",
+        "CVE-2026-23253",
+        "CVE-2026-23255",
+        "CVE-2026-23261",
+        "CVE-2026-23268",
+        "CVE-2026-23269",
+        "CVE-2026-23271",
+        "CVE-2026-23272",
+        "CVE-2026-23274",
+        "CVE-2026-23276",
+        "CVE-2026-23277",
+        "CVE-2026-23290",
+        "CVE-2026-23292",
+        "CVE-2026-23293",
+        "CVE-2026-23300",
+        "CVE-2026-23303",
+        "CVE-2026-23304",
+        "CVE-2026-23312",
+        "CVE-2026-23317",
+        "CVE-2026-23340",
+        "CVE-2026-23351",
+        "CVE-2026-23352",
+        "CVE-2026-23365",
+        "CVE-2026-23368",
+        "CVE-2026-23371",
+        "CVE-2026-23381",
+        "CVE-2026-23388",
+        "CVE-2026-23389",
+        "CVE-2026-23391",
+        "CVE-2026-23397",
+        "CVE-2026-23398",
+        "CVE-2026-23403",
+        "CVE-2026-23404",
+        "CVE-2026-23405",
+        "CVE-2026-23406",
+        "CVE-2026-23407",
+        "CVE-2026-23408",
+        "CVE-2026-23409",
+        "CVE-2026-23410",
+        "CVE-2026-23411",
+        "CVE-2026-23442",
+        "CVE-2026-23447",
+        "CVE-2026-23448",
+        "CVE-2026-23449",
+        "CVE-2026-23452",
+        "CVE-2026-23455",
+        "CVE-2026-23456",
+        "CVE-2026-23457",
+        "CVE-2026-23458",
+        "CVE-2026-23472",
+        "CVE-2026-31392",
+        "CVE-2026-31399",
+        "CVE-2026-31400",
+        "CVE-2026-31402",
+        "CVE-2026-31403",
+        "CVE-2026-31404",
+        "CVE-2026-31405",
+        "CVE-2026-31414",
+        "CVE-2026-31415",
+        "CVE-2026-31416",
+        "CVE-2026-31418",
+        "CVE-2026-31419",
+        "CVE-2026-31421",
+        "CVE-2026-31422",
+        "CVE-2026-31423",
+        "CVE-2026-31426",
+        "CVE-2026-31427",
+        "CVE-2026-31428",
+        "CVE-2026-31436",
+        "CVE-2026-31441",
+        "CVE-2026-31447",
+        "CVE-2026-31448",
+        "CVE-2026-31449",
+        "CVE-2026-31450",
+        "CVE-2026-31452",
+        "CVE-2026-31453",
+        "CVE-2026-31454",
+        "CVE-2026-31455",
+        "CVE-2026-31469",
+        "CVE-2026-31473",
+        "CVE-2026-31495",
+        "CVE-2026-31496",
+        "CVE-2026-31503",
+        "CVE-2026-31508",
+        "CVE-2026-31515",
+        "CVE-2026-31516",
+        "CVE-2026-31521",
+        "CVE-2026-31523",
+        "CVE-2026-31527",
+        "CVE-2026-31531",
+        "CVE-2026-31555",
+        "CVE-2026-31557",
+        "CVE-2026-31586",
+        "CVE-2026-31588",
+        "CVE-2026-31590",
+        "CVE-2026-31624",
+        "CVE-2026-31625",
+        "CVE-2026-31651",
+        "CVE-2026-31662",
+        "CVE-2026-31664",
+        "CVE-2026-31665",
+        "CVE-2026-31670",
+        "CVE-2026-31673",
+        "CVE-2026-31674",
+        "CVE-2026-31675",
+        "CVE-2026-31677",
+        "CVE-2026-31678",
+        "CVE-2026-31679",
+        "CVE-2026-31680",
+        "CVE-2026-31682",
+        "CVE-2026-31685",
+        "CVE-2026-31708",
+        "CVE-2026-31729",
+        "CVE-2026-31751",
+        "CVE-2026-31755",
+        "CVE-2026-31758",
+        "CVE-2026-31759",
+        "CVE-2026-31781",
+        "CVE-2026-43027",
+        "CVE-2026-43028",
+        "CVE-2026-43030",
+        "CVE-2026-43033",
+        "CVE-2026-43037",
+        "CVE-2026-43038",
+        "CVE-2026-43040",
+        "CVE-2026-43043",
+        "CVE-2026-43047",
+        "CVE-2026-43048",
+        "CVE-2026-43057",
+        "CVE-2026-43060",
+        "CVE-2026-43064",
+        "CVE-2026-43068",
+        "CVE-2026-43071",
+        "CVE-2026-43079",
+        "CVE-2026-43094",
+        "CVE-2026-43124",
+        "CVE-2026-43156",
+        "CVE-2026-43158",
+        "CVE-2026-43171",
+        "CVE-2026-43180",
+        "CVE-2026-43187",
+        "CVE-2026-43194",
+        "CVE-2026-43211",
+        "CVE-2026-43233",
+        "CVE-2026-43273",
+        "CVE-2026-43281",
+        "CVE-2026-43344",
+        "CVE-2026-43363",
+        "CVE-2026-43365",
+        "CVE-2026-43383",
+        "CVE-2026-43407",
+        "CVE-2026-43408",
+        "CVE-2026-43409",
+        "CVE-2026-43416",
+        "CVE-2026-43429",
+        "CVE-2026-43445",
+        "CVE-2026-43450",
+        "CVE-2026-43452",
+        "CVE-2026-43453",
+        "CVE-2026-43493",
+        "CVE-2026-43503",
+        "CVE-2026-46333"
+      ]
+    },
+    {
+      "id": "326221",
+      "title": "EulerOS 2.0 SP12 : glibc (EulerOS-SA-2026-2529)",
       "severity": "Critical",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325758",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326221",
+      "cves": [
+        "CVE-2026-4046",
+        "CVE-2026-5450",
+        "CVE-2026-5928"
+      ]
+    },
+    {
+      "id": "326220",
+      "title": "EulerOS 2.0 SP12 : cups (EulerOS-SA-2026-2522)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326220",
+      "cves": [
+        "CVE-2026-27447",
+        "CVE-2026-34978",
+        "CVE-2026-34979",
+        "CVE-2026-34980",
+        "CVE-2026-34990",
+        "CVE-2026-39314",
+        "CVE-2026-39316",
+        "CVE-2026-41079"
+      ]
+    },
+    {
+      "id": "326219",
+      "title": "EulerOS 2.0 SP12 : bind (EulerOS-SA-2026-2520)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326219",
+      "cves": [
+        "CVE-2026-1519"
+      ]
+    },
+    {
+      "id": "326218",
+      "title": "EulerOS 2.0 SP12 : firewalld (EulerOS-SA-2026-2527)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326218",
+      "cves": [
+        "CVE-2026-4948"
+      ]
+    },
+    {
+      "id": "326217",
+      "title": "EulerOS 2.0 SP12 : docker-engine (EulerOS-SA-2026-2525)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326217",
+      "cves": [
+        "CVE-2026-34040"
+      ]
+    },
+    {
+      "id": "326216",
+      "title": "EulerOS 2.0 SP12 : libarchive (EulerOS-SA-2026-2598)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326216",
+      "cves": [
+        "CVE-2026-4426"
+      ]
+    },
+    {
+      "id": "326215",
+      "title": "EulerOS 2.0 SP12 : libssh2 (EulerOS-SA-2026-2543)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326215",
+      "cves": [
+        "CVE-2026-7598"
+      ]
+    },
+    {
+      "id": "326214",
+      "title": "EulerOS 2.0 SP12 : gnutls (EulerOS-SA-2026-2530)",
+      "severity": "Critical",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326214",
       "cves": [
         "CVE-2026-33845",
         "CVE-2026-33846",
         "CVE-2026-3833",
         "CVE-2026-42009",
         "CVE-2026-42010",
-        "CVE-2026-42011"
+        "CVE-2026-42013",
+        "CVE-2026-42014",
+        "CVE-2026-5260"
       ]
     },
     {
-      "id": "325757",
-      "title": "AlmaLinux 8 : compat-openssl10 (ALSA-2026:36215)",
+      "id": "326213",
+      "title": "EulerOS 2.0 SP12 : libtiff (EulerOS-SA-2026-2604)",
       "severity": "High",
-      "date": "Thu, 09 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/325757",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326213",
       "cves": [
-        "CVE-2026-45447"
+        "CVE-2025-61144",
+        "CVE-2026-4775"
+      ]
+    },
+    {
+      "id": "326212",
+      "title": "EulerOS 2.0 SP12 : bind (EulerOS-SA-2026-2580)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326212",
+      "cves": [
+        "CVE-2026-1519"
+      ]
+    },
+    {
+      "id": "326211",
+      "title": "EulerOS 2.0 SP12 : sqlite (EulerOS-SA-2026-2570)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326211",
+      "cves": [
+        "CVE-2025-70873"
+      ]
+    },
+    {
+      "id": "326210",
+      "title": "EulerOS 2.0 SP12 : libxml2 (EulerOS-SA-2026-2545)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326210",
+      "cves": [
+        "CVE-2025-8732"
+      ]
+    },
+    {
+      "id": "326209",
+      "title": "EulerOS 2.0 SP12 : ruby (EulerOS-SA-2026-2567)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326209",
+      "cves": [
+        "CVE-2026-41316"
+      ]
+    },
+    {
+      "id": "326208",
+      "title": "EulerOS 2.0 SP12 : python-pip (EulerOS-SA-2026-2620)",
+      "severity": "Low",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326208",
+      "cves": [
+        "CVE-2026-1703",
+        "CVE-2026-25645"
+      ]
+    },
+    {
+      "id": "326207",
+      "title": "EulerOS 2.0 SP12 : python-pyasn1 (EulerOS-SA-2026-2561)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326207",
+      "cves": [
+        "CVE-2026-23490"
+      ]
+    },
+    {
+      "id": "326206",
+      "title": "EulerOS 2.0 SP12 : pyOpenSSL (EulerOS-SA-2026-2615)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326206",
+      "cves": [
+        "CVE-2026-27448"
+      ]
+    },
+    {
+      "id": "326205",
+      "title": "EulerOS 2.0 SP12 : rsync (EulerOS-SA-2026-2626)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326205",
+      "cves": [
+        "CVE-2026-41035",
+        "CVE-2026-43618"
+      ]
+    },
+    {
+      "id": "326204",
+      "title": "EulerOS 2.0 SP12 : perl (EulerOS-SA-2026-2552)",
+      "severity": "Critical",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326204",
+      "cves": [
+        "CVE-2026-8376"
+      ]
+    },
+    {
+      "id": "326203",
+      "title": "EulerOS 2.0 SP12 : unbound (EulerOS-SA-2026-2574)",
+      "severity": "Critical",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326203",
+      "cves": [
+        "CVE-2025-11411",
+        "CVE-2026-33278",
+        "CVE-2026-40622",
+        "CVE-2026-41292",
+        "CVE-2026-42959",
+        "CVE-2026-42960"
+      ]
+    },
+    {
+      "id": "326202",
+      "title": "EulerOS 2.0 SP12 : libarchive (EulerOS-SA-2026-2538)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326202",
+      "cves": [
+        "CVE-2026-4426"
+      ]
+    },
+    {
+      "id": "326201",
+      "title": "EulerOS 2.0 SP12 : kata-containers (EulerOS-SA-2026-2594)",
+      "severity": "Critical",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326201",
+      "cves": [
+        "CVE-2026-33186"
+      ]
+    },
+    {
+      "id": "326200",
+      "title": "EulerOS 2.0 SP12 : vim (EulerOS-SA-2026-2576)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326200",
+      "cves": [
+        "CVE-2025-53906",
+        "CVE-2026-28418",
+        "CVE-2026-28420",
+        "CVE-2026-28422",
+        "CVE-2026-33412",
+        "CVE-2026-34982",
+        "CVE-2026-35177",
+        "CVE-2026-39881",
+        "CVE-2026-41411",
+        "CVE-2026-42307",
+        "CVE-2026-44656",
+        "CVE-2026-46483"
+      ]
+    },
+    {
+      "id": "326199",
+      "title": "EulerOS 2.0 SP12 : systemd (EulerOS-SA-2026-2632)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326199",
+      "cves": [
+        "CVE-2026-29111",
+        "CVE-2026-40226",
+        "CVE-2026-4105"
+      ]
+    },
+    {
+      "id": "326198",
+      "title": "EulerOS 2.0 SP12 : busybox (EulerOS-SA-2026-2581)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326198",
+      "cves": [
+        "CVE-2025-60876",
+        "CVE-2026-29004"
+      ]
+    },
+    {
+      "id": "326197",
+      "title": "EulerOS 2.0 SP12 : krb5 (EulerOS-SA-2026-2596)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326197",
+      "cves": [
+        "CVE-2026-40355",
+        "CVE-2026-40356"
+      ]
+    },
+    {
+      "id": "326196",
+      "title": "EulerOS 2.0 SP12 : python-jwt (EulerOS-SA-2026-2557)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326196",
+      "cves": [
+        "CVE-2026-32597"
+      ]
+    },
+    {
+      "id": "326195",
+      "title": "EulerOS 2.0 SP12 : vim (EulerOS-SA-2026-2636)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326195",
+      "cves": [
+        "CVE-2025-53906",
+        "CVE-2026-28418",
+        "CVE-2026-28420",
+        "CVE-2026-28422",
+        "CVE-2026-33412",
+        "CVE-2026-34982",
+        "CVE-2026-35177",
+        "CVE-2026-39881",
+        "CVE-2026-41411",
+        "CVE-2026-42307",
+        "CVE-2026-44656",
+        "CVE-2026-46483"
+      ]
+    },
+    {
+      "id": "326194",
+      "title": "EulerOS 2.0 SP12 : python-ecdsa (EulerOS-SA-2026-2616)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326194",
+      "cves": [
+        "CVE-2026-33936"
+      ]
+    },
+    {
+      "id": "326193",
+      "title": "EulerOS 2.0 SP12 : dnsmasq (EulerOS-SA-2026-2524)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326193",
+      "cves": [
+        "CVE-2026-4892",
+        "CVE-2026-4893"
+      ]
+    },
+    {
+      "id": "326192",
+      "title": "EulerOS 2.0 SP12 : rsync (EulerOS-SA-2026-2566)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326192",
+      "cves": [
+        "CVE-2026-41035",
+        "CVE-2026-43618"
+      ]
+    },
+    {
+      "id": "326191",
+      "title": "EulerOS 2.0 SP12 : tigervnc (EulerOS-SA-2026-2573)",
+      "severity": "Critical",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326191",
+      "cves": [
+        "CVE-2026-34352"
+      ]
+    },
+    {
+      "id": "326190",
+      "title": "EulerOS 2.0 SP12 : sudo (EulerOS-SA-2026-2631)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326190",
+      "cves": [
+        "CVE-2026-35535"
+      ]
+    },
+    {
+      "id": "326189",
+      "title": "EulerOS 2.0 SP12 : expat (EulerOS-SA-2026-2586)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326189",
+      "cves": [
+        "CVE-2026-32776",
+        "CVE-2026-32777",
+        "CVE-2026-32778",
+        "CVE-2026-41080",
+        "CVE-2026-45186"
+      ]
+    },
+    {
+      "id": "326188",
+      "title": "EulerOS 2.0 SP12 : ncurses (EulerOS-SA-2026-2548)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326188",
+      "cves": [
+        "CVE-2025-69720"
+      ]
+    },
+    {
+      "id": "326187",
+      "title": "EulerOS 2.0 SP12 : shim (EulerOS-SA-2026-2629)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326187",
+      "cves": [
+        "CVE-2026-28388"
+      ]
+    },
+    {
+      "id": "326186",
+      "title": "EulerOS 2.0 SP12 : gdk-pixbuf2 (EulerOS-SA-2026-2528)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326186",
+      "cves": [
+        "CVE-2026-5201"
+      ]
+    },
+    {
+      "id": "326185",
+      "title": "EulerOS 2.0 SP12 : polkit (EulerOS-SA-2026-2553)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326185",
+      "cves": [
+        "CVE-2026-4897"
+      ]
+    },
+    {
+      "id": "326184",
+      "title": "EulerOS 2.0 SP12 : golang (EulerOS-SA-2026-2591)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326184",
+      "cves": [
+        "CVE-2026-27140",
+        "CVE-2026-27142",
+        "CVE-2026-32288"
+      ]
+    },
+    {
+      "id": "326183",
+      "title": "EulerOS 2.0 SP12 : libcap (EulerOS-SA-2026-2599)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326183",
+      "cves": [
+        "CVE-2026-4878"
+      ]
+    },
+    {
+      "id": "326182",
+      "title": "EulerOS 2.0 SP12 : python-requests (EulerOS-SA-2026-2563)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326182",
+      "cves": [
+        "CVE-2026-25645"
+      ]
+    },
+    {
+      "id": "326181",
+      "title": "EulerOS 2.0 SP12 : sed (EulerOS-SA-2026-2628)",
+      "severity": "Low",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326181",
+      "cves": [
+        "CVE-2026-5958"
+      ]
+    },
+    {
+      "id": "326180",
+      "title": "EulerOS 2.0 SP12 : mesa (EulerOS-SA-2026-2607)",
+      "severity": "Critical",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326180",
+      "cves": [
+        "CVE-2026-40393"
+      ]
+    },
+    {
+      "id": "326179",
+      "title": "EulerOS 2.0 SP12 : polkit (EulerOS-SA-2026-2613)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326179",
+      "cves": [
+        "CVE-2026-4897"
+      ]
+    },
+    {
+      "id": "326178",
+      "title": "EulerOS 2.0 SP12 : libsoup (EulerOS-SA-2026-2602)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326178",
+      "cves": [
+        "CVE-2026-5119"
+      ]
+    },
+    {
+      "id": "326177",
+      "title": "EulerOS 2.0 SP12 : httpd (EulerOS-SA-2026-2593)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326177",
+      "cves": [
+        "CVE-2026-24072",
+        "CVE-2026-28780",
+        "CVE-2026-29168",
+        "CVE-2026-29169",
+        "CVE-2026-33006",
+        "CVE-2026-34059"
+      ]
+    },
+    {
+      "id": "326176",
+      "title": "EulerOS 2.0 SP12 : python-jwt (EulerOS-SA-2026-2617)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326176",
+      "cves": [
+        "CVE-2026-32597"
+      ]
+    },
+    {
+      "id": "326175",
+      "title": "EulerOS 2.0 SP12 : python-pip (EulerOS-SA-2026-2560)",
+      "severity": "Low",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326175",
+      "cves": [
+        "CVE-2026-1703",
+        "CVE-2026-25645"
+      ]
+    },
+    {
+      "id": "326174",
+      "title": "EulerOS 2.0 SP12 : docker-engine (EulerOS-SA-2026-2585)",
+      "severity": "High",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326174",
+      "cves": [
+        "CVE-2026-34040"
+      ]
+    },
+    {
+      "id": "326173",
+      "title": "EulerOS 2.0 SP12 : python3 (EulerOS-SA-2026-2625)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326173",
+      "cves": [
+        "CVE-2026-0865"
+      ]
+    },
+    {
+      "id": "326172",
+      "title": "EulerOS 2.0 SP12 : cups (EulerOS-SA-2026-2582)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326172",
+      "cves": [
+        "CVE-2026-27447",
+        "CVE-2026-34978",
+        "CVE-2026-34979",
+        "CVE-2026-34980",
+        "CVE-2026-34990",
+        "CVE-2026-39314",
+        "CVE-2026-39316",
+        "CVE-2026-41079"
+      ]
+    },
+    {
+      "id": "326171",
+      "title": "EulerOS 2.0 SP12 : python-requests (EulerOS-SA-2026-2623)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326171",
+      "cves": [
+        "CVE-2026-25645"
+      ]
+    },
+    {
+      "id": "326170",
+      "title": "EulerOS 2.0 SP12 : tigervnc (EulerOS-SA-2026-2633)",
+      "severity": "Critical",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326170",
+      "cves": [
+        "CVE-2026-34352"
+      ]
+    },
+    {
+      "id": "326169",
+      "title": "EulerOS 2.0 SP12 : glibc (EulerOS-SA-2026-2589)",
+      "severity": "Critical",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326169",
+      "cves": [
+        "CVE-2026-4046",
+        "CVE-2026-5450",
+        "CVE-2026-5928"
+      ]
+    },
+    {
+      "id": "326168",
+      "title": "EulerOS 2.0 SP12 : systemd (EulerOS-SA-2026-2572)",
+      "severity": "Medium",
+      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326168",
+      "cves": [
+        "CVE-2026-29111",
+        "CVE-2026-40226",
+        "CVE-2026-4105"
       ]
     }
   ]
