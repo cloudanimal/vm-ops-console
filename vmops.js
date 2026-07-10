@@ -363,6 +363,7 @@
   function currentView() {
     var h = (location.hash || '').split('?')[0];
     if (h.indexOf('#/dashboard') === 0) return viewDashboard();
+    if (h.indexOf('#/campaigns') === 0) return viewCampaigns();
     if (h.indexOf('#/settings') === 0) return viewSettings();
     if (h.indexOf('#/import') === 0) return viewImport();
     return viewFindings();
