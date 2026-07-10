@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>VM Ops Console — docs</title>
+  <style>
+    :root{
+      --bg:#f7f8fa; --panel:#fff; --ink:#141922; --soft:#5a6472; --faint:#8a94a3; --line:#e5e8ee; --accent:#4257c9;
+      --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+      --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    }
+    @media (prefers-color-scheme:dark){:root{
+      --bg:#0d1117; --panel:#161c26; --ink:#e8edf4; --soft:#9aa6b4; --faint:#6b7686; --line:#232c38; --accent:#7c8cf0;
+    }}
+    *{box-sizing:border-box;} body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans);}
+    .wrap{max-width:720px; margin:0 auto; padding:3rem 1.4rem 4rem;}
+    .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0 0 .5rem;}
+    h1{font-size:28px; font-weight:600; margin:0 0 .4rem; letter-spacing:-.01em;}
+    .lede{color:var(--soft); font-size:15.5px; margin:0 0 2rem;}
+    a.card{display:block; text-decoration:none; color:inherit; background:var(--panel); border:1px solid var(--line);
+           border-radius:14px; padding:1.1rem 1.3rem; margin-bottom:14px; transition:border-color .12s, transform .12s;}
+    a.card:hover{border-color:var(--accent); transform:translateY(-1px);}
+    a.card h2{margin:0 0 4px; font-size:17px; font-weight:600;}
+    a.card p{margin:0; color:var(--soft); font-size:13.5px;}
+    a.card .go{color:var(--accent); font-size:13px; margin-top:8px; display:inline-block;}
+    .foot{color:var(--faint); font-size:12.5px; margin-top:2rem;}
+    .foot a{color:var(--accent); text-decoration:none;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="eyebrow">VM Ops Console · docs</p>
+    <h1>Reference &amp; comparisons</h1>
+    <p class="lede">Standalone pages that sit alongside the console — positioning and tooling references.</p>
+
+    <a class="card" href="vm-ops-console-vs-decision-focus.html">
+      <h2>VM Ops Console vs Decision Focus</h2>
+      <p>Where an operational VM workbench sits relative to a GRC governance platform — layer-by-layer, feature-by-feature. (Researched 2026-07-10.)</p>
+      <span class="go">Open comparison →</span>
+    </a>
+
+    <a class="card" href="tio-client-reference.html">
+      <h2>tio_client.py — one-page reference</h2>
+      <p>Quick reference for the dependency-free Tenable.io exporter CLI: commands, flags, credentials, and the disk-safety guards.</p>
+      <span class="go">Open reference →</span>
+    </a>
+
+    <p class="foot">← <a href="../">Back to the VM Ops Console</a></p>
+  </div>
+</body>
+</html>

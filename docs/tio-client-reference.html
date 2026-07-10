@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>tio_client.py — Tenable.io exporter reference</title>
+<style>
+  :root{
+    --ground:#0c1219; --surface:#141c26; --code:#090d13; --border:#243140;
+    --text:#e8eef5; --muted:#8a99a9; --faint:#5b6b7b;
+    --accent:#37cfdd; --accent-dim:#1b8993; --amber:#e6ac52; --green:#54c08c;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  }
+  .doc{
+    max-width:800px; margin:0 auto; padding:2.4rem 1.5rem 3rem;
+    background:var(--ground); color:var(--text);
+    font-family:var(--sans); font-size:15px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .doc *{box-sizing:border-box;}
+  .eyebrow{font-family:var(--mono); font-size:11.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin:0 0 .5rem;}
+  h1{font-size:34px; font-weight:600; letter-spacing:-.01em; margin:0; font-family:var(--mono); text-wrap:balance;}
+  .lede{color:var(--muted); font-size:15.5px; margin:.55rem 0 1.1rem; max-width:60ch;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 .4rem;}
+  .chip{font-family:var(--mono); font-size:11.5px; color:var(--muted); background:var(--surface); border:1px solid var(--border); border-radius:999px; padding:4px 11px;}
+  .chip.ok{color:var(--green); border-color:color-mix(in srgb,var(--green) 40%,var(--border));}
+  hr{border:0; border-top:1px solid var(--border); margin:1.8rem 0;}
+  h2{font-size:12px; font-family:var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--faint); margin:0 0 .9rem; display:flex; align-items:center; gap:10px;}
+  h2::after{content:""; flex:1; height:1px; background:var(--border);}
+  .steps{display:flex; flex-direction:column; gap:12px; counter-reset:s; margin:0; padding:0; list-style:none;}
+  .steps li{display:grid; grid-template-columns:26px 1fr; gap:12px; align-items:start;}
+  .steps li::before{counter-increment:s; content:counter(s); font-family:var(--mono); font-size:12px; color:var(--accent); background:var(--surface); border:1px solid var(--accent-dim); border-radius:6px; width:26px; height:26px; display:flex; align-items:center; justify-content:center;}
+  .steps .what{color:var(--muted); font-size:13.5px; margin-top:3px;}
+  .cmd, pre{background:var(--code); border:1px solid var(--border); border-radius:8px; font-family:var(--mono); font-size:13px; overflow-x:auto;}
+  .cmd{padding:9px 13px; display:flex; gap:9px; align-items:baseline; color:var(--text); white-space:nowrap;}
+  .cmd .p{color:var(--accent); user-select:none;}
+  .cmd .c{color:var(--faint);}
+  pre{padding:13px 15px; margin:0; line-height:1.55; color:var(--text);}
+  .tok-k{color:var(--accent);} .tok-s{color:var(--green);} .tok-c{color:var(--faint);}
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  .tblwrap{overflow-x:auto; border:1px solid var(--border); border-radius:8px;}
+  th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--border); vertical-align:top;}
+  tr:last-child td{border-bottom:0;}
+  th{font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); font-weight:500;}
+  td code, .icode{font-family:var(--mono); font-size:12.5px; color:var(--accent); white-space:nowrap;}
+  td .d{color:var(--muted);}
+  .badge{font-family:var(--mono); font-size:10px; padding:2px 7px; border-radius:4px; letter-spacing:.04em; text-transform:uppercase; white-space:nowrap;}
+  .badge.read{color:var(--green); background:color-mix(in srgb,var(--green) 14%,transparent); border:1px solid color-mix(in srgb,var(--green) 35%,transparent);}
+  .badge.bulk{color:var(--amber); background:color-mix(in srgb,var(--amber) 14%,transparent); border:1px solid color-mix(in srgb,var(--amber) 35%,transparent);}
+  .cmdlist{display:flex; flex-direction:column; gap:10px;}
+  .cmdrow{display:grid; grid-template-columns:1fr auto; gap:8px 14px; align-items:center;}
+  .cmdrow .desc{grid-column:1 / -1; color:var(--muted); font-size:13px; margin-top:-2px;}
+  .callout{display:grid; grid-template-columns:auto 1fr; gap:13px; background:color-mix(in srgb,var(--amber) 9%,var(--surface)); border:1px solid color-mix(in srgb,var(--amber) 38%,var(--border)); border-radius:10px; padding:14px 16px;}
+  .callout .ic{font-family:var(--mono); color:var(--amber); font-weight:600; font-size:15px;}
+  .callout b{color:var(--amber); font-weight:600;}
+  .callout ul{margin:.5rem 0 0; padding-left:1.1rem; color:var(--muted); font-size:13.5px; line-height:1.7;}
+  .callout li::marker{color:var(--amber);}
+  .foot{color:var(--faint); font-size:12.5px; line-height:1.7; font-family:var(--mono);}
+  .foot .k{color:var(--muted);}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:1.6rem;}
+  @media (max-width:620px){ .grid2{grid-template-columns:1fr; gap:1.1rem;} h1{font-size:27px;} }
+</style>
+</head>
+<body>
+<div class="doc">
+  <p class="eyebrow">Tenable.io exporter · quick reference</p>
+  <h1>tio_client.py</h1>
+  <p class="lede">A dependency-free command-line exporter that pulls your data out of Tenable Vulnerability Management (<span class="icode">cloud.tenable.com</span>) — vulnerabilities, assets, compliance, and the full config inventory.</p>
+  <div class="chips">
+    <span class="chip">Python 3.8+</span>
+    <span class="chip">stdlib only · no pip</span>
+    <span class="chip">keys via macOS Keychain</span>
+    <span class="chip ok">✓ auth verified — Scan Manager, container 3726</span>
+  </div>
+
+  <hr>
+
+  <h2>Get started</h2>
+  <ol class="steps">
+    <li>
+      <div>
+        <div class="cmd"><span class="p">$</span>python3 tio_client.py store-keys</div>
+        <div class="what">Prompts for your access + secret key (hidden input) and saves them to the macOS Keychain under service <span class="icode">tenable-io</span>. Create a key pair in Tenable under <b>Settings → My Account → API Keys</b>.</div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <div class="cmd"><span class="p">$</span>python3 tio_client.py whoami</div>
+        <div class="what">Validates the keys and prints your account — username, permissions, and container id. Read-only; run this first to confirm everything works.</div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <div class="cmd"><span class="p">$</span>python3 tio_client.py export-all ./tio_data <span class="c">--compliance-since 90d</span></div>
+        <div class="what">Dumps everything to <span class="icode">./tio_data</span> as JSONL, writing a <span class="icode">_manifest.json</span>. Endpoints your key can't read (403/404) are skipped and recorded.</div>
+      </div>
+    </li>
+  </ol>
+
+  <hr>
+
+  <h2>Commands</h2>
+  <div class="cmdlist">
+    <div class="cmdrow">
+      <span class="icode">store-keys</span><span class="badge read">setup</span>
+      <span class="desc">Prompt for and save API keys to the Keychain.</span>
+    </div>
+    <div class="cmdrow">
+      <span class="icode">whoami</span><span class="badge read">read-only</span>
+      <span class="desc">Validate keys; print account info. No data downloaded.</span>
+    </div>
+    <div class="cmdrow">
+      <span class="icode">export-all <span style="color:var(--faint)">./tio_data</span></span><span class="badge bulk">bulk</span>
+      <span class="desc">Everything — vulns, assets, compliance, plugin &amp; field catalogs, and all config/inventory endpoints.</span>
+    </div>
+    <div class="cmdrow">
+      <span class="icode">vulns <span style="color:var(--faint)">./vulns.jsonl</span></span><span class="badge bulk">bulk</span>
+      <span class="desc">Just the vulnerability export, streamed to a JSONL file.</span>
+    </div>
+    <div class="cmdrow">
+      <span class="icode">assets <span style="color:var(--faint)">./assets.jsonl</span></span><span class="badge bulk">bulk</span>
+      <span class="desc">Just the asset export, streamed to JSONL.</span>
+    </div>
+    <div class="cmdrow">
+      <span class="icode">compliance <span style="color:var(--faint)">./compliance.jsonl</span></span><span class="badge bulk">bulk</span>
+      <span class="desc">Just the compliance-findings export. Pair with <span class="icode">--compliance-since</span>.</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="grid2">
+    <div>
+      <h2>Global flags</h2>
+      <div class="tblwrap">
+        <table>
+          <tr><th>Flag</th><th>Effect</th></tr>
+          <tr><td><code>--access-key</code><br><code>--secret-key</code></td><td><span class="d">Pass keys inline (overrides env / Keychain). One-offs only.</span></td></tr>
+          <tr><td><code>--base URL</code></td><td><span class="d">API host. Default <span class="icode">cloud.tenable.com</span>; FedRAMP: <span class="icode">fedcloud.tenable.com</span>.</span></td></tr>
+          <tr><td><code>--skip a,b,c</code></td><td><span class="d">(export-all) skip datasets, e.g. <span class="icode">--skip compliance,vulns</span>.</span></td></tr>
+          <tr><td><code>--compliance&#8288;-since D</code></td><td><span class="d">Limit compliance to <span class="icode">YYYY-MM-DD</span> or <span class="icode">Nd</span> (e.g. <span class="icode">90d</span>).</span></td></tr>
+        </table>
+      </div>
+    </div>
+    <div>
+      <h2>Use as a library</h2>
+<pre><span class="tok-k">from</span> tio_client <span class="tok-k">import</span> TenableIO
+
+tio = <span class="tok-k">TenableIO</span>()  <span class="tok-c"># env / Keychain</span>
+
+<span class="tok-c"># generator — memory-safe</span>
+<span class="tok-k">for</span> v <span class="tok-k">in</span> tio.export_vulns():
+    process(v)
+
+tio.export_all(<span class="tok-s">"./tio_data"</span>)</pre>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="callout">
+    <div class="ic">!</div>
+    <div>
+      <b>Exports are large — mind the disk.</b> A full pull can reach tens of GB. Built-in guards:
+      <ul>
+        <li><span class="icode">export-all</span> aborts if free disk drops below <b>2&nbsp;GB</b>.</li>
+        <li><span class="icode">--compliance-since 90d</span> avoids the huge full audit history.</li>
+        <li><span class="icode">--skip</span> drops the datasets you don't need this run.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <p class="foot">
+    <span class="k">Credential resolution:</span> CLI flag → environment (<span class="icode">TIO_ACCESS_KEY</span>, <span class="icode">TIO_SECRET_KEY</span>) → macOS Keychain (service <span class="icode">tenable-io</span>).<br>
+    <span class="k">Scope depends on the key's role</span> — a Scan Manager key reads most datasets; admin-only endpoints (reports, audit log, roles) need an Administrator key.<br>
+    <span class="k">Security:</span> flag values show up in <span class="icode">ps</span> and shell history — prefer the Keychain or env for anything long-lived. Keys are only ever sent to <span class="icode">cloud.tenable.com</span> over TLS.
+  </p>
+</div>
+</body>
+</html>
