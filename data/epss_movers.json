@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-10",
+  "updated": "2026-07-11",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-10",
-  "previous_date": "2026-07-03",
+  "current_date": "2026-07-11",
+  "previous_date": "2026-07-04",
   "risers": [
     {
       "id": "CVE-2026-48282",
@@ -19,25 +19,11 @@
       "name": "Nagios XI version xi-5.7.5 is affected by OS command injection. The vulnerability exists in the file /usr/loca"
     },
     {
-      "id": "CVE-2023-5217",
-      "now": 0.49013,
-      "prev": 0.34401,
-      "delta": 0.14612,
-      "name": "Google Chrome"
-    },
-    {
       "id": "CVE-2022-20828",
       "now": 0.4831,
       "prev": 0.39862,
       "delta": 0.08448,
       "name": "Cisco FirePOWER Software for ASA FirePOWER Module Command Injection Vulnerability"
-    },
-    {
-      "id": "CVE-2022-25046",
-      "now": 0.53515,
-      "prev": 0.45314,
-      "delta": 0.08201,
-      "name": "A path traversal vulnerability in loader.php of CWP v0.9.8.1122 allows attackers to execute arbitrary code via"
     },
     {
       "id": "CVE-2009-2629",
@@ -68,13 +54,6 @@
       "name": "Cisco Cisco Adaptive Security Appliance (ASA) Software"
     },
     {
-      "id": "CVE-2022-31854",
-      "now": 0.32233,
-      "prev": 0.24939,
-      "delta": 0.07294,
-      "name": "Codoforum v5.1 was discovered to contain an arbitrary file upload vulnerability via the logo change option in "
-    },
-    {
       "id": "CVE-2025-2945",
       "now": 0.46222,
       "prev": 0.39067,
@@ -96,6 +75,20 @@
       "name": "ColdFusion | Deserialization of Untrusted Data (CWE-502)"
     },
     {
+      "id": "CVE-2022-32213",
+      "now": 0.41954,
+      "prev": 0.35079,
+      "delta": 0.06875,
+      "name": "NodeJS Node"
+    },
+    {
+      "id": "CVE-2011-4362",
+      "now": 0.23076,
+      "prev": 0.16246,
+      "delta": 0.0683,
+      "name": "Integer signedness error in the base64_decode function in the HTTP authentication functionality (http_auth.c) "
+    },
+    {
       "id": "CVE-2018-5767",
       "now": 0.48013,
       "prev": 0.41403,
@@ -110,13 +103,6 @@
       "name": "Multiple PHP remote file inclusion vulnerabilities in Wim Fleischhauer docpile: wim's edition (docpile:we) 0.2"
     },
     {
-      "id": "CVE-2024-36465",
-      "now": 0.2926,
-      "prev": 0.23028,
-      "delta": 0.06232,
-      "name": "SQL injection in Zabbix API"
-    },
-    {
       "id": "CVE-2006-4052",
       "now": 0.16119,
       "prev": 0.09979,
@@ -124,11 +110,11 @@
       "name": "Multiple PHP remote file inclusion vulnerabilities in Turnkey Web Tools PHP Simple Shop 2.0 and earlier allow "
     },
     {
-      "id": "CVE-2023-36824",
-      "now": 0.80919,
-      "prev": 0.74822,
-      "delta": 0.06097,
-      "name": "Heap overflow in COMMAND GETKEYS and ACL evaluation in Redis"
+      "id": "CVE-2012-5321",
+      "now": 0.1375,
+      "prev": 0.07679,
+      "delta": 0.06071,
+      "name": "tiki-featured_link.php in TikiWiki CMS/Groupware 8.3 allows remote attackers to load arbitrary web site pages "
     },
     {
       "id": "CVE-2022-1952",
@@ -201,6 +187,13 @@
       "name": "REC in MCPJam inspector due to HTTP Endpoint exposes"
     },
     {
+      "id": "CVE-2025-49113",
+      "now": 0.94741,
+      "prev": 0.89462,
+      "delta": 0.05279,
+      "name": "Roundcube Webmail"
+    },
+    {
       "id": "CVE-2025-30401",
       "now": 0.21096,
       "prev": 0.15844,
@@ -208,11 +201,18 @@
       "name": "Facebook WhatsApp Desktop for Windows"
     },
     {
-      "id": "CVE-2012-5321",
-      "now": 0.1291,
-      "prev": 0.07679,
-      "delta": 0.05231,
-      "name": "tiki-featured_link.php in TikiWiki CMS/Groupware 8.3 allows remote attackers to load arbitrary web site pages "
+      "id": "CVE-2023-2796",
+      "now": 0.42674,
+      "prev": 0.37468,
+      "delta": 0.05206,
+      "name": "EventON < 2.1.2 - Unauthenticated Event Access"
+    },
+    {
+      "id": "CVE-2008-4559",
+      "now": 0.21478,
+      "prev": 0.16387,
+      "delta": 0.05091,
+      "name": "HP OpenView Network Node Manager (OV NNM) 7.01, 7.51, and 7.53 allows remote attackers to execute arbitrary co"
     }
   ],
   "newly_high": [
@@ -222,13 +222,6 @@
       "prev": 0.42935,
       "delta": 0.15807,
       "name": "Nagios XI version xi-5.7.5 is affected by OS command injection. The vulnerability exists in the file /usr/loca"
-    },
-    {
-      "id": "CVE-2022-25046",
-      "now": 0.53515,
-      "prev": 0.45314,
-      "delta": 0.08201,
-      "name": "A path traversal vulnerability in loader.php of CWP v0.9.8.1122 allows attackers to execute arbitrary code via"
     },
     {
       "id": "CVE-2024-41163",
@@ -243,6 +236,13 @@
       "prev": 0.46334,
       "delta": 0.04719,
       "name": "Multiple buffer overflows in Novell iPrint Client before 5.06 allow remote attackers to execute arbitrary code"
+    },
+    {
+      "id": "CVE-2025-32375",
+      "now": 0.50446,
+      "prev": 0.45773,
+      "delta": 0.04673,
+      "name": "Insecure Deserialization leads to RCE in BentoML's runner server"
     },
     {
       "id": "CVE-2023-35924",
