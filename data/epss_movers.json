@@ -1,9 +1,16 @@
 {
-  "updated": "2026-07-11",
+  "updated": "2026-07-12",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-11",
-  "previous_date": "2026-07-04",
+  "current_date": "2026-07-12",
+  "previous_date": "2026-07-05",
   "risers": [
+    {
+      "id": "CVE-2026-5027",
+      "now": 0.31405,
+      "prev": 0.02104,
+      "delta": 0.29301,
+      "name": "Langflow - Path Traversal Arbitrary File Write via upload_user_file"
+    },
     {
       "id": "CVE-2026-48282",
       "now": 0.28583,
@@ -13,10 +20,17 @@
     },
     {
       "id": "CVE-2021-25297",
-      "now": 0.58742,
+      "now": 0.56384,
       "prev": 0.42935,
-      "delta": 0.15807,
+      "delta": 0.13449,
       "name": "Nagios XI version xi-5.7.5 is affected by OS command injection. The vulnerability exists in the file /usr/loca"
+    },
+    {
+      "id": "CVE-2023-36874",
+      "now": 0.43058,
+      "prev": 0.32309,
+      "delta": 0.10749,
+      "name": "Windows Error Reporting Service Elevation of Privilege Vulnerability"
     },
     {
       "id": "CVE-2022-20828",
@@ -33,13 +47,6 @@
       "name": "Buffer underflow in src/http/ngx_http_parse.c in nginx 0.1.0 through 0.5.37, 0.6.x before 0.6.39, 0.7.x before"
     },
     {
-      "id": "CVE-2025-57201",
-      "now": 0.15359,
-      "prev": 0.07259,
-      "delta": 0.081,
-      "name": "AVTECH SECURITY Corporation DGM1104 FullImg-1015-1004-1006-1003 was discovered to contain an authenticated com"
-    },
-    {
       "id": "CVE-2006-5205",
       "now": 0.10676,
       "prev": 0.02731,
@@ -52,13 +59,6 @@
       "prev": 0.63272,
       "delta": 0.07414,
       "name": "Cisco Cisco Adaptive Security Appliance (ASA) Software"
-    },
-    {
-      "id": "CVE-2025-2945",
-      "now": 0.46222,
-      "prev": 0.39067,
-      "delta": 0.07155,
-      "name": "pgAdmin 4: Remote Code Execution in Query Tool and Cloud Deployment"
     },
     {
       "id": "CVE-2014-8387",
@@ -101,6 +101,13 @@
       "prev": 0.1047,
       "delta": 0.06421,
       "name": "Multiple PHP remote file inclusion vulnerabilities in Wim Fleischhauer docpile: wim's edition (docpile:we) 0.2"
+    },
+    {
+      "id": "CVE-2022-31161",
+      "now": 0.26819,
+      "prev": 0.20446,
+      "delta": 0.06373,
+      "name": "Roxy-WI Vulnerable to Unauthenticated Remote Code Execution via ssl_cert Upload"
     },
     {
       "id": "CVE-2006-4052",
@@ -206,21 +213,14 @@
       "prev": 0.37468,
       "delta": 0.05206,
       "name": "EventON < 2.1.2 - Unauthenticated Event Access"
-    },
-    {
-      "id": "CVE-2008-4559",
-      "now": 0.21478,
-      "prev": 0.16387,
-      "delta": 0.05091,
-      "name": "HP OpenView Network Node Manager (OV NNM) 7.01, 7.51, and 7.53 allows remote attackers to execute arbitrary co"
     }
   ],
   "newly_high": [
     {
       "id": "CVE-2021-25297",
-      "now": 0.58742,
+      "now": 0.56384,
       "prev": 0.42935,
-      "delta": 0.15807,
+      "delta": 0.13449,
       "name": "Nagios XI version xi-5.7.5 is affected by OS command injection. The vulnerability exists in the file /usr/loca"
     },
     {
@@ -229,13 +229,6 @@
       "prev": 0.47107,
       "delta": 0.05383,
       "name": "Veertu Anka Build"
-    },
-    {
-      "id": "CVE-2008-2431",
-      "now": 0.51053,
-      "prev": 0.46334,
-      "delta": 0.04719,
-      "name": "Multiple buffer overflows in Novell iPrint Client before 5.06 allow remote attackers to execute arbitrary code"
     },
     {
       "id": "CVE-2025-32375",
@@ -252,11 +245,11 @@
       "name": "GLPI vulnerable to SQL injection via inventory agent request"
     },
     {
-      "id": "CVE-2020-35131",
-      "now": 0.51299,
-      "prev": 0.49938,
-      "delta": 0.01361,
-      "name": "Cockpit before 0.6.1 allows an attacker to inject custom PHP code and achieve Remote Command Execution via reg"
+      "id": "CVE-2025-44148",
+      "now": 0.50752,
+      "prev": 0.49703,
+      "delta": 0.01049,
+      "name": "Cross Site Scripting (XSS) vulnerability in MailEnable before v10 allows a remote attacker to execute arbitrar"
     }
   ]
 }

@@ -1,10 +1,270 @@
 {
-  "updated": "2026-07-11",
+  "updated": "2026-07-12",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
+    {
+      "id": null,
+      "title": "SCA: security update for daphne (GHSA-xh68-hfp5-5x5m)",
+      "severity": "Medium",
+      "date": "Sun, 12 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444653",
+      "cves": [
+        "CVE-2026-44546"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for daphne (GHSA-xh68-hfp5-5x5m)",
+      "severity": "Medium",
+      "date": "Sun, 12 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444653",
+      "cves": [
+        "CVE-2026-44546"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for daphne (GHSA-rrc9-mx66-ffcm)",
+      "severity": "High",
+      "date": "Sun, 12 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444652",
+      "cves": [
+        "CVE-2026-44545"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for daphne (GHSA-rrc9-mx66-ffcm)",
+      "severity": "High",
+      "date": "Sun, 12 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444652",
+      "cves": [
+        "CVE-2026-44545"
+      ]
+    },
+    {
+      "id": "326386",
+      "title": "Debian dsa-6387 : chromium - security update",
+      "severity": "Critical",
+      "date": "Sun, 12 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326386",
+      "cves": [
+        "CVE-2026-15107",
+        "CVE-2026-15108",
+        "CVE-2026-15109",
+        "CVE-2026-15110",
+        "CVE-2026-15111",
+        "CVE-2026-15112",
+        "CVE-2026-15113",
+        "CVE-2026-15114",
+        "CVE-2026-15115",
+        "CVE-2026-15116",
+        "CVE-2026-15117",
+        "CVE-2026-15118",
+        "CVE-2026-15119",
+        "CVE-2026-15120",
+        "CVE-2026-15121",
+        "CVE-2026-15122",
+        "CVE-2026-15123",
+        "CVE-2026-15124",
+        "CVE-2026-15125",
+        "CVE-2026-15126",
+        "CVE-2026-15127",
+        "CVE-2026-15128",
+        "CVE-2026-15129",
+        "CVE-2026-15130",
+        "CVE-2026-15131",
+        "CVE-2026-15132",
+        "CVE-2026-15133"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple incus packages: security update to 7.0.1-r0",
+      "severity": "High",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/444651",
+      "cves": [
+        "CVE-2026-47753",
+        "CVE-2026-48749",
+        "CVE-2026-48750",
+        "CVE-2026-48751",
+        "CVE-2026-48752",
+        "CVE-2026-48753",
+        "CVE-2026-48754",
+        "CVE-2026-48755",
+        "CVE-2026-48756",
+        "CVE-2026-48769",
+        "CVE-2026-55621",
+        "CVE-2026-55622"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple incus packages: security update to 7.0.1-r0",
+      "severity": "High",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/444651",
+      "cves": [
+        "CVE-2026-47753",
+        "CVE-2026-48749",
+        "CVE-2026-48750",
+        "CVE-2026-48751",
+        "CVE-2026-48752",
+        "CVE-2026-48753",
+        "CVE-2026-48754",
+        "CVE-2026-48755",
+        "CVE-2026-48756",
+        "CVE-2026-48769",
+        "CVE-2026-55621",
+        "CVE-2026-55622"
+      ]
+    },
+    {
+      "id": "326385",
+      "title": "Debian dla-4676 : wireless-regdb - security update",
+      "severity": "High",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326385",
+      "cves": []
+    },
+    {
+      "id": "326384",
+      "title": "RockyLinux 10 : kernel (RLSA-2026:36956)",
+      "severity": "High",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326384",
+      "cves": [
+        "CVE-2025-71066",
+        "CVE-2026-46113",
+        "CVE-2026-46227",
+        "CVE-2026-53359"
+      ]
+    },
+    {
+      "id": "326383",
+      "title": "RockyLinux 9 : kernel (RLSA-2026:36018)",
+      "severity": "High",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326383",
+      "cves": [
+        "CVE-2025-10263",
+        "CVE-2026-43112",
+        "CVE-2026-43276",
+        "CVE-2026-46116",
+        "CVE-2026-46155",
+        "CVE-2026-46209",
+        "CVE-2026-46227",
+        "CVE-2026-46244",
+        "CVE-2026-46259",
+        "CVE-2026-46316",
+        "CVE-2026-46323"
+      ]
+    },
+    {
+      "id": "326382",
+      "title": "Oracle Linux 9 : nodejs:24 (ELSA-2026-35891)",
+      "severity": "Medium",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326382",
+      "cves": []
+    },
+    {
+      "id": "326381",
+      "title": "Oracle Linux 9 : golang (ELSA-2026-37435)",
+      "severity": "High",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326381",
+      "cves": []
+    },
+    {
+      "id": "326380",
+      "title": "Photon OS 3.0: Krb5 PHSA-2023-3.0-0624",
+      "severity": "Medium",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326380",
+      "cves": []
+    },
+    {
+      "id": "326379",
+      "title": "Photon OS 3.0: Nss PHSA-2024-3.0-0739",
+      "severity": "Medium",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326379",
+      "cves": []
+    },
+    {
+      "id": "326378",
+      "title": "Photon OS 3.0: Wget PHSA-2022-3.0-0505",
+      "severity": "Medium",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326378",
+      "cves": []
+    },
+    {
+      "id": "326377",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-52761",
+      "severity": "Medium",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326377",
+      "cves": [
+        "CVE-2026-52761"
+      ]
+    },
+    {
+      "id": "326376",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-52747",
+      "severity": "High",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326376",
+      "cves": [
+        "CVE-2026-52747"
+      ]
+    },
+    {
+      "id": "326375",
+      "title": "RockyLinux 8 : kernel-rt (RLSA-2026:36365)",
+      "severity": "High",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326375",
+      "cves": [
+        "CVE-2026-43112"
+      ]
+    },
+    {
+      "id": "326374",
+      "title": "RockyLinux 8 : kernel (RLSA-2026:36366)",
+      "severity": "High",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326374",
+      "cves": [
+        "CVE-2026-43112"
+      ]
+    },
+    {
+      "id": "326373",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-53363",
+      "severity": "Critical",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326373",
+      "cves": [
+        "CVE-2026-46300",
+        "CVE-2026-53363"
+      ]
+    },
+    {
+      "id": "326372",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-15276",
+      "severity": "Medium",
+      "date": "Sat, 11 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/326372",
+      "cves": [
+        "CVE-2026-15276"
+      ]
+    },
     {
       "id": "326371",
       "title": "Fedora 43 : composer (2026-3017b1bec1)",
@@ -390,297 +650,6 @@
         "CVE-2026-46331",
         "CVE-2026-46333",
         "CVE-2026-52943"
-      ]
-    },
-    {
-      "id": "326352",
-      "title": "Oracle Linux 8 / 9 : Unbreakable Enterprise kernel (ELSA-2026-50387)",
-      "severity": "High",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326352",
-      "cves": [
-        "CVE-2022-50073",
-        "CVE-2025-10263",
-        "CVE-2025-38085",
-        "CVE-2025-54518",
-        "CVE-2026-23270",
-        "CVE-2026-31402",
-        "CVE-2026-31657",
-        "CVE-2026-43284",
-        "CVE-2026-43499",
-        "CVE-2026-46300",
-        "CVE-2026-46331",
-        "CVE-2026-46333",
-        "CVE-2026-52943"
-      ]
-    },
-    {
-      "id": "326351",
-      "title": "Oracle Linux 8 : grafana (ELSA-2026-35830)",
-      "severity": "High",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326351",
-      "cves": [
-        "CVE-2024-1442"
-      ]
-    },
-    {
-      "id": "326350",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-59180",
-      "severity": "Low",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326350",
-      "cves": [
-        "CVE-2026-59180"
-      ]
-    },
-    {
-      "id": "326349",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-38076",
-      "severity": "High",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326349",
-      "cves": [
-        "CVE-2026-38076"
-      ]
-    },
-    {
-      "id": "326348",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-56366",
-      "severity": "High",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326348",
-      "cves": [
-        "CVE-2026-56366"
-      ]
-    },
-    {
-      "id": "326347",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-56373",
-      "severity": "Medium",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326347",
-      "cves": [
-        "CVE-2026-56373"
-      ]
-    },
-    {
-      "id": "326346",
-      "title": "Slackware Linux 15.0 / current p11-kit  Vulnerability (SSA:2026-191-01)",
-      "severity": "Medium",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326346",
-      "cves": []
-    },
-    {
-      "id": "326345",
-      "title": "Debian dsa-6386 : opam - security update",
-      "severity": "Critical",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326345",
-      "cves": [
-        "CVE-2026-57825"
-      ]
-    },
-    {
-      "id": "326344",
-      "title": "Amazon Linux 2 : kernel, --advisory ALAS2-2026-3801 (ALAS-2026-3801)",
-      "severity": "High",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326344",
-      "cves": [
-        "CVE-2026-43499"
-      ]
-    },
-    {
-      "id": "326343",
-      "title": "Amazon Linux 2 : kernel, --advisory ALAS2KERNEL-5.10-2026-125 (ALASKERNEL-5.10-2026-125)",
-      "severity": "High",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326343",
-      "cves": [
-        "CVE-2026-43499"
-      ]
-    },
-    {
-      "id": "326342",
-      "title": "Amazon Linux 2 : kernel, --advisory ALAS2KERNEL-5.15-2026-109 (ALASKERNEL-5.15-2026-109)",
-      "severity": "High",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326342",
-      "cves": [
-        "CVE-2026-43499"
-      ]
-    },
-    {
-      "id": "326341",
-      "title": "Amazon Linux 2 : virtuoso-opensource, --advisory ALAS2-2026-3799 (ALAS-2026-3799)",
-      "severity": "High",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326341",
-      "cves": [
-        "CVE-2024-57635",
-        "CVE-2024-57636",
-        "CVE-2024-57637",
-        "CVE-2024-57638",
-        "CVE-2024-57639",
-        "CVE-2024-57640",
-        "CVE-2024-57641",
-        "CVE-2024-57642",
-        "CVE-2024-57643",
-        "CVE-2024-57644",
-        "CVE-2024-57645",
-        "CVE-2024-57646",
-        "CVE-2024-57647",
-        "CVE-2024-57648",
-        "CVE-2024-57649",
-        "CVE-2024-57650",
-        "CVE-2024-57651",
-        "CVE-2024-57652",
-        "CVE-2024-57653",
-        "CVE-2024-57654",
-        "CVE-2024-57655",
-        "CVE-2024-57656",
-        "CVE-2024-57657",
-        "CVE-2024-57658",
-        "CVE-2024-57659",
-        "CVE-2024-57660",
-        "CVE-2024-57661",
-        "CVE-2024-57662",
-        "CVE-2024-57663",
-        "CVE-2024-57664",
-        "CVE-2025-61018",
-        "CVE-2025-61019",
-        "CVE-2025-61020",
-        "CVE-2025-61021",
-        "CVE-2025-61022",
-        "CVE-2025-61023",
-        "CVE-2025-61024",
-        "CVE-2025-61025",
-        "CVE-2025-61027",
-        "CVE-2025-61028",
-        "CVE-2025-61029"
-      ]
-    },
-    {
-      "id": "326340",
-      "title": "Amazon Linux 2 : kernel, --advisory ALAS2KERNEL-5.4-2026-126 (ALASKERNEL-5.4-2026-126)",
-      "severity": "High",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326340",
-      "cves": [
-        "CVE-2026-43499"
-      ]
-    },
-    {
-      "id": "326339",
-      "title": "RHEL 9 : kernel (RHSA-2026:37729)",
-      "severity": "High",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326339",
-      "cves": [
-        "CVE-2026-43074",
-        "CVE-2026-46242",
-        "CVE-2026-53359"
-      ]
-    },
-    {
-      "id": "326338",
-      "title": "RHEL 10 : kernel (RHSA-2026:37728)",
-      "severity": "High",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326338",
-      "cves": [
-        "CVE-2026-43499",
-        "CVE-2026-53166"
-      ]
-    },
-    {
-      "id": "326337",
-      "title": "RHEL 10 : golang (RHSA-2026:37436)",
-      "severity": "High",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326337",
-      "cves": [
-        "CVE-2026-39821",
-        "CVE-2026-39822"
-      ]
-    },
-    {
-      "id": "326336",
-      "title": "RHEL 9 : golang (RHSA-2026:37435)",
-      "severity": "High",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326336",
-      "cves": [
-        "CVE-2026-39821",
-        "CVE-2026-39822"
-      ]
-    },
-    {
-      "id": "326335",
-      "title": "SUSE SLED15 / SLES15 Security Update : cosign (SUSE-SU-2026:2827-1)",
-      "severity": "Critical",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326335",
-      "cves": [
-        "CVE-2026-25680",
-        "CVE-2026-25681",
-        "CVE-2026-27136",
-        "CVE-2026-33815",
-        "CVE-2026-39827",
-        "CVE-2026-39828",
-        "CVE-2026-39829",
-        "CVE-2026-39830",
-        "CVE-2026-39831",
-        "CVE-2026-39832",
-        "CVE-2026-39834",
-        "CVE-2026-39835",
-        "CVE-2026-42502",
-        "CVE-2026-42506",
-        "CVE-2026-42508",
-        "CVE-2026-46595",
-        "CVE-2026-46597",
-        "CVE-2026-46598"
-      ]
-    },
-    {
-      "id": "326334",
-      "title": "SUSE SLES15 Security Update : python-sqlparse (SUSE-SU-2026:2821-1)",
-      "severity": "Medium",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326334",
-      "cves": []
-    },
-    {
-      "id": "326333",
-      "title": "SUSE SLES15 Security Update : rustup (SUSE-SU-2026:2831-1)",
-      "severity": "Critical",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326333",
-      "cves": [
-        "CVE-2024-12224",
-        "CVE-2025-58160",
-        "CVE-2026-25727",
-        "CVE-2026-41676",
-        "CVE-2026-41677",
-        "CVE-2026-41678",
-        "CVE-2026-41681",
-        "CVE-2026-41898",
-        "CVE-2026-42327",
-        "CVE-2026-44662",
-        "CVE-2026-45784"
-      ]
-    },
-    {
-      "id": "326332",
-      "title": "SUSE SLES15: helm / helm-bash-completion / helm-fish-completion / etc (SUSE-SU-2026:2823-1)",
-      "severity": "Low",
-      "date": "Fri, 10 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/326332",
-      "cves": [
-        "CVE-2026-39821",
-        "CVE-2026-48978"
       ]
     }
   ]
