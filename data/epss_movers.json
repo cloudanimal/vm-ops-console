@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-12",
+  "updated": "2026-07-13",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-12",
-  "previous_date": "2026-07-05",
+  "current_date": "2026-07-13",
+  "previous_date": "2026-07-06",
   "risers": [
     {
       "id": "CVE-2026-5027",
@@ -26,6 +26,13 @@
       "name": "Nagios XI version xi-5.7.5 is affected by OS command injection. The vulnerability exists in the file /usr/loca"
     },
     {
+      "id": "CVE-2026-3854",
+      "now": 0.35858,
+      "prev": 0.24462,
+      "delta": 0.11396,
+      "name": "Remote code execution via git push option injection in GitHub Enterprise Server"
+    },
+    {
       "id": "CVE-2023-36874",
       "now": 0.43058,
       "prev": 0.32309,
@@ -38,6 +45,13 @@
       "prev": 0.39862,
       "delta": 0.08448,
       "name": "Cisco FirePOWER Software for ASA FirePOWER Module Command Injection Vulnerability"
+    },
+    {
+      "id": "CVE-2023-37629",
+      "now": 0.23311,
+      "prev": 0.15033,
+      "delta": 0.08278,
+      "name": "Online Piggery Management System 1.0 is vulnerable to File Upload. An unauthenticated user can upload a php fi"
     },
     {
       "id": "CVE-2009-2629",
@@ -87,6 +101,13 @@
       "prev": 0.16246,
       "delta": 0.0683,
       "name": "Integer signedness error in the base64_decode function in the HTTP authentication functionality (http_auth.c) "
+    },
+    {
+      "id": "CVE-2026-26190",
+      "now": 0.34346,
+      "prev": 0.27661,
+      "delta": 0.06685,
+      "name": "Milvus Allows Unauthenticated Access to Restful API on Metrics Port (9091) Leads to Critic"
     },
     {
       "id": "CVE-2018-5767",
@@ -145,13 +166,6 @@
       "name": "Multiple PHP remote file inclusion vulnerabilities in USOLVED NEWSolved Lite 1.9.2, and possibly earlier, allo"
     },
     {
-      "id": "CVE-2025-47916",
-      "now": 0.84803,
-      "prev": 0.79174,
-      "delta": 0.05629,
-      "name": "invisioncommunity Invision Power Board"
-    },
-    {
       "id": "CVE-2025-29793",
       "now": 0.21618,
       "prev": 0.16014,
@@ -171,20 +185,6 @@
       "prev": 0.47107,
       "delta": 0.05383,
       "name": "Veertu Anka Build"
-    },
-    {
-      "id": "CVE-2023-34260",
-      "now": 0.73354,
-      "prev": 0.67994,
-      "delta": 0.0536,
-      "name": "Kyocera TASKalfa 4053ci printers through 2VG_S000.002.561 allow a denial of service (service outage) via /wlmd"
-    },
-    {
-      "id": "CVE-2003-0129",
-      "now": 0.11614,
-      "prev": 0.06292,
-      "delta": 0.05322,
-      "name": "Ximian Evolution Mail User Agent 1.2.2 and earlier allows remote attackers to cause a denial of service (memor"
     },
     {
       "id": "CVE-2026-23744",
@@ -236,13 +236,6 @@
       "prev": 0.45773,
       "delta": 0.04673,
       "name": "Insecure Deserialization leads to RCE in BentoML's runner server"
-    },
-    {
-      "id": "CVE-2023-35924",
-      "now": 0.52381,
-      "prev": 0.49425,
-      "delta": 0.02956,
-      "name": "GLPI vulnerable to SQL injection via inventory agent request"
     },
     {
       "id": "CVE-2025-44148",
