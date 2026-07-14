@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-13",
+  "updated": "2026-07-14",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-13",
-  "previous_date": "2026-07-06",
+  "current_date": "2026-07-14",
+  "previous_date": "2026-07-07",
   "risers": [
     {
       "id": "CVE-2026-5027",
@@ -19,11 +19,18 @@
       "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
     },
     {
-      "id": "CVE-2021-25297",
-      "now": 0.56384,
-      "prev": 0.42935,
-      "delta": 0.13449,
-      "name": "Nagios XI version xi-5.7.5 is affected by OS command injection. The vulnerability exists in the file /usr/loca"
+      "id": "CVE-2026-8037",
+      "now": 0.4343,
+      "prev": 0.29641,
+      "delta": 0.13789,
+      "name": "OS Command Injection Remote Code Execution Vulnerability in Progress LoadMaster, ECS Conne"
+    },
+    {
+      "id": "CVE-2008-4128",
+      "now": 0.23857,
+      "prev": 0.12036,
+      "delta": 0.11821,
+      "name": "Multiple cross-site request forgery (CSRF) vulnerabilities in the HTTP Administration component in Cisco IOS 1"
     },
     {
       "id": "CVE-2026-3854",
@@ -34,17 +41,17 @@
     },
     {
       "id": "CVE-2023-36874",
-      "now": 0.43058,
+      "now": 0.42602,
       "prev": 0.32309,
-      "delta": 0.10749,
+      "delta": 0.10293,
       "name": "Windows Error Reporting Service Elevation of Privilege Vulnerability"
     },
     {
-      "id": "CVE-2022-20828",
-      "now": 0.4831,
-      "prev": 0.39862,
-      "delta": 0.08448,
-      "name": "Cisco FirePOWER Software for ASA FirePOWER Module Command Injection Vulnerability"
+      "id": "CVE-2009-0517",
+      "now": 0.55019,
+      "prev": 0.45267,
+      "delta": 0.09752,
+      "name": "Eval injection vulnerability in index.php in phpSlash 0.8.1.1 and earlier allows remote attackers to execute a"
     },
     {
       "id": "CVE-2023-37629",
@@ -52,27 +59,6 @@
       "prev": 0.15033,
       "delta": 0.08278,
       "name": "Online Piggery Management System 1.0 is vulnerable to File Upload. An unauthenticated user can upload a php fi"
-    },
-    {
-      "id": "CVE-2009-2629",
-      "now": 0.75079,
-      "prev": 0.669,
-      "delta": 0.08179,
-      "name": "Buffer underflow in src/http/ngx_http_parse.c in nginx 0.1.0 through 0.5.37, 0.6.x before 0.6.39, 0.7.x before"
-    },
-    {
-      "id": "CVE-2006-5205",
-      "now": 0.10676,
-      "prev": 0.02731,
-      "delta": 0.07945,
-      "name": "Directory traversal vulnerability in Invision Gallery 2.0.7 allows remote attackers to read arbitrary files vi"
-    },
-    {
-      "id": "CVE-2024-20353",
-      "now": 0.70686,
-      "prev": 0.63272,
-      "delta": 0.07414,
-      "name": "Cisco Cisco Adaptive Security Appliance (ASA) Software"
     },
     {
       "id": "CVE-2014-8387",
@@ -145,6 +131,13 @@
       "name": "tiki-featured_link.php in TikiWiki CMS/Groupware 8.3 allows remote attackers to load arbitrary web site pages "
     },
     {
+      "id": "CVE-2025-3833",
+      "now": 0.33693,
+      "prev": 0.27766,
+      "delta": 0.05927,
+      "name": "SQL Injection"
+    },
+    {
       "id": "CVE-2022-1952",
       "now": 0.23487,
       "prev": 0.17572,
@@ -164,6 +157,13 @@
       "prev": 0.0943,
       "delta": 0.05823,
       "name": "Multiple PHP remote file inclusion vulnerabilities in USOLVED NEWSolved Lite 1.9.2, and possibly earlier, allo"
+    },
+    {
+      "id": "CVE-2006-4159",
+      "now": 0.14701,
+      "prev": 0.09081,
+      "delta": 0.0562,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in Chaussette 080706 and earlier allow remote attackers to "
     },
     {
       "id": "CVE-2025-29793",
@@ -201,27 +201,27 @@
       "name": "Roundcube Webmail"
     },
     {
-      "id": "CVE-2025-30401",
-      "now": 0.21096,
-      "prev": 0.15844,
-      "delta": 0.05252,
-      "name": "Facebook WhatsApp Desktop for Windows"
-    },
-    {
       "id": "CVE-2023-2796",
       "now": 0.42674,
       "prev": 0.37468,
       "delta": 0.05206,
       "name": "EventON < 2.1.2 - Unauthenticated Event Access"
+    },
+    {
+      "id": "CVE-2008-4559",
+      "now": 0.21478,
+      "prev": 0.16387,
+      "delta": 0.05091,
+      "name": "HP OpenView Network Node Manager (OV NNM) 7.01, 7.51, and 7.53 allows remote attackers to execute arbitrary co"
     }
   ],
   "newly_high": [
     {
-      "id": "CVE-2021-25297",
-      "now": 0.56384,
-      "prev": 0.42935,
-      "delta": 0.13449,
-      "name": "Nagios XI version xi-5.7.5 is affected by OS command injection. The vulnerability exists in the file /usr/loca"
+      "id": "CVE-2009-0517",
+      "now": 0.55019,
+      "prev": 0.45267,
+      "delta": 0.09752,
+      "name": "Eval injection vulnerability in index.php in phpSlash 0.8.1.1 and earlier allows remote attackers to execute a"
     },
     {
       "id": "CVE-2024-41163",
