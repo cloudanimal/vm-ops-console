@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-14",
+  "updated": "2026-07-15",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-14",
-  "previous_date": "2026-07-07",
+  "current_date": "2026-07-15",
+  "previous_date": "2026-07-08",
   "risers": [
     {
       "id": "CVE-2026-5027",
@@ -14,8 +14,8 @@
     {
       "id": "CVE-2026-48282",
       "now": 0.28583,
-      "prev": 0.01021,
-      "delta": 0.27562,
+      "prev": 0.03199,
+      "delta": 0.25384,
       "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
     },
     {
@@ -117,18 +117,11 @@
       "name": "Roxy-WI Vulnerable to Unauthenticated Remote Code Execution via ssl_cert Upload"
     },
     {
-      "id": "CVE-2006-4052",
-      "now": 0.16119,
-      "prev": 0.09979,
-      "delta": 0.0614,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in Turnkey Web Tools PHP Simple Shop 2.0 and earlier allow "
-    },
-    {
-      "id": "CVE-2012-5321",
-      "now": 0.1375,
-      "prev": 0.07679,
-      "delta": 0.06071,
-      "name": "tiki-featured_link.php in TikiWiki CMS/Groupware 8.3 allows remote attackers to load arbitrary web site pages "
+      "id": "CVE-2002-0061",
+      "now": 0.56701,
+      "prev": 0.50371,
+      "delta": 0.0633,
+      "name": "Apache for Win32 before 1.3.24, and 2.0.x before 2.0.34-beta, allows remote attackers to execute arbitrary com"
     },
     {
       "id": "CVE-2025-3833",
@@ -138,13 +131,6 @@
       "name": "SQL Injection"
     },
     {
-      "id": "CVE-2022-1952",
-      "now": 0.23487,
-      "prev": 0.17572,
-      "delta": 0.05915,
-      "name": "eaSYNC < 1.1.16 - Unauthenticated Arbitrary File Upload"
-    },
-    {
       "id": "CVE-2026-34486",
       "now": 0.21691,
       "prev": 0.15831,
@@ -152,18 +138,18 @@
       "name": "Apache Tomcat: Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor"
     },
     {
-      "id": "CVE-2006-4059",
-      "now": 0.15253,
-      "prev": 0.0943,
-      "delta": 0.05823,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in USOLVED NEWSolved Lite 1.9.2, and possibly earlier, allo"
-    },
-    {
       "id": "CVE-2006-4159",
       "now": 0.14701,
       "prev": 0.09081,
       "delta": 0.0562,
       "name": "Multiple PHP remote file inclusion vulnerabilities in Chaussette 080706 and earlier allow remote attackers to "
+    },
+    {
+      "id": "CVE-2024-43572",
+      "now": 0.66571,
+      "prev": 0.60954,
+      "delta": 0.05617,
+      "name": "Microsoft Management Console Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2025-29793",
@@ -187,13 +173,6 @@
       "name": "Veertu Anka Build"
     },
     {
-      "id": "CVE-2026-23744",
-      "now": 0.43671,
-      "prev": 0.38374,
-      "delta": 0.05297,
-      "name": "REC in MCPJam inspector due to HTTP Endpoint exposes"
-    },
-    {
       "id": "CVE-2025-49113",
       "now": 0.94741,
       "prev": 0.89462,
@@ -213,6 +192,27 @@
       "prev": 0.16387,
       "delta": 0.05091,
       "name": "HP OpenView Network Node Manager (OV NNM) 7.01, 7.51, and 7.53 allows remote attackers to execute arbitrary co"
+    },
+    {
+      "id": "CVE-2025-30290",
+      "now": 0.17908,
+      "prev": 0.13053,
+      "delta": 0.04855,
+      "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
+    },
+    {
+      "id": "CVE-2026-20079",
+      "now": 0.387,
+      "prev": 0.33898,
+      "delta": 0.04802,
+      "name": "Cisco Cisco Secure Firewall Management Center (FMC)"
+    },
+    {
+      "id": "CVE-2025-32375",
+      "now": 0.50446,
+      "prev": 0.45773,
+      "delta": 0.04673,
+      "name": "Insecure Deserialization leads to RCE in BentoML's runner server"
     }
   ],
   "newly_high": [
