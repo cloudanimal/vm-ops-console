@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-15",
+  "updated": "2026-07-16",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-15",
-  "previous_date": "2026-07-08",
+  "current_date": "2026-07-16",
+  "previous_date": "2026-07-09",
   "risers": [
     {
       "id": "CVE-2026-5027",
@@ -12,11 +12,11 @@
       "name": "Langflow - Path Traversal Arbitrary File Write via upload_user_file"
     },
     {
-      "id": "CVE-2026-48282",
-      "now": 0.28583,
-      "prev": 0.03199,
-      "delta": 0.25384,
-      "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
+      "id": "CVE-2022-34169",
+      "now": 0.33623,
+      "prev": 0.17673,
+      "delta": 0.1595,
+      "name": "Apache Xalan Java XSLT library is vulnerable to an integer truncation issue when processin"
     },
     {
       "id": "CVE-2026-8037",
@@ -24,6 +24,13 @@
       "prev": 0.29641,
       "delta": 0.13789,
       "name": "OS Command Injection Remote Code Execution Vulnerability in Progress LoadMaster, ECS Conne"
+    },
+    {
+      "id": "CVE-2021-26919",
+      "now": 0.34949,
+      "prev": 0.22588,
+      "delta": 0.12361,
+      "name": "Apache Druid Authenticated users can execute arbitrary code from malicious MySQL database "
     },
     {
       "id": "CVE-2008-4128",
@@ -101,13 +108,6 @@
       "prev": 0.41403,
       "delta": 0.0661,
       "name": "An issue was discovered on Tenda AC15 V15.03.1.16_multi devices. A remote, unauthenticated attacker can gain r"
-    },
-    {
-      "id": "CVE-2006-4075",
-      "now": 0.16891,
-      "prev": 0.1047,
-      "delta": 0.06421,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in Wim Fleischhauer docpile: wim's edition (docpile:we) 0.2"
     },
     {
       "id": "CVE-2022-31161",
@@ -201,18 +201,18 @@
       "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
     },
     {
-      "id": "CVE-2026-20079",
-      "now": 0.387,
-      "prev": 0.33898,
-      "delta": 0.04802,
-      "name": "Cisco Cisco Secure Firewall Management Center (FMC)"
-    },
-    {
       "id": "CVE-2025-32375",
       "now": 0.50446,
       "prev": 0.45773,
       "delta": 0.04673,
       "name": "Insecure Deserialization leads to RCE in BentoML's runner server"
+    },
+    {
+      "id": "CVE-2022-24675",
+      "now": 0.0995,
+      "prev": 0.05416,
+      "delta": 0.04534,
+      "name": "encoding/pem in Go before 1.17.9 and 1.18.x before 1.18.1 has a Decode stack overflow via a large amount of PE"
     }
   ],
   "newly_high": [
