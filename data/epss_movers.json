@@ -1,9 +1,16 @@
 {
-  "updated": "2026-07-16",
+  "updated": "2026-07-17",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-16",
-  "previous_date": "2026-07-09",
+  "current_date": "2026-07-17",
+  "previous_date": "2026-07-10",
   "risers": [
+    {
+      "id": "CVE-2026-39808",
+      "now": 0.84158,
+      "prev": 0.48668,
+      "delta": 0.3549,
+      "name": "Fortinet FortiSandbox"
+    },
     {
       "id": "CVE-2026-5027",
       "now": 0.31405,
@@ -26,11 +33,25 @@
       "name": "OS Command Injection Remote Code Execution Vulnerability in Progress LoadMaster, ECS Conne"
     },
     {
+      "id": "CVE-2026-25089",
+      "now": 0.36135,
+      "prev": 0.23393,
+      "delta": 0.12742,
+      "name": "Fortinet FortiSandbox"
+    },
+    {
       "id": "CVE-2021-26919",
       "now": 0.34949,
       "prev": 0.22588,
       "delta": 0.12361,
       "name": "Apache Druid Authenticated users can execute arbitrary code from malicious MySQL database "
+    },
+    {
+      "id": "CVE-2025-48828",
+      "now": 0.60786,
+      "prev": 0.48582,
+      "delta": 0.12204,
+      "name": "vBulletin vBulletin"
     },
     {
       "id": "CVE-2008-4128",
@@ -68,18 +89,11 @@
       "name": "Online Piggery Management System 1.0 is vulnerable to File Upload. An unauthenticated user can upload a php fi"
     },
     {
-      "id": "CVE-2014-8387",
-      "now": 0.30947,
-      "prev": 0.23813,
-      "delta": 0.07134,
-      "name": "cgi/utility.cgi in Advantech EKI-6340 2.05 Wi-Fi Mesh Access Point allows remote authenticated users to execut"
-    },
-    {
-      "id": "CVE-2025-30285",
-      "now": 0.26691,
-      "prev": 0.19687,
-      "delta": 0.07004,
-      "name": "ColdFusion | Deserialization of Untrusted Data (CWE-502)"
+      "id": "CVE-2025-48827",
+      "now": 0.77681,
+      "prev": 0.69817,
+      "delta": 0.07864,
+      "name": "vBulletin vBulletin"
     },
     {
       "id": "CVE-2022-32213",
@@ -103,13 +117,6 @@
       "name": "Milvus Allows Unauthenticated Access to Restful API on Metrics Port (9091) Leads to Critic"
     },
     {
-      "id": "CVE-2018-5767",
-      "now": 0.48013,
-      "prev": 0.41403,
-      "delta": 0.0661,
-      "name": "An issue was discovered on Tenda AC15 V15.03.1.16_multi devices. A remote, unauthenticated attacker can gain r"
-    },
-    {
       "id": "CVE-2022-31161",
       "now": 0.26819,
       "prev": 0.20446,
@@ -131,13 +138,6 @@
       "name": "SQL Injection"
     },
     {
-      "id": "CVE-2026-34486",
-      "now": 0.21691,
-      "prev": 0.15831,
-      "delta": 0.0586,
-      "name": "Apache Tomcat: Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor"
-    },
-    {
       "id": "CVE-2006-4159",
       "now": 0.14701,
       "prev": 0.09081,
@@ -150,27 +150,6 @@
       "prev": 0.60954,
       "delta": 0.05617,
       "name": "Microsoft Management Console Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2025-29793",
-      "now": 0.21618,
-      "prev": 0.16014,
-      "delta": 0.05604,
-      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2025-30281",
-      "now": 0.20264,
-      "prev": 0.14812,
-      "delta": 0.05452,
-      "name": "ColdFusion | Improper Access Control (CWE-284)"
-    },
-    {
-      "id": "CVE-2024-41163",
-      "now": 0.5249,
-      "prev": 0.47107,
-      "delta": 0.05383,
-      "name": "Veertu Anka Build"
     },
     {
       "id": "CVE-2025-49113",
@@ -194,13 +173,6 @@
       "name": "HP OpenView Network Node Manager (OV NNM) 7.01, 7.51, and 7.53 allows remote attackers to execute arbitrary co"
     },
     {
-      "id": "CVE-2025-30290",
-      "now": 0.17908,
-      "prev": 0.13053,
-      "delta": 0.04855,
-      "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
-    },
-    {
       "id": "CVE-2025-32375",
       "now": 0.50446,
       "prev": 0.45773,
@@ -213,22 +185,57 @@
       "prev": 0.05416,
       "delta": 0.04534,
       "name": "encoding/pem in Go before 1.17.9 and 1.18.x before 1.18.1 has a Decode stack overflow via a large amount of PE"
+    },
+    {
+      "id": "CVE-2009-0543",
+      "now": 0.18722,
+      "prev": 0.1424,
+      "delta": 0.04482,
+      "name": "ProFTPD Server 1.3.1, with NLS support enabled, allows remote attackers to bypass SQL injection protection mec"
+    },
+    {
+      "id": "CVE-2022-2488",
+      "now": 0.32947,
+      "prev": 0.28724,
+      "delta": 0.04223,
+      "name": "WAVLINK WN535K2/WN535K3 touchlist_sync.cgi os command injection"
+    },
+    {
+      "id": "CVE-2009-0305",
+      "now": 0.16919,
+      "prev": 0.12844,
+      "delta": 0.04075,
+      "name": "Multiple stack-based buffer overflows in the Research in Motion RIM AxLoader ActiveX control in AxLoader.ocx a"
+    },
+    {
+      "id": "CVE-2026-2537",
+      "now": 0.2447,
+      "prev": 0.2044,
+      "delta": 0.0403,
+      "name": "Comfast CF-E4 HTTP POST Request mbox-config command injection"
     }
   ],
   "newly_high": [
+    {
+      "id": "CVE-2026-39808",
+      "now": 0.84158,
+      "prev": 0.48668,
+      "delta": 0.3549,
+      "name": "Fortinet FortiSandbox"
+    },
+    {
+      "id": "CVE-2025-48828",
+      "now": 0.60786,
+      "prev": 0.48582,
+      "delta": 0.12204,
+      "name": "vBulletin vBulletin"
+    },
     {
       "id": "CVE-2009-0517",
       "now": 0.55019,
       "prev": 0.45267,
       "delta": 0.09752,
       "name": "Eval injection vulnerability in index.php in phpSlash 0.8.1.1 and earlier allows remote attackers to execute a"
-    },
-    {
-      "id": "CVE-2024-41163",
-      "now": 0.5249,
-      "prev": 0.47107,
-      "delta": 0.05383,
-      "name": "Veertu Anka Build"
     },
     {
       "id": "CVE-2025-32375",
