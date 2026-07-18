@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-17",
+  "updated": "2026-07-18",
   "source": "FIRST EPSS",
   "current_date": "2026-07-17",
-  "previous_date": "2026-07-10",
+  "previous_date": "2026-07-11",
   "risers": [
     {
       "id": "CVE-2026-39808",
@@ -96,20 +96,6 @@
       "name": "vBulletin vBulletin"
     },
     {
-      "id": "CVE-2022-32213",
-      "now": 0.41954,
-      "prev": 0.35079,
-      "delta": 0.06875,
-      "name": "NodeJS Node"
-    },
-    {
-      "id": "CVE-2011-4362",
-      "now": 0.23076,
-      "prev": 0.16246,
-      "delta": 0.0683,
-      "name": "Integer signedness error in the base64_decode function in the HTTP authentication functionality (http_auth.c) "
-    },
-    {
       "id": "CVE-2026-26190",
       "now": 0.34346,
       "prev": 0.27661,
@@ -152,34 +138,6 @@
       "name": "Microsoft Management Console Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2025-49113",
-      "now": 0.94741,
-      "prev": 0.89462,
-      "delta": 0.05279,
-      "name": "Roundcube Webmail"
-    },
-    {
-      "id": "CVE-2023-2796",
-      "now": 0.42674,
-      "prev": 0.37468,
-      "delta": 0.05206,
-      "name": "EventON < 2.1.2 - Unauthenticated Event Access"
-    },
-    {
-      "id": "CVE-2008-4559",
-      "now": 0.21478,
-      "prev": 0.16387,
-      "delta": 0.05091,
-      "name": "HP OpenView Network Node Manager (OV NNM) 7.01, 7.51, and 7.53 allows remote attackers to execute arbitrary co"
-    },
-    {
-      "id": "CVE-2025-32375",
-      "now": 0.50446,
-      "prev": 0.45773,
-      "delta": 0.04673,
-      "name": "Insecure Deserialization leads to RCE in BentoML's runner server"
-    },
-    {
       "id": "CVE-2022-24675",
       "now": 0.0995,
       "prev": 0.05416,
@@ -213,6 +171,48 @@
       "prev": 0.2044,
       "delta": 0.0403,
       "name": "Comfast CF-E4 HTTP POST Request mbox-config command injection"
+    },
+    {
+      "id": "CVE-2022-34047",
+      "now": 0.21387,
+      "prev": 0.17444,
+      "delta": 0.03943,
+      "name": "An access control issue in Wavlink WN530HG4 M30HG4.V5030.191116 allows attackers to obtain usernames and passw"
+    },
+    {
+      "id": "CVE-2023-34124",
+      "now": 0.44715,
+      "prev": 0.40891,
+      "delta": 0.03824,
+      "name": "SonicWall GMS"
+    },
+    {
+      "id": "CVE-2022-34046",
+      "now": 0.20351,
+      "prev": 0.16583,
+      "delta": 0.03768,
+      "name": "An access control issue in Wavlink WN533A8 M33A8.V5030.190716 allows attackers to obtain usernames and passwor"
+    },
+    {
+      "id": "CVE-2018-8715",
+      "now": 0.23621,
+      "prev": 0.19854,
+      "delta": 0.03767,
+      "name": "The Embedthis HTTP library, and Appweb versions before 7.0.3, have a logic flaw related to the authCondition f"
+    },
+    {
+      "id": "CVE-2022-2486",
+      "now": 0.29763,
+      "prev": 0.2605,
+      "delta": 0.03713,
+      "name": "WAVLINK WN535K2/WN535K3 os command injection"
+    },
+    {
+      "id": "CVE-2025-46618",
+      "now": 0.28742,
+      "prev": 0.2515,
+      "delta": 0.03592,
+      "name": "JetBrains TeamCity"
     }
   ],
   "newly_high": [
@@ -236,20 +236,6 @@
       "prev": 0.45267,
       "delta": 0.09752,
       "name": "Eval injection vulnerability in index.php in phpSlash 0.8.1.1 and earlier allows remote attackers to execute a"
-    },
-    {
-      "id": "CVE-2025-32375",
-      "now": 0.50446,
-      "prev": 0.45773,
-      "delta": 0.04673,
-      "name": "Insecure Deserialization leads to RCE in BentoML's runner server"
-    },
-    {
-      "id": "CVE-2025-44148",
-      "now": 0.50752,
-      "prev": 0.49703,
-      "delta": 0.01049,
-      "name": "Cross Site Scripting (XSS) vulnerability in MailEnable before v10 allows a remote attacker to execute arbitrar"
     }
   ]
 }
