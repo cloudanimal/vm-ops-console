@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-18",
+  "updated": "2026-07-19",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-17",
-  "previous_date": "2026-07-11",
+  "current_date": "2026-07-18",
+  "previous_date": "2026-07-12",
   "risers": [
     {
       "id": "CVE-2026-39808",
@@ -10,13 +10,6 @@
       "prev": 0.48668,
       "delta": 0.3549,
       "name": "Fortinet FortiSandbox"
-    },
-    {
-      "id": "CVE-2026-5027",
-      "now": 0.31405,
-      "prev": 0.02104,
-      "delta": 0.29301,
-      "name": "Langflow - Path Traversal Arbitrary File Write via upload_user_file"
     },
     {
       "id": "CVE-2022-34169",
@@ -68,18 +61,25 @@
       "name": "Remote code execution via git push option injection in GitHub Enterprise Server"
     },
     {
-      "id": "CVE-2023-36874",
-      "now": 0.42602,
-      "prev": 0.32309,
-      "delta": 0.10293,
-      "name": "Windows Error Reporting Service Elevation of Privilege Vulnerability"
-    },
-    {
       "id": "CVE-2009-0517",
       "now": 0.55019,
       "prev": 0.45267,
       "delta": 0.09752,
       "name": "Eval injection vulnerability in index.php in phpSlash 0.8.1.1 and earlier allows remote attackers to execute a"
+    },
+    {
+      "id": "CVE-2021-32628",
+      "now": 0.12619,
+      "prev": 0.03636,
+      "delta": 0.08983,
+      "name": "Vulnerability in handling large ziplists"
+    },
+    {
+      "id": "CVE-2025-22037",
+      "now": 0.37115,
+      "prev": 0.28222,
+      "delta": 0.08893,
+      "name": "ksmbd: fix null pointer dereference in alloc_preauth_hash()"
     },
     {
       "id": "CVE-2023-37629",
@@ -101,13 +101,6 @@
       "prev": 0.27661,
       "delta": 0.06685,
       "name": "Milvus Allows Unauthenticated Access to Restful API on Metrics Port (9091) Leads to Critic"
-    },
-    {
-      "id": "CVE-2022-31161",
-      "now": 0.26819,
-      "prev": 0.20446,
-      "delta": 0.06373,
-      "name": "Roxy-WI Vulnerable to Unauthenticated Remote Code Execution via ssl_cert Upload"
     },
     {
       "id": "CVE-2002-0061",
@@ -138,6 +131,13 @@
       "name": "Microsoft Management Console Remote Code Execution Vulnerability"
     },
     {
+      "id": "CVE-2014-100005",
+      "now": 0.47071,
+      "prev": 0.42414,
+      "delta": 0.04657,
+      "name": "Multiple cross-site request forgery (CSRF) vulnerabilities in D-Link DIR-600 router (rev. Bx) with firmware be"
+    },
+    {
       "id": "CVE-2022-24675",
       "now": 0.0995,
       "prev": 0.05416,
@@ -164,6 +164,13 @@
       "prev": 0.12844,
       "delta": 0.04075,
       "name": "Multiple stack-based buffer overflows in the Research in Motion RIM AxLoader ActiveX control in AxLoader.ocx a"
+    },
+    {
+      "id": "CVE-2022-35977",
+      "now": 0.37299,
+      "prev": 0.33269,
+      "delta": 0.0403,
+      "name": "Integer overflow in certain command arguments can drive Redis to OOM panic"
     },
     {
       "id": "CVE-2026-2537",
@@ -206,13 +213,6 @@
       "prev": 0.2605,
       "delta": 0.03713,
       "name": "WAVLINK WN535K2/WN535K3 os command injection"
-    },
-    {
-      "id": "CVE-2025-46618",
-      "now": 0.28742,
-      "prev": 0.2515,
-      "delta": 0.03592,
-      "name": "JetBrains TeamCity"
     }
   ],
   "newly_high": [
