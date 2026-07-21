@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-20",
+  "updated": "2026-07-21",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-20",
-  "previous_date": "2026-07-13",
+  "current_date": "2026-07-21",
+  "previous_date": "2026-07-14",
   "risers": [
     {
       "id": "CVE-2026-39808",
@@ -17,13 +17,6 @@
       "prev": 0.17673,
       "delta": 0.1595,
       "name": "Apache Xalan Java XSLT library is vulnerable to an integer truncation issue when processin"
-    },
-    {
-      "id": "CVE-2026-8037",
-      "now": 0.4343,
-      "prev": 0.29641,
-      "delta": 0.13789,
-      "name": "OS Command Injection Remote Code Execution Vulnerability in Progress LoadMaster, ECS Conne"
     },
     {
       "id": "CVE-2025-33073",
@@ -54,13 +47,6 @@
       "name": "vBulletin vBulletin"
     },
     {
-      "id": "CVE-2008-4128",
-      "now": 0.23857,
-      "prev": 0.12036,
-      "delta": 0.11821,
-      "name": "Multiple cross-site request forgery (CSRF) vulnerabilities in the HTTP Administration component in Cisco IOS 1"
-    },
-    {
       "id": "CVE-2008-2549",
       "now": 0.52617,
       "prev": 0.41251,
@@ -75,11 +61,11 @@
       "name": "EAR vulnerability in Progress ShareFile Storage Zones Controller (SZC)"
     },
     {
-      "id": "CVE-2009-0517",
-      "now": 0.55019,
-      "prev": 0.45267,
-      "delta": 0.09752,
-      "name": "Eval injection vulnerability in index.php in phpSlash 0.8.1.1 and earlier allows remote attackers to execute a"
+      "id": "CVE-2026-8732",
+      "now": 0.19272,
+      "prev": 0.09461,
+      "delta": 0.09811,
+      "name": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Crea"
     },
     {
       "id": "CVE-2025-29513",
@@ -131,6 +117,13 @@
       "name": "Apache for Win32 before 1.3.24, and 2.0.x before 2.0.34-beta, allows remote attackers to execute arbitrary com"
     },
     {
+      "id": "CVE-2021-34833",
+      "now": 0.95655,
+      "prev": 0.89479,
+      "delta": 0.06176,
+      "name": "Foxit PDF Reader"
+    },
+    {
       "id": "CVE-2006-4287",
       "now": 0.16119,
       "prev": 0.09979,
@@ -138,11 +131,11 @@
       "name": "Multiple PHP remote file inclusion vulnerabilities in NES Game and NES System c108122 and earlier allow remote"
     },
     {
-      "id": "CVE-2025-3833",
-      "now": 0.33693,
-      "prev": 0.27766,
-      "delta": 0.05927,
-      "name": "SQL Injection"
+      "id": "CVE-2020-8958",
+      "now": 0.52643,
+      "prev": 0.46642,
+      "delta": 0.06001,
+      "name": "Guangzhou 1GE ONU V2801RW 1.9.1-181203 through 2.9.0-181024 and V2804RGW 1.9.1-181203 through 2.9.0-181024 dev"
     },
     {
       "id": "CVE-2006-4236",
@@ -157,13 +150,6 @@
       "prev": 0.75812,
       "delta": 0.05662,
       "name": "MOVEit Transfer Authentication Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2006-4159",
-      "now": 0.14701,
-      "prev": 0.09081,
-      "delta": 0.0562,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in Chaussette 080706 and earlier allow remote attackers to "
     },
     {
       "id": "CVE-2024-43572",
@@ -213,6 +199,20 @@
       "prev": 0.2044,
       "delta": 0.0403,
       "name": "Comfast CF-E4 HTTP POST Request mbox-config command injection"
+    },
+    {
+      "id": "CVE-2022-34047",
+      "now": 0.21387,
+      "prev": 0.17444,
+      "delta": 0.03943,
+      "name": "An access control issue in Wavlink WN530HG4 M30HG4.V5030.191116 allows attackers to obtain usernames and passw"
+    },
+    {
+      "id": "CVE-2022-34046",
+      "now": 0.20351,
+      "prev": 0.16583,
+      "delta": 0.03768,
+      "name": "An access control issue in Wavlink WN533A8 M33A8.V5030.190716 allows attackers to obtain usernames and passwor"
     }
   ],
   "newly_high": [
@@ -245,11 +245,11 @@
       "name": "EAR vulnerability in Progress ShareFile Storage Zones Controller (SZC)"
     },
     {
-      "id": "CVE-2009-0517",
-      "now": 0.55019,
-      "prev": 0.45267,
-      "delta": 0.09752,
-      "name": "Eval injection vulnerability in index.php in phpSlash 0.8.1.1 and earlier allows remote attackers to execute a"
+      "id": "CVE-2020-8958",
+      "now": 0.52643,
+      "prev": 0.46642,
+      "delta": 0.06001,
+      "name": "Guangzhou 1GE ONU V2801RW 1.9.1-181203 through 2.9.0-181024 and V2804RGW 1.9.1-181203 through 2.9.0-181024 dev"
     },
     {
       "id": "CVE-2015-5127",
