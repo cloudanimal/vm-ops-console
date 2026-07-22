@@ -1,1048 +1,592 @@
 {
-  "updated": "2026-07-21",
+  "updated": "2026-07-22",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
     {
-      "id": "328668",
-      "title": "EulerOS Virtualization 2.10.1 : expat (EulerOS-SA-2026-2818)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328668",
-      "cves": [
-        "CVE-2026-32776",
-        "CVE-2026-32777",
-        "CVE-2026-45186"
-      ]
-    },
-    {
-      "id": "328667",
-      "title": "EulerOS Virtualization 2.10.0 : openssh (EulerOS-SA-2026-2862)",
+      "id": null,
+      "title": "SCA: security update for SharpCompress (GHSA-6c8g-7p36-r338)",
       "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328667",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445122",
       "cves": [
-        "CVE-2026-3497",
-        "CVE-2026-35385",
-        "CVE-2026-35386",
-        "CVE-2026-35387",
-        "CVE-2026-35388",
-        "CVE-2026-35414"
+        "CVE-2026-44788"
       ]
     },
     {
-      "id": "328666",
-      "title": "EulerOS Virtualization 2.10.0 : ncurses (EulerOS-SA-2026-2861)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328666",
-      "cves": [
-        "CVE-2025-69720"
-      ]
-    },
-    {
-      "id": "328665",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2729)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328665",
-      "cves": [
-        "CVE-2026-24072",
-        "CVE-2026-28780",
-        "CVE-2026-29168",
-        "CVE-2026-29169",
-        "CVE-2026-33006",
-        "CVE-2026-34059"
-      ]
-    },
-    {
-      "id": "328664",
-      "title": "EulerOS Virtualization 2.10.0 : kernel (EulerOS-SA-2026-2854)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328664",
-      "cves": [
-        "CVE-2022-50697",
-        "CVE-2022-50885",
-        "CVE-2023-54087",
-        "CVE-2023-54186",
-        "CVE-2023-54211",
-        "CVE-2023-54283",
-        "CVE-2023-54294",
-        "CVE-2023-54314",
-        "CVE-2025-71087",
-        "CVE-2026-23003",
-        "CVE-2026-23054",
-        "CVE-2026-23243",
-        "CVE-2026-31449",
-        "CVE-2026-31450",
-        "CVE-2026-31586",
-        "CVE-2026-31588",
-        "CVE-2026-31673",
-        "CVE-2026-31674",
-        "CVE-2026-31678",
-        "CVE-2026-31682",
-        "CVE-2026-31698",
-        "CVE-2026-31699",
-        "CVE-2026-31708",
-        "CVE-2026-31786",
-        "CVE-2026-31787",
-        "CVE-2026-43033",
-        "CVE-2026-43047",
-        "CVE-2026-43048",
-        "CVE-2026-43077",
-        "CVE-2026-43125",
-        "CVE-2026-43211",
-        "CVE-2026-43281",
-        "CVE-2026-43336",
-        "CVE-2026-43493",
-        "CVE-2026-43503",
-        "CVE-2026-46333"
-      ]
-    },
-    {
-      "id": "328663",
-      "title": "EulerOS Virtualization 2.10.1 : lcms2 (EulerOS-SA-2026-2824)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328663",
-      "cves": [
-        "CVE-2026-41254"
-      ]
-    },
-    {
-      "id": "328662",
-      "title": "EulerOS Virtualization 2.12.0 : pyOpenSSL (EulerOS-SA-2026-2794)",
+      "id": null,
+      "title": "SCA: security update for SharpCompress (GHSA-6c8g-7p36-r338)",
       "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328662",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445122",
       "cves": [
-        "CVE-2026-27448"
+        "CVE-2026-44788"
       ]
     },
     {
-      "id": "328661",
-      "title": "EulerOS Virtualization 2.10.1 : shim (EulerOS-SA-2026-2838)",
+      "id": null,
+      "title": "SCA: security update for fast-uri (GHSA-4c8g-83qw-93j6)",
       "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328661",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445121",
       "cves": [
-        "CVE-2026-28388"
+        "CVE-2026-13676"
       ]
     },
     {
-      "id": "328660",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2722)",
+      "id": null,
+      "title": "SCA: security update for fast-uri (GHSA-4c8g-83qw-93j6)",
       "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328660",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445121",
       "cves": [
-        "CVE-2026-1519"
+        "CVE-2026-13676"
       ]
     },
     {
-      "id": "328659",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2751)",
+      "id": null,
+      "title": "SCA: security update for aws-cdk-lib (GHSA-vcrf-j523-4mrf)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445120",
+      "cves": [
+        "CVE-2026-13760"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for aws-cdk-lib (GHSA-vcrf-j523-4mrf)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445120",
+      "cves": [
+        "CVE-2026-13760"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @opentelemetry/propagator-jaeger (GHSA-45rx-2jwx-cxfr)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445119",
+      "cves": [
+        "CVE-2026-59892"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @opentelemetry/propagator-jaeger (GHSA-45rx-2jwx-cxfr)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445119",
+      "cves": [
+        "CVE-2026-59892"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for setuptools (GHSA-h35f-9h28-mq5c)",
       "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328659",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445118",
       "cves": [
-        "CVE-2026-42308",
-        "CVE-2026-42310"
+        "CVE-2026-59890"
       ]
     },
     {
-      "id": "328658",
-      "title": "EulerOS Virtualization 2.10.0 : qemu (EulerOS-SA-2026-2867)",
+      "id": null,
+      "title": "SCA: security update for setuptools (GHSA-h35f-9h28-mq5c)",
       "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328658",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445118",
       "cves": [
-        "CVE-2025-14876",
-        "CVE-2026-2243"
+        "CVE-2026-59890"
       ]
     },
     {
-      "id": "328657",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2737)",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-82f7-87hm-852x)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445117",
+      "cves": [
+        "CVE-2026-57894"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-82f7-87hm-852x)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445117",
+      "cves": [
+        "CVE-2026-57894"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for svgo (GHSA-2p49-hgcm-8545)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445116",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for svgo (GHSA-2p49-hgcm-8545)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445116",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for gitea.dev (GHSA-66m4-5jjr-2rg5)",
       "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328657",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445115",
       "cves": [
-        "CVE-2026-7598"
+        "CVE-2026-58440"
       ]
     },
     {
-      "id": "328656",
-      "title": "EulerOS Virtualization 2.12.0 : python3 (EulerOS-SA-2026-2795)",
+      "id": null,
+      "title": "SCA: security update for gitea.dev (GHSA-66m4-5jjr-2rg5)",
       "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328656",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445115",
       "cves": [
-        "CVE-2026-0865"
+        "CVE-2026-58440"
       ]
     },
     {
-      "id": "328655",
-      "title": "EulerOS Virtualization 2.10.1 : gnutls (EulerOS-SA-2026-2820)",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-q9pg-jj6x-j9p6)",
+      "severity": "Medium",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445114",
+      "cves": [
+        "CVE-2026-58432"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-q9pg-jj6x-j9p6)",
+      "severity": "Medium",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445114",
+      "cves": [
+        "CVE-2026-58432"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-rgv6-xp99-6mgj)",
       "severity": "Critical",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328655",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445113",
       "cves": [
-        "CVE-2026-33845",
-        "CVE-2026-33846",
-        "CVE-2026-42009",
-        "CVE-2026-42010",
-        "CVE-2026-42014"
+        "CVE-2026-56750"
       ]
     },
     {
-      "id": "328654",
-      "title": "EulerOS Virtualization 2.10.1 : dnsmasq (EulerOS-SA-2026-2817)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328654",
-      "cves": [
-        "CVE-2026-4892"
-      ]
-    },
-    {
-      "id": "328653",
-      "title": "EulerOS Virtualization 2.12.0 : python-pillow (EulerOS-SA-2026-2797)",
-      "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328653",
-      "cves": [
-        "CVE-2026-42308",
-        "CVE-2026-42310"
-      ]
-    },
-    {
-      "id": "328652",
-      "title": "EulerOS Virtualization 2.12.0 : krb5 (EulerOS-SA-2026-2777)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328652",
-      "cves": [
-        "CVE-2026-40355",
-        "CVE-2026-40356"
-      ]
-    },
-    {
-      "id": "328651",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2756)",
-      "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328651",
-      "cves": [
-        "CVE-2025-11234",
-        "CVE-2025-14876",
-        "CVE-2026-2243"
-      ]
-    },
-    {
-      "id": "328650",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2731)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328650",
-      "cves": [
-        "CVE-2026-40355",
-        "CVE-2026-40356"
-      ]
-    },
-    {
-      "id": "328649",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2724)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328649",
-      "cves": [
-        "CVE-2026-4892",
-        "CVE-2026-4893"
-      ]
-    },
-    {
-      "id": "328648",
-      "title": "EulerOS Virtualization 2.10.1 : unbound (EulerOS-SA-2026-2841)",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-rgv6-xp99-6mgj)",
       "severity": "Critical",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328648",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445113",
       "cves": [
-        "CVE-2025-11411",
-        "CVE-2026-33278",
-        "CVE-2026-41292",
-        "CVE-2026-42959",
-        "CVE-2026-42960"
+        "CVE-2026-56750"
       ]
     },
     {
-      "id": "328647",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2740)",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-x77v-q46j-393g)",
       "severity": "Low",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328647",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445112",
       "cves": [
-        "CVE-2025-11731"
+        "CVE-2026-23603"
       ]
     },
     {
-      "id": "328646",
-      "title": "EulerOS Virtualization 2.12.0 : libxml2 (EulerOS-SA-2026-2785)",
-      "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328646",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-x77v-q46j-393g)",
+      "severity": "Low",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445112",
       "cves": [
-        "CVE-2025-8732"
+        "CVE-2026-23603"
       ]
     },
     {
-      "id": "328645",
-      "title": "EulerOS Virtualization 2.10.0 : libssh2 (EulerOS-SA-2026-2858)",
-      "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328645",
-      "cves": [
-        "CVE-2026-7598"
-      ]
-    },
-    {
-      "id": "328644",
-      "title": "EulerOS Virtualization 2.10.1 : libtiff (EulerOS-SA-2026-2828)",
+      "id": null,
+      "title": "SCA: security update for gitea.dev (GHSA-2m9v-5q2g-58vq)",
       "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328644",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445111",
       "cves": [
-        "CVE-2026-4775"
+        "CVE-2026-28740"
       ]
     },
     {
-      "id": "328643",
-      "title": "EulerOS Virtualization 2.12.0 : ncurses (EulerOS-SA-2026-2788)",
+      "id": null,
+      "title": "SCA: security update for gitea.dev (GHSA-2m9v-5q2g-58vq)",
       "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328643",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445111",
       "cves": [
-        "CVE-2025-69720"
+        "CVE-2026-28740"
       ]
     },
     {
-      "id": "328642",
-      "title": "EulerOS Virtualization 2.12.0 : libpng (EulerOS-SA-2026-2782)",
-      "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328642",
-      "cves": [
-        "CVE-2026-33416",
-        "CVE-2026-33636",
-        "CVE-2026-34757"
-      ]
-    },
-    {
-      "id": "328641",
-      "title": "EulerOS Virtualization 2.12.0 : rsync (EulerOS-SA-2026-2803)",
-      "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328641",
-      "cves": [
-        "CVE-2026-41035",
-        "CVE-2026-43618"
-      ]
-    },
-    {
-      "id": "328640",
-      "title": "EulerOS Virtualization 2.12.0 : expat (EulerOS-SA-2026-2771)",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-v96j-25gv-g2w9)",
       "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328640",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445110",
       "cves": [
-        "CVE-2026-32776",
-        "CVE-2026-32777",
-        "CVE-2026-32778",
-        "CVE-2026-41080",
-        "CVE-2026-45186"
+        "CVE-2026-58421"
       ]
     },
     {
-      "id": "328639",
-      "title": "EulerOS Virtualization 2.10.1 : openssl (EulerOS-SA-2026-2832)",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-v96j-25gv-g2w9)",
       "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328639",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445110",
       "cves": [
-        "CVE-2026-28387",
-        "CVE-2026-28388",
-        "CVE-2026-28389",
-        "CVE-2026-28390"
+        "CVE-2026-58421"
       ]
     },
     {
-      "id": "328638",
-      "title": "EulerOS Virtualization 2.12.0 : libcap (EulerOS-SA-2026-2780)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328638",
-      "cves": [
-        "CVE-2026-4878"
-      ]
-    },
-    {
-      "id": "328637",
-      "title": "EulerOS Virtualization 2.10.0 : systemd (EulerOS-SA-2026-2871)",
-      "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328637",
-      "cves": [
-        "CVE-2026-4105"
-      ]
-    },
-    {
-      "id": "328636",
-      "title": "EulerOS Virtualization 2.12.0 : openjpeg2 (EulerOS-SA-2026-2789)",
-      "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328636",
-      "cves": [
-        "CVE-2026-6192"
-      ]
-    },
-    {
-      "id": "328635",
-      "title": "EulerOS Virtualization 2.12.0 : kernel (EulerOS-SA-2026-2776)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328635",
-      "cves": [
-        "CVE-2025-68313",
-        "CVE-2025-68795",
-        "CVE-2025-68822",
-        "CVE-2026-23119",
-        "CVE-2026-23240",
-        "CVE-2026-23253",
-        "CVE-2026-23255",
-        "CVE-2026-23261",
-        "CVE-2026-23268",
-        "CVE-2026-23269",
-        "CVE-2026-23271",
-        "CVE-2026-23272",
-        "CVE-2026-23274",
-        "CVE-2026-23276",
-        "CVE-2026-23277",
-        "CVE-2026-23290",
-        "CVE-2026-23292",
-        "CVE-2026-23293",
-        "CVE-2026-23300",
-        "CVE-2026-23303",
-        "CVE-2026-23304",
-        "CVE-2026-23312",
-        "CVE-2026-23317",
-        "CVE-2026-23340",
-        "CVE-2026-23351",
-        "CVE-2026-23352",
-        "CVE-2026-23365",
-        "CVE-2026-23368",
-        "CVE-2026-23371",
-        "CVE-2026-23381",
-        "CVE-2026-23388",
-        "CVE-2026-23389",
-        "CVE-2026-23391",
-        "CVE-2026-23397",
-        "CVE-2026-23398",
-        "CVE-2026-23403",
-        "CVE-2026-23404",
-        "CVE-2026-23405",
-        "CVE-2026-23406",
-        "CVE-2026-23407",
-        "CVE-2026-23408",
-        "CVE-2026-23409",
-        "CVE-2026-23410",
-        "CVE-2026-23411",
-        "CVE-2026-23442",
-        "CVE-2026-23447",
-        "CVE-2026-23448",
-        "CVE-2026-23449",
-        "CVE-2026-23452",
-        "CVE-2026-23455",
-        "CVE-2026-23456",
-        "CVE-2026-23457",
-        "CVE-2026-23458",
-        "CVE-2026-23472",
-        "CVE-2026-31392",
-        "CVE-2026-31399",
-        "CVE-2026-31400",
-        "CVE-2026-31402",
-        "CVE-2026-31403",
-        "CVE-2026-31404",
-        "CVE-2026-31405",
-        "CVE-2026-31414",
-        "CVE-2026-31415",
-        "CVE-2026-31416",
-        "CVE-2026-31418",
-        "CVE-2026-31419",
-        "CVE-2026-31421",
-        "CVE-2026-31422",
-        "CVE-2026-31423",
-        "CVE-2026-31426",
-        "CVE-2026-31427",
-        "CVE-2026-31428",
-        "CVE-2026-31436",
-        "CVE-2026-31441",
-        "CVE-2026-31447",
-        "CVE-2026-31448",
-        "CVE-2026-31449",
-        "CVE-2026-31450",
-        "CVE-2026-31452",
-        "CVE-2026-31453",
-        "CVE-2026-31454",
-        "CVE-2026-31455",
-        "CVE-2026-31469",
-        "CVE-2026-31473",
-        "CVE-2026-31495",
-        "CVE-2026-31496",
-        "CVE-2026-31503",
-        "CVE-2026-31508",
-        "CVE-2026-31515",
-        "CVE-2026-31516",
-        "CVE-2026-31521",
-        "CVE-2026-31523",
-        "CVE-2026-31527",
-        "CVE-2026-31531",
-        "CVE-2026-31555",
-        "CVE-2026-31557",
-        "CVE-2026-31586",
-        "CVE-2026-31588",
-        "CVE-2026-31590",
-        "CVE-2026-31624",
-        "CVE-2026-31625",
-        "CVE-2026-31651",
-        "CVE-2026-31662",
-        "CVE-2026-31664",
-        "CVE-2026-31665",
-        "CVE-2026-31670",
-        "CVE-2026-31673",
-        "CVE-2026-31674",
-        "CVE-2026-31675",
-        "CVE-2026-31677",
-        "CVE-2026-31678",
-        "CVE-2026-31679",
-        "CVE-2026-31680",
-        "CVE-2026-31682",
-        "CVE-2026-31685",
-        "CVE-2026-31708",
-        "CVE-2026-31729",
-        "CVE-2026-31751",
-        "CVE-2026-31755",
-        "CVE-2026-31758",
-        "CVE-2026-31759",
-        "CVE-2026-31781",
-        "CVE-2026-43027",
-        "CVE-2026-43028",
-        "CVE-2026-43030",
-        "CVE-2026-43033",
-        "CVE-2026-43037",
-        "CVE-2026-43038",
-        "CVE-2026-43040",
-        "CVE-2026-43043",
-        "CVE-2026-43047",
-        "CVE-2026-43048",
-        "CVE-2026-43057",
-        "CVE-2026-43060",
-        "CVE-2026-43064",
-        "CVE-2026-43068",
-        "CVE-2026-43071",
-        "CVE-2026-43079",
-        "CVE-2026-43094",
-        "CVE-2026-43124",
-        "CVE-2026-43156",
-        "CVE-2026-43158",
-        "CVE-2026-43171",
-        "CVE-2026-43180",
-        "CVE-2026-43187",
-        "CVE-2026-43194",
-        "CVE-2026-43211",
-        "CVE-2026-43233",
-        "CVE-2026-43273",
-        "CVE-2026-43281",
-        "CVE-2026-43344",
-        "CVE-2026-43363",
-        "CVE-2026-43365",
-        "CVE-2026-43383",
-        "CVE-2026-43407",
-        "CVE-2026-43408",
-        "CVE-2026-43409",
-        "CVE-2026-43416",
-        "CVE-2026-43429",
-        "CVE-2026-43445",
-        "CVE-2026-43450",
-        "CVE-2026-43452",
-        "CVE-2026-43453",
-        "CVE-2026-43493",
-        "CVE-2026-43503",
-        "CVE-2026-46333"
-      ]
-    },
-    {
-      "id": "328634",
-      "title": "EulerOS Virtualization 2.12.0 : dnsmasq (EulerOS-SA-2026-2770)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328634",
-      "cves": [
-        "CVE-2026-4892",
-        "CVE-2026-4893"
-      ]
-    },
-    {
-      "id": "328633",
-      "title": "EulerOS Virtualization 2.12.0 : vim (EulerOS-SA-2026-2811)",
-      "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328633",
-      "cves": [
-        "CVE-2025-53906",
-        "CVE-2026-28418",
-        "CVE-2026-28420",
-        "CVE-2026-28422",
-        "CVE-2026-33412",
-        "CVE-2026-34982",
-        "CVE-2026-35177",
-        "CVE-2026-39881",
-        "CVE-2026-41411",
-        "CVE-2026-42307",
-        "CVE-2026-44656",
-        "CVE-2026-46483"
-      ]
-    },
-    {
-      "id": "328632",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2725)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328632",
-      "cves": [
-        "CVE-2026-32776",
-        "CVE-2026-32777",
-        "CVE-2026-32778",
-        "CVE-2026-41080",
-        "CVE-2026-45186"
-      ]
-    },
-    {
-      "id": "328631",
-      "title": "EulerOS Virtualization 2.10.1 : sqlite (EulerOS-SA-2026-2839)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328631",
-      "cves": [
-        "CVE-2025-70873"
-      ]
-    },
-    {
-      "id": "328630",
-      "title": "EulerOS Virtualization 2.12.0 : util-linux (EulerOS-SA-2026-2810)",
-      "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328630",
-      "cves": [
-        "CVE-2026-27456"
-      ]
-    },
-    {
-      "id": "328629",
-      "title": "EulerOS Virtualization 2.12.0 : libssh2 (EulerOS-SA-2026-2783)",
-      "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328629",
-      "cves": [
-        "CVE-2026-7598"
-      ]
-    },
-    {
-      "id": "328628",
-      "title": "EulerOS Virtualization 2.12.0 : haveged (EulerOS-SA-2026-2774)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328628",
-      "cves": [
-        "CVE-2026-41054"
-      ]
-    },
-    {
-      "id": "328627",
-      "title": "EulerOS Virtualization 2.10.0 : bind (EulerOS-SA-2026-2845)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328627",
-      "cves": [
-        "CVE-2026-1519"
-      ]
-    },
-    {
-      "id": "328626",
-      "title": "EulerOS Virtualization 2.12.0 : python-requests (EulerOS-SA-2026-2800)",
-      "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328626",
-      "cves": [
-        "CVE-2026-25645"
-      ]
-    },
-    {
-      "id": "328625",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2755)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328625",
-      "cves": [
-        "CVE-2026-44431"
-      ]
-    },
-    {
-      "id": "328624",
-      "title": "EulerOS Virtualization 2.12.0 : systemd (EulerOS-SA-2026-2808)",
-      "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328624",
-      "cves": [
-        "CVE-2026-29111",
-        "CVE-2026-40226",
-        "CVE-2026-4105"
-      ]
-    },
-    {
-      "id": "328623",
-      "title": "EulerOS Virtualization 2.10.0 : perl (EulerOS-SA-2026-2864)",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-hg5r-vq93-9fv6)",
       "severity": "Critical",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328623",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445109",
       "cves": [
-        "CVE-2026-8376"
+        "CVE-2026-58426"
       ]
     },
     {
-      "id": "328622",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2726)",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-hg5r-vq93-9fv6)",
       "severity": "Critical",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328622",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445109",
       "cves": [
-        "CVE-2026-4046",
-        "CVE-2026-5450",
-        "CVE-2026-5928"
+        "CVE-2026-58426"
       ]
     },
     {
-      "id": "328621",
-      "title": "EulerOS Virtualization 2.10.1 : haveged (EulerOS-SA-2026-2821)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328621",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-xxjv-752h-3vp2)",
+      "severity": "Critical",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445108",
       "cves": [
-        "CVE-2026-41054"
+        "CVE-2026-58443"
       ]
     },
     {
-      "id": "328620",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2721)",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-xxjv-752h-3vp2)",
+      "severity": "Critical",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445108",
+      "cves": [
+        "CVE-2026-58443"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-mg4f-x9v4-6h2p)",
       "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328620",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445107",
       "cves": [
-        "CVE-2026-34933"
+        "CVE-2026-55982"
       ]
     },
     {
-      "id": "328619",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2730)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328619",
-      "cves": [
-        "CVE-2025-68313",
-        "CVE-2025-68795",
-        "CVE-2025-68822",
-        "CVE-2026-23119",
-        "CVE-2026-23240",
-        "CVE-2026-23253",
-        "CVE-2026-23255",
-        "CVE-2026-23261",
-        "CVE-2026-23268",
-        "CVE-2026-23269",
-        "CVE-2026-23271",
-        "CVE-2026-23272",
-        "CVE-2026-23274",
-        "CVE-2026-23276",
-        "CVE-2026-23277",
-        "CVE-2026-23290",
-        "CVE-2026-23292",
-        "CVE-2026-23293",
-        "CVE-2026-23300",
-        "CVE-2026-23303",
-        "CVE-2026-23304",
-        "CVE-2026-23312",
-        "CVE-2026-23317",
-        "CVE-2026-23340",
-        "CVE-2026-23351",
-        "CVE-2026-23352",
-        "CVE-2026-23365",
-        "CVE-2026-23368",
-        "CVE-2026-23371",
-        "CVE-2026-23381",
-        "CVE-2026-23388",
-        "CVE-2026-23389",
-        "CVE-2026-23391",
-        "CVE-2026-23397",
-        "CVE-2026-23398",
-        "CVE-2026-23403",
-        "CVE-2026-23404",
-        "CVE-2026-23405",
-        "CVE-2026-23406",
-        "CVE-2026-23407",
-        "CVE-2026-23408",
-        "CVE-2026-23409",
-        "CVE-2026-23410",
-        "CVE-2026-23411",
-        "CVE-2026-23442",
-        "CVE-2026-23447",
-        "CVE-2026-23448",
-        "CVE-2026-23449",
-        "CVE-2026-23452",
-        "CVE-2026-23455",
-        "CVE-2026-23456",
-        "CVE-2026-23457",
-        "CVE-2026-23458",
-        "CVE-2026-23472",
-        "CVE-2026-31392",
-        "CVE-2026-31399",
-        "CVE-2026-31400",
-        "CVE-2026-31402",
-        "CVE-2026-31403",
-        "CVE-2026-31404",
-        "CVE-2026-31405",
-        "CVE-2026-31414",
-        "CVE-2026-31415",
-        "CVE-2026-31416",
-        "CVE-2026-31418",
-        "CVE-2026-31419",
-        "CVE-2026-31421",
-        "CVE-2026-31422",
-        "CVE-2026-31423",
-        "CVE-2026-31426",
-        "CVE-2026-31427",
-        "CVE-2026-31428",
-        "CVE-2026-31436",
-        "CVE-2026-31441",
-        "CVE-2026-31447",
-        "CVE-2026-31448",
-        "CVE-2026-31449",
-        "CVE-2026-31450",
-        "CVE-2026-31452",
-        "CVE-2026-31453",
-        "CVE-2026-31454",
-        "CVE-2026-31455",
-        "CVE-2026-31469",
-        "CVE-2026-31473",
-        "CVE-2026-31495",
-        "CVE-2026-31496",
-        "CVE-2026-31503",
-        "CVE-2026-31508",
-        "CVE-2026-31515",
-        "CVE-2026-31516",
-        "CVE-2026-31521",
-        "CVE-2026-31523",
-        "CVE-2026-31527",
-        "CVE-2026-31531",
-        "CVE-2026-31555",
-        "CVE-2026-31557",
-        "CVE-2026-31586",
-        "CVE-2026-31588",
-        "CVE-2026-31590",
-        "CVE-2026-31624",
-        "CVE-2026-31625",
-        "CVE-2026-31651",
-        "CVE-2026-31662",
-        "CVE-2026-31664",
-        "CVE-2026-31665",
-        "CVE-2026-31670",
-        "CVE-2026-31673",
-        "CVE-2026-31674",
-        "CVE-2026-31675",
-        "CVE-2026-31677",
-        "CVE-2026-31678",
-        "CVE-2026-31679",
-        "CVE-2026-31680",
-        "CVE-2026-31682",
-        "CVE-2026-31685",
-        "CVE-2026-31708",
-        "CVE-2026-31729",
-        "CVE-2026-31751",
-        "CVE-2026-31755",
-        "CVE-2026-31758",
-        "CVE-2026-31759",
-        "CVE-2026-31781",
-        "CVE-2026-43027",
-        "CVE-2026-43028",
-        "CVE-2026-43030",
-        "CVE-2026-43033",
-        "CVE-2026-43037",
-        "CVE-2026-43038",
-        "CVE-2026-43040",
-        "CVE-2026-43043",
-        "CVE-2026-43047",
-        "CVE-2026-43048",
-        "CVE-2026-43057",
-        "CVE-2026-43060",
-        "CVE-2026-43064",
-        "CVE-2026-43068",
-        "CVE-2026-43071",
-        "CVE-2026-43079",
-        "CVE-2026-43094",
-        "CVE-2026-43124",
-        "CVE-2026-43156",
-        "CVE-2026-43158",
-        "CVE-2026-43171",
-        "CVE-2026-43180",
-        "CVE-2026-43187",
-        "CVE-2026-43194",
-        "CVE-2026-43211",
-        "CVE-2026-43233",
-        "CVE-2026-43273",
-        "CVE-2026-43281",
-        "CVE-2026-43344",
-        "CVE-2026-43363",
-        "CVE-2026-43365",
-        "CVE-2026-43383",
-        "CVE-2026-43407",
-        "CVE-2026-43408",
-        "CVE-2026-43409",
-        "CVE-2026-43416",
-        "CVE-2026-43429",
-        "CVE-2026-43445",
-        "CVE-2026-43450",
-        "CVE-2026-43452",
-        "CVE-2026-43453",
-        "CVE-2026-43493",
-        "CVE-2026-43503",
-        "CVE-2026-46333"
-      ]
-    },
-    {
-      "id": "328618",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2746)",
-      "severity": "Critical",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328618",
-      "cves": [
-        "CVE-2026-8376"
-      ]
-    },
-    {
-      "id": "328617",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2723)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328617",
-      "cves": [
-        "CVE-2026-4873",
-        "CVE-2026-5545",
-        "CVE-2026-5773",
-        "CVE-2026-6253",
-        "CVE-2026-6276",
-        "CVE-2026-6429",
-        "CVE-2026-7168"
-      ]
-    },
-    {
-      "id": "328616",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2744)",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-mg4f-x9v4-6h2p)",
       "severity": "Medium",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328616",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445107",
       "cves": [
-        "CVE-2026-3497",
-        "CVE-2026-35385",
-        "CVE-2026-35386",
-        "CVE-2026-35387",
-        "CVE-2026-35388",
-        "CVE-2026-35414"
+        "CVE-2026-55982"
       ]
     },
     {
-      "id": "328615",
-      "title": "EulerOS Virtualization 2.10.0 : openssl (EulerOS-SA-2026-2863)",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-m932-crvm-gcp5)",
+      "severity": "Low",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445106",
+      "cves": [
+        "CVE-2026-55984"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-m932-crvm-gcp5)",
+      "severity": "Low",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445106",
+      "cves": [
+        "CVE-2026-55984"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for gitea.dev (GHSA-5ggr-2f2h-jmvm)",
+      "severity": "Medium",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445105",
+      "cves": [
+        "CVE-2026-58420"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for gitea.dev (GHSA-5ggr-2f2h-jmvm)",
+      "severity": "Medium",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445105",
+      "cves": [
+        "CVE-2026-58420"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-8p9h-49rc-qgxj)",
       "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328615",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445104",
       "cves": [
-        "CVE-2026-28387",
-        "CVE-2026-28388",
-        "CVE-2026-28389",
-        "CVE-2026-28390"
+        "CVE-2026-58437"
       ]
     },
     {
-      "id": "328614",
-      "title": "EulerOS Virtualization 2.10.0 : glibc (EulerOS-SA-2026-2850)",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-8p9h-49rc-qgxj)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445104",
+      "cves": [
+        "CVE-2026-58437"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-fw57-jgch-pgf3)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445103",
+      "cves": [
+        "CVE-2026-58436"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-fw57-jgch-pgf3)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445103",
+      "cves": [
+        "CVE-2026-58436"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for immutable (GHSA-v56q-mh7h-f735)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445102",
+      "cves": [
+        "CVE-2026-59879"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for immutable (GHSA-v56q-mh7h-f735)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445102",
+      "cves": [
+        "CVE-2026-59879"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for immutable (GHSA-xvcm-6775-5m9r)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445101",
+      "cves": [
+        "CVE-2026-59880"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for immutable (GHSA-xvcm-6775-5m9r)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445101",
+      "cves": [
+        "CVE-2026-59880"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for pyssn1 (GHSA-m4p7-r5rc-7g4j)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445100",
+      "cves": [
+        "CVE-2026-59884"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for pyssn1 (GHSA-m4p7-r5rc-7g4j)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445100",
+      "cves": [
+        "CVE-2026-59884"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @sigstore/oci (GHSA-pf56-329r-95rw)",
       "severity": "Critical",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328614",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445099",
       "cves": [
-        "CVE-2026-4046",
-        "CVE-2026-5450",
-        "CVE-2026-5928"
+        "CVE-2026-59891"
       ]
     },
     {
-      "id": "328613",
-      "title": "EulerOS Virtualization 2.10.0 : mesa (EulerOS-SA-2026-2860)",
+      "id": null,
+      "title": "SCA: security update for @sigstore/oci (GHSA-pf56-329r-95rw)",
       "severity": "Critical",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328613",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445099",
       "cves": [
-        "CVE-2026-40393"
+        "CVE-2026-59891"
       ]
     },
     {
-      "id": "328612",
-      "title": "EulerOS Virtualization 2.10.1 : rsync (EulerOS-SA-2026-2837)",
+      "id": null,
+      "title": "SCA: security update for dompurify (GHSA-c2j3-45gr-mqc4)",
       "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328612",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445098",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for dompurify (GHSA-c2j3-45gr-mqc4)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445098",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for GitPython (GHSA-v396-v7q4-x2qj)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445097",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for GitPython (GHSA-v396-v7q4-x2qj)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445097",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for GitPython (GHSA-956x-8gvw-wg5v)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445096",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for GitPython (GHSA-956x-8gvw-wg5v)",
+      "severity": "High",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445096",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-qf2f-qh6p-7v89)",
+      "severity": "Medium",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445095",
       "cves": [
-        "CVE-2026-41035"
+        "CVE-2026-59766"
       ]
     },
     {
-      "id": "328611",
-      "title": "EulerOS Virtualization 2.12.1  (EulerOS-SA-2026-2734)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328611",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-qf2f-qh6p-7v89)",
+      "severity": "Medium",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445095",
       "cves": [
-        "CVE-2026-4878"
+        "CVE-2026-59766"
       ]
     },
     {
-      "id": "328610",
-      "title": "EulerOS Virtualization 2.10.1 : libpng (EulerOS-SA-2026-2826)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328610",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-7p4h-3gxq-x3h3)",
+      "severity": "Medium",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445094",
       "cves": [
-        "CVE-2026-33416",
-        "CVE-2026-33636"
+        "CVE-2026-56443"
       ]
     },
     {
-      "id": "328609",
-      "title": "EulerOS Virtualization 2.12.0 : sqlite (EulerOS-SA-2026-2806)",
-      "severity": "High",
-      "date": "Tue, 21 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/328609",
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-7p4h-3gxq-x3h3)",
+      "severity": "Medium",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445094",
       "cves": [
-        "CVE-2025-70873"
+        "CVE-2026-56443"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-9mq6-mqjj-c2c5)",
+      "severity": "Medium",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445093",
+      "cves": [
+        "CVE-2026-59763"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for code.gitea.io/gitea (GHSA-9mq6-mqjj-c2c5)",
+      "severity": "Medium",
+      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445093",
+      "cves": [
+        "CVE-2026-59763"
       ]
     }
   ]

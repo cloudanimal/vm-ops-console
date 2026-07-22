@@ -1,9 +1,16 @@
 {
-  "updated": "2026-07-21",
+  "updated": "2026-07-22",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-21",
-  "previous_date": "2026-07-14",
+  "current_date": "2026-07-22",
+  "previous_date": "2026-07-15",
   "risers": [
+    {
+      "id": "CVE-2026-0770",
+      "now": 0.54503,
+      "prev": 0.10371,
+      "delta": 0.44132,
+      "name": "Langflow exec_globals Inclusion of Functionality from Untrusted Control Sphere Remote Code"
+    },
     {
       "id": "CVE-2026-39808",
       "now": 0.84158,
@@ -14,9 +21,30 @@
     {
       "id": "CVE-2022-34169",
       "now": 0.33623,
-      "prev": 0.17673,
-      "delta": 0.1595,
+      "prev": 0.16151,
+      "delta": 0.17472,
       "name": "Apache Xalan Java XSLT library is vulnerable to an integer truncation issue when processin"
+    },
+    {
+      "id": "CVE-2026-15410",
+      "now": 0.18287,
+      "prev": 0.01647,
+      "delta": 0.1664,
+      "name": "SonicWall SMA1000"
+    },
+    {
+      "id": "CVE-2026-56290",
+      "now": 0.18707,
+      "prev": 0.02912,
+      "delta": 0.15795,
+      "name": "Joomla Extension - joomlack.fr - Unauthenticated file upload in Page Builder CK extension "
+    },
+    {
+      "id": "CVE-2026-15409",
+      "now": 0.16271,
+      "prev": 0.01404,
+      "delta": 0.14867,
+      "name": "SonicWall SMA1000"
     },
     {
       "id": "CVE-2025-33073",
@@ -24,6 +52,13 @@
       "prev": 0.64987,
       "delta": 0.13528,
       "name": "Windows SMB Client Elevation of Privilege Vulnerability"
+    },
+    {
+      "id": "CVE-2003-0772",
+      "now": 0.84883,
+      "prev": 0.72069,
+      "delta": 0.12814,
+      "name": "Multiple buffer overflows in WS_FTP 3 and 4 allow remote authenticated users to cause a denial of service and "
     },
     {
       "id": "CVE-2026-25089",
@@ -52,6 +87,20 @@
       "prev": 0.41251,
       "delta": 0.11366,
       "name": "Adobe Acrobat Reader 8.1.2 and earlier, and before 7.1.1, allows remote attackers to cause a denial of service"
+    },
+    {
+      "id": "CVE-2025-34509",
+      "now": 0.51018,
+      "prev": 0.39961,
+      "delta": 0.11057,
+      "name": "Sitecore XM and XP Hardcoded Credentials"
+    },
+    {
+      "id": "CVE-2026-33497",
+      "now": 0.19584,
+      "prev": 0.08847,
+      "delta": 0.10737,
+      "name": "Langflow: /profile_pictures/{folder_name}/{file_name} endpoint file reading"
     },
     {
       "id": "CVE-2026-2699",
@@ -103,18 +152,18 @@
       "name": "Joomla Extension - balbooa.com - Unauthenticated file upload in Balbooa Forms extension < "
     },
     {
+      "id": "CVE-2010-4231",
+      "now": 0.1633,
+      "prev": 0.09542,
+      "delta": 0.06788,
+      "name": "Directory traversal vulnerability in the web-based administration interface on the Camtron CMNC-200 Full HD IP"
+    },
+    {
       "id": "CVE-2009-0592",
       "now": 0.28831,
       "prev": 0.22214,
       "delta": 0.06617,
       "name": "Multiple directory traversal vulnerabilities in PNphpBB2 1.2i and earlier allow remote attackers to include an"
-    },
-    {
-      "id": "CVE-2002-0061",
-      "now": 0.56701,
-      "prev": 0.50371,
-      "delta": 0.0633,
-      "name": "Apache for Win32 before 1.3.24, and 2.0.x before 2.0.34-beta, allows remote attackers to execute arbitrary com"
     },
     {
       "id": "CVE-2021-34833",
@@ -131,18 +180,18 @@
       "name": "Multiple PHP remote file inclusion vulnerabilities in NES Game and NES System c108122 and earlier allow remote"
     },
     {
-      "id": "CVE-2020-8958",
-      "now": 0.52643,
-      "prev": 0.46642,
-      "delta": 0.06001,
-      "name": "Guangzhou 1GE ONU V2801RW 1.9.1-181203 through 2.9.0-181024 and V2804RGW 1.9.1-181203 through 2.9.0-181024 dev"
-    },
-    {
       "id": "CVE-2006-4236",
       "now": 0.15336,
       "prev": 0.09483,
       "delta": 0.05853,
       "name": "Multiple PHP remote file inclusion vulnerabilities in POWERGAP allow remote attackers to execute arbitrary PHP"
+    },
+    {
+      "id": "CVE-2026-48284",
+      "now": 0.0794,
+      "prev": 0.02174,
+      "delta": 0.05766,
+      "name": "ColdFusion | Improper Input Validation (CWE-20)"
     },
     {
       "id": "CVE-2024-5806",
@@ -152,70 +201,28 @@
       "name": "MOVEit Transfer Authentication Bypass Vulnerability"
     },
     {
-      "id": "CVE-2024-43572",
-      "now": 0.66571,
-      "prev": 0.60954,
-      "delta": 0.05617,
-      "name": "Microsoft Management Console Remote Code Execution Vulnerability"
+      "id": "CVE-2026-48320",
+      "now": 0.09358,
+      "prev": 0.0375,
+      "delta": 0.05608,
+      "name": "ColdFusion | Cross-site Scripting (Reflected XSS) (CWE-79)"
     },
     {
-      "id": "CVE-2009-0595",
-      "now": 0.22207,
-      "prev": 0.16958,
-      "delta": 0.05249,
-      "name": "PHP remote file inclusion vulnerability in skysilver/login.tpl.php in phpSkelSite 1.4, when register_globals i"
-    },
-    {
-      "id": "CVE-2014-100005",
-      "now": 0.47071,
-      "prev": 0.42414,
-      "delta": 0.04657,
-      "name": "Multiple cross-site request forgery (CSRF) vulnerabilities in D-Link DIR-600 router (rev. Bx) with firmware be"
-    },
-    {
-      "id": "CVE-2009-0543",
-      "now": 0.18722,
-      "prev": 0.1424,
-      "delta": 0.04482,
-      "name": "ProFTPD Server 1.3.1, with NLS support enabled, allows remote attackers to bypass SQL injection protection mec"
-    },
-    {
-      "id": "CVE-2022-2488",
-      "now": 0.32947,
-      "prev": 0.28724,
-      "delta": 0.04223,
-      "name": "WAVLINK WN535K2/WN535K3 touchlist_sync.cgi os command injection"
-    },
-    {
-      "id": "CVE-2022-35977",
-      "now": 0.37299,
-      "prev": 0.33269,
-      "delta": 0.0403,
-      "name": "Integer overflow in certain command arguments can drive Redis to OOM panic"
-    },
-    {
-      "id": "CVE-2026-2537",
-      "now": 0.2447,
-      "prev": 0.2044,
-      "delta": 0.0403,
-      "name": "Comfast CF-E4 HTTP POST Request mbox-config command injection"
-    },
-    {
-      "id": "CVE-2022-34047",
-      "now": 0.21387,
-      "prev": 0.17444,
-      "delta": 0.03943,
-      "name": "An access control issue in Wavlink WN530HG4 M30HG4.V5030.191116 allows attackers to obtain usernames and passw"
-    },
-    {
-      "id": "CVE-2022-34046",
-      "now": 0.20351,
-      "prev": 0.16583,
-      "delta": 0.03768,
-      "name": "An access control issue in Wavlink WN533A8 M33A8.V5030.190716 allows attackers to obtain usernames and passwor"
+      "id": "CVE-2026-49975",
+      "now": 0.16833,
+      "prev": 0.11471,
+      "delta": 0.05362,
+      "name": "Apache HTTP Server: mod_http2 denial of service"
     }
   ],
   "newly_high": [
+    {
+      "id": "CVE-2026-0770",
+      "now": 0.54503,
+      "prev": 0.10371,
+      "delta": 0.44132,
+      "name": "Langflow exec_globals Inclusion of Functionality from Untrusted Control Sphere Remote Code"
+    },
     {
       "id": "CVE-2026-39808",
       "now": 0.84158,
@@ -238,18 +245,18 @@
       "name": "Adobe Acrobat Reader 8.1.2 and earlier, and before 7.1.1, allows remote attackers to cause a denial of service"
     },
     {
+      "id": "CVE-2025-34509",
+      "now": 0.51018,
+      "prev": 0.39961,
+      "delta": 0.11057,
+      "name": "Sitecore XM and XP Hardcoded Credentials"
+    },
+    {
       "id": "CVE-2026-2699",
       "now": 0.59506,
       "prev": 0.49424,
       "delta": 0.10082,
       "name": "EAR vulnerability in Progress ShareFile Storage Zones Controller (SZC)"
-    },
-    {
-      "id": "CVE-2020-8958",
-      "now": 0.52643,
-      "prev": 0.46642,
-      "delta": 0.06001,
-      "name": "Guangzhou 1GE ONU V2801RW 1.9.1-181203 through 2.9.0-181024 and V2804RGW 1.9.1-181203 through 2.9.0-181024 dev"
     },
     {
       "id": "CVE-2015-5127",
