@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-22",
+  "updated": "2026-07-23",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-22",
-  "previous_date": "2026-07-15",
+  "current_date": "2026-07-23",
+  "previous_date": "2026-07-16",
   "risers": [
     {
       "id": "CVE-2026-0770",
@@ -19,17 +19,10 @@
       "name": "Fortinet FortiSandbox"
     },
     {
-      "id": "CVE-2022-34169",
-      "now": 0.33623,
-      "prev": 0.16151,
-      "delta": 0.17472,
-      "name": "Apache Xalan Java XSLT library is vulnerable to an integer truncation issue when processin"
-    },
-    {
       "id": "CVE-2026-15410",
       "now": 0.18287,
-      "prev": 0.01647,
-      "delta": 0.1664,
+      "prev": 0.01486,
+      "delta": 0.16801,
       "name": "SonicWall SMA1000"
     },
     {
@@ -42,8 +35,8 @@
     {
       "id": "CVE-2026-15409",
       "now": 0.16271,
-      "prev": 0.01404,
-      "delta": 0.14867,
+      "prev": 0.01266,
+      "delta": 0.15005,
       "name": "SonicWall SMA1000"
     },
     {
@@ -66,13 +59,6 @@
       "prev": 0.23393,
       "delta": 0.12742,
       "name": "Fortinet FortiSandbox"
-    },
-    {
-      "id": "CVE-2021-26919",
-      "now": 0.34949,
-      "prev": 0.22588,
-      "delta": 0.12361,
-      "name": "Apache Druid Authenticated users can execute arbitrary code from malicious MySQL database "
     },
     {
       "id": "CVE-2025-48828",
@@ -115,6 +101,13 @@
       "prev": 0.09461,
       "delta": 0.09811,
       "name": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Crea"
+    },
+    {
+      "id": "CVE-2008-6221",
+      "now": 0.37692,
+      "prev": 0.27888,
+      "delta": 0.09804,
+      "name": "PHP remote file inclusion vulnerability in config.dadamail.php in the Dada Mail Manager (com_dadamail) compone"
     },
     {
       "id": "CVE-2025-29513",
@@ -187,13 +180,6 @@
       "name": "Multiple PHP remote file inclusion vulnerabilities in POWERGAP allow remote attackers to execute arbitrary PHP"
     },
     {
-      "id": "CVE-2026-48284",
-      "now": 0.0794,
-      "prev": 0.02174,
-      "delta": 0.05766,
-      "name": "ColdFusion | Improper Input Validation (CWE-20)"
-    },
-    {
       "id": "CVE-2024-5806",
       "now": 0.81474,
       "prev": 0.75812,
@@ -201,18 +187,32 @@
       "name": "MOVEit Transfer Authentication Bypass Vulnerability"
     },
     {
-      "id": "CVE-2026-48320",
-      "now": 0.09358,
-      "prev": 0.0375,
-      "delta": 0.05608,
-      "name": "ColdFusion | Cross-site Scripting (Reflected XSS) (CWE-79)"
-    },
-    {
       "id": "CVE-2026-49975",
       "now": 0.16833,
       "prev": 0.11471,
       "delta": 0.05362,
       "name": "Apache HTTP Server: mod_http2 denial of service"
+    },
+    {
+      "id": "CVE-2009-0595",
+      "now": 0.22207,
+      "prev": 0.16958,
+      "delta": 0.05249,
+      "name": "PHP remote file inclusion vulnerability in skysilver/login.tpl.php in phpSkelSite 1.4, when register_globals i"
+    },
+    {
+      "id": "CVE-2025-36527",
+      "now": 0.28216,
+      "prev": 0.23084,
+      "delta": 0.05132,
+      "name": "SQL Injection"
+    },
+    {
+      "id": "CVE-2014-100005",
+      "now": 0.47071,
+      "prev": 0.42414,
+      "delta": 0.04657,
+      "name": "Multiple cross-site request forgery (CSRF) vulnerabilities in D-Link DIR-600 router (rev. Bx) with firmware be"
     }
   ],
   "newly_high": [
@@ -257,6 +257,13 @@
       "prev": 0.49424,
       "delta": 0.10082,
       "name": "EAR vulnerability in Progress ShareFile Storage Zones Controller (SZC)"
+    },
+    {
+      "id": "CVE-2021-39840",
+      "now": 0.50626,
+      "prev": 0.49525,
+      "delta": 0.01101,
+      "name": "Adobe Acrobat Reader DC AcroForm Field Use-After-Free Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2015-5127",

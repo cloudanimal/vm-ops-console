@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22",
+  "updated": "2026-07-23",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,586 +7,590 @@
   "items": [
     {
       "id": null,
-      "title": "SCA: security update for SharpCompress (GHSA-6c8g-7p36-r338)",
+      "title": "SCA: security update for io.netty:netty-codec-http (GHSA-mvh2-crg5-v77c)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445207",
+      "cves": [
+        "CVE-2026-55833"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for io.netty:netty-codec-http (GHSA-mvh2-crg5-v77c)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445207",
+      "cves": [
+        "CVE-2026-55833"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for io.netty:netty-codec-haproxy (GHSA-q6cq-mhr2-jmr5)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445206",
+      "cves": [
+        "CVE-2026-55851"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for io.netty:netty-codec-haproxy (GHSA-q6cq-mhr2-jmr5)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445206",
+      "cves": [
+        "CVE-2026-55851"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for dompdf/dompdf (GHSA-cx96-42px-69fm)",
       "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445122",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445205",
       "cves": [
-        "CVE-2026-44788"
+        "CVE-2026-56722"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for SharpCompress (GHSA-6c8g-7p36-r338)",
+      "title": "SCA: security update for dompdf/dompdf (GHSA-cx96-42px-69fm)",
       "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445122",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445205",
       "cves": [
-        "CVE-2026-44788"
+        "CVE-2026-56722"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for fast-uri (GHSA-4c8g-83qw-93j6)",
+      "title": "SCA: security update for io.netty:netty-codec-http3 (GHSA-hpcc-26xq-25fv)",
       "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445121",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445204",
       "cves": [
-        "CVE-2026-13676"
+        "CVE-2026-56816"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for fast-uri (GHSA-4c8g-83qw-93j6)",
+      "title": "SCA: security update for io.netty:netty-codec-http3 (GHSA-hpcc-26xq-25fv)",
       "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445121",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445204",
       "cves": [
-        "CVE-2026-13676"
+        "CVE-2026-56816"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for aws-cdk-lib (GHSA-vcrf-j523-4mrf)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445120",
-      "cves": [
-        "CVE-2026-13760"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for aws-cdk-lib (GHSA-vcrf-j523-4mrf)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445120",
-      "cves": [
-        "CVE-2026-13760"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for @opentelemetry/propagator-jaeger (GHSA-45rx-2jwx-cxfr)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445119",
-      "cves": [
-        "CVE-2026-59892"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for @opentelemetry/propagator-jaeger (GHSA-45rx-2jwx-cxfr)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445119",
-      "cves": [
-        "CVE-2026-59892"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for setuptools (GHSA-h35f-9h28-mq5c)",
+      "title": "SCA: security update for io.netty:netty-codec-http2 (GHSA-c69g-56f8-xwqj)",
       "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445118",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445203",
       "cves": [
-        "CVE-2026-59890"
+        "CVE-2026-59900"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for setuptools (GHSA-h35f-9h28-mq5c)",
+      "title": "SCA: security update for io.netty:netty-codec-http2 (GHSA-c69g-56f8-xwqj)",
       "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445118",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445203",
       "cves": [
-        "CVE-2026-59890"
+        "CVE-2026-59900"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-82f7-87hm-852x)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445117",
+      "title": "SCA: security update for io.netty:netty-codec-haproxy (GHSA-wh89-7897-x99h)",
+      "severity": "Medium",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445202",
       "cves": [
-        "CVE-2026-57894"
+        "CVE-2026-59919"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-82f7-87hm-852x)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445117",
+      "title": "SCA: security update for io.netty:netty-codec-haproxy (GHSA-wh89-7897-x99h)",
+      "severity": "Medium",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445202",
       "cves": [
-        "CVE-2026-57894"
+        "CVE-2026-59919"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for svgo (GHSA-2p49-hgcm-8545)",
+      "title": "SCA: security update for n8n (GHSA-q3j5-8vrg-4p9q)",
       "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445116",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445201",
+      "cves": [
+        "CVE-2026-59209"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-q3j5-8vrg-4p9q)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445201",
+      "cves": [
+        "CVE-2026-59209"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-75qm-gp28-rcq9)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445200",
+      "cves": [
+        "CVE-2026-59206"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-75qm-gp28-rcq9)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445200",
+      "cves": [
+        "CVE-2026-59206"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-mq3m-f8x3-579w)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445199",
+      "cves": [
+        "CVE-2026-59208"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-mq3m-f8x3-579w)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445199",
+      "cves": [
+        "CVE-2026-59208"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-8342-988q-86cr)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445198",
       "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for svgo (GHSA-2p49-hgcm-8545)",
+      "title": "SCA: security update for n8n (GHSA-8342-988q-86cr)",
       "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445116",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445198",
       "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for gitea.dev (GHSA-66m4-5jjr-2rg5)",
-      "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445115",
-      "cves": [
-        "CVE-2026-58440"
-      ]
+      "title": "SCA: security update for n8n (GHSA-vhf8-cg2h-cg3p)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445197",
+      "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for gitea.dev (GHSA-66m4-5jjr-2rg5)",
-      "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445115",
-      "cves": [
-        "CVE-2026-58440"
-      ]
+      "title": "SCA: security update for n8n (GHSA-vhf8-cg2h-cg3p)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445197",
+      "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-q9pg-jj6x-j9p6)",
-      "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445114",
-      "cves": [
-        "CVE-2026-58432"
-      ]
+      "title": "SCA: security update for n8n (GHSA-pf2q-pxhf-hgmw)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445196",
+      "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-q9pg-jj6x-j9p6)",
-      "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445114",
-      "cves": [
-        "CVE-2026-58432"
-      ]
+      "title": "SCA: security update for n8n (GHSA-pf2q-pxhf-hgmw)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445196",
+      "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-rgv6-xp99-6mgj)",
-      "severity": "Critical",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445113",
-      "cves": [
-        "CVE-2026-56750"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-rgv6-xp99-6mgj)",
-      "severity": "Critical",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445113",
-      "cves": [
-        "CVE-2026-56750"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-x77v-q46j-393g)",
+      "title": "SCA: security update for dompdf/dompdf (GHSA-7x2p-4jvh-6384)",
       "severity": "Low",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445112",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445195",
       "cves": [
-        "CVE-2026-23603"
+        "CVE-2026-55555"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-x77v-q46j-393g)",
+      "title": "SCA: security update for dompdf/dompdf (GHSA-7x2p-4jvh-6384)",
       "severity": "Low",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445112",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445195",
       "cves": [
-        "CVE-2026-23603"
+        "CVE-2026-55555"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for gitea.dev (GHSA-2m9v-5q2g-58vq)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445111",
-      "cves": [
-        "CVE-2026-28740"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for gitea.dev (GHSA-2m9v-5q2g-58vq)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445111",
-      "cves": [
-        "CVE-2026-28740"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-v96j-25gv-g2w9)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445110",
-      "cves": [
-        "CVE-2026-58421"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-v96j-25gv-g2w9)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445110",
-      "cves": [
-        "CVE-2026-58421"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-hg5r-vq93-9fv6)",
-      "severity": "Critical",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445109",
-      "cves": [
-        "CVE-2026-58426"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-hg5r-vq93-9fv6)",
-      "severity": "Critical",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445109",
-      "cves": [
-        "CVE-2026-58426"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-xxjv-752h-3vp2)",
-      "severity": "Critical",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445108",
-      "cves": [
-        "CVE-2026-58443"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-xxjv-752h-3vp2)",
-      "severity": "Critical",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445108",
-      "cves": [
-        "CVE-2026-58443"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-mg4f-x9v4-6h2p)",
+      "title": "SCA: security update for n8n (GHSA-hwmj-qg4v-cvg9)",
       "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445107",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445194",
       "cves": [
-        "CVE-2026-55982"
+        "CVE-2026-59257"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-mg4f-x9v4-6h2p)",
+      "title": "SCA: security update for n8n (GHSA-hwmj-qg4v-cvg9)",
       "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445107",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445194",
       "cves": [
-        "CVE-2026-55982"
+        "CVE-2026-59257"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-m932-crvm-gcp5)",
+      "title": "SCA: security update for n8n (GHSA-2434-3x6q-8r99)",
+      "severity": "Medium",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445193",
+      "cves": [
+        "CVE-2026-59254"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-2434-3x6q-8r99)",
+      "severity": "Medium",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445193",
+      "cves": [
+        "CVE-2026-59254"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-2xgm-wc4g-5jvg)",
+      "severity": "Medium",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445192",
+      "cves": [
+        "CVE-2026-59253"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-2xgm-wc4g-5jvg)",
+      "severity": "Medium",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445192",
+      "cves": [
+        "CVE-2026-59253"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-q5xf-xhwf-cwqf)",
+      "severity": "Medium",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445191",
+      "cves": [
+        "CVE-2026-65594"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-q5xf-xhwf-cwqf)",
+      "severity": "Medium",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445191",
+      "cves": [
+        "CVE-2026-65594"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-33q9-f52j-gc75)",
+      "severity": "Medium",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445190",
+      "cves": [
+        "CVE-2026-65014"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-33q9-f52j-gc75)",
+      "severity": "Medium",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445190",
+      "cves": [
+        "CVE-2026-65014"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for litellm (GHSA-5jmr-gcrj-2c9q)",
+      "severity": "Medium",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445189",
+      "cves": [
+        "CVE-2026-59820"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for litellm (GHSA-5jmr-gcrj-2c9q)",
+      "severity": "Medium",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445189",
+      "cves": [
+        "CVE-2026-59820"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for litellm (GHSA-4g5m-c9r5-49xf)",
       "severity": "Low",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445106",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445188",
       "cves": [
-        "CVE-2026-55984"
+        "CVE-2026-59819"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-m932-crvm-gcp5)",
+      "title": "SCA: security update for litellm (GHSA-4g5m-c9r5-49xf)",
       "severity": "Low",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445106",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445188",
       "cves": [
-        "CVE-2026-55984"
+        "CVE-2026-59819"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for gitea.dev (GHSA-5ggr-2f2h-jmvm)",
+      "title": "SCA: security update for litellm (GHSA-7488-6r32-c95q)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445187",
+      "cves": [
+        "CVE-2026-59822"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for litellm (GHSA-7488-6r32-c95q)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445187",
+      "cves": [
+        "CVE-2026-59822"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for litellm (GHSA-72m8-9m7m-h278)",
+      "severity": "Low",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445186",
+      "cves": [
+        "CVE-2026-59821"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for litellm (GHSA-72m8-9m7m-h278)",
+      "severity": "Low",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445186",
+      "cves": [
+        "CVE-2026-59821"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for dompdf/dompdf (GHSA-j8qw-6jw8-r297)",
       "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445105",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445185",
       "cves": [
-        "CVE-2026-58420"
+        "CVE-2026-59943"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for gitea.dev (GHSA-5ggr-2f2h-jmvm)",
+      "title": "SCA: security update for dompdf/dompdf (GHSA-j8qw-6jw8-r297)",
       "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445105",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445185",
       "cves": [
-        "CVE-2026-58420"
+        "CVE-2026-59943"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-8p9h-49rc-qgxj)",
+      "title": "SCA: security update for io.netty:netty-codec-http (GHSA-jppx-w49h-x2qq)",
       "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445104",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445184",
       "cves": [
-        "CVE-2026-58437"
+        "CVE-2026-56745"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-8p9h-49rc-qgxj)",
+      "title": "SCA: security update for io.netty:netty-codec-http (GHSA-jppx-w49h-x2qq)",
       "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445104",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445184",
       "cves": [
-        "CVE-2026-58437"
+        "CVE-2026-56745"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-fw57-jgch-pgf3)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445103",
-      "cves": [
-        "CVE-2026-58436"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-fw57-jgch-pgf3)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445103",
-      "cves": [
-        "CVE-2026-58436"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for immutable (GHSA-v56q-mh7h-f735)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445102",
-      "cves": [
-        "CVE-2026-59879"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for immutable (GHSA-v56q-mh7h-f735)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445102",
-      "cves": [
-        "CVE-2026-59879"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for immutable (GHSA-xvcm-6775-5m9r)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445101",
-      "cves": [
-        "CVE-2026-59880"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for immutable (GHSA-xvcm-6775-5m9r)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445101",
-      "cves": [
-        "CVE-2026-59880"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for pyssn1 (GHSA-m4p7-r5rc-7g4j)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445100",
-      "cves": [
-        "CVE-2026-59884"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for pyssn1 (GHSA-m4p7-r5rc-7g4j)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445100",
-      "cves": [
-        "CVE-2026-59884"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for @sigstore/oci (GHSA-pf56-329r-95rw)",
-      "severity": "Critical",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445099",
-      "cves": [
-        "CVE-2026-59891"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for @sigstore/oci (GHSA-pf56-329r-95rw)",
-      "severity": "Critical",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445099",
-      "cves": [
-        "CVE-2026-59891"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for dompurify (GHSA-c2j3-45gr-mqc4)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445098",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for dompurify (GHSA-c2j3-45gr-mqc4)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445098",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for GitPython (GHSA-v396-v7q4-x2qj)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445097",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for GitPython (GHSA-v396-v7q4-x2qj)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445097",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for GitPython (GHSA-956x-8gvw-wg5v)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445096",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for GitPython (GHSA-956x-8gvw-wg5v)",
-      "severity": "High",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445096",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-qf2f-qh6p-7v89)",
+      "title": "SCA: security update for org.eclipse.jetty:jetty-util (GHSA-w7x5-g22v-xqhr)",
       "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445095",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445183",
       "cves": [
-        "CVE-2026-59766"
+        "CVE-2026-8384"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-qf2f-qh6p-7v89)",
+      "title": "SCA: security update for org.eclipse.jetty:jetty-util (GHSA-w7x5-g22v-xqhr)",
       "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445095",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445183",
       "cves": [
-        "CVE-2026-59766"
+        "CVE-2026-8384"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-7p4h-3gxq-x3h3)",
+      "title": "SCA: security update for next (GHSA-4c39-4ccg-62r3)",
       "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445094",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445182",
       "cves": [
-        "CVE-2026-56443"
+        "CVE-2026-64646"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-7p4h-3gxq-x3h3)",
+      "title": "SCA: security update for next (GHSA-4c39-4ccg-62r3)",
       "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445094",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445182",
       "cves": [
-        "CVE-2026-56443"
+        "CVE-2026-64646"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-9mq6-mqjj-c2c5)",
-      "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445093",
+      "title": "SCA: security update for io.netty:netty-codec-xml (GHSA-4qhr-g3c6-fcfx)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445181",
       "cves": [
-        "CVE-2026-59763"
+        "CVE-2026-56817"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for code.gitea.io/gitea (GHSA-9mq6-mqjj-c2c5)",
-      "severity": "Medium",
-      "date": "Wed, 22 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445093",
+      "title": "SCA: security update for io.netty:netty-codec-xml (GHSA-4qhr-g3c6-fcfx)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445181",
       "cves": [
-        "CVE-2026-59763"
+        "CVE-2026-56817"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for next (GHSA-68g3-v927-f742)",
+      "severity": "Medium",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445180",
+      "cves": [
+        "CVE-2026-64648"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for next (GHSA-68g3-v927-f742)",
+      "severity": "Medium",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445180",
+      "cves": [
+        "CVE-2026-64648"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for dompdf/dompdf (GHSA-wvh6-f5jh-8gw4)",
+      "severity": "Low",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445179",
+      "cves": [
+        "CVE-2026-55554"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for dompdf/dompdf (GHSA-wvh6-f5jh-8gw4)",
+      "severity": "Low",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445179",
+      "cves": [
+        "CVE-2026-55554"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for io.netty:netty-handler-ssl-ocsp (GHSA-g7hg-vrcf-mvmr)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445178",
+      "cves": [
+        "CVE-2026-56821"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for io.netty:netty-handler-ssl-ocsp (GHSA-g7hg-vrcf-mvmr)",
+      "severity": "High",
+      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445178",
+      "cves": [
+        "CVE-2026-56821"
       ]
     }
   ]
