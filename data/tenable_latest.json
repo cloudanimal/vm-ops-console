@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-23",
+  "updated": "2026-07-24",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,590 +7,1026 @@
   "items": [
     {
       "id": null,
-      "title": "SCA: security update for io.netty:netty-codec-http (GHSA-mvh2-crg5-v77c)",
+      "title": "SCA: security update for find-my-way (GHSA-c96f-x56v-gq3h)",
       "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445207",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445227",
       "cves": [
-        "CVE-2026-55833"
+        "CVE-2026-47219"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for io.netty:netty-codec-http (GHSA-mvh2-crg5-v77c)",
+      "title": "SCA: security update for find-my-way (GHSA-c96f-x56v-gq3h)",
       "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445207",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445227",
       "cves": [
-        "CVE-2026-55833"
+        "CVE-2026-47219"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for io.netty:netty-codec-haproxy (GHSA-q6cq-mhr2-jmr5)",
-      "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445206",
-      "cves": [
-        "CVE-2026-55851"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for io.netty:netty-codec-haproxy (GHSA-q6cq-mhr2-jmr5)",
-      "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445206",
-      "cves": [
-        "CVE-2026-55851"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for dompdf/dompdf (GHSA-cx96-42px-69fm)",
+      "title": "SCA: security update for react-router (GHSA-337j-9hxr-rhxg)",
       "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445205",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445226",
       "cves": [
-        "CVE-2026-56722"
+        "CVE-2026-53666"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for dompdf/dompdf (GHSA-cx96-42px-69fm)",
+      "title": "SCA: security update for react-router (GHSA-337j-9hxr-rhxg)",
       "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445205",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445226",
       "cves": [
-        "CVE-2026-56722"
+        "CVE-2026-53666"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for io.netty:netty-codec-http3 (GHSA-hpcc-26xq-25fv)",
-      "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445204",
-      "cves": [
-        "CVE-2026-56816"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for io.netty:netty-codec-http3 (GHSA-hpcc-26xq-25fv)",
-      "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445204",
-      "cves": [
-        "CVE-2026-56816"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for io.netty:netty-codec-http2 (GHSA-c69g-56f8-xwqj)",
+      "title": "SCA: security update for react-router (GHSA-h8fp-f39c-q6mh)",
       "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445203",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445225",
       "cves": [
-        "CVE-2026-59900"
+        "CVE-2026-53667"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for io.netty:netty-codec-http2 (GHSA-c69g-56f8-xwqj)",
+      "title": "SCA: security update for react-router (GHSA-h8fp-f39c-q6mh)",
       "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445203",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445225",
       "cves": [
-        "CVE-2026-59900"
+        "CVE-2026-53667"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for io.netty:netty-codec-haproxy (GHSA-wh89-7897-x99h)",
+      "title": "SCA: security update for react-router (GHSA-wrjc-x8rr-h8h6)",
       "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445202",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445224",
       "cves": [
-        "CVE-2026-59919"
+        "CVE-2026-53669"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for io.netty:netty-codec-haproxy (GHSA-wh89-7897-x99h)",
+      "title": "SCA: security update for react-router (GHSA-wrjc-x8rr-h8h6)",
       "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445202",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445224",
       "cves": [
-        "CVE-2026-59919"
+        "CVE-2026-53669"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for n8n (GHSA-q3j5-8vrg-4p9q)",
-      "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445201",
+      "title": "SCA: security update for json (GHSA-x2f5-4prf-w687)",
+      "severity": "Low",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445223",
       "cves": [
-        "CVE-2026-59209"
+        "CVE-2026-54696"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for n8n (GHSA-q3j5-8vrg-4p9q)",
-      "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445201",
+      "title": "SCA: security update for json (GHSA-x2f5-4prf-w687)",
+      "severity": "Low",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445223",
       "cves": [
-        "CVE-2026-59209"
+        "CVE-2026-54696"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for n8n (GHSA-75qm-gp28-rcq9)",
-      "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445200",
+      "title": "SCA: security update for Magick.NET-Q16-AnyCPU, Magick.NET-Q16-HDRI-AnyCPU, Magick.NET-Q16-HDRI-OpenMP-arm64, Magick.NET-Q16-HDRI-arm64, Magick.NET-Q16-HDRI-x64, Magick.NET-Q16-HDRI-x86, Magick.NET-Q16-OpenMP-arm64, Magick.NET-Q16-OpenMP-x64, Magick.NET-Q16-arm64, Magick.NET-Q16-x64, Magick.NET-Q16-x86, Magick.NET-Q8-AnyCPU, Magick.NET-Q8-OpenMP-arm64, Magick.NET-Q8-OpenMP-x64, Magick.NET-Q8-arm64, Magick.NET-Q8-x64, Magick.NET-Q8-x86 (GHSA-8g53-9m3c-69xg)",
+      "severity": "Medium",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445222",
       "cves": [
-        "CVE-2026-59206"
+        "CVE-2026-53467"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for n8n (GHSA-75qm-gp28-rcq9)",
-      "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445200",
+      "title": "SCA: security update for Magick.NET-Q16-AnyCPU, Magick.NET-Q16-HDRI-AnyCPU, Magick.NET-Q16-HDRI-OpenMP-arm64, Magick.NET-Q16-HDRI-arm64, Magick.NET-Q16-HDRI-x64, Magick.NET-Q16-HDRI-x86, Magick.NET-Q16-OpenMP-arm64, Magick.NET-Q16-OpenMP-x64, Magick.NET-Q16-arm64, Magick.NET-Q16-x64, Magick.NET-Q16-x86, Magick.NET-Q8-AnyCPU, Magick.NET-Q8-OpenMP-arm64, Magick.NET-Q8-OpenMP-x64, Magick.NET-Q8-arm64, Magick.NET-Q8-x64, Magick.NET-Q8-x86 (GHSA-8g53-9m3c-69xg)",
+      "severity": "Medium",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445222",
       "cves": [
-        "CVE-2026-59206"
+        "CVE-2026-53467"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for n8n (GHSA-mq3m-f8x3-579w)",
-      "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445199",
+      "title": "SCA: security update for com.mchange:c3p0 (GHSA-w6w4-rjh9-9r58)",
+      "severity": "Medium",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445221",
       "cves": [
-        "CVE-2026-59208"
+        "CVE-2026-55223"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for n8n (GHSA-mq3m-f8x3-579w)",
-      "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445199",
+      "title": "SCA: security update for com.mchange:c3p0 (GHSA-w6w4-rjh9-9r58)",
+      "severity": "Medium",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445221",
       "cves": [
-        "CVE-2026-59208"
+        "CVE-2026-55223"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for n8n (GHSA-8342-988q-86cr)",
+      "title": "SCA: security update for react-router (GHSA-jjmj-jmhj-qwj2)",
+      "severity": "Medium",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445220",
+      "cves": [
+        "CVE-2026-53668"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for react-router (GHSA-jjmj-jmhj-qwj2)",
+      "severity": "Medium",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445220",
+      "cves": [
+        "CVE-2026-53668"
+      ]
+    },
+    {
+      "id": "329308",
+      "title": "openSUSE 16: ImageMagick / ImageMagick-config-7-SUSE / etc (openSUSE-SU-2026:21391-1)",
+      "severity": "Medium",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329308",
+      "cves": [
+        "CVE-2026-55628",
+        "CVE-2026-56362",
+        "CVE-2026-56366",
+        "CVE-2026-56372",
+        "CVE-2026-56373",
+        "CVE-2026-56377",
+        "CVE-2026-61465",
+        "CVE-2026-61857",
+        "CVE-2026-61858",
+        "CVE-2026-61861",
+        "CVE-2026-61870"
+      ]
+    },
+    {
+      "id": "329307",
+      "title": "openSUSE 16: cockpit / cockpit-bridge / cockpit-devel / cockpit-firewalld / etc (openSUSE-SU-2026:21399-1)",
+      "severity": "Critical",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329307",
+      "cves": [
+        "CVE-2025-13465",
+        "CVE-2026-25547",
+        "CVE-2026-26996",
+        "CVE-2026-27904",
+        "CVE-2026-4631"
+      ]
+    },
+    {
+      "id": "329306",
+      "title": "openSUSE 16 Security Update : python-pyasn1 (openSUSE-SU-2026:21392-1)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329306",
+      "cves": [
+        "CVE-2026-59884",
+        "CVE-2026-59885",
+        "CVE-2026-59886"
+      ]
+    },
+    {
+      "id": "329305",
+      "title": "openSUSE 16: cluster-md-kmp-64kb / cluster-md-kmp-azure / cluster-md-kmp-default / etc (openSUSE-SU-2026:21388-1)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329305",
+      "cves": [
+        "CVE-2025-10263",
+        "CVE-2025-39894",
+        "CVE-2025-40341",
+        "CVE-2026-23248",
+        "CVE-2026-23394",
+        "CVE-2026-23451",
+        "CVE-2026-31414",
+        "CVE-2026-31429",
+        "CVE-2026-31438",
+        "CVE-2026-31450",
+        "CVE-2026-31452",
+        "CVE-2026-31466",
+        "CVE-2026-31469",
+        "CVE-2026-31479",
+        "CVE-2026-31492",
+        "CVE-2026-31495",
+        "CVE-2026-31499",
+        "CVE-2026-31502",
+        "CVE-2026-31555",
+        "CVE-2026-31560",
+        "CVE-2026-31596",
+        "CVE-2026-31646",
+        "CVE-2026-31647",
+        "CVE-2026-31663",
+        "CVE-2026-31664",
+        "CVE-2026-31665",
+        "CVE-2026-31670",
+        "CVE-2026-31673",
+        "CVE-2026-31674",
+        "CVE-2026-31680",
+        "CVE-2026-31693",
+        "CVE-2026-31743",
+        "CVE-2026-31752",
+        "CVE-2026-31771",
+        "CVE-2026-43010",
+        "CVE-2026-43014",
+        "CVE-2026-43015",
+        "CVE-2026-43016",
+        "CVE-2026-43022",
+        "CVE-2026-43024",
+        "CVE-2026-43028",
+        "CVE-2026-43034",
+        "CVE-2026-43035",
+        "CVE-2026-43036",
+        "CVE-2026-43053",
+        "CVE-2026-43057",
+        "CVE-2026-43074",
+        "CVE-2026-43080",
+        "CVE-2026-43081",
+        "CVE-2026-43083",
+        "CVE-2026-43085",
+        "CVE-2026-43086",
+        "CVE-2026-43089",
+        "CVE-2026-43090",
+        "CVE-2026-43092",
+        "CVE-2026-43093",
+        "CVE-2026-43094",
+        "CVE-2026-43101",
+        "CVE-2026-43107",
+        "CVE-2026-43119",
+        "CVE-2026-43124",
+        "CVE-2026-43128",
+        "CVE-2026-43130",
+        "CVE-2026-43132",
+        "CVE-2026-43139",
+        "CVE-2026-43145",
+        "CVE-2026-43157",
+        "CVE-2026-43158",
+        "CVE-2026-43161",
+        "CVE-2026-43167",
+        "CVE-2026-43171",
+        "CVE-2026-43175",
+        "CVE-2026-43187",
+        "CVE-2026-43191",
+        "CVE-2026-43194",
+        "CVE-2026-43198",
+        "CVE-2026-43199",
+        "CVE-2026-43205",
+        "CVE-2026-43213",
+        "CVE-2026-43226",
+        "CVE-2026-43233",
+        "CVE-2026-43238",
+        "CVE-2026-43240",
+        "CVE-2026-43248",
+        "CVE-2026-43260",
+        "CVE-2026-43283",
+        "CVE-2026-43298",
+        "CVE-2026-43303",
+        "CVE-2026-43336",
+        "CVE-2026-43337",
+        "CVE-2026-43339",
+        "CVE-2026-43345",
+        "CVE-2026-43351",
+        "CVE-2026-43373",
+        "CVE-2026-43374",
+        "CVE-2026-43383",
+        "CVE-2026-43384",
+        "CVE-2026-43386",
+        "CVE-2026-43403",
+        "CVE-2026-43405",
+        "CVE-2026-43406",
+        "CVE-2026-43407",
+        "CVE-2026-43415",
+        "CVE-2026-43449",
+        "CVE-2026-43450",
+        "CVE-2026-43452",
+        "CVE-2026-43456",
+        "CVE-2026-43457",
+        "CVE-2026-43458",
+        "CVE-2026-43465",
+        "CVE-2026-43466",
+        "CVE-2026-43468",
+        "CVE-2026-43469",
+        "CVE-2026-43470",
+        "CVE-2026-43471",
+        "CVE-2026-43491",
+        "CVE-2026-43492",
+        "CVE-2026-43502",
+        "CVE-2026-45837",
+        "CVE-2026-45838",
+        "CVE-2026-45840",
+        "CVE-2026-45841",
+        "CVE-2026-45848",
+        "CVE-2026-45857",
+        "CVE-2026-45858",
+        "CVE-2026-45861",
+        "CVE-2026-45862",
+        "CVE-2026-45870",
+        "CVE-2026-45884",
+        "CVE-2026-45888",
+        "CVE-2026-45891",
+        "CVE-2026-45894",
+        "CVE-2026-45899",
+        "CVE-2026-45901",
+        "CVE-2026-45912",
+        "CVE-2026-45920",
+        "CVE-2026-45922",
+        "CVE-2026-45933",
+        "CVE-2026-45940",
+        "CVE-2026-45948",
+        "CVE-2026-45961",
+        "CVE-2026-45964",
+        "CVE-2026-45965",
+        "CVE-2026-45974",
+        "CVE-2026-45983",
+        "CVE-2026-45985",
+        "CVE-2026-45997",
+        "CVE-2026-45999",
+        "CVE-2026-46005",
+        "CVE-2026-46024",
+        "CVE-2026-46037",
+        "CVE-2026-46046",
+        "CVE-2026-46050",
+        "CVE-2026-46051",
+        "CVE-2026-46053",
+        "CVE-2026-46063",
+        "CVE-2026-46065",
+        "CVE-2026-46069",
+        "CVE-2026-46071",
+        "CVE-2026-46076",
+        "CVE-2026-46078",
+        "CVE-2026-46079",
+        "CVE-2026-46091",
+        "CVE-2026-46093",
+        "CVE-2026-46099",
+        "CVE-2026-46101",
+        "CVE-2026-46111",
+        "CVE-2026-46112",
+        "CVE-2026-46116",
+        "CVE-2026-46119",
+        "CVE-2026-46120",
+        "CVE-2026-46124",
+        "CVE-2026-46150",
+        "CVE-2026-46160",
+        "CVE-2026-46161",
+        "CVE-2026-46162",
+        "CVE-2026-46172",
+        "CVE-2026-46173",
+        "CVE-2026-46178",
+        "CVE-2026-46185",
+        "CVE-2026-46214",
+        "CVE-2026-46227",
+        "CVE-2026-46242",
+        "CVE-2026-46244",
+        "CVE-2026-46253",
+        "CVE-2026-46254",
+        "CVE-2026-46259",
+        "CVE-2026-46266",
+        "CVE-2026-46289",
+        "CVE-2026-46291",
+        "CVE-2026-46314",
+        "CVE-2026-46319",
+        "CVE-2026-46320",
+        "CVE-2026-46322",
+        "CVE-2026-46328",
+        "CVE-2026-52908",
+        "CVE-2026-52909",
+        "CVE-2026-52919",
+        "CVE-2026-52923",
+        "CVE-2026-52924",
+        "CVE-2026-52933",
+        "CVE-2026-52943",
+        "CVE-2026-52954",
+        "CVE-2026-52955",
+        "CVE-2026-52957",
+        "CVE-2026-52962",
+        "CVE-2026-52975",
+        "CVE-2026-52980",
+        "CVE-2026-52993",
+        "CVE-2026-53015",
+        "CVE-2026-53021",
+        "CVE-2026-53036",
+        "CVE-2026-53039",
+        "CVE-2026-53040",
+        "CVE-2026-53041",
+        "CVE-2026-53049",
+        "CVE-2026-53050",
+        "CVE-2026-53053",
+        "CVE-2026-53060",
+        "CVE-2026-53075",
+        "CVE-2026-53078",
+        "CVE-2026-53081",
+        "CVE-2026-53086",
+        "CVE-2026-53090",
+        "CVE-2026-53103",
+        "CVE-2026-53122",
+        "CVE-2026-53133",
+        "CVE-2026-53139",
+        "CVE-2026-53156",
+        "CVE-2026-53167",
+        "CVE-2026-53168",
+        "CVE-2026-53176",
+        "CVE-2026-53178",
+        "CVE-2026-53215",
+        "CVE-2026-53216",
+        "CVE-2026-53217",
+        "CVE-2026-53229",
+        "CVE-2026-53249",
+        "CVE-2026-53258",
+        "CVE-2026-53262",
+        "CVE-2026-53263",
+        "CVE-2026-53266",
+        "CVE-2026-53272",
+        "CVE-2026-53274",
+        "CVE-2026-53281",
+        "CVE-2026-53285",
+        "CVE-2026-53286",
+        "CVE-2026-53287",
+        "CVE-2026-53306"
+      ]
+    },
+    {
+      "id": "329304",
+      "title": "openSUSE 16: libgcrypt-devel / libgcrypt-devel-x86-64-v3 / libgcrypt20 / etc (openSUSE-SU-2026:21387-1)",
+      "severity": "Medium",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329304",
+      "cves": [
+        "CVE-2026-41989"
+      ]
+    },
+    {
+      "id": "329303",
+      "title": "openSUSE 16: GraphicsMagick / GraphicsMagick-devel / libGraphicsMagick++-Q16-12 / etc (openSUSE-SU-2026:21401-1)",
+      "severity": "Low",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329303",
+      "cves": [
+        "CVE-2026-61870"
+      ]
+    },
+    {
+      "id": "329302",
+      "title": "openSUSE 16 Security Update : radvd (openSUSE-SU-2026:21400-1)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329302",
+      "cves": [
+        "CVE-2026-48715"
+      ]
+    },
+    {
+      "id": "329301",
+      "title": "openSUSE 16 Security Update : afterburn (openSUSE-SU-2026:21386-1)",
+      "severity": "Critical",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329301",
+      "cves": [
+        "CVE-2026-25541",
+        "CVE-2026-41676",
+        "CVE-2026-41677",
+        "CVE-2026-41678",
+        "CVE-2026-41681",
+        "CVE-2026-41898",
+        "CVE-2026-42327",
+        "CVE-2026-44662",
+        "CVE-2026-45784"
+      ]
+    },
+    {
+      "id": "329300",
+      "title": "openSUSE 16 Security Update : gpg2 (openSUSE-SU-2026:21385-1)",
+      "severity": "Low",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329300",
+      "cves": [
+        "CVE-2026-57062"
+      ]
+    },
+    {
+      "id": "329299",
+      "title": "openSUSE 16 Security Update : gawk (openSUSE-SU-2026:21393-1)",
+      "severity": "Medium",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329299",
+      "cves": [
+        "CVE-2026-40467",
+        "CVE-2026-40468",
+        "CVE-2026-40553"
+      ]
+    },
+    {
+      "id": "329298",
+      "title": "openSUSE 16 Security Update : trivy (openSUSE-SU-2026:21395-1)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329298",
+      "cves": [
+        "CVE-2026-39821",
+        "CVE-2026-50151",
+        "CVE-2026-56852"
+      ]
+    },
+    {
+      "id": "329297",
+      "title": "Fedora 43 : dotnet9.0 (2026-3afd9d89f4)",
+      "severity": "Medium",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329297",
+      "cves": [
+        "CVE-2026-47300",
+        "CVE-2026-47302",
+        "CVE-2026-47303",
+        "CVE-2026-47304",
+        "CVE-2026-50524",
+        "CVE-2026-50525",
+        "CVE-2026-50527",
+        "CVE-2026-50528",
+        "CVE-2026-50646",
+        "CVE-2026-50648",
+        "CVE-2026-50649",
+        "CVE-2026-50650",
+        "CVE-2026-50659",
+        "CVE-2026-56158",
+        "CVE-2026-57108"
+      ]
+    },
+    {
+      "id": "329296",
+      "title": "Fedora 43 : cryptlib (2026-47575c76a5)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329296",
+      "cves": []
+    },
+    {
+      "id": "329295",
+      "title": "Fedora 43 : dotnet8.0 (2026-da44c3870f)",
+      "severity": "Medium",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329295",
+      "cves": [
+        "CVE-2026-47300",
+        "CVE-2026-47302",
+        "CVE-2026-47303",
+        "CVE-2026-47304",
+        "CVE-2026-50524",
+        "CVE-2026-50525",
+        "CVE-2026-50527",
+        "CVE-2026-50528",
+        "CVE-2026-50646",
+        "CVE-2026-50648",
+        "CVE-2026-50649",
+        "CVE-2026-50650",
+        "CVE-2026-50659",
+        "CVE-2026-56158",
+        "CVE-2026-57108"
+      ]
+    },
+    {
+      "id": "329294",
+      "title": "SUSE SLES12: MozillaFirefox / MozillaFirefox-devel / etc (SUSE-SU-2026:3200-1)",
+      "severity": "Critical",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329294",
+      "cves": [
+        "CVE-2026-15718",
+        "CVE-2026-15719",
+        "CVE-2026-16349",
+        "CVE-2026-16350",
+        "CVE-2026-16351",
+        "CVE-2026-16352",
+        "CVE-2026-16353",
+        "CVE-2026-16354",
+        "CVE-2026-16355",
+        "CVE-2026-16356",
+        "CVE-2026-16357",
+        "CVE-2026-16358",
+        "CVE-2026-16359",
+        "CVE-2026-16360",
+        "CVE-2026-16361",
+        "CVE-2026-16362",
+        "CVE-2026-16363",
+        "CVE-2026-16368",
+        "CVE-2026-16369",
+        "CVE-2026-16371",
+        "CVE-2026-16374",
+        "CVE-2026-16375",
+        "CVE-2026-16377",
+        "CVE-2026-16379",
+        "CVE-2026-16381",
+        "CVE-2026-16383",
+        "CVE-2026-16387",
+        "CVE-2026-16390",
+        "CVE-2026-16391",
+        "CVE-2026-16396",
+        "CVE-2026-16405",
+        "CVE-2026-16412"
+      ]
+    },
+    {
+      "id": "329293",
+      "title": "SUSE SLES12 Security Update : wget (SUSE-SU-2026:3205-1)",
+      "severity": "Medium",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329293",
+      "cves": [
+        "CVE-2026-15146",
+        "CVE-2026-58470",
+        "CVE-2026-58472"
+      ]
+    },
+    {
+      "id": "329292",
+      "title": "SUSE SLES15 Security Update : wget (SUSE-SU-2026:3206-1)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329292",
+      "cves": [
+        "CVE-2026-15146",
+        "CVE-2026-58469",
+        "CVE-2026-58470",
+        "CVE-2026-58471",
+        "CVE-2026-58472"
+      ]
+    },
+    {
+      "id": "329291",
+      "title": "SUSE SLES12 Security Update : multipath-tools (SUSE-SU-2026:3212-1)",
+      "severity": "Medium",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329291",
+      "cves": []
+    },
+    {
+      "id": "329290",
+      "title": "SUSE SLES15: GraphicsMagick / GraphicsMagick-devel / libGraphicsMagick++-Q16-12 / etc (SUSE-SU-2026:3201-1)",
+      "severity": "Low",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329290",
+      "cves": [
+        "CVE-2026-61870"
+      ]
+    },
+    {
+      "id": "329289",
+      "title": "SUSE SLES12 Security Update : gawk (SUSE-SU-2026:3211-1)",
+      "severity": "Low",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329289",
+      "cves": [
+        "CVE-2026-40468"
+      ]
+    },
+    {
+      "id": "329288",
+      "title": "SUSE SLES12 Security Update : google-osconfig-agent (SUSE-SU-2026:3209-1)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329288",
+      "cves": [
+        "CVE-2026-39821"
+      ]
+    },
+    {
+      "id": "329287",
+      "title": "SUSE SLES15 Security Update : python-urllib3 (SUSE-SU-2026:0367-2)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329287",
+      "cves": [
+        "CVE-2025-66418",
+        "CVE-2025-66471"
+      ]
+    },
+    {
+      "id": "329286",
+      "title": "SUSE SLES12 Security Update : ntfs-3g_ntfsprogs (SUSE-SU-2026:3213-1)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329286",
+      "cves": [
+        "CVE-2026-42616",
+        "CVE-2026-42617",
+        "CVE-2026-42618",
+        "CVE-2026-46569",
+        "CVE-2026-46570",
+        "CVE-2026-46571",
+        "CVE-2026-46572",
+        "CVE-2026-56135",
+        "CVE-2026-56136"
+      ]
+    },
+    {
+      "id": "329285",
+      "title": "SUSE SLES15 Security Update : kubevirt (SUSE-SU-2026:3203-1)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329285",
+      "cves": [
+        "CVE-2026-25680",
+        "CVE-2026-25681",
+        "CVE-2026-27136",
+        "CVE-2026-33814",
+        "CVE-2026-39821",
+        "CVE-2026-39827",
+        "CVE-2026-39828",
+        "CVE-2026-39829",
+        "CVE-2026-39830",
+        "CVE-2026-39831",
+        "CVE-2026-39832",
+        "CVE-2026-39833",
+        "CVE-2026-39834",
+        "CVE-2026-39835",
+        "CVE-2026-42502",
+        "CVE-2026-42506",
+        "CVE-2026-42508",
+        "CVE-2026-46595",
+        "CVE-2026-46597",
+        "CVE-2026-46598"
+      ]
+    },
+    {
+      "id": "329284",
+      "title": "SUSE SLES15 Security Update : python-urllib3 (SUSE-SU-2026:0255-2)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329284",
+      "cves": [
+        "CVE-2026-21441"
+      ]
+    },
+    {
+      "id": "329283",
+      "title": "SUSE SLES15 Security Update : google-guest-agent (SUSE-SU-2026:3210-1)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329283",
+      "cves": [
+        "CVE-2026-39821"
+      ]
+    },
+    {
+      "id": "329282",
+      "title": "SUSE SLES15 Security Update : python-aiohttp (SUSE-SU-2026:3208-1)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329282",
+      "cves": [
+        "CVE-2026-50269",
+        "CVE-2026-54273",
+        "CVE-2026-54274",
+        "CVE-2026-54275",
+        "CVE-2026-54277",
+        "CVE-2026-54278",
+        "CVE-2026-54279",
+        "CVE-2026-54280"
+      ]
+    },
+    {
+      "id": "329281",
+      "title": "SUSE SLED15 / SLES15 Security Update : ntfs-3g_ntfsprogs (SUSE-SU-2026:3214-1)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329281",
+      "cves": [
+        "CVE-2026-42616",
+        "CVE-2026-42617",
+        "CVE-2026-42618",
+        "CVE-2026-46569",
+        "CVE-2026-46570",
+        "CVE-2026-46571",
+        "CVE-2026-46572",
+        "CVE-2026-56135",
+        "CVE-2026-56136"
+      ]
+    },
+    {
+      "id": "329280",
+      "title": "SUSE SLED15 / SLES15 Security Update : python-aiohttp (SUSE-SU-2026:3207-1)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329280",
+      "cves": [
+        "CVE-2026-22815",
+        "CVE-2026-34513",
+        "CVE-2026-34514",
+        "CVE-2026-34516",
+        "CVE-2026-34517",
+        "CVE-2026-34518",
+        "CVE-2026-34519",
+        "CVE-2026-34520",
+        "CVE-2026-34525",
+        "CVE-2026-34993",
+        "CVE-2026-47265",
+        "CVE-2026-50269",
+        "CVE-2026-54273",
+        "CVE-2026-54274",
+        "CVE-2026-54275",
+        "CVE-2026-54277",
+        "CVE-2026-54278",
+        "CVE-2026-54279",
+        "CVE-2026-54280"
+      ]
+    },
+    {
+      "id": "329279",
+      "title": "MiracleLinux 8 : webkit2gtk3-2.52.5-1.el8_10.ML.1 (AXSA:2026-1340:06)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329279",
+      "cves": [
+        "CVE-2024-4367",
+        "CVE-2026-39872",
+        "CVE-2026-43663",
+        "CVE-2026-43676",
+        "CVE-2026-43699",
+        "CVE-2026-43701",
+        "CVE-2026-43705",
+        "CVE-2026-43707",
+        "CVE-2026-43712",
+        "CVE-2026-43713",
+        "CVE-2026-43715",
+        "CVE-2026-43716",
+        "CVE-2026-43720",
+        "CVE-2026-43721",
+        "CVE-2026-43725",
+        "CVE-2026-43726",
+        "CVE-2026-43727",
+        "CVE-2026-43731",
+        "CVE-2026-43732",
+        "CVE-2026-43734",
+        "CVE-2026-43740",
+        "CVE-2026-43742",
+        "CVE-2026-43745"
+      ]
+    },
+    {
+      "id": "329278",
+      "title": "MiracleLinux 9 : openssl-3.5.5-4.el9_8.ML.1 (AXSA:2026-1339:14)",
+      "severity": "Critical",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329278",
+      "cves": [
+        "CVE-2026-34180",
+        "CVE-2026-34181",
+        "CVE-2026-34182",
+        "CVE-2026-34183",
+        "CVE-2026-42764",
+        "CVE-2026-42766",
+        "CVE-2026-42767",
+        "CVE-2026-42768",
+        "CVE-2026-42769",
+        "CVE-2026-42770",
+        "CVE-2026-45445",
+        "CVE-2026-45446",
+        "CVE-2026-45447",
+        "CVE-2026-7383",
+        "CVE-2026-9076"
+      ]
+    },
+    {
+      "id": "329277",
+      "title": "MiracleLinux 9 : kernel-5.14.0-687.13.1.el9_8 (AXSA:2026-1341:52)",
+      "severity": "High",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329277",
+      "cves": [
+        "CVE-2026-31613",
+        "CVE-2026-31786",
+        "CVE-2026-46243"
+      ]
+    },
+    {
+      "id": "329276",
+      "title": "Microsoft Edge (Chromium) < 150.0.4078.96 Multiple Vulnerabilities",
+      "severity": "Critical",
+      "date": "Fri, 24 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329276",
+      "cves": [
+        "CVE-2026-16413",
+        "CVE-2026-16414",
+        "CVE-2026-16415",
+        "CVE-2026-16416",
+        "CVE-2026-16424"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @auth/core, next-auth (GHSA-x445-f3h2-j279)",
       "severity": "High",
       "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445198",
+      "link": "https://www.tenable.com/plugins/cloud-security/445219",
       "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for n8n (GHSA-8342-988q-86cr)",
+      "title": "SCA: security update for @auth/core, next-auth (GHSA-x445-f3h2-j279)",
       "severity": "High",
       "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445198",
+      "link": "https://www.tenable.com/plugins/container-security/445219",
       "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for n8n (GHSA-vhf8-cg2h-cg3p)",
+      "title": "SCA: security update for @auth/core, next-auth (GHSA-7rqj-j65f-68wh)",
       "severity": "High",
       "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445197",
+      "link": "https://www.tenable.com/plugins/cloud-security/445218",
       "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for n8n (GHSA-vhf8-cg2h-cg3p)",
+      "title": "SCA: security update for @auth/core, next-auth (GHSA-7rqj-j65f-68wh)",
       "severity": "High",
       "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445197",
+      "link": "https://www.tenable.com/plugins/container-security/445218",
       "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for n8n (GHSA-pf2q-pxhf-hgmw)",
+      "title": "SCA: security update for next-auth (GHSA-8fpg-xm3f-6cx3)",
       "severity": "High",
       "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445196",
+      "link": "https://www.tenable.com/plugins/cloud-security/445217",
       "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for n8n (GHSA-pf2q-pxhf-hgmw)",
+      "title": "SCA: security update for next-auth (GHSA-8fpg-xm3f-6cx3)",
       "severity": "High",
       "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445196",
+      "link": "https://www.tenable.com/plugins/container-security/445217",
       "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for dompdf/dompdf (GHSA-7x2p-4jvh-6384)",
-      "severity": "Low",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445195",
-      "cves": [
-        "CVE-2026-55555"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for dompdf/dompdf (GHSA-7x2p-4jvh-6384)",
-      "severity": "Low",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445195",
-      "cves": [
-        "CVE-2026-55555"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for n8n (GHSA-hwmj-qg4v-cvg9)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445194",
-      "cves": [
-        "CVE-2026-59257"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for n8n (GHSA-hwmj-qg4v-cvg9)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445194",
-      "cves": [
-        "CVE-2026-59257"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for n8n (GHSA-2434-3x6q-8r99)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445193",
-      "cves": [
-        "CVE-2026-59254"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for n8n (GHSA-2434-3x6q-8r99)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445193",
-      "cves": [
-        "CVE-2026-59254"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for n8n (GHSA-2xgm-wc4g-5jvg)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445192",
-      "cves": [
-        "CVE-2026-59253"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for n8n (GHSA-2xgm-wc4g-5jvg)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445192",
-      "cves": [
-        "CVE-2026-59253"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for n8n (GHSA-q5xf-xhwf-cwqf)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445191",
-      "cves": [
-        "CVE-2026-65594"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for n8n (GHSA-q5xf-xhwf-cwqf)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445191",
-      "cves": [
-        "CVE-2026-65594"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for n8n (GHSA-33q9-f52j-gc75)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445190",
-      "cves": [
-        "CVE-2026-65014"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for n8n (GHSA-33q9-f52j-gc75)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445190",
-      "cves": [
-        "CVE-2026-65014"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for litellm (GHSA-5jmr-gcrj-2c9q)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445189",
-      "cves": [
-        "CVE-2026-59820"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for litellm (GHSA-5jmr-gcrj-2c9q)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445189",
-      "cves": [
-        "CVE-2026-59820"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for litellm (GHSA-4g5m-c9r5-49xf)",
-      "severity": "Low",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445188",
-      "cves": [
-        "CVE-2026-59819"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for litellm (GHSA-4g5m-c9r5-49xf)",
-      "severity": "Low",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445188",
-      "cves": [
-        "CVE-2026-59819"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for litellm (GHSA-7488-6r32-c95q)",
+      "title": "SCA: security update for @auth/core, next-auth (GHSA-xmf8-cvqr-rfgj)",
       "severity": "High",
       "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445187",
-      "cves": [
-        "CVE-2026-59822"
-      ]
+      "link": "https://www.tenable.com/plugins/cloud-security/445216",
+      "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for litellm (GHSA-7488-6r32-c95q)",
+      "title": "SCA: security update for @auth/core, next-auth (GHSA-xmf8-cvqr-rfgj)",
       "severity": "High",
       "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445187",
-      "cves": [
-        "CVE-2026-59822"
-      ]
+      "link": "https://www.tenable.com/plugins/container-security/445216",
+      "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for litellm (GHSA-72m8-9m7m-h278)",
-      "severity": "Low",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445186",
-      "cves": [
-        "CVE-2026-59821"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for litellm (GHSA-72m8-9m7m-h278)",
-      "severity": "Low",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445186",
-      "cves": [
-        "CVE-2026-59821"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for dompdf/dompdf (GHSA-j8qw-6jw8-r297)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445185",
-      "cves": [
-        "CVE-2026-59943"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for dompdf/dompdf (GHSA-j8qw-6jw8-r297)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445185",
-      "cves": [
-        "CVE-2026-59943"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for io.netty:netty-codec-http (GHSA-jppx-w49h-x2qq)",
+      "title": "SCA: security update for phpoffice/phpspreadsheet (GHSA-2mrg-gjxq-2gvr)",
       "severity": "High",
       "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445184",
+      "link": "https://www.tenable.com/plugins/cloud-security/445215",
       "cves": [
-        "CVE-2026-56745"
+        "CVE-2026-59932"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for io.netty:netty-codec-http (GHSA-jppx-w49h-x2qq)",
+      "title": "SCA: security update for phpoffice/phpspreadsheet (GHSA-2mrg-gjxq-2gvr)",
       "severity": "High",
       "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445184",
+      "link": "https://www.tenable.com/plugins/container-security/445215",
       "cves": [
-        "CVE-2026-56745"
+        "CVE-2026-59932"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for org.eclipse.jetty:jetty-util (GHSA-w7x5-g22v-xqhr)",
+      "title": "SCA: security update for pypdf (GHSA-55h5-xmcq-c37v)",
       "severity": "Medium",
       "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445183",
+      "link": "https://www.tenable.com/plugins/cloud-security/445214",
       "cves": [
-        "CVE-2026-8384"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.eclipse.jetty:jetty-util (GHSA-w7x5-g22v-xqhr)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445183",
-      "cves": [
-        "CVE-2026-8384"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for next (GHSA-4c39-4ccg-62r3)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445182",
-      "cves": [
-        "CVE-2026-64646"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for next (GHSA-4c39-4ccg-62r3)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445182",
-      "cves": [
-        "CVE-2026-64646"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for io.netty:netty-codec-xml (GHSA-4qhr-g3c6-fcfx)",
-      "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445181",
-      "cves": [
-        "CVE-2026-56817"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for io.netty:netty-codec-xml (GHSA-4qhr-g3c6-fcfx)",
-      "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445181",
-      "cves": [
-        "CVE-2026-56817"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for next (GHSA-68g3-v927-f742)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445180",
-      "cves": [
-        "CVE-2026-64648"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for next (GHSA-68g3-v927-f742)",
-      "severity": "Medium",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445180",
-      "cves": [
-        "CVE-2026-64648"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for dompdf/dompdf (GHSA-wvh6-f5jh-8gw4)",
-      "severity": "Low",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445179",
-      "cves": [
-        "CVE-2026-55554"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for dompdf/dompdf (GHSA-wvh6-f5jh-8gw4)",
-      "severity": "Low",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445179",
-      "cves": [
-        "CVE-2026-55554"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for io.netty:netty-handler-ssl-ocsp (GHSA-g7hg-vrcf-mvmr)",
-      "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445178",
-      "cves": [
-        "CVE-2026-56821"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for io.netty:netty-handler-ssl-ocsp (GHSA-g7hg-vrcf-mvmr)",
-      "severity": "High",
-      "date": "Thu, 23 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445178",
-      "cves": [
-        "CVE-2026-56821"
+        "CVE-2026-59937"
       ]
     }
   ]
