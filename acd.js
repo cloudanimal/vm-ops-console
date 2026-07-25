@@ -86,7 +86,7 @@
 'use strict';
 // ---------- state ----------
 if(!STATE) STATE = { ad:[], me:[], ten:[], cs:[], adCols:[], src:{}, staleDays:30, denom:'enabled',
-  excludeNonReal:true, logonFilter:true, logonDays:15, cbTheme:'default',
+  excludeNonReal:true, logonFilter:false, logonDays:15, cbTheme:'default',
   ouMode:'exclude', ouSel:new Set(),   // OU scope: include-only or exclude the selected OUs from the whole analysis
   grpMode:'include', grpSel:new Set(),  // AD group (MemberOf) scope
   // per-source filter rules {mode, field, op, value}. AD rules scope the denominator;
