@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-25",
+  "updated": "2026-07-26",
   "source": "FIRST EPSS",
   "current_date": "2026-07-25",
-  "previous_date": "2026-07-18",
+  "previous_date": "2026-07-19",
   "risers": [
     {
       "id": "CVE-2026-63030",
@@ -40,13 +40,6 @@
       "name": "Zoho ManageEngine ADManager Plus through 7151 allows authenticated admin users to execute the commands in prox"
     },
     {
-      "id": "CVE-2026-56291",
-      "now": 0.76066,
-      "prev": 0.00836,
-      "delta": 0.7523,
-      "name": "Joomla Extension - balbooa.com - Unauthenticated file upload in Balbooa Forms extension < "
-    },
-    {
       "id": "CVE-2026-15410",
       "now": 0.76347,
       "prev": 0.01486,
@@ -66,6 +59,13 @@
       "prev": 0.28583,
       "delta": 0.7041,
       "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
+    },
+    {
+      "id": "CVE-2026-56291",
+      "now": 0.76066,
+      "prev": 0.08635,
+      "delta": 0.67431,
+      "name": "Joomla Extension - balbooa.com - Unauthenticated file upload in Balbooa Forms extension < "
     },
     {
       "id": "CVE-2023-39475",
@@ -252,13 +252,6 @@
       "name": "Zoho ManageEngine ADManager Plus through 7151 allows authenticated admin users to execute the commands in prox"
     },
     {
-      "id": "CVE-2026-56291",
-      "now": 0.76066,
-      "prev": 0.00836,
-      "delta": 0.7523,
-      "name": "Joomla Extension - balbooa.com - Unauthenticated file upload in Balbooa Forms extension < "
-    },
-    {
       "id": "CVE-2026-15410",
       "now": 0.76347,
       "prev": 0.01486,
@@ -278,6 +271,13 @@
       "prev": 0.28583,
       "delta": 0.7041,
       "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
+    },
+    {
+      "id": "CVE-2026-56291",
+      "now": 0.76066,
+      "prev": 0.08635,
+      "delta": 0.67431,
+      "name": "Joomla Extension - balbooa.com - Unauthenticated file upload in Balbooa Forms extension < "
     },
     {
       "id": "CVE-2023-39475",

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25",
+  "updated": "2026-07-26",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -206,385 +206,383 @@
       "cves": []
     },
     {
-      "id": "329501",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-8593",
-      "severity": "Medium",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329501",
-      "cves": [
-        "CVE-2026-8593"
-      ]
-    },
-    {
-      "id": "329500",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-12617",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329500",
-      "cves": [
-        "CVE-2026-12617"
-      ]
-    },
-    {
-      "id": "329499",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16374",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329499",
-      "cves": [
-        "CVE-2026-16374"
-      ]
-    },
-    {
-      "id": "329498",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-15226",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329498",
-      "cves": [
-        "CVE-2026-15226"
-      ]
-    },
-    {
-      "id": "329497",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16416",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329497",
-      "cves": [
-        "CVE-2026-16416"
-      ]
-    },
-    {
-      "id": "329496",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16382",
+      "id": "329997",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64412",
       "severity": "Critical",
       "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329496",
+      "link": "https://www.tenable.com/plugins/nessus/329997",
       "cves": [
-        "CVE-2026-16382"
+        "CVE-2026-64412"
       ]
     },
     {
-      "id": "329495",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16392",
-      "severity": "Medium",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329495",
-      "cves": [
-        "CVE-2026-16392"
-      ]
-    },
-    {
-      "id": "329494",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-42955",
-      "severity": "Low",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329494",
-      "cves": [
-        "CVE-2026-40622",
-        "CVE-2026-42955"
-      ]
-    },
-    {
-      "id": "329493",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16396",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329493",
-      "cves": [
-        "CVE-2026-16396"
-      ]
-    },
-    {
-      "id": "329492",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16381",
+      "id": "329996",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64323",
       "severity": "Critical",
       "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329492",
+      "link": "https://www.tenable.com/plugins/nessus/329996",
       "cves": [
-        "CVE-2026-16381"
+        "CVE-2026-64323"
       ]
     },
     {
-      "id": "329491",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16383",
+      "id": "329995",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64470",
       "severity": "Critical",
       "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329491",
+      "link": "https://www.tenable.com/plugins/nessus/329995",
       "cves": [
-        "CVE-2026-16383"
+        "CVE-2026-64470"
       ]
     },
     {
-      "id": "329490",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16420",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329490",
-      "cves": [
-        "CVE-2026-16420"
-      ]
-    },
-    {
-      "id": "329489",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16412",
+      "id": "329994",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64510",
       "severity": "Critical",
       "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329489",
+      "link": "https://www.tenable.com/plugins/nessus/329994",
       "cves": [
-        "CVE-2026-16412"
+        "CVE-2026-64510"
       ]
     },
     {
-      "id": "329488",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-13074",
-      "severity": "Medium",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329488",
-      "cves": [
-        "CVE-2026-13074"
-      ]
-    },
-    {
-      "id": "329487",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16411",
+      "id": "329993",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64471",
       "severity": "Critical",
       "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329487",
+      "link": "https://www.tenable.com/plugins/nessus/329993",
       "cves": [
-        "CVE-2026-16411"
+        "CVE-2026-64471"
       ]
     },
     {
-      "id": "329486",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16415",
-      "severity": "Medium",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329486",
-      "cves": [
-        "CVE-2026-16415"
-      ]
-    },
-    {
-      "id": "329485",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-32665",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329485",
-      "cves": [
-        "CVE-2026-32665"
-      ]
-    },
-    {
-      "id": "329484",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16370",
+      "id": "329992",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64460",
       "severity": "Critical",
       "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329484",
+      "link": "https://www.tenable.com/plugins/nessus/329992",
       "cves": [
-        "CVE-2026-16370"
+        "CVE-2026-64460"
       ]
     },
     {
-      "id": "329483",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16413",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329483",
-      "cves": [
-        "CVE-2026-16413"
-      ]
-    },
-    {
-      "id": "329482",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16402",
+      "id": "329991",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64416",
       "severity": "Critical",
       "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329482",
+      "link": "https://www.tenable.com/plugins/nessus/329991",
       "cves": [
-        "CVE-2026-16402"
+        "CVE-2026-64416"
       ]
     },
     {
-      "id": "329481",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16407",
+      "id": "329990",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64480",
       "severity": "Critical",
       "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329481",
+      "link": "https://www.tenable.com/plugins/nessus/329990",
       "cves": [
-        "CVE-2026-16407"
+        "CVE-2026-64480"
       ]
     },
     {
-      "id": "329480",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16366",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329480",
-      "cves": [
-        "CVE-2026-16366"
-      ]
-    },
-    {
-      "id": "329479",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16493",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329479",
-      "cves": [
-        "CVE-2026-11332",
-        "CVE-2026-16493"
-      ]
-    },
-    {
-      "id": "329478",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-11622",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329478",
-      "cves": [
-        "CVE-2026-11622"
-      ]
-    },
-    {
-      "id": "329477",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16404",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329477",
-      "cves": [
-        "CVE-2026-16404"
-      ]
-    },
-    {
-      "id": "329476",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16372",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329476",
-      "cves": [
-        "CVE-2026-16372"
-      ]
-    },
-    {
-      "id": "329475",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-26199",
-      "severity": "Medium",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329475",
-      "cves": [
-        "CVE-2026-26199"
-      ]
-    },
-    {
-      "id": "329474",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-13069",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329474",
-      "cves": [
-        "CVE-2026-13069"
-      ]
-    },
-    {
-      "id": "329473",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16805",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329473",
-      "cves": [
-        "CVE-2026-16805"
-      ]
-    },
-    {
-      "id": "329472",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-15370",
-      "severity": "Medium",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329472",
-      "cves": [
-        "CVE-2026-15370"
-      ]
-    },
-    {
-      "id": "329471",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16804",
-      "severity": "High",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329471",
-      "cves": [
-        "CVE-2026-16804"
-      ]
-    },
-    {
-      "id": "329470",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16408",
+      "id": "329989",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64287",
       "severity": "Critical",
       "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329470",
+      "link": "https://www.tenable.com/plugins/nessus/329989",
       "cves": [
-        "CVE-2026-16408"
+        "CVE-2026-64287"
       ]
     },
     {
-      "id": "329469",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16369",
+      "id": "329988",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64410",
       "severity": "Critical",
       "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329469",
+      "link": "https://www.tenable.com/plugins/nessus/329988",
       "cves": [
-        "CVE-2026-16369"
+        "CVE-2026-64410"
       ]
     },
     {
-      "id": "329468",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16377",
+      "id": "329987",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64418",
       "severity": "Critical",
       "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329468",
+      "link": "https://www.tenable.com/plugins/nessus/329987",
       "cves": [
-        "CVE-2026-16377"
+        "CVE-2026-64418"
       ]
     },
     {
-      "id": "329467",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-13057",
-      "severity": "Medium",
-      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329467",
-      "cves": [
-        "CVE-2026-13057"
-      ]
-    },
-    {
-      "id": "329466",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16406",
+      "id": "329986",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64338",
       "severity": "Critical",
       "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329466",
+      "link": "https://www.tenable.com/plugins/nessus/329986",
       "cves": [
-        "CVE-2026-16406"
+        "CVE-2026-64338"
       ]
     },
     {
-      "id": "329465",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16418",
-      "severity": "High",
+      "id": "329985",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64348",
+      "severity": "Critical",
       "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329465",
+      "link": "https://www.tenable.com/plugins/nessus/329985",
       "cves": [
-        "CVE-2026-16418"
+        "CVE-2026-64348"
       ]
     },
     {
-      "id": "329464",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-16473",
-      "severity": "Medium",
+      "id": "329984",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64362",
+      "severity": "Critical",
       "date": "Sat, 25 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/329464",
+      "link": "https://www.tenable.com/plugins/nessus/329984",
       "cves": [
-        "CVE-2026-16473"
+        "CVE-2026-64362"
+      ]
+    },
+    {
+      "id": "329983",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64469",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329983",
+      "cves": [
+        "CVE-2026-64469"
+      ]
+    },
+    {
+      "id": "329982",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64371",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329982",
+      "cves": [
+        "CVE-2026-64371"
+      ]
+    },
+    {
+      "id": "329981",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64318",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329981",
+      "cves": [
+        "CVE-2026-64318"
+      ]
+    },
+    {
+      "id": "329980",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64395",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329980",
+      "cves": [
+        "CVE-2026-64395"
+      ]
+    },
+    {
+      "id": "329979",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64512",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329979",
+      "cves": [
+        "CVE-2026-64512"
+      ]
+    },
+    {
+      "id": "329978",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64375",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329978",
+      "cves": [
+        "CVE-2026-64375"
+      ]
+    },
+    {
+      "id": "329977",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64406",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329977",
+      "cves": [
+        "CVE-2026-64406"
+      ]
+    },
+    {
+      "id": "329976",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64384",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329976",
+      "cves": [
+        "CVE-2026-64384"
+      ]
+    },
+    {
+      "id": "329975",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64372",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329975",
+      "cves": [
+        "CVE-2026-64372"
+      ]
+    },
+    {
+      "id": "329974",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64463",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329974",
+      "cves": [
+        "CVE-2026-64463"
+      ]
+    },
+    {
+      "id": "329973",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64431",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329973",
+      "cves": [
+        "CVE-2026-64431"
+      ]
+    },
+    {
+      "id": "329972",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64309",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329972",
+      "cves": [
+        "CVE-2026-64309"
+      ]
+    },
+    {
+      "id": "329971",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64306",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329971",
+      "cves": [
+        "CVE-2026-64306"
+      ]
+    },
+    {
+      "id": "329970",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64390",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329970",
+      "cves": [
+        "CVE-2026-64390"
+      ]
+    },
+    {
+      "id": "329969",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64482",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329969",
+      "cves": [
+        "CVE-2026-64482"
+      ]
+    },
+    {
+      "id": "329968",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64509",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329968",
+      "cves": [
+        "CVE-2026-64509"
+      ]
+    },
+    {
+      "id": "329967",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64263",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329967",
+      "cves": [
+        "CVE-2026-64263"
+      ]
+    },
+    {
+      "id": "329966",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64369",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329966",
+      "cves": [
+        "CVE-2026-64369"
+      ]
+    },
+    {
+      "id": "329965",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64439",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329965",
+      "cves": [
+        "CVE-2026-64439"
+      ]
+    },
+    {
+      "id": "329964",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64377",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329964",
+      "cves": [
+        "CVE-2026-64377"
+      ]
+    },
+    {
+      "id": "329963",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64493",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329963",
+      "cves": [
+        "CVE-2026-64493"
+      ]
+    },
+    {
+      "id": "329962",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64476",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329962",
+      "cves": [
+        "CVE-2026-64476"
+      ]
+    },
+    {
+      "id": "329961",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64326",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329961",
+      "cves": [
+        "CVE-2026-64326"
+      ]
+    },
+    {
+      "id": "329960",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-64501",
+      "severity": "Critical",
+      "date": "Sat, 25 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/329960",
+      "cves": [
+        "CVE-2026-64501"
       ]
     }
   ]
