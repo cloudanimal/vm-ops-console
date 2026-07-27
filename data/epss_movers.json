@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-26",
+  "updated": "2026-07-27",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-25",
-  "previous_date": "2026-07-19",
+  "current_date": "2026-07-27",
+  "previous_date": "2026-07-20",
   "risers": [
     {
       "id": "CVE-2026-63030",
@@ -55,9 +55,9 @@
     },
     {
       "id": "CVE-2026-48282",
-      "now": 0.98993,
+      "now": 0.99197,
       "prev": 0.28583,
-      "delta": 0.7041,
+      "delta": 0.70614,
       "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
     },
     {
@@ -159,13 +159,6 @@
       "name": "Fortinet FortiSandbox"
     },
     {
-      "id": "CVE-2026-45484",
-      "now": 0.35216,
-      "prev": 0.01982,
-      "delta": 0.33234,
-      "name": "Microsoft SharePoint Elevation of Privilege Vulnerability"
-    },
-    {
       "id": "CVE-2025-30066",
       "now": 0.72391,
       "prev": 0.41008,
@@ -213,6 +206,13 @@
       "prev": 0.00884,
       "delta": 0.26072,
       "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
+    },
+    {
+      "id": "CVE-2023-51449",
+      "now": 0.2795,
+      "prev": 0.0228,
+      "delta": 0.2567,
+      "name": "Make the `/file` secure against file traversal attacks"
     }
   ],
   "newly_high": [
@@ -267,9 +267,9 @@
     },
     {
       "id": "CVE-2026-48282",
-      "now": 0.98993,
+      "now": 0.99197,
       "prev": 0.28583,
-      "delta": 0.7041,
+      "delta": 0.70614,
       "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
     },
     {
@@ -392,25 +392,11 @@
       "name": "Eval injection vulnerability in pajax_call_dispatcher.php in PAJAX 0.5.1 and earlier allows remote attackers t"
     },
     {
-      "id": "CVE-2008-2549",
-      "now": 0.52617,
-      "prev": 0.41251,
-      "delta": 0.11366,
-      "name": "Adobe Acrobat Reader 8.1.2 and earlier, and before 7.1.1, allows remote attackers to cause a denial of service"
-    },
-    {
       "id": "CVE-2025-34509",
-      "now": 0.51018,
+      "now": 0.52707,
       "prev": 0.39961,
-      "delta": 0.11057,
+      "delta": 0.12746,
       "name": "Sitecore XM and XP Hardcoded Credentials"
-    },
-    {
-      "id": "CVE-2026-2699",
-      "now": 0.58386,
-      "prev": 0.49424,
-      "delta": 0.08962,
-      "name": "EAR vulnerability in Progress ShareFile Storage Zones Controller (SZC)"
     },
     {
       "id": "CVE-2026-2701",
@@ -422,9 +408,23 @@
     {
       "id": "CVE-2025-32463",
       "now": 0.54935,
-      "prev": 0.47467,
-      "delta": 0.07468,
+      "prev": 0.48239,
+      "delta": 0.06696,
       "name": "Sudo project Sudo"
+    },
+    {
+      "id": "CVE-2026-49160",
+      "now": 0.53829,
+      "prev": 0.48438,
+      "delta": 0.05391,
+      "name": "HTTP.sys Denial of Service Vulnerability"
+    },
+    {
+      "id": "CVE-2026-10523",
+      "now": 0.5187,
+      "prev": 0.4719,
+      "delta": 0.0468,
+      "name": "ivanti Sentry"
     }
   ]
 }
