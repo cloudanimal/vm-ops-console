@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-13",
+  "updated": "2026-07-27",
   "source": "fkie-cad NVD mirror (counted locally)",
   "note": "NVD data via the fkie-cad GitHub mirror; no NVD API key. CVEs are bucketed by publication year. Severity buckets use the primary CVSS v3 base severity (CVEs without a v3 score are absent from the split). KEV counts use the CISA KEV enrichment (cisaExploitAdd) carried in the NVD record.",
   "dimensions": [
@@ -10,7 +10,7 @@
     "LOW",
     "kev"
   ],
-  "grand_total": 364204,
+  "grand_total": 369744,
   "by_year": {
     "1999": {
       "total": 923,
@@ -86,7 +86,7 @@
     },
     "2008": {
       "total": 5664,
-      "kev": 5,
+      "kev": 6,
       "CRITICAL": 13,
       "HIGH": 36,
       "MEDIUM": 10,
@@ -200,13 +200,13 @@
       "total": 26431,
       "kev": 130,
       "CRITICAL": 4153,
-      "HIGH": 9198,
-      "MEDIUM": 9380,
+      "HIGH": 9197,
+      "MEDIUM": 9381,
       "LOW": 427
     },
     "2023": {
       "total": 30949,
-      "kev": 163,
+      "kev": 164,
       "CRITICAL": 4396,
       "HIGH": 9896,
       "MEDIUM": 11863,
@@ -218,34 +218,34 @@
       "CRITICAL": 3036,
       "HIGH": 8257,
       "MEDIUM": 11493,
-      "LOW": 372
+      "LOW": 371
     },
     "2025": {
       "total": 49972,
       "kev": 194,
       "CRITICAL": 3365,
-      "HIGH": 4996,
-      "MEDIUM": 8079,
+      "HIGH": 4993,
+      "MEDIUM": 8078,
       "LOW": 225
     },
     "2026": {
-      "total": 39611,
-      "kev": 92,
-      "CRITICAL": 1727,
-      "HIGH": 3837,
-      "MEDIUM": 4941,
-      "LOW": 164
+      "total": 45151,
+      "kev": 106,
+      "CRITICAL": 1806,
+      "HIGH": 4081,
+      "MEDIUM": 5185,
+      "LOW": 174
     }
   },
   "severity_totals": {
-    "CRITICAL": 30330,
-    "HIGH": 75565,
-    "MEDIUM": 82290,
-    "LOW": 3216
+    "CRITICAL": 30409,
+    "HIGH": 75805,
+    "MEDIUM": 82534,
+    "LOW": 3225
   },
   "profile": {
-    "network": 137263,
-    "wormable": 56747,
-    "kev_total": 1637
+    "network": 137565,
+    "wormable": 56863,
+    "kev_total": 1653
   }
 }
