@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-27",
-  "total": 1653,
+  "updated": "2026-07-28",
+  "total": 1655,
   "ransomware_count": 332,
   "by_year": {
     "2021": 311,
@@ -8,7 +8,7 @@
     "2023": 187,
     "2024": 186,
     "2025": 245,
-    "2026": 169
+    "2026": 171
   },
   "top_vendors": [
     [
@@ -45,7 +45,7 @@
     ],
     [
       "Fortinet",
-      28
+      29
     ],
     [
       "Linux",
@@ -170,7 +170,7 @@
       10
     ],
     [
-      "VMware vCenter Server",
+      "Fortinet FortiOS",
       9
     ]
   ]

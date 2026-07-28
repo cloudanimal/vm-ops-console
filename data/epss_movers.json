@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-27",
+  "updated": "2026-07-28",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-27",
-  "previous_date": "2026-07-20",
+  "current_date": "2026-07-28",
+  "previous_date": "2026-07-21",
   "risers": [
     {
       "id": "CVE-2026-63030",
@@ -118,9 +118,9 @@
     },
     {
       "id": "CVE-2026-0770",
-      "now": 0.53461,
+      "now": 0.56267,
       "prev": 0.10371,
-      "delta": 0.4309,
+      "delta": 0.45896,
       "name": "Langflow exec_globals Inclusion of Functionality from Untrusted Control Sphere Remote Code"
     },
     {
@@ -201,18 +201,18 @@
       "name": "LangChain serialization injection vulnerability enables secret extraction in dumps/loads A"
     },
     {
+      "id": "CVE-2025-49132",
+      "now": 0.40019,
+      "prev": 0.13105,
+      "delta": 0.26914,
+      "name": "Pterodactyl Panel Allows Unauthenticated Arbitrary Remote Code Execution"
+    },
+    {
       "id": "CVE-2026-48319",
       "now": 0.26956,
       "prev": 0.00884,
       "delta": 0.26072,
       "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
-    },
-    {
-      "id": "CVE-2023-51449",
-      "now": 0.2795,
-      "prev": 0.0228,
-      "delta": 0.2567,
-      "name": "Make the `/file` secure against file traversal attacks"
     }
   ],
   "newly_high": [
@@ -330,9 +330,9 @@
     },
     {
       "id": "CVE-2026-0770",
-      "now": 0.53461,
+      "now": 0.56267,
       "prev": 0.10371,
-      "delta": 0.4309,
+      "delta": 0.45896,
       "name": "Langflow exec_globals Inclusion of Functionality from Untrusted Control Sphere Remote Code"
     },
     {
