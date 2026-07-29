@@ -1,16 +1,9 @@
 {
-  "updated": "2026-07-28",
+  "updated": "2026-07-29",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-28",
-  "previous_date": "2026-07-21",
+  "current_date": "2026-07-29",
+  "previous_date": "2026-07-22",
   "risers": [
-    {
-      "id": "CVE-2026-63030",
-      "now": 0.98051,
-      "prev": 0.08946,
-      "delta": 0.89105,
-      "name": "WordPress < 7.0.2 - REST API batch-route confusion and SQL injection issue leading to Remo"
-    },
     {
       "id": "CVE-2026-48908",
       "now": 0.8813,
@@ -19,39 +12,11 @@
       "name": "Joomla Extension - joomshaper.com - Remote Code Execution in SP Pagebuilder extension for "
     },
     {
-      "id": "CVE-2026-56290",
-      "now": 0.83254,
-      "prev": 0.02912,
-      "delta": 0.80342,
-      "name": "Joomla Extension - joomlack.fr - Unauthenticated file upload in Page Builder CK extension "
-    },
-    {
-      "id": "CVE-2026-15409",
-      "now": 0.7844,
-      "prev": 0.01266,
-      "delta": 0.77174,
-      "name": "SonicWall SMA1000"
-    },
-    {
       "id": "CVE-2022-42904",
       "now": 0.82963,
       "prev": 0.0767,
       "delta": 0.75293,
       "name": "Zoho ManageEngine ADManager Plus through 7151 allows authenticated admin users to execute the commands in prox"
-    },
-    {
-      "id": "CVE-2026-15410",
-      "now": 0.76347,
-      "prev": 0.01486,
-      "delta": 0.74861,
-      "name": "SonicWall SMA1000"
-    },
-    {
-      "id": "CVE-2026-60137",
-      "now": 0.77974,
-      "prev": 0.04026,
-      "delta": 0.73948,
-      "name": "WordPress < 7.0.2 - Facilitated SQL Injection via author__not_in in WP_Query"
     },
     {
       "id": "CVE-2026-48282",
@@ -68,6 +33,27 @@
       "name": "Joomla Extension - balbooa.com - Unauthenticated file upload in Balbooa Forms extension < "
     },
     {
+      "id": "CVE-2026-56290",
+      "now": 0.83254,
+      "prev": 0.18707,
+      "delta": 0.64547,
+      "name": "Joomla Extension - joomlack.fr - Unauthenticated file upload in Page Builder CK extension "
+    },
+    {
+      "id": "CVE-2026-15409",
+      "now": 0.7844,
+      "prev": 0.16271,
+      "delta": 0.62169,
+      "name": "SonicWall SMA1000"
+    },
+    {
+      "id": "CVE-2026-63030",
+      "now": 0.98051,
+      "prev": 0.38599,
+      "delta": 0.59452,
+      "name": "WordPress < 7.0.2 - REST API batch-route confusion and SQL injection issue leading to Remo"
+    },
+    {
       "id": "CVE-2023-39475",
       "now": 0.62262,
       "prev": 0.03147,
@@ -75,11 +61,25 @@
       "name": "Inductive Automation Ignition ParameterVersionJavaSerializationCodec Deserialization of Un"
     },
     {
+      "id": "CVE-2026-15410",
+      "now": 0.76347,
+      "prev": 0.18287,
+      "delta": 0.5806,
+      "name": "SonicWall SMA1000"
+    },
+    {
       "id": "CVE-2023-51448",
       "now": 0.66711,
       "prev": 0.09022,
       "delta": 0.57689,
       "name": "SQL Injection vulnerability when managing SNMP Notification Receivers"
+    },
+    {
+      "id": "CVE-2026-60137",
+      "now": 0.77974,
+      "prev": 0.20395,
+      "delta": 0.57579,
+      "name": "WordPress < 7.0.2 - Facilitated SQL Injection via author__not_in in WP_Query"
     },
     {
       "id": "CVE-2023-27293",
@@ -117,13 +117,6 @@
       "name": "Linksys E1000"
     },
     {
-      "id": "CVE-2026-0770",
-      "now": 0.56267,
-      "prev": 0.10371,
-      "delta": 0.45896,
-      "name": "Langflow exec_globals Inclusion of Functionality from Untrusted Control Sphere Remote Code"
-    },
-    {
       "id": "CVE-2025-5961",
       "now": 0.48659,
       "prev": 0.06479,
@@ -157,6 +150,13 @@
       "prev": 0.36135,
       "delta": 0.33692,
       "name": "Fortinet FortiSandbox"
+    },
+    {
+      "id": "CVE-2026-45484",
+      "now": 0.35216,
+      "prev": 0.01982,
+      "delta": 0.33234,
+      "name": "Microsoft SharePoint Elevation of Privilege Vulnerability"
     },
     {
       "id": "CVE-2025-30066",
@@ -196,8 +196,8 @@
     {
       "id": "CVE-2025-68664",
       "now": 0.41454,
-      "prev": 0.1383,
-      "delta": 0.27624,
+      "prev": 0.14035,
+      "delta": 0.27419,
       "name": "LangChain serialization injection vulnerability enables secret extraction in dumps/loads A"
     },
     {
@@ -217,13 +217,6 @@
   ],
   "newly_high": [
     {
-      "id": "CVE-2026-63030",
-      "now": 0.98051,
-      "prev": 0.08946,
-      "delta": 0.89105,
-      "name": "WordPress < 7.0.2 - REST API batch-route confusion and SQL injection issue leading to Remo"
-    },
-    {
       "id": "CVE-2026-48908",
       "now": 0.8813,
       "prev": 0.01569,
@@ -231,39 +224,11 @@
       "name": "Joomla Extension - joomshaper.com - Remote Code Execution in SP Pagebuilder extension for "
     },
     {
-      "id": "CVE-2026-56290",
-      "now": 0.83254,
-      "prev": 0.02912,
-      "delta": 0.80342,
-      "name": "Joomla Extension - joomlack.fr - Unauthenticated file upload in Page Builder CK extension "
-    },
-    {
-      "id": "CVE-2026-15409",
-      "now": 0.7844,
-      "prev": 0.01266,
-      "delta": 0.77174,
-      "name": "SonicWall SMA1000"
-    },
-    {
       "id": "CVE-2022-42904",
       "now": 0.82963,
       "prev": 0.0767,
       "delta": 0.75293,
       "name": "Zoho ManageEngine ADManager Plus through 7151 allows authenticated admin users to execute the commands in prox"
-    },
-    {
-      "id": "CVE-2026-15410",
-      "now": 0.76347,
-      "prev": 0.01486,
-      "delta": 0.74861,
-      "name": "SonicWall SMA1000"
-    },
-    {
-      "id": "CVE-2026-60137",
-      "now": 0.77974,
-      "prev": 0.04026,
-      "delta": 0.73948,
-      "name": "WordPress < 7.0.2 - Facilitated SQL Injection via author__not_in in WP_Query"
     },
     {
       "id": "CVE-2026-48282",
@@ -280,6 +245,27 @@
       "name": "Joomla Extension - balbooa.com - Unauthenticated file upload in Balbooa Forms extension < "
     },
     {
+      "id": "CVE-2026-56290",
+      "now": 0.83254,
+      "prev": 0.18707,
+      "delta": 0.64547,
+      "name": "Joomla Extension - joomlack.fr - Unauthenticated file upload in Page Builder CK extension "
+    },
+    {
+      "id": "CVE-2026-15409",
+      "now": 0.7844,
+      "prev": 0.16271,
+      "delta": 0.62169,
+      "name": "SonicWall SMA1000"
+    },
+    {
+      "id": "CVE-2026-63030",
+      "now": 0.98051,
+      "prev": 0.38599,
+      "delta": 0.59452,
+      "name": "WordPress < 7.0.2 - REST API batch-route confusion and SQL injection issue leading to Remo"
+    },
+    {
       "id": "CVE-2023-39475",
       "now": 0.62262,
       "prev": 0.03147,
@@ -287,11 +273,25 @@
       "name": "Inductive Automation Ignition ParameterVersionJavaSerializationCodec Deserialization of Un"
     },
     {
+      "id": "CVE-2026-15410",
+      "now": 0.76347,
+      "prev": 0.18287,
+      "delta": 0.5806,
+      "name": "SonicWall SMA1000"
+    },
+    {
       "id": "CVE-2023-51448",
       "now": 0.66711,
       "prev": 0.09022,
       "delta": 0.57689,
       "name": "SQL Injection vulnerability when managing SNMP Notification Receivers"
+    },
+    {
+      "id": "CVE-2026-60137",
+      "now": 0.77974,
+      "prev": 0.20395,
+      "delta": 0.57579,
+      "name": "WordPress < 7.0.2 - Facilitated SQL Injection via author__not_in in WP_Query"
     },
     {
       "id": "CVE-2023-27293",
@@ -327,13 +327,6 @@
       "prev": 0.05618,
       "delta": 0.47299,
       "name": "Linksys E1000"
-    },
-    {
-      "id": "CVE-2026-0770",
-      "now": 0.56267,
-      "prev": 0.10371,
-      "delta": 0.45896,
-      "name": "Langflow exec_globals Inclusion of Functionality from Untrusted Control Sphere Remote Code"
     },
     {
       "id": "CVE-2026-8037",
@@ -392,13 +385,6 @@
       "name": "Eval injection vulnerability in pajax_call_dispatcher.php in PAJAX 0.5.1 and earlier allows remote attackers t"
     },
     {
-      "id": "CVE-2025-34509",
-      "now": 0.52707,
-      "prev": 0.39961,
-      "delta": 0.12746,
-      "name": "Sitecore XM and XP Hardcoded Credentials"
-    },
-    {
       "id": "CVE-2026-2701",
       "now": 0.56673,
       "prev": 0.4881,
@@ -425,6 +411,20 @@
       "prev": 0.4719,
       "delta": 0.0468,
       "name": "ivanti Sentry"
+    },
+    {
+      "id": "CVE-2025-58434",
+      "now": 0.50156,
+      "prev": 0.47288,
+      "delta": 0.02868,
+      "name": "Flowise Cloud and Local Deployments have Unauthenticated Password Reset Token Disclosure t"
+    },
+    {
+      "id": "CVE-2018-11686",
+      "now": 0.52542,
+      "prev": 0.49787,
+      "delta": 0.02755,
+      "name": "The Publish Service in FlexPaper (later renamed FlowPaper) 2.3.6 allows remote code execution via setup.php an"
     }
   ]
 }

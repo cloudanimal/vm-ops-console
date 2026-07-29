@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28",
+  "updated": "2026-07-29",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,658 +7,605 @@
   "items": [
     {
       "id": null,
-      "title": "SCA: security update for github.com/kata-containers/kata-containers (GHSA-rr59-xxvx-96qr)",
+      "title": "SCA: security update for hermes-agent (GHSA-mv8x-fg99-32mf)",
       "severity": "Medium",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445386",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445446",
       "cves": [
-        "CVE-2026-44210"
+        "CVE-2026-10222"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/kata-containers/kata-containers (GHSA-rr59-xxvx-96qr)",
+      "title": "SCA: security update for hermes-agent (GHSA-mv8x-fg99-32mf)",
       "severity": "Medium",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445386",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445446",
       "cves": [
-        "CVE-2026-44210"
+        "CVE-2026-10222"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for goodoneuz/pay-uz (GHSA-m5wg-cjgh-223j)",
-      "severity": "Critical",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/445385",
+      "title": "SCA: security update for hermes-agent (GHSA-33qv-c5qm-799v)",
+      "severity": "Medium",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445445",
       "cves": [
-        "CVE-2026-31843"
+        "CVE-2026-10223"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for goodoneuz/pay-uz (GHSA-m5wg-cjgh-223j)",
-      "severity": "Critical",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/445385",
-      "cves": [
-        "CVE-2026-31843"
-      ]
-    },
-    {
-      "id": "330307",
-      "title": "MiracleLinux 9 : memcached-1.6.9-7.el9_8.1 (AXSA:2026-1361:01)",
-      "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330307",
-      "cves": [
-        "CVE-2026-47783"
-      ]
-    },
-    {
-      "id": "330306",
-      "title": "MiracleLinux 9 : postgresql-13.23-3.el9_8 (AXSA:2026-1366:07)",
-      "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330306",
-      "cves": [
-        "CVE-2026-6473",
-        "CVE-2026-6475",
-        "CVE-2026-6477",
-        "CVE-2026-6478"
-      ]
-    },
-    {
-      "id": "330305",
-      "title": "Oracle APEX (CVE-2026-60156) (July 2026 CPU)",
+      "title": "SCA: security update for hermes-agent (GHSA-33qv-c5qm-799v)",
       "severity": "Medium",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330305",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445445",
       "cves": [
-        "CVE-2026-60156"
+        "CVE-2026-10223"
       ]
     },
     {
-      "id": "330304",
-      "title": "Oracle APEX (CVE-2026-54285) (July 2026 CPU)",
+      "id": null,
+      "title": "SCA: security update for github.com/fission/fission (GHSA-qf5v-m7p4-95rp)",
+      "severity": "High",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445444",
+      "cves": [
+        "CVE-2026-50570"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/fission/fission (GHSA-qf5v-m7p4-95rp)",
+      "severity": "High",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445444",
+      "cves": [
+        "CVE-2026-50570"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/azukaar/cosmos-server (GHSA-2rx5-2g7j-2659)",
       "severity": "Medium",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330304",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445443",
       "cves": [
-        "CVE-2026-54285"
+        "CVE-2026-49446"
       ]
     },
     {
-      "id": "330303",
-      "title": "Oracle APEX (CVE-2026-60630) (July 2026 CPU)",
+      "id": null,
+      "title": "SCA: security update for github.com/azukaar/cosmos-server (GHSA-2rx5-2g7j-2659)",
       "severity": "Medium",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330303",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445443",
       "cves": [
-        "CVE-2026-60630"
+        "CVE-2026-49446"
       ]
     },
     {
-      "id": "330302",
-      "title": "Fedora 43 : perl-Mojolicious (2026-6f12b08313)",
-      "severity": "Critical",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330302",
-      "cves": []
-    },
-    {
-      "id": "330301",
-      "title": "Fedora 43 : rpm (2026-a9f0d5370e)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-rfr2-mq9m-x2qx)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330301",
-      "cves": []
-    },
-    {
-      "id": "330300",
-      "title": "SUSE SLES16: glib2-devel / glib2-devel-static / glib2-doc / glib2-lang / etc (SUSE-SU-2026:22846-1)",
-      "severity": "Critical",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330300",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445442",
       "cves": [
-        "CVE-2026-58010",
-        "CVE-2026-58011",
-        "CVE-2026-58012",
-        "CVE-2026-58013",
-        "CVE-2026-58014",
-        "CVE-2026-58016"
+        "CVE-2026-54691"
       ]
     },
     {
-      "id": "330299",
-      "title": "SUSE SLES16: helm / helm-bash-completion / helm-fish-completion / etc (SUSE-SU-2026:22855-1)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-rfr2-mq9m-x2qx)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330299",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445442",
       "cves": [
-        "CVE-2026-39821",
-        "CVE-2026-56852"
+        "CVE-2026-54691"
       ]
     },
     {
-      "id": "330298",
-      "title": "SUSE SLES12: libopenssl-1_0_0-devel / libopenssl-1_0_0-devel-32bit / etc (SUSE-SU-2026:3272-1)",
-      "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330298",
-      "cves": [
-        "CVE-2026-28390"
-      ]
-    },
-    {
-      "id": "330297",
-      "title": "SUSE SLED15 / SLES15 Security Update : python-soupsieve (SUSE-SU-2026:3239-1)",
-      "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330297",
-      "cves": [
-        "CVE-2026-49476",
-        "CVE-2026-49477"
-      ]
-    },
-    {
-      "id": "330296",
-      "title": "SUSE SLES16: avahi / avahi-autoipd / avahi-compat-mDNSResponder-devel / etc (SUSE-SU-2026:22853-1)",
+      "id": null,
+      "title": "SCA: security update for github.com/fission/fission (GHSA-vchh-r53j-8mpw)",
       "severity": "Medium",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330296",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445441",
       "cves": [
-        "CVE-2025-59529"
+        "CVE-2026-50569"
       ]
     },
     {
-      "id": "330295",
-      "title": "SUSE SLED15: libsystemd0 / libsystemd0-32bit / libudev1 / libudev1-32bit / etc (SUSE-SU-2026:3244-1)",
+      "id": null,
+      "title": "SCA: security update for github.com/fission/fission (GHSA-vchh-r53j-8mpw)",
       "severity": "Medium",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330295",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445441",
       "cves": [
-        "CVE-2026-40226"
+        "CVE-2026-50569"
       ]
     },
     {
-      "id": "330294",
-      "title": "SUSE SLES16 Security Update : joe (SUSE-SU-2026:22843-1)",
+      "id": null,
+      "title": "SCA: security update for github.com/fission/fission (GHSA-q6vm-xqc9-v3ff)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330294",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445440",
       "cves": [
-        "CVE-2026-13412"
+        "CVE-2026-50567"
       ]
     },
     {
-      "id": "330293",
-      "title": "SUSE SLES15 Security Update : kernel RT (Live Patch 15 for SUSE Linux Enterprise 15 SP7) (SUSE-SU-2026:3248-1)",
+      "id": null,
+      "title": "SCA: security update for github.com/fission/fission (GHSA-q6vm-xqc9-v3ff)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330293",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445440",
       "cves": [
-        "CVE-2026-53359",
-        "CVE-2026-53366"
+        "CVE-2026-50567"
       ]
     },
     {
-      "id": "330292",
-      "title": "SUSE SLES16 Security Update : apache-ivy (SUSE-SU-2026:22858-1)",
+      "id": null,
+      "title": "SCA: security update for github.com/azukaar/cosmos-server (GHSA-5fqm-cc34-fcf5)",
       "severity": "Medium",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330292",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445439",
       "cves": [
-        "CVE-2026-26032"
+        "CVE-2026-49447"
       ]
     },
     {
-      "id": "330291",
-      "title": "SUSE SLES15 Security Update : perl-DBI (SUSE-SU-2026:3283-1)",
-      "severity": "Critical",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330291",
+      "id": null,
+      "title": "SCA: security update for github.com/azukaar/cosmos-server (GHSA-5fqm-cc34-fcf5)",
+      "severity": "Medium",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445439",
       "cves": [
-        "CVE-2026-14380",
-        "CVE-2026-14740",
-        "CVE-2026-15043",
-        "CVE-2026-15392",
-        "CVE-2026-60081",
-        "CVE-2026-60082"
+        "CVE-2026-49447"
       ]
     },
     {
-      "id": "330290",
-      "title": "SUSE SLES16 Security Update : perl (SUSE-SU-2026:22847-1)",
-      "severity": "Critical",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330290",
+      "id": null,
+      "title": "SCA: security update for @nocobase/plugin-collection-sql (GHSA-v8vm-cqh8-q87q)",
+      "severity": "Medium",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445438",
       "cves": [
-        "CVE-2025-15649",
-        "CVE-2026-12087",
-        "CVE-2026-13221",
-        "CVE-2026-57432",
-        "CVE-2026-8376"
+        "CVE-2026-52888"
       ]
     },
     {
-      "id": "330289",
-      "title": "SUSE SLES12 Security Update : vim (SUSE-SU-2026:3237-1)",
+      "id": null,
+      "title": "SCA: security update for @nocobase/plugin-collection-sql (GHSA-v8vm-cqh8-q87q)",
+      "severity": "Medium",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445438",
+      "cves": [
+        "CVE-2026-52888"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for System.Security.Cryptography.Xml (GHSA-6588-8gv4-xfgh)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330289",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445437",
       "cves": [
-        "CVE-2026-59856",
-        "CVE-2026-59857",
-        "CVE-2026-59858"
+        "CVE-2026-32203"
       ]
     },
     {
-      "id": "330288",
-      "title": "SUSE SLES16: aws-nitro-enclaves-binaryblobs-upstream / aws-nitro-enclaves-cli / etc (SUSE-SU-2026:22841-1)",
-      "severity": "Critical",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330288",
+      "id": null,
+      "title": "SCA: security update for System.Security.Cryptography.Xml (GHSA-6588-8gv4-xfgh)",
+      "severity": "High",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445437",
       "cves": [
-        "CVE-2026-41677",
-        "CVE-2026-41678",
-        "CVE-2026-41681",
-        "CVE-2026-41898",
-        "CVE-2026-42327",
-        "CVE-2026-44662",
-        "CVE-2026-45784"
+        "CVE-2026-32203"
       ]
     },
     {
-      "id": "330287",
-      "title": "SUSE SLED15 / SLES15 Security Update : gpg2 (SUSE-SU-2026:3243-1)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-442q-2j6p-642g)",
+      "severity": "High",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445436",
+      "cves": [
+        "CVE-2026-55390"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-442q-2j6p-642g)",
+      "severity": "High",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445436",
+      "cves": [
+        "CVE-2026-55390"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/fission/fission (GHSA-r5jh-q2mw-gcx4)",
       "severity": "Low",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330287",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445435",
       "cves": [
-        "CVE-2026-57062"
+        "CVE-2026-50568"
       ]
     },
     {
-      "id": "330286",
-      "title": "SUSE SLES15 Security Update : kernel RT (Live Patch 14 for SUSE Linux Enterprise 15 SP7) (SUSE-SU-2026:3246-1)",
-      "severity": "Medium",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330286",
+      "id": null,
+      "title": "SCA: security update for github.com/fission/fission (GHSA-r5jh-q2mw-gcx4)",
+      "severity": "Low",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445435",
       "cves": [
-        "CVE-2026-23240",
-        "CVE-2026-31738",
-        "CVE-2026-43038",
-        "CVE-2026-46113",
-        "CVE-2026-53359",
-        "CVE-2026-53366"
+        "CVE-2026-50568"
       ]
     },
     {
-      "id": "330285",
-      "title": "SUSE SLES16 Security Update : perl-HTTP-Date (SUSE-SU-2026:22859-1)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-r5vv-ff45-prp2)",
+      "severity": "Low",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445434",
+      "cves": [
+        "CVE-2026-55403"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-r5vv-ff45-prp2)",
+      "severity": "Low",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445434",
+      "cves": [
+        "CVE-2026-55403"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-j884-q54q-mmx3)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330285",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445433",
       "cves": [
-        "CVE-2026-14741"
+        "CVE-2026-54621"
       ]
     },
     {
-      "id": "330284",
-      "title": "SUSE SLED15: jackson-annotations / jackson-core / jackson-databind / etc (SUSE-SU-2026:3273-1)",
-      "severity": "Medium",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330284",
-      "cves": [
-        "CVE-2026-54515",
-        "CVE-2026-59888",
-        "CVE-2026-59889"
-      ]
-    },
-    {
-      "id": "330283",
-      "title": "SUSE SLES12: libpython3_4m1_0 / libpython3_4m1_0-32bit / python3 / python3-base / etc (SUSE-SU-2026:3245-1)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-j884-q54q-mmx3)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330283",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445433",
       "cves": [
-        "CVE-2026-11940",
-        "CVE-2026-7210",
-        "CVE-2026-8328"
+        "CVE-2026-54621"
       ]
     },
     {
-      "id": "330282",
-      "title": "n8n Node.js Package < 2.27.4 / 2.28.0 < 2.28.1 Account Takeover (CVE-2026-59208)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-5578-w22f-pfx9)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330282",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445432",
       "cves": [
-        "CVE-2026-59208"
+        "CVE-2026-55415"
       ]
     },
     {
-      "id": "330281",
-      "title": "Amazon Linux 2 : kernel, --advisory ALAS2KERNEL-5.15-2026-111 (ALASKERNEL-5.15-2026-111)",
-      "severity": "Medium",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330281",
-      "cves": [
-        "CVE-2026-31451",
-        "CVE-2026-46331",
-        "CVE-2026-52909",
-        "CVE-2026-52928",
-        "CVE-2026-53167",
-        "CVE-2026-53359"
-      ]
-    },
-    {
-      "id": "330280",
-      "title": "Amazon Linux 2 : kernel, --advisory ALAS2KERNEL-5.15-2026-112 (ALASKERNEL-5.15-2026-112)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-5578-w22f-pfx9)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330280",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445432",
       "cves": [
-        "CVE-2026-64600"
+        "CVE-2026-55415"
       ]
     },
     {
-      "id": "330279",
-      "title": "Amazon Linux 2 : kernel, --advisory ALAS2-2026-3835 (ALAS-2026-3835)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-954p-556p-r752)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330279",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445431",
       "cves": [
-        "CVE-2026-64600"
+        "CVE-2026-54690"
       ]
     },
     {
-      "id": "330278",
-      "title": "Amazon Linux 2 : kernel, --advisory ALAS2KERNEL-5.4-2026-127 (ALASKERNEL-5.4-2026-127)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-954p-556p-r752)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330278",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445431",
       "cves": [
-        "CVE-2026-64600"
+        "CVE-2026-54690"
       ]
     },
     {
-      "id": "330277",
-      "title": "MiracleLinux 9 : dotnet8.0-8.0.128-1.el9_8.ML.1 (AXSA:2026-1363:13)",
-      "severity": "Medium",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330277",
-      "cves": [
-        "CVE-2026-45491",
-        "CVE-2026-45591"
-      ]
-    },
-    {
-      "id": "330276",
-      "title": "MiracleLinux 9 : evince-40.5-4.el9_8.1 (AXSA:2026-1365:02)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-vx7x-vcc2-c44g)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330276",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445430",
       "cves": [
-        "CVE-2026-46529"
+        "CVE-2026-55391"
       ]
     },
     {
-      "id": "330275",
-      "title": "MiracleLinux 9 : hplip-3.21.2-6.el9_8.4.ML.1 (AXSA:2026-1362:03)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-vx7x-vcc2-c44g)",
+      "severity": "High",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445430",
+      "cves": [
+        "CVE-2026-55391"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/patrickhener/goshs/v2, goshs.de/goshs/v2 (GHSA-rjrw-mjq6-hpmm)",
       "severity": "Critical",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330275",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445429",
       "cves": [
-        "CVE-2026-8631",
-        "CVE-2026-8632"
+        "CVE-2026-62325"
       ]
     },
     {
-      "id": "330274",
-      "title": "MiracleLinux 9 : dotnet10.0-10.0.108-1.el9_8.ML.1 (AXSA:2026-1360:14)",
-      "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330274",
-      "cves": [
-        "CVE-2026-42899"
-      ]
-    },
-    {
-      "id": "330273",
-      "title": "FreeBSD : Erlang/OTP -- binary_to_term crash on crafted BIT_BINARY_EXT input (445dc6b9-89e1-11f1-b35c-4c526214c986)",
-      "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330273",
-      "cves": []
-    },
-    {
-      "id": "330272",
-      "title": "FreeBSD : Erlang/OTP -- denial of service via exponential certificate policy tree growth (445d674f-89e1-11f1-b35c-4c526214c986)",
-      "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330272",
-      "cves": []
-    },
-    {
-      "id": "330271",
-      "title": "FreeBSD : Erlang/OTP -- relative path traversal in the zip module (445e11d4-89e1-11f1-b35c-4c526214c986)",
-      "severity": "Medium",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330271",
-      "cves": []
-    },
-    {
-      "id": "330270",
-      "title": "FreeBSD : Erlang/OTP -- TLS denial of service using invalid certificate chains (445d3f14-89e1-11f1-b35c-4c526214c986)",
-      "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330270",
-      "cves": []
-    },
-    {
-      "id": "330269",
-      "title": "FreeBSD : Erlang/OTP -- megaco flex scanner buffer overflow (445da2cc-89e1-11f1-b35c-4c526214c986)",
-      "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330269",
-      "cves": []
-    },
-    {
-      "id": "330268",
-      "title": "FreeBSD : Erlang/OTP -- (D)TLS-1.2 server certificate verification bypass (445c61c0-89e1-11f1-b35c-4c526214c986)",
+      "id": null,
+      "title": "SCA: security update for github.com/patrickhener/goshs/v2, goshs.de/goshs/v2 (GHSA-rjrw-mjq6-hpmm)",
       "severity": "Critical",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330268",
-      "cves": []
-    },
-    {
-      "id": "330267",
-      "title": "FreeBSD : Erlang/OTP -- denial of service in epmd (445e3324-89e1-11f1-b35c-4c526214c986)",
-      "severity": "Medium",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330267",
-      "cves": []
-    },
-    {
-      "id": "330266",
-      "title": "FreeBSD : Erlang/OTP -- heap corruption decoding invalidly encoded large tuples (445df078-89e1-11f1-b35c-4c526214c986)",
-      "severity": "Medium",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330266",
-      "cves": []
-    },
-    {
-      "id": "330265",
-      "title": "RHEL 8 : kernel-rt (RHSA-2026:47010)",
-      "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330265",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445429",
       "cves": [
-        "CVE-2026-53006"
+        "CVE-2026-62325"
       ]
     },
     {
-      "id": "330264",
-      "title": "RHEL 8 : kernel (RHSA-2026:47011)",
+      "id": null,
+      "title": "SCA: security update for github.com/patrickhener/goshs/v2, goshs.de/goshs/v2 (GHSA-rmxw-pq4x-3fvh)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330264",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445428",
       "cves": [
-        "CVE-2026-53006"
+        "CVE-2026-40189",
+        "CVE-2026-54719"
       ]
     },
     {
-      "id": "330263",
-      "title": "RHEL 8 : sssd (RHSA-2026:46990)",
+      "id": null,
+      "title": "SCA: security update for github.com/patrickhener/goshs/v2, goshs.de/goshs/v2 (GHSA-rmxw-pq4x-3fvh)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330263",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445428",
       "cves": [
-        "CVE-2026-14474",
-        "CVE-2026-14476"
+        "CVE-2026-40189",
+        "CVE-2026-54719"
       ]
     },
     {
-      "id": "330262",
-      "title": "TencentOS Server 2: xorg-x11-server (TSSA-2026:0764)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-386q-5hp3-95m9)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330262",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445427",
       "cves": [
-        "CVE-2025-26597",
-        "CVE-2026-50256",
-        "CVE-2026-50257",
-        "CVE-2026-50258",
-        "CVE-2026-50259",
-        "CVE-2026-50260",
-        "CVE-2026-50261",
-        "CVE-2026-50262",
-        "CVE-2026-50263",
-        "CVE-2026-50264"
+        "CVE-2026-54653"
       ]
     },
     {
-      "id": "330261",
-      "title": "TencentOS Server 3: glibc (TSSA-2026:0772)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-386q-5hp3-95m9)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330261",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445427",
       "cves": [
-        "CVE-2026-5435",
-        "CVE-2026-5928",
-        "CVE-2026-6238"
+        "CVE-2026-54653"
       ]
     },
     {
-      "id": "330260",
-      "title": "TencentOS Server 2: gstreamer1-plugins-bad-free, gstreamer1-plugins-base, and gstreamer1-plugins-good (TSSA-2026:0765)",
+      "id": null,
+      "title": "SCA: security update for github.com/gotd/td (GHSA-whmm-qj9r-wvr2)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330260",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445426",
       "cves": [
-        "CVE-2026-2921",
-        "CVE-2026-3082",
-        "CVE-2026-3083",
-        "CVE-2026-3085"
+        "CVE-2026-54638"
       ]
     },
     {
-      "id": "330259",
-      "title": "TencentOS Server 3: perl-XML-LibXML (TSSA-2026:0767)",
+      "id": null,
+      "title": "SCA: security update for github.com/gotd/td (GHSA-whmm-qj9r-wvr2)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330259",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445426",
       "cves": [
-        "CVE-2026-8177"
+        "CVE-2026-54638"
       ]
     },
     {
-      "id": "330258",
-      "title": "TencentOS Server 2: ruby (TSSA-2026:0763)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-8359-h9fx-j6v9)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330258",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445425",
       "cves": [
-        "CVE-2026-42246",
-        "CVE-2026-42258"
+        "CVE-2026-55389"
       ]
     },
     {
-      "id": "330257",
-      "title": "TencentOS Server 3: python3.12 (TSSA-2026:0768)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-8359-h9fx-j6v9)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330257",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445425",
       "cves": [
-        "CVE-2026-15308"
+        "CVE-2026-55389"
       ]
     },
     {
-      "id": "330256",
-      "title": "TencentOS Server 3: python-pillow (TSSA-2026:0769)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-m34r-v34r-rf9q)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330256",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445424",
       "cves": [
-        "CVE-2026-54059",
-        "CVE-2026-54060",
-        "CVE-2026-55379",
-        "CVE-2026-55380"
+        "CVE-2026-54655"
       ]
     },
     {
-      "id": "330255",
-      "title": "TencentOS Server 3: python3 (TSSA-2026:0766)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-m34r-v34r-rf9q)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330255",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445424",
       "cves": [
-        "CVE-2026-15308"
+        "CVE-2026-54655"
       ]
     },
     {
-      "id": "330254",
-      "title": "TencentOS Server 3: .NET 8.0 (TSSA-2026:0770)",
+      "id": null,
+      "title": "SCA: security update for @hypequery/clickhouse (GHSA-6wcc-39rp-hh9p)",
       "severity": "Critical",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330254",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445423",
       "cves": [
-        "CVE-2026-47300",
-        "CVE-2026-47302",
-        "CVE-2026-47303",
-        "CVE-2026-47304",
-        "CVE-2026-50524",
-        "CVE-2026-50525",
-        "CVE-2026-50526",
-        "CVE-2026-50527",
-        "CVE-2026-50528",
-        "CVE-2026-50646",
-        "CVE-2026-50648",
-        "CVE-2026-50649",
-        "CVE-2026-50650",
-        "CVE-2026-50651",
-        "CVE-2026-50659",
-        "CVE-2026-56170",
-        "CVE-2026-57108"
+        "CVE-2026-54658"
       ]
     },
     {
-      "id": "330253",
-      "title": "Fedora 44 : perl-Mojolicious (2026-4334fd85bc)",
+      "id": null,
+      "title": "SCA: security update for @hypequery/clickhouse (GHSA-6wcc-39rp-hh9p)",
       "severity": "Critical",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330253",
-      "cves": []
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445423",
+      "cves": [
+        "CVE-2026-54658"
+      ]
     },
     {
-      "id": "330252",
-      "title": "Fedora 44 : opkssh (2026-a0bf40ecfe)",
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-wjv6-jcfj-mf9r)",
       "severity": "High",
-      "date": "Tue, 28 Jul 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/330252",
-      "cves": []
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445422",
+      "cves": [
+        "CVE-2026-54654"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-wjv6-jcfj-mf9r)",
+      "severity": "High",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445422",
+      "cves": [
+        "CVE-2026-54654"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-8m8r-38jm-f355)",
+      "severity": "High",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445421",
+      "cves": [
+        "CVE-2026-54656"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for datamodel-code-generator (GHSA-8m8r-38jm-f355)",
+      "severity": "High",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445421",
+      "cves": [
+        "CVE-2026-54656"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/patrickhener/goshs/v2, goshs.de/goshs/v2 (GHSA-hq33-8jgp-8qq3)",
+      "severity": "Critical",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445420",
+      "cves": [
+        "CVE-2026-64863"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/patrickhener/goshs/v2, goshs.de/goshs/v2 (GHSA-hq33-8jgp-8qq3)",
+      "severity": "Critical",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445420",
+      "cves": [
+        "CVE-2026-64863"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for pagy (GHSA-2xmw-f8j8-wfxc)",
+      "severity": "Medium",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445419",
+      "cves": [
+        "CVE-2026-54659"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for pagy (GHSA-2xmw-f8j8-wfxc)",
+      "severity": "Medium",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445419",
+      "cves": [
+        "CVE-2026-54659"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/patrickhener/goshs/v2, goshs.de/goshs/v2 (GHSA-wg2q-39h6-66x9)",
+      "severity": "Medium",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445418",
+      "cves": [
+        "CVE-2026-66063"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/patrickhener/goshs/v2, goshs.de/goshs/v2 (GHSA-wg2q-39h6-66x9)",
+      "severity": "Medium",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445418",
+      "cves": [
+        "CVE-2026-66063"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/bablilayoub/openhole (GHSA-fh2f-xfxc-q9cc)",
+      "severity": "High",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/445417",
+      "cves": [
+        "CVE-2026-54650"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/bablilayoub/openhole (GHSA-fh2f-xfxc-q9cc)",
+      "severity": "High",
+      "date": "Wed, 29 Jul 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/445417",
+      "cves": [
+        "CVE-2026-54650"
+      ]
     }
   ]
 }
