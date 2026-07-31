@@ -1,204 +1,15 @@
 {
-  "updated": "2026-07-30",
+  "updated": "2026-07-31",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-30",
-  "previous_date": "2026-07-23",
+  "current_date": "2026-07-31",
+  "previous_date": "2026-07-24",
   "risers": [
-    {
-      "id": "CVE-2026-48908",
-      "now": 0.8813,
-      "prev": 0.01569,
-      "delta": 0.86561,
-      "name": "Joomla Extension - joomshaper.com - Remote Code Execution in SP Pagebuilder extension for "
-    },
-    {
-      "id": "CVE-2022-42904",
-      "now": 0.82963,
-      "prev": 0.0767,
-      "delta": 0.75293,
-      "name": "Zoho ManageEngine ADManager Plus through 7151 allows authenticated admin users to execute the commands in prox"
-    },
-    {
-      "id": "CVE-2026-48282",
-      "now": 0.99197,
-      "prev": 0.28583,
-      "delta": 0.70614,
-      "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
-    },
     {
       "id": "CVE-2026-16232",
       "now": 0.69969,
-      "prev": 0.01074,
-      "delta": 0.68895,
+      "prev": 0.12685,
+      "delta": 0.57284,
       "name": "Authentication Bypass in the SmartConsole Login Process Using an Application Token"
-    },
-    {
-      "id": "CVE-2026-56291",
-      "now": 0.76066,
-      "prev": 0.08635,
-      "delta": 0.67431,
-      "name": "Joomla Extension - balbooa.com - Unauthenticated file upload in Balbooa Forms extension < "
-    },
-    {
-      "id": "CVE-2026-56290",
-      "now": 0.83254,
-      "prev": 0.18707,
-      "delta": 0.64547,
-      "name": "Joomla Extension - joomlack.fr - Unauthenticated file upload in Page Builder CK extension "
-    },
-    {
-      "id": "CVE-2026-15409",
-      "now": 0.7844,
-      "prev": 0.16271,
-      "delta": 0.62169,
-      "name": "SonicWall SMA1000"
-    },
-    {
-      "id": "CVE-2026-63030",
-      "now": 0.98417,
-      "prev": 0.38599,
-      "delta": 0.59818,
-      "name": "WordPress < 7.0.2 - REST API batch-route confusion and SQL injection issue leading to Remo"
-    },
-    {
-      "id": "CVE-2023-39475",
-      "now": 0.62262,
-      "prev": 0.03147,
-      "delta": 0.59115,
-      "name": "Inductive Automation Ignition ParameterVersionJavaSerializationCodec Deserialization of Un"
-    },
-    {
-      "id": "CVE-2026-60137",
-      "now": 0.79029,
-      "prev": 0.20395,
-      "delta": 0.58634,
-      "name": "WordPress < 7.0.2 - Facilitated SQL Injection via author__not_in in WP_Query"
-    },
-    {
-      "id": "CVE-2026-15410",
-      "now": 0.76347,
-      "prev": 0.18287,
-      "delta": 0.5806,
-      "name": "SonicWall SMA1000"
-    },
-    {
-      "id": "CVE-2023-51448",
-      "now": 0.66711,
-      "prev": 0.09022,
-      "delta": 0.57689,
-      "name": "SQL Injection vulnerability when managing SNMP Notification Receivers"
-    },
-    {
-      "id": "CVE-2023-27293",
-      "now": 0.56768,
-      "prev": 0.00596,
-      "delta": 0.56172,
-      "name": "OpenCATS"
-    },
-    {
-      "id": "CVE-2026-34908",
-      "now": 0.58432,
-      "prev": 0.02452,
-      "delta": 0.5598,
-      "name": "Ubiquiti Inc UniFi OS Server"
-    },
-    {
-      "id": "CVE-2026-34909",
-      "now": 0.56934,
-      "prev": 0.02269,
-      "delta": 0.54665,
-      "name": "Ubiquiti Inc UniFi OS Server"
-    },
-    {
-      "id": "CVE-2022-34169",
-      "now": 0.81039,
-      "prev": 0.33623,
-      "delta": 0.47416,
-      "name": "Apache Xalan Java XSLT library is vulnerable to an integer truncation issue when processin"
-    },
-    {
-      "id": "CVE-2013-3307",
-      "now": 0.52917,
-      "prev": 0.05618,
-      "delta": 0.47299,
-      "name": "Linksys E1000"
-    },
-    {
-      "id": "CVE-2025-5961",
-      "now": 0.48659,
-      "prev": 0.06479,
-      "delta": 0.4218,
-      "name": "Migration, Backup, Staging \u2013 WPvivid Backup & Migration <= 0.9.116 - Authenticated (Admini"
-    },
-    {
-      "id": "CVE-2026-20230",
-      "now": 0.83213,
-      "prev": 0.41694,
-      "delta": 0.41519,
-      "name": "Cisco Unified Communications Manager Server-Side Request Forgery Vulnerability"
-    },
-    {
-      "id": "CVE-2026-50522",
-      "now": 0.62545,
-      "prev": 0.21044,
-      "delta": 0.41501,
-      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2026-8037",
-      "now": 0.84793,
-      "prev": 0.4343,
-      "delta": 0.41363,
-      "name": "OS Command Injection Remote Code Execution Vulnerability in Progress LoadMaster, ECS Conne"
-    },
-    {
-      "id": "CVE-2026-25089",
-      "now": 0.69827,
-      "prev": 0.36135,
-      "delta": 0.33692,
-      "name": "Fortinet FortiSandbox"
-    },
-    {
-      "id": "CVE-2026-45484",
-      "now": 0.35216,
-      "prev": 0.01982,
-      "delta": 0.33234,
-      "name": "Microsoft SharePoint Elevation of Privilege Vulnerability"
-    },
-    {
-      "id": "CVE-2026-48319",
-      "now": 0.3229,
-      "prev": 0.00884,
-      "delta": 0.31406,
-      "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
-    },
-    {
-      "id": "CVE-2025-30066",
-      "now": 0.72391,
-      "prev": 0.41008,
-      "delta": 0.31383,
-      "name": "tj-actions changed-files"
-    },
-    {
-      "id": "CVE-2026-20896",
-      "now": 0.31809,
-      "prev": 0.00783,
-      "delta": 0.31026,
-      "name": "Gitea Docker image trusts spoofable reverse-proxy headers by default"
-    },
-    {
-      "id": "CVE-2026-20127",
-      "now": 0.88243,
-      "prev": 0.57793,
-      "delta": 0.3045,
-      "name": "Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2024-37014",
-      "now": 0.31113,
-      "prev": 0.00923,
-      "delta": 0.3019,
-      "name": "Langflow through 0.6.19 allows remote code execution if untrusted users are able to reach the \"POST /api/v1/cu"
     },
     {
       "id": "CVE-2025-22037",
@@ -208,167 +19,209 @@
       "name": "ksmbd: fix null pointer dereference in alloc_preauth_hash()"
     },
     {
-      "id": "CVE-2026-55255",
-      "now": 0.29052,
-      "prev": 0.0056,
-      "delta": 0.28492,
-      "name": "Langflow: IDOR Vulnerability in `/api/v1/responses` Endpoint Allows Authenticated Attacker"
+      "id": "CVE-2025-49132",
+      "now": 0.41137,
+      "prev": 0.13105,
+      "delta": 0.28032,
+      "name": "Pterodactyl Panel Allows Unauthenticated Arbitrary Remote Code Execution"
+    },
+    {
+      "id": "CVE-2025-21760",
+      "now": 0.33417,
+      "prev": 0.09117,
+      "delta": 0.243,
+      "name": "ndisc: extend RCU protection in ndisc_send_skb()"
+    },
+    {
+      "id": "CVE-2026-50522",
+      "now": 0.7576,
+      "prev": 0.57101,
+      "delta": 0.18659,
+      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2025-29513",
+      "now": 0.41195,
+      "prev": 0.2543,
+      "delta": 0.15765,
+      "name": "Cross-Site Scripting (XSS) vulnerability in NodeBB v4.0.4 and before allows remote attackers to store arbitrar"
+    },
+    {
+      "id": "CVE-2005-4360",
+      "now": 0.86729,
+      "prev": 0.7289,
+      "delta": 0.13839,
+      "name": "The URL parser in Microsoft Internet Information Services (IIS) 5.1 on Windows XP Professional SP2 allows remo"
+    },
+    {
+      "id": "CVE-2021-28143",
+      "now": 0.45708,
+      "prev": 0.31957,
+      "delta": 0.13751,
+      "name": "/jsonrpc on D-Link DIR-841 3.03 and 3.04 devices allows authenticated command injection via ping, ping6, or tr"
+    },
+    {
+      "id": "CVE-2020-27989",
+      "now": 0.34013,
+      "prev": 0.21749,
+      "delta": 0.12264,
+      "name": "Nagios XI before 5.7.5 is vulnerable to XSS in Dashboard Tools (Edit Dashboard)."
+    },
+    {
+      "id": "CVE-2020-27990",
+      "now": 0.34013,
+      "prev": 0.21749,
+      "delta": 0.12264,
+      "name": "Nagios XI before 5.7.5 is vulnerable to XSS in the Deployment tool (add agent)."
+    },
+    {
+      "id": "CVE-2020-27991",
+      "now": 0.34013,
+      "prev": 0.21749,
+      "delta": 0.12264,
+      "name": "Nagios XI before 5.7.5 is vulnerable to XSS in Account Information (Email field)."
+    },
+    {
+      "id": "CVE-2025-46618",
+      "now": 0.40949,
+      "prev": 0.28742,
+      "delta": 0.12207,
+      "name": "JetBrains TeamCity"
+    },
+    {
+      "id": "CVE-2023-3824",
+      "now": 0.18044,
+      "prev": 0.07938,
+      "delta": 0.10106,
+      "name": "Buffer overflow and overread in phar_dir_read()"
+    },
+    {
+      "id": "CVE-2003-0801",
+      "now": 0.12202,
+      "prev": 0.02538,
+      "delta": 0.09664,
+      "name": "Cross-site scripting (XSS) vulnerability in Nokia Electronic Documentation (NED) 5.0 allows remote attackers t"
+    },
+    {
+      "id": "CVE-2024-57041",
+      "now": 0.39006,
+      "prev": 0.30488,
+      "delta": 0.08518,
+      "name": "A persistent cross-site scripting (XSS) vulnerability in NodeBB v3.11.0 allows remote attackers to store arbit"
+    },
+    {
+      "id": "CVE-2024-12209",
+      "now": 0.23364,
+      "prev": 0.15043,
+      "delta": 0.08321,
+      "name": "WP Umbrella: Update Backup Restore & Monitoring <= 2.17.0 - Unauthenticated Local File Inc"
+    },
+    {
+      "id": "CVE-2009-0991",
+      "now": 0.15637,
+      "prev": 0.07578,
+      "delta": 0.08059,
+      "name": "Unspecified vulnerability in the Listener component in Oracle Database 9.2.0.8, 9.2.0.8DV, 10.1.0.5, 10.2.0.4,"
+    },
+    {
+      "id": "CVE-2025-20188",
+      "now": 0.25043,
+      "prev": 0.17894,
+      "delta": 0.07149,
+      "name": "Cisco Cisco IOS XE Software"
+    },
+    {
+      "id": "CVE-2002-1753",
+      "now": 0.32204,
+      "prev": 0.25916,
+      "delta": 0.06288,
+      "name": "csNewsPro.cgi in CGIScript.net csNews Professional (csNewsPro) allows remote attackers to execute arbitrary Pe"
+    },
+    {
+      "id": "CVE-2001-0008",
+      "now": 0.13307,
+      "prev": 0.07024,
+      "delta": 0.06283,
+      "name": "Backdoor account in Interbase database server allows remote attackers to overwrite arbitrary files using store"
+    },
+    {
+      "id": "CVE-2025-54988",
+      "now": 0.09092,
+      "prev": 0.02973,
+      "delta": 0.06119,
+      "name": "Apache Tika PDF parser module: XXE vulnerability in PDFParser's handling of XFA"
+    },
+    {
+      "id": "CVE-2026-3891",
+      "now": 0.08797,
+      "prev": 0.02775,
+      "delta": 0.06022,
+      "name": "Pix for WooCommerce <= 1.5.0 - Unauthenticated Arbitrary File Upload"
+    },
+    {
+      "id": "CVE-2003-0694",
+      "now": 0.66183,
+      "prev": 0.60185,
+      "delta": 0.05998,
+      "name": "The prescan function in Sendmail 8.12.9 allows remote attackers to execute arbitrary code via buffer overflow "
+    },
+    {
+      "id": "CVE-2025-23121",
+      "now": 0.17527,
+      "prev": 0.1154,
+      "delta": 0.05987,
+      "name": "Veeam Backup and Recovery"
+    },
+    {
+      "id": "CVE-2001-0797",
+      "now": 0.94739,
+      "prev": 0.88836,
+      "delta": 0.05903,
+      "name": "Buffer overflow in login in various System V based operating systems allows remote attackers to execute arbitr"
+    },
+    {
+      "id": "CVE-2015-0935",
+      "now": 0.11761,
+      "prev": 0.05869,
+      "delta": 0.05892,
+      "name": "Bomgar Remote Support before 15.1.1 allows remote attackers to execute arbitrary PHP code via crafted serializ"
+    },
+    {
+      "id": "CVE-2006-4489",
+      "now": 0.1542,
+      "prev": 0.09536,
+      "delta": 0.05884,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in MiniBill 2006-07-14 (1.2.2) allow remote attackers to ex"
+    },
+    {
+      "id": "CVE-2025-49619",
+      "now": 0.1996,
+      "prev": 0.14215,
+      "delta": 0.05745,
+      "name": "Skyvern Skyvern"
+    },
+    {
+      "id": "CVE-2020-15956",
+      "now": 0.16158,
+      "prev": 0.10522,
+      "delta": 0.05636,
+      "name": "ActiveMediaServer.exe in ACTi NVR3 Standard Server 3.0.12.42 allows remote unauthenticated attackers to trigge"
+    },
+    {
+      "id": "CVE-2025-2760",
+      "now": 0.12755,
+      "prev": 0.07298,
+      "delta": 0.05457,
+      "name": "GIMP XWD File Parsing Integer Overflow Remote Code Execution Vulnerability"
     }
   ],
   "newly_high": [
     {
-      "id": "CVE-2026-48908",
-      "now": 0.8813,
-      "prev": 0.01569,
-      "delta": 0.86561,
-      "name": "Joomla Extension - joomshaper.com - Remote Code Execution in SP Pagebuilder extension for "
-    },
-    {
-      "id": "CVE-2022-42904",
-      "now": 0.82963,
-      "prev": 0.0767,
-      "delta": 0.75293,
-      "name": "Zoho ManageEngine ADManager Plus through 7151 allows authenticated admin users to execute the commands in prox"
-    },
-    {
-      "id": "CVE-2026-48282",
-      "now": 0.99197,
-      "prev": 0.28583,
-      "delta": 0.70614,
-      "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
-    },
-    {
       "id": "CVE-2026-16232",
       "now": 0.69969,
-      "prev": 0.01074,
-      "delta": 0.68895,
+      "prev": 0.12685,
+      "delta": 0.57284,
       "name": "Authentication Bypass in the SmartConsole Login Process Using an Application Token"
-    },
-    {
-      "id": "CVE-2026-56291",
-      "now": 0.76066,
-      "prev": 0.08635,
-      "delta": 0.67431,
-      "name": "Joomla Extension - balbooa.com - Unauthenticated file upload in Balbooa Forms extension < "
-    },
-    {
-      "id": "CVE-2026-56290",
-      "now": 0.83254,
-      "prev": 0.18707,
-      "delta": 0.64547,
-      "name": "Joomla Extension - joomlack.fr - Unauthenticated file upload in Page Builder CK extension "
-    },
-    {
-      "id": "CVE-2026-15409",
-      "now": 0.7844,
-      "prev": 0.16271,
-      "delta": 0.62169,
-      "name": "SonicWall SMA1000"
-    },
-    {
-      "id": "CVE-2026-63030",
-      "now": 0.98417,
-      "prev": 0.38599,
-      "delta": 0.59818,
-      "name": "WordPress < 7.0.2 - REST API batch-route confusion and SQL injection issue leading to Remo"
-    },
-    {
-      "id": "CVE-2023-39475",
-      "now": 0.62262,
-      "prev": 0.03147,
-      "delta": 0.59115,
-      "name": "Inductive Automation Ignition ParameterVersionJavaSerializationCodec Deserialization of Un"
-    },
-    {
-      "id": "CVE-2026-60137",
-      "now": 0.79029,
-      "prev": 0.20395,
-      "delta": 0.58634,
-      "name": "WordPress < 7.0.2 - Facilitated SQL Injection via author__not_in in WP_Query"
-    },
-    {
-      "id": "CVE-2026-15410",
-      "now": 0.76347,
-      "prev": 0.18287,
-      "delta": 0.5806,
-      "name": "SonicWall SMA1000"
-    },
-    {
-      "id": "CVE-2023-51448",
-      "now": 0.66711,
-      "prev": 0.09022,
-      "delta": 0.57689,
-      "name": "SQL Injection vulnerability when managing SNMP Notification Receivers"
-    },
-    {
-      "id": "CVE-2023-27293",
-      "now": 0.56768,
-      "prev": 0.00596,
-      "delta": 0.56172,
-      "name": "OpenCATS"
-    },
-    {
-      "id": "CVE-2026-34908",
-      "now": 0.58432,
-      "prev": 0.02452,
-      "delta": 0.5598,
-      "name": "Ubiquiti Inc UniFi OS Server"
-    },
-    {
-      "id": "CVE-2026-34909",
-      "now": 0.56934,
-      "prev": 0.02269,
-      "delta": 0.54665,
-      "name": "Ubiquiti Inc UniFi OS Server"
-    },
-    {
-      "id": "CVE-2022-34169",
-      "now": 0.81039,
-      "prev": 0.33623,
-      "delta": 0.47416,
-      "name": "Apache Xalan Java XSLT library is vulnerable to an integer truncation issue when processin"
-    },
-    {
-      "id": "CVE-2013-3307",
-      "now": 0.52917,
-      "prev": 0.05618,
-      "delta": 0.47299,
-      "name": "Linksys E1000"
-    },
-    {
-      "id": "CVE-2026-20230",
-      "now": 0.83213,
-      "prev": 0.41694,
-      "delta": 0.41519,
-      "name": "Cisco Unified Communications Manager Server-Side Request Forgery Vulnerability"
-    },
-    {
-      "id": "CVE-2026-50522",
-      "now": 0.62545,
-      "prev": 0.21044,
-      "delta": 0.41501,
-      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2026-8037",
-      "now": 0.84793,
-      "prev": 0.4343,
-      "delta": 0.41363,
-      "name": "OS Command Injection Remote Code Execution Vulnerability in Progress LoadMaster, ECS Conne"
-    },
-    {
-      "id": "CVE-2026-25089",
-      "now": 0.69827,
-      "prev": 0.36135,
-      "delta": 0.33692,
-      "name": "Fortinet FortiSandbox"
-    },
-    {
-      "id": "CVE-2025-30066",
-      "now": 0.72391,
-      "prev": 0.41008,
-      "delta": 0.31383,
-      "name": "tj-actions changed-files"
     },
     {
       "id": "CVE-2025-22037",
@@ -378,53 +231,25 @@
       "name": "ksmbd: fix null pointer dereference in alloc_preauth_hash()"
     },
     {
-      "id": "CVE-2021-22681",
-      "now": 0.50712,
-      "prev": 0.25455,
-      "delta": 0.25257,
-      "name": "Rockwell Automation Studio 5000 Logix Designer, RSLogix 5000, Logix Controllers"
+      "id": "CVE-2015-1487",
+      "now": 0.51977,
+      "prev": 0.47331,
+      "delta": 0.04646,
+      "name": "The management console in Symantec Endpoint Protection Manager (SEPM) 12.1 before 12.1-RU6-MP1 allows remote a"
     },
     {
-      "id": "CVE-2017-3548",
-      "now": 0.50837,
-      "prev": 0.25832,
-      "delta": 0.25005,
-      "name": "Oracle Corporation PeopleSoft Enterprise PT PeopleTools"
+      "id": "CVE-2025-58434",
+      "now": 0.50156,
+      "prev": 0.47326,
+      "delta": 0.0283,
+      "name": "Flowise Cloud and Local Deployments have Unauthenticated Password Reset Token Disclosure t"
     },
     {
-      "id": "CVE-2006-1551",
-      "now": 0.50632,
-      "prev": 0.36127,
-      "delta": 0.14505,
-      "name": "Eval injection vulnerability in pajax_call_dispatcher.php in PAJAX 0.5.1 and earlier allows remote attackers t"
-    },
-    {
-      "id": "CVE-2026-2701",
-      "now": 0.56673,
-      "prev": 0.4881,
-      "delta": 0.07863,
-      "name": "RCE vulnerability in Progress ShareFile Storage Zones Controller (SZC)"
-    },
-    {
-      "id": "CVE-2025-32463",
-      "now": 0.54935,
-      "prev": 0.48239,
-      "delta": 0.06696,
-      "name": "Sudo project Sudo"
-    },
-    {
-      "id": "CVE-2026-49160",
-      "now": 0.53829,
-      "prev": 0.48438,
-      "delta": 0.05391,
-      "name": "HTTP.sys Denial of Service Vulnerability"
-    },
-    {
-      "id": "CVE-2026-10523",
-      "now": 0.5187,
-      "prev": 0.4719,
-      "delta": 0.0468,
-      "name": "ivanti Sentry"
+      "id": "CVE-2018-11686",
+      "now": 0.52542,
+      "prev": 0.49787,
+      "delta": 0.02755,
+      "name": "The Publish Service in FlexPaper (later renamed FlowPaper) 2.3.6 allows remote code execution via setup.php an"
     }
   ]
 }
