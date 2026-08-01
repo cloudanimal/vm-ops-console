@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-31",
+  "updated": "2026-08-01",
   "source": "FIRST EPSS",
   "current_date": "2026-07-31",
-  "previous_date": "2026-07-24",
+  "previous_date": "2026-07-25",
   "risers": [
     {
       "id": "CVE-2026-16232",
@@ -61,27 +61,6 @@
       "name": "/jsonrpc on D-Link DIR-841 3.03 and 3.04 devices allows authenticated command injection via ping, ping6, or tr"
     },
     {
-      "id": "CVE-2020-27989",
-      "now": 0.34013,
-      "prev": 0.21749,
-      "delta": 0.12264,
-      "name": "Nagios XI before 5.7.5 is vulnerable to XSS in Dashboard Tools (Edit Dashboard)."
-    },
-    {
-      "id": "CVE-2020-27990",
-      "now": 0.34013,
-      "prev": 0.21749,
-      "delta": 0.12264,
-      "name": "Nagios XI before 5.7.5 is vulnerable to XSS in the Deployment tool (add agent)."
-    },
-    {
-      "id": "CVE-2020-27991",
-      "now": 0.34013,
-      "prev": 0.21749,
-      "delta": 0.12264,
-      "name": "Nagios XI before 5.7.5 is vulnerable to XSS in Account Information (Email field)."
-    },
-    {
       "id": "CVE-2025-46618",
       "now": 0.40949,
       "prev": 0.28742,
@@ -131,13 +110,6 @@
       "name": "Cisco Cisco IOS XE Software"
     },
     {
-      "id": "CVE-2002-1753",
-      "now": 0.32204,
-      "prev": 0.25916,
-      "delta": 0.06288,
-      "name": "csNewsPro.cgi in CGIScript.net csNews Professional (csNewsPro) allows remote attackers to execute arbitrary Pe"
-    },
-    {
       "id": "CVE-2001-0008",
       "now": 0.13307,
       "prev": 0.07024,
@@ -173,13 +145,6 @@
       "name": "Veeam Backup and Recovery"
     },
     {
-      "id": "CVE-2001-0797",
-      "now": 0.94739,
-      "prev": 0.88836,
-      "delta": 0.05903,
-      "name": "Buffer overflow in login in various System V based operating systems allows remote attackers to execute arbitr"
-    },
-    {
       "id": "CVE-2015-0935",
       "now": 0.11761,
       "prev": 0.05869,
@@ -208,11 +173,46 @@
       "name": "ActiveMediaServer.exe in ACTi NVR3 Standard Server 3.0.12.42 allows remote unauthenticated attackers to trigge"
     },
     {
-      "id": "CVE-2025-2760",
-      "now": 0.12755,
-      "prev": 0.07298,
-      "delta": 0.05457,
-      "name": "GIMP XWD File Parsing Integer Overflow Remote Code Execution Vulnerability"
+      "id": "CVE-2026-48319",
+      "now": 0.3229,
+      "prev": 0.26956,
+      "delta": 0.05334,
+      "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
+    },
+    {
+      "id": "CVE-2014-1912",
+      "now": 0.28319,
+      "prev": 0.23047,
+      "delta": 0.05272,
+      "name": "Buffer overflow in the socket.recvfrom_into function in Modules/socketmodule.c in Python 2.5 before 2.7.7, 3.x"
+    },
+    {
+      "id": "CVE-2021-3493",
+      "now": 0.49166,
+      "prev": 0.43988,
+      "delta": 0.05178,
+      "name": "Ubuntu linux kernel"
+    },
+    {
+      "id": "CVE-2016-5636",
+      "now": 0.26316,
+      "prev": 0.21366,
+      "delta": 0.0495,
+      "name": "Integer overflow in the get_data function in zipimport.c in CPython (aka Python) before 2.7.12, 3.x before 3.4"
+    },
+    {
+      "id": "CVE-2008-5692",
+      "now": 0.12646,
+      "prev": 0.07843,
+      "delta": 0.04803,
+      "name": "Ipswitch WS_FTP Server Manager before 6.1.1, and possibly other Ipswitch products, allows remote attackers to "
+    },
+    {
+      "id": "CVE-2002-0081",
+      "now": 0.24256,
+      "prev": 0.19486,
+      "delta": 0.0477,
+      "name": "Buffer overflows in (1) php_mime_split in PHP 4.1.0, 4.1.1, and 4.0.6 and earlier, and (2) php3_mime_split in "
     }
   ],
   "newly_high": [
@@ -231,11 +231,25 @@
       "name": "ksmbd: fix null pointer dereference in alloc_preauth_hash()"
     },
     {
+      "id": "CVE-2000-0869",
+      "now": 0.5095,
+      "prev": 0.46226,
+      "delta": 0.04724,
+      "name": "The default configuration of Apache 1.3.12 in SuSE Linux 6.4 enables WebDAV, which allows remote attackers to "
+    },
+    {
       "id": "CVE-2015-1487",
       "now": 0.51977,
       "prev": 0.47331,
       "delta": 0.04646,
       "name": "The management console in Symantec Endpoint Protection Manager (SEPM) 12.1 before 12.1-RU6-MP1 allows remote a"
+    },
+    {
+      "id": "CVE-2023-41249",
+      "now": 0.53128,
+      "prev": 0.49596,
+      "delta": 0.03532,
+      "name": "JetBrains TeamCity"
     },
     {
       "id": "CVE-2025-58434",
