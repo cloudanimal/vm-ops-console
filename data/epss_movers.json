@@ -1,15 +1,29 @@
 {
-  "updated": "2026-08-01",
+  "updated": "2026-08-02",
   "source": "FIRST EPSS",
-  "current_date": "2026-07-31",
-  "previous_date": "2026-07-25",
+  "current_date": "2026-08-02",
+  "previous_date": "2026-07-26",
   "risers": [
     {
       "id": "CVE-2026-16232",
-      "now": 0.69969,
+      "now": 0.71391,
       "prev": 0.12685,
-      "delta": 0.57284,
+      "delta": 0.58706,
       "name": "Authentication Bypass in the SmartConsole Login Process Using an Application Token"
+    },
+    {
+      "id": "CVE-2007-2815",
+      "now": 0.71905,
+      "prev": 0.39208,
+      "delta": 0.32697,
+      "name": "The \"hit-highlighting\" functionality in webhits.dll in Microsoft Internet Information Services (IIS) Web Serve"
+    },
+    {
+      "id": "CVE-2025-46618",
+      "now": 0.59023,
+      "prev": 0.28742,
+      "delta": 0.30281,
+      "name": "JetBrains TeamCity"
     },
     {
       "id": "CVE-2025-22037",
@@ -26,11 +40,60 @@
       "name": "Pterodactyl Panel Allows Unauthenticated Arbitrary Remote Code Execution"
     },
     {
+      "id": "CVE-2026-12569",
+      "now": 0.30198,
+      "prev": 0.02263,
+      "delta": 0.27935,
+      "name": "Remote Code Execution (RCE) vulnerability in Windchill PDMlink"
+    },
+    {
+      "id": "CVE-2000-0884",
+      "now": 0.7055,
+      "prev": 0.45346,
+      "delta": 0.25204,
+      "name": "IIS 4.0 and 5.0 allows remote attackers to read documents outside of the web root, and possibly execute arbitr"
+    },
+    {
+      "id": "CVE-2002-0079",
+      "now": 0.71195,
+      "prev": 0.46027,
+      "delta": 0.25168,
+      "name": "Buffer overflow in the chunked encoding transfer mechanism in Internet Information Server (IIS) 4.0 and 5.0 Ac"
+    },
+    {
       "id": "CVE-2025-21760",
       "now": 0.33417,
-      "prev": 0.09117,
-      "delta": 0.243,
+      "prev": 0.095,
+      "delta": 0.23917,
       "name": "ndisc: extend RCU protection in ndisc_send_skb()"
+    },
+    {
+      "id": "CVE-2000-0630",
+      "now": 0.66714,
+      "prev": 0.45007,
+      "delta": 0.21707,
+      "name": "IIS 4.0 and 5.0 allows remote attackers to obtain fragments of source code by appending a +.htr to the URL, a "
+    },
+    {
+      "id": "CVE-2000-0886",
+      "now": 0.67027,
+      "prev": 0.45657,
+      "delta": 0.2137,
+      "name": "IIS 5.0 allows remote attackers to execute arbitrary commands via a malformed request for an executable file w"
+    },
+    {
+      "id": "CVE-2000-0457",
+      "now": 0.50594,
+      "prev": 0.2977,
+      "delta": 0.20824,
+      "name": "ISM.DLL in IIS 4.0 and 5.0 allows remote attackers to read file contents by requesting the file and appending "
+    },
+    {
+      "id": "CVE-2001-0151",
+      "now": 0.66115,
+      "prev": 0.4616,
+      "delta": 0.19955,
+      "name": "IIS 5.0 allows remote attackers to cause a denial of service via a series of malformed WebDAV requests."
     },
     {
       "id": "CVE-2026-50522",
@@ -40,11 +103,39 @@
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2025-29513",
-      "now": 0.41195,
-      "prev": 0.2543,
-      "delta": 0.15765,
-      "name": "Cross-Site Scripting (XSS) vulnerability in NodeBB v4.0.4 and before allows remote attackers to store arbitrar"
+      "id": "CVE-2000-0408",
+      "now": 0.55861,
+      "prev": 0.39364,
+      "delta": 0.16497,
+      "name": "IIS 4.05 and 5.0 allow remote attackers to cause a denial of service via a long, complex URL that appears to c"
+    },
+    {
+      "id": "CVE-2001-0506",
+      "now": 0.3,
+      "prev": 0.14028,
+      "delta": 0.15972,
+      "name": "Buffer overflow in ssinc.dll in IIS 5.0 and 4.0 allows local users to gain system privileges via a Server-Side"
+    },
+    {
+      "id": "CVE-2000-0246",
+      "now": 0.78911,
+      "prev": 0.63266,
+      "delta": 0.15645,
+      "name": "IIS 4.0 and 5.0 does not properly perform ISAPI extension processing if a virtual directory is mapped to a UNC"
+    },
+    {
+      "id": "CVE-2002-0073",
+      "now": 0.5305,
+      "prev": 0.38054,
+      "delta": 0.14996,
+      "name": "The FTP service in Internet Information Server (IIS) 4.0, 5.0 and 5.1 allows attackers who have established an"
+    },
+    {
+      "id": "CVE-2025-68493",
+      "now": 0.37055,
+      "prev": 0.22988,
+      "delta": 0.14067,
+      "name": "Apache Struts, Apache Struts: XXE vulnerability in outdated XWork component"
     },
     {
       "id": "CVE-2005-4360",
@@ -61,167 +152,90 @@
       "name": "/jsonrpc on D-Link DIR-841 3.03 and 3.04 devices allows authenticated command injection via ping, ping6, or tr"
     },
     {
-      "id": "CVE-2025-46618",
-      "now": 0.40949,
-      "prev": 0.28742,
-      "delta": 0.12207,
-      "name": "JetBrains TeamCity"
-    },
-    {
       "id": "CVE-2023-3824",
-      "now": 0.18044,
+      "now": 0.21132,
       "prev": 0.07938,
-      "delta": 0.10106,
+      "delta": 0.13194,
       "name": "Buffer overflow and overread in phar_dir_read()"
     },
     {
-      "id": "CVE-2003-0801",
-      "now": 0.12202,
-      "prev": 0.02538,
-      "delta": 0.09664,
-      "name": "Cross-site scripting (XSS) vulnerability in Nokia Electronic Documentation (NED) 5.0 allows remote attackers t"
+      "id": "CVE-2001-1243",
+      "now": 0.63188,
+      "prev": 0.50372,
+      "delta": 0.12816,
+      "name": "Scripting.FileSystemObject in asp.dll for Microsoft IIS 4.0 and 5.0 allows local or remote attackers to cause "
     },
     {
-      "id": "CVE-2024-57041",
-      "now": 0.39006,
-      "prev": 0.30488,
-      "delta": 0.08518,
-      "name": "A persistent cross-site scripting (XSS) vulnerability in NodeBB v3.11.0 allows remote attackers to store arbit"
+      "id": "CVE-2000-0970",
+      "now": 0.43548,
+      "prev": 0.30938,
+      "delta": 0.1261,
+      "name": "IIS 4.0 and 5.0 .ASP pages send the same Session ID cookie for secure and insecure web sessions, which could a"
     },
     {
-      "id": "CVE-2024-12209",
-      "now": 0.23364,
-      "prev": 0.15043,
-      "delta": 0.08321,
-      "name": "WP Umbrella: Update Backup Restore & Monitoring <= 2.17.0 - Unauthenticated Local File Inc"
+      "id": "CVE-2000-0778",
+      "now": 0.86409,
+      "prev": 0.7539,
+      "delta": 0.11019,
+      "name": "IIS 5.0 allows remote attackers to obtain source code for .ASP files and other scripts via an HTTP GET request"
     },
     {
-      "id": "CVE-2009-0991",
-      "now": 0.15637,
-      "prev": 0.07578,
-      "delta": 0.08059,
-      "name": "Unspecified vulnerability in the Listener component in Oracle Database 9.2.0.8, 9.2.0.8DV, 10.1.0.5, 10.2.0.4,"
+      "id": "CVE-2024-38023",
+      "now": 0.529,
+      "prev": 0.42458,
+      "delta": 0.10442,
+      "name": "Microsoft SharePoint Server Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2025-20188",
-      "now": 0.25043,
-      "prev": 0.17894,
-      "delta": 0.07149,
-      "name": "Cisco Cisco IOS XE Software"
+      "id": "CVE-2024-38018",
+      "now": 0.51461,
+      "prev": 0.41086,
+      "delta": 0.10375,
+      "name": "Microsoft SharePoint Server Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2001-0008",
-      "now": 0.13307,
-      "prev": 0.07024,
-      "delta": 0.06283,
-      "name": "Backdoor account in Interbase database server allows remote attackers to overwrite arbitrary files using store"
+      "id": "CVE-2021-22681",
+      "now": 0.60993,
+      "prev": 0.50712,
+      "delta": 0.10281,
+      "name": "Rockwell Automation Studio 5000 Logix Designer, RSLogix 5000, Logix Controllers"
     },
     {
-      "id": "CVE-2025-54988",
-      "now": 0.09092,
-      "prev": 0.02973,
-      "delta": 0.06119,
-      "name": "Apache Tika PDF parser module: XXE vulnerability in PDFParser's handling of XFA"
+      "id": "CVE-2005-2678",
+      "now": 0.39806,
+      "prev": 0.29744,
+      "delta": 0.10062,
+      "name": "Microsoft IIS 5.1 and 6 allows remote attackers to spoof the SERVER_NAME variable to bypass security checks an"
     },
     {
-      "id": "CVE-2026-3891",
-      "now": 0.08797,
-      "prev": 0.02775,
-      "delta": 0.06022,
-      "name": "Pix for WooCommerce <= 1.5.0 - Unauthenticated Arbitrary File Upload"
-    },
-    {
-      "id": "CVE-2003-0694",
-      "now": 0.66183,
-      "prev": 0.60185,
-      "delta": 0.05998,
-      "name": "The prescan function in Sendmail 8.12.9 allows remote attackers to execute arbitrary code via buffer overflow "
-    },
-    {
-      "id": "CVE-2025-23121",
-      "now": 0.17527,
-      "prev": 0.1154,
-      "delta": 0.05987,
-      "name": "Veeam Backup and Recovery"
-    },
-    {
-      "id": "CVE-2015-0935",
-      "now": 0.11761,
-      "prev": 0.05869,
-      "delta": 0.05892,
-      "name": "Bomgar Remote Support before 15.1.1 allows remote attackers to execute arbitrary PHP code via crafted serializ"
-    },
-    {
-      "id": "CVE-2006-4489",
-      "now": 0.1542,
-      "prev": 0.09536,
-      "delta": 0.05884,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in MiniBill 2006-07-14 (1.2.2) allow remote attackers to ex"
-    },
-    {
-      "id": "CVE-2025-49619",
-      "now": 0.1996,
-      "prev": 0.14215,
-      "delta": 0.05745,
-      "name": "Skyvern Skyvern"
-    },
-    {
-      "id": "CVE-2020-15956",
-      "now": 0.16158,
-      "prev": 0.10522,
-      "delta": 0.05636,
-      "name": "ActiveMediaServer.exe in ACTi NVR3 Standard Server 3.0.12.42 allows remote unauthenticated attackers to trigge"
-    },
-    {
-      "id": "CVE-2026-48319",
-      "now": 0.3229,
-      "prev": 0.26956,
-      "delta": 0.05334,
-      "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
-    },
-    {
-      "id": "CVE-2014-1912",
-      "now": 0.28319,
-      "prev": 0.23047,
-      "delta": 0.05272,
-      "name": "Buffer overflow in the socket.recvfrom_into function in Modules/socketmodule.c in Python 2.5 before 2.7.7, 3.x"
-    },
-    {
-      "id": "CVE-2021-3493",
-      "now": 0.49166,
-      "prev": 0.43988,
-      "delta": 0.05178,
-      "name": "Ubuntu linux kernel"
-    },
-    {
-      "id": "CVE-2016-5636",
-      "now": 0.26316,
-      "prev": 0.21366,
-      "delta": 0.0495,
-      "name": "Integer overflow in the get_data function in zipimport.c in CPython (aka Python) before 2.7.12, 3.x before 3.4"
-    },
-    {
-      "id": "CVE-2008-5692",
-      "now": 0.12646,
-      "prev": 0.07843,
-      "delta": 0.04803,
-      "name": "Ipswitch WS_FTP Server Manager before 6.1.1, and possibly other Ipswitch products, allows remote attackers to "
-    },
-    {
-      "id": "CVE-2002-0081",
-      "now": 0.24256,
-      "prev": 0.19486,
-      "delta": 0.0477,
-      "name": "Buffer overflows in (1) php_mime_split in PHP 4.1.0, 4.1.1, and 4.0.6 and earlier, and (2) php3_mime_split in "
+      "id": "CVE-2024-38024",
+      "now": 0.45219,
+      "prev": 0.35382,
+      "delta": 0.09837,
+      "name": "Microsoft SharePoint Server Remote Code Execution Vulnerability"
     }
   ],
   "newly_high": [
     {
       "id": "CVE-2026-16232",
-      "now": 0.69969,
+      "now": 0.71391,
       "prev": 0.12685,
-      "delta": 0.57284,
+      "delta": 0.58706,
       "name": "Authentication Bypass in the SmartConsole Login Process Using an Application Token"
+    },
+    {
+      "id": "CVE-2007-2815",
+      "now": 0.71905,
+      "prev": 0.39208,
+      "delta": 0.32697,
+      "name": "The \"hit-highlighting\" functionality in webhits.dll in Microsoft Internet Information Services (IIS) Web Serve"
+    },
+    {
+      "id": "CVE-2025-46618",
+      "now": 0.59023,
+      "prev": 0.28742,
+      "delta": 0.30281,
+      "name": "JetBrains TeamCity"
     },
     {
       "id": "CVE-2025-22037",
@@ -229,6 +243,83 @@
       "prev": 0.37115,
       "delta": 0.28621,
       "name": "ksmbd: fix null pointer dereference in alloc_preauth_hash()"
+    },
+    {
+      "id": "CVE-2000-0884",
+      "now": 0.7055,
+      "prev": 0.45346,
+      "delta": 0.25204,
+      "name": "IIS 4.0 and 5.0 allows remote attackers to read documents outside of the web root, and possibly execute arbitr"
+    },
+    {
+      "id": "CVE-2002-0079",
+      "now": 0.71195,
+      "prev": 0.46027,
+      "delta": 0.25168,
+      "name": "Buffer overflow in the chunked encoding transfer mechanism in Internet Information Server (IIS) 4.0 and 5.0 Ac"
+    },
+    {
+      "id": "CVE-2000-0630",
+      "now": 0.66714,
+      "prev": 0.45007,
+      "delta": 0.21707,
+      "name": "IIS 4.0 and 5.0 allows remote attackers to obtain fragments of source code by appending a +.htr to the URL, a "
+    },
+    {
+      "id": "CVE-2000-0886",
+      "now": 0.67027,
+      "prev": 0.45657,
+      "delta": 0.2137,
+      "name": "IIS 5.0 allows remote attackers to execute arbitrary commands via a malformed request for an executable file w"
+    },
+    {
+      "id": "CVE-2000-0457",
+      "now": 0.50594,
+      "prev": 0.2977,
+      "delta": 0.20824,
+      "name": "ISM.DLL in IIS 4.0 and 5.0 allows remote attackers to read file contents by requesting the file and appending "
+    },
+    {
+      "id": "CVE-2001-0151",
+      "now": 0.66115,
+      "prev": 0.4616,
+      "delta": 0.19955,
+      "name": "IIS 5.0 allows remote attackers to cause a denial of service via a series of malformed WebDAV requests."
+    },
+    {
+      "id": "CVE-2000-0408",
+      "now": 0.55861,
+      "prev": 0.39364,
+      "delta": 0.16497,
+      "name": "IIS 4.05 and 5.0 allow remote attackers to cause a denial of service via a long, complex URL that appears to c"
+    },
+    {
+      "id": "CVE-2002-0073",
+      "now": 0.5305,
+      "prev": 0.38054,
+      "delta": 0.14996,
+      "name": "The FTP service in Internet Information Server (IIS) 4.0, 5.0 and 5.1 allows attackers who have established an"
+    },
+    {
+      "id": "CVE-2024-38023",
+      "now": 0.529,
+      "prev": 0.42458,
+      "delta": 0.10442,
+      "name": "Microsoft SharePoint Server Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2024-38018",
+      "now": 0.51461,
+      "prev": 0.41086,
+      "delta": 0.10375,
+      "name": "Microsoft SharePoint Server Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2021-28474",
+      "now": 0.50628,
+      "prev": 0.44948,
+      "delta": 0.0568,
+      "name": "Microsoft SharePoint Server Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2000-0869",
@@ -245,6 +336,20 @@
       "name": "The management console in Symantec Endpoint Protection Manager (SEPM) 12.1 before 12.1-RU6-MP1 allows remote a"
     },
     {
+      "id": "CVE-2002-0147",
+      "now": 0.52162,
+      "prev": 0.48119,
+      "delta": 0.04043,
+      "name": "Buffer overflow in the ASP data transfer mechanism in Internet Information Server (IIS) 4.0, 5.0, and 5.1 allo"
+    },
+    {
+      "id": "CVE-2002-0149",
+      "now": 0.53195,
+      "prev": 0.49152,
+      "delta": 0.04043,
+      "name": "Buffer overflow in ASP Server-Side Include Function in IIS 4.0, 5.0 and 5.1 allows remote attackers to cause a"
+    },
+    {
       "id": "CVE-2023-41249",
       "now": 0.53128,
       "prev": 0.49596,
@@ -259,11 +364,11 @@
       "name": "Flowise Cloud and Local Deployments have Unauthenticated Password Reset Token Disclosure t"
     },
     {
-      "id": "CVE-2018-11686",
-      "now": 0.52542,
-      "prev": 0.49787,
-      "delta": 0.02755,
-      "name": "The Publish Service in FlexPaper (later renamed FlowPaper) 2.3.6 allows remote code execution via setup.php an"
+      "id": "CVE-2024-26331",
+      "now": 0.51284,
+      "prev": 0.49322,
+      "delta": 0.01962,
+      "name": "ReCrystallize Server 5.10.0.0 uses a authorization mechanism that relies on the value of a cookie, but it does"
     }
   ]
 }
