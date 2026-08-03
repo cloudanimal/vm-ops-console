@@ -1,9 +1,16 @@
 {
-  "updated": "2026-08-02",
+  "updated": "2026-08-03",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-02",
-  "previous_date": "2026-07-26",
+  "current_date": "2026-08-03",
+  "previous_date": "2026-07-27",
   "risers": [
+    {
+      "id": "CVE-2026-42897",
+      "now": 0.70307,
+      "prev": 0.0564,
+      "delta": 0.64667,
+      "name": "Microsoft Exchange Server Spoofing Vulnerability"
+    },
     {
       "id": "CVE-2026-16232",
       "now": 0.71391,
@@ -17,13 +24,6 @@
       "prev": 0.39208,
       "delta": 0.32697,
       "name": "The \"hit-highlighting\" functionality in webhits.dll in Microsoft Internet Information Services (IIS) Web Serve"
-    },
-    {
-      "id": "CVE-2025-46618",
-      "now": 0.59023,
-      "prev": 0.28742,
-      "delta": 0.30281,
-      "name": "JetBrains TeamCity"
     },
     {
       "id": "CVE-2025-22037",
@@ -103,6 +103,13 @@
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     },
     {
+      "id": "CVE-2025-46618",
+      "now": 0.59023,
+      "prev": 0.40949,
+      "delta": 0.18074,
+      "name": "JetBrains TeamCity"
+    },
+    {
       "id": "CVE-2000-0408",
       "now": 0.55861,
       "prev": 0.39364,
@@ -173,6 +180,13 @@
       "name": "IIS 4.0 and 5.0 .ASP pages send the same Session ID cookie for secure and insecure web sessions, which could a"
     },
     {
+      "id": "CVE-2022-21449",
+      "now": 0.60336,
+      "prev": 0.48235,
+      "delta": 0.12101,
+      "name": "Oracle Corporation Java SE JDK and JRE"
+    },
+    {
       "id": "CVE-2000-0778",
       "now": 0.86409,
       "prev": 0.7539,
@@ -199,23 +213,16 @@
       "prev": 0.50712,
       "delta": 0.10281,
       "name": "Rockwell Automation Studio 5000 Logix Designer, RSLogix 5000, Logix Controllers"
-    },
-    {
-      "id": "CVE-2005-2678",
-      "now": 0.39806,
-      "prev": 0.29744,
-      "delta": 0.10062,
-      "name": "Microsoft IIS 5.1 and 6 allows remote attackers to spoof the SERVER_NAME variable to bypass security checks an"
-    },
-    {
-      "id": "CVE-2024-38024",
-      "now": 0.45219,
-      "prev": 0.35382,
-      "delta": 0.09837,
-      "name": "Microsoft SharePoint Server Remote Code Execution Vulnerability"
     }
   ],
   "newly_high": [
+    {
+      "id": "CVE-2026-42897",
+      "now": 0.70307,
+      "prev": 0.0564,
+      "delta": 0.64667,
+      "name": "Microsoft Exchange Server Spoofing Vulnerability"
+    },
     {
       "id": "CVE-2026-16232",
       "now": 0.71391,
@@ -229,13 +236,6 @@
       "prev": 0.39208,
       "delta": 0.32697,
       "name": "The \"hit-highlighting\" functionality in webhits.dll in Microsoft Internet Information Services (IIS) Web Serve"
-    },
-    {
-      "id": "CVE-2025-46618",
-      "now": 0.59023,
-      "prev": 0.28742,
-      "delta": 0.30281,
-      "name": "JetBrains TeamCity"
     },
     {
       "id": "CVE-2025-22037",
@@ -287,6 +287,13 @@
       "name": "IIS 5.0 allows remote attackers to cause a denial of service via a series of malformed WebDAV requests."
     },
     {
+      "id": "CVE-2025-46618",
+      "now": 0.59023,
+      "prev": 0.40949,
+      "delta": 0.18074,
+      "name": "JetBrains TeamCity"
+    },
+    {
       "id": "CVE-2000-0408",
       "now": 0.55861,
       "prev": 0.39364,
@@ -299,6 +306,13 @@
       "prev": 0.38054,
       "delta": 0.14996,
       "name": "The FTP service in Internet Information Server (IIS) 4.0, 5.0 and 5.1 allows attackers who have established an"
+    },
+    {
+      "id": "CVE-2022-21449",
+      "now": 0.60336,
+      "prev": 0.48235,
+      "delta": 0.12101,
+      "name": "Oracle Corporation Java SE JDK and JRE"
     },
     {
       "id": "CVE-2024-38023",
