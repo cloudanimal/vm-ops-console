@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-03",
+  "updated": "2026-08-04",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-03",
-  "previous_date": "2026-07-27",
+  "current_date": "2026-08-04",
+  "previous_date": "2026-07-28",
   "risers": [
     {
       "id": "CVE-2026-42897",
@@ -26,18 +26,18 @@
       "name": "The \"hit-highlighting\" functionality in webhits.dll in Microsoft Internet Information Services (IIS) Web Serve"
     },
     {
+      "id": "CVE-2025-6389",
+      "now": 0.73089,
+      "prev": 0.44442,
+      "delta": 0.28647,
+      "name": "Sneeit Framework <= 8.3 - Unauthenticated Remote Code Execution in sneeit_articles_paginat"
+    },
+    {
       "id": "CVE-2025-22037",
       "now": 0.65736,
       "prev": 0.37115,
       "delta": 0.28621,
       "name": "ksmbd: fix null pointer dereference in alloc_preauth_hash()"
-    },
-    {
-      "id": "CVE-2025-49132",
-      "now": 0.41137,
-      "prev": 0.13105,
-      "delta": 0.28032,
-      "name": "Pterodactyl Panel Allows Unauthenticated Arbitrary Remote Code Execution"
     },
     {
       "id": "CVE-2026-12569",
@@ -152,20 +152,6 @@
       "name": "The URL parser in Microsoft Internet Information Services (IIS) 5.1 on Windows XP Professional SP2 allows remo"
     },
     {
-      "id": "CVE-2021-28143",
-      "now": 0.45708,
-      "prev": 0.31957,
-      "delta": 0.13751,
-      "name": "/jsonrpc on D-Link DIR-841 3.03 and 3.04 devices allows authenticated command injection via ping, ping6, or tr"
-    },
-    {
-      "id": "CVE-2023-3824",
-      "now": 0.21132,
-      "prev": 0.07938,
-      "delta": 0.13194,
-      "name": "Buffer overflow and overread in phar_dir_read()"
-    },
-    {
       "id": "CVE-2001-1243",
       "now": 0.63188,
       "prev": 0.50372,
@@ -173,11 +159,25 @@
       "name": "Scripting.FileSystemObject in asp.dll for Microsoft IIS 4.0 and 5.0 allows local or remote attackers to cause "
     },
     {
+      "id": "CVE-2014-9390",
+      "now": 0.75845,
+      "prev": 0.63178,
+      "delta": 0.12667,
+      "name": "Git before 1.8.5.6, 1.9.x before 1.9.5, 2.0.x before 2.0.5, 2.1.x before 2.1.4, and 2.2.x before 2.2.1 on Wind"
+    },
+    {
       "id": "CVE-2000-0970",
       "now": 0.43548,
       "prev": 0.30938,
       "delta": 0.1261,
       "name": "IIS 4.0 and 5.0 .ASP pages send the same Session ID cookie for secure and insecure web sessions, which could a"
+    },
+    {
+      "id": "CVE-2023-52442",
+      "now": 0.29644,
+      "prev": 0.17442,
+      "delta": 0.12202,
+      "name": "ksmbd: validate session id and tree id in compound request"
     },
     {
       "id": "CVE-2022-21449",
@@ -236,6 +236,13 @@
       "prev": 0.39208,
       "delta": 0.32697,
       "name": "The \"hit-highlighting\" functionality in webhits.dll in Microsoft Internet Information Services (IIS) Web Serve"
+    },
+    {
+      "id": "CVE-2025-6389",
+      "now": 0.73089,
+      "prev": 0.44442,
+      "delta": 0.28647,
+      "name": "Sneeit Framework <= 8.3 - Unauthenticated Remote Code Execution in sneeit_articles_paginat"
     },
     {
       "id": "CVE-2025-22037",
@@ -362,20 +369,6 @@
       "prev": 0.49152,
       "delta": 0.04043,
       "name": "Buffer overflow in ASP Server-Side Include Function in IIS 4.0, 5.0 and 5.1 allows remote attackers to cause a"
-    },
-    {
-      "id": "CVE-2023-41249",
-      "now": 0.53128,
-      "prev": 0.49596,
-      "delta": 0.03532,
-      "name": "JetBrains TeamCity"
-    },
-    {
-      "id": "CVE-2025-58434",
-      "now": 0.50156,
-      "prev": 0.47326,
-      "delta": 0.0283,
-      "name": "Flowise Cloud and Local Deployments have Unauthenticated Password Reset Token Disclosure t"
     },
     {
       "id": "CVE-2024-26331",
