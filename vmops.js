@@ -652,8 +652,10 @@
   function totalW() { return COL_DEFS.reduce(function (s, c) { return s + (STATE._colHidden[c.id] ? 0 : colW(c)); }, 0); }
   // Column show/hide: inject nth-child display:none for hidden columns (rows are positional).
   function injectColHide() {
-    var sel = COL_DEFS.map(function (c, i) { return STATE._colHidden[c.id] ? ('#gridHost th:nth-child(' + (i + 1) + '),#gridHost td:nth-child(' + (i + 1) + ')') : null; }).filter(Boolean).join(',');
     var st = document.getElementById('colHideStyle'); if (!st) { st = document.createElement('style'); st.id = 'colHideStyle'; document.head.appendChild(st); }
+    // Grouped view emits colspan'd header rows, so positional nth-child hiding misaligns them — skip while grouped.
+    if (STATE.filt.group) { st.textContent = ''; return; }
+    var sel = COL_DEFS.map(function (c, i) { return STATE._colHidden[c.id] ? ('#gridHost th:nth-child(' + (i + 1) + '),#gridHost td:nth-child(' + (i + 1) + ')') : null; }).filter(Boolean).join(',');
     st.textContent = sel ? (sel + '{display:none!important}') : '';
   }
   // Per-column filter: which columns get a filter box, and the text value each is matched against.
@@ -751,7 +753,7 @@
   function renderGrid(list) { return STATE.filt.group ? groupedTable(list, STATE.filt.group) : gridTable(list); }
   function intelChips(cve) {
     var it = cveIntel(cve), c = '';
-    if (it.kev) c += '<span class="ichip kev" title="CISA Known Exploited Vulnerability' + (it.kevDue ? ' — remediate by ' + it.kevDue : '') + '">KEV</span>';
+    if (it.kev) c += '<span class="ichip kev" title="CISA Known Exploited Vulnerability' + (it.kevDue ? ' — remediate by ' + esc(it.kevDue) : '') + '">KEV</span>';
     if (it.ransomware) c += '<span class="ichip rw" title="Known ransomware campaign use">RW</span>';
     if (!it.kev && it.exploit) c += '<span class="ichip poc" title="Public exploit / PoC available">PoC</span>';
     return c ? ' ' + c : '';
@@ -1122,8 +1124,8 @@
     { title: 'Agent coverage', open: { route: '#/agent-coverage', label: 'Open Agent Coverage →' }, items: [
       { id: 'acd:ad', label: 'Active Directory (AD)', sub: 'Computer inventory → Agent Coverage denominator', accept: '.json,.csv' },
       { id: 'acd:me', label: 'ManageEngine (ME)', sub: 'Endpoint Central agents → Agent Coverage', accept: '.json,.csv' },
-      { id: 'acd:tsc', label: 'Tenable.io', sub: 'Tenable.io agents / assets → Agent Coverage', accept: '.json,.csv' },
-      { id: 'acd:tio', label: 'Tenable.io (TIO)', sub: 'Tenable.io agents / assets → Agent Coverage', accept: '.json,.csv' },
+      { id: 'acd:tsc', label: 'Tenable Security Center (.sc)', sub: 'Tenable.sc agents / assets export → Agent Coverage', accept: '.json,.csv' },
+      { id: 'acd:tio', label: 'Tenable.io (cloud)', sub: 'Tenable.io agents / assets export → Agent Coverage', accept: '.json,.csv' },
       { id: 'acd:cs', label: 'CrowdStrike (CS)', sub: 'Falcon sensor inventory → Agent Coverage', accept: '.json,.csv' }
     ] },
     { title: 'Tenable vulnerability dashboard', open: { route: '#/tvd', label: 'Open Tenable dashboard →' }, items: [
@@ -1800,34 +1802,19 @@
     app.innerHTML =
       '<header class="view"><a class="btn sm" href="#/campaigns">← Campaigns</a>' +
       '<div class="overline" style="margin-top:10px">Campaign</div><h1>' + esc(c.name) + '</h1></header>' +
-      '<div class="kpis">' +
-        kpi('Progress', st.pct + '%', st.resolved + ' of ' + st.total + ' resolved') +
-        kpi('Open', st.open, 'still to fix') +
-        kpi('Overdue (SLA)', st.overdue, 'past due', st.overdue ? 'crit' : 'ok') +
-        kpi('Due', c.dueDate || '—', campStatusLabel(c.status)) +
-      '</div>' +
+      '<div class="kpis" id="campKpis">' + campKpiCards(c, st) + '</div>' +
       '<div class="card"><div class="camp-meta">' +
         '<div><span class="k">Owner</span>' + esc(c.owner || '—') + (c.team ? ' · ' + esc(c.team) : '') + '</div>' +
         '<div><span class="k">Priority</span>' + esc(c.priority || '—') + '</div>' +
         '<div><span class="k">Scope</span>' + esc(campScopeText(c)) + '</div>' +
         '<div><span class="k">Status</span><span class="stbadge st-' + esc(c.status) + '">' + esc(campStatusLabel(c.status)) + '</span></div>' +
-        (c.ticketRef ? '<div><span class="k">Ticket</span>' + (function () { var sys = /^INC/i.test(c.ticketRef) ? 'snow' : 'jira'; var u = ticketLink(sys, c.ticketRef); return u ? '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(c.ticketRef) + '</a>' : esc(c.ticketRef); })() + '</div>' : '') +
+        (c.ticketRef ? '<div><span class="k">Ticket</span>' + (function () { var sys = ticketSys(c.ticketRef); var u = ticketLink(sys, c.ticketRef); return u ? '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(c.ticketRef) + '</a>' : esc(c.ticketRef); })() + '</div>' : '') +
         '<div><span class="k">Trend</span>' + sparkline(c.history) + '</div></div>' +
         '<div style="margin-top:12px"><label style="display:block;font-size:12px;font-weight:600;color:var(--soft);margin-bottom:5px">Notes</label><textarea id="campNotes" style="width:100%;min-height:70px" placeholder="Plan, blockers, decisions…">' + esc(c.notes || '') + '</textarea></div>' +
         '<div class="toolbar"><button class="btn" id="campEdit">Edit</button><button class="btn" id="campJira" title="One ticket covering the open findings in this campaign">Open Jira story</button><button class="btn" id="campSnow" title="One incident covering the open findings in this campaign">Open SNOW incident</button><button class="btn" id="campDelete">Delete</button></div></div>' +
       '<div id="campEditForm"></div>' +
       '<h2>Findings (' + fs.length + ')</h2>' +
-      (fs.length
-        ? '<div class="card" style="padding:0;overflow-x:auto"><table class="grid"><thead><tr><th>CVE</th><th>Host</th><th>Severity</th><th>Status</th><th>SLA due</th></tr></thead><tbody>' +
-          fs.slice(0, 500).map(function (f) {
-            var ss = slaState(f), dd = dueDate(f);
-            return '<tr class="campfind" data-key="' + esc(keyOf(f)) + '" style="cursor:pointer">' +
-              '<td><a href="' + CVE_DETAIL + esc(f.cve) + '">' + esc(f.cve) + '</a></td>' +
-              '<td class="host">' + esc(f.host) + '</td>' +
-              '<td><span class="badge ' + (['crit', 'high', 'med', 'low'][SEV_ORDER[f.severity]] || 'low') + '">' + esc(f.severity) + '</span></td>' +
-              '<td>' + esc(SLABEL[statusOf(f)] || statusOf(f)) + '</td>' +
-              '<td><span class="pill-sla ' + ss + '">' + (dd ? esc(dd) : '—') + '</span></td></tr>';
-          }).join('') + '</tbody></table></div>'
+      (fs.length ? '<div id="ctMount" class="ct-mount"></div>'
         : '<div class="card"><span class="muted">No findings currently match this campaign\'s scope.</span></div>');
     var nt = document.getElementById('campNotes');
     nt.addEventListener('input', function () { var cc = loadCampaigns(), r = cc.filter(function (x) { return x.id === id; })[0]; if (r) { r.notes = nt.value; saveCampaigns(cc); } });
@@ -1838,10 +1825,362 @@
       if (!confirm('Delete campaign “' + c.name + '”? (The findings themselves are untouched.)')) return;
       saveCampaigns(loadCampaigns().filter(function (x) { return x.id !== id; })); toast('Campaign deleted'); location.hash = '#/campaigns';
     });
-    var byKey = {}; fs.forEach(function (f) { byKey[keyOf(f)] = f; });
-    [].forEach.call(document.querySelectorAll('.campfind'), function (tr) {
-      tr.addEventListener('click', function (e) { if (e.target.closest('a')) return; var f = byKey[tr.getAttribute('data-key')]; if (f) openDrawer(f); });
+    if (fs.length) campaignTracker(c);
+  }
+
+  // ===================== Campaign Tracker (ClickUp-style multi-view) =====================
+  // A multi-view lens over ONE campaign's scoped findings (campaignFindings), reusing the app's real
+  // risk model (riskScore/priorityOf), intel (cveIntel), status store (setOverride) and finding drawer.
+  var CT = { cid: null, view: 'board', group: 'status', q: '', qf: {}, sel: {}, tcol: {}, sort: { k: 'risk', dir: -1 }, closed: {} };
+  var CT_VIEWS = [['board', 'Board'], ['list', 'List'], ['table', 'Table'], ['calendar', 'Calendar'], ['timeline', 'Timeline'], ['workload', 'Workload'], ['dashboard', 'Dashboard'], ['activity', 'Activity']];
+  var CT_GROUPS = [['status', 'Status'], ['severity', 'Severity'], ['owner', 'Assignee'], ['host', 'System'], ['patch', 'Remediation / patch']];
+  var ST_VAR = { new: '--st-new', triaged: '--st-triaged', in_remediation: '--st-rem', resolved: '--st-res', risk_accepted: '--st-risk', false_positive: '--st-fp' };
+  var SEV_VAR = { Critical: '--crit', High: '--high', Medium: '--med', Low: '--low', Info: '--low' };
+  var SEV_BADGE = ['crit', 'high', 'med', 'low', 'low'];
+  var CT_AVC = ['#0ea5e9', '#8b5cf6', '#ec4899', '#14b8a6', '#f59e0b', '#ef4444', '#22c55e', '#6366f1'];
+  function ctOwner(f) { return ovOf(f).owner || 'Unassigned'; }
+  function ctInitials(n) { if (!n || n === 'Unassigned') return '?'; var p = n.trim().split(/\s+/); return (p[0].charAt(0) + (p[1] ? p[1].charAt(0) : '')).toUpperCase(); }
+  function ctAvColor(n) { if (!n || n === 'Unassigned') return '#94a3b8'; var h = 0; for (var i = 0; i < n.length; i++) h = (h * 31 + n.charCodeAt(i)) >>> 0; return CT_AVC[h % CT_AVC.length]; }
+  function ctAvatar(n) { return '<span class="ct-av" style="background:' + ctAvColor(n) + '" title="' + esc(n) + '">' + esc(ctInitials(n)) + '</span>'; }
+  function ctSevBadge(sev) { return '<span class="badge ' + (SEV_BADGE[SEV_ORDER[sev]] || 'low') + '">' + esc(sev) + '</span>'; }
+  function ctDueBadge(f) { if (!isOpen(f)) return '<span class="muted" style="font-size:11px">—</span>'; var di = dueIn(f), ss = slaState(f); var t = di == null ? 'no SLA' : di < 0 ? (-di) + 'd overdue' : di === 0 ? 'due today' : 'due in ' + di + 'd'; return '<span class="ct-due ' + ss + '">' + t + '</span>'; }
+  function ctCoverageKnown() { return !!(window._model && window._model.ad && window._model.ad.length); }
+  function ctNoAgent(f) { if (!ctCoverageKnown()) return false; var M = window._model; if (!M._ctByKey) { M._ctByKey = {}; M.ad.forEach(function (a) { if (!(a.key in M._ctByKey)) M._ctByKey[a.key] = a; }); } var rec = M._ctByKey[norm(f.host)]; return !!(rec && rec.cov && rec.cov.ten && rec.cov.ten.present === false); }
+  // MSRC patch (KB) map = the real "one patch clears N findings" fix key (data/msrc/<year>.json, unread elsewhere).
+  var MSRC_CACHE = {};
+  function kbsFor(cve) { var y = (String(cve).match(/CVE-(\d{4})-/) || [])[1]; if (!y || !MSRC_CACHE[y]) return null; var kb = MSRC_CACHE[y][cve]; return (kb && kb.length) ? kb : null; }
+  function ensureMsrc(cves) {
+    var years = {}; cves.forEach(function (c) { var y = (String(c).match(/CVE-(\d{4})-/) || [])[1]; if (y && !MSRC_CACHE[y]) years[y] = 1; });
+    var need = Object.keys(years); if (!need.length) return Promise.resolve();
+    return Promise.all(need.map(function (y) { return fetch('data/msrc/' + y + '.json').then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(function (m) { MSRC_CACHE[y] = m || {}; }); }));
+  }
+  function ctFixKey(f) { var kb = kbsFor(f.cve); if (kb) return 'Patch ' + kb.slice(0, 2).join(' + '); var r = REMED.data ? remediationFor(f) : null; return r ? r.title : 'Manual remediation'; }
+  function ctCamp() { return loadCampaigns().filter(function (x) { return x.id === CT.cid; })[0] || null; }
+  function ctScoped() { var c = ctCamp(); return c ? campaignFindings(c) : []; }
+  function ctFindings() {
+    var qf = CT.qf, q = CT.q.trim().toLowerCase();
+    return ctScoped().filter(function (f) {
+      if (qf.kev) { var it = cveIntel(f.cve); if (!it.kev && !it.exploit) return false; }
+      if (qf.overdue && slaState(f) !== 'overdue') return false;
+      if (qf.critical && f.severity !== 'Critical') return false;
+      if (qf.noagent && !ctNoAgent(f)) return false;
+      if (q && (f.cve + ' ' + f.host + ' ' + (f.name || '') + ' ' + ctOwner(f)).toLowerCase().indexOf(q) < 0) return false;
+      return true;
     });
+  }
+  function ctByRisk(a, b) { return riskScore(b) - riskScore(a); }
+  function ctFieldVal(f) { return CT.group === 'status' ? statusOf(f) : CT.group === 'severity' ? f.severity : CT.group === 'owner' ? ctOwner(f) : CT.group === 'host' ? f.host : ctFixKey(f); }
+  function ctGroupDefs(list) {
+    if (CT.group === 'status') return STATUS.map(function (s) { return { k: s.k, label: s.l, color: 'var(' + ST_VAR[s.k] + ')', drag: true }; });
+    if (CT.group === 'severity') return ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return { k: s, label: s, color: 'var(' + SEV_VAR[s] + ')' }; });
+    if (CT.group === 'owner') { var seen = {}, o = []; list.forEach(function (f) { var w = ctOwner(f); if (!seen[w]) { seen[w] = 1; o.push({ k: w, label: w, color: ctAvColor(w), drag: true }); } }); return o; }
+    if (CT.group === 'host') { var s = {}, h = []; list.forEach(function (f) { if (!s[f.host]) { s[f.host] = 1; h.push({ k: f.host, label: f.host, color: 'var(--accent)' }); } }); return h.sort(function (a, b) { return a.label < b.label ? -1 : 1; }); }
+    var pm = {}, po = []; list.forEach(function (f) { var k = ctFixKey(f); if (!pm[k]) { pm[k] = 0; po.push(k); } pm[k]++; });
+    return po.sort(function (a, b) { return pm[b] - pm[a]; }).map(function (k) { return { k: k, label: k, color: 'var(--accent)' }; });
+  }
+
+  function ctCard(f) {
+    var k = keyOf(f), sel = CT.sel[k];
+    return '<div class="ct-card' + (slaState(f) === 'overdue' ? ' over' : '') + (sel ? ' sel' : '') + '" draggable="true" data-key="' + esc(k) + '" style="border-left-color:var(' + (SEV_VAR[f.severity] || '--low') + ')">' +
+      '<span class="ct-cbox' + (sel ? ' on' : '') + '" data-selk="' + esc(k) + '" role="checkbox" aria-checked="' + (sel ? 'true' : 'false') + '">' + (sel ? '✓' : '') + '</span>' +
+      '<div class="ct-r1"><a class="cve" href="' + CVE_DETAIL + esc(f.cve) + '" tabindex="-1">' + esc(f.cve) + '</a>' + intelChips(f.cve) + ' ' + priChip(f) + '</div>' +
+      '<div class="ct-ttl">' + esc(f.name || f.desc || 'Vulnerability') + '</div>' +
+      '<div class="ct-r2">' + ctSevBadge(f.severity) + '<span class="host">' + esc(f.host) + '</span>' + (ctNoAgent(f) ? '<span class="ct-flag" title="Host has no Tenable agent — coverage blind spot">NO AGENT</span>' : '') + '<span class="ct-epss">EPSS ' + epssCell(f) + '</span></div>' +
+      '<div class="ct-r3">' + ctAvatar(ctOwner(f)) + ctDueBadge(f) + '</div></div>';
+  }
+
+  function ctBoard() {
+    var list = ctFindings(), groups = ctGroupDefs(list);
+    return '<div class="ct-board" id="ctBoard">' + groups.map(function (g) {
+      var items = list.filter(function (f) { return ctFieldVal(f) === g.k; }).sort(ctByRisk);
+      return '<div class="ct-col' + (g.drag ? '' : ' nodrop') + '" data-k="' + esc(g.k) + '">' +
+        '<div class="ct-colh"><span class="ct-sq" style="background:' + g.color + '"></span><span class="ct-lbl">' + esc(g.label) + '</span><span class="ct-cnt">' + items.length + '</span></div>' +
+        '<div class="ct-colb">' + (items.map(ctCard).join('') || '<div class="muted" style="font-size:12px;padding:6px 8px">—</div>') + '</div></div>';
+    }).join('') + '</div>' + (CT.group !== 'status' && CT.group !== 'owner' ? '<div class="muted" style="font-size:11.5px;margin-top:8px">Grouped by ' + esc(CT.group) + ' — read-only (severity, system and patch come from the scan). Drag to change status or assignee.</div>' : '');
+  }
+
+  function ctList() {
+    var list = ctFindings(), groups = ctGroupDefs(list);
+    var h = '';
+    groups.forEach(function (g) {
+      var items = list.filter(function (f) { return ctFieldVal(f) === g.k; }).sort(ctByRisk); if (!items.length) return;
+      var closed = CT.closed[CT.group + ':' + g.k];
+      h += '<div class="ct-lg' + (closed ? ' closed' : '') + '" data-g="' + esc(CT.group + ':' + g.k) + '"><div class="ct-lgh"><span class="ct-caret">▾</span><span class="ct-sq" style="background:' + g.color + '"></span><b>' + esc(g.label) + '</b><span class="ct-cnt">' + items.length + '</span></div><div class="ct-lrows">' +
+        items.map(function (f) {
+          return '<div class="ct-lrow" data-key="' + esc(keyOf(f)) + '"><span class="cve mono">' + esc(f.cve) + '</span>' + intelChips(f.cve) +
+            '<span class="ct-lname">' + esc(f.name || f.desc || '') + (ctNoAgent(f) ? ' <span class="ct-flag">NO AGENT</span>' : '') + '</span>' +
+            '<span class="host">' + esc(f.host) + '</span>' + priChip(f) + '<span class="ct-vpr">' + vprCell(f) + '</span>' +
+            '<span class="ct-lend">' + ctAvatar(ctOwner(f)) + ctDueBadge(f) + '</span></div>';
+        }).join('') + '</div></div>';
+    });
+    return '<div class="ct-list">' + (h || '<div class="muted" style="padding:14px">No findings match.</div>') + '</div>';
+  }
+
+  var CT_TCOLS = [['cve', 'CVE'], ['host', 'System'], ['sev', 'Severity'], ['pri', 'Priority'], ['vpr', 'VPR'], ['epss', 'EPSS'], ['owner', 'Assignee'], ['status', 'Status'], ['due', 'SLA due']];
+  function ctPassTcol(f) {
+    var t = CT.tcol;
+    if (t.cve && f.cve.toLowerCase().indexOf(t.cve.toLowerCase()) < 0) return false;
+    if (t.host && f.host !== t.host) return false;
+    if (t.sev && f.severity !== t.sev) return false;
+    if (t.pri && (priorityOf(f) || '') !== t.pri) return false;
+    if (t.vpr !== '' && t.vpr != null && !(f.vpr != null && f.vpr >= parseFloat(t.vpr))) return false;
+    if (t.epss !== '' && t.epss != null) { var e = cveIntel(f.cve).epss; if (e == null || e * 100 < parseFloat(t.epss)) return false; }
+    if (t.owner && ctOwner(f) !== t.owner) return false;
+    if (t.status && statusOf(f) !== t.status) return false;
+    if (t.due) { var ss = slaState(f); if (t.due === 'overdue' && ss !== 'overdue') return false; if (t.due === 'soon' && ss !== 'soon') return false; if (t.due === 'open' && !isOpen(f)) return false; if (t.due === 'closed' && isOpen(f)) return false; }
+    return true;
+  }
+  function ctDistinct(fn, list) { var s = {}, o = []; (list || ctScoped()).forEach(function (f) { var v = fn(f); if (v && !s[v]) { s[v] = 1; o.push(v); } }); return o.sort(); }
+  function ctTctl(key) {
+    var v = CT.tcol[key] || '', sc = ctScoped();
+    function sel(opts) { return '<select data-tc="' + key + '"><option value="">All</option>' + opts.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (v === o[0] ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select>'; }
+    if (key === 'cve') return '<input data-tc="cve" type="text" placeholder="CVE…" value="' + esc(v) + '">';
+    if (key === 'host') return sel(ctDistinct(function (f) { return f.host; }, sc).map(function (x) { return [x, x]; }));
+    if (key === 'sev') return sel(['Critical', 'High', 'Medium', 'Low'].map(function (x) { return [x, x]; }));
+    if (key === 'pri') return sel([['P1', 'P1'], ['P2', 'P2'], ['P3', 'P3']]);
+    if (key === 'vpr') return '<input data-tc="vpr" type="number" min="0" max="10" step="0.1" placeholder="≥" value="' + esc(v) + '">';
+    if (key === 'epss') return '<input data-tc="epss" type="number" min="0" max="100" placeholder="≥%" value="' + esc(v) + '">';
+    if (key === 'owner') return sel(ctDistinct(ctOwner, sc).map(function (x) { return [x, x]; }));
+    if (key === 'status') return sel(STATUS.map(function (s) { return [s.k, s.l]; }));
+    if (key === 'due') return sel([['open', 'Open'], ['overdue', 'Overdue'], ['soon', 'Due soon'], ['closed', 'Closed']]);
+    return '';
+  }
+  function ctTable() {
+    var arrow = function (k) { return CT.sort.k === k ? (CT.sort.dir < 0 ? ' ▼' : ' ▲') : ''; };
+    var head = '<tr>' + CT_TCOLS.map(function (c) { return '<th data-sk="' + c[0] + '">' + c[1] + arrow(c[0]) + '</th>'; }).join('') + '</tr>' +
+      '<tr class="grid-filterrow">' + CT_TCOLS.map(function (c) { return '<th>' + ctTctl(c[0]) + '</th>'; }).join('') + '</tr>';
+    var active = Object.keys(CT.tcol).some(function (k) { return CT.tcol[k] !== '' && CT.tcol[k] != null; });
+    return '<div class="ct-tcap"><span id="ctCount"></span>' + (active ? '<button class="btn sm" id="ctClear">Clear filters</button>' : '') + '</div>' +
+      '<div class="gridwrap"><table class="grid" id="ctTable"><thead>' + head + '</thead><tbody id="ctTbody"></tbody></table></div>';
+  }
+  function ctFillTable() {
+    var list = ctFindings().filter(ctPassTcol);
+    list.sort(function (a, b) {
+      var A, B, k = CT.sort.k;
+      if (k === 'risk' || k === 'pri') { A = riskScore(a); B = riskScore(b); }
+      else if (k === 'sev') { A = SEV_ORDER[b.severity]; B = SEV_ORDER[a.severity]; }
+      else if (k === 'vpr') { A = a.vpr || -1; B = b.vpr || -1; }
+      else if (k === 'epss') { A = cveIntel(a.cve).epss || -1; B = cveIntel(b.cve).epss || -1; }
+      else if (k === 'due') { A = dueIn(a) == null ? 1e9 : dueIn(a); B = dueIn(b) == null ? 1e9 : dueIn(b); }
+      else if (k === 'owner') { A = ctOwner(a); B = ctOwner(b); }
+      else if (k === 'status') { A = statusOf(a); B = statusOf(b); }
+      else if (k === 'host') { A = a.host; B = b.host; }
+      else { A = a.cve; B = b.cve; }
+      return A < B ? -CT.sort.dir : A > B ? CT.sort.dir : 0;
+    });
+    var tb = document.getElementById('ctTbody'); if (!tb) return;
+    tb.innerHTML = list.length ? list.map(function (f) {
+      return '<tr class="ct-brow" data-key="' + esc(keyOf(f)) + '"><td class="cid"><a href="' + CVE_DETAIL + esc(f.cve) + '">' + esc(f.cve) + '</a>' + intelChips(f.cve) + '</td>' +
+        '<td class="host">' + esc(f.host) + (ctNoAgent(f) ? ' <span class="ct-flag">NO AGENT</span>' : '') + '</td><td>' + ctSevBadge(f.severity) + '</td><td>' + priChip(f) + '</td>' +
+        '<td>' + vprCell(f) + '</td><td>' + epssCell(f) + '</td><td>' + ctAvatar(ctOwner(f)) + ' <span class="muted" style="font-size:12px">' + esc(ctOwner(f)) + '</span></td>' +
+        '<td><span class="stbadge st-' + statusOf(f) + '" style="font-size:11px">' + esc(SLABEL[statusOf(f)]) + '</span></td><td>' + ctDueBadge(f) + '</td></tr>';
+    }).join('') : '<tr><td colspan="9" class="muted" style="text-align:center;padding:22px">No findings match these filters.</td></tr>';
+    var cnt = document.getElementById('ctCount'); if (cnt) cnt.innerHTML = 'Showing <b>' + list.length + '</b> of ' + ctScoped().length + ' findings';
+    [].forEach.call(tb.querySelectorAll('.ct-brow'), function (r) { r.addEventListener('click', function () { var f = ctFindings().filter(function (x) { return keyOf(x) === r.dataset.key; })[0]; if (f) openDrawer(f); }); });
+  }
+
+  function ctCalendar() {
+    var list = ctFindings().filter(isOpen), byDay = {};
+    list.forEach(function (f) { var dd = dueDate(f); if (dd) (byDay[dd] = byDay[dd] || []).push(f); });
+    var now = new Date(), y = now.getFullYear(), m = now.getMonth(), first = new Date(y, m, 1), start = new Date(y, m, 1 - first.getDay());
+    var today = todayISO();
+    var cells = '';
+    for (var i = 0; i < 42; i++) { var cur = new Date(start.getTime() + i * 86400000); var ci = cur.getFullYear() + '-' + String(cur.getMonth() + 1).padStart(2, '0') + '-' + String(cur.getDate()).padStart(2, '0'); var off = cur.getMonth() !== m, evs = byDay[ci] || []; cells += '<div class="ct-cell' + (off ? ' off' : '') + (ci === today ? ' today' : '') + '"><span class="ct-dn">' + cur.getDate() + '</span>' + evs.slice(0, 3).map(function (f) { return '<span class="ct-ev" data-key="' + esc(keyOf(f)) + '" style="background:var(' + (SEV_VAR[f.severity] || '--low') + ')" title="' + esc(f.cve + ' · ' + f.host) + '">' + esc(f.cve.replace('CVE-', '')) + '</span>'; }).join('') + (evs.length > 3 ? '<span class="muted" style="font-size:10px">+' + (evs.length - 3) + '</span>' : '') + '</div>'; }
+    return '<div class="ct-cal"><div class="ct-calh">' + first.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) + ' <span class="muted" style="font-size:12px">— open findings on their SLA due date</span></div><div class="ct-calg">' + ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(function (d) { return '<div class="ct-dow">' + d + '</div>'; }).join('') + '</div><div class="ct-calg">' + cells + '</div></div>';
+  }
+
+  function ctTimeline() {
+    var list = ctFindings().slice().filter(function (f) { return f.firstSeen; }).sort(function (a, b) { var da = dueDate(a) || '9999', db = dueDate(b) || '9999'; return da < db ? -1 : 1; });
+    var MIN = -120, MAX = 60, span = MAX - MIN;
+    function p(off) { return (off - MIN) / span * 100; }
+    var rows = list.map(function (f) {
+      var s = daysSince(f.firstSeen); var e = dueIn(f); var L = p(s == null ? MIN : -s), R = p(e == null ? 30 : e), W = Math.max(2, R - L);
+      return '<div class="ct-tlrow" data-key="' + esc(keyOf(f)) + '"><div class="ct-tll"><b class="mono">' + esc(f.cve.replace('CVE-', '')) + '</b> · ' + esc(f.host) + '</div><div class="ct-tltrack"><div class="ct-tlnow" style="left:' + p(0) + '%"></div><div class="ct-tlbar" style="left:' + L + '%;width:' + W + '%;background:var(' + (SEV_VAR[f.severity] || '--low') + ')' + (slaState(f) === 'overdue' ? ';box-shadow:0 0 0 1px var(--crit)' : '') + '"></div></div></div>';
+    }).join('');
+    var ticks = [-90, -60, -30, 0, 30, 60].map(function (t) { return '<span class="ct-tick" style="left:' + p(t) + '%">' + (t === 0 ? 'today' : (t > 0 ? '+' : '') + t + 'd') + '</span>'; }).join('');
+    return '<div class="ct-tl">' + (rows || '<div class="muted" style="padding:14px">No findings.</div>') + '<div class="ct-tlaxis"><div>first seen → SLA due</div><div class="ct-tlticks">' + ticks + '</div></div></div>';
+  }
+
+  function ctWorkload() {
+    var by = {}; ctFindings().forEach(function (f) { var o = ctOwner(f); (by[o] = by[o] || []).push(f); });
+    var rows = Object.keys(by).map(function (o) { var its = by[o], open = its.filter(isOpen), cc = { Critical: 0, High: 0, Medium: 0, Low: 0 }; open.forEach(function (f) { cc[f.severity] = (cc[f.severity] || 0) + 1; }); return { o: o, its: its, open: open.length, cc: cc, total: its.length }; }).sort(function (a, b) { return b.open - a.open; });
+    var mx = Math.max.apply(null, rows.map(function (r) { return r.open; }).concat([1]));
+    return '<div class="ct-wl">' + rows.map(function (r) {
+      var segs = ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return r.cc[s] ? '<span class="ct-wseg" style="width:' + (r.cc[s] / mx * 100) + '%;background:var(' + SEV_VAR[s] + ')" title="' + r.cc[s] + ' ' + s + '"></span>' : ''; }).join('');
+      return '<div class="ct-wlrow"><div class="ct-wlwho">' + ctAvatar(r.o) + '<span>' + esc(r.o) + '</span></div><div><div class="ct-wlbar">' + segs + '</div><div class="muted" style="font-size:11px;margin-top:5px">' + r.open + ' open · ' + (r.total - r.open) + ' closed</div></div><div class="ct-wltot">' + r.open + '</div></div>';
+    }).join('') + '</div>';
+  }
+
+  function ctDashboard() {
+    var c = ctCamp(), st = campaignStats(c), list = ctScoped(), open = list.filter(isOpen);
+    var overdue = open.filter(function (f) { return slaState(f) === 'overdue'; }).length;
+    var critOpen = open.filter(function (f) { return f.severity === 'Critical'; }).length;
+    var kevOpen = open.filter(function (f) { return cveIntel(f.cve).kev; }).length;
+    var noAgent = ctCoverageKnown() ? open.filter(ctNoAgent).length : null;
+    // real findings-aware digest (cross-reference intel to THIS campaign's open findings)
+    var digKev = open.filter(function (f) { return cveIntel(f.cve).kev; }).length;
+    var digRw = open.filter(function (f) { return cveIntel(f.cve).ransomware; }).length;
+    var digEpss = open.filter(function (f) { var e = cveIntel(f.cve).epss; return e != null && e >= 0.5; }).length;
+    var digDueToday = open.filter(function (f) { return dueIn(f) === 0; }).length;
+    var digest = '<div class="ct-digest"><h3>☼ Campaign digest</h3><ul>' +
+      '<li><span class="d" style="background:var(--crit)"></span><b>' + digKev + '</b> open finding(s) are CISA <b>KEV</b> (actively exploited)</li>' +
+      '<li><span class="d" style="background:var(--high)"></span><b>' + digEpss + '</b> open with <b>EPSS ≥ 50%</b> · ' + digRw + ' tied to ransomware</li>' +
+      '<li><span class="d" style="background:var(--med)"></span><b>' + overdue + '</b> past SLA · <b>' + digDueToday + '</b> due today</li>' +
+      '<li><span class="d" style="background:var(--accent)"></span>' + (noAgent == null ? 'Load Agent Coverage to flag no-agent hosts' : '<b>' + noAgent + '</b> open on hosts with no Tenable agent') + '</li></ul></div>';
+    var kpi2 = function (l, n, s, cls) { return '<div class="kpi ' + (cls || '') + '"><div class="label">' + l + '</div><div class="num">' + n + '</div><div class="sub">' + s + '</div></div>'; };
+    var kpis = '<div class="kpis">' + kpi2('Progress', st.pct + '%', st.resolved + ' of ' + st.total + ' resolved', 'ok') + kpi2('Open', st.open, 'still to fix') + kpi2('Overdue', overdue, 'past SLA', overdue ? 'crit' : '') + kpi2('Critical open', critOpen, 'highest severity', critOpen ? 'crit' : '') + kpi2('KEV open', kevOpen, 'actively exploited', kevOpen ? 'crit' : '') + '</div>';
+    // severity donut (open)
+    var sc = { Critical: 0, High: 0, Medium: 0, Low: 0 }; open.forEach(function (f) { sc[f.severity] = (sc[f.severity] || 0) + 1; });
+    var tot = open.length || 1, circ = 2 * Math.PI * 52, acc = 0;
+    var arcs = ['Critical', 'High', 'Medium', 'Low'].map(function (s) { var len = sc[s] / tot * circ, seg = sc[s] ? '<circle r="52" cx="70" cy="70" fill="none" stroke="var(' + SEV_VAR[s] + ')" stroke-width="20" stroke-dasharray="' + len + ' ' + (circ - len) + '" stroke-dashoffset="' + (-acc) + '" transform="rotate(-90 70 70)"/>' : ''; acc += len; return seg; }).join('');
+    var donut = '<div class="card"><h3 style="margin:0 0 10px;font-size:13px">Open by severity</h3><div style="display:flex;align-items:center;gap:16px"><svg viewBox="0 0 140 140" style="width:126px;height:126px"><circle r="52" cx="70" cy="70" fill="none" stroke="color-mix(in srgb,var(--line) 60%,transparent)" stroke-width="20"/>' + arcs + '<text x="70" y="66" text-anchor="middle" font-size="26" font-weight="700" fill="var(--ink)">' + open.length + '</text><text x="70" y="84" text-anchor="middle" font-size="10" fill="var(--soft)">open</text></svg><div style="display:flex;flex-direction:column;gap:6px;font-size:12px">' + ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return '<span><span style="display:inline-block;width:9px;height:9px;border-radius:3px;background:var(' + SEV_VAR[s] + ');margin-right:6px"></span>' + s + ' <b>' + sc[s] + '</b></span>'; }).join('') + '</div></div></div>';
+    // burndown from real campaign history + ideal target line
+    var hist = (c.history || []).slice(-30), W = 380, H = 110;
+    var bd;
+    if (hist.length >= 2) {
+      var openHist = hist.map(function (p) { return Math.round(st.total * (1 - (p.pct || 0) / 100)); });
+      var mxB = Math.max.apply(null, openHist.concat([1]));
+      var path = openHist.map(function (v, i) { return (i ? 'L' : 'M') + (i / (openHist.length - 1) * W).toFixed(1) + ' ' + (H - v / mxB * (H - 14)).toFixed(1); }).join(' ');
+      bd = '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:120px" preserveAspectRatio="none"><path d="M0 14 L' + W + ' ' + H + '" stroke="var(--faint)" stroke-width="1.3" stroke-dasharray="4 4" fill="none"/><path d="' + path + ' L' + W + ' ' + H + ' L0 ' + H + ' Z" fill="color-mix(in srgb,var(--accent) 22%,transparent)"/><path d="' + path + '" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linejoin="round"/></svg>';
+    } else { bd = '<div class="muted" style="font-size:12px;padding:20px 0">Burndown appears after a day of progress history.</div>'; }
+    var burn = '<div class="card"><h3 style="margin:0 0 8px;font-size:13px">Burndown vs target <span class="muted" style="font-weight:400;font-size:11.5px">open remaining · dashed = ideal pace</span></h3>' + bd + '</div>';
+    var pipe = '<div class="card" style="margin-top:14px"><h3 style="margin:0 0 12px;font-size:13px">Pipeline <span class="muted" style="font-weight:400;font-size:11.5px">findings by status</span></h3>' + STATUS.map(function (s) { var n = list.filter(function (f) { return statusOf(f) === s.k; }).length; return '<div style="display:grid;grid-template-columns:110px 1fr 34px;gap:10px;align-items:center;font-size:12px;margin-bottom:8px"><span class="muted">' + s.l + '</span><span style="height:9px;border-radius:99px;background:color-mix(in srgb,var(--line) 60%,transparent);overflow:hidden;display:block"><span style="display:block;height:100%;width:' + (list.length ? n / list.length * 100 : 0) + '%;background:var(' + ST_VAR[s.k] + ')"></span></span><b style="text-align:right">' + n + '</b></div>'; }).join('') + '</div>';
+    return '<div class="ct-dash">' + digest + kpis + '<div class="ct-dgrid">' + burn + donut + '</div>' + pipe + '</div>';
+  }
+
+  function ctActivity() {
+    var list = ctScoped(), ev = [];
+    list.forEach(function (f) { (ovOf(f).updates || []).forEach(function (u) { ev.push({ at: u.at, text: u.text, f: f }); }); });
+    ev.sort(function (a, b) { return a.at < b.at ? 1 : -1; });
+    if (!ev.length) return '<div class="card"><span class="muted">No activity yet. Status changes and notes on this campaign\'s findings appear here.</span></div>';
+    return '<div class="ct-feed">' + ev.slice(0, 200).map(function (e) {
+      var d = new Date(e.at), ds = isNaN(d) ? e.at : d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      return '<div class="ct-fitem"><span class="ct-fdot"></span><div><div style="font-size:13px"><b class="mono">' + esc(e.f.cve) + '</b> <span class="muted">' + esc(e.f.host) + '</span> — ' + esc(e.text) + '</div><div class="muted" style="font-size:11.5px">' + esc(ds) + '</div></div></div>';
+    }).join('') + '</div>';
+  }
+
+  function ctBulkBar() {
+    var n = Object.keys(CT.sel).length, b = document.getElementById('ctBulk'); if (!b) return;
+    if (!n) { b.setAttribute('hidden', ''); return; }
+    b.removeAttribute('hidden');
+    b.innerHTML = '<span class="bulkcount"><b>' + n + '</b> selected</span>' +
+      '<select id="ctbStatus"><option value="">Set status…</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '">' + s.l + '</option>'; }).join('') + '</select>' +
+      '<select id="ctbOwner"><option value="">Assign…</option>' + owners().map(function (o) { return '<option>' + esc(o) + '</option>'; }).join('') + '<option value="__new">+ new owner…</option></select>' +
+      '<button class="btn sm" id="ctbClear">Clear</button>';
+    var keys = function () { return Object.keys(CT.sel); };
+    var applyEach = function (patch, msg) { keys().forEach(function (k) { var f = ctScoped().filter(function (x) { return keyOf(x) === k; })[0]; if (f) { setOverride(f, patch); if (msg) addUpdate(f, msg); } }); };
+    document.getElementById('ctbStatus').onchange = function (e) { if (!e.target.value) return; var nk = keys().length; applyEach({ status: e.target.value }, 'Bulk set to ' + SLABEL[e.target.value] + ' in campaign board'); toast(nk + ' → ' + SLABEL[e.target.value]); CT.sel = {}; refreshCampaign(); };
+    document.getElementById('ctbOwner').onchange = function (e) { var v = e.target.value; if (!v) return; if (v === '__new') { v = (prompt('Assign to') || '').trim(); if (!v) return; } var nk = keys().length; applyEach({ owner: v }, 'Assigned to ' + v + ' in campaign board'); toast(nk + ' assigned to ' + v); CT.sel = {}; refreshCampaign(); };
+    document.getElementById('ctbClear').onclick = function () { CT.sel = {}; refreshCampaign(); };
+  }
+
+  var CT_SAVED = [['', 'Views…'], ['risk', 'SLA risk (Table, worst first)'], ['patch', 'By patch (Board)'], ['overdue', 'Overdue criticals (List)'], ['coverage', 'No-agent blind spots (Table)']];
+  function ctApplySaved(v) {
+    if (v === 'coverage' && !ctCoverageKnown()) { toast('Load Agent Coverage first (Ops Dashboard → Agent Coverage)'); return; }
+    CT.qf = {}; CT.q = ''; CT.tcol = {};
+    if (v === 'risk') { CT.view = 'table'; CT.sort = { k: 'vpr', dir: -1 }; }
+    else if (v === 'patch') { CT.view = 'board'; CT.group = 'patch'; }
+    else if (v === 'overdue') { CT.view = 'list'; CT.group = 'severity'; CT.qf = { overdue: true, critical: true }; }
+    else if (v === 'coverage') { CT.view = 'table'; CT.qf = { noagent: true }; }
+    var c = ctCamp(); if (!c) return;
+    if (CT.group === 'patch') { ensureMsrc(ctScoped().map(function (f) { return f.cve; })).then(function () { return REMED.data ? Promise.resolve() : ensureRemed(); }).then(function () { campaignTracker(c); }); }
+    else campaignTracker(c);
+  }
+
+  // Load MSRC / remediation data lazily when patch-grouping is used, then re-render.
+  function ctSyncGrouping(cb) {
+    if ((CT.group === 'patch' || (CT.view === 'board' && CT.group === 'patch'))) {
+      var cves = ctScoped().map(function (f) { return f.cve; });
+      Promise.all([ensureMsrc(cves), REMED.data ? Promise.resolve() : ensureRemed()]).then(function () { refreshCampaign(); if (cb) cb(); });
+    } else { refreshCampaign(); if (cb) cb(); }
+  }
+
+  function campKpiCards(c, st) {
+    return kpi('Progress', st.pct + '%', st.resolved + ' of ' + st.total + ' resolved') +
+      kpi('Open', st.open, 'still to fix') +
+      kpi('Overdue (SLA)', st.overdue, 'past due', st.overdue ? 'crit' : 'ok') +
+      kpi('Due', c.dueDate || '—', campStatusLabel(c.status));
+  }
+  // Lightweight refresh after a status/owner write: re-render only the tracker body + the campaign KPI row,
+  // instead of rebuilding the whole campaignDetail page on every drag/bulk. CT state persists across renders.
+  function refreshCampaign() {
+    if (!CT.cid) return; var c = ctCamp(); if (!c) return;
+    var kp = document.getElementById('campKpis'); if (kp) kp.innerHTML = campKpiCards(c, campaignStats(c));
+    ctRenderView(); ctBulkBar();
+  }
+
+  function ctRenderView() {
+    var host = document.getElementById('ctBody'); if (!host) return;
+    host.innerHTML = ({ board: ctBoard, list: ctList, table: ctTable, calendar: ctCalendar, timeline: ctTimeline, workload: ctWorkload, dashboard: ctDashboard, activity: ctActivity }[CT.view] || ctBoard)();
+    if (CT.view === 'table') { ctWireTable(); ctFillTable(); }
+    ctWireBody();
+  }
+  function ctWireTable() {
+    [].forEach.call(document.querySelectorAll('#ctTable th[data-sk]'), function (th) { th.onclick = function () { var k = th.dataset.sk; if (CT.sort.k === k) CT.sort.dir = -CT.sort.dir; else { CT.sort = { k: k, dir: (k === 'cve' || k === 'host' || k === 'owner' || k === 'status') ? 1 : -1 }; } document.getElementById('ctBody').innerHTML = ''; ctRenderView(); }; });
+    [].forEach.call(document.querySelectorAll('#ctTable .grid-filterrow [data-tc]'), function (el) { var ev = el.tagName === 'SELECT' ? 'change' : 'input'; el.addEventListener(ev, function () { CT.tcol[el.dataset.tc] = el.value; var active = Object.keys(CT.tcol).some(function (k) { return CT.tcol[k] !== '' && CT.tcol[k] != null; }); var cap = document.querySelector('.ct-tcap'), cl = document.getElementById('ctClear'); if (active && !cl && cap) { var bb = document.createElement('button'); bb.className = 'btn sm'; bb.id = 'ctClear'; bb.textContent = 'Clear filters'; bb.onclick = function () { CT.tcol = {}; ctRenderView(); }; cap.appendChild(bb); } else if (!active && cl) { cl.remove(); } ctFillTable(); }); });
+    var clr = document.getElementById('ctClear'); if (clr) clr.onclick = function () { CT.tcol = {}; ctRenderView(); };
+  }
+  function ctWireBody() {
+    // open drawer on card / row / list-row / cal-ev / timeline-row click
+    [].forEach.call(document.querySelectorAll('#ctBody [data-key]'), function (el) {
+      if (el.classList.contains('ct-cbox')) return;
+      el.addEventListener('click', function (e) {
+        if (e.target.closest('a') || e.target.closest('.ct-cbox')) return;
+        var f = ctScoped().filter(function (x) { return keyOf(x) === el.dataset.key; })[0]; if (f) openDrawer(f);
+      });
+    });
+    // selection checkboxes
+    [].forEach.call(document.querySelectorAll('#ctBody .ct-cbox'), function (cb) { cb.addEventListener('click', function (e) { e.stopPropagation(); var k = cb.dataset.selk; if (CT.sel[k]) delete CT.sel[k]; else CT.sel[k] = 1; cb.classList.toggle('on'); cb.innerHTML = CT.sel[k] ? '✓' : ''; cb.closest('.ct-card').classList.toggle('sel'); ctBulkBar(); }); });
+    // list group collapse
+    [].forEach.call(document.querySelectorAll('#ctBody .ct-lgh'), function (h) { h.addEventListener('click', function () { var g = h.parentNode.dataset.g; CT.closed[g] = !CT.closed[g]; h.parentNode.classList.toggle('closed'); }); });
+    // board drag-and-drop (only Status / Assignee groupings write back)
+    var dragKey = null, draggable = (CT.group === 'status' || CT.group === 'owner');
+    [].forEach.call(document.querySelectorAll('#ctBody .ct-card'), function (card) {
+      card.addEventListener('dragstart', function (e) { dragKey = card.dataset.key; card.classList.add('drag'); e.dataTransfer.effectAllowed = 'move'; });
+      card.addEventListener('dragend', function () { card.classList.remove('drag'); });
+    });
+    [].forEach.call(document.querySelectorAll('#ctBody .ct-col'), function (col) {
+      col.addEventListener('dragover', function (e) { if (!draggable) return; e.preventDefault(); col.classList.add('drop'); });
+      col.addEventListener('dragleave', function () { col.classList.remove('drop'); });
+      col.addEventListener('drop', function (e) { e.preventDefault(); col.classList.remove('drop'); if (!draggable) return; var f = ctScoped().filter(function (x) { return keyOf(x) === dragKey; })[0]; if (!f) return; if (ctFieldVal(f) === col.dataset.k) return; if (CT.group === 'status') { setOverride(f, { status: col.dataset.k }); addUpdate(f, 'Moved to ' + SLABEL[col.dataset.k] + ' on the campaign board'); } else { var nw = col.dataset.k === 'Unassigned' ? '' : col.dataset.k; setOverride(f, { owner: nw }); addUpdate(f, nw ? 'Assigned to ' + nw + ' on the campaign board' : 'Unassigned on the campaign board'); } refreshCampaign(); });
+    });
+  }
+
+  // Public entry: render the tracker for a campaign into #ctMount (called from campaignDetail).
+  function campaignTracker(c) {
+    if (CT.cid !== c.id) { CT.sel = {}; CT.q = ''; CT.qf = {}; CT.tcol = {}; CT.closed = {}; }   // don't leak state between campaigns
+    CT.cid = c.id;
+    var mount = document.getElementById('ctMount'); if (!mount) return;
+    var tabs = '<div class="ct-tabs">' + CT_VIEWS.map(function (v) { return '<button class="ct-tab' + (v[0] === CT.view ? ' on' : '') + '" data-v="' + v[0] + '">' + v[1] + '</button>'; }).join('') + '</div>';
+    var groupSel = (CT.view === 'board' || CT.view === 'list') ? '<label class="ct-ctl">Group <select id="ctGroup">' + CT_GROUPS.map(function (g) { return '<option value="' + g[0] + '"' + (CT.group === g[0] ? ' selected' : '') + '>' + g[1] + '</option>'; }).join('') + '</select></label>' : '';
+    var chips = ['kev:KEV / exploited', 'overdue:Overdue', 'critical:Critical', 'noagent:No agent'].map(function (q) { var p = q.split(':'); return '<button class="ct-qf' + (CT.qf[p[0]] ? ' on' : '') + '" data-q="' + p[0] + '"' + (p[0] === 'noagent' && !ctCoverageKnown() ? ' disabled title="Load Agent Coverage first"' : '') + '>' + p[1] + '</button>'; }).join('');
+    var toolbar = '<div class="ct-toolbar">' + groupSel + '<div class="ct-qfs">' + chips + '</div><input class="ct-search" id="ctSearch" type="text" placeholder="Search CVE, host, owner…" value="' + esc(CT.q) + '">' +
+      '<span style="flex:1"></span><select id="ctSaved" class="ct-ctl">' + CT_SAVED.map(function (s) { return '<option value="' + s[0] + '">' + s[1] + '</option>'; }).join('') + '</select><button class="btn sm" id="ctAuto">⚙ Automations</button></div>';
+    mount.innerHTML = tabs + toolbar + '<div class="bulkbar" id="ctBulk" hidden></div><div class="ct-body" id="ctBody"></div>';
+    [].forEach.call(mount.querySelectorAll('.ct-tab'), function (b) { b.onclick = function () { CT.view = b.dataset.v; campaignTracker(c); }; });
+    var g = document.getElementById('ctGroup'); if (g) g.onchange = function () { CT.group = g.value; ctSyncGrouping(); };
+    [].forEach.call(mount.querySelectorAll('.ct-qf'), function (b) { b.onclick = function () { if (b.disabled) return; CT.qf[b.dataset.q] = !CT.qf[b.dataset.q]; campaignTracker(c); }; });
+    document.getElementById('ctSearch').oninput = function (e) { CT.q = e.target.value; if (CT.view === 'table') ctFillTable(); else ctRenderView(); };
+    document.getElementById('ctSaved').onchange = function (e) { if (e.target.value) ctApplySaved(e.target.value); };
+    document.getElementById('ctAuto').onclick = ctAutomations;
+    ctRenderView(); ctBulkBar();
+    if (!INTEL.loaded) ensureIntel().then(function () { if (CT.cid === c.id && (location.hash || '').indexOf('#/campaigns/') === 0) ctRenderView(); });
+  }
+  function ctAutomations() {
+    var m = document.getElementById('drawerBg'); // reuse a simple modal via toast-less overlay
+    var ov = document.getElementById('ctModal') || (function () { var d = document.createElement('div'); d.id = 'ctModal'; d.className = 'ct-modal vmops'; document.body.appendChild(d); return d; })();
+    ov.innerHTML = '<div class="ct-mcard"><button class="x" id="ctMx">×</button><h3 style="margin:0 0 3px">Automations</h3><div class="muted" style="font-size:12.5px;margin-bottom:12px">What runs today vs. what\'s planned.</div>' +
+      [['Rescan reconcile', 'Re-importing a scan auto-resolves any open finding that no longer appears (with a dated update).', true],
+       ['KEV → priority', 'KEV / ransomware / exploited findings are surfaced as P1 by the risk model everywhere.', true],
+       ['Tenable State=Fixed → Resolved', 'Parse the Tenable "State" column so a still-present-but-Fixed row resolves.', false],
+       ['EPSS ≥ 90% → escalate to lead', 'Auto-notify the campaign owner when EPSS crosses the threshold.', false],
+       ['No-agent → block auto-close', 'Prevent auto-resolving a finding whose host has no scanner agent.', false]].map(function (r) {
+        return '<div class="ct-rule"><span class="ct-sw ' + (r[2] ? 'on' : '') + '"></span><div><div style="font-weight:600;font-size:13px">' + r[0] + ' <span class="muted" style="font-weight:400;font-size:11px">' + (r[2] ? 'active' : 'planned') + '</span></div><div class="muted" style="font-size:12px">' + r[1] + '</div></div></div>';
+      }).join('') + '<div style="text-align:right;margin-top:14px"><button class="btn primary sm" id="ctMdone">Done</button></div></div>';
+    ov.classList.add('on');
+    var close = function () { ov.classList.remove('on'); };
+    document.getElementById('ctMx').onclick = document.getElementById('ctMdone').onclick = close;
+    ov.onclick = function (e) { if (e.target === ov) close(); };
   }
 
   function vmShow(fn){ return function(){ app.className='vmops'; return fn.apply(null, arguments); }; }
