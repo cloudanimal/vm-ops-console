@@ -42,7 +42,7 @@
   var ST_ORDER = {}; STATUS.forEach(function (s, i) { ST_ORDER[s.k] = i; });   // sort by workflow order (new, triaged, in remediation, resolved...), not alphabetically
   var OPEN_STATES = STATUS.filter(function (s) { return s.open; }).map(function (s) { return s.k; });
   var SEV_ORDER = { Critical: 0, High: 1, Medium: 2, Low: 3, Info: 4 };
-  var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tioAccess: '', tioSecret: '', meUrl: '', meClientId: '', meClientSecret: '' };
+  var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tioAccess: '', tioSecret: '', meUrl: '', meClientId: '', meClientSecret: '', epssLive: false };
   var DEFAULT_BRAND = 'VM Ops Console';
   var DEFAULT_ICON_COLOR = '#28415d';
 
@@ -151,6 +151,9 @@
   function epssVerdict(e) { if (e == null) return { v: 'No data', why: '' }; if (e >= 0.5) return { v: 'High', why: pct(e) + ' chance in 30 days' }; if (e >= 0.1) return { v: 'Elevated', why: pct(e) + ' chance in 30 days' }; return { v: 'Low', why: pct(e) + ' chance in 30 days' }; }
   function levVerdict(l) { if (l == null) return { v: 'No data', why: '' }; if (l >= 0.5) return { v: 'Likely exploited', why: pct(l) + ' lower-bound it was already exploited' }; if (l >= 0.1) return { v: 'Possibly', why: pct(l) + ' lower-bound' }; return { v: 'Unlikely', why: pct(l) + ' lower-bound' }; }
   function ssvcVerdict(kev, exploit, cvss) { var a = kev || exploit, t = isHigh(cvss); if (a && t) return { v: 'Act', why: 'active exploitation · high impact' }; if (a) return { v: 'Attend', why: 'active exploitation' }; if (t) return { v: 'Attend', why: 'high impact' }; return { v: 'Track', why: 'no active exploitation · limited impact' }; }
+  // Live EPSS lookup from FIRST.org, used ONLY when the user opts in (Settings, off by default) for a CVE
+  // missing from the bundled local feed. Sends just the CVE id to a third party; see the Settings explanation.
+  function epssFor(cve) { return fetch('https://api.first.org/data/v1/epss?cve=' + encodeURIComponent(cve)).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) { var r = d && d.data && d.data[0]; return r ? parseFloat(r.epss) : null; }); }
   var LEV_CACHE = {};
   function levFor(cve) {
     var y = (cve.match(/CVE-(\d{4})-/) || [])[1]; if (!y) return Promise.resolve(null);
@@ -1025,12 +1028,16 @@
       '<button class="btn sm" id="drCopy" title="Copy a text summary of this finding">Copy summary</button>' +
       '</div>';
     bg.classList.add('open'); dr.classList.add('open'); showDrawerHandle();
-    // Fill the remaining prioritization models: SSVC is derived (instant); EPSS is from the bundled local feed; LEV (local) loads async.
+    // Fill the remaining prioritization models: SSVC is derived (instant); EPSS is from the bundled local feed (or an opt-in live FIRST.org lookup, off by default); LEV (local) loads async.
     (function () {
       var it = cveIntel(f.cve), sv = ssvcVerdict(it.kev, it.exploit, f.cvss);
       var se = document.getElementById('drSsvc'); if (se) se.innerHTML = '<b>' + sv.v + '</b>' + (sv.why ? ' · ' + esc(sv.why) : '');
       var setEpss = function (e) { var el = document.getElementById('drEpss'); if (!el) return; el.className = ''; var v = epssVerdict(e); el.innerHTML = e == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); };
-      setEpss(it.epss);   // bundled local EPSS feed only, so opening a finding never calls out to a third party (the Findings workbench stays fully local)
+      // Prefer the bundled local feed. Only when the user has opted in (Settings) do we fall back to a live
+      // FIRST.org lookup for a CVE missing locally; by default nothing leaves the browser.
+      if (it.epss != null) setEpss(it.epss);
+      else if (STATE.cfg.epssLive) epssFor(f.cve).then(setEpss);
+      else setEpss(null);
       levFor(f.cve).then(function (l) { var el = document.getElementById('drLev'); if (!el) return; el.className = ''; var v = levVerdict(l); el.innerHTML = l == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); });
     })();
     // Fill the remediation sample (loads data/remediation.json once, then it's instant).
@@ -1441,6 +1448,9 @@
       '<h2>Data import</h2><div class="card">' +
       '<div class="muted" style="font-size:13px;margin-bottom:12px">Bring in each data source — Active Directory, ManageEngine, Tenable.io, CrowdStrike, and scan findings. Files are parsed and cached in your browser and feed the dashboards.</div>' +
       '<a class="btn primary" href="#/import">Open Data Import →</a></div>' +
+      '<h2>Privacy</h2><div class="card">' +
+      '<label style="display:flex;align-items:center;gap:9px;font-size:13.5px;cursor:pointer"><input type="checkbox" id="epssLive" style="flex:none;width:16px;height:16px"' + (c.epssLive ? ' checked' : '') + '> Live EPSS lookup (FIRST.org) for CVEs missing from the local feed</label>' +
+      '<div class="muted" style="font-size:12.5px;margin-top:9px">This console is local-first: your findings, scan data, and settings stay in this browser, and the bundled EPSS feed already covers almost every CVE. Leave this <b>off</b> and a finding with no local EPSS score simply shows a dash. Turn it <b>on</b> and, for those rare CVEs, opening a finding fetches the score from <code>api.first.org</code>, which sends the CVE id you are viewing to a third party. The id itself is public, but the lookups reveal which vulnerabilities you are examining, so it stays off by default.</div></div>' +
       '<h2>Remediation SLA windows (days)</h2><div class="card"><div class="grid2">' +
       ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return '<div class="field"><label>' + s + '</label><input type="number" min="0" data-sla="' + s + '" value="' + esc(c.sla[s]) + '"></div>'; }).join('') +
       '</div><div class="muted" style="font-size:12.5px">SLA due = first-seen date + window. Drives overdue flags and SLA compliance.</div></div>' +
@@ -1462,7 +1472,7 @@
       '<div class="grid2"><div class="field"><label>Client ID</label><input type="password" id="meClientId" autocomplete="off" value="' + esc(c.meClientId) + '" placeholder="client ID"></div>' +
       '<div class="field"><label>Client Secret</label><input type="password" id="meClientSecret" autocomplete="off" value="' + esc(c.meClientSecret) + '" placeholder="client secret"></div></div></div>' +
       '<h2>Guided tour</h2><div class="card">' +
-      '<label style="display:flex;align-items:center;gap:9px;font-size:13.5px;cursor:pointer"><input type="checkbox" id="tourAuto"' + (load('vmops-tour-auto', false) ? ' checked' : '') + '> Show the guided tour automatically on first visit</label>' +
+      '<label style="display:flex;align-items:center;gap:9px;font-size:13.5px;cursor:pointer"><input type="checkbox" id="tourAuto" style="flex:none;width:16px;height:16px"' + (load('vmops-tour-auto', false) ? ' checked' : '') + '> Show the guided tour automatically on first visit</label>' +
       '<div class="muted" style="font-size:12.5px;margin:9px 0 12px">A quick coachmark walkthrough of the workflow — the dashboard strip, findings, campaigns, and reporting. Replay it anytime from the “Take a tour” button on the Ops Dashboard, or with ⌘K / Ctrl-K → “Guided tour”.</div>' +
       '<button class="btn" id="tourStart">Start tour now</button></div>' +
       '<h2>SharePoint access tester</h2><div class="card">' +
@@ -1495,6 +1505,7 @@
       STATE.cfg.meUrl = document.getElementById('meUrl').value.trim();
       STATE.cfg.meClientId = document.getElementById('meClientId').value.trim();
       STATE.cfg.meClientSecret = document.getElementById('meClientSecret').value.trim();
+      STATE.cfg.epssLive = document.getElementById('epssLive').checked;
       save('vmops-config', STATE.cfg); applyBrand(); toast('Settings saved');
     });
     document.getElementById('resetSla').addEventListener('click', function () { STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla); save('vmops-config', STATE.cfg); viewSettings(); toast('SLA windows reset'); });
