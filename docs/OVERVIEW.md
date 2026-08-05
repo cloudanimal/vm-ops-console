@@ -10,7 +10,10 @@ A browser-local **vulnerability-management operations console**. One nav, one th
    Morning Report. All from public data, fetched live or shipped as pre-built static datasets.
 2. **Operational tooling over the user's own data** (all client-side):
    - **Findings workbench** — import scanner findings (Tenable today), triage by status/owner/SLA, keep
-     per-finding notes + a dated status-update log, open Jira/ServiceNow tickets, export CSV.
+     per-finding notes + a dated status-update log, open Jira/ServiceNow tickets, export CSV. Re-imports
+     reconcile by presence and, when the export carries a Tenable "State" column, by state (Fixed rows
+     resolve; a resolved finding that reappears active reopens), and each reopen is counted so **recurring /
+     flapping** findings surface via a chip, a Recurring filter, and a dashboard KPI.
    - **Tenable VM dashboard** — upload Tenable SC cumulative + mitigated exports for KPIs, severity/SLA
      breakdowns, top findings, one-click report export.
    - **Agent Coverage dashboard** — reconcile Active Directory (the denominator) against ManageEngine,

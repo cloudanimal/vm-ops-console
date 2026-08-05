@@ -42,7 +42,7 @@
   var ST_ORDER = {}; STATUS.forEach(function (s, i) { ST_ORDER[s.k] = i; });   // sort by workflow order (new, triaged, in remediation, resolved...), not alphabetically
   var OPEN_STATES = STATUS.filter(function (s) { return s.open; }).map(function (s) { return s.k; });
   var SEV_ORDER = { Critical: 0, High: 1, Medium: 2, Low: 3, Info: 4 };
-  var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tioAccess: '', tioSecret: '', meUrl: '', meClientId: '', meClientSecret: '', epssLive: false };
+  var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tioAccess: '', tioSecret: '', meUrl: '', meClientId: '', meClientSecret: '', epssLive: false, recurThreshold: 1 };
   var DEFAULT_BRAND = 'VM Ops Console';
   var DEFAULT_ICON_COLOR = '#28415d';
 
@@ -200,6 +200,7 @@
       if (f.epssHi) { var ee = cveIntel(x.cve).epss; if (ee == null || ee < 0.5) return false; }
       if (f.noTicket) { if (ticketOf(x)) return false; if (!isOpen(x)) return false; }
       if (f.noowner) { if (ovOf(x).owner) return false; if (!isOpen(x)) return false; }
+      if (f.recurring && !isRecurring(x)) return false;
       if (f.fresh && !isNewKey(keyOf(x))) return false;
       if (f.seen) { var _ds = daysSince(x.firstSeen); if (_ds == null || _ds > +f.seen) return false; }
       if (f.q) { var q = f.q.toLowerCase(); if ((x.cve + ' ' + x.host + ' ' + (x.name || '') + ' ' + (x.desc || '') + ' ' + repoOf(x) + ' ' + (ovOf(x).owner || '')).toLowerCase().indexOf(q) === -1) return false; }
@@ -247,7 +248,7 @@
       var d = (new Date(r) - new Date(f.firstSeen)) / 86400000; return d >= 0 ? d : null;
     }).filter(function (v) { return v != null; });
     var mttr = mttrVals.length ? Math.round(mttrVals.reduce(function (a, b) { return a + b; }, 0) / mttrVals.length) : null;
-    return { total: STATE.findings.length, open: open.length, overdue: overdue.length, comp: comp, crit: crit.length, assets: assetCount(), unassigned: open.filter(function (f) { return !ovOf(f).owner; }).length, noTicket: open.filter(function (f) { return !ticketOf(f); }).length, exploited: exploited.length, epssHi: epssHi.length, newScan: newScan.length, mttr: mttr };
+    return { total: STATE.findings.length, open: open.length, overdue: overdue.length, comp: comp, crit: crit.length, assets: assetCount(), unassigned: open.filter(function (f) { return !ovOf(f).owner; }).length, noTicket: open.filter(function (f) { return !ticketOf(f); }).length, exploited: exploited.length, epssHi: epssHi.length, newScan: newScan.length, recurring: STATE.findings.filter(isRecurring).length, mttr: mttr };
   }
   function assetCount() { var s = {}; STATE.findings.forEach(function (f) { s[norm(f.host)] = 1; }); return Object.keys(s).length; }
   // Rank systems (by normalized short hostname) with the most OPEN findings, for the dashboard.
@@ -292,6 +293,7 @@
       kpiL('EPSS ≥ 50%', k.epssHi, 'high exploit probability', k.epssHi ? '' : 'ok', '#/findings?epssHi=1&open=1') +
       kpiL('Open critical', k.crit, 'severity = Critical', k.crit ? 'crit' : '', '#/findings?sev=Critical&open=1') +
       kpiL('New this scan', k.newScan, 'added since last import', '', '#/findings?fresh=1') +
+      kpiL('Recurring', k.recurring, 'reopened after a fix', k.recurring ? 'warn' : 'ok', '#/findings?recurring=1') +
       kpi('MTTR', k.mttr == null ? '—' : k.mttr + 'd', 'avg days to remediate') +
       kpi('SLA compliance', k.comp + '%', 'open findings within window', k.comp >= 90 ? 'ok' : '') +
       kpiL('Unassigned', k.unassigned, 'no owner set', '', '#/findings?noowner=1') +
@@ -385,7 +387,7 @@
   });
   function routeLabel(hash) {
     var h = (hash || '').split('?')[0];
-    var map = { '#/dashboard': 'the Ops Dashboard', '#/findings': 'Findings', '#/campaigns': 'Campaigns', '#/report': 'the Morning Report', '#/import': 'Data import', '#/settings': 'Settings' };
+    var map = { '#/dashboard': 'the Dashboard', '#/findings': 'Findings', '#/campaigns': 'Campaigns', '#/report': 'the Morning Report', '#/import': 'Data import', '#/settings': 'Settings' };
     if (map[h]) return map[h];
     if (h.indexOf('#/campaigns/') === 0) return 'the campaign';
     if (h.indexOf('#/cve/') === 0) return 'the CVE detail';
@@ -415,7 +417,7 @@
   }
 
   // ---------- saved + preset views (one-click filter sets) ----------
-  function defaultFilt() { return { q: '', status: '', sev: '', owner: '', repo: '', open: false, overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, noTicket: false, noowner: false, colf: {}, group: '' }; }
+  function defaultFilt() { return { q: '', status: '', sev: '', owner: '', repo: '', open: false, overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, noTicket: false, noowner: false, recurring: false, colf: {}, group: '' }; }
   var PRESET_VIEWS = [
     { id: 'exploited', name: 'Exploited (KEV / PoC)', filt: { exploited: true } },
     { id: 'epsshi', name: 'EPSS ≥ 50%', filt: { epssHi: true } },
@@ -430,7 +432,7 @@
   // True when any finding filter is set (so the toolbar can offer "Clear filters").
   function filtActive() {
     var f = STATE.filt, d = defaultFilt();
-    var keys = ['q', 'status', 'sev', 'owner', 'repo', 'open', 'overdue', 'seen', 'exploited', 'fresh', 'epssHi', 'noTicket', 'noowner', 'group'];
+    var keys = ['q', 'status', 'sev', 'owner', 'repo', 'open', 'overdue', 'seen', 'exploited', 'fresh', 'epssHi', 'noTicket', 'noowner', 'recurring', 'group'];
     for (var i = 0; i < keys.length; i++) { if (f[keys[i]] !== d[keys[i]]) return true; }
     return !!(f.colf && Object.keys(f.colf).length);
   }
@@ -439,7 +441,7 @@
     // Apply a deep-link query (e.g. Ask AI -> #/findings?sev=Critical&overdue=1) ONLY when it actually
     // changes — otherwise the in-page filter handlers (which re-call viewFindings without touching the
     // hash) would re-parse the stale query every render and clobber the user's selection.
-    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=safeDecode(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', open:p.open==='1', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', epssHi:p.epssHi==='1', noTicket:p.noTicket==='1', noowner:p.noowner==='1', colf:{}, group:STATE.filt.group||'' }; })();
+    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=safeDecode(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', open:p.open==='1', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', epssHi:p.epssHi==='1', noTicket:p.noTicket==='1', noowner:p.noowner==='1', recurring:p.recurring==='1', colf:{}, group:STATE.filt.group||'' }; })();
     if (!STATE.findings.length) return viewEmpty('findings');
     var list = visibleFindings();
     var statusOpts = '<option value="">All statuses</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '"' + (STATE.filt.status === s.k ? ' selected' : '') + '>' + s.l + '</option>'; }).join('');
@@ -471,6 +473,7 @@
       '<button class="btn sm" id="fEpssHi" style="' + (STATE.filt.epssHi ? 'border-color:var(--crit);color:var(--crit)' : '') + '" title="EPSS ≥ 50% (high near-term exploitation probability)">EPSS ≥ 50%</button>' +
       '<button class="btn sm" id="fNoTicket" style="' + (STATE.filt.noTicket ? 'border-color:var(--high);color:var(--high)' : '') + '" title="Open findings with no linked ticket — needs a ticket">No ticket</button>' +
       (Object.keys(STATE._newKeys || {}).length ? '<button class="btn sm" id="fFresh" style="' + (STATE.filt.fresh ? 'border-color:var(--accent);color:var(--accent)' : '') + '" title="Added in the most recent scan">New only</button>' : '') +
+      '<button class="btn sm" id="fRecur" style="' + (STATE.filt.recurring ? 'border-color:var(--high);color:var(--high)' : '') + '" title="Findings that were resolved and came back (recurring / flapping)">Recurring</button>' +
       '<select id="fGroup" title="Group findings"><option value="">No grouping</option><option value="cve"' + (STATE.filt.group === 'cve' ? ' selected' : '') + '>Group by CVE</option><option value="product"' + (STATE.filt.group === 'product' ? ' selected' : '') + '>Group by product / fix</option><option value="host"' + (STATE.filt.group === 'host' ? ' selected' : '') + '>Group by host</option></select>' +
       '<select id="fView" title="Saved & preset views">' + viewOpts + '</select>' +
       '<button class="btn sm" id="fViewSave" title="Save the current filters as a view">Save view</button>' +
@@ -519,6 +522,7 @@
     document.getElementById('fEpssHi').addEventListener('click', function () { STATE.filt.epssHi = !STATE.filt.epssHi; viewFindings(); });
     document.getElementById('fNoTicket').addEventListener('click', function () { STATE.filt.noTicket = !STATE.filt.noTicket; viewFindings(); });
     var fFresh = document.getElementById('fFresh'); if (fFresh) fFresh.addEventListener('click', function () { STATE.filt.fresh = !STATE.filt.fresh; viewFindings(); });
+    var fRecur = document.getElementById('fRecur'); if (fRecur) fRecur.addEventListener('click', function () { STATE.filt.recurring = !STATE.filt.recurring; viewFindings(); });
     document.getElementById('fGroup').addEventListener('change', function () { STATE.filt.group = this.value; viewFindings(); });
     document.getElementById('fView').addEventListener('change', function () {
       var v = this.value; if (!v) return;
@@ -705,7 +709,7 @@
     var attrs = 'data-key="' + esc(keyOf(f)) + '"' + (gid ? ' data-g="' + gid + '" class="childrow" style="display:none"' : '');
     return '<tr ' + attrs + '>' +
       '<td class="selcol"><input type="checkbox" class="rowsel" aria-label="Select finding"' + (selKeys[keyOf(f)] ? ' checked' : '') + '></td>' +
-      '<td class="cid"><a href="' + CVE_DETAIL + esc(f.cve) + '" title="Open CVE detail">' + esc(f.cve) + '</a>' + (isNewKey(keyOf(f)) ? '<span class="ichip new" title="New since last scan">NEW</span>' : '') + intelChips(f.cve) + '</td>' +
+      '<td class="cid"><a href="' + CVE_DETAIL + esc(f.cve) + '" title="Open CVE detail">' + esc(f.cve) + '</a>' + (isNewKey(keyOf(f)) ? '<span class="ichip new" title="New since last scan">NEW</span>' : '') + intelChips(f.cve) + recurChip(f) + '</td>' +
       '<td class="host">' + esc(f.host) + '</td>' +
       '<td class="dcell" title="' + esc(f.desc || f.name || '') + '">' + (f.desc || f.name ? esc(f.desc || f.name) : '<span class="muted">—</span>') + '</td>' +
       '<td>' + sevBadge(f.severity) + '</td>' +
@@ -766,6 +770,10 @@
     return c ? ' ' + c : '';
   }
   function priChip(f) { var p = priorityOf(f); return p ? '<span class="pri ' + p.toLowerCase() + '">' + p + '</span>' : '<span class="muted">—</span>'; }
+  // Recurrence / flapping: how many times this finding has been reopened after being resolved (from the override store).
+  function recurCount(f) { return ovOf(f).reopens || 0; }
+  function isRecurring(f) { return recurCount(f) >= Math.max(1, (STATE.cfg && STATE.cfg.recurThreshold) || 1); }
+  function recurChip(f) { var n = recurCount(f); return n < 1 ? '' : ' <span class="ichip recur" title="Reopened ' + n + ' time' + (n > 1 ? 's' : '') + ' after being resolved (recurring / flapping finding)">↻ ' + n + '</span>'; }
   function epssCell(f) { var e = cveIntel(f.cve).epss; if (e == null) return '<span class="muted">—</span>'; return '<span class="epss ' + (e >= 0.5 ? 'hi' : e >= 0.1 ? 'mid' : '') + '">' + Math.round(e * 100) + '%</span>'; }
   function vprBand(v) { return v >= 9 ? 'crit' : v >= 7 ? 'hi' : v >= 4 ? 'mid' : ''; }
   function vprCell(f) { var v = f.vpr; if (v == null) return '<span class="muted">—</span>'; return '<span class="vpr ' + vprBand(v) + '" title="Tenable VPR">' + v.toFixed(1) + '</span>'; }
@@ -1006,6 +1014,7 @@
       '<div class="row"><span class="k">SSVC</span><span id="drSsvc"></span></div>' +
       '<div class="row"><span class="k">Plugin</span><span>' + (f.plugin ? esc(f.plugin) : '—') + ' · ' + esc(f.source || '') + '</span></div>' +
       '<div class="row"><span class="k">First seen</span><span>' + esc(f.firstSeen) + ' (' + (daysSince(f.firstSeen) || 0) + 'd ago)</span></div>' +
+      (isRecurring(f) ? '<div class="row"><span class="k">Recurrence</span><span><span class="ichip recur">↻ ' + recurCount(f) + '</span> reopened after being resolved</span></div>' : '') +
       '<div class="row"><span class="k">SLA due</span><span class="pill-sla ' + ss + '">' + (dd ? esc(dd) + (di == null ? '' : ' · ' + (di < 0 ? Math.abs(di) + 'd overdue' : di + 'd left')) : '—') + '</span></div>' +
       '<div id="drRemed" class="remed"></div>' +
       '<div style="margin-top:16px"><label style="font-size:12px;font-weight:600;color:var(--soft)">Status</label><br>' + statusSelect(f, st).replace('act-status', 'dr-status') + '</div>' +
@@ -1223,36 +1232,54 @@
     });
     return save('vmops-findings', STATE.findings);
   }
-  // A re-import is a fresh scan: diff vs the current set, auto-resolve anything that's gone
-  // (no longer detected), REOPEN anything that was resolved but is detected again (a recurrence /
-  // flap, so a live vuln can never hide behind a stale "Resolved"), and remember what's new.
+  // A re-import is a fresh scan. It reconciles the current set both by PRESENCE (a finding that is gone is
+  // resolved) and, when the export carries a Tenable "State" column, by STATE (a still-listed row marked
+  // Fixed is resolved; a still-active row that was resolved reopens and its recurrence count is bumped, so a
+  // live vuln never hides behind a stale "Resolved" and a chronic flapper is visible). No State column keeps
+  // the older presence-only behavior, so plain CVE exports still work.
   function importScan(incoming) {
     var reimport = STATE.findings.length > 0;
-    var incKeys = {}, existing = {};
-    incoming.forEach(function (f) { incKeys[keyOf(f)] = 1; });
+    var incByKey = {}, existing = {};
+    incoming.forEach(function (f) { incByKey[keyOf(f)] = f; });
     STATE.findings.forEach(function (f) { existing[keyOf(f)] = 1; });
     var added = 0; incoming.forEach(function (f) { if (!existing[keyOf(f)]) added++; });
     var fixed = 0, reopened = 0;
     STATE.findings.forEach(function (f) {
-      var inScan = !!incKeys[keyOf(f)];
+      var inc = incByKey[keyOf(f)], inScan = !!inc, incState = inc ? (inc.state || '') : '';
       if (isOpen(f) && !inScan) {
         setOverride(f, { status: 'resolved' }); addUpdate(f, 'Rescan: no longer detected, auto-resolved'); fixed++;
-      } else if (inScan && statusOf(f) === 'resolved') {
-        // Was resolved, now detected again: reopen and record the recurrence so repeated flapping is visible.
+      } else if (isOpen(f) && inScan && incState === 'fixed') {
+        setOverride(f, { status: 'resolved' }); addUpdate(f, 'Rescan: Tenable state Fixed, auto-resolved'); fixed++;
+      } else if (inScan && incState !== 'fixed' && statusOf(f) === 'resolved') {
+        // Was resolved, now still active in the scan: reopen and record the recurrence (flap).
         var flaps = (ovOf(f).reopens || 0) + 1;
         setOverride(f, { status: 'new', reopens: flaps });
-        addUpdate(f, 'Rescan: detected again, reopened (recurrence #' + flaps + ')');
+        addUpdate(f, 'Rescan: detected again' + (incState === 'reopened' ? ' (Tenable state Reopened)' : '') + ', reopened (recurrence #' + flaps + ')');
         reopened++;
       }
+      // Note: a resolved finding that reappears marked Fixed stays resolved (e.g. a Tenable mitigated export).
+      // Deliberate closures (risk-accepted, false-positive) are left untouched.
     });
-    // Deliberate closures (risk-accepted, false-positive) are left untouched even if they reappear.
-    STATE._newKeys = {}; if (reimport) incoming.forEach(function (f) { var k = keyOf(f); if (!existing[k]) STATE._newKeys[k] = 1; });
+    // A brand-new row Tenable already marks Fixed comes in as resolved, not open.
+    incoming.forEach(function (f) { if (!existing[keyOf(f)] && f.state === 'fixed') { setOverride(f, { status: 'resolved' }); addUpdate(f, 'Imported as resolved (Tenable state Fixed)'); fixed++; } });
+    STATE._newKeys = {}; if (reimport) incoming.forEach(function (f) { var k = keyOf(f); if (!existing[k] && f.state !== 'fixed') STATE._newKeys[k] = 1; });
     try { localStorage.setItem('vmops-newkeys', JSON.stringify(Object.keys(STATE._newKeys))); } catch (e) {}
     var today = todayISO();
     var saved = mergeFindings(incoming.map(function (f) { f.lastSeen = today; return f; }));
     return { added: added, fixed: fixed, reopened: reopened, total: incoming.length, reimport: reimport, saved: saved };
   }
 
+  // Normalize a Tenable "State" / "Vulnerability State" value to a canonical token.
+  // Covers Tenable.io (OPEN / REOPENED / FIXED) and Tenable.sc (New / Active / Fixed / Reopened / Mitigated).
+  function normState(s) {
+    s = String(s || '').trim().toLowerCase();
+    if (!s) return '';
+    if (s.indexOf('fixed') > -1 || s.indexOf('mitigat') > -1 || s.indexOf('patched') > -1) return 'fixed';
+    if (s.indexOf('reopen') > -1) return 'reopened';
+    if (s.indexOf('active') > -1 || s.indexOf('open') > -1) return 'active';
+    if (s.indexOf('new') > -1) return 'new';
+    return '';
+  }
   function parseCsv(text) {
     if (text.charCodeAt(0) === 0xFEFF) text = text.slice(1);
     var rows = [], row = [], fld = '', q = false;
@@ -1270,7 +1297,8 @@
       iDesc = col([/^description$/i, /\bdescription\b/i, /synopsis/i]),
       iRepo = col([/^repo(sitory)?$/i, /\brepositor/i, /application/i, /\bapp\b/i]),
       iPid = col([/plugin\s*id/i]), iSeen = col([/first\s*(discovered|seen)/i, /plugin\s*publication/i, /discovered/i]),
-      iVpr = col([/vpr.*score/i, /\bvpr\b/i]);
+      iVpr = col([/vpr.*score/i, /\bvpr\b/i]),
+      iState = col([/vulnerabilit\w*\s*state/i, /^state$/i]);
     if (iName === iHost) iName = col([/plugin\s*name/i, /synopsis/i]);   // a bare "Name" column must not be claimed as both host and plugin name
     if (iCve === -1) return [];
     var out = [];
@@ -1286,7 +1314,8 @@
       var nm = iName > -1 ? (r[iName] || '').trim() : '';
       var ds = iDesc > -1 ? (r[iDesc] || '').trim() : '';
       var rp = iRepo > -1 ? (r[iRepo] || '').trim() : '';
-      cves.forEach(function (cve) { out.push({ cve: cve.toUpperCase(), host: host || 'unknown', severity: sev, cvss: isNaN(cvss) ? null : cvss, vpr: (vpr == null || isNaN(vpr)) ? null : vpr, plugin: iPid > -1 ? (r[iPid] || '').trim() : '', name: nm, desc: ds || nm, repo: rp, source: 'Tenable', firstSeen: seen }); });
+      var vstate = normState(iState > -1 ? r[iState] : '');
+      cves.forEach(function (cve) { out.push({ cve: cve.toUpperCase(), host: host || 'unknown', severity: sev, cvss: isNaN(cvss) ? null : cvss, vpr: (vpr == null || isNaN(vpr)) ? null : vpr, plugin: iPid > -1 ? (r[iPid] || '').trim() : '', name: nm, desc: ds || nm, repo: rp, source: 'Tenable', firstSeen: seen, state: vstate }); });
     });
     return out;
   }
@@ -1454,6 +1483,9 @@
       '<h2>Remediation SLA windows (days)</h2><div class="card"><div class="grid2">' +
       ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return '<div class="field"><label>' + s + '</label><input type="number" min="0" data-sla="' + s + '" value="' + esc(c.sla[s]) + '"></div>'; }).join('') +
       '</div><div class="muted" style="font-size:12.5px">SLA due = first-seen date + window. Drives overdue flags and SLA compliance.</div></div>' +
+      '<h2>Recurrence</h2><div class="card">' +
+      '<div class="field" style="max-width:340px"><label>Flag as recurring after N reopens</label><input type="number" min="1" id="recurThreshold" value="' + esc(c.recurThreshold || 1) + '"></div>' +
+      '<div class="muted" style="font-size:12.5px">A finding is marked recurring / flapping once it has been reopened (after being resolved) at least this many times. Drives the ↻ chip, the Recurring filter, and the dashboard KPI. Default 1.</div></div>' +
       '<h2>Jira</h2><div class="card">' +
       '<div class="field"><label>Base URL</label><input type="text" id="jiraBase" value="' + esc(c.jiraBase) + '" placeholder="https://yourorg.atlassian.net"></div>' +
       '<div class="grid2"><div class="field"><label>Project ID (pid, numeric)</label><input type="text" id="jiraPid" value="' + esc(c.jiraPid) + '" placeholder="10001"></div>' +
@@ -1473,7 +1505,7 @@
       '<div class="field"><label>Client Secret</label><input type="password" id="meClientSecret" autocomplete="off" value="' + esc(c.meClientSecret) + '" placeholder="client secret"></div></div></div>' +
       '<h2>Guided tour</h2><div class="card">' +
       '<label style="display:flex;align-items:center;gap:9px;font-size:13.5px;cursor:pointer"><input type="checkbox" id="tourAuto" style="flex:none;width:16px;height:16px"' + (load('vmops-tour-auto', false) ? ' checked' : '') + '> Show the guided tour automatically on first visit</label>' +
-      '<div class="muted" style="font-size:12.5px;margin:9px 0 12px">A quick coachmark walkthrough of the workflow — the dashboard strip, findings, campaigns, and reporting. Replay it anytime from the “Take a tour” button on the Ops Dashboard, or with ⌘K / Ctrl-K → “Guided tour”.</div>' +
+      '<div class="muted" style="font-size:12.5px;margin:9px 0 12px">A quick coachmark walkthrough of the workflow — the dashboard strip, findings, campaigns, and reporting. Replay it anytime from the “Take a tour” button on the Dashboard, or with ⌘K / Ctrl-K → “Guided tour”.</div>' +
       '<button class="btn" id="tourStart">Start tour now</button></div>' +
       '<h2>SharePoint access tester</h2><div class="card">' +
       '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Diagnostic: paste a SharePoint / OneDrive sharing link and test which method can read the file in-browser — anonymous (blocked) vs. Microsoft Graph (<code>downloadUrl</code>, works after sign-in). Opens in a new tab; your link &amp; token stay there, nothing is uploaded.</div>' +
@@ -1506,6 +1538,7 @@
       STATE.cfg.meClientId = document.getElementById('meClientId').value.trim();
       STATE.cfg.meClientSecret = document.getElementById('meClientSecret').value.trim();
       STATE.cfg.epssLive = document.getElementById('epssLive').checked;
+      STATE.cfg.recurThreshold = Math.max(1, parseInt(document.getElementById('recurThreshold').value, 10) || 1);
       save('vmops-config', STATE.cfg); applyBrand(); toast('Settings saved');
     });
     document.getElementById('resetSla').addEventListener('click', function () { STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla); save('vmops-config', STATE.cfg); viewSettings(); toast('SLA windows reset'); });
@@ -1605,9 +1638,9 @@
   }
 
   function viewWiz() {
-    setActive('dashboard');
+    setActive('wiz');
     app.innerHTML =
-      '<header class="view"><div class="overline">Operations Dashboard</div><h1>Wiz cloud findings</h1>' +
+      '<header class="view"><div class="overline">Cloud findings</div><h1>Wiz cloud findings</h1>' +
       '<p class="lede">Cloud (CNAPP) findings from Wiz — issues, toxic combinations, public exposure, and SLA — alongside your Tenable findings and agent coverage, so every vulnerability from Tenable <i>and</i> Wiz lives in one place.</p></header>' +
       privSlim() +
       '<div class="card" style="text-align:center;padding:40px 24px">' +
@@ -1664,7 +1697,7 @@
     return 'Dynamic' + (bits.length ? ' · ' + bits.join(', ') : ' · all findings');
   }
   function pbar(pct) { return '<span class="pbar"><span class="pbar-fill" style="width:' + pct + '%"></span></span> <span class="pbar-num">' + pct + '%</span>'; }
-  // Compact "Active campaigns" section for the Ops Dashboard ('' when there are none).
+  // Compact "Active campaigns" section for the Dashboard ('' when there are none).
   function dashCampaigns() {
     var camps = loadCampaigns().filter(function (c) { return c.status !== 'completed' && c.status !== 'cancelled'; });
     if (!camps.length) return '';
@@ -1896,6 +1929,7 @@
       if (qf.kev) { var it = cveIntel(f.cve); if (!it.kev && !it.exploit) return false; }
       if (qf.overdue && slaState(f) !== 'overdue') return false;
       if (qf.critical && f.severity !== 'Critical') return false;
+      if (qf.recurring && !isRecurring(f)) return false;
       if (qf.noagent && !ctNoAgent(f)) return false;
       if (q && (f.cve + ' ' + f.host + ' ' + (f.name || '') + ' ' + ctOwner(f)).toLowerCase().indexOf(q) < 0) return false;
       return true;
@@ -1927,7 +1961,7 @@
       (drag ? ' aria-roledescription="draggable card" aria-grabbed="' + (grabbed ? 'true' : 'false') + '" aria-describedby="ctKbdHelp"' : '') +
       ' aria-label="' + esc(aria) + '" data-key="' + esc(k) + '" style="border-left-color:var(' + (SEV_VAR[f.severity] || '--low') + ')">' +
       '<span class="ct-cbox' + (sel ? ' on' : '') + '" data-selk="' + esc(k) + '" role="checkbox" aria-checked="' + (sel ? 'true' : 'false') + '">' + (sel ? '✓' : '') + '</span>' +
-      '<div class="ct-r1"><a class="cve" href="' + CVE_DETAIL + esc(f.cve) + '" tabindex="-1">' + esc(f.cve) + '</a>' + intelChips(f.cve) + ' ' + priChip(f) + '</div>' +
+      '<div class="ct-r1"><a class="cve" href="' + CVE_DETAIL + esc(f.cve) + '" tabindex="-1">' + esc(f.cve) + '</a>' + intelChips(f.cve) + ' ' + priChip(f) + recurChip(f) + '</div>' +
       '<div class="ct-ttl">' + esc(f.name || f.desc || 'Vulnerability') + '</div>' +
       '<div class="ct-r2">' + ctSevBadge(f.severity) + '<span class="host">' + esc(f.host) + '</span>' + (ctNoAgent(f) ? '<span class="ct-flag" title="Host has no Tenable agent — coverage blind spot">NO AGENT</span>' : '') + '<span class="ct-epss">EPSS ' + epssCell(f) + '</span></div>' +
       '<div class="ct-r3">' + ctAvatar(ctOwner(f)) + ctDueBadge(f) + '</div></div>';
@@ -2125,7 +2159,7 @@
 
   var CT_SAVED = [['', 'Views…'], ['risk', 'SLA risk (Table, worst first)'], ['patch', 'By patch (Board)'], ['overdue', 'Overdue criticals (List)'], ['coverage', 'No-agent blind spots (Table)']];
   function ctApplySaved(v) {
-    if (v === 'coverage' && !ctCoverageKnown()) { toast('Load Agent Coverage first (Ops Dashboard → Agent Coverage)'); return; }
+    if (v === 'coverage' && !ctCoverageKnown()) { toast('Load Agent Coverage first (open Agent Coverage)'); return; }
     CT.qf = {}; CT.q = ''; CT.tcol = {};
     if (v === 'risk') { CT.view = 'table'; CT.sort = { k: 'vpr', dir: -1 }; }
     else if (v === 'patch') { CT.view = 'board'; CT.group = 'patch'; }
@@ -2255,7 +2289,7 @@
     var mount = document.getElementById('ctMount'); if (!mount) return;
     var tabs = '<div class="ct-tabs">' + CT_VIEWS.map(function (v) { return '<button class="ct-tab' + (v[0] === CT.view ? ' on' : '') + '" data-v="' + v[0] + '">' + v[1] + '</button>'; }).join('') + '</div>';
     var groupSel = (CT.view === 'board' || CT.view === 'list') ? '<label class="ct-ctl">Group <select id="ctGroup">' + CT_GROUPS.map(function (g) { return '<option value="' + g[0] + '"' + (CT.group === g[0] ? ' selected' : '') + '>' + g[1] + '</option>'; }).join('') + '</select></label>' : '';
-    var chips = ['kev:KEV / exploited', 'overdue:Overdue', 'critical:Critical', 'noagent:No agent'].map(function (q) { var p = q.split(':'); return '<button class="ct-qf' + (CT.qf[p[0]] ? ' on' : '') + '" data-q="' + p[0] + '"' + (p[0] === 'noagent' && !ctCoverageKnown() ? ' disabled title="Load Agent Coverage first"' : '') + '>' + p[1] + '</button>'; }).join('');
+    var chips = ['kev:KEV / exploited', 'overdue:Overdue', 'critical:Critical', 'recurring:Recurring', 'noagent:No agent'].map(function (q) { var p = q.split(':'); return '<button class="ct-qf' + (CT.qf[p[0]] ? ' on' : '') + '" data-q="' + p[0] + '"' + (p[0] === 'noagent' && !ctCoverageKnown() ? ' disabled title="Load Agent Coverage first"' : '') + '>' + p[1] + '</button>'; }).join('');
     var toolbar = '<div class="ct-toolbar">' + groupSel + '<div class="ct-qfs">' + chips + '</div><input class="ct-search" id="ctSearch" type="text" placeholder="Search CVE, host, owner…" value="' + esc(CT.q) + '">' +
       '<span style="flex:1"></span><select id="ctSaved" class="ct-ctl">' + CT_SAVED.map(function (s) { return '<option value="' + s[0] + '">' + s[1] + '</option>'; }).join('') + '</select><button class="btn sm" id="ctAuto">⚙ Automations</button></div>';
     mount.innerHTML = tabs + toolbar + '<div class="bulkbar" id="ctBulk" hidden></div><div class="ct-body" id="ctBody"></div>' +
@@ -2276,8 +2310,9 @@
     var ov = document.getElementById('ctModal') || (function () { var d = document.createElement('div'); d.id = 'ctModal'; d.className = 'ct-modal vmops'; document.body.appendChild(d); return d; })();
     ov.innerHTML = '<div class="ct-mcard"><button class="x" id="ctMx">×</button><h3 style="margin:0 0 3px">Automations</h3><div class="muted" style="font-size:12.5px;margin-bottom:12px">What runs today vs. what\'s planned.</div>' +
       [['Rescan reconcile', 'Re-importing a scan auto-resolves any open finding that no longer appears (with a dated update).', true],
+       ['Tenable State=Fixed → Resolved', 'When the export has a "State" column, a still-listed row marked Fixed auto-resolves, not just vanished rows.', true],
+       ['Reopen on recurrence', 'A resolved finding that shows up again (still active) reopens, and its reopen count is tracked so recurring / flapping findings stand out.', true],
        ['KEV → priority', 'KEV / ransomware / exploited findings are surfaced as P1 by the risk model everywhere.', true],
-       ['Tenable State=Fixed → Resolved', 'Parse the Tenable "State" column so a still-present-but-Fixed row resolves.', false],
        ['EPSS ≥ 90% → escalate to lead', 'Auto-notify the campaign owner when EPSS crosses the threshold.', false],
        ['No-agent → block auto-close', 'Prevent auto-resolving a finding whose host has no scanner agent.', false]].map(function (r) {
         return '<div class="ct-rule"><span class="ct-sw ' + (r[2] ? 'on' : '') + '"></span><div><div style="font-weight:600;font-size:13px">' + r[0] + ' <span class="muted" style="font-weight:400;font-size:11px">' + (r[2] ? 'active' : 'planned') + '</span></div><div class="muted" style="font-size:12px">' + r[1] + '</div></div></div>';

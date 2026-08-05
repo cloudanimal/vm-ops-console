@@ -13,7 +13,7 @@ Everything runs in your browser. Scan exports, findings, notes, and API keys sta
 ## What's inside
 
 - **Ask AI** — describe what you want in plain English; a small **on-device** language model (Transformers.js, downloaded once from a public CDN) maps it to the app's *own* searches and filters (never invents CVEs), then the app runs them against real data. No API key, nothing leaves your browser.
-- **Findings workbench** — import scanner findings (Tenable today; more sources on the roadmap), triage by status/owner/SLA, keep per-finding notes and a dated **status-update log**, and open Jira/ServiceNow tickets.
+- **Findings workbench** — import scanner findings (Tenable today; more sources on the roadmap), triage by status/owner/SLA, keep per-finding notes and a dated **status-update log**, and open Jira/ServiceNow tickets. Re-importing a scan reconciles state: findings that are gone (or marked **Fixed** in the Tenable "State" column) auto-resolve, and a resolved finding that shows up again reopens. Each reopen is counted, so **recurring / flapping** findings (a fix that keeps coming undone) surface via a chip, a "Recurring" filter, and a dashboard KPI.
 - **Tenable VM dashboard** — upload Tenable SC cumulative + mitigated exports for instant KPIs, severity/SLA breakdowns, top findings, and one-click report exports.
 - **Agent coverage dashboard** — reconcile Active Directory against ManageEngine, Tenable, and CrowdStrike agents to find coverage gaps.
 - **CVE intelligence** — search, browse, KEV/EPSS/exploit signals, statistics, and a daily Morning Report on what's newly exploitable (on Mondays it rolls up the whole weekend — everything released since Friday).

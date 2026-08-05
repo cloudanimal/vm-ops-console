@@ -16,7 +16,7 @@
 .vmops .kpi .label { font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--faint); }
 .vmops .kpi .num { font-family:var(--serif); font-size:30px; line-height:1.1; margin:6px 0 2px; }
 .vmops .kpi .sub { font-size:12.5px; color:var(--soft); }
-.vmops .kpi.crit .num { color:var(--crit); } .vmops .kpi.ok .num { color:var(--ok); }
+.vmops .kpi.crit .num { color:var(--crit); } .vmops .kpi.ok .num { color:var(--ok); } .vmops .kpi.warn .num { color:var(--high); }
 
 /* "Start here" workflow strip (Ops dashboard) — horizontal stage bar, each stage links into its view */
 .vmops .wfstrip { border:1px solid var(--line); border-radius:12px; background:color-mix(in srgb, var(--accent) 4%, var(--surface)); padding:12px 14px; margin:20px 0; }
@@ -100,6 +100,7 @@
 .vmops .ichip.kev, .vmops .ichip.rw { color:var(--badge-ink); background:var(--crit); }
 .vmops .ichip.poc { color:var(--badge-ink); background:var(--high); }
 .vmops .ichip.new { color:var(--badge-ink); background:var(--accent); }
+.vmops .ichip.recur { color:var(--high); background:color-mix(in srgb,var(--high) 15%,transparent); border:1px solid color-mix(in srgb,var(--high) 45%,transparent); }
 .vmops table.grid tr.grouprow { cursor:pointer; background:color-mix(in srgb,var(--accent) 6%,transparent); }
 .vmops table.grid tr.grouprow:hover { background:color-mix(in srgb,var(--accent) 11%,transparent); }
 .vmops table.grid tr.grouprow td { border-bottom:1px solid var(--line); }

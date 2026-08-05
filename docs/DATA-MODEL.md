@@ -26,13 +26,15 @@ findings — this is intentional but means counts are CVE×host, not Tenable's p
 ```js
 { cve, host, severity /* Critical|High|Medium|Low */, cvss /* number|null */,
   vpr /* number|null */, plugin, name, desc, repo, source /* 'Tenable' */,
-  firstSeen /* ISO date */, lastSeen /* ISO date, set on rescan merge */ }
+  firstSeen /* ISO date */, lastSeen /* ISO date, set on rescan merge */,
+  state /* normalized Tenable state: '' | 'fixed' | 'reopened' | 'active' | 'new' (from the "State" column when present) */ }
 ```
 
 ### `Override` (`STATE.ov[key]`)
 User-applied triage state, kept separate from the imported finding so re-imports don't lose it.
 ```js
 { status /* one of STATUS keys */, owner, notes,
+  reopens /* integer: times reopened after being resolved (recurrence / flapping) */,
   updates: [{ at /* ISO */, text }],        // dated status-update log
   ticket:  { sys /* 'jira'|'snow' */, key, url, status, synced },
   updated /* ISO */ }
@@ -43,6 +45,12 @@ User-applied triage state, kept separate from the imported finding so re-imports
 - `ovOf(f) = STATE.ov[keyOf(f)] || {}`.
 - Rescan/merge preserves the earliest `firstSeen`, stamps `lastSeen`, auto-resolves open findings absent
   from the new scan, and tracks newly-seen keys in `STATE._newKeys` (drives the "New" chip + filter).
+- **State-aware reconcile** (only when the export carries a Tenable "State" / "Vulnerability State" column):
+  a still-listed finding marked `fixed` is auto-resolved; a resolved finding that reappears still-active is
+  **reopened** and its `reopens` count is incremented. A resolved finding that reappears marked `fixed` stays
+  resolved (e.g. a Tenable mitigated export), so a fixed record cannot un-resolve real work. The `reopens`
+  count drives the "recurring / flapping" chip, the Recurring filter, and the Recurring KPI. With no State
+  column the reconcile stays presence-only (the older behavior), so plain CVE exports are unaffected.
 
 ### `STATUS` (the triage lifecycle) — exact
 ```
