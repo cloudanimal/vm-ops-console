@@ -475,7 +475,7 @@ function buildModel(){
     (STATE[k]||[]).forEach(r=>{ const key=norm(nm?r[nm]:r[Object.keys(r)[0]]); if(key && !adKeys.has(key))
       orphans.push({ source:AGENT_NAME[k], host:(nm?r[nm]:key), seen:(sources[k].seen?r[sources[k].seen]:'') }); }); });
 
-  return { ad, sources, matched, orphans, adNameCol };
+  return { ad, sources, matched, orphans, adNameCol, loaded: AKEYS.filter(k=>(STATE[k]||[]).length) };
 }
 
 // Intune temporarily removed — needs a different inventory-model approach (AD ∪ Intune), to be reintroduced.
@@ -680,10 +680,10 @@ function buildMatrix(M, inScope){
     <div class="controls">
       <input id="mxSearch" placeholder="Search host…" style="min-width:160px">
       <select id="mxView"><option value="all">All in-scope</option><option value="gaps">Has a gap</option><option value="none">No coverage</option><option value="full">Fully covered</option><option value="stale">Any stale</option><option value="invalid">Any invalid</option><option value="unhealthy">Unhealthy</option></select>
-      <select id="mxSeg"><option value="">All segments</option>${segs.map(s=>`<option>${s}</option>`).join('')}</select>
-      <select id="mxDomain"><option value="">All domains</option>${domains.map(s=>`<option>${s}</option>`).join('')}</select>
-      <select id="mxOu"><option value="">All OUs</option>${ous.map(s=>`<option>${s}</option>`).join('')}</select>
-      <select id="mxOs"><option value="">All OS</option>${oses.map(s=>`<option>${s}</option>`).join('')}</select>
+      <select id="mxSeg"><option value="">All segments</option>${segs.map(s=>`<option>${escH(s)}</option>`).join('')}</select>
+      <select id="mxDomain"><option value="">All domains</option>${domains.map(s=>`<option>${escH(s)}</option>`).join('')}</select>
+      <select id="mxOu"><option value="">All OUs</option>${ous.map(s=>`<option>${escH(s)}</option>`).join('')}</select>
+      <select id="mxOs"><option value="">All OS</option>${oses.map(s=>`<option>${escH(s)}</option>`).join('')}</select>
       <select id="mxType"><option value="">All types</option>${types.map(t=>`<option>${t}</option>`).join('')}</select>
       <span class="sub" id="mxCount"></span>
     </div>
@@ -712,13 +712,14 @@ function buildMatrix(M, inScope){
       rows.sort((a,b)=>{ let x=keyVal(a),y=keyVal(b); if(typeof x==='string'){x=x.toUpperCase();y=String(y).toUpperCase();} return (x>y?1:x<y?-1:0)*dir; }); }
     $('#mxCount').textContent = rows.length.toLocaleString()+' of '+inScope.length.toLocaleString();
     $('#mxBody').innerHTML = rows.slice(0,2000).map(c=>`<tr>
-      <td>${c.name}</td><td>${c.seg}</td><td style="font-size:12px">${c.domain}</td><td style="font-size:12px">${c.ou}</td><td style="font-size:12px">${c.os}</td><td>${c.type}</td>
+      <td>${escH(c.name)}</td><td>${escH(c.seg)}</td><td style="font-size:12px">${escH(c.domain)}</td><td style="font-size:12px">${escH(c.ou)}</td><td style="font-size:12px">${escH(c.os)}</td><td>${c.type}</td>
       <td>${c.enabled?'<span class="pill ok">Yes</span>':'<span class="pill muted">No</span>'}</td>
       ${AGENTS.map(a=>`<td>${cell(c.cov[a[0]])}</td>`).join('')}
       <td class="num">${c.nAgents===AKEYS.length?`<span class="pill ok">${AKEYS.length}/${AKEYS.length}</span>`:c.nAgents===0?`<span class="pill gap">0/${AKEYS.length}</span>`:c.nAgents+'/'+AKEYS.length}</td></tr>`).join('')
       + (rows.length>2000?`<tr><td colspan="${8+AKEYS.length}" class="sub">Showing first 2,000 of ${rows.length.toLocaleString()} — refine filters or export the full set.</td></tr>`:'');
   };
-  ['mxSearch','mxView','mxSeg','mxDomain','mxOu','mxOs','mxType'].forEach(id=>$('#'+id).addEventListener('input',fill));
+  let _mxT; const fillD=()=>{ clearTimeout(_mxT); _mxT=setTimeout(fill,150); };   // debounce the heavy rebuild so it fires once per pause, not per keystroke
+  ['mxSearch','mxView','mxSeg','mxDomain','mxOu','mxOs','mxType'].forEach(id=>$('#'+id).addEventListener('input',fillD));
   $('#matrixPanel').querySelectorAll('th[data-s]').forEach(th=>{ th.style.cursor='pointer';
     th.addEventListener('click',()=>{
       const k=th.dataset.s; STATE._sort = STATE._sort && STATE._sort.k===k ? {k,dir:-STATE._sort.dir} : {k,dir:1};
@@ -734,7 +735,7 @@ function buildMatrix(M, inScope){
 
 function buildOrphans(M){
   if(!M.orphans.length){ return; }
-  const rows = M.orphans.slice(0,2000).map(o=>`<tr><td>${o.host}</td><td>${o.source}</td><td style="font-size:12px">${o.seen||''}</td></tr>`).join('');
+  const rows = M.orphans.slice(0,2000).map(o=>`<tr><td>${escH(o.host)}</td><td>${o.source}</td><td style="font-size:12px">${escH(o.seen||'')}</td></tr>`).join('');
   $('#dashboard').insertAdjacentHTML('beforeend', `<div class="panel" id="orphanPanel"><h3>Orphan agents <span class="sub">— reporting in but not found in Active Directory (decommissioned, renamed, or rogue)</span></h3>
     <div class="scrollwrap"><table><thead><tr><th>Host</th><th>Source</th><th>Last seen</th></tr></thead><tbody>${rows}</tbody></table></div></div>`);
   makeSortable($('#orphanPanel table'));
@@ -866,7 +867,7 @@ async function loadSample(build){
 }
 
 // ---------- exports ----------
-function csvEsc(v){ v=v==null?'':String(v); return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v; }
+function csvEsc(v){ v=v==null?'':String(v); if(/^[=+\-@\t\r]/.test(v)) v="'"+v; return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v; }
 function toCsv(cols, rows){ return [cols.map(csvEsc).join(',')].concat(rows.map(r=>r.map(csvEsc).join(','))).join('\n'); }
 function dl(name, text, mime){ const b=new Blob([text],{type:mime||'text/plain'}); const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download=name; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),800); }
 

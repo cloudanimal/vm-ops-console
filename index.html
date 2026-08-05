@@ -435,7 +435,7 @@
     <a href="https://www.first.org/epss/" target="_blank" rel="noopener">EPSS (FIRST)</a>,
     <a href="https://osv.dev" target="_blank" rel="noopener">OSV.dev</a>, and the
     <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV catalog</a>.
-    Built by <a href="https://cloudanimal.github.io" target="_blank" rel="noopener">Joe Cook</a>. <span class="appver" title="Release version">v1.1.0</span>
+    Built by <a href="https://cloudanimal.github.io" target="_blank" rel="noopener">Joe Cook</a>. <span class="appver" title="Release version">v1.1.1</span>
     <div class="disclaimer"><span class="brandname">VM Ops Console</span> runs entirely in your browser — public CVE lookups are read-only, and your imported findings, scan data, and settings stay local. Risk signals (CVSS, EPSS, KEV, LEV, SSVC) often disagree by design. Always confirm against the vendor before acting.</div>
   </footer>
 
@@ -504,6 +504,8 @@
 
   // ---------- tiny helpers ----------
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]; }); }
+  function safeUrl(u){ u = String(u==null?'':u).trim(); return /^(https?:|mailto:|#|\/)/i.test(u) ? u : '#'; }
+  function safeDecode(s){ try { return decodeURIComponent(s); } catch(e){ return s; } }
   function el(html) { var d = document.createElement('div'); d.innerHTML = html; return d; }
   function getJSON(url, opts) { return fetch(url, opts || {}).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error(r.status)); }); }
   function softJSON(url) { return fetch(url).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
@@ -657,7 +659,7 @@
       d.items.slice(0, 25).forEach(function (it) {
         var cves = (it.cves || []).slice(0, 4).map(function (c) { return '<a class="cvechip" href="#/cve/' + esc(c) + '">' + esc(c) + '</a>'; }).join('');
         var more = (it.cves || []).length > 4 ? '<span class="muted" style="font-size:12px"> +' + ((it.cves || []).length - 4) + '</span>' : '';
-        h += '<div class="det"><div class="det-main"><a class="det-title" href="' + esc(it.link) + '" target="_blank" rel="noopener">' + esc(it.title) + '</a>' +
+        h += '<div class="det"><div class="det-main"><a class="det-title" href="' + esc(safeUrl(it.link)) + '" target="_blank" rel="noopener">' + esc(it.title) + '</a>' +
           (it.severity ? ' <span class="badge ' + (sevCls[it.severity] || '') + '">' + esc(it.severity) + '</span>' : '') +
           (it.id ? ' <span class="muted" style="font-family:var(--mono);font-size:12px">#' + esc(it.id) + '</span>' : '') +
           '</div>' + (cves ? '<div class="det-cves">' + cves + more + '</div>' : '') + '</div>';
@@ -918,7 +920,7 @@
       h.push('<details class="block"><summary>Patches &amp; advisories <span class="count">' + patches.length + '</span></summary><div class="sub">NVD references tagged as patch, vendor advisory, or mitigation</div><ul class="reflist">');
       patches.forEach(function (r) {
         var tags = (r.tags || []).filter(function (t) { return patchTags.indexOf(t) > -1; }).map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('');
-        h.push('<li>' + tags + '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.url) + '</a></li>');
+        h.push('<li>' + tags + '<a href="' + esc(safeUrl(r.url)) + '" target="_blank" rel="noopener">' + esc(r.url) + '</a></li>');
       });
       h.push('</ul></details>');
     }
@@ -926,7 +928,7 @@
       h.push('<details class="block"><summary>All references <span class="count">' + refs.length + '</span></summary><ul class="reflist">');
       refs.forEach(function (r) {
         var tags = (r.tags || []).map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('');
-        h.push('<li>' + tags + '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.url) + '</a></li>');
+        h.push('<li>' + tags + '<a href="' + esc(safeUrl(r.url)) + '" target="_blank" rel="noopener">' + esc(r.url) + '</a></li>');
       });
       h.push('</ul></details>');
     }
@@ -939,7 +941,7 @@
       if (!r || !blk || !body) return;
       if (lang) { lang.textContent = r.lang + (r.generic ? ' · generic' : ''); lang.className = 'remed-badge' + (r.generic ? ' gen' : ''); }
       body.innerHTML = '<div class="remed-title">' + esc(r.title) + '</div><pre class="remed-code">' + esc(r.script) + '</pre>' +
-        (r.playbook ? '<div style="margin:8px 0"><a href="' + esc(r.playbook) + '" target="_blank" rel="noopener">Full playbook ↗</a></div>' : '') +
+        (r.playbook ? '<div style="margin:8px 0"><a href="' + esc(safeUrl(r.playbook)) + '" target="_blank" rel="noopener">Full playbook ↗</a></div>' : '') +
         '<div style="margin-top:10px"><button class="btn sm" id="cveRemedCopy" type="button">Copy</button></div>';
       blk.style.display = '';
       var cb = document.getElementById('cveRemedCopy'); if (cb) cb.addEventListener('click', function () { VMOPS.remediation.copy(r.script); });
@@ -951,6 +953,7 @@
   // results inside the Search view, keeping the search box and examples above.
   function viewBrowse(params) {
     viewSearch('');
+    setActive('browse');
     var now = new Date().getFullYear();
     var years = []; for (var y = now; y >= 1999; y--) years.push(y);
     var p = params || {};
@@ -1006,6 +1009,7 @@
   // the Search view, so the search box and examples stay put above them.
   function viewLatest(params) {
     viewSearch('');
+    setActive('latest');
     var p = params || {};
     var days = p.days || '1';
     var mode = p.mode === 'modified' ? 'modified' : 'published';
@@ -1769,7 +1773,7 @@
     { re: /^#\/cve\/CVE-\d{4}-\d{4,}$/i, hint: 'a specific CVE detail page' },
     { re: /^#\/report$/i, hint: 'Morning Report — daily new + newly-exploitable briefing' },
     { re: /^#\/search\/[^/]+$/i, hint: 'keyword/product search' },
-    { re: /^#\/latest(\?(days=(1|7|14|30))?(&?mode=(published|updated))?)?$/i, hint: 'recently published/updated CVEs' },
+    { re: /^#\/latest(\?(days=(1|7|14|30))?(&?mode=(published|modified))?)?$/i, hint: 'recently published/updated CVEs' },
     { re: /^#\/browse(\?(year=(19|20)\d\d)?(&?sev=(CRITICAL|HIGH|MEDIUM|LOW))?(&?cwe=CWE-\d+)?)*$/i, hint: 'browse corpus by year/severity/CWE' },
     { re: /^#\/kev(\?(due=(overdue|due7|due30|ransom)|q=[^&]+))?$/i, hint: 'Exploited — CISA KEV catalog' },
     { re: /^#\/exploited(\?days=(1|7|14|30))?$/i, hint: 'Exploited — all-sources known-exploited feed (optionally ?days= for recent exploitation)' },
@@ -1844,7 +1848,7 @@
     { label: 'Exploited (all sources)', phrases: ['what became exploitable', 'what became exploitable in the last 24 hours', 'newly exploitable vulnerabilities', 'recently exploited vulnerabilities', 'known exploited vulnerabilities', 'all known exploited vulnerabilities', 'public proof of concept exploits', 'exploitation intelligence all sources', 'what has exploits available'],
       build: function (q, s) { return s.days ? '#/exploited?days=' + s.days : '#/exploited'; } },
     { label: 'Latest CVEs', phrases: ['newest CVEs', 'recently published vulnerabilities', 'CVEs from the last week', 'latest vulnerabilities', 'what was published recently'],
-      build: function (q, s) { return '#/latest?days=' + (s.days || '7') + '&mode=' + (s.updated ? 'updated' : 'published'); } },
+      build: function (q, s) { return '#/latest?days=' + (s.days || '7') + '&mode=' + (s.updated ? 'modified' : 'published'); } },
     { label: 'Browse corpus', phrases: ['browse CVEs by year', 'CVEs from a specific year', 'filter the corpus by severity', 'browse vulnerabilities'],
       build: function (q, s) { var p = []; if (s.year) p.push('year=' + s.year); if (s.sev) p.push('sev=' + s.sev); return '#/browse' + (p.length ? '?' + p.join('&') : ''); } },
     { label: 'Statistics', route: '#/stats', phrases: ['CVE statistics', 'trends over time', 'how many CVEs per year', 'corpus statistics'] },
@@ -1973,7 +1977,7 @@
     if (!box) return;
     box.innerHTML = spinner('Loading results…');
     var m, p = parseQuery((route.split('?')[1] || ''));
-    if ((m = route.match(/^#\/search\/(.+)$/i))) return runSearch(decodeURIComponent(m[1]), box);
+    if ((m = route.match(/^#\/search\/(.+)$/i))) return runSearch(safeDecode(m[1]), box);
     if ((m = route.match(/^#\/cve\/(CVE-\d{4}-\d{4,})$/i))) {
       var id = m[1].toUpperCase();
       return getJSON(NVD + '?cveId=' + id).then(function (d) {
@@ -1986,7 +1990,7 @@
     if (route.indexOf('#/browse') === 0) return runBrowse(p.year || String(new Date().getFullYear()), p.sev || '', p.cwe || '', box);
     if (route.indexOf('#/kev') === 0) return loadKev().then(function (d) { if (!d) { box.innerHTML = errBox('KEV data not built yet.'); return; } askRenderKev(box, p); });
     if (route.indexOf('#/exploited') === 0) return softJSON('data/exploited.json').then(function (d) { if (!d) { box.innerHTML = errBox('Exploited dataset not built yet.'); return; } askRenderExploited(box, d, p.days ? parseInt(p.days, 10) : 0); });
-    if ((m = route.match(/^#\/compare\/(.+)$/i))) return runCompareList(decodeURIComponent(m[1]), box);
+    if ((m = route.match(/^#\/compare\/(.+)$/i))) return runCompareList(safeDecode(m[1]), box);
     if (route === '#/report') {
       var freshJSON = function (u) { return fetch(u, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); };
       return Promise.all([loadKev(), freshJSON('data/epss_movers.json'), freshJSON('data/exploited.json'), freshJSON('data/tenable_latest.json')])
@@ -2074,7 +2078,7 @@
     app.innerHTML = reportHead() + spinner('Compiling this morning’s briefing…');
     // fetch fresh (no-store) — a morning briefing should never render a cached copy
     var freshJSON = function (u) { return fetch(u, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); };
-    Promise.all([loadKev(), freshJSON('data/epss_movers.json'), freshJSON('data/exploited.json'), freshJSON('data/tenable_latest.json')]).then(function (r) {
+    Promise.all([freshJSON('data/kev.json'), freshJSON('data/epss_movers.json'), freshJSON('data/exploited.json'), freshJSON('data/tenable_latest.json')]).then(function (r) {
       renderReport(r[0], r[1], r[2], r[3]);
     });
   }
@@ -2137,7 +2141,7 @@
           var cves = (it.cves || []).slice(0, 4).map(function (c) { return '<a class="cvechip" href="#/cve/' + esc(c) + '">' + esc(c) + '</a>'; }).join('');
           var more = (it.cves || []).length > 4 ? ' <span class="muted" style="font-size:12px">+' + ((it.cves || []).length - 4) + '</span>' : '';
           var sev = it.severity ? '<span class="badge ' + (sevCls[it.severity] || '') + '">' + esc(it.severity) + '</span>' : '<span class="muted">—</span>';
-          return '<tr><td style="white-space:normal;max-width:380px"><a href="' + esc(it.link) + '" target="_blank" rel="noopener">' + esc(it.title) + '</a></td>' +
+          return '<tr><td style="white-space:normal;max-width:380px"><a href="' + esc(safeUrl(it.link)) + '" target="_blank" rel="noopener">' + esc(it.title) + '</a></td>' +
             '<td>' + sev + '</td><td style="white-space:normal;max-width:240px">' + (cves ? cves + more : '<span class="muted">—</span>') + '</td>' +
             '<td class="muted" style="font-family:var(--mono);font-size:12px">' + esc(it.id || '') + '</td></tr>';
         }).join('') + '</tbody></table>'
@@ -2859,7 +2863,7 @@
 
   // ---------- router ----------
   function serialize(o) { return Object.keys(o).filter(function (k) { return o[k]; }).map(function (k) { return k + '=' + encodeURIComponent(o[k]); }).join('&'); }
-  function parseQuery(s) { var o = {}; (s || '').split('&').forEach(function (kv) { if (!kv) return; var i = kv.indexOf('='); o[kv.slice(0, i)] = decodeURIComponent(kv.slice(i + 1)); }); return o; }
+  function parseQuery(s) { var o = {}; (s || '').split('&').forEach(function (kv) { if (!kv) return; var i = kv.indexOf('='); if (i < 0) { o[kv] = ''; return; } o[kv.slice(0, i)] = safeDecode(kv.slice(i + 1)); }); return o; }
 
   // ---------- End of Life (endoflife.date v1 API — full data + category selector, CORS-open, no key) ----------
   var EOL_WATCH = ['windows', 'windows-server', 'macos', 'ubuntu', 'debian', 'rhel', 'centos', 'sles', 'python', 'nodejs', 'php', 'dotnet', 'mssqlserver', 'mysql', 'postgresql', 'mongodb', 'redis', 'nginx', 'apache', 'kubernetes'];
@@ -3014,8 +3018,8 @@
       if (r.versionCommand) sub.push('Version check: <code>' + esc(r.versionCommand) + '</code>');
       if (r.identifiers && r.identifiers.length) sub.push('Identifiers: ' + r.identifiers.map(function (id) { return esc(typeof id === 'object' ? ((id.type ? id.type + ':' : '') + (id.id || '')) : id); }).join(', '));
       var linkbits = [];
-      if (links.html) linkbits.push('<a href="' + esc(links.html) + '" target="_blank" rel="noopener">endoflife.date page ↗</a>');
-      if (links.releasePolicy) linkbits.push('<a href="' + esc(links.releasePolicy) + '" target="_blank" rel="noopener">Vendor release policy ↗</a>');
+      if (links.html) linkbits.push('<a href="' + esc(safeUrl(links.html)) + '" target="_blank" rel="noopener">endoflife.date page ↗</a>');
+      if (links.releasePolicy) linkbits.push('<a href="' + esc(safeUrl(links.releasePolicy)) + '" target="_blank" rel="noopener">Vendor release policy ↗</a>');
       var showCode = rels.some(function (x) { return x.codename; });
       var showLts = rels.some(function (x) { return x.isLts; });
       var showEoas = rels.some(function (x) { return x.eoasFrom != null || x.isEoas != null; });
@@ -3028,7 +3032,7 @@
         '<th>Latest</th>' + (showCustom ? '<th>More</th>' : '') + '<th>Status</th></tr>';
       var body = rels.map(function (rel) {
         var s = eolRelStatus(rel), latest = rel.latest || {};
-        var latestCell = latest.name ? ((latest.link ? '<a href="' + esc(latest.link) + '" target="_blank" rel="noopener">' + esc(latest.name) + '</a>' : esc(latest.name)) + (latest.date ? ' <span class="muted" style="font-size:11px">' + esc(latest.date) + '</span>' : '')) : '—';
+        var latestCell = latest.name ? ((latest.link ? '<a href="' + esc(safeUrl(latest.link)) + '" target="_blank" rel="noopener">' + esc(latest.name) + '</a>' : esc(latest.name)) + (latest.date ? ' <span class="muted" style="font-size:11px">' + esc(latest.date) + '</span>' : '')) : '—';
         var customCell = (rel.custom && typeof rel.custom === 'object') ? Object.keys(rel.custom).map(function (k) { var v = rel.custom[k]; return esc(k) + ': ' + esc(typeof v === 'object' ? JSON.stringify(v) : String(v)); }).join('<br>') : '';
         return '<tr>' +
           '<td><b>' + esc(rel.label || rel.name) + '</b>' + (rel.label && rel.label !== rel.name ? ' <span class="muted" style="font-size:11px">' + esc(rel.name) + '</span>' : '') + (rel.isMaintained === false ? ' <span class="eol-dead" style="font-size:11px">unmaintained</span>' : '') + '</td>' +
@@ -3051,6 +3055,7 @@
     }).catch(function () { box.innerHTML = errBox('Could not load ' + esc(product) + '.'); });
   }
   function route() {
+    try {
     clearInterval(freshTimer);   // stop the freshness auto-refresh when leaving About
     if (aboutScroll) { window.removeEventListener('scroll', aboutScroll); aboutScroll = null; }
     var hash = location.hash.replace(/^#/, '') || '/';
@@ -3061,32 +3066,37 @@
     window.scrollTo(0, 0);
     updateDashTabs(parts[0]);   // show/hide the Ops Dashboard tab strip + mark the active section
     // VM Ops operational pages live in vmops.js; dispatch to them and scope #app to .vmops.
-    if (window.VMOPS && window.VMOPS[parts[0]]) { setActive(parts[0]); window.VMOPS[parts[0]](); return; }
+    if (window.VMOPS && typeof window.VMOPS[parts[0]] === 'function') { setActive(parts[0]); window.VMOPS[parts[0]](); return; }
     if (parts[0] === 'agent-coverage' && window.ACD) { setActive('dashboard'); window.ACD.open(); return; }
     if (parts[0] === 'tvd' && window.TVD) { setActive('dashboard'); window.TVD.open(); return; }
     if (parts[0] === 'prompt-scanner' && window.PSCAN) { setActive('prompt-scanner'); window.PSCAN.open(); return; }
     var _appEl = document.getElementById('app'); if (_appEl) _appEl.className = '';
     if (parts.length === 0) return viewAsk();
     if (parts[0] === 'report') return viewReport();
-    if (parts[0] === 'search') return viewSearch(parts[1] ? decodeURIComponent(parts[1]) : '');
-    if (parts[0] === 'cve' && parts[1]) return viewDetail(decodeURIComponent(parts[1]).toUpperCase());
-    if (parts[0] === 'triage') return viewTriage(parts[1] ? decodeURIComponent(parts[1]) : '', parseQuery(query).view === 'compare' ? 'compare' : 'table');
+    if (parts[0] === 'search') return viewSearch(parts[1] ? safeDecode(parts[1]) : '');
+    if (parts[0] === 'cve' && parts[1]) return viewDetail(safeDecode(parts[1]).toUpperCase());
+    if (parts[0] === 'triage') return viewTriage(parts[1] ? safeDecode(parts[1]) : '', parseQuery(query).view === 'compare' ? 'compare' : 'table');
     if (parts[0] === 'analyze') return viewAnalyze();
     if (parts[0] === 'nasl') return viewNasl();
     if (parts[0] === 'detections') return viewDetections();
-    if (parts[0] === 'compare') return viewTriage(parts[1] ? decodeURIComponent(parts[1]).toUpperCase() : '', 'compare');
+    if (parts[0] === 'compare') return viewTriage(parts[1] ? safeDecode(parts[1]).toUpperCase() : '', 'compare');
     if (parts[0] === 'latest') return viewLatest(parseQuery(query));
     if (parts[0] === 'browse') return viewBrowse(parseQuery(query));
     if (parts[0] === 'kev') return viewKev(parseQuery(query));
     if (parts[0] === 'exploited') return viewExplorer();
     if (parts[0] === 'stats') return viewStats(parseQuery(query));
     if (parts[0] === 'tte') return viewStats({ tab: 'tte' });
-    if (parts[0] === 'eol') return viewEol({ product: parts[1] ? decodeURIComponent(parts[1]) : '', tag: parseQuery(query).tag || '' });
+    if (parts[0] === 'eol') return viewEol({ product: parts[1] ? safeDecode(parts[1]) : '', tag: parseQuery(query).tag || '' });
     if (parts[0] === 'data') return viewAbout();
     if (parts[0] === 'ask') return viewAsk();
     if (parts[0] === 'about') return viewAbout();
     if (parts[0] === 'faq') return viewFaq();
+    console.warn('vm-ops-console: unknown route "' + path + '", falling back to Search.');
     return viewSearch('');
+    } catch (e) {
+      console.error('vm-ops-console: route() failed, falling back to Search.', e);
+      return viewSearch('');
+    }
   }
   window.addEventListener('hashchange', route);
 

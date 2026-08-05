@@ -170,6 +170,14 @@ function setState(){ const s=$('#loadState'); if(s) s.textContent =
 function isDataSheet(rows){
   return rows.length && rows.some(r => ('pluginID' in r) || ('exploitAvailable' in r) || ('severity' in r));
 }
+// Permissive schema check for uploaded CSV / JSON: case-insensitive column match, tolerates extra columns.
+const SCHEMA_KEYS = ['pluginid','pluginname','severity','exploitavailable','dnsname','ip','cve','vulnpubdate','firstseen'];
+function hasTenableSchema(rows){
+  if(!rows || !rows.length) return false;
+  const first = rows.find(r => r && typeof r==='object'); if(!first) return false;
+  const present = {}; Object.keys(first).forEach(k => { present[String(k).toLowerCase()] = true; });
+  return SCHEMA_KEYS.some(k => present[k]);
+}
 const isMitigated = r => String(r.hasBeenMitigated).toLowerCase()==='yes';
 function classify(rows, name){
   const n = (name||'').toLowerCase();
@@ -248,24 +256,30 @@ async function handleFiles(fileList, forcedKind){
   if(!fileList || !fileList.length) return;
   showLoading('Reading file…'); await nextPaint();
   try{
+  let matched = false;
   for(const f of fileList){
     const ext = f.name.split('.').pop().toLowerCase();
     if(ext==='xlsx'||ext==='xls'){
       const wb = XLSX.read(await f.arrayBuffer(), {type:'array'});
       wb.SheetNames.forEach(sn=>{
         const rows = XLSX.utils.sheet_to_json(wb.Sheets[sn], {defval:''});
-        if(isDataSheet(rows)) addRows(rows, sn);
+        if(isDataSheet(rows)){ addRows(rows, sn); matched=true; }
       });
     } else if(ext==='csv'){
       const rows = Papa.parse(await f.text(), {header:true, skipEmptyLines:true, dynamicTyping:false}).data;
-      addRows(rows, f.name, forcedKind);
+      if(hasTenableSchema(rows)){ addRows(rows, f.name, forcedKind); matched=true; }
     } else if(ext==='json' || ext==='jsonl' || ext==='ndjson'){
       const data = parseJsonMaybeLines(await f.text());
-      if(data.length && isTioRecord(data[0])) ingestTio(data);   // Tenable.io export → map + auto-split by state
-      else addRows(data, f.name, forcedKind);
+      if(data.length && isTioRecord(data[0])){ ingestTio(data); matched=true; }   // Tenable.io export → map + auto-split by state
+      else if(hasTenableSchema(data)){ addRows(data, f.name, forcedKind); matched=true; }
     }
   }
   setState();
+  if(!matched){
+    const note=document.getElementById('loadState');
+    if(note){ note.innerHTML='&#9888; That file does not look like a Tenable export (expected columns such as <code>pluginID</code>, <code>pluginName</code>, <code>severity</code>, or <code>exploitAvailable</code> were not found). Upload a Tenable.io vulnerability export, or a Tenable.sc /analysis CSV.'; note.style.color='var(--warn)'; }
+    return;
+  }
   showLoading('Building dashboard…'); await nextPaint();
   if(STATE.cumulative.length || STATE.mitigated.length) render();
   } finally { hideLoading(); }
@@ -311,7 +325,13 @@ const sevOrder = {Critical:4,High:3,Medium:2,Low:1,Info:0};
 function uniqHosts(rows){ return new Set(rows.map(r=>r.ip||r.dnsName)).size; }
 function groupCount(rows, keyfn){ const m={}; rows.forEach(r=>{const k=keyfn(r); m[k]=(m[k]||0)+1}); return m; }
 function fmtNum(n){ return (n||0).toLocaleString(); }
-function daysBetween(a,b){ const da=new Date(a), db=new Date(b); return (db-da)/86400000; }
+// HTML-escape uploaded / CSV-derived values before they go into innerHTML template strings (covers text and quoted attributes).
+const escTxt = s => String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+// Normalize a date cell to a valid Date (or null): epoch seconds (10-digit) vs epoch ms (13-digit) vs ISO / locale strings; unparseable becomes null so it drops out of metrics.
+function toDate(x){ if(x==null||x==='') return null; if(x instanceof Date) return isNaN(x.getTime())?null:x;
+  const n=(typeof x==='number')?x:(/^\d+$/.test(String(x).trim())?+String(x).trim():null);
+  const d=(n!=null)?new Date(n<1e12?n*1000:n):new Date(String(x)); return isNaN(d.getTime())?null:d; }
+function daysBetween(a,b){ const da=toDate(a), db=toDate(b); if(!da||!db) return null; return (db-da)/86400000; }
 
 // ---------- render ----------
 function render(){
@@ -344,9 +364,9 @@ function render(){
 
   // vulnerabilities published more than 1 year ago (by vuln publication date)
   const oneYrAgo = Date.now() - 365*86400000;
-  const oldPub = cum.filter(r=> r.vulnPubDate && new Date(r.vulnPubDate).getTime() < oneYrAgo).length;
+  const oldPub = cum.filter(r=>{ const d=toDate(r.vulnPubDate); return d && d.getTime() < oneYrAgo; }).length;
   // findings first detected (firstSeen) more than 1 year ago
-  const oldSeen = cum.filter(r=> r.firstSeen && new Date(r.firstSeen).getTime() < oneYrAgo).length;
+  const oldSeen = cum.filter(r=>{ const d=toDate(r.firstSeen); return d && d.getTime() < oneYrAgo; }).length;
   // findings referencing Log4j (plugin name / synopsis / description / cve / output)
   const log4j = cum.filter(r=> /log4j/i.test([r.pluginName,r.synopsis,r.description,r.cve,r.pluginText].join(' '))).length;
 
@@ -379,8 +399,8 @@ function render(){
 
   // vulnerabilities past remediation SLA (aging from vulnPubDate; editable day targets per severity)
   const sevList = ['Critical','High','Medium','Low'];
-  const pastSla = r => { const sd=STATE.slaDays[r.severity]; if(sd==null||!r.vulnPubDate) return false;
-    return (Date.now()-new Date(r.vulnPubDate).getTime())/86400000 > sd; };
+  const pastSla = r => { const sd=STATE.slaDays[r.severity]; if(sd==null) return false; const d=toDate(r.vulnPubDate); if(!d) return false;
+    return (Date.now()-d.getTime())/86400000 > sd; };
   const slaCounts = () => { const c={total:0,Critical:0,High:0,Medium:0,Low:0,expl:0};
     cum.forEach(r=>{ if(pastSla(r)){ c.total++; if(c[r.severity]!=null) c[r.severity]++; if(isExpl(r)) c.expl++; } }); return c; };
   const slaCard = (label,id,col,tip) => `<div class="card"${tip?` title="${tip}"`:''}><div class="l">${label}</div><div class="v" id="${id}" style="color:${col}">0</div></div>`;
@@ -443,7 +463,7 @@ function render(){
       <td class="num" id="sla-per-T"></td><td class="num" id="sla-pct-T"></td><td id="sla-st-T"></td>
       <td class="num">${wifInput('T','non','')}</td>
       <td class="num">${wifInput('T','mitE','')}</td></tr>
-    ${slaRows.map((r,i)=>`<tr><td>${r.b}</td>
+    ${slaRows.map((r,i)=>`<tr><td>${escTxt(r.b)}</td>
       <td class="num">${wifInput(i,'h',r.h)}</td>
       <td class="num">${wifInput(i,'e',r.e)}</td>
       <td class="num" id="sla-per-${i}">${r.ratio.toFixed(3)}</td>
@@ -491,7 +511,7 @@ function render(){
       (pmap[p]=pmap[p]||{sev:r.severity,total:0,by:{}}); pmap[p].by[bu(r)]=(pmap[p].by[bu(r)]||0)+1; pmap[p].total++; });
     pRows = Object.entries(pmap).sort((a,b)=> b[1].total-a[1].total || (sevRank[b[1].sev]||0)-(sevRank[a[1].sev]||0)); };
   computeP();
-  const plugRow = ([name,o])=>`<tr><td>${name}</td><td class="sev-${o.sev}">${o.sev}</td>
+  const plugRow = ([name,o])=>`<tr><td>${escTxt(name)}</td><td class="sev-${escTxt(o.sev)}">${escTxt(o.sev)}</td>
     ${buses.map(b=>`<td class="num">${o.by[b]?fmtNum(o.by[b]):'<span style="color:var(--muted)">—</span>'}</td>`).join('')}
     <td class="num" style="font-weight:600">${fmtNum(o.total)}</td></tr>`;
   const sMax = Math.max(new Set(cum.map(r=>r.pluginName||'(unknown)')).size,1); const sLabel = v=>v>=sMax?'ALL':v;
@@ -505,7 +525,7 @@ function render(){
     </div>
     <div class="scrollwrap" style="margin-top:12px;max-height:440px">
     <table><thead><tr><th>Plugin</th><th>Severity</th>
-      ${buses.map(b=>`<th class="num">${segShort(b)}</th>`).join('')}<th class="num">Total</th></tr></thead>
+      ${buses.map(b=>`<th class="num">${escTxt(segShort(b))}</th>`).join('')}<th class="num">Total</th></tr></thead>
     <tbody id="summaryBody"></tbody></table></div>
     <p class="sub noprint">Open findings past their remediation SLA per Tenable plugin across segments — driven by the SLA day targets above (sorted by Total, greatest to smallest).</p></div>`));
   const fillSummary = ()=>{ const n=Math.min(STATE.summaryN,sMax); const vis=pRows.slice(0,n);
@@ -593,9 +613,9 @@ function render(){
   function fillHosts(){
     const data = hostData(STATE.hostsSev);
     const ofEl=document.getElementById('hostOf'); if(ofEl) ofEl.textContent='of '+data.length;
-    document.getElementById('hostBody').innerHTML = data.slice(0, Math.min(STATE.hostsN,hMax)).map(([h,o])=>`<tr class="hostrow" data-host="${h}" style="cursor:pointer">
-      <td><span class="chev" style="display:inline-block;width:12px;color:var(--muted)">▸</span>${h}</td><td>${o.bu}</td>
-      <td style="font-size:12px">${(o.os||'').replace('Microsoft ','')}</td><td style="font-size:12px">${o.ip||''}</td>
+    document.getElementById('hostBody').innerHTML = data.slice(0, Math.min(STATE.hostsN,hMax)).map(([h,o])=>`<tr class="hostrow" data-host="${escTxt(h)}" style="cursor:pointer">
+      <td><span class="chev" style="display:inline-block;width:12px;color:var(--muted)">▸</span>${escTxt(h)}</td><td>${escTxt(o.bu)}</td>
+      <td style="font-size:12px">${escTxt((o.os||'').replace('Microsoft ',''))}</td><td style="font-size:12px">${escTxt(o.ip||'')}</td>
       <td class="num">${fmtNum(o.n)}</td></tr>`).join('');
     const wrap=document.getElementById('hostWrap'), tb=document.getElementById('hostBody'), rs=tb.querySelectorAll('tr');
     if(rs.length>10){ const th=wrap.querySelector('thead'); let h=th?th.offsetHeight:0;
@@ -605,19 +625,18 @@ function render(){
   const findingSort = (a,b)=>(sevR[b.severity]||0)-(sevR[a.severity]||0) || (String(a.pluginName)>String(b.pluginName)?1:-1);
   const hostFindings = h => { const sev=STATE.hostsSev;
     return cum.filter(r=>(r.dnsName||r.ip)===h && (sev==='all'||r.severity===sev)).sort(findingSort); };
-  const escTxt = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   function hostDetailHTML(h){
     const sev=STATE.hostsSev; const rows=hostFindings(h);
     const inner=rows.map((r,i)=>{ const hasText=!!(r.pluginText||r.description||r.solution);
-      return `<tr class="findingrow" data-host="${h}" data-fidx="${i}" style="cursor:${hasText?'pointer':'default'}">
-      <td class="sev-${r.severity}" style="white-space:nowrap">${hasText?'<span class="fchev" style="display:inline-block;width:11px;color:var(--muted)">▸</span>':'<span style="display:inline-block;width:11px"></span>'}${r.severity}</td>
-      <td>${r.pluginName}</td><td style="font-size:12px">${r.cve||'—'}</td>
-      <td style="font-size:12px">${r.port}/${r.protocol}</td>
+      return `<tr class="findingrow" data-host="${escTxt(h)}" data-fidx="${i}" style="cursor:${hasText?'pointer':'default'}">
+      <td class="sev-${escTxt(r.severity)}" style="white-space:nowrap">${hasText?'<span class="fchev" style="display:inline-block;width:11px;color:var(--muted)">▸</span>':'<span style="display:inline-block;width:11px"></span>'}${escTxt(r.severity)}</td>
+      <td>${escTxt(r.pluginName)}</td><td style="font-size:12px">${escTxt(r.cve||'—')}</td>
+      <td style="font-size:12px">${escTxt(r.port)}/${escTxt(r.protocol)}</td>
       <td>${isExpl(r)?'<span class="pill over">Exploit</span>':'—'}</td>
       <td>${pastSla(r)?'<span class="pill over">Past SLA</span>':'<span class="pill ok">Within</span>'}</td></tr>`; }).join('');
     return `<tr class="hostdetail"><td colspan="5" style="background:var(--panel2);padding:0">
       <div style="padding:8px 12px 10px 26px">
-        <div class="sub" style="margin:0 0 6px">${rows.length} open finding${rows.length===1?'':'s'} on ${h}${sev!=='all'?' · '+sev:''} · click a finding for plugin output</div>
+        <div class="sub" style="margin:0 0 6px">${rows.length} open finding${rows.length===1?'':'s'} on ${escTxt(h)}${sev!=='all'?' · '+sev:''} · click a finding for plugin output</div>
         <table style="font-size:13px"><thead><tr><th>Severity</th><th>Plugin</th><th>CVE</th><th>Port</th><th>Exploit</th><th>SLA</th></tr></thead>
         <tbody>${inner}</tbody></table></div></td></tr>`;
   }
@@ -864,7 +883,7 @@ function makeSortable(table){
 // ---------- export ----------
 function dl(name, text, mime){ const b=new Blob([text],{type:mime||'text/plain'}); const a=document.createElement('a');
   a.href=URL.createObjectURL(b); a.download=name; a.click(); URL.revokeObjectURL(a.href); }
-function toCsv(headers, rows){ const esc=v=>{ v=v==null?'':String(v); return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v; };
+function toCsv(headers, rows){ const esc=v=>{ v=v==null?'':String(v); if(/^[=+\-@]/.test(v)) v="'"+v; return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v; };
   return [headers.join(',')].concat(rows.map(r=>r.map(esc).join(','))).join('\n'); }
 function objCsv(objs){ if(!objs.length) return ''; const cols=[...new Set(objs.flatMap(o=>Object.keys(o)))];
   return toCsv(cols, objs.map(o=>cols.map(c=>o[c]))); }
@@ -1048,7 +1067,7 @@ function buildJumpNav(){
   sel.innerHTML='<option value="">Jump to section…</option>'+panels.map(p=>{ const h=p.querySelector('h3'); return `<option value="${p.id}">${h?h.textContent:p.id}</option>`; }).join('');
   const ss=document.getElementById('segSel');
   if(ss){ const segs=[...new Set([...STATE.cumulative,...STATE.mitigated].map(bu))].sort();
-    ss.innerHTML='<option value="all">All segments</option>'+segs.map(s=>`<option value="${s}">${String(s).replace(/_Repo$/,'')}</option>`).join('');
+    ss.innerHTML='<option value="all">All segments</option>'+segs.map(s=>`<option value="${escTxt(s)}">${escTxt(String(s).replace(/_Repo$/,''))}</option>`).join('');
     ss.value=STATE.segFilter; }
   if(bar) bar.style.display = panels.length ? 'block' : 'none';
 }

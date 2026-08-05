@@ -7,7 +7,7 @@
    - Live public-CVE APIs (NVD, EPSS, CISA, …): passthrough, network only (they need fresh data and a
      connection; offline simply fails for those, the rest of the app keeps working).
    Bump CACHE to invalidate old caches on the next visit. */
-var CACHE = 'vmops-v1.1.0';
+var CACHE = 'vmops-v1.1.1';
 var PRECACHE = [
   './', './index.html',
   './vmops.js', './vmops.css', './acd.js', './acd.css', './tvd.js', './tvd.css',

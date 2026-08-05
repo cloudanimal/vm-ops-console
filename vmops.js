@@ -39,6 +39,7 @@
     { k: 'false_positive', l: 'False Positive', open: false, d: 'Not a real vulnerability — scanner misdetection; dismissed.' }
   ];
   var SLABEL = {}; STATUS.forEach(function (s) { SLABEL[s.k] = s.l; });
+  var ST_ORDER = {}; STATUS.forEach(function (s, i) { ST_ORDER[s.k] = i; });   // sort by workflow order (new, triaged, in remediation, resolved...), not alphabetically
   var OPEN_STATES = STATUS.filter(function (s) { return s.open; }).map(function (s) { return s.k; });
   var SEV_ORDER = { Critical: 0, High: 1, Medium: 2, Low: 3, Info: 4 };
   var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tioAccess: '', tioSecret: '', meUrl: '', meClientId: '', meClientSecret: '' };
@@ -47,12 +48,13 @@
 
   function load(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
   function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } }
+  function safeDecode(s) { try { return decodeURIComponent(s); } catch (e) { return s; } }   // a stray % in a hand-typed/shared deep link must not throw out of the router
 
   var STATE = {
     findings: load('vmops-findings', []),
     ov: load('vmops-overrides', {}),       // key -> {status, owner, notes, updated}
     cfg: Object.assign({}, DEFAULT_CFG, load('vmops-config', {})),
-    sort: { col: 'risk', dir: 1 },
+    sort: { col: 'risk', dir: -1 },
     filt: defaultFilt()
   };
   STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla, STATE.cfg.sla || {});
@@ -142,14 +144,13 @@
     return s;
   }
   // ---------- the other prioritization models, per CVE (for the drawer): EPSS, NIST LEV, SSVC ----------
-  // Same sources the CVE detail page uses: EPSS live from FIRST, LEV from the local data/lev/<year>.json,
+  // Same sources the CVE detail page uses: EPSS from the bundled local feed, LEV from the local data/lev/<year>.json,
   // SSVC the simplified Act/Attend/Track derived from exploitation + impact (CISA's authoritative SSVC is on the detail page).
   function pct(x) { return Math.round((x || 0) * 100) + '%'; }
   function isHigh(cvss) { return cvss != null && !isNaN(cvss) && cvss >= 7; }
   function epssVerdict(e) { if (e == null) return { v: 'No data', why: '' }; if (e >= 0.5) return { v: 'High', why: pct(e) + ' chance in 30 days' }; if (e >= 0.1) return { v: 'Elevated', why: pct(e) + ' chance in 30 days' }; return { v: 'Low', why: pct(e) + ' chance in 30 days' }; }
   function levVerdict(l) { if (l == null) return { v: 'No data', why: '' }; if (l >= 0.5) return { v: 'Likely exploited', why: pct(l) + ' lower-bound it was already exploited' }; if (l >= 0.1) return { v: 'Possibly', why: pct(l) + ' lower-bound' }; return { v: 'Unlikely', why: pct(l) + ' lower-bound' }; }
   function ssvcVerdict(kev, exploit, cvss) { var a = kev || exploit, t = isHigh(cvss); if (a && t) return { v: 'Act', why: 'active exploitation · high impact' }; if (a) return { v: 'Attend', why: 'active exploitation' }; if (t) return { v: 'Attend', why: 'high impact' }; return { v: 'Track', why: 'no active exploitation · limited impact' }; }
-  function epssFor(cve) { return fetch('https://api.first.org/data/v1/epss?cve=' + encodeURIComponent(cve)).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) { var r = d && d.data && d.data[0]; return r ? parseFloat(r.epss) : null; }); }
   var LEV_CACHE = {};
   function levFor(cve) {
     var y = (cve.match(/CVE-(\d{4})-/) || [])[1]; if (!y) return Promise.resolve(null);
@@ -203,15 +204,18 @@
       return true;
     });
     var c = STATE.sort.col, d = STATE.sort.dir;
+    // risk/epss/vpr read naturally (a then b) and default to descending via STATE.sort.dir, so the header
+    // arrow matches the real order. Risk is scored once per row here rather than on every comparison.
+    var rsk = null; if (c === 'risk') { rsk = {}; list.forEach(function (f) { rsk[keyOf(f)] = riskScore(f); }); }
     list.sort(function (a, b) {
       var va, vb;
-      if (c === 'risk') { va = riskScore(b); vb = riskScore(a); }              // default high->low
+      if (c === 'risk') { va = rsk[keyOf(a)]; vb = rsk[keyOf(b)]; }
       else if (c === 'sev') { va = SEV_ORDER[a.severity]; vb = SEV_ORDER[b.severity]; }
       else if (c === 'due') { va = dueIn(a); vb = dueIn(b); va = va == null ? 1e9 : va; vb = vb == null ? 1e9 : vb; }
-      else if (c === 'status') { va = SLABEL[statusOf(a)]; vb = SLABEL[statusOf(b)]; }
+      else if (c === 'status') { va = ST_ORDER[statusOf(a)]; vb = ST_ORDER[statusOf(b)]; }
       else if (c === 'age') { va = daysSince(a.firstSeen) || 0; vb = daysSince(b.firstSeen) || 0; }
-      else if (c === 'epss') { va = cveIntel(b.cve).epss || 0; vb = cveIntel(a.cve).epss || 0; }   // high → low by default
-      else if (c === 'vpr') { va = b.vpr || 0; vb = a.vpr || 0; }                                   // high → low by default
+      else if (c === 'epss') { va = cveIntel(a.cve).epss || 0; vb = cveIntel(b.cve).epss || 0; }
+      else if (c === 'vpr') { va = a.vpr || 0; vb = b.vpr || 0; }
       else if (c === 'ticket') { va = (ticketOf(a) && ticketOf(a).key) || '~'; vb = (ticketOf(b) && ticketOf(b).key) || '~'; }   // linked first, no-ticket last
       else if (c === 'owner') { va = (ovOf(a).owner || '~'); vb = (ovOf(b).owner || '~'); }
       else if (c === 'repo') { va = (repoOf(a) || '~'); vb = (repoOf(b) || '~'); }
@@ -432,7 +436,7 @@
     // Apply a deep-link query (e.g. Ask AI -> #/findings?sev=Critical&overdue=1) ONLY when it actually
     // changes — otherwise the in-page filter handlers (which re-call viewFindings without touching the
     // hash) would re-parse the stale query every render and clobber the user's selection.
-    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=decodeURIComponent(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', open:p.open==='1', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', epssHi:p.epssHi==='1', noTicket:p.noTicket==='1', noowner:p.noowner==='1', colf:{}, group:STATE.filt.group||'' }; })();
+    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=safeDecode(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', open:p.open==='1', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', epssHi:p.epssHi==='1', noTicket:p.noTicket==='1', noowner:p.noowner==='1', colf:{}, group:STATE.filt.group||'' }; })();
     if (!STATE.findings.length) return viewEmpty('findings');
     var list = visibleFindings();
     var statusOpts = '<option value="">All statuses</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '"' + (STATE.filt.status === s.k ? ' selected' : '') + '>' + s.l + '</option>'; }).join('');
@@ -745,7 +749,7 @@
         '<td colspan="3"><span class="gcaret">▸</span> <b>' + esc(g.label) + '</b> <span class="muted" style="font-size:12px">' + unit + '</span>' + (chips ? ' ' + chips : '') + '</td>' +
         '<td>' + sevBadge(g.maxSev) + '</td>' +
         '<td>' + (g.pri ? '<span class="pri ' + g.pri.toLowerCase() + '">' + g.pri + '</span>' : '<span class="muted">—</span>') + '</td>' +
-        '<td colspan="7" class="muted" style="font-size:12px">' + g.openCount + ' open / ' + g.count + '</td><td></td></tr>';
+        '<td colspan="8" class="muted" style="font-size:12px">' + g.openCount + ' open / ' + g.count + '</td><td></td></tr>';
       return head + g.items.map(function (f) { return findingRow(f, g.id); }).join('');
     }).join('');
     return '<table class="grid resizable" id="gridHost" style="width:' + totalW() + 'px">' + gridHead() + '<tbody>' + body + '</tbody></table>';
@@ -840,7 +844,7 @@
       });
     });
     [].forEach.call(document.querySelectorAll('table.grid thead th[data-col]'), function (th) {
-      th.addEventListener('click', function (e) { if (e.target.closest('.col-resize')) return; var c = th.getAttribute('data-col'); if (STATE.sort.col === c) STATE.sort.dir *= -1; else { STATE.sort.col = c; STATE.sort.dir = 1; } currentView(); });
+      th.addEventListener('click', function (e) { if (e.target.closest('.col-resize')) return; var c = th.getAttribute('data-col'); if (STATE.sort.col === c) STATE.sort.dir *= -1; else { STATE.sort.col = c; STATE.sort.dir = (c === 'risk' || c === 'epss' || c === 'vpr') ? -1 : 1; } currentView(); });
     });
     wireResizers();
     var selAll = document.getElementById('selAll');
@@ -874,8 +878,9 @@
         updateBulkBar();
       });
     });
+    var byKey = {}; STATE.findings.forEach(function (f) { byKey[keyOf(f)] = f; });   // index once so per-row wiring is O(n), not O(n^2) via findByKey
     [].forEach.call(document.querySelectorAll('table.grid tbody tr'), function (tr) {
-      var f = findByKey(tr.getAttribute('data-key'));
+      var f = byKey[tr.getAttribute('data-key')];
       var cb = tr.querySelector('.rowsel');
       if (cb) cb.addEventListener('change', function (e) { e.stopPropagation(); var k = tr.getAttribute('data-key'); if (this.checked) selKeys[k] = true; else delete selKeys[k]; updateBulkBar(); });
       var sel = tr.querySelector('.act-status');
@@ -1020,12 +1025,12 @@
       '<button class="btn sm" id="drCopy" title="Copy a text summary of this finding">Copy summary</button>' +
       '</div>';
     bg.classList.add('open'); dr.classList.add('open'); showDrawerHandle();
-    // Fill the remaining prioritization models: SSVC is derived (instant); EPSS (live) + LEV (local) load async.
+    // Fill the remaining prioritization models: SSVC is derived (instant); EPSS is from the bundled local feed; LEV (local) loads async.
     (function () {
       var it = cveIntel(f.cve), sv = ssvcVerdict(it.kev, it.exploit, f.cvss);
       var se = document.getElementById('drSsvc'); if (se) se.innerHTML = '<b>' + sv.v + '</b>' + (sv.why ? ' · ' + esc(sv.why) : '');
       var setEpss = function (e) { var el = document.getElementById('drEpss'); if (!el) return; el.className = ''; var v = epssVerdict(e); el.innerHTML = e == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); };
-      if (it.epss != null) setEpss(it.epss); else epssFor(f.cve).then(setEpss);   // prefer the loaded feed; fall back to a live lookup
+      setEpss(it.epss);   // bundled local EPSS feed only, so opening a finding never calls out to a third party (the Findings workbench stays fully local)
       levFor(f.cve).then(function (l) { var el = document.getElementById('drLev'); if (!el) return; el.className = ''; var v = levVerdict(l); el.innerHTML = l == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); });
     })();
     // Fill the remediation sample (loads data/remediation.json once, then it's instant).
@@ -1187,7 +1192,9 @@
         if (!fs.length) return toast('No CVE rows found in that CSV');
         var sum = importScan(fs);
         if (window.VMStore) VMStore.put({ id: 'findings', name: file.name, text: text, kind: 'csv' });
-        toast(sum.reimport ? ('Rescan: ' + sum.total + ' findings · ' + sum.added + ' new · ' + sum.fixed + ' auto-resolved (fixed)') : ('Imported ' + sum.total + ' findings')); refreshSourceStatus(id);
+        if (!sum.saved) { toast('Heads up: browser storage is full. Findings are loaded for this session only and were not saved.'); }
+        else { toast(sum.reimport ? ('Rescan: ' + sum.total + ' findings · ' + sum.added + ' new · ' + sum.fixed + ' auto-resolved' + (sum.reopened ? ' · ' + sum.reopened + ' reopened' : '')) : ('Imported ' + sum.total + ' findings')); }
+        refreshSourceStatus(id);
       } else if (window.VMStore) {
         var dest = id.indexOf('tvd:') === 0 ? 'the Tenable dashboard' : 'Agent Coverage';
         VMStore.put({ id: id, name: file.name, text: text, kind: kind }).then(function () { toast(file.name + ' imported — open ' + dest + ' to view'); refreshSourceStatus(id); });
@@ -1200,7 +1207,6 @@
     if (window.VMStore) VMStore.remove(id);
     toast('Cleared'); refreshSourceStatus(id);
   }
-  function readFile(file) { var r = new FileReader(); r.onload = function () { try { var fs = parseCsv(String(r.result || '')); if (!fs.length) return toast('No CVE rows found in that CSV'); mergeFindings(fs); toast('Imported ' + fs.length + ' findings'); goDash(); } catch (e) { toast('Parse error: ' + e.message); } }; r.readAsText(file); }
   function mergeFindings(incoming) {
     var idx = {}; STATE.findings.forEach(function (f, i) { idx[keyOf(f)] = i; });
     incoming.forEach(function (f) {
@@ -1208,23 +1214,36 @@
       if (idx[k] != null) { var old = STATE.findings[idx[k]]; if (old.firstSeen && (!f.firstSeen || old.firstSeen < f.firstSeen)) f.firstSeen = old.firstSeen; STATE.findings[idx[k]] = f; }
       else { STATE.findings.push(f); idx[k] = STATE.findings.length - 1; }
     });
-    save('vmops-findings', STATE.findings);
+    return save('vmops-findings', STATE.findings);
   }
   // A re-import is a fresh scan: diff vs the current set, auto-resolve anything that's gone
-  // (no longer detected), and remember what's new — so you see progress, not a static list.
+  // (no longer detected), REOPEN anything that was resolved but is detected again (a recurrence /
+  // flap, so a live vuln can never hide behind a stale "Resolved"), and remember what's new.
   function importScan(incoming) {
     var reimport = STATE.findings.length > 0;
     var incKeys = {}, existing = {};
     incoming.forEach(function (f) { incKeys[keyOf(f)] = 1; });
     STATE.findings.forEach(function (f) { existing[keyOf(f)] = 1; });
     var added = 0; incoming.forEach(function (f) { if (!existing[keyOf(f)]) added++; });
-    var fixed = 0;
-    STATE.findings.forEach(function (f) { if (isOpen(f) && !incKeys[keyOf(f)]) { setOverride(f, { status: 'resolved' }); addUpdate(f, 'Rescan: no longer detected — auto-resolved'); fixed++; } });
+    var fixed = 0, reopened = 0;
+    STATE.findings.forEach(function (f) {
+      var inScan = !!incKeys[keyOf(f)];
+      if (isOpen(f) && !inScan) {
+        setOverride(f, { status: 'resolved' }); addUpdate(f, 'Rescan: no longer detected, auto-resolved'); fixed++;
+      } else if (inScan && statusOf(f) === 'resolved') {
+        // Was resolved, now detected again: reopen and record the recurrence so repeated flapping is visible.
+        var flaps = (ovOf(f).reopens || 0) + 1;
+        setOverride(f, { status: 'new', reopens: flaps });
+        addUpdate(f, 'Rescan: detected again, reopened (recurrence #' + flaps + ')');
+        reopened++;
+      }
+    });
+    // Deliberate closures (risk-accepted, false-positive) are left untouched even if they reappear.
     STATE._newKeys = {}; if (reimport) incoming.forEach(function (f) { var k = keyOf(f); if (!existing[k]) STATE._newKeys[k] = 1; });
     try { localStorage.setItem('vmops-newkeys', JSON.stringify(Object.keys(STATE._newKeys))); } catch (e) {}
     var today = todayISO();
-    mergeFindings(incoming.map(function (f) { f.lastSeen = today; return f; }));
-    return { added: added, fixed: fixed, total: incoming.length, reimport: reimport };
+    var saved = mergeFindings(incoming.map(function (f) { f.lastSeen = today; return f; }));
+    return { added: added, fixed: fixed, reopened: reopened, total: incoming.length, reimport: reimport, saved: saved };
   }
 
   function parseCsv(text) {
@@ -1245,6 +1264,7 @@
       iRepo = col([/^repo(sitory)?$/i, /\brepositor/i, /application/i, /\bapp\b/i]),
       iPid = col([/plugin\s*id/i]), iSeen = col([/first\s*(discovered|seen)/i, /plugin\s*publication/i, /discovered/i]),
       iVpr = col([/vpr.*score/i, /\bvpr\b/i]);
+    if (iName === iHost) iName = col([/plugin\s*name/i, /synopsis/i]);   // a bare "Name" column must not be claimed as both host and plugin name
     if (iCve === -1) return [];
     var out = [];
     rows.forEach(function (r) {
@@ -1281,7 +1301,7 @@
       var o = ovOf(f), ep = cveIntel(f.cve).epss;
       var ups = updatesOf(f).map(function (u) { return (u.at || '').slice(0, 10) + ' ' + (u.text || '').replace(/\s+/g, ' '); }).join(' | ');
       return [f.cve, f.host, f.desc || f.name || '', f.severity, f.cvss == null ? '' : f.cvss, f.vpr == null ? '' : f.vpr, ep == null ? '' : ep, SLABEL[statusOf(f)], (ticketOf(f) ? ticketOf(f).key : ''), o.owner || '', repoOf(f), f.firstSeen, f.lastSeen || '', dueDate(f) || '', dueIn(f) == null ? '' : dueIn(f), f.plugin || '', f.source || '', (o.notes || '').replace(/\s+/g, ' '), ups]
-        .map(function (v) { v = String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }).join(',');
+        .map(function (v) { v = String(v); if (/^[=+\-@\t\r]/.test(v)) v = "'" + v; return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }).join(',');
     }));
     var blob = new Blob([lines.join('\n')], { type: 'text/csv' }), a = document.createElement('a');
     a.href = URL.createObjectURL(blob); a.download = 'vm-findings-' + todayISO() + '.csv'; a.click(); URL.revokeObjectURL(a.href); toast('Exported ' + list.length + ' findings');
@@ -1465,7 +1485,7 @@
       STATE.cfg.brand = document.getElementById('brandName').value.trim();
       STATE.cfg.brandIcon = document.getElementById('brandIcon').value.trim();
       STATE.cfg.brandIconColor = document.getElementById('brandIconColor').value.trim();
-      [].forEach.call(document.querySelectorAll('[data-sla]'), function (i) { var v = parseInt(i.value, 10); if (!isNaN(v)) STATE.cfg.sla[i.getAttribute('data-sla')] = v; });
+      [].forEach.call(document.querySelectorAll('[data-sla]'), function (i) { var v = parseInt(i.value, 10); if (!isNaN(v)) STATE.cfg.sla[i.getAttribute('data-sla')] = Math.max(0, v); });
       STATE.cfg.jiraBase = document.getElementById('jiraBase').value.trim();
       STATE.cfg.jiraPid = document.getElementById('jiraPid').value.trim();
       STATE.cfg.jiraType = document.getElementById('jiraType').value.trim();
@@ -1686,7 +1706,7 @@
   function viewCampaigns() {
     setActive('campaigns');
     var parts = (location.hash.replace(/^#/, '') || '').split('/').filter(Boolean); // ['campaigns', id?]
-    var go = parts[1] ? function () { campaignDetail(decodeURIComponent(parts[1])); } : campaignList;
+    var go = parts[1] ? function () { campaignDetail(safeDecode(parts[1])); } : campaignList;
     go();
     // "exploited only" scopes depend on the KEV/exploit intel; load it and re-render once ready.
     if (!INTEL.loaded) ensureIntel().then(function () { if ((location.hash || '').indexOf('#/campaigns') === 0) go(); });
@@ -1840,11 +1860,13 @@
   var CT_AVC = ['#0ea5e9', '#8b5cf6', '#ec4899', '#14b8a6', '#f59e0b', '#ef4444', '#22c55e', '#6366f1'];
   function ctOwner(f) { return ovOf(f).owner || 'Unassigned'; }
   function ctInitials(n) { if (!n || n === 'Unassigned') return '?'; var p = n.trim().split(/\s+/); return (p[0].charAt(0) + (p[1] ? p[1].charAt(0) : '')).toUpperCase(); }
-  function ctAvColor(n) { if (!n || n === 'Unassigned') return '#94a3b8'; var h = 0; for (var i = 0; i < n.length; i++) h = (h * 31 + n.charCodeAt(i)) >>> 0; return CT_AVC[h % CT_AVC.length]; }
+  function ctAvColor(n) { if (!n || n === 'Unassigned') return '#64748b'; var h = 0; for (var i = 0; i < n.length; i++) h = (h * 31 + n.charCodeAt(i)) >>> 0; return CT_AVC[h % CT_AVC.length]; }
   function ctAvatar(n) { return '<span class="ct-av" style="background:' + ctAvColor(n) + '" title="' + esc(n) + '">' + esc(ctInitials(n)) + '</span>'; }
   function ctSevBadge(sev) { return '<span class="badge ' + (SEV_BADGE[SEV_ORDER[sev]] || 'low') + '">' + esc(sev) + '</span>'; }
   function ctDueBadge(f) { if (!isOpen(f)) return '<span class="muted" style="font-size:11px">—</span>'; var di = dueIn(f), ss = slaState(f); var t = di == null ? 'no SLA' : di < 0 ? (-di) + 'd overdue' : di === 0 ? 'due today' : 'due in ' + di + 'd'; return '<span class="ct-due ' + ss + '">' + t + '</span>'; }
-  function ctCoverageKnown() { return !!(window._model && window._model.ad && window._model.ad.length); }
+  // "No agent" is only knowable when BOTH the AD denominator AND the Tenable agent source are loaded.
+  // Without the Tenable source, a host's agent status is unknown, not absent, so do not flag it.
+  function ctCoverageKnown() { var M = window._model; return !!(M && M.ad && M.ad.length && M.loaded && M.loaded.indexOf('ten') > -1); }
   function ctNoAgent(f) { if (!ctCoverageKnown()) return false; var M = window._model; if (!M._ctByKey) { M._ctByKey = {}; M.ad.forEach(function (a) { if (!(a.key in M._ctByKey)) M._ctByKey[a.key] = a; }); } var rec = M._ctByKey[norm(f.host)]; return !!(rec && rec.cov && rec.cov.ten && rec.cov.ten.present === false); }
   // MSRC patch (KB) map = the real "one patch clears N findings" fix key (data/msrc/<year>.json, unread elsewhere).
   var MSRC_CACHE = {};
@@ -1869,11 +1891,17 @@
     });
   }
   function ctByRisk(a, b) { return riskScore(b) - riskScore(a); }
+  function ctFilterActive() { return !!(CT.q || Object.keys(CT.qf).some(function (k) { return CT.qf[k]; }) || Object.keys(CT.tcol).some(function (k) { return CT.tcol[k] !== '' && CT.tcol[k] != null; })); }
+  function ctEmptyState() {
+    var scoped = ctScoped().length, active = ctFilterActive();
+    var msg = scoped === 0 ? 'This campaign has no findings yet.' : (active ? 'No findings match the current search and filters.' : 'No open findings to show.');
+    return '<div class="ct-empty"><div class="ct-empty-ic">◍</div><p>' + esc(msg) + '</p>' + (active && scoped ? '<button class="btn sm" id="ctEmptyClear">Clear search and filters</button>' : '') + '</div>';
+  }
   function ctFieldVal(f) { return CT.group === 'status' ? statusOf(f) : CT.group === 'severity' ? f.severity : CT.group === 'owner' ? ctOwner(f) : CT.group === 'host' ? f.host : ctFixKey(f); }
   function ctGroupDefs(list) {
     if (CT.group === 'status') return STATUS.map(function (s) { return { k: s.k, label: s.l, color: 'var(' + ST_VAR[s.k] + ')', drag: true }; });
     if (CT.group === 'severity') return ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return { k: s, label: s, color: 'var(' + SEV_VAR[s] + ')' }; });
-    if (CT.group === 'owner') { var seen = {}, o = []; list.forEach(function (f) { var w = ctOwner(f); if (!seen[w]) { seen[w] = 1; o.push({ k: w, label: w, color: ctAvColor(w), drag: true }); } }); return o; }
+    if (CT.group === 'owner') { var seen = {}, o = []; list.forEach(function (f) { var w = ctOwner(f); if (!seen[w]) { seen[w] = 1; o.push({ k: w, label: w, color: ctAvColor(w), drag: true }); } }); if (!seen['Unassigned']) o.push({ k: 'Unassigned', label: 'Unassigned', color: ctAvColor('Unassigned'), drag: true }); return o; }   // always offer an Unassigned column so a card can be dragged back to unassigned
     if (CT.group === 'host') { var s = {}, h = []; list.forEach(function (f) { if (!s[f.host]) { s[f.host] = 1; h.push({ k: f.host, label: f.host, color: 'var(--accent)' }); } }); return h.sort(function (a, b) { return a.label < b.label ? -1 : 1; }); }
     var pm = {}, po = []; list.forEach(function (f) { var k = ctFixKey(f); if (!pm[k]) { pm[k] = 0; po.push(k); } pm[k]++; });
     return po.sort(function (a, b) { return pm[b] - pm[a]; }).map(function (k) { return { k: k, label: k, color: 'var(--accent)' }; });
@@ -1963,7 +1991,7 @@
       else if (k === 'epss') { A = cveIntel(a.cve).epss || -1; B = cveIntel(b.cve).epss || -1; }
       else if (k === 'due') { A = dueIn(a) == null ? 1e9 : dueIn(a); B = dueIn(b) == null ? 1e9 : dueIn(b); }
       else if (k === 'owner') { A = ctOwner(a); B = ctOwner(b); }
-      else if (k === 'status') { A = statusOf(a); B = statusOf(b); }
+      else if (k === 'status') { A = ST_ORDER[statusOf(a)]; B = ST_ORDER[statusOf(b)]; }
       else if (k === 'host') { A = a.host; B = b.host; }
       else { A = a.cve; B = b.cve; }
       return A < B ? -CT.sort.dir : A > B ? CT.sort.dir : 0;
@@ -2012,7 +2040,9 @@
   }
 
   function ctDashboard() {
-    var c = ctCamp(), st = campaignStats(c), list = ctScoped(), open = list.filter(isOpen);
+    var c = ctCamp(), scoped = ctScoped(), list = ctFindings(), filtered = list.length !== scoped.length;
+    var st = filtered ? (function () { var tot = list.length, res = list.filter(function (f) { return !isOpen(f); }).length; return { total: tot, resolved: res, open: tot - res, pct: tot ? Math.round(res / tot * 100) : 0 }; })() : campaignStats(c);
+    var open = list.filter(isOpen);
     var overdue = open.filter(function (f) { return slaState(f) === 'overdue'; }).length;
     var critOpen = open.filter(function (f) { return f.severity === 'Critical'; }).length;
     var kevOpen = open.filter(function (f) { return cveIntel(f.cve).kev; }).length;
@@ -2045,14 +2075,15 @@
     } else { bd = '<div class="muted" style="font-size:12px;padding:20px 0">Burndown appears after a day of progress history.</div>'; }
     var burn = '<div class="card"><h3 style="margin:0 0 8px;font-size:13px">Burndown vs target <span class="muted" style="font-weight:400;font-size:11.5px">open remaining · dashed = ideal pace</span></h3>' + bd + '</div>';
     var pipe = '<div class="card" style="margin-top:14px"><h3 style="margin:0 0 12px;font-size:13px">Pipeline <span class="muted" style="font-weight:400;font-size:11.5px">findings by status</span></h3>' + STATUS.map(function (s) { var n = list.filter(function (f) { return statusOf(f) === s.k; }).length; return '<div style="display:grid;grid-template-columns:110px 1fr 34px;gap:10px;align-items:center;font-size:12px;margin-bottom:8px"><span class="muted">' + s.l + '</span><span style="height:9px;border-radius:99px;background:color-mix(in srgb,var(--line) 60%,transparent);overflow:hidden;display:block"><span style="display:block;height:100%;width:' + (list.length ? n / list.length * 100 : 0) + '%;background:var(' + ST_VAR[s.k] + ')"></span></span><b style="text-align:right">' + n + '</b></div>'; }).join('') + '</div>';
-    return '<div class="ct-dash">' + digest + kpis + '<div class="ct-dgrid">' + burn + donut + '</div>' + pipe + '</div>';
+    var note = filtered ? '<div class="muted ct-dnote">Showing <b>' + list.length + '</b> of ' + scoped.length + ' findings (search and filters applied). Progress and charts reflect the filtered set; the burndown history reflects the whole campaign.</div>' : '';
+    return '<div class="ct-dash">' + note + digest + kpis + '<div class="ct-dgrid">' + burn + donut + '</div>' + pipe + '</div>';
   }
 
   function ctActivity() {
-    var list = ctScoped(), ev = [];
+    var list = ctFindings(), ev = [];
     list.forEach(function (f) { (ovOf(f).updates || []).forEach(function (u) { ev.push({ at: u.at, text: u.text, f: f }); }); });
     ev.sort(function (a, b) { return a.at < b.at ? 1 : -1; });
-    if (!ev.length) return '<div class="card"><span class="muted">No activity yet. Status changes and notes on this campaign\'s findings appear here.</span></div>';
+    if (!ev.length) return '<div class="card"><span class="muted">' + (ctFilterActive() ? 'No activity matches the current search and filters.' : 'No activity yet. Status changes and notes on this campaign\'s findings appear here.') + '</span></div>';
     return '<div class="ct-feed">' + ev.slice(0, 200).map(function (e) {
       var d = new Date(e.at), ds = isNaN(d) ? e.at : d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
       return '<div class="ct-fitem"><span class="ct-fdot"></span><div><div style="font-size:13px"><b class="mono">' + esc(e.f.cve) + '</b> <span class="muted">' + esc(e.f.host) + '</span> — ' + esc(e.text) + '</div><div class="muted" style="font-size:11.5px">' + esc(ds) + '</div></div></div>';
@@ -2089,7 +2120,7 @@
 
   // Load MSRC / remediation data lazily when patch-grouping is used, then re-render.
   function ctSyncGrouping(cb) {
-    if ((CT.group === 'patch' || (CT.view === 'board' && CT.group === 'patch'))) {
+    if (CT.group === 'patch') {
       var cves = ctScoped().map(function (f) { return f.cve; });
       Promise.all([ensureMsrc(cves), REMED.data ? Promise.resolve() : ensureRemed()]).then(function () { refreshCampaign(); if (cb) cb(); });
     } else { refreshCampaign(); if (cb) cb(); }
@@ -2111,6 +2142,8 @@
 
   function ctRenderView() {
     var host = document.getElementById('ctBody'); if (!host) return;
+    var listViews = { board: 1, list: 1, calendar: 1, timeline: 1, workload: 1 };   // Table keeps its own empty row so the filter header stays; Dashboard/Activity have their own empty copy
+    if (listViews[CT.view] && !ctFindings().length) { host.innerHTML = ctEmptyState(); ctWireBody(); return; }
     host.innerHTML = ({ board: ctBoard, list: ctList, table: ctTable, calendar: ctCalendar, timeline: ctTimeline, workload: ctWorkload, dashboard: ctDashboard, activity: ctActivity }[CT.view] || ctBoard)();
     if (CT.view === 'table') { ctWireTable(); ctFillTable(); }
     ctWireBody();
@@ -2123,12 +2156,13 @@
   function ctWireBody() {
     // open drawer on card / row / list-row / cal-ev / timeline-row click
     [].forEach.call(document.querySelectorAll('#ctBody [data-key]'), function (el) {
-      if (el.classList.contains('ct-cbox')) return;
+      if (el.classList.contains('ct-cbox') || el.classList.contains('ct-brow')) return;   // table rows are bound in ctFillTable; skip here so the drawer does not open twice
       el.addEventListener('click', function (e) {
         if (e.target.closest('a') || e.target.closest('.ct-cbox')) return;
         var f = ctScoped().filter(function (x) { return keyOf(x) === el.dataset.key; })[0]; if (f) openDrawer(f);
       });
     });
+    var ec = document.getElementById('ctEmptyClear'); if (ec) ec.onclick = function () { CT.q = ''; CT.qf = {}; CT.tcol = {}; var c = ctCamp(); if (c) campaignTracker(c); };
     // selection checkboxes
     [].forEach.call(document.querySelectorAll('#ctBody .ct-cbox'), function (cb) { cb.addEventListener('click', function (e) { e.stopPropagation(); var k = cb.dataset.selk; if (CT.sel[k]) delete CT.sel[k]; else CT.sel[k] = 1; cb.classList.toggle('on'); cb.innerHTML = CT.sel[k] ? '✓' : ''; cb.closest('.ct-card').classList.toggle('sel'); ctBulkBar(); }); });
     // list group collapse
@@ -2164,10 +2198,11 @@
     document.getElementById('ctSaved').onchange = function (e) { if (e.target.value) ctApplySaved(e.target.value); };
     document.getElementById('ctAuto').onclick = ctAutomations;
     ctRenderView(); ctBulkBar();
-    if (!INTEL.loaded) ensureIntel().then(function () { if (CT.cid === c.id && (location.hash || '').indexOf('#/campaigns/') === 0) ctRenderView(); });
+    // If the board opens grouped by patch, load this campaign's MSRC KB map, else cards collapse into "Manual remediation" until the group is re-picked.
+    if (CT.group === 'patch') ensureMsrc(ctScoped().map(function (f) { return f.cve; })).then(function () { if (CT.cid === c.id) ctRenderView(); });
+    if (!INTEL.loaded) ensureIntel().then(function () { if (CT.cid === c.id && (location.hash || '').indexOf('#/campaigns/') === 0) { if (CT.view === 'table') ctFillTable(); else ctRenderView(); } });
   }
   function ctAutomations() {
-    var m = document.getElementById('drawerBg'); // reuse a simple modal via toast-less overlay
     var ov = document.getElementById('ctModal') || (function () { var d = document.createElement('div'); d.id = 'ctModal'; d.className = 'ct-modal vmops'; document.body.appendChild(d); return d; })();
     ov.innerHTML = '<div class="ct-mcard"><button class="x" id="ctMx">×</button><h3 style="margin:0 0 3px">Automations</h3><div class="muted" style="font-size:12.5px;margin-bottom:12px">What runs today vs. what\'s planned.</div>' +
       [['Rescan reconcile', 'Re-importing a scan auto-resolves any open finding that no longer appears (with a dated update).', true],

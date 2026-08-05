@@ -202,10 +202,10 @@
 .vmops .pbar-num { font-size:11px; color:var(--soft); }
 .vmops .camprow { cursor:pointer; }
 .vmops .stbadge { display:inline-block; font-size:11px; font-weight:600; padding:2px 9px; border-radius:100px; background:var(--surface); border:1px solid var(--line); color:var(--soft); white-space:nowrap; }
-.vmops .stbadge.st-active { color:#1d6fd6; border-color:#bcd6f5; }
-.vmops .stbadge.st-completed { color:#1a7f47; border-color:#b7e0c6; }
-.vmops .stbadge.st-paused { color:#b6791f; border-color:#eddaa8; }
-.vmops .stbadge.st-cancelled { color:#9aa0a8; }
+.vmops .stbadge.st-active { background:color-mix(in srgb,var(--info) 15%,transparent); color:var(--info); border-color:color-mix(in srgb,var(--info) 42%,transparent); }
+.vmops .stbadge.st-completed { background:color-mix(in srgb,var(--ok) 15%,transparent); color:var(--ok); border-color:color-mix(in srgb,var(--ok) 42%,transparent); }
+.vmops .stbadge.st-paused { background:color-mix(in srgb,var(--med) 15%,transparent); color:var(--med); border-color:color-mix(in srgb,var(--med) 42%,transparent); }
+.vmops .stbadge.st-cancelled { color:var(--soft); border-color:var(--line); }
 .vmops .camp-meta > div { padding:8px 0; border-bottom:1px solid var(--line); font-size:13.5px; }
 .vmops .camp-meta > div:last-child { border-bottom:0; }
 .vmops .camp-meta .k { display:inline-block; width:92px; color:var(--soft); }
@@ -266,7 +266,7 @@
 .vmops .ct-r2 .host { font-family:var(--mono); font-size:11.5px; color:var(--soft); }
 .vmops .ct-epss { font-size:11px; color:var(--faint); }
 .vmops .ct-r3 { display:flex; align-items:center; justify-content:space-between; margin-top:9px; padding-top:8px; border-top:1px solid var(--line); }
-.vmops .ct-av { width:22px; height:22px; border-radius:50%; display:inline-grid; place-items:center; font-size:10px; font-weight:700; color:#fff; }
+.vmops .ct-av { width:22px; height:22px; border-radius:50%; display:inline-grid; place-items:center; font-size:10px; font-weight:700; color:#fff; text-shadow:0 1px 1px rgba(0,0,0,.4); }
 .vmops .ct-flag { font-size:9.5px; font-weight:800; letter-spacing:.03em; color:var(--high); border:1px solid var(--high); border-radius:4px; padding:0 4px; line-height:15px; }
 .vmops .ct-due { font-size:11px; font-weight:600; color:var(--faint); }
 .vmops .ct-due.overdue { color:var(--crit); } .vmops .ct-due.soon { color:var(--high); }
@@ -354,3 +354,16 @@
 .vmops .ct-sw { width:32px; height:19px; border-radius:99px; background:var(--line); position:relative; flex:none; margin-top:1px; }
 .vmops .ct-sw::after { content:""; position:absolute; top:2px; left:2px; width:15px; height:15px; border-radius:50%; background:#fff; }
 .vmops .ct-sw.on { background:var(--ok); } .vmops .ct-sw.on::after { left:15px; }
+
+/* shared empty state (board/list/calendar/timeline/workload) + dashboard filter note */
+.vmops .ct-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; text-align:center; padding:56px 20px; color:var(--soft); border:1px dashed var(--line); border-radius:12px; background:color-mix(in srgb,var(--surface) 60%,transparent); }
+.vmops .ct-empty-ic { font-size:30px; line-height:1; color:var(--faint); opacity:.7; }
+.vmops .ct-empty p { margin:0; font-size:13px; }
+.vmops .ct-dnote { font-size:11.5px; margin-bottom:2px; }
+
+/* narrow screens: let the list view wrap instead of overflowing horizontally */
+@media (max-width:680px) {
+  .vmops .ct-lrow { display:flex; flex-wrap:wrap; gap:6px 10px; }
+  .vmops .ct-lrow .ct-lname { flex:1 1 100%; white-space:normal; }
+  .vmops .ct-lrow .ct-lend { margin-left:auto; }
+}
