@@ -42,8 +42,8 @@
   var ST_ORDER = {}; STATUS.forEach(function (s, i) { ST_ORDER[s.k] = i; });   // sort by workflow order (new, triaged, in remediation, resolved...), not alphabetically
   var OPEN_STATES = STATUS.filter(function (s) { return s.open; }).map(function (s) { return s.k; });
   var SEV_ORDER = { Critical: 0, High: 1, Medium: 2, Low: 3, Info: 4 };
-  var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tioAccess: '', tioSecret: '', meUrl: '', meClientId: '', meClientSecret: '', epssLive: false, recurThreshold: 1 };
-  var DEFAULT_BRAND = 'VM Ops Console';
+  var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tioAccess: '', tioSecret: '', meUrl: '', meClientId: '', meClientSecret: '', epssLive: false, recurThreshold: 1, navHidden: [] };
+  var DEFAULT_BRAND = 'Vulnerability Management Console';
   var DEFAULT_ICON_COLOR = '#28415d';
 
   function load(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
@@ -63,7 +63,7 @@
   STATE._colHidden = {}; try { STATE._colHidden = JSON.parse(localStorage.getItem('vmops-colhidden') || '{}') || {}; } catch (e) {}
 
   // Custom branding: apply the configured app name to the nav brand + document title, and rebuild the
-  // favicon (monogram + color) — all default to the VM Ops Console look when unset.
+  // favicon (monogram + color) — all default to the Vulnerability Management Console look when unset.
   function brandInitials(s) {
     var w = String(s || '').trim().split(/\s+/).filter(Boolean);
     if (!w.length) return 'VM';
@@ -77,16 +77,43 @@
       "'/><text x='32' y='45' font-family='Georgia,serif' font-size='" + fs + "' fill='#faf9f7' text-anchor='middle'>" + mono + "</text></svg>";
     return 'data:image/svg+xml,' + encodeURIComponent(svg);
   }
+  // Top-menu items a user can hide from Settings (Settings itself is intentionally never hideable, so the
+  // controls stay reachable; hidden routes are still reachable by direct link).
+  var NAV_ITEMS = [
+    { k: 'ask', label: 'Ask AI', sel: '.tab[data-route="ask"]' },
+    { k: 'report', label: 'Morning Report', sel: '.tab[data-route="report"]' },
+    { k: 'dashboard', label: 'Dashboard', sel: '.tab[data-route="dashboard"]' },
+    { k: 'findings', label: 'Findings', sel: '.tab[data-route="findings"]' },
+    { k: 'campaigns', label: 'Campaigns', sel: '.tab[data-route="campaigns"]' },
+    { k: 'agent-coverage', label: 'Agent Coverage', sel: '.tab[data-route="agent-coverage"]' },
+    { k: 'tvd', label: 'Tenable', sel: '.tab[data-route="tvd"]' },
+    { k: 'wiz', label: 'Wiz', sel: '.tab[data-route="wiz"]' },
+    { k: 'intel', label: 'CVE Intelligence', sel: '.navmenu[data-menu="intel"]' },
+    { k: 'tools', label: 'Tools', sel: '.navmenu[data-menu="tools"]' },
+    { k: 'faq', label: 'FAQ', sel: '.tab[data-route="faq"]' },
+    { k: 'about', label: 'About', sel: '.tab[data-route="about"]' }
+  ];
+  function applyNavHidden() {
+    var hidden = STATE.cfg.navHidden || [];
+    NAV_ITEMS.forEach(function (it) { var el = document.querySelector('nav.top ' + it.sel); if (el) el.style.display = hidden.indexOf(it.k) > -1 ? 'none' : ''; });
+  }
   function applyBrand() {
     var name = (STATE.cfg.brand || '').trim() || DEFAULT_BRAND;
     window.VM_BRAND = name;   // read by the CVE-shell views (About, footer, diagram, ledes)
-    var el = document.querySelector('nav.top .brand'); if (el) el.textContent = name;
+    var el = document.querySelector('nav.top .brand');
+    if (el) {
+      // Stack the brand: all but the last word on line 1, the last word on line 2 (shrunk to fit).
+      var w = name.split(/\s+/).filter(Boolean);
+      if (w.length > 1) { var last = w.pop(); el.innerHTML = '<span class="brand-l1">' + esc(w.join(' ')) + '</span><span class="brand-l2">' + esc(last) + '</span>'; el.classList.add('two-line'); }
+      else { el.textContent = name; el.classList.remove('two-line'); }
+    }
     [].forEach.call(document.querySelectorAll('.brandname'), function (s) { s.textContent = name; });
     try { document.title = name; } catch (e) {}
     var mono = ((STATE.cfg.brandIcon || '').trim() || brandInitials(name)).slice(0, 3);
     var col = (STATE.cfg.brandIconColor || '').trim() || DEFAULT_ICON_COLOR;
     var link = document.getElementById('favicon');
     if (link) { var nw = link.cloneNode(false); nw.setAttribute('href', faviconURI(mono, col)); link.parentNode.replaceChild(nw, link); }
+    applyNavHidden();
   }
   applyBrand();   // vmops.js loads after the nav, so the brand element already exists
 
@@ -1108,7 +1135,7 @@
   }
   function groupBody(fs) {
     var lines = fs.map(function (f) { return '- ' + f.cve + ' | ' + f.host + ' | ' + f.severity + (priorityOf(f) ? ' | ' + priorityOf(f) : '') + (cveIntel(f.cve).kev ? ' | KEV' : ''); });
-    return 'Remediation ticket covering ' + fs.length + ' finding(s):\n' + lines.join('\n') + '\n\nGenerated by ' + (window.VM_BRAND || 'VM Ops Console') + '.';
+    return 'Remediation ticket covering ' + fs.length + ' finding(s):\n' + lines.join('\n') + '\n\nGenerated by ' + (window.VM_BRAND || 'Vulnerability Management Console') + '.';
   }
   function ticketGroup(kind, fs) { if (!fs.length) return; var u = ticketUrl(kind, groupSummary(fs), groupBody(fs)); if (u) window.open(u, '_blank', 'noopener'); }
   function searchTicket(kind, f) {
@@ -1462,6 +1489,32 @@
     renderRemedList();
   }
 
+  // Settings backup / transfer. API keys and secrets are NEVER exported; on import, this browser's own
+  // secrets are preserved (the file has none to overwrite them with).
+  var SETTINGS_SECRET_KEYS = ['tioAccess', 'tioSecret', 'meClientId', 'meClientSecret'];
+  function exportSettings() {
+    var cfg = {}; Object.keys(STATE.cfg).forEach(function (k) { if (SETTINGS_SECRET_KEYS.indexOf(k) < 0) cfg[k] = STATE.cfg[k]; });
+    var payload = { _type: 'vmops-settings', _app: 'vm-ops-console', _version: (window.APP_VERSION || ''), _exported: new Date().toISOString(), config: cfg, views: loadViews() };
+    var blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' }), a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = 'vmops-settings-' + todayISO() + '.json'; a.click(); URL.revokeObjectURL(a.href);
+    toast('Settings exported (API keys excluded)');
+  }
+  function importSettings(text) {
+    var data; try { data = JSON.parse(text); } catch (e) { return toast('Import failed: not valid JSON'); }
+    if (!data || data._type !== 'vmops-settings' || !data.config) return toast('Import failed: not a VM Ops settings file');
+    var keep = {}; SETTINGS_SECRET_KEYS.forEach(function (k) { keep[k] = STATE.cfg[k]; });   // never let an import wipe this browser's own keys
+    var incoming = {}; Object.keys(data.config).forEach(function (k) { if (SETTINGS_SECRET_KEYS.indexOf(k) < 0 && k !== 'sla') incoming[k] = data.config[k]; });
+    STATE.cfg = Object.assign({}, DEFAULT_CFG, incoming, keep);
+    STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla, (data.config.sla || {}));
+    save('vmops-config', STATE.cfg);
+    var addedViews = 0;
+    if (Array.isArray(data.views)) {
+      var byName = {}; loadViews().forEach(function (v) { if (v && v.name) byName[v.name] = v; });
+      data.views.forEach(function (v) { if (v && v.name) { if (!(v.name in byName)) addedViews++; byName[v.name] = v; } });
+      saveViews(Object.keys(byName).map(function (n) { return byName[n]; }));
+    }
+    applyBrand(); toast('Settings imported' + (addedViews ? ' (' + addedViews + ' new view' + (addedViews > 1 ? 's' : '') + ')' : '')); viewSettings();
+  }
   function viewSettings() {
     setActive('settings');
     var c = STATE.cfg;
@@ -1473,7 +1526,10 @@
       '<div class="field"><label>App name</label><input type="text" id="brandName" value="' + esc(c.brand || '') + '" placeholder="' + esc(DEFAULT_BRAND) + '"></div>' +
       '<div class="grid2"><div class="field"><label>Icon monogram</label><input type="text" id="brandIcon" maxlength="3" value="' + esc(c.brandIcon || '') + '" placeholder="' + esc(brandInitials((c.brand || '').trim() || DEFAULT_BRAND)) + '"></div>' +
       '<div class="field"><label>Icon color</label><input type="color" id="brandIconColor" value="' + esc((c.brandIconColor || '').trim() || DEFAULT_ICON_COLOR) + '" style="width:60px;padding:3px;height:38px"></div></div>' +
-      '<div class="muted" style="font-size:12.5px">Sets the name in the top nav + browser tab and the page icon (favicon) — 1–3 letters on a colored tile. Leave the name blank to use “' + esc(DEFAULT_BRAND) + '”; leave the monogram blank to derive it from the name.</div></div>' +
+      '<div class="muted" style="font-size:12.5px">Sets the name in the top nav, the browser tab, and the page icon (favicon; 1 to 3 letters on a colored tile). A multi-word name stacks onto two lines in the nav (the last word drops to the second line). Leave the name blank to use “' + esc(DEFAULT_BRAND) + '”; leave the monogram blank to derive it from the name.</div></div>' +
+      '<h2>Navigation</h2><div class="card">' +
+      '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Choose which items appear in the top menu bar. Unchecking hides an item from the nav; you can still reach it by a direct link, and Settings always stays visible.</div>' +
+      '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px 16px">' + NAV_ITEMS.map(function (it) { var vis = (c.navHidden || []).indexOf(it.k) < 0; return '<label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" class="navtoggle" data-nav="' + it.k + '" style="flex:none;width:16px;height:16px"' + (vis ? ' checked' : '') + '> ' + esc(it.label) + '</label>'; }).join('') + '</div></div>' +
       '<h2>Data import</h2><div class="card">' +
       '<div class="muted" style="font-size:13px;margin-bottom:12px">Bring in each data source — Active Directory, ManageEngine, Tenable.io, CrowdStrike, and scan findings. Files are parsed and cached in your browser and feed the dashboards.</div>' +
       '<a class="btn primary" href="#/import">Open Data Import →</a></div>' +
@@ -1483,6 +1539,9 @@
       '<h2>Remediation SLA windows (days)</h2><div class="card"><div class="grid2">' +
       ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return '<div class="field"><label>' + s + '</label><input type="number" min="0" data-sla="' + s + '" value="' + esc(c.sla[s]) + '"></div>'; }).join('') +
       '</div><div class="muted" style="font-size:12.5px">SLA due = first-seen date + window. Drives overdue flags and SLA compliance.</div></div>' +
+      '<h2>Backup &amp; transfer</h2><div class="card">' +
+      '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Export your settings and saved views to a JSON file, for backup (in case this browser gets cleared) or to move them to another browser or a teammate. <b>API keys and secrets are never included</b>, and importing never overwrites this browser\'s own keys. Everything stays local.</div>' +
+      '<div class="toolbar"><button class="btn" id="cfgExport">Export settings</button><button class="btn" id="cfgImport">Import settings</button><input type="file" id="cfgFile" accept="application/json,.json" hidden></div></div>' +
       '<h2>Recurrence</h2><div class="card">' +
       '<div class="field" style="max-width:340px"><label>Flag as recurring after N reopens</label><input type="number" min="1" id="recurThreshold" value="' + esc(c.recurThreshold || 1) + '"></div>' +
       '<div class="muted" style="font-size:12.5px">A finding is marked recurring / flapping once it has been reopened (after being resolved) at least this many times. Drives the ↻ chip, the Recurring filter, and the dashboard KPI. Default 1.</div></div>' +
@@ -1539,9 +1598,13 @@
       STATE.cfg.meClientSecret = document.getElementById('meClientSecret').value.trim();
       STATE.cfg.epssLive = document.getElementById('epssLive').checked;
       STATE.cfg.recurThreshold = Math.max(1, parseInt(document.getElementById('recurThreshold').value, 10) || 1);
+      var nh = []; [].forEach.call(document.querySelectorAll('.navtoggle'), function (cb) { if (!cb.checked) nh.push(cb.getAttribute('data-nav')); }); STATE.cfg.navHidden = nh;
       save('vmops-config', STATE.cfg); applyBrand(); toast('Settings saved');
     });
     document.getElementById('resetSla').addEventListener('click', function () { STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla); save('vmops-config', STATE.cfg); viewSettings(); toast('SLA windows reset'); });
+    document.getElementById('cfgExport').addEventListener('click', exportSettings);
+    document.getElementById('cfgImport').addEventListener('click', function () { document.getElementById('cfgFile').click(); });
+    document.getElementById('cfgFile').addEventListener('change', function (e) { var f = e.target.files[0]; if (!f) return; var r = new FileReader(); r.onload = function () { importSettings(String(r.result || '')); }; r.readAsText(f); e.target.value = ''; });
     var ta = document.getElementById('tourAuto');
     if (ta) ta.addEventListener('change', function () { save('vmops-tour-auto', ta.checked); toast(ta.checked ? 'Tour will show on first visit' : 'Auto tour turned off'); });
     var tstart = document.getElementById('tourStart');
@@ -1555,7 +1618,7 @@
 
   function viewEmpty(active) {
     setActive(active);
-    app.innerHTML = '<header class="view"><div class="overline">' + esc(window.VM_BRAND || 'VM Ops Console') + '</div><h1>No findings yet</h1>' +
+    app.innerHTML = '<header class="view"><div class="overline">' + esc(window.VM_BRAND || 'Vulnerability Management Console') + '</div><h1>No findings yet</h1>' +
       '<p class="lede">Import a Tenable / Nessus CSV export, or load the sample data set, to start tracking remediation.</p></header>' +
       '<div class="toolbar"><button class="btn primary" id="goImport">Import findings</button><button class="btn" id="goSample">Load sample data</button></div>';
     document.getElementById('goImport').addEventListener('click', function () { location.hash = '#/import'; });
