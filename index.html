@@ -378,6 +378,7 @@
 <link rel="stylesheet" href="acd.css">
 <link rel="stylesheet" href="tvd.css">
 <link rel="stylesheet" href="pscan.css">
+<script src="version.js"></script>
 <script src="vendor/papaparse.min.js"></script>
 <script src="vendor/xlsx.full.min.js"></script>
 <script src="vendor/chart.umd.js"></script>
@@ -435,7 +436,7 @@
     <a href="https://www.first.org/epss/" target="_blank" rel="noopener">EPSS (FIRST)</a>,
     <a href="https://osv.dev" target="_blank" rel="noopener">OSV.dev</a>, and the
     <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV catalog</a>.
-    Built by <a href="https://cloudanimal.github.io" target="_blank" rel="noopener">Joe Cook</a>. <span class="appver" title="Release version">v1.1.1</span>
+    Built by <a href="https://cloudanimal.github.io" target="_blank" rel="noopener">Joe Cook</a>. <span class="appver" title="Release version"></span>
     <div class="disclaimer"><span class="brandname">VM Ops Console</span> runs entirely in your browser — public CVE lookups are read-only, and your imported findings, scan data, and settings stay local. Risk signals (CVSS, EPSS, KEV, LEV, SSVC) often disagree by design. Always confirm against the vendor before acting.</div>
   </footer>
 
@@ -3318,6 +3319,8 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
   }
+  // Single-source the version badge from version.js (same constant the service-worker cache uses).
+  try { var _av = document.querySelector('.appver'); if (_av && window.APP_VERSION) _av.textContent = 'v' + window.APP_VERSION; } catch (e) {}
 </script>
 </body>
 </html>

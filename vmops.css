@@ -256,6 +256,11 @@
 .vmops .ct-card.over { box-shadow:0 0 0 1px var(--crit); }
 .vmops .ct-card.drag { opacity:.4; }
 .vmops .ct-card.sel { outline:2px solid var(--accent); outline-offset:1px; }
+.vmops .ct-card:focus { outline:none; }
+.vmops .ct-card:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.vmops .ct-card.grabbed { outline:2px dashed var(--accent); outline-offset:2px; box-shadow:0 6px 18px rgba(0,0,0,.28); transform:scale(1.015); }
+/* visually-hidden, still read by screen readers (keyboard help + live announcements) */
+.vmops .ct-sr { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 .vmops .ct-cbox { position:absolute; top:8px; right:8px; width:16px; height:16px; border:1px solid var(--line); border-radius:4px; background:var(--surface); cursor:pointer; opacity:0; display:grid; place-items:center; font-size:11px; color:#fff; }
 .vmops .ct-card:hover .ct-cbox { opacity:.9; }
 .vmops .ct-cbox.on { background:var(--accent); border-color:var(--accent); opacity:1; }

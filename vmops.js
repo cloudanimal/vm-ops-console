@@ -1851,7 +1851,7 @@
   // ===================== Campaign Tracker (ClickUp-style multi-view) =====================
   // A multi-view lens over ONE campaign's scoped findings (campaignFindings), reusing the app's real
   // risk model (riskScore/priorityOf), intel (cveIntel), status store (setOverride) and finding drawer.
-  var CT = { cid: null, view: 'board', group: 'status', q: '', qf: {}, sel: {}, tcol: {}, sort: { k: 'risk', dir: -1 }, closed: {} };
+  var CT = { cid: null, view: 'board', group: 'status', q: '', qf: {}, sel: {}, tcol: {}, sort: { k: 'risk', dir: -1 }, closed: {}, grab: null };
   var CT_VIEWS = [['board', 'Board'], ['list', 'List'], ['table', 'Table'], ['calendar', 'Calendar'], ['timeline', 'Timeline'], ['workload', 'Workload'], ['dashboard', 'Dashboard'], ['activity', 'Activity']];
   var CT_GROUPS = [['status', 'Status'], ['severity', 'Severity'], ['owner', 'Assignee'], ['host', 'System'], ['patch', 'Remediation / patch']];
   var ST_VAR = { new: '--st-new', triaged: '--st-triaged', in_remediation: '--st-rem', resolved: '--st-res', risk_accepted: '--st-risk', false_positive: '--st-fp' };
@@ -1909,7 +1909,12 @@
 
   function ctCard(f) {
     var k = keyOf(f), sel = CT.sel[k];
-    return '<div class="ct-card' + (slaState(f) === 'overdue' ? ' over' : '') + (sel ? ' sel' : '') + '" draggable="true" data-key="' + esc(k) + '" style="border-left-color:var(' + (SEV_VAR[f.severity] || '--low') + ')">' +
+    var drag = (CT.group === 'status' || CT.group === 'owner'), grabbed = CT.grab === k;
+    var colLbl = CT.group === 'status' ? SLABEL[statusOf(f)] : CT.group === 'owner' ? ctOwner(f) : '';
+    var aria = f.cve + ', ' + f.severity + ', ' + f.host + (colLbl ? ', ' + (CT.group === 'owner' ? 'assignee ' : 'status ') + colLbl : '') + (sel ? ', selected' : '');
+    return '<div class="ct-card' + (slaState(f) === 'overdue' ? ' over' : '') + (sel ? ' sel' : '') + (grabbed ? ' grabbed' : '') + '" draggable="true" tabindex="0"' +
+      (drag ? ' aria-roledescription="draggable card" aria-grabbed="' + (grabbed ? 'true' : 'false') + '" aria-describedby="ctKbdHelp"' : '') +
+      ' aria-label="' + esc(aria) + '" data-key="' + esc(k) + '" style="border-left-color:var(' + (SEV_VAR[f.severity] || '--low') + ')">' +
       '<span class="ct-cbox' + (sel ? ' on' : '') + '" data-selk="' + esc(k) + '" role="checkbox" aria-checked="' + (sel ? 'true' : 'false') + '">' + (sel ? '✓' : '') + '</span>' +
       '<div class="ct-r1"><a class="cve" href="' + CVE_DETAIL + esc(f.cve) + '" tabindex="-1">' + esc(f.cve) + '</a>' + intelChips(f.cve) + ' ' + priChip(f) + '</div>' +
       '<div class="ct-ttl">' + esc(f.name || f.desc || 'Vulnerability') + '</div>' +
@@ -1924,7 +1929,9 @@
       return '<div class="ct-col' + (g.drag ? '' : ' nodrop') + '" data-k="' + esc(g.k) + '">' +
         '<div class="ct-colh"><span class="ct-sq" style="background:' + g.color + '"></span><span class="ct-lbl">' + esc(g.label) + '</span><span class="ct-cnt">' + items.length + '</span></div>' +
         '<div class="ct-colb">' + (items.map(ctCard).join('') || '<div class="muted" style="font-size:12px;padding:6px 8px">—</div>') + '</div></div>';
-    }).join('') + '</div>' + (CT.group !== 'status' && CT.group !== 'owner' ? '<div class="muted" style="font-size:11.5px;margin-top:8px">Grouped by ' + esc(CT.group) + ' — read-only (severity, system and patch come from the scan). Drag to change status or assignee.</div>' : '');
+    }).join('') + '</div>' + (CT.group !== 'status' && CT.group !== 'owner'
+      ? '<div class="muted" style="font-size:11.5px;margin-top:8px">Grouped by ' + esc(CT.group) + ' — read-only (severity, system and patch come from the scan). Drag to change status or assignee.</div>'
+      : '<div class="muted" style="font-size:11.5px;margin-top:8px">Drag a card between columns, or focus a card and press <b>Space</b> to pick it up, then <b>←</b> / <b>→</b> to move it. <b>Enter</b> opens the finding.</div>');
   }
 
   function ctList() {
@@ -2153,6 +2160,55 @@
     [].forEach.call(document.querySelectorAll('#ctTable .grid-filterrow [data-tc]'), function (el) { var ev = el.tagName === 'SELECT' ? 'change' : 'input'; el.addEventListener(ev, function () { CT.tcol[el.dataset.tc] = el.value; var active = Object.keys(CT.tcol).some(function (k) { return CT.tcol[k] !== '' && CT.tcol[k] != null; }); var cap = document.querySelector('.ct-tcap'), cl = document.getElementById('ctClear'); if (active && !cl && cap) { var bb = document.createElement('button'); bb.className = 'btn sm'; bb.id = 'ctClear'; bb.textContent = 'Clear filters'; bb.onclick = function () { CT.tcol = {}; ctRenderView(); }; cap.appendChild(bb); } else if (!active && cl) { cl.remove(); } ctFillTable(); }); });
     var clr = document.getElementById('ctClear'); if (clr) clr.onclick = function () { CT.tcol = {}; ctRenderView(); };
   }
+  function ctAnnounce(msg) { var el = document.getElementById('ctLive'); if (el) { el.textContent = ''; el.textContent = msg; } }
+  function ctFocusCard(key) { var el = document.querySelector('#ctBody .ct-card[data-key="' + key + '"]'); if (el) el.focus(); return el; }
+  function ctFocusSibling(card, dir) { var colb = card.closest('.ct-colb'); if (!colb) return; var cards = [].slice.call(colb.querySelectorAll('.ct-card')); var n = cards[cards.indexOf(card) + dir]; if (n) n.focus(); }
+  function ctFocusAdjacentColumn(card, dir) {
+    var col = card.closest('.ct-col'); if (!col) return;
+    var cols = [].slice.call(document.querySelectorAll('#ctBoard .ct-col')); var ci = cols.indexOf(col);
+    var vi = [].slice.call(col.querySelectorAll('.ct-card')).indexOf(card);
+    for (var t = ci + dir; t >= 0 && t < cols.length; t += dir) {
+      var tc = [].slice.call(cols[t].querySelectorAll('.ct-card'));
+      if (tc.length) { (tc[Math.min(vi, tc.length - 1)] || tc[0]).focus(); return; }
+    }
+  }
+  // Keyboard equivalent of dragging: move a grabbed card one column left/right (reassign status or owner).
+  function ctMoveCardKb(f, dir) {
+    var cols = [].slice.call(document.querySelectorAll('#ctBoard .ct-col'));
+    var cur = ctFieldVal(f), idx = -1;
+    for (var i = 0; i < cols.length; i++) { if (cols[i].dataset.k === cur) { idx = i; break; } }
+    var target = idx + dir;
+    if (idx < 0 || target < 0 || target >= cols.length) { ctAnnounce('Already in the ' + (dir < 0 ? 'first' : 'last') + ' column.'); return; }
+    var tk = cols[target].dataset.k;
+    if (CT.group === 'status') { setOverride(f, { status: tk }); addUpdate(f, 'Moved to ' + SLABEL[tk] + ' on the campaign board (keyboard)'); }
+    else { var nw = tk === 'Unassigned' ? '' : tk; setOverride(f, { owner: nw }); addUpdate(f, nw ? 'Assigned to ' + nw + ' on the campaign board (keyboard)' : 'Unassigned on the campaign board (keyboard)'); }
+    refreshCampaign();                                  // CT.grab is preserved, so the card stays picked up after the re-render
+    ctFocusCard(keyOf(f));
+    ctAnnounce('Moved ' + f.cve + ' to ' + (CT.group === 'owner' ? tk : SLABEL[tk]) + '. Still holding, use arrow keys to keep moving or space to drop.');
+  }
+  function ctReleaseGrab(card, msg) { CT.grab = null; if (card) { card.classList.remove('grabbed'); card.setAttribute('aria-grabbed', 'false'); } if (msg) ctAnnounce(msg); }
+  function ctBoardKey(e, card, draggable) {
+    var key = card.dataset.key, k = e.key, grabbed = CT.grab === key;
+    var f = ctScoped().filter(function (x) { return keyOf(x) === key; })[0]; if (!f) return;
+    if (k === 'Enter' || k === 'o' || k === 'O') { e.preventDefault(); if (grabbed) ctReleaseGrab(card, 'Dropped.'); else openDrawer(f); return; }
+    if (k === ' ' || k === 'Spacebar') {
+      e.preventDefault();
+      if (!draggable) { openDrawer(f); return; }
+      if (grabbed) ctReleaseGrab(card, 'Dropped ' + f.cve + '.');
+      else { CT.grab = key; card.classList.add('grabbed'); card.setAttribute('aria-grabbed', 'true'); ctAnnounce('Picked up ' + f.cve + '. Use left and right arrow keys to change ' + (CT.group === 'owner' ? 'assignee' : 'status') + ', space to drop, escape to cancel.'); }
+      return;
+    }
+    if (k === 'Escape') { if (grabbed) { e.preventDefault(); ctReleaseGrab(card, 'Cancelled.'); } return; }
+    if (k === 'x' || k === 'X') {
+      e.preventDefault();
+      if (CT.sel[key]) delete CT.sel[key]; else CT.sel[key] = 1;
+      card.classList.toggle('sel', !!CT.sel[key]);
+      var cb = card.querySelector('.ct-cbox'); if (cb) { cb.classList.toggle('on', !!CT.sel[key]); cb.innerHTML = CT.sel[key] ? '✓' : ''; cb.setAttribute('aria-checked', CT.sel[key] ? 'true' : 'false'); }
+      ctBulkBar(); ctAnnounce(CT.sel[key] ? 'Selected.' : 'Deselected.'); return;
+    }
+    if (k === 'ArrowLeft' || k === 'ArrowRight') { e.preventDefault(); var dir = k === 'ArrowRight' ? 1 : -1; if (grabbed && draggable) ctMoveCardKb(f, dir); else ctFocusAdjacentColumn(card, dir); return; }
+    if (k === 'ArrowUp' || k === 'ArrowDown') { e.preventDefault(); if (grabbed) return; ctFocusSibling(card, k === 'ArrowDown' ? 1 : -1); return; }
+  }
   function ctWireBody() {
     // open drawer on card / row / list-row / cal-ev / timeline-row click
     [].forEach.call(document.querySelectorAll('#ctBody [data-key]'), function (el) {
@@ -2172,6 +2228,7 @@
     [].forEach.call(document.querySelectorAll('#ctBody .ct-card'), function (card) {
       card.addEventListener('dragstart', function (e) { dragKey = card.dataset.key; card.classList.add('drag'); e.dataTransfer.effectAllowed = 'move'; });
       card.addEventListener('dragend', function () { card.classList.remove('drag'); });
+      card.addEventListener('keydown', function (e) { ctBoardKey(e, card, draggable); });   // keyboard drag-and-drop equivalent
     });
     [].forEach.call(document.querySelectorAll('#ctBody .ct-col'), function (col) {
       col.addEventListener('dragover', function (e) { if (!draggable) return; e.preventDefault(); col.classList.add('drop'); });
@@ -2183,14 +2240,16 @@
   // Public entry: render the tracker for a campaign into #ctMount (called from campaignDetail).
   function campaignTracker(c) {
     if (CT.cid !== c.id) { CT.sel = {}; CT.q = ''; CT.qf = {}; CT.tcol = {}; CT.closed = {}; }   // don't leak state between campaigns
-    CT.cid = c.id;
+    CT.cid = c.id; CT.grab = null;   // any fresh render (campaign/view/group/filter change) releases a picked-up card; in-progress moves go through refreshCampaign, which keeps it
     var mount = document.getElementById('ctMount'); if (!mount) return;
     var tabs = '<div class="ct-tabs">' + CT_VIEWS.map(function (v) { return '<button class="ct-tab' + (v[0] === CT.view ? ' on' : '') + '" data-v="' + v[0] + '">' + v[1] + '</button>'; }).join('') + '</div>';
     var groupSel = (CT.view === 'board' || CT.view === 'list') ? '<label class="ct-ctl">Group <select id="ctGroup">' + CT_GROUPS.map(function (g) { return '<option value="' + g[0] + '"' + (CT.group === g[0] ? ' selected' : '') + '>' + g[1] + '</option>'; }).join('') + '</select></label>' : '';
     var chips = ['kev:KEV / exploited', 'overdue:Overdue', 'critical:Critical', 'noagent:No agent'].map(function (q) { var p = q.split(':'); return '<button class="ct-qf' + (CT.qf[p[0]] ? ' on' : '') + '" data-q="' + p[0] + '"' + (p[0] === 'noagent' && !ctCoverageKnown() ? ' disabled title="Load Agent Coverage first"' : '') + '>' + p[1] + '</button>'; }).join('');
     var toolbar = '<div class="ct-toolbar">' + groupSel + '<div class="ct-qfs">' + chips + '</div><input class="ct-search" id="ctSearch" type="text" placeholder="Search CVE, host, owner…" value="' + esc(CT.q) + '">' +
       '<span style="flex:1"></span><select id="ctSaved" class="ct-ctl">' + CT_SAVED.map(function (s) { return '<option value="' + s[0] + '">' + s[1] + '</option>'; }).join('') + '</select><button class="btn sm" id="ctAuto">⚙ Automations</button></div>';
-    mount.innerHTML = tabs + toolbar + '<div class="bulkbar" id="ctBulk" hidden></div><div class="ct-body" id="ctBody"></div>';
+    mount.innerHTML = tabs + toolbar + '<div class="bulkbar" id="ctBulk" hidden></div><div class="ct-body" id="ctBody"></div>' +
+      '<div id="ctKbdHelp" class="ct-sr">Draggable card. Press Space to pick it up, then use the Left and Right arrow keys to move it between columns. Press Space or Enter to drop, Escape to cancel. Press Enter to open the finding, or x to select it.</div>' +
+      '<div id="ctLive" class="ct-sr" aria-live="polite" aria-atomic="true"></div>';
     [].forEach.call(mount.querySelectorAll('.ct-tab'), function (b) { b.onclick = function () { CT.view = b.dataset.v; campaignTracker(c); }; });
     var g = document.getElementById('ctGroup'); if (g) g.onchange = function () { CT.group = g.value; ctSyncGrouping(); };
     [].forEach.call(mount.querySelectorAll('.ct-qf'), function (b) { b.onclick = function () { if (b.disabled) return; CT.qf[b.dataset.q] = !CT.qf[b.dataset.q]; campaignTracker(c); }; });
