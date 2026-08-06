@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-05",
+  "updated": "2026-08-06",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-05",
-  "previous_date": "2026-07-29",
+  "current_date": "2026-08-06",
+  "previous_date": "2026-07-30",
   "risers": [
     {
       "id": "CVE-2026-42897",
@@ -13,9 +13,9 @@
     },
     {
       "id": "CVE-2026-34486",
-      "now": 0.8116,
+      "now": 0.79938,
       "prev": 0.42627,
-      "delta": 0.38533,
+      "delta": 0.37311,
       "name": "Apache Tomcat: Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor"
     },
     {
@@ -24,13 +24,6 @@
       "prev": 0.44442,
       "delta": 0.28647,
       "name": "Sneeit Framework <= 8.3 - Unauthenticated Remote Code Execution in sneeit_articles_paginat"
-    },
-    {
-      "id": "CVE-2025-22037",
-      "now": 0.65736,
-      "prev": 0.37115,
-      "delta": 0.28621,
-      "name": "ksmbd: fix null pointer dereference in alloc_preauth_hash()"
     },
     {
       "id": "CVE-2026-12569",
@@ -45,20 +38,6 @@
       "prev": 0.31113,
       "delta": 0.26372,
       "name": "Langflow through 0.6.19 allows remote code execution if untrusted users are able to reach the \"POST /api/v1/cu"
-    },
-    {
-      "id": "CVE-2025-21760",
-      "now": 0.33417,
-      "prev": 0.095,
-      "delta": 0.23917,
-      "name": "ndisc: extend RCU protection in ndisc_send_skb()"
-    },
-    {
-      "id": "CVE-2026-50522",
-      "now": 0.7576,
-      "prev": 0.57101,
-      "delta": 0.18659,
-      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2025-46618",
@@ -94,6 +73,13 @@
       "prev": 0.7289,
       "delta": 0.13839,
       "name": "The URL parser in Microsoft Internet Information Services (IIS) 5.1 on Windows XP Professional SP2 allows remo"
+    },
+    {
+      "id": "CVE-2026-50522",
+      "now": 0.7576,
+      "prev": 0.62545,
+      "delta": 0.13215,
+      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2014-9390",
@@ -136,6 +122,13 @@
       "prev": 0.50712,
       "delta": 0.10281,
       "name": "Rockwell Automation Studio 5000 Logix Designer, RSLogix 5000, Logix Controllers"
+    },
+    {
+      "id": "CVE-2023-4168",
+      "now": 0.45972,
+      "prev": 0.36205,
+      "delta": 0.09767,
+      "name": "Templatecookie Adlisting Redirect ad-list information disclosure"
     },
     {
       "id": "CVE-2008-1145",
@@ -201,18 +194,25 @@
       "name": "Laravel allows environment manipulation via query string"
     },
     {
-      "id": "CVE-2026-3891",
-      "now": 0.08797,
-      "prev": 0.02775,
-      "delta": 0.06022,
-      "name": "Pix for WooCommerce <= 1.5.0 - Unauthenticated Arbitrary File Upload"
-    },
-    {
       "id": "CVE-2015-0935",
       "now": 0.11761,
       "prev": 0.05869,
       "delta": 0.05892,
       "name": "Bomgar Remote Support before 15.1.1 allows remote attackers to execute arbitrary PHP code via crafted serializ"
+    },
+    {
+      "id": "CVE-2026-34909",
+      "now": 0.62767,
+      "prev": 0.56934,
+      "delta": 0.05833,
+      "name": "Ubiquiti Inc UniFi OS Server"
+    },
+    {
+      "id": "CVE-2020-15956",
+      "now": 0.16158,
+      "prev": 0.10522,
+      "delta": 0.05636,
+      "name": "ActiveMediaServer.exe in ACTi NVR3 Standard Server 3.0.12.42 allows remote unauthenticated attackers to trigge"
     }
   ],
   "newly_high": [
@@ -225,9 +225,9 @@
     },
     {
       "id": "CVE-2026-34486",
-      "now": 0.8116,
+      "now": 0.79938,
       "prev": 0.42627,
-      "delta": 0.38533,
+      "delta": 0.37311,
       "name": "Apache Tomcat: Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor"
     },
     {
@@ -236,13 +236,6 @@
       "prev": 0.44442,
       "delta": 0.28647,
       "name": "Sneeit Framework <= 8.3 - Unauthenticated Remote Code Execution in sneeit_articles_paginat"
-    },
-    {
-      "id": "CVE-2025-22037",
-      "now": 0.65736,
-      "prev": 0.37115,
-      "delta": 0.28621,
-      "name": "ksmbd: fix null pointer dereference in alloc_preauth_hash()"
     },
     {
       "id": "CVE-2024-37014",
