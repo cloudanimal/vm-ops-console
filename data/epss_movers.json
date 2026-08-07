@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-06",
+  "updated": "2026-08-07",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-06",
-  "previous_date": "2026-07-30",
+  "current_date": "2026-08-07",
+  "previous_date": "2026-07-31",
   "risers": [
     {
       "id": "CVE-2026-42897",
@@ -12,10 +12,24 @@
       "name": "Microsoft Exchange Server Spoofing Vulnerability"
     },
     {
+      "id": "CVE-2025-6197",
+      "now": 0.66785,
+      "prev": 0.03711,
+      "delta": 0.63074,
+      "name": "Grafana Grafana"
+    },
+    {
+      "id": "CVE-2026-48939",
+      "now": 0.82501,
+      "prev": 0.24347,
+      "delta": 0.58154,
+      "name": "Joomla Extension - icagenda.com - Remote Code Execution in iCaganda extension for Joomla <"
+    },
+    {
       "id": "CVE-2026-34486",
-      "now": 0.79938,
+      "now": 0.8116,
       "prev": 0.42627,
-      "delta": 0.37311,
+      "delta": 0.38533,
       "name": "Apache Tomcat: Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor"
     },
     {
@@ -66,20 +80,6 @@
       "prev": 0.22988,
       "delta": 0.14067,
       "name": "Apache Struts, Apache Struts: XXE vulnerability in outdated XWork component"
-    },
-    {
-      "id": "CVE-2005-4360",
-      "now": 0.86729,
-      "prev": 0.7289,
-      "delta": 0.13839,
-      "name": "The URL parser in Microsoft Internet Information Services (IIS) 5.1 on Windows XP Professional SP2 allows remo"
-    },
-    {
-      "id": "CVE-2026-50522",
-      "now": 0.7576,
-      "prev": 0.62545,
-      "delta": 0.13215,
-      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2014-9390",
@@ -152,6 +152,13 @@
       "name": "The Linux kernel, versions 3.9+, IP implementation is vulnerable to denial of service cond"
     },
     {
+      "id": "CVE-2021-33179",
+      "now": 0.11683,
+      "prev": 0.04289,
+      "delta": 0.07394,
+      "name": "Nagios Nagios XI"
+    },
+    {
       "id": "CVE-2014-4148",
       "now": 0.59776,
       "prev": 0.52744,
@@ -173,18 +180,25 @@
       "name": "Microsoft Windows"
     },
     {
+      "id": "CVE-2025-25014",
+      "now": 0.21483,
+      "prev": 0.15181,
+      "delta": 0.06302,
+      "name": "Kibana arbitrary code execution via prototype pollution"
+    },
+    {
+      "id": "CVE-2026-62241",
+      "now": 0.06548,
+      "prev": 0.00389,
+      "delta": 0.06159,
+      "name": "clawvet < 0.7.5 Hard-coded JWT Secret Session Forgery"
+    },
+    {
       "id": "CVE-2026-3055",
       "now": 0.84471,
       "prev": 0.78337,
       "delta": 0.06134,
       "name": "Insufficient input validation leading to memory overread"
-    },
-    {
-      "id": "CVE-2025-54988",
-      "now": 0.09092,
-      "prev": 0.02973,
-      "delta": 0.06119,
-      "name": "Apache Tika PDF parser module: XXE vulnerability in PDFParser's handling of XFA"
     },
     {
       "id": "CVE-2024-52301",
@@ -194,25 +208,11 @@
       "name": "Laravel allows environment manipulation via query string"
     },
     {
-      "id": "CVE-2015-0935",
-      "now": 0.11761,
-      "prev": 0.05869,
-      "delta": 0.05892,
-      "name": "Bomgar Remote Support before 15.1.1 allows remote attackers to execute arbitrary PHP code via crafted serializ"
-    },
-    {
       "id": "CVE-2026-34909",
       "now": 0.62767,
       "prev": 0.56934,
       "delta": 0.05833,
       "name": "Ubiquiti Inc UniFi OS Server"
-    },
-    {
-      "id": "CVE-2020-15956",
-      "now": 0.16158,
-      "prev": 0.10522,
-      "delta": 0.05636,
-      "name": "ActiveMediaServer.exe in ACTi NVR3 Standard Server 3.0.12.42 allows remote unauthenticated attackers to trigge"
     }
   ],
   "newly_high": [
@@ -224,10 +224,24 @@
       "name": "Microsoft Exchange Server Spoofing Vulnerability"
     },
     {
+      "id": "CVE-2025-6197",
+      "now": 0.66785,
+      "prev": 0.03711,
+      "delta": 0.63074,
+      "name": "Grafana Grafana"
+    },
+    {
+      "id": "CVE-2026-48939",
+      "now": 0.82501,
+      "prev": 0.24347,
+      "delta": 0.58154,
+      "name": "Joomla Extension - icagenda.com - Remote Code Execution in iCaganda extension for Joomla <"
+    },
+    {
       "id": "CVE-2026-34486",
-      "now": 0.79938,
+      "now": 0.8116,
       "prev": 0.42627,
-      "delta": 0.37311,
+      "delta": 0.38533,
       "name": "Apache Tomcat: Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor"
     },
     {
@@ -266,11 +280,11 @@
       "name": "Oracle Corporation Java SE JDK and JRE"
     },
     {
-      "id": "CVE-2015-1487",
-      "now": 0.51977,
-      "prev": 0.47331,
-      "delta": 0.04646,
-      "name": "The management console in Symantec Endpoint Protection Manager (SEPM) 12.1 before 12.1-RU6-MP1 allows remote a"
+      "id": "CVE-2024-38094",
+      "now": 0.50892,
+      "prev": 0.48735,
+      "delta": 0.02157,
+      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2024-26331",
