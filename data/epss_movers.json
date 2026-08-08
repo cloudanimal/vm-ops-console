@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-07",
+  "updated": "2026-08-08",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-07",
-  "previous_date": "2026-07-31",
+  "current_date": "2026-08-08",
+  "previous_date": "2026-08-01",
   "risers": [
     {
       "id": "CVE-2026-42897",
@@ -31,6 +31,13 @@
       "prev": 0.42627,
       "delta": 0.38533,
       "name": "Apache Tomcat: Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor"
+    },
+    {
+      "id": "CVE-2025-11953",
+      "now": 0.9398,
+      "prev": 0.61921,
+      "delta": 0.32059,
+      "name": "Command injection in React Native Community CLI allows remote attackers to perform remote "
     },
     {
       "id": "CVE-2025-6389",
@@ -75,18 +82,25 @@
       "name": "Unauthenticated Remote Code Execution via Auto-Login Bypass and Code Validation"
     },
     {
-      "id": "CVE-2025-68493",
-      "now": 0.37055,
-      "prev": 0.22988,
-      "delta": 0.14067,
-      "name": "Apache Struts, Apache Struts: XXE vulnerability in outdated XWork component"
+      "id": "CVE-2008-5764",
+      "now": 0.45386,
+      "prev": 0.30406,
+      "delta": 0.1498,
+      "name": "PHP remote file inclusion vulnerability in calendar.php in WorkSimple 1.2.1, when register_globals is enabled,"
     },
     {
-      "id": "CVE-2014-9390",
-      "now": 0.75845,
-      "prev": 0.63178,
-      "delta": 0.12667,
-      "name": "Git before 1.8.5.6, 1.9.x before 1.9.5, 2.0.x before 2.0.5, 2.1.x before 2.1.4, and 2.2.x before 2.2.1 on Wind"
+      "id": "CVE-2026-8037",
+      "now": 0.99311,
+      "prev": 0.84793,
+      "delta": 0.14518,
+      "name": "OS Command Injection Remote Code Execution Vulnerability in Progress LoadMaster, ECS Conne"
+    },
+    {
+      "id": "CVE-2008-5763",
+      "now": 0.39211,
+      "prev": 0.25682,
+      "delta": 0.13529,
+      "name": "PHP remote file inclusion vulnerability in slogin_lib.inc.php in Simple Text-File Login Script (SiTeFiLo) 1.0."
     },
     {
       "id": "CVE-2023-29689",
@@ -110,18 +124,18 @@
       "name": "Oracle Corporation Java SE JDK and JRE"
     },
     {
+      "id": "CVE-2014-9390",
+      "now": 0.75041,
+      "prev": 0.63178,
+      "delta": 0.11863,
+      "name": "Git before 1.8.5.6, 1.9.x before 1.9.5, 2.0.x before 2.0.5, 2.1.x before 2.1.4, and 2.2.x before 2.2.1 on Wind"
+    },
+    {
       "id": "CVE-2026-27760",
       "now": 0.34629,
       "prev": 0.2433,
       "delta": 0.10299,
       "name": "OpenCATS PHP Code Injection via installer AJAX endpoint"
-    },
-    {
-      "id": "CVE-2021-22681",
-      "now": 0.60993,
-      "prev": 0.50712,
-      "delta": 0.10281,
-      "name": "Rockwell Automation Studio 5000 Logix Designer, RSLogix 5000, Logix Controllers"
     },
     {
       "id": "CVE-2023-4168",
@@ -136,13 +150,6 @@
       "prev": 0.18163,
       "delta": 0.09615,
       "name": "Directory traversal vulnerability in WEBrick in Ruby 1.8 before 1.8.5-p115 and 1.8.6-p114, and 1.9 through 1.9"
-    },
-    {
-      "id": "CVE-2002-1954",
-      "now": 0.11853,
-      "prev": 0.03621,
-      "delta": 0.08232,
-      "name": "Cross-site scripting (XSS) vulnerability in the phpinfo function in PHP 4.2.3 allows remote attackers to injec"
     },
     {
       "id": "CVE-2018-5391",
@@ -173,13 +180,6 @@
       "name": "Microsoft Internet Explorer 7 through 11 allows remote attackers to gain privileges via a crafted web site, ak"
     },
     {
-      "id": "CVE-2019-1166",
-      "now": 0.68108,
-      "prev": 0.61676,
-      "delta": 0.06432,
-      "name": "Microsoft Windows"
-    },
-    {
       "id": "CVE-2025-25014",
       "now": 0.21483,
       "prev": 0.15181,
@@ -194,13 +194,6 @@
       "name": "clawvet < 0.7.5 Hard-coded JWT Secret Session Forgery"
     },
     {
-      "id": "CVE-2026-3055",
-      "now": 0.84471,
-      "prev": 0.78337,
-      "delta": 0.06134,
-      "name": "Insufficient input validation leading to memory overread"
-    },
-    {
       "id": "CVE-2024-52301",
       "now": 0.44004,
       "prev": 0.37981,
@@ -213,6 +206,13 @@
       "prev": 0.56934,
       "delta": 0.05833,
       "name": "Ubiquiti Inc UniFi OS Server"
+    },
+    {
+      "id": "CVE-2025-4901",
+      "now": 0.73367,
+      "prev": 0.67731,
+      "delta": 0.05636,
+      "name": "D-Link DI-7003GV2 HTTP Endpoint state_view.data sub_41E304 information disclosure"
     }
   ],
   "newly_high": [
