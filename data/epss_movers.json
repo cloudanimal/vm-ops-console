@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-08",
+  "updated": "2026-08-09",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-08",
-  "previous_date": "2026-08-01",
+  "current_date": "2026-08-09",
+  "previous_date": "2026-08-02",
   "risers": [
     {
       "id": "CVE-2026-42897",
@@ -47,25 +47,11 @@
       "name": "Sneeit Framework <= 8.3 - Unauthenticated Remote Code Execution in sneeit_articles_paginat"
     },
     {
-      "id": "CVE-2026-12569",
-      "now": 0.30198,
-      "prev": 0.02263,
-      "delta": 0.27935,
-      "name": "Remote Code Execution (RCE) vulnerability in Windchill PDMlink"
-    },
-    {
       "id": "CVE-2024-37014",
       "now": 0.57485,
       "prev": 0.31113,
       "delta": 0.26372,
       "name": "Langflow through 0.6.19 allows remote code execution if untrusted users are able to reach the \"POST /api/v1/cu"
-    },
-    {
-      "id": "CVE-2025-46618",
-      "now": 0.59023,
-      "prev": 0.40949,
-      "delta": 0.18074,
-      "name": "JetBrains TeamCity"
     },
     {
       "id": "CVE-2025-20282",
@@ -89,6 +75,13 @@
       "name": "PHP remote file inclusion vulnerability in calendar.php in WorkSimple 1.2.1, when register_globals is enabled,"
     },
     {
+      "id": "CVE-2008-5789",
+      "now": 0.4499,
+      "prev": 0.30093,
+      "delta": 0.14897,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in the Recly Interactive Feederator (com_feederator) compon"
+    },
+    {
       "id": "CVE-2026-8037",
       "now": 0.99311,
       "prev": 0.84793,
@@ -101,6 +94,13 @@
       "prev": 0.25682,
       "delta": 0.13529,
       "name": "PHP remote file inclusion vulnerability in slogin_lib.inc.php in Simple Text-File Login Script (SiTeFiLo) 1.0."
+    },
+    {
+      "id": "CVE-2008-5790",
+      "now": 0.36382,
+      "prev": 0.23621,
+      "delta": 0.12761,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in the Recly!Competitions (com_competitions) component 1.0 "
     },
     {
       "id": "CVE-2023-29689",
@@ -138,6 +138,13 @@
       "name": "OpenCATS PHP Code Injection via installer AJAX endpoint"
     },
     {
+      "id": "CVE-2023-37569",
+      "now": 0.33886,
+      "prev": 0.24029,
+      "delta": 0.09857,
+      "name": "OS Command Injection Vulnerability in Emagic Data Center Management Suite"
+    },
+    {
       "id": "CVE-2023-4168",
       "now": 0.45972,
       "prev": 0.36205,
@@ -145,18 +152,11 @@
       "name": "Templatecookie Adlisting Redirect ad-list information disclosure"
     },
     {
-      "id": "CVE-2008-1145",
-      "now": 0.27778,
-      "prev": 0.18163,
-      "delta": 0.09615,
-      "name": "Directory traversal vulnerability in WEBrick in Ruby 1.8 before 1.8.5-p115 and 1.8.6-p114, and 1.9 through 1.9"
-    },
-    {
-      "id": "CVE-2018-5391",
-      "now": 0.32445,
-      "prev": 0.24575,
-      "delta": 0.0787,
-      "name": "The Linux kernel, versions 3.9+, IP implementation is vulnerable to denial of service cond"
+      "id": "CVE-2008-5793",
+      "now": 0.24367,
+      "prev": 0.15372,
+      "delta": 0.08995,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in the Clickheat - Heatmap stats (com_clickheat) component "
     },
     {
       "id": "CVE-2021-33179",
@@ -201,11 +201,11 @@
       "name": "Laravel allows environment manipulation via query string"
     },
     {
-      "id": "CVE-2026-34909",
-      "now": 0.62767,
-      "prev": 0.56934,
-      "delta": 0.05833,
-      "name": "Ubiquiti Inc UniFi OS Server"
+      "id": "CVE-2025-4443",
+      "now": 0.56831,
+      "prev": 0.51017,
+      "delta": 0.05814,
+      "name": "D-Link DIR-605L sub_454F2C command injection"
     },
     {
       "id": "CVE-2025-4901",
@@ -259,13 +259,6 @@
       "name": "Langflow through 0.6.19 allows remote code execution if untrusted users are able to reach the \"POST /api/v1/cu"
     },
     {
-      "id": "CVE-2025-46618",
-      "now": 0.59023,
-      "prev": 0.40949,
-      "delta": 0.18074,
-      "name": "JetBrains TeamCity"
-    },
-    {
       "id": "CVE-2023-29689",
       "now": 0.53463,
       "prev": 0.4111,
@@ -285,13 +278,6 @@
       "prev": 0.48735,
       "delta": 0.02157,
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2024-26331",
-      "now": 0.51284,
-      "prev": 0.49322,
-      "delta": 0.01962,
-      "name": "ReCrystallize Server 5.10.0.0 uses a authorization mechanism that relies on the value of a cookie, but it does"
     },
     {
       "id": "CVE-2025-34300",
