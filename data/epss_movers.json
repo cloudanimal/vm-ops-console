@@ -1,16 +1,9 @@
 {
-  "updated": "2026-08-09",
+  "updated": "2026-08-10",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-09",
-  "previous_date": "2026-08-02",
+  "current_date": "2026-08-10",
+  "previous_date": "2026-08-03",
   "risers": [
-    {
-      "id": "CVE-2026-42897",
-      "now": 0.70307,
-      "prev": 0.0564,
-      "delta": 0.64667,
-      "name": "Microsoft Exchange Server Spoofing Vulnerability"
-    },
     {
       "id": "CVE-2025-6197",
       "now": 0.66785,
@@ -54,13 +47,6 @@
       "name": "Langflow through 0.6.19 allows remote code execution if untrusted users are able to reach the \"POST /api/v1/cu"
     },
     {
-      "id": "CVE-2025-20282",
-      "now": 0.26516,
-      "prev": 0.11173,
-      "delta": 0.15343,
-      "name": "Cisco ISE API Unauthenticated Remote Code Execution Vulnerability"
-    },
-    {
       "id": "CVE-2026-9198",
       "now": 0.17053,
       "prev": 0.01886,
@@ -89,6 +75,13 @@
       "name": "OS Command Injection Remote Code Execution Vulnerability in Progress LoadMaster, ECS Conne"
     },
     {
+      "id": "CVE-2025-20282",
+      "now": 0.26516,
+      "prev": 0.12033,
+      "delta": 0.14483,
+      "name": "Cisco ISE API Unauthenticated Remote Code Execution Vulnerability"
+    },
+    {
       "id": "CVE-2008-5763",
       "now": 0.39211,
       "prev": 0.25682,
@@ -110,18 +103,18 @@
       "name": "PyroCMS 3.9 contains a remote code execution (RCE) vulnerability that can be exploited through a server-side t"
     },
     {
+      "id": "CVE-2025-49132",
+      "now": 0.53389,
+      "prev": 0.41137,
+      "delta": 0.12252,
+      "name": "Pterodactyl Panel Allows Unauthenticated Arbitrary Remote Code Execution"
+    },
+    {
       "id": "CVE-2023-52442",
       "now": 0.29644,
       "prev": 0.17442,
       "delta": 0.12202,
       "name": "ksmbd: validate session id and tree id in compound request"
-    },
-    {
-      "id": "CVE-2022-21449",
-      "now": 0.60336,
-      "prev": 0.48235,
-      "delta": 0.12101,
-      "name": "Oracle Corporation Java SE JDK and JRE"
     },
     {
       "id": "CVE-2014-9390",
@@ -136,6 +129,13 @@
       "prev": 0.2433,
       "delta": 0.10299,
       "name": "OpenCATS PHP Code Injection via installer AJAX endpoint"
+    },
+    {
+      "id": "CVE-2026-63077",
+      "now": 0.10722,
+      "prev": 0.00649,
+      "delta": 0.10073,
+      "name": "JetBrains TeamCity"
     },
     {
       "id": "CVE-2023-37569",
@@ -157,6 +157,13 @@
       "prev": 0.15372,
       "delta": 0.08995,
       "name": "Multiple PHP remote file inclusion vulnerabilities in the Clickheat - Heatmap stats (com_clickheat) component "
+    },
+    {
+      "id": "CVE-2025-4380",
+      "now": 0.36837,
+      "prev": 0.29404,
+      "delta": 0.07433,
+      "name": "Ads Pro Plugin - Multi-Purpose WordPress Advertising Manager <= 4.89 - Unauthenticated Loc"
     },
     {
       "id": "CVE-2021-33179",
@@ -206,23 +213,9 @@
       "prev": 0.51017,
       "delta": 0.05814,
       "name": "D-Link DIR-605L sub_454F2C command injection"
-    },
-    {
-      "id": "CVE-2025-4901",
-      "now": 0.73367,
-      "prev": 0.67731,
-      "delta": 0.05636,
-      "name": "D-Link DI-7003GV2 HTTP Endpoint state_view.data sub_41E304 information disclosure"
     }
   ],
   "newly_high": [
-    {
-      "id": "CVE-2026-42897",
-      "now": 0.70307,
-      "prev": 0.0564,
-      "delta": 0.64667,
-      "name": "Microsoft Exchange Server Spoofing Vulnerability"
-    },
     {
       "id": "CVE-2025-6197",
       "now": 0.66785,
@@ -266,11 +259,11 @@
       "name": "PyroCMS 3.9 contains a remote code execution (RCE) vulnerability that can be exploited through a server-side t"
     },
     {
-      "id": "CVE-2022-21449",
-      "now": 0.60336,
-      "prev": 0.48235,
-      "delta": 0.12101,
-      "name": "Oracle Corporation Java SE JDK and JRE"
+      "id": "CVE-2025-49132",
+      "now": 0.53389,
+      "prev": 0.41137,
+      "delta": 0.12252,
+      "name": "Pterodactyl Panel Allows Unauthenticated Arbitrary Remote Code Execution"
     },
     {
       "id": "CVE-2024-38094",
