@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-10",
+  "updated": "2026-08-11",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-10",
-  "previous_date": "2026-08-03",
+  "current_date": "2026-08-11",
+  "previous_date": "2026-08-04",
   "risers": [
     {
       "id": "CVE-2025-6197",
@@ -20,9 +20,9 @@
     },
     {
       "id": "CVE-2026-34486",
-      "now": 0.8116,
+      "now": 0.82933,
       "prev": 0.42627,
-      "delta": 0.38533,
+      "delta": 0.40306,
       "name": "Apache Tomcat: Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor"
     },
     {
@@ -33,24 +33,24 @@
       "name": "Command injection in React Native Community CLI allows remote attackers to perform remote "
     },
     {
-      "id": "CVE-2025-6389",
-      "now": 0.73089,
-      "prev": 0.44442,
-      "delta": 0.28647,
-      "name": "Sneeit Framework <= 8.3 - Unauthenticated Remote Code Execution in sneeit_articles_paginat"
-    },
-    {
       "id": "CVE-2024-37014",
       "now": 0.57485,
-      "prev": 0.31113,
-      "delta": 0.26372,
+      "prev": 0.31337,
+      "delta": 0.26148,
       "name": "Langflow through 0.6.19 allows remote code execution if untrusted users are able to reach the \"POST /api/v1/cu"
     },
     {
+      "id": "CVE-2026-34908",
+      "now": 0.85194,
+      "prev": 0.61906,
+      "delta": 0.23288,
+      "name": "Ubiquiti Inc UniFi OS Server"
+    },
+    {
       "id": "CVE-2026-9198",
-      "now": 0.17053,
+      "now": 0.17352,
       "prev": 0.01886,
-      "delta": 0.15167,
+      "delta": 0.15466,
       "name": "Unauthenticated Remote Code Execution via Auto-Login Bypass and Code Validation"
     },
     {
@@ -110,25 +110,18 @@
       "name": "Pterodactyl Panel Allows Unauthenticated Arbitrary Remote Code Execution"
     },
     {
-      "id": "CVE-2023-52442",
-      "now": 0.29644,
-      "prev": 0.17442,
-      "delta": 0.12202,
-      "name": "ksmbd: validate session id and tree id in compound request"
-    },
-    {
-      "id": "CVE-2014-9390",
-      "now": 0.75041,
-      "prev": 0.63178,
-      "delta": 0.11863,
-      "name": "Git before 1.8.5.6, 1.9.x before 1.9.5, 2.0.x before 2.0.5, 2.1.x before 2.1.4, and 2.2.x before 2.2.1 on Wind"
-    },
-    {
       "id": "CVE-2026-27760",
       "now": 0.34629,
       "prev": 0.2433,
       "delta": 0.10299,
       "name": "OpenCATS PHP Code Injection via installer AJAX endpoint"
+    },
+    {
+      "id": "CVE-2026-48907",
+      "now": 0.66013,
+      "prev": 0.55914,
+      "delta": 0.10099,
+      "name": "Joomla Extension - joomlacontenteditor.net - Remote Code Execution in JCE extension for Jo"
     },
     {
       "id": "CVE-2026-63077",
@@ -152,11 +145,39 @@
       "name": "Templatecookie Adlisting Redirect ad-list information disclosure"
     },
     {
+      "id": "CVE-2021-34448",
+      "now": 0.40062,
+      "prev": 0.3067,
+      "delta": 0.09392,
+      "name": "Scripting Engine Memory Corruption Vulnerability"
+    },
+    {
       "id": "CVE-2008-5793",
       "now": 0.24367,
       "prev": 0.15372,
       "delta": 0.08995,
       "name": "Multiple PHP remote file inclusion vulnerabilities in the Clickheat - Heatmap stats (com_clickheat) component "
+    },
+    {
+      "id": "CVE-2021-34480",
+      "now": 0.39782,
+      "prev": 0.31825,
+      "delta": 0.07957,
+      "name": "Scripting Engine Memory Corruption Vulnerability"
+    },
+    {
+      "id": "CVE-2010-3324",
+      "now": 0.25016,
+      "prev": 0.17219,
+      "delta": 0.07797,
+      "name": "The toStaticHTML function in Microsoft Internet Explorer 8, and the SafeHTML function in Microsoft Windows Sha"
+    },
+    {
+      "id": "CVE-2021-31196",
+      "now": 0.54056,
+      "prev": 0.4638,
+      "delta": 0.07676,
+      "name": "Microsoft Exchange Server Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2025-4380",
@@ -173,46 +194,25 @@
       "name": "Nagios Nagios XI"
     },
     {
+      "id": "CVE-2023-32562",
+      "now": 0.45562,
+      "prev": 0.38414,
+      "delta": 0.07148,
+      "name": "Ivanti Avalanche"
+    },
+    {
+      "id": "CVE-2023-32564",
+      "now": 0.44427,
+      "prev": 0.37365,
+      "delta": 0.07062,
+      "name": "Ivanti Avalanche"
+    },
+    {
       "id": "CVE-2014-4148",
       "now": 0.59776,
       "prev": 0.52744,
       "delta": 0.07032,
       "name": "win32k.sys in the kernel-mode drivers in Microsoft Windows Server 2003 SP2, Windows Vista SP2, Windows Server "
-    },
-    {
-      "id": "CVE-2014-4123",
-      "now": 0.47259,
-      "prev": 0.40289,
-      "delta": 0.0697,
-      "name": "Microsoft Internet Explorer 7 through 11 allows remote attackers to gain privileges via a crafted web site, ak"
-    },
-    {
-      "id": "CVE-2025-25014",
-      "now": 0.21483,
-      "prev": 0.15181,
-      "delta": 0.06302,
-      "name": "Kibana arbitrary code execution via prototype pollution"
-    },
-    {
-      "id": "CVE-2026-62241",
-      "now": 0.06548,
-      "prev": 0.00389,
-      "delta": 0.06159,
-      "name": "clawvet < 0.7.5 Hard-coded JWT Secret Session Forgery"
-    },
-    {
-      "id": "CVE-2024-52301",
-      "now": 0.44004,
-      "prev": 0.37981,
-      "delta": 0.06023,
-      "name": "Laravel allows environment manipulation via query string"
-    },
-    {
-      "id": "CVE-2025-4443",
-      "now": 0.56831,
-      "prev": 0.51017,
-      "delta": 0.05814,
-      "name": "D-Link DIR-605L sub_454F2C command injection"
     }
   ],
   "newly_high": [
@@ -232,23 +232,16 @@
     },
     {
       "id": "CVE-2026-34486",
-      "now": 0.8116,
+      "now": 0.82933,
       "prev": 0.42627,
-      "delta": 0.38533,
+      "delta": 0.40306,
       "name": "Apache Tomcat: Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor"
-    },
-    {
-      "id": "CVE-2025-6389",
-      "now": 0.73089,
-      "prev": 0.44442,
-      "delta": 0.28647,
-      "name": "Sneeit Framework <= 8.3 - Unauthenticated Remote Code Execution in sneeit_articles_paginat"
     },
     {
       "id": "CVE-2024-37014",
       "now": 0.57485,
-      "prev": 0.31113,
-      "delta": 0.26372,
+      "prev": 0.31337,
+      "delta": 0.26148,
       "name": "Langflow through 0.6.19 allows remote code execution if untrusted users are able to reach the \"POST /api/v1/cu"
     },
     {
@@ -264,6 +257,20 @@
       "prev": 0.41137,
       "delta": 0.12252,
       "name": "Pterodactyl Panel Allows Unauthenticated Arbitrary Remote Code Execution"
+    },
+    {
+      "id": "CVE-2021-31196",
+      "now": 0.54056,
+      "prev": 0.4638,
+      "delta": 0.07676,
+      "name": "Microsoft Exchange Server Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2025-5961",
+      "now": 0.51341,
+      "prev": 0.48659,
+      "delta": 0.02682,
+      "name": "Migration, Backup, Staging \u2013 WPvivid Backup & Migration <= 0.9.116 - Authenticated (Admini"
     },
     {
       "id": "CVE-2024-38094",
