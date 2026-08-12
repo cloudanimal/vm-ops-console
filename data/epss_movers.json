@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-11",
+  "updated": "2026-08-12",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-11",
-  "previous_date": "2026-08-04",
+  "current_date": "2026-08-12",
+  "previous_date": "2026-08-05",
   "risers": [
     {
       "id": "CVE-2025-6197",
@@ -19,13 +19,6 @@
       "name": "Joomla Extension - icagenda.com - Remote Code Execution in iCaganda extension for Joomla <"
     },
     {
-      "id": "CVE-2026-34486",
-      "now": 0.82933,
-      "prev": 0.42627,
-      "delta": 0.40306,
-      "name": "Apache Tomcat: Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor"
-    },
-    {
       "id": "CVE-2025-11953",
       "now": 0.9398,
       "prev": 0.61921,
@@ -33,25 +26,11 @@
       "name": "Command injection in React Native Community CLI allows remote attackers to perform remote "
     },
     {
-      "id": "CVE-2024-37014",
-      "now": 0.57485,
-      "prev": 0.31337,
-      "delta": 0.26148,
-      "name": "Langflow through 0.6.19 allows remote code execution if untrusted users are able to reach the \"POST /api/v1/cu"
-    },
-    {
       "id": "CVE-2026-34908",
       "now": 0.85194,
       "prev": 0.61906,
       "delta": 0.23288,
       "name": "Ubiquiti Inc UniFi OS Server"
-    },
-    {
-      "id": "CVE-2026-9198",
-      "now": 0.17352,
-      "prev": 0.01886,
-      "delta": 0.15466,
-      "name": "Unauthenticated Remote Code Execution via Auto-Login Bypass and Code Validation"
     },
     {
       "id": "CVE-2008-5764",
@@ -75,13 +54,6 @@
       "name": "OS Command Injection Remote Code Execution Vulnerability in Progress LoadMaster, ECS Conne"
     },
     {
-      "id": "CVE-2025-20282",
-      "now": 0.26516,
-      "prev": 0.12033,
-      "delta": 0.14483,
-      "name": "Cisco ISE API Unauthenticated Remote Code Execution Vulnerability"
-    },
-    {
       "id": "CVE-2008-5763",
       "now": 0.39211,
       "prev": 0.25682,
@@ -96,25 +68,11 @@
       "name": "Multiple PHP remote file inclusion vulnerabilities in the Recly!Competitions (com_competitions) component 1.0 "
     },
     {
-      "id": "CVE-2023-29689",
-      "now": 0.53463,
-      "prev": 0.4111,
-      "delta": 0.12353,
-      "name": "PyroCMS 3.9 contains a remote code execution (RCE) vulnerability that can be exploited through a server-side t"
-    },
-    {
       "id": "CVE-2025-49132",
       "now": 0.53389,
       "prev": 0.41137,
       "delta": 0.12252,
       "name": "Pterodactyl Panel Allows Unauthenticated Arbitrary Remote Code Execution"
-    },
-    {
-      "id": "CVE-2026-27760",
-      "now": 0.34629,
-      "prev": 0.2433,
-      "delta": 0.10299,
-      "name": "OpenCATS PHP Code Injection via installer AJAX endpoint"
     },
     {
       "id": "CVE-2026-48907",
@@ -136,13 +94,6 @@
       "prev": 0.24029,
       "delta": 0.09857,
       "name": "OS Command Injection Vulnerability in Emagic Data Center Management Suite"
-    },
-    {
-      "id": "CVE-2023-4168",
-      "now": 0.45972,
-      "prev": 0.36205,
-      "delta": 0.09767,
-      "name": "Templatecookie Adlisting Redirect ad-list information disclosure"
     },
     {
       "id": "CVE-2021-34448",
@@ -208,11 +159,60 @@
       "name": "Ivanti Avalanche"
     },
     {
-      "id": "CVE-2014-4148",
-      "now": 0.59776,
-      "prev": 0.52744,
-      "delta": 0.07032,
-      "name": "win32k.sys in the kernel-mode drivers in Microsoft Windows Server 2003 SP2, Windows Vista SP2, Windows Server "
+      "id": "CVE-2021-36948",
+      "now": 0.26733,
+      "prev": 0.1991,
+      "delta": 0.06823,
+      "name": "Windows Update Medic Service Elevation of Privilege Vulnerability"
+    },
+    {
+      "id": "CVE-2025-25014",
+      "now": 0.21483,
+      "prev": 0.15181,
+      "delta": 0.06302,
+      "name": "Kibana arbitrary code execution via prototype pollution"
+    },
+    {
+      "id": "CVE-2026-62241",
+      "now": 0.06548,
+      "prev": 0.00389,
+      "delta": 0.06159,
+      "name": "clawvet < 0.7.5 Hard-coded JWT Secret Session Forgery"
+    },
+    {
+      "id": "CVE-2021-34484",
+      "now": 0.21661,
+      "prev": 0.15616,
+      "delta": 0.06045,
+      "name": "Windows User Profile Service Elevation of Privilege Vulnerability"
+    },
+    {
+      "id": "CVE-2025-4443",
+      "now": 0.56831,
+      "prev": 0.51017,
+      "delta": 0.05814,
+      "name": "D-Link DIR-605L sub_454F2C command injection"
+    },
+    {
+      "id": "CVE-2025-4901",
+      "now": 0.73367,
+      "prev": 0.67731,
+      "delta": 0.05636,
+      "name": "D-Link DI-7003GV2 HTTP Endpoint state_view.data sub_41E304 information disclosure"
+    },
+    {
+      "id": "CVE-2023-4168",
+      "now": 0.45972,
+      "prev": 0.40582,
+      "delta": 0.0539,
+      "name": "Templatecookie Adlisting Redirect ad-list information disclosure"
+    },
+    {
+      "id": "CVE-2026-31431",
+      "now": 0.99907,
+      "prev": 0.94545,
+      "delta": 0.05362,
+      "name": "crypto: algif_aead - Revert to operating out-of-place"
     }
   ],
   "newly_high": [
@@ -229,27 +229,6 @@
       "prev": 0.24347,
       "delta": 0.58154,
       "name": "Joomla Extension - icagenda.com - Remote Code Execution in iCaganda extension for Joomla <"
-    },
-    {
-      "id": "CVE-2026-34486",
-      "now": 0.82933,
-      "prev": 0.42627,
-      "delta": 0.40306,
-      "name": "Apache Tomcat: Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor"
-    },
-    {
-      "id": "CVE-2024-37014",
-      "now": 0.57485,
-      "prev": 0.31337,
-      "delta": 0.26148,
-      "name": "Langflow through 0.6.19 allows remote code execution if untrusted users are able to reach the \"POST /api/v1/cu"
-    },
-    {
-      "id": "CVE-2023-29689",
-      "now": 0.53463,
-      "prev": 0.4111,
-      "delta": 0.12353,
-      "name": "PyroCMS 3.9 contains a remote code execution (RCE) vulnerability that can be exploited through a server-side t"
     },
     {
       "id": "CVE-2025-49132",
@@ -278,13 +257,6 @@
       "prev": 0.48735,
       "delta": 0.02157,
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2025-34300",
-      "now": 0.5108,
-      "prev": 0.4942,
-      "delta": 0.0166,
-      "name": "Sawtooth Software Lighthouse Studio < 9.16.14 Pre-Authentication RCE"
     }
   ]
 }
