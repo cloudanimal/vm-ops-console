@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-12",
+  "updated": "2026-08-13",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-12",
-  "previous_date": "2026-08-05",
+  "current_date": "2026-08-13",
+  "previous_date": "2026-08-06",
   "risers": [
     {
       "id": "CVE-2025-6197",
@@ -82,18 +82,18 @@
       "name": "Joomla Extension - joomlacontenteditor.net - Remote Code Execution in JCE extension for Jo"
     },
     {
-      "id": "CVE-2026-63077",
-      "now": 0.10722,
-      "prev": 0.00649,
-      "delta": 0.10073,
-      "name": "JetBrains TeamCity"
-    },
-    {
       "id": "CVE-2023-37569",
       "now": 0.33886,
       "prev": 0.24029,
       "delta": 0.09857,
       "name": "OS Command Injection Vulnerability in Emagic Data Center Management Suite"
+    },
+    {
+      "id": "CVE-2026-63077",
+      "now": 0.10722,
+      "prev": 0.0101,
+      "delta": 0.09712,
+      "name": "JetBrains TeamCity"
     },
     {
       "id": "CVE-2021-34448",
@@ -201,18 +201,18 @@
       "name": "D-Link DI-7003GV2 HTTP Endpoint state_view.data sub_41E304 information disclosure"
     },
     {
-      "id": "CVE-2023-4168",
-      "now": 0.45972,
-      "prev": 0.40582,
-      "delta": 0.0539,
-      "name": "Templatecookie Adlisting Redirect ad-list information disclosure"
+      "id": "CVE-2025-47269",
+      "now": 0.42958,
+      "prev": 0.37817,
+      "delta": 0.05141,
+      "name": "code-server session cookie can be extracted by having user visit specially crafted proxy U"
     },
     {
-      "id": "CVE-2026-31431",
-      "now": 0.99907,
-      "prev": 0.94545,
-      "delta": 0.05362,
-      "name": "crypto: algif_aead - Revert to operating out-of-place"
+      "id": "CVE-2022-0482",
+      "now": 0.43746,
+      "prev": 0.3873,
+      "delta": 0.05016,
+      "name": "Exposure of Private Personal Information to an Unauthorized Actor in alextselegidis/easyap"
     }
   ],
   "newly_high": [
@@ -246,9 +246,9 @@
     },
     {
       "id": "CVE-2025-5961",
-      "now": 0.51341,
+      "now": 0.5253,
       "prev": 0.48659,
-      "delta": 0.02682,
+      "delta": 0.03871,
       "name": "Migration, Backup, Staging \u2013 WPvivid Backup & Migration <= 0.9.116 - Authenticated (Admini"
     },
     {
@@ -257,6 +257,20 @@
       "prev": 0.48735,
       "delta": 0.02157,
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2020-28579",
+      "now": 0.50734,
+      "prev": 0.4929,
+      "delta": 0.01444,
+      "name": "Trend Micro Trend Micro InterScan Web Security Virtual Appliance"
+    },
+    {
+      "id": "CVE-2017-11890",
+      "now": 0.50051,
+      "prev": 0.49398,
+      "delta": 0.00653,
+      "name": "Microsoft Corporation Internet Explorer"
     }
   ]
 }
