@@ -11,7 +11,7 @@ importScripts('version.js');   // single source of truth for APP_VERSION (shared
 var CACHE = 'vmops-v' + (self.APP_VERSION || '0');
 var PRECACHE = [
   './', './index.html', './version.js',
-  './vmops.js', './vmops.css', './acd.js', './acd.css', './tvd.js', './tvd.css', './wiz.js', './wiz.css', './qualys.js', './rapid7.js', './scanner.css',
+  './vmops.js', './vmops.css', './acd.js', './acd.css', './tvd.js', './tvd.css', './wiz.js', './wiz.css', './qualys.js', './rapid7.js', './crowdstrike.js', './scanner.css',
   './pscan.js', './pscan.css', './vmstore.js',
   './vendor/papaparse.min.js', './vendor/xlsx.full.min.js', './vendor/chart.umd.js',
   './vendor/html2canvas.min.js', './vendor/gifenc.global.js'
