@@ -53,6 +53,13 @@
 
 .sc-foot { font-size: 11.5px; color: var(--faint); margin-top: 14px; line-height: 1.5; }
 
+/* Coverage matrix */
+.cov-matrix th.cov-vh { text-align: center; white-space: nowrap; }
+.cov-matrix td.cov-c { text-align: center; }
+.cov-yes { color: var(--ok); font-size: 13px; }
+.cov-no { color: var(--faint); opacity: .5; }
+.cov-matrix tr.cov-gaprow td { background: color-mix(in srgb, var(--crit) 7%, transparent); }
+
 @media (max-width: 900px) {
   .sc-kpis { grid-template-columns: repeat(2, 1fr); }
   .sc-grid2 { grid-template-columns: 1fr; }

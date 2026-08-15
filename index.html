@@ -401,6 +401,7 @@
       <div class="navmenu-list" role="menu">
         <a href="#/dashboard" data-route="dashboard">Overview</a>
         <a href="#/agent-coverage" data-route="agent-coverage">Agent Coverage</a>
+        <a href="#/coverage" data-route="coverage">Scanner Coverage</a>
         <a href="#/tvd" data-route="tvd">Tenable</a>
         <a href="#/qualys" data-route="qualys">Qualys</a>
         <a href="#/rapid7" data-route="rapid7">Rapid7</a>
@@ -458,6 +459,8 @@
 <script src="qualys.js"></script>
 <script src="rapid7.js"></script>
 <script src="crowdstrike.js"></script>
+<script src="scan_unify.js"></script>
+<script src="coverage.js"></script>
 <script src="pscan.js"></script>
 
 <script>
@@ -3069,6 +3072,7 @@
     if (parts[0] === 'qualys' && window.QUALYS) { setActive('qualys'); window.QUALYS.open(); return; }
     if (parts[0] === 'rapid7' && window.RAPID7) { setActive('rapid7'); window.RAPID7.open(); return; }
     if (parts[0] === 'crowdstrike' && window.CROWDSTRIKE) { setActive('crowdstrike'); window.CROWDSTRIKE.open(); return; }
+    if (parts[0] === 'coverage' && window.COVERAGE) { setActive('coverage'); window.COVERAGE.open(); return; }
     if (parts[0] === 'prompt-scanner' && window.PSCAN) { setActive('prompt-scanner'); window.PSCAN.open(); return; }
     var _appEl = document.getElementById('app'); if (_appEl) _appEl.className = '';
     if (parts.length === 0) return viewAsk();
@@ -3120,6 +3124,7 @@
       { label: 'Qualys VMDR Dashboard', hash: '#/qualys', hint: 'QID detections + TruRisk' },
       { label: 'Rapid7 InsightVM Dashboard', hash: '#/rapid7', hint: 'Real Risk + exploit exposure' },
       { label: 'CrowdStrike Falcon Spotlight', hash: '#/crowdstrike', hint: 'ExPRT.AI + exploit status' },
+      { label: 'Scanner Coverage', hash: '#/coverage', hint: 'Cross-vendor CVE overlap + gaps' },
       { label: 'Data Import', hash: '#/import' },
       { label: 'Settings', hash: '#/settings' },
       { label: 'Datasets & freshness', hash: '#/data' },

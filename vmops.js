@@ -1200,7 +1200,7 @@
       '<header class="view"><div class="overline">Settings · Data Import</div><h1>Data import</h1>' +
       '<p class="lede">Bring in each data source once, here. Files are parsed in your browser and cached locally (IndexedDB) — nothing is uploaded. Imported sources feed the matching dashboard; scan findings feed the Findings workbench. Re-importing findings merges and preserves your status, owner, and notes.</p></header>' +
       privSlim() +
-      '<div class="toolbar"><a class="btn sm" href="#/settings">← Settings</a><span class="spacer"></span><a class="btn sm" href="sharepoint-test.html" target="_blank" rel="noopener">SharePoint tester ↗</a><button class="btn sm" id="loadSample">Load sample findings</button></div>' +
+      '<div class="toolbar"><a class="btn sm" href="#/settings">← Settings</a><span class="spacer"></span><a class="btn sm" href="sharepoint-test.html" target="_blank" rel="noopener">SharePoint tester ↗</a><button class="btn sm" id="loadSample">Load sample findings</button><button class="btn sm" id="loadMultiScan" title="Also load Qualys, Rapid7, CrowdStrike, and Wiz sample findings so the workbench reflects every source">Load multi-scanner sample</button></div>' +
       IMPORT_GROUPS.map(function (g) {
         return '<div class="import-grouprow"><h2 class="import-grouphdr">' + esc(g.title) + '</h2>' +
           (g.open ? '<a class="btn sm import-open" href="' + g.open.route + '">' + esc(g.open.label) + '</a>' : '') +
@@ -1210,6 +1210,13 @@
       IMPORT_SOON.map(function (s) { return '<div class="card import-src soon"><div class="src-title">' + esc(s.label) + '</div><div class="muted src-sub">' + esc(s.sub) + '</div><div class="src-status muted">Coming soon</div></div>'; }).join('') +
       '</div>';
     document.getElementById('loadSample').addEventListener('click', function () { var _s = SAMPLE(); mergeFindings(_s); seedSampleOverrides(_s); if (window.VMStore) VMStore.put({ id: 'findings', name: 'sample (built-in)', text: '', kind: 'sample' }); toast('Loaded sample findings'); goDash(); });
+    document.getElementById('loadMultiScan').addEventListener('click', function () {
+      var _s = SAMPLE(); mergeFindings(_s); seedSampleOverrides(_s);   // Tenable baseline
+      var extra = (window.VMSCAN ? VMSCAN.scannerFindings() : []);      // Qualys/Rapid7/CrowdStrike/Wiz
+      mergeFindings(extra);
+      if (window.VMStore) VMStore.put({ id: 'findings', name: 'multi-scanner sample', text: '', kind: 'sample' });
+      toast('Loaded findings from 5 scanners (' + STATE.findings.length + ' total)'); goDash();
+    });
     [].forEach.call(document.querySelectorAll('.src-pick'), function (b) { b.addEventListener('click', function () { document.querySelector('.src-file[data-id="' + b.getAttribute('data-id') + '"]').click(); }); });
     [].forEach.call(document.querySelectorAll('.src-file'), function (inp) { inp.addEventListener('change', function () { if (inp.files[0]) handleSourceFile(inp.getAttribute('data-id'), inp.files[0]); inp.value = ''; }); });
     [].forEach.call(document.querySelectorAll('.src-clear'), function (b) { b.addEventListener('click', function () { clearSource(b.getAttribute('data-id')); }); });
@@ -2561,6 +2568,14 @@
   function vmShow(fn){ return function(){ app.className='vmops'; return fn.apply(null, arguments); }; }
   function goDash() { if ((location.hash||'').indexOf('#/dashboard')===0){ app.className='vmops'; viewDashboard(); } else { location.hash='#/dashboard'; } }
   // Exposed to the host (CVE-Explorer-based) router, which dispatches the ops routes.
+  // Read-only snapshot of the current findings (used by the cross-vendor Scanner
+  // Coverage view to include the Tenable baseline).
+  function getFindings() { return STATE.findings.slice(); }
+  // Opt-in loader: merge externally-normalized scanner findings (Qualys/Rapid7/
+  // CrowdStrike/Wiz sample) into the shared store so the workbench, Overview, and
+  // Campaigns reflect all sources. Returns the new total.
+  function loadScannerFindings(list) { if (!list || !list.length) return STATE.findings.length; mergeFindings(list); return STATE.findings.length; }
   window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), campaigns: vmShow(viewCampaigns), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz),
+    getFindings: getFindings, loadScannerFindings: loadScannerFindings,
     remediation: { ensure: ensureRemed, for: remediationFor, copy: copyText } };
 })();
