@@ -1,0 +1,60 @@
+/* Shared styles for the scanner dashboards (Qualys, Rapid7). Uses the app's
+   shared design tokens so they match the other dashboards in light and dark. */
+.scapp { max-width: 1180px; margin: 0 auto; padding: 8px 4px 40px; color: var(--ink); }
+.schead .overline { text-transform: uppercase; letter-spacing: .08em; font-size: 12px; font-weight: 700; color: var(--accent); }
+.schead h1 { margin: 4px 0 6px; font-family: var(--serif); }
+.schead .lede { color: var(--soft); max-width: 800px; }
+.sctools { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 10px 0 18px; }
+.sc-sample { font-size: 12px; font-weight: 700; color: var(--high); background: color-mix(in srgb, var(--high) 12%, transparent); border: 1px solid color-mix(in srgb, var(--high) 45%, transparent); border-radius: 999px; padding: 4px 10px; }
+.sctools .priv { font-size: 12px; color: var(--faint); }
+
+.sc-kpis { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 18px; }
+.sc-kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
+.sc-kpi-v { font-family: var(--serif); font-size: 28px; font-weight: 700; line-height: 1; }
+.sc-kpi-l { font-size: 12px; font-weight: 600; margin-top: 6px; color: var(--ink); }
+.sc-kpi-s { font-size: 11px; color: var(--faint); margin-top: 2px; }
+.sc-kpi.crit { border-color: color-mix(in srgb, var(--crit) 45%, var(--line)); } .sc-kpi.crit .sc-kpi-v { color: var(--crit); }
+.sc-kpi.high { border-color: color-mix(in srgb, var(--high) 45%, var(--line)); } .sc-kpi.high .sc-kpi-v { color: var(--high); }
+
+.sc-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.sc-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-bottom: 16px; }
+.sc-card h3 { margin: 0 0 10px; font-size: 15px; color: var(--ink); }
+.sc-cardnote { font-size: 12.5px; color: var(--soft); margin: -4px 0 12px; line-height: 1.45; }
+.sc-note { font-size: 11.5px; color: var(--faint); margin-top: 10px; }
+
+.sc-bar { display: grid; grid-template-columns: 200px 1fr 40px; align-items: center; gap: 10px; margin: 7px 0; font-size: 13px; }
+.sc-bar-l { color: var(--ink); }
+.sc-bar-track { background: color-mix(in srgb, var(--accent) 8%, transparent); border: 1px solid var(--line); border-radius: 6px; height: 14px; overflow: hidden; }
+.sc-bar-fill { display: block; height: 100%; border-radius: 6px; }
+.sc-bar-n { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); }
+
+.sc-rem { border: 1px solid var(--line); border-left-width: 4px; border-left-color: var(--accent); border-radius: 10px; padding: 11px 13px; margin: 9px 0; background: var(--paper); }
+.sc-rem-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.sc-rem-title { font-weight: 600; font-size: 13.5px; color: var(--ink); }
+.sc-rem-metric { margin-left: auto; font-size: 12px; color: var(--soft); font-variant-numeric: tabular-nums; }
+.sc-rem-sub { font-size: 12px; color: var(--soft); margin-top: 4px; }
+.sc-rem-sub .mono { font-family: var(--mono, ui-monospace, Menlo, monospace); }
+
+.sc-sev { display: inline-block; min-width: 16px; text-align: center; font-size: 10.5px; font-weight: 800; color: var(--badge-ink); border-radius: 4px; padding: 1px 5px; letter-spacing: .02em; }
+.sc-sev.crit { background: var(--crit); } .sc-sev.high { background: var(--high); }
+.sc-sev.med { background: var(--med); } .sc-sev.low { background: var(--low); }
+
+.sc-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.sc-table th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--faint); border-bottom: 1px solid var(--line); padding: 6px 8px; }
+.sc-table td { padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: middle; color: var(--ink); }
+.sc-table .mono { font-family: var(--mono, ui-monospace, Menlo, monospace); }
+.sc-sub { font-size: 10.5px; color: var(--faint); }
+.sc-risk { font-variant-numeric: tabular-nums; font-weight: 700; }
+.sc-tag { font-size: 10px; font-weight: 700; border-radius: 4px; padding: 1px 6px; margin-right: 3px; display: inline-block; }
+.sc-tag.kev { background: color-mix(in srgb, var(--crit) 16%, transparent); color: var(--crit); }
+.sc-tag.exp { background: color-mix(in srgb, var(--high) 16%, transparent); color: var(--high); }
+.sc-tag.mal { background: color-mix(in srgb, var(--crit) 20%, transparent); color: var(--crit); }
+.sc-tag.status { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); }
+
+.sc-foot { font-size: 11.5px; color: var(--faint); margin-top: 14px; line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .sc-kpis { grid-template-columns: repeat(2, 1fr); }
+  .sc-grid2 { grid-template-columns: 1fr; }
+  .sc-bar { grid-template-columns: 140px 1fr 34px; }
+}

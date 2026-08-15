@@ -375,6 +375,7 @@
 <link rel="stylesheet" href="acd.css">
 <link rel="stylesheet" href="tvd.css">
 <link rel="stylesheet" href="wiz.css">
+<link rel="stylesheet" href="scanner.css">
 <link rel="stylesheet" href="pscan.css">
 <script src="version.js"></script>
 <script src="vendor/papaparse.min.js"></script>
@@ -401,6 +402,8 @@
         <a href="#/dashboard" data-route="dashboard">Overview</a>
         <a href="#/agent-coverage" data-route="agent-coverage">Agent Coverage</a>
         <a href="#/tvd" data-route="tvd">Tenable</a>
+        <a href="#/qualys" data-route="qualys">Qualys</a>
+        <a href="#/rapid7" data-route="rapid7">Rapid7</a>
         <a href="#/wiz" data-route="wiz">Wiz</a>
       </div>
     </div>
@@ -451,6 +454,8 @@
 <script src="acd.js"></script>
 <script src="tvd.js"></script>
 <script src="wiz.js"></script>
+<script src="qualys.js"></script>
+<script src="rapid7.js"></script>
 <script src="pscan.js"></script>
 
 <script>
@@ -3059,6 +3064,8 @@
     if (parts[0] === 'agent-coverage' && window.ACD) { setActive('agent-coverage'); window.ACD.open(); return; }
     if (parts[0] === 'tvd' && window.TVD) { setActive('tvd'); window.TVD.open(); return; }
     if (parts[0] === 'wiz' && window.WIZ) { setActive('wiz'); window.WIZ.open(); return; }
+    if (parts[0] === 'qualys' && window.QUALYS) { setActive('qualys'); window.QUALYS.open(); return; }
+    if (parts[0] === 'rapid7' && window.RAPID7) { setActive('rapid7'); window.RAPID7.open(); return; }
     if (parts[0] === 'prompt-scanner' && window.PSCAN) { setActive('prompt-scanner'); window.PSCAN.open(); return; }
     var _appEl = document.getElementById('app'); if (_appEl) _appEl.className = '';
     if (parts.length === 0) return viewAsk();
@@ -3107,6 +3114,8 @@
       { label: 'Agent Coverage', hash: '#/agent-coverage' },
       { label: 'Tenable VM Dashboard', hash: '#/tvd' },
       { label: 'Wiz CNAPP Dashboard', hash: '#/wiz', hint: 'Cloud posture + attack paths' },
+      { label: 'Qualys VMDR Dashboard', hash: '#/qualys', hint: 'QID detections + TruRisk' },
+      { label: 'Rapid7 InsightVM Dashboard', hash: '#/rapid7', hint: 'Real Risk + exploit exposure' },
       { label: 'Data Import', hash: '#/import' },
       { label: 'Settings', hash: '#/settings' },
       { label: 'Datasets & freshness', hash: '#/data' },
