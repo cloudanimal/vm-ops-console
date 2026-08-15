@@ -82,10 +82,9 @@
   var NAV_ITEMS = [
     { k: 'ask', label: 'Ask AI', sel: '.tab[data-route="ask"]' },
     { k: 'report', label: 'Morning Report', sel: '.tab[data-route="report"]' },
-    { k: 'dashboard', label: 'Dashboard', sel: '.tab[data-route="dashboard"]' },
+    { k: 'dashboards', label: 'Dashboards', sel: '.navmenu[data-menu="dashboards"]' },
     { k: 'findings', label: 'Findings', sel: '.tab[data-route="findings"]' },
     { k: 'campaigns', label: 'Campaigns', sel: '.tab[data-route="campaigns"]' },
-    { k: 'agent-coverage', label: 'Agent Coverage', sel: '.tab[data-route="agent-coverage"]' },
     { k: 'tools', label: 'Tools', sel: '.navmenu[data-menu="tools"]' },
     { k: 'faq', label: 'FAQ', sel: '.tab[data-route="faq"]' },
     { k: 'about', label: 'About', sel: '.tab[data-route="about"]' }
@@ -481,7 +480,7 @@
       (savedViews.length ? '<optgroup label="Saved">' + savedViews.map(function (v) { return '<option value="saved:' + esc(v.name) + '"' + (activeView === 'saved:' + v.name ? ' selected' : '') + '>' + esc(v.name) + '</option>'; }).join('') + '</optgroup>' : '');
     app.innerHTML =
       backLink() +
-      '<header class="view"><div class="overline">Findings workbench</div><h1>Vulnerability findings</h1>' +
+      '<header class="view"><div class="overline">Findings workbench</div><h1>Vulnerability Findings</h1>' +
       '<p class="lede">Triage your imported scan findings by status, owner, SLA, and recency — keep per-finding notes and a dated status log, and open Jira or ServiceNow tickets. Everything stays in your browser.</p></header>' +
       privSlim() +
       '<div class="toolbar">' +

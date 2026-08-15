@@ -5,7 +5,7 @@
   var ACD_MARKUP='<div class="acdapp">'+`<div class="acdhead">
     <div class="overline">Agent Coverage</div>
     <h1>Reconcile your agent coverage</h1>
-    <p class="lede">Active Directory is the source of truth (the denominator); every host is matched back to it by hostname across ManageEngine, Tenable, and CrowdStrike — all in your browser.</p>
+    <p class="lede">Active Directory is the source of truth (the denominator); every host is matched back to it by hostname across ManageEngine, Tenable, and CrowdStrike, all in your&nbsp;browser.</p>
   </div>
   <div class="acdtools">
     <span class="priv">🔒 100% local — your data never leaves this browser</span>

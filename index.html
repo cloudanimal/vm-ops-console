@@ -394,17 +394,21 @@
     <a class="tab" href="#/ask" data-route="ask">Ask&nbsp;AI</a>
     <span class="navsep" aria-hidden="true"></span>
     <a class="tab" href="#/report" data-route="report">Morning Report</a>
-    <a class="tab" href="#/dashboard" data-route="dashboard">Dashboard</a>
+    <div class="navmenu" data-menu="dashboards">
+      <button class="navmenu-btn" type="button" aria-haspopup="true" aria-expanded="false">Dashboards <span class="caret">▾</span></button>
+      <div class="navmenu-list" role="menu">
+        <a href="#/dashboard" data-route="dashboard">Overview</a>
+        <a href="#/agent-coverage" data-route="agent-coverage">Agent Coverage</a>
+        <a href="#/tvd" data-route="tvd">Tenable</a>
+        <a href="#/wiz" data-route="wiz">Wiz</a>
+      </div>
+    </div>
     <a class="tab" href="#/findings" data-route="findings">Findings</a>
     <a class="tab" href="#/campaigns" data-route="campaigns">Campaigns</a>
-    <a class="tab" href="#/agent-coverage" data-route="agent-coverage">Agent&nbsp;Coverage</a>
     <span class="navsep" aria-hidden="true"></span>
     <div class="navmenu" data-menu="tools">
       <button class="navmenu-btn" type="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret">▾</span></button>
       <div class="navmenu-list" role="menu">
-        <div class="navmenu-group">Dashboards</div>
-        <a href="#/tvd" data-route="tvd">Tenable</a>
-        <a href="#/wiz" data-route="wiz">Wiz</a>
         <div class="navmenu-group">Analysis</div>
         <a href="#/analyze" data-route="tenable">Tenable Analyzer</a>
         <a href="#/prompt-scanner" data-route="prompt-scanner">AI Prompt Scanner</a>
