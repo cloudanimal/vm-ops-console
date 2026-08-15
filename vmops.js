@@ -86,9 +86,6 @@
     { k: 'findings', label: 'Findings', sel: '.tab[data-route="findings"]' },
     { k: 'campaigns', label: 'Campaigns', sel: '.tab[data-route="campaigns"]' },
     { k: 'agent-coverage', label: 'Agent Coverage', sel: '.tab[data-route="agent-coverage"]' },
-    { k: 'tvd', label: 'Tenable', sel: '.tab[data-route="tvd"]' },
-    { k: 'wiz', label: 'Wiz', sel: '.tab[data-route="wiz"]' },
-    { k: 'intel', label: 'CVE Intelligence', sel: '.navmenu[data-menu="intel"]' },
     { k: 'tools', label: 'Tools', sel: '.navmenu[data-menu="tools"]' },
     { k: 'faq', label: 'FAQ', sel: '.tab[data-route="faq"]' },
     { k: 'about', label: 'About', sel: '.tab[data-route="about"]' }

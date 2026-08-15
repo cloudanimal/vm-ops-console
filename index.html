@@ -66,7 +66,9 @@
   nav.top .navmenu-btn .caret { font-size:10px; opacity:.7; }
   nav.top .navmenu.menu-active > .navmenu-btn, nav.top .navmenu.open > .navmenu-btn { color:var(--ink); font-weight:500; background:var(--surface); }
   nav.top .navmenu.open > .navmenu-btn .caret { transform:rotate(180deg); }
-  nav.top .navmenu-list { position:fixed; display:none; flex-direction:column; min-width:190px; background:var(--paper); border:1px solid var(--line); border-radius:11px; box-shadow:0 10px 30px rgba(0,0,0,.18); padding:6px; z-index:200; }
+  nav.top .navmenu-list { position:fixed; display:none; flex-direction:column; min-width:190px; max-height:calc(100vh - 80px); overflow-y:auto; background:var(--paper); border:1px solid var(--line); border-radius:11px; box-shadow:0 10px 30px rgba(0,0,0,.18); padding:6px; z-index:200; }
+  nav.top .navmenu-list .navmenu-group { font-size:10px; text-transform:uppercase; letter-spacing:.05em; color:var(--faint); font-weight:700; padding:9px 12px 3px; }
+  nav.top .navmenu-list .navmenu-group:first-child { padding-top:4px; }
   nav.top .navmenu.open .navmenu-list { display:flex; }
   nav.top .navmenu-list a { display:block; padding:8px 12px; border-radius:7px; font-size:13.5px; color:var(--soft); text-decoration:none; white-space:nowrap; }
   nav.top .navmenu-list a:hover { background:var(--surface); color:var(--ink); }
@@ -396,12 +398,18 @@
     <a class="tab" href="#/findings" data-route="findings">Findings</a>
     <a class="tab" href="#/campaigns" data-route="campaigns">Campaigns</a>
     <a class="tab" href="#/agent-coverage" data-route="agent-coverage">Agent&nbsp;Coverage</a>
-    <a class="tab" href="#/tvd" data-route="tvd">Tenable</a>
-    <a class="tab" href="#/wiz" data-route="wiz">Wiz</a>
     <span class="navsep" aria-hidden="true"></span>
-    <div class="navmenu" data-menu="intel">
-      <button class="navmenu-btn" type="button" aria-haspopup="true" aria-expanded="false">CVE&nbsp;Intelligence <span class="caret">▾</span></button>
+    <div class="navmenu" data-menu="tools">
+      <button class="navmenu-btn" type="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret">▾</span></button>
       <div class="navmenu-list" role="menu">
+        <div class="navmenu-group">Dashboards</div>
+        <a href="#/tvd" data-route="tvd">Tenable</a>
+        <a href="#/wiz" data-route="wiz">Wiz</a>
+        <div class="navmenu-group">Analysis</div>
+        <a href="#/analyze" data-route="tenable">Tenable Analyzer</a>
+        <a href="#/prompt-scanner" data-route="prompt-scanner">AI Prompt Scanner</a>
+        <a href="#/nasl" data-route="nasl">NASL Viewer</a>
+        <div class="navmenu-group">CVE Intelligence</div>
         <a href="#/search" data-route="search">Search</a>
         <a href="#/exploited" data-route="exploited">Exploited</a>
         <a href="#/stats" data-route="stats">CVE Statistics</a>
@@ -409,14 +417,6 @@
         <a href="#/latest" data-route="latest">Latest CVEs</a>
         <a href="#/triage" data-route="triage">Triage</a>
         <a href="#/eol" data-route="eol">End of Life</a>
-      </div>
-    </div>
-    <div class="navmenu" data-menu="tools">
-      <button class="navmenu-btn" type="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret">▾</span></button>
-      <div class="navmenu-list" role="menu">
-        <a href="#/analyze" data-route="tenable">Tenable Analyzer</a>
-        <a href="#/prompt-scanner" data-route="prompt-scanner">AI Prompt Scanner</a>
-        <a href="#/nasl" data-route="nasl">NASL Viewer</a>
       </div>
     </div>
     <span class="navsep" aria-hidden="true"></span>
