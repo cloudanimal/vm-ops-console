@@ -391,3 +391,8 @@
 .vmops .cm-gaplist { display:flex; flex-direction:column; gap:6px; }
 .vmops .cm-gapitem { display:flex; align-items:center; gap:7px; font-size:12.5px; padding:5px 0; border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent); }
 .vmops .cm-gapitem .host { font-family:var(--mono); font-size:11.5px; color:var(--soft); }
+.vmops .cm-card { position:relative; }
+.vmops .cm-card:hover .ct-cbox, .vmops .cm-card.sel .ct-cbox { opacity:.9; }
+.vmops .cm-card.sel { outline:2px solid var(--accent); outline-offset:1px; }
+.vmops .cm-row.sel > td { background:color-mix(in srgb,var(--accent) 9%,transparent); }
+.vmops .grid .selcol .ct-cbox { position:static; opacity:.85; margin:0 auto; }

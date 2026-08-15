@@ -1816,7 +1816,8 @@
   }
 
   // ===================== Campaign Manager (portfolio layer over all campaigns) =====================
-  var CM = { view: 'board', sort: { k: 'name', dir: 1 }, tcol: {} };
+  var CM = { view: 'board', sort: { k: 'name', dir: 1 }, tcol: {}, sel: {} };
+  function cmStatusColor(k) { return { planning: 'var(--soft)', active: 'var(--accent)', paused: 'var(--med)', completed: 'var(--ok)', cancelled: 'var(--faint)' }[k] || 'var(--accent)'; }
   function campSetStatus(id, status) {
     var camps = loadCampaigns(), c = camps.filter(function (x) { return x.id === id; })[0];
     if (!c || c.status === status) return; c.status = status; saveCampaigns(camps);
@@ -1847,8 +1848,9 @@
       '</div>';
   }
   function cmCampCard(c) {
-    var st = campaignStats(c), risk = campAtRisk(c, st);
-    return '<div class="cm-card' + (risk ? ' risk' : '') + '" draggable="true" data-id="' + esc(c.id) + '">' +
+    var st = campaignStats(c), risk = campAtRisk(c, st), sel = CM.sel[c.id];
+    return '<div class="cm-card' + (risk ? ' risk' : '') + (sel ? ' sel' : '') + '" draggable="true" data-id="' + esc(c.id) + '">' +
+      '<span class="ct-cbox' + (sel ? ' on' : '') + '" data-selid="' + esc(c.id) + '" role="checkbox" aria-checked="' + (sel ? 'true' : 'false') + '">' + (sel ? '✓' : '') + '</span>' +
       '<div class="cm-c1"><a href="#/campaigns/' + esc(c.id) + '">' + esc(c.name) + '</a>' + (c.priority ? ' <span class="pri ' + esc((c.priority || '').toLowerCase()) + '">' + esc(c.priority) + '</span>' : '') + '</div>' +
       '<div class="cm-c2">' + pbar(st.pct) + '</div>' +
       '<div class="cm-c3"><span class="muted">' + esc(c.owner || 'Unassigned') + '</span>' + (st.overdue ? ' <span class="badge crit" title="findings past SLA">' + st.overdue + ' overdue</span>' : '') + (risk ? ' <span class="cm-risk" title="' + esc(risk) + '">at risk</span>' : '') + '</div>' +
@@ -1885,8 +1887,8 @@
   }
   function cmTable() {
     var arrow = function (k) { return CM.sort.k === k ? (CM.sort.dir < 0 ? ' ▾' : ' ▴') : ''; };
-    var head = '<tr>' + CM_COLS.map(function (c) { return '<th data-sk="' + c[0] + '">' + c[1] + arrow(c[0]) + '</th>'; }).join('') + '</tr>' +
-      '<tr class="grid-filterrow">' + CM_COLS.map(function (c) { return '<th>' + cmFilterCtl(c) + '</th>'; }).join('') + '</tr>';
+    var head = '<tr><th class="selcol"></th>' + CM_COLS.map(function (c) { return '<th data-sk="' + c[0] + '">' + c[1] + arrow(c[0]) + '</th>'; }).join('') + '</tr>' +
+      '<tr class="grid-filterrow"><th class="selcol"></th>' + CM_COLS.map(function (c) { return '<th>' + cmFilterCtl(c) + '</th>'; }).join('') + '</tr>';
     return '<div class="ct-tcap"><span id="cmCount"></span>' + (cmFilterActive() ? '<button class="btn sm" id="cmClear">Clear filters</button>' : '') + '</div>' +
       '<div class="gridwrap"><table class="grid" id="cmTable"><thead>' + head + '</thead><tbody id="cmTbody"></tbody></table></div>';
   }
@@ -1896,13 +1898,13 @@
     rows.sort(function (a, b) { var va = cmFieldVal(a.c, k, a.st), vb = cmFieldVal(b.c, k, b.st); if (num) { va = +va; vb = +vb; } else { va = String(va).toLowerCase(); vb = String(vb).toLowerCase(); } return va < vb ? -d : va > vb ? d : 0; });
     var tb = document.getElementById('cmTbody'); if (!tb) return;
     tb.innerHTML = rows.length ? rows.map(function (o) { var c = o.c, st = o.st, risk = campAtRisk(c, st);
-      return '<tr class="cm-row" data-id="' + esc(c.id) + '"><td><a href="#/campaigns/' + esc(c.id) + '"><b>' + esc(c.name) + '</b></a></td>' +
+      return '<tr class="cm-row' + (CM.sel[c.id] ? ' sel' : '') + '" data-id="' + esc(c.id) + '"><td class="selcol"><span class="ct-cbox' + (CM.sel[c.id] ? ' on' : '') + '" data-selid="' + esc(c.id) + '">' + (CM.sel[c.id] ? '✓' : '') + '</span></td><td><a href="#/campaigns/' + esc(c.id) + '"><b>' + esc(c.name) + '</b></a></td>' +
         '<td class="muted" style="font-size:12px">' + esc(campScopeText(c)) + '</td><td>' + esc(c.owner || '—') + '</td>' +
         '<td>' + (c.priority ? '<span class="pri ' + esc((c.priority || '').toLowerCase()) + '">' + esc(c.priority) + '</span>' : '—') + '</td>' +
         '<td>' + pbar(st.pct) + '</td><td>' + (st.overdue ? '<span class="badge crit">' + st.overdue + '</span>' : '<span class="muted">—</span>') + '</td>' +
         '<td>' + (risk ? '<span class="cm-risk" title="' + esc(risk) + '">at risk</span>' : '<span class="muted">—</span>') + '</td>' +
         '<td>' + (c.dueDate ? esc(c.dueDate) : '—') + '</td><td><span class="stbadge st-' + esc(c.status) + '">' + esc(campStatusLabel(c.status)) + '</span></td></tr>';
-    }).join('') : '<tr><td colspan="' + CM_COLS.length + '" class="muted" style="text-align:center;padding:20px">No campaigns match these filters.</td></tr>';
+    }).join('') : '<tr><td colspan="' + (CM_COLS.length + 1) + '" class="muted" style="text-align:center;padding:20px">No campaigns match these filters.</td></tr>';
     var cnt = document.getElementById('cmCount'); if (cnt) cnt.innerHTML = 'Showing <b>' + rows.length + '</b> of ' + camps.length + ' campaigns';
     [].forEach.call(tb.querySelectorAll('.cm-row'), function (r) { r.addEventListener('click', function (e) { if (e.target.closest('a')) return; location.hash = '#/campaigns/' + r.dataset.id; }); });
   }
@@ -1934,14 +1936,75 @@
       '<div class="cm-gaplist">' + top.map(function (f) { return '<div class="cm-gapitem"><a class="mono" href="' + CVE_DETAIL + esc(f.cve) + '">' + esc(f.cve) + '</a>' + intelChips(f.cve) + ' ' + sevBadge(f.severity) + ' <span class="host">' + esc(f.host) + '</span></div>'; }).join('') +
       '</div>' + (un.length > 8 ? '<div class="muted" style="font-size:11.5px;margin-top:8px">plus ' + (un.length - 8) + ' more</div>' : '') + '</div>';
   }
+  function cmTimeline(camps) {
+    var dates = []; camps.forEach(function (c) { if (c.created) dates.push(c.created); if (c.dueDate) dates.push(c.dueDate); }); dates.push(todayISO());
+    if (!dates.length) return '<div class="ct-tl"><div class="muted" style="padding:14px">No campaigns.</div></div>';
+    var min = dates.reduce(function (a, b) { return a < b ? a : b; }), max = dates.reduce(function (a, b) { return a > b ? a : b; });
+    var minT = new Date(min).getTime(), maxT = new Date(max).getTime(), span = Math.max(1, maxT - minT);
+    var p = function (d) { return (new Date(d).getTime() - minT) / span * 100; };
+    var rows = camps.slice().sort(function (a, b) { return (a.dueDate || '9999') < (b.dueDate || '9999') ? -1 : 1; }).map(function (c) {
+      var st = campaignStats(c), s = c.created || c.dueDate || todayISO(), e = c.dueDate || c.created || todayISO(), L = p(s), R = p(e), W = Math.max(2, R - L);
+      return '<div class="ct-tlrow" data-id="' + esc(c.id) + '"><div class="ct-tll"><b>' + esc(c.name) + '</b> · ' + esc(c.owner || '—') + '</div>' +
+        '<div class="ct-tltrack"><div class="ct-tlnow" style="left:' + p(todayISO()) + '%"></div>' +
+        '<div class="ct-tlbar" style="left:' + L + '%;width:' + W + '%;background:' + cmStatusColor(c.status) + (campAtRisk(c, st) ? ';box-shadow:0 0 0 1px var(--crit)' : '') + '"></div></div></div>';
+    }).join('');
+    return '<div class="ct-tl">' + rows + '<div class="ct-tlaxis"><div>created → due</div><div class="ct-tlticks"><span class="ct-tick" style="left:0%">' + esc(min) + '</span><span class="ct-tick" style="left:' + p(todayISO()) + '%">today</span><span class="ct-tick" style="left:100%">' + esc(max) + '</span></div></div></div>';
+  }
+  function cmCalendar(camps) {
+    var byDay = {}; camps.forEach(function (c) { if (c.dueDate) (byDay[c.dueDate] = byDay[c.dueDate] || []).push(c); });
+    var now = new Date(), y = now.getFullYear(), m = now.getMonth(), first = new Date(y, m, 1), start = new Date(y, m, 1 - first.getDay()), today = todayISO(), cells = '';
+    for (var i = 0; i < 42; i++) { var cur = new Date(start.getTime() + i * 86400000); var ci = cur.getFullYear() + '-' + String(cur.getMonth() + 1).padStart(2, '0') + '-' + String(cur.getDate()).padStart(2, '0'); var off = cur.getMonth() !== m, evs = byDay[ci] || [];
+      cells += '<div class="ct-cell' + (off ? ' off' : '') + (ci === today ? ' today' : '') + '"><span class="ct-dn">' + cur.getDate() + '</span>' + evs.slice(0, 3).map(function (c) { return '<span class="ct-ev" data-id="' + esc(c.id) + '" style="background:' + cmStatusColor(c.status) + '" title="' + esc(c.name) + '">' + esc(c.name) + '</span>'; }).join('') + (evs.length > 3 ? '<span class="muted" style="font-size:10px">+' + (evs.length - 3) + '</span>' : '') + '</div>'; }
+    return '<div class="ct-cal"><div class="ct-calh">' + first.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) + ' <span class="muted" style="font-size:12px">campaigns on their due date</span></div><div class="ct-calg">' + ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(function (d) { return '<div class="ct-dow">' + d + '</div>'; }).join('') + '</div><div class="ct-calg">' + cells + '</div></div>';
+  }
+  function cmWorkload(camps) {
+    var by = {}; camps.forEach(function (c) { var o = c.owner || 'Unassigned'; (by[o] = by[o] || []).push(c); });
+    var rows = Object.keys(by).map(function (o) { var cs = by[o], tot = 0, res = 0, overdue = 0; cs.forEach(function (c) { var st = campaignStats(c); tot += st.total; res += st.resolved; overdue += st.overdue; }); return { o: o, n: cs.length, pct: tot ? Math.round(res / tot * 100) : 0, overdue: overdue }; }).sort(function (a, b) { return b.n - a.n; });
+    if (!rows.length) return '<div class="ct-wl"><div class="muted" style="padding:14px">No campaigns.</div></div>';
+    return '<div class="ct-wl">' + rows.map(function (r) {
+      return '<div class="ct-wlrow"><div class="ct-wlwho">' + ctAvatar(r.o) + '<span>' + esc(r.o) + '</span></div><div><div class="ct-wlbar"><span class="ct-wseg" style="width:' + r.pct + '%;background:var(--ok)"></span></div><div class="muted" style="font-size:11px;margin-top:5px">' + r.n + ' campaign' + (r.n > 1 ? 's' : '') + ' · ' + r.pct + '% resolved' + (r.overdue ? ' · ' + r.overdue + ' overdue findings' : '') + '</div></div><div class="ct-wltot">' + r.n + '</div></div>';
+    }).join('') + '</div>';
+  }
+  function cmDashboard(camps) {
+    var order = ['active', 'planning', 'paused', 'completed', 'cancelled'], sc = {}; order.forEach(function (k) { sc[k] = 0; }); camps.forEach(function (c) { sc[c.status] = (sc[c.status] || 0) + 1; });
+    var tot = camps.length || 1, circ = 2 * Math.PI * 52, acc = 0;
+    var arcs = order.map(function (k) { var len = sc[k] / tot * circ, seg = sc[k] ? '<circle r="52" cx="70" cy="70" fill="none" stroke="' + cmStatusColor(k) + '" stroke-width="20" stroke-dasharray="' + len + ' ' + (circ - len) + '" stroke-dashoffset="' + (-acc) + '" transform="rotate(-90 70 70)"/>' : ''; acc += len; return seg; }).join('');
+    var donut = '<div class="card"><h3 style="margin:0 0 10px;font-size:13px">Campaigns by status</h3><div style="display:flex;align-items:center;gap:16px"><svg viewBox="0 0 140 140" style="width:126px;height:126px"><circle r="52" cx="70" cy="70" fill="none" stroke="color-mix(in srgb,var(--line) 60%,transparent)" stroke-width="20"/>' + arcs + '<text x="70" y="66" text-anchor="middle" font-size="26" font-weight="700" fill="var(--ink)">' + camps.length + '</text><text x="70" y="84" text-anchor="middle" font-size="10" fill="var(--soft)">total</text></svg><div style="display:flex;flex-direction:column;gap:6px;font-size:12px">' + order.map(function (k) { return '<span><span style="display:inline-block;width:9px;height:9px;border-radius:3px;background:' + cmStatusColor(k) + ';margin-right:6px"></span>' + campStatusLabel(k) + ' <b>' + sc[k] + '</b></span>'; }).join('') + '</div></div></div>';
+    var prog = '<div class="card"><h3 style="margin:0 0 10px;font-size:13px">Progress by campaign</h3>' + camps.slice().sort(function (a, b) { return campaignStats(b).pct - campaignStats(a).pct; }).map(function (c) { var st = campaignStats(c); return '<div style="display:grid;grid-template-columns:160px 1fr 40px;gap:10px;align-items:center;font-size:12px;margin-bottom:8px"><a href="#/campaigns/' + esc(c.id) + '" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + esc(c.name) + '</a><span style="height:9px;border-radius:99px;background:color-mix(in srgb,var(--line) 60%,transparent);overflow:hidden;display:block"><span style="display:block;height:100%;width:' + st.pct + '%;background:var(--ok)"></span></span><b style="text-align:right">' + st.pct + '%</b></div>'; }).join('') + '</div>';
+    return '<div class="ct-dash"><div class="ct-dgrid">' + donut + prog + '</div></div>';
+  }
+  function cmBulkBar() {
+    var b = document.getElementById('cmBulk'); if (!b) return;
+    var ids = Object.keys(CM.sel); if (!ids.length) { b.setAttribute('hidden', ''); return; }
+    b.removeAttribute('hidden');
+    b.innerHTML = '<span class="bulkcount"><b>' + ids.length + '</b> selected</span>' +
+      '<select id="cmbStatus"><option value="">Set status…</option>' + CAMP_STATUS.map(function (s) { return '<option value="' + s.k + '">' + s.l + '</option>'; }).join('') + '</select>' +
+      '<select id="cmbPrio"><option value="">Set priority…</option>' + CAMP_PRIO.map(function (p) { return '<option>' + p + '</option>'; }).join('') + '</select>' +
+      '<button class="btn sm" id="cmbOwner">Set owner…</button>' +
+      '<input type="date" id="cmbDue" title="Due date"><button class="btn sm" id="cmbDueApply">Set due</button>' +
+      '<span class="spacer"></span><button class="btn sm" id="cmbClear">Clear</button>';
+    var apply = function (patch, msg) { var camps = loadCampaigns(); ids.forEach(function (id) { var c = camps.filter(function (x) { return x.id === id; })[0]; if (c) Object.assign(c, patch); }); saveCampaigns(camps); toast(ids.length + ' campaign' + (ids.length > 1 ? 's' : '') + ' ' + msg); CM.sel = {}; campaignList(); };
+    document.getElementById('cmbStatus').onchange = function (e) { if (e.target.value) apply({ status: e.target.value }, 'set to ' + campStatusLabel(e.target.value)); };
+    document.getElementById('cmbPrio').onchange = function (e) { if (e.target.value) apply({ priority: e.target.value }, 'set to ' + e.target.value); };
+    document.getElementById('cmbOwner').onclick = function () { var o = (prompt('Assign owner to ' + ids.length + ' campaign(s)') || '').trim(); if (o) apply({ owner: o }, 'assigned to ' + o); };
+    document.getElementById('cmbDueApply').onclick = function () { var d = document.getElementById('cmbDue').value; if (d) apply({ dueDate: d }, 'due ' + d); };
+    document.getElementById('cmbClear').onclick = function () { CM.sel = {}; campaignList(); };
+  }
+  function cmToggleSel(cb) { var id = cb.dataset.selid; if (CM.sel[id]) delete CM.sel[id]; else CM.sel[id] = 1; cb.classList.toggle('on'); cb.innerHTML = CM.sel[id] ? '✓' : ''; var host = cb.closest('.cm-card') || cb.closest('.cm-row'); if (host) host.classList.toggle('sel'); cmBulkBar(); }
+  function cmWireSel() { [].forEach.call(document.querySelectorAll('#cmBody .ct-cbox[data-selid]'), function (cb) { cb.addEventListener('click', function (e) { e.stopPropagation(); cmToggleSel(cb); }); }); }
+  function cmWireItems() { [].forEach.call(document.querySelectorAll('#cmBody [data-id]'), function (el) { el.addEventListener('click', function (e) { if (e.target.closest('a') || e.target.closest('.ct-cbox')) return; location.hash = '#/campaigns/' + el.dataset.id; }); }); }
   function cmRenderView() {
     var camps = loadCampaigns(), host = document.getElementById('cmBody'); if (!host) return;
-    host.innerHTML = CM.view === 'table' ? cmTable() : cmBoard(camps);
-    if (CM.view === 'table') { cmWireTable(); cmFillTable(camps); } else cmWireBoard();
+    var fn = { board: cmBoard, timeline: cmTimeline, calendar: cmCalendar, workload: cmWorkload, dashboard: cmDashboard };
+    host.innerHTML = CM.view === 'table' ? cmTable() : (fn[CM.view] || cmBoard)(camps);
+    if (CM.view === 'table') { cmWireTable(); cmFillTable(camps); cmWireSel(); }
+    else if (CM.view === 'board') { cmWireBoard(); cmWireSel(); }
+    else cmWireItems();
+    cmBulkBar();
   }
   function campaignList() {
     var camps = loadCampaigns();
-    var tabs = '<div class="ct-tabs" id="cmTabs">' + [['board', 'Board'], ['table', 'Table']].map(function (v) { return '<button class="ct-tab' + (CM.view === v[0] ? ' on' : '') + '" data-v="' + v[0] + '">' + v[1] + '</button>'; }).join('') + '</div>';
+    var tabs = '<div class="ct-tabs" id="cmTabs">' + [['board', 'Board'], ['table', 'Table'], ['timeline', 'Timeline'], ['calendar', 'Calendar'], ['workload', 'Workload'], ['dashboard', 'Dashboard']].map(function (v) { return '<button class="ct-tab' + (CM.view === v[0] ? ' on' : '') + '" data-v="' + v[0] + '">' + v[1] + '</button>'; }).join('') + '</div>';
     app.innerHTML =
       '<header class="view"><div class="overline">Operations</div><h1>Campaign Manager</h1>' +
       '<p class="lede">Manage your remediation campaigns as a portfolio: progress, risk, and coverage across every campaign. Open one to work its findings in the tracker.</p></header>' +
@@ -1949,7 +2012,7 @@
       '<div class="toolbar"><button class="btn primary" id="campNew">+ New campaign</button><button class="btn" id="campSample">Load sample campaigns</button></div>' +
       '<div id="campForm"></div>' +
       (camps.length
-        ? cmPortfolioKpis(camps) + tabs + '<div class="ct-body" id="cmBody"></div>' + '<div style="margin-top:16px">' + cmCoverageGap() + '</div>'
+        ? cmPortfolioKpis(camps) + tabs + '<div class="bulkbar" id="cmBulk" hidden></div><div class="ct-body" id="cmBody"></div>' + '<div style="margin-top:16px">' + cmCoverageGap() + '</div>'
         : '<div class="card" style="text-align:center;padding:34px 20px"><div class="muted">No campaigns yet. Create one to start tracking a remediation push.</div></div>');
     document.getElementById('campNew').addEventListener('click', function () { renderCampForm(null, 'campForm'); document.getElementById('campForm').scrollIntoView({ block: 'nearest' }); });
     document.getElementById('campSample').addEventListener('click', loadSampleCampaigns);
