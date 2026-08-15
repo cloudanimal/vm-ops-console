@@ -1,29 +1,15 @@
 {
-  "updated": "2026-08-14",
+  "updated": "2026-08-15",
   "source": "FIRST EPSS",
   "current_date": "2026-08-14",
-  "previous_date": "2026-08-07",
+  "previous_date": "2026-08-08",
   "risers": [
-    {
-      "id": "CVE-2025-11953",
-      "now": 0.9398,
-      "prev": 0.61921,
-      "delta": 0.32059,
-      "name": "Command injection in React Native Community CLI allows remote attackers to perform remote "
-    },
     {
       "id": "CVE-2026-34908",
       "now": 0.85194,
       "prev": 0.61906,
       "delta": 0.23288,
       "name": "Ubiquiti Inc UniFi OS Server"
-    },
-    {
-      "id": "CVE-2008-5764",
-      "now": 0.45386,
-      "prev": 0.30406,
-      "delta": 0.1498,
-      "name": "PHP remote file inclusion vulnerability in calendar.php in WorkSimple 1.2.1, when register_globals is enabled,"
     },
     {
       "id": "CVE-2008-5789",
@@ -38,20 +24,6 @@
       "prev": 0.15342,
       "delta": 0.14652,
       "name": "WordPress WP SuperBackup plugin <= 2.3.3 - Unauthenticated Arbitrary File Upload vulnerabi"
-    },
-    {
-      "id": "CVE-2026-8037",
-      "now": 0.99311,
-      "prev": 0.84793,
-      "delta": 0.14518,
-      "name": "OS Command Injection Remote Code Execution Vulnerability in Progress LoadMaster, ECS Conne"
-    },
-    {
-      "id": "CVE-2008-5763",
-      "now": 0.39211,
-      "prev": 0.25682,
-      "delta": 0.13529,
-      "name": "PHP remote file inclusion vulnerability in slogin_lib.inc.php in Simple Text-File Login Script (SiTeFiLo) 1.0."
     },
     {
       "id": "CVE-2008-5790",
@@ -73,13 +45,6 @@
       "prev": 0.03663,
       "delta": 0.12086,
       "name": "The System.setClipboard method in ActionScript in Adobe Flash Player 9.0.124.0 and earlier allows remote attac"
-    },
-    {
-      "id": "CVE-2026-15733",
-      "now": 0.13545,
-      "prev": 0.01528,
-      "delta": 0.12017,
-      "name": "WGDashboard Remote Code Execution vulnerability"
     },
     {
       "id": "CVE-2025-43566",
@@ -108,6 +73,13 @@
       "prev": 0.0101,
       "delta": 0.09712,
       "name": "JetBrains TeamCity"
+    },
+    {
+      "id": "CVE-2026-15733",
+      "now": 0.13545,
+      "prev": 0.03902,
+      "delta": 0.09643,
+      "name": "WGDashboard Remote Code Execution vulnerability"
     },
     {
       "id": "CVE-2021-34448",
@@ -213,6 +185,34 @@
       "prev": 0.51017,
       "delta": 0.05814,
       "name": "D-Link DIR-605L sub_454F2C command injection"
+    },
+    {
+      "id": "CVE-2025-30397",
+      "now": 0.26835,
+      "prev": 0.21318,
+      "delta": 0.05517,
+      "name": "Scripting Engine Memory Corruption Vulnerability"
+    },
+    {
+      "id": "CVE-2025-47269",
+      "now": 0.42958,
+      "prev": 0.37817,
+      "delta": 0.05141,
+      "name": "code-server session cookie can be extracted by having user visit specially crafted proxy U"
+    },
+    {
+      "id": "CVE-2025-43560",
+      "now": 0.19427,
+      "prev": 0.14299,
+      "delta": 0.05128,
+      "name": "ColdFusion | Improper Input Validation (CWE-20)"
+    },
+    {
+      "id": "CVE-2024-13985",
+      "now": 0.12578,
+      "prev": 0.07522,
+      "delta": 0.05056,
+      "name": "Dahua EIMS capture_handle.action RCE"
     }
   ],
   "newly_high": [
