@@ -374,6 +374,7 @@
 <link rel="stylesheet" href="vmops.css">
 <link rel="stylesheet" href="acd.css">
 <link rel="stylesheet" href="tvd.css">
+<link rel="stylesheet" href="wiz.css">
 <link rel="stylesheet" href="pscan.css">
 <script src="version.js"></script>
 <script src="vendor/papaparse.min.js"></script>
@@ -449,6 +450,7 @@
 <script src="vmops.js"></script>
 <script src="acd.js"></script>
 <script src="tvd.js"></script>
+<script src="wiz.js"></script>
 <script src="pscan.js"></script>
 
 <script>
@@ -3056,6 +3058,7 @@
     if (window.VMOPS && typeof window.VMOPS[parts[0]] === 'function') { setActive(parts[0]); window.VMOPS[parts[0]](); return; }
     if (parts[0] === 'agent-coverage' && window.ACD) { setActive('agent-coverage'); window.ACD.open(); return; }
     if (parts[0] === 'tvd' && window.TVD) { setActive('tvd'); window.TVD.open(); return; }
+    if (parts[0] === 'wiz' && window.WIZ) { setActive('wiz'); window.WIZ.open(); return; }
     if (parts[0] === 'prompt-scanner' && window.PSCAN) { setActive('prompt-scanner'); window.PSCAN.open(); return; }
     var _appEl = document.getElementById('app'); if (_appEl) _appEl.className = '';
     if (parts.length === 0) return viewAsk();
@@ -3103,6 +3106,7 @@
       { label: 'KEV Catalog', hash: '#/kev' },
       { label: 'Agent Coverage', hash: '#/agent-coverage' },
       { label: 'Tenable VM Dashboard', hash: '#/tvd' },
+      { label: 'Wiz CNAPP Dashboard', hash: '#/wiz', hint: 'Cloud posture + attack paths' },
       { label: 'Data Import', hash: '#/import' },
       { label: 'Settings', hash: '#/settings' },
       { label: 'Datasets & freshness', hash: '#/data' },

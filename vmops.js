@@ -1698,13 +1698,16 @@
 
   function viewWiz() {
     setActive('wiz');
+    // The Wiz CNAPP dashboard lives in its own module (wiz.js) so it can be swapped
+    // for a live connector feed later without touching this file.
+    if (window.WIZ && typeof window.WIZ.open === 'function') { window.WIZ.open(); return; }
     app.innerHTML =
       '<header class="view"><div class="overline">Cloud findings</div><h1>Wiz cloud findings</h1>' +
-      '<p class="lede">Cloud (CNAPP) findings from Wiz — issues, toxic combinations, public exposure, and SLA — alongside your Tenable findings and agent coverage, so every vulnerability from Tenable <i>and</i> Wiz lives in one place.</p></header>' +
+      '<p class="lede">Cloud (CNAPP) findings from Wiz, alongside your Tenable findings and agent coverage.</p></header>' +
       privSlim() +
       '<div class="card" style="text-align:center;padding:40px 24px">' +
-      '<div style="font-family:var(--serif);font-size:20px;margin-bottom:8px">Wiz isn’t connected yet</div>' +
-      '<div class="muted" style="max-width:560px;margin:0 auto 18px;font-size:14px;line-height:1.6">The Wiz connector is on the roadmap. Wiz uses a GraphQL API with OAuth2 service-account auth, so live pulls need a small local connector (the same one that will unlock Tenable.io / CrowdStrike). Once it lands, import your Wiz export on the Data Import page and this dashboard lights up — issues by cloud, by resource type, toxic combinations, and SLA.</div>' +
+      '<div style="font-family:var(--serif);font-size:20px;margin-bottom:8px">Wiz dashboard did not load</div>' +
+      '<div class="muted" style="max-width:560px;margin:0 auto 18px;font-size:14px;line-height:1.6">The Wiz module (wiz.js) is unavailable. Reload the page; if it persists, the script failed to load.</div>' +
       '<a class="btn primary" href="#/import">Open Data Import →</a></div>';
   }
 

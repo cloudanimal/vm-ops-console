@@ -1,0 +1,66 @@
+/* Wiz CNAPP dashboard — scoped styles, using the app's shared design tokens
+   (--crit/--high/--med/--low, --accent, --surface, --paper, --ink, --soft,
+   --faint, --line, --badge-ink, --serif, --sans) so it matches the other
+   dashboards in light and dark themes. */
+.wizapp { max-width: 1180px; margin: 0 auto; padding: 8px 4px 40px; color: var(--ink); }
+.wizhead .overline { text-transform: uppercase; letter-spacing: .08em; font-size: 12px; font-weight: 700; color: var(--accent); }
+.wizhead h1 { margin: 4px 0 6px; font-family: var(--serif); }
+.wizhead .lede { color: var(--soft); max-width: 780px; }
+.wiztools { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 10px 0 18px; }
+.wiz-sample { font-size: 12px; font-weight: 700; color: var(--high); background: color-mix(in srgb, var(--high) 12%, transparent); border: 1px solid color-mix(in srgb, var(--high) 45%, transparent); border-radius: 999px; padding: 4px 10px; }
+.wiztools .priv { font-size: 12px; color: var(--faint); }
+
+.wiz-kpis { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 18px; }
+.wiz-kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
+.wiz-kpi-v { font-family: var(--serif); font-size: 28px; font-weight: 700; line-height: 1; }
+.wiz-kpi-l { font-size: 12px; font-weight: 600; margin-top: 6px; color: var(--ink); }
+.wiz-kpi-s { font-size: 11px; color: var(--faint); margin-top: 2px; }
+.wiz-kpi.crit { border-color: color-mix(in srgb, var(--crit) 45%, var(--line)); } .wiz-kpi.crit .wiz-kpi-v { color: var(--crit); }
+.wiz-kpi.high { border-color: color-mix(in srgb, var(--high) 45%, var(--line)); } .wiz-kpi.high .wiz-kpi-v { color: var(--high); }
+
+.wiz-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.wiz-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-bottom: 16px; }
+.wiz-card h3 { margin: 0 0 10px; font-size: 15px; color: var(--ink); }
+.wiz-cardnote { font-size: 12.5px; color: var(--soft); margin: -4px 0 12px; line-height: 1.45; }
+.wiz-note { font-size: 11.5px; color: var(--faint); margin-top: 10px; }
+
+.wiz-bar { display: grid; grid-template-columns: 200px 1fr 40px; align-items: center; gap: 10px; margin: 7px 0; font-size: 13px; }
+.wiz-bar-l { color: var(--ink); }
+.wiz-bar-track { background: color-mix(in srgb, var(--accent) 8%, transparent); border: 1px solid var(--line); border-radius: 6px; height: 14px; overflow: hidden; }
+.wiz-bar-fill { display: block; height: 100%; border-radius: 6px; }
+.wiz-bar-n { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); }
+.wiz-gap { font-size: 11px; color: var(--high); margin-left: 6px; }
+
+.wiz-path { border: 1px solid var(--line); border-left-width: 4px; border-radius: 10px; padding: 11px 13px; margin: 9px 0; background: var(--paper); }
+.wiz-path.wiz-critical { border-left-color: var(--crit); }
+.wiz-path.wiz-high { border-left-color: var(--high); }
+.wiz-path.wiz-medium { border-left-color: var(--med); }
+.wiz-path-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.wiz-path-rule { font-weight: 600; font-size: 13.5px; color: var(--ink); }
+.wiz-cloud { font-weight: 700; font-size: 12px; }
+.wiz-path-status { margin-left: auto; font-size: 11px; color: var(--faint); text-transform: uppercase; letter-spacing: .04em; }
+.wiz-path-entity { font-family: var(--mono, ui-monospace, Menlo, monospace); font-size: 12px; color: var(--soft); margin: 4px 0 8px; }
+.wiz-chain { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.wiz-step { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; font-size: 11.5px; color: var(--ink); }
+.wiz-arrow { color: var(--faint); font-weight: 700; }
+
+.wiz-sev { display: inline-block; min-width: 16px; text-align: center; font-size: 10.5px; font-weight: 800; color: var(--badge-ink); border-radius: 4px; padding: 1px 5px; letter-spacing: .02em; }
+.wiz-sev.wiz-critical { background: var(--crit); } .wiz-sev.wiz-high { background: var(--high); }
+.wiz-sev.wiz-medium { background: var(--med); } .wiz-sev.wiz-low { background: var(--low); }
+
+.wiz-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.wiz-table th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--faint); border-bottom: 1px solid var(--line); padding: 6px 8px; }
+.wiz-table td { padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: middle; color: var(--ink); }
+.wiz-table .mono { font-family: var(--mono, ui-monospace, Menlo, monospace); }
+.wiz-atype { font-size: 10.5px; color: var(--faint); }
+.wiz-tag { font-size: 10px; font-weight: 700; border-radius: 4px; padding: 1px 6px; }
+.wiz-tag.kev { background: color-mix(in srgb, var(--crit) 16%, transparent); color: var(--crit); }
+.wiz-tag.exp { background: color-mix(in srgb, var(--high) 16%, transparent); color: var(--high); }
+
+.wiz-foot { font-size: 11.5px; color: var(--faint); margin-top: 14px; line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .wiz-kpis { grid-template-columns: repeat(2, 1fr); }
+  .wiz-grid2 { grid-template-columns: 1fr; }
+  .wiz-bar { grid-template-columns: 140px 1fr 34px; }
+}
