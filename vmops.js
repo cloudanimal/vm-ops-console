@@ -1819,38 +1819,148 @@
     if (!INTEL.loaded) ensureIntel().then(function () { if ((location.hash || '').indexOf('#/campaigns') === 0) go(); });
   }
 
+  // ===================== Campaign Manager (portfolio layer over all campaigns) =====================
+  var CM = { view: 'board', sort: { k: 'name', dir: 1 }, tcol: {} };
+  function campSetStatus(id, status) {
+    var camps = loadCampaigns(), c = camps.filter(function (x) { return x.id === id; })[0];
+    if (!c || c.status === status) return; c.status = status; saveCampaigns(camps);
+  }
+  // A campaign is "at risk" if it's still live and either has findings past SLA or is past its own due date.
+  function campAtRisk(c, st) {
+    if (c.status === 'completed' || c.status === 'cancelled') return '';
+    if (st.overdue > 0) return st.overdue + ' finding' + (st.overdue > 1 ? 's' : '') + ' past SLA';
+    if (c.dueDate && c.dueDate < todayISO() && st.pct < 100) return 'past the due date';
+    return '';
+  }
+  function managedKeys() { var s = {}; loadCampaigns().forEach(function (c) { campaignFindings(c).forEach(function (f) { s[keyOf(f)] = 1; }); }); return s; }
+  function unmanagedOpen() { var mk = managedKeys(); return STATE.findings.filter(function (f) { return isOpen(f) && !mk[keyOf(f)]; }); }
+  function cmPortfolioKpis(camps) {
+    var active = 0, totF = 0, resF = 0, overdueCamps = 0, atRisk = 0;
+    camps.forEach(function (c) { if (c.status === 'active') active++; var st = campaignStats(c); totF += st.total; resF += st.resolved; if (st.overdue > 0) overdueCamps++; if (campAtRisk(c, st)) atRisk++; });
+    var pct = totF ? Math.round(resF / totF * 100) : 0;
+    var mk = managedKeys(), openAll = 0, managedOpen = 0;
+    STATE.findings.forEach(function (f) { if (isOpen(f)) { openAll++; if (mk[keyOf(f)]) managedOpen++; } });
+    var unmanaged = openAll - managedOpen;
+    return '<div class="kpis">' +
+      kpi('Campaigns', camps.length, active + ' active') +
+      kpi('Progress', pct + '%', resF + ' of ' + totF + ' resolved', pct >= 90 ? 'ok' : '') +
+      kpi('Overdue', overdueCamps, 'campaigns past SLA', overdueCamps ? 'crit' : 'ok') +
+      kpi('At risk', atRisk, 'behind or past due', atRisk ? 'warn' : 'ok') +
+      kpi('Under management', managedOpen + ' / ' + openAll, 'open findings in a campaign') +
+      kpi('Unmanaged', unmanaged, 'open, in no campaign', unmanaged ? 'warn' : 'ok') +
+      '</div>';
+  }
+  function cmCampCard(c) {
+    var st = campaignStats(c), risk = campAtRisk(c, st);
+    return '<div class="cm-card' + (risk ? ' risk' : '') + '" draggable="true" data-id="' + esc(c.id) + '">' +
+      '<div class="cm-c1"><a href="#/campaigns/' + esc(c.id) + '">' + esc(c.name) + '</a>' + (c.priority ? ' <span class="pri ' + esc((c.priority || '').toLowerCase()) + '">' + esc(c.priority) + '</span>' : '') + '</div>' +
+      '<div class="cm-c2">' + pbar(st.pct) + '</div>' +
+      '<div class="cm-c3"><span class="muted">' + esc(c.owner || 'Unassigned') + '</span>' + (st.overdue ? ' <span class="badge crit" title="findings past SLA">' + st.overdue + ' overdue</span>' : '') + (risk ? ' <span class="cm-risk" title="' + esc(risk) + '">at risk</span>' : '') + '</div>' +
+      '<div class="cm-c4 muted">' + (c.dueDate ? 'Due ' + esc(c.dueDate) : 'No due date') + ' · ' + st.resolved + '/' + st.total + '</div></div>';
+  }
+  function cmBoard(camps) {
+    return '<div class="ct-board" id="cmBoard">' + CAMP_STATUS.map(function (s) {
+      var items = camps.filter(function (c) { return (c.status || 'planning') === s.k; });
+      return '<div class="ct-col" data-k="' + s.k + '"><div class="ct-colh"><span class="ct-lbl">' + s.l + '</span><span class="ct-cnt">' + items.length + '</span></div>' +
+        '<div class="ct-colb">' + (items.map(cmCampCard).join('') || '<div class="muted" style="font-size:12px;padding:6px 8px">none</div>') + '</div></div>';
+    }).join('') + '</div><div class="muted" style="font-size:11.5px;margin-top:8px">Drag a campaign between columns to change its status, or focus a card and use it like the tracker. Click a campaign to open it.</div>';
+  }
+  var CM_COLS = [['name', 'Name', 'text'], ['scope', 'Scope', 'text'], ['owner', 'Owner', 'text'], ['priority', 'Priority', 'sel'], ['progress', 'Progress', 'num'], ['overdue', 'Overdue', 'num'], ['risk', 'Risk', 'sel'], ['due', 'Due', 'text'], ['status', 'Status', 'sel']];
+  function cmFieldVal(c, k, st) {
+    if (k === 'name') return c.name || ''; if (k === 'scope') return campScopeText(c); if (k === 'owner') return c.owner || '';
+    if (k === 'priority') return c.priority || ''; if (k === 'progress') return st.pct; if (k === 'overdue') return st.overdue;
+    if (k === 'risk') return campAtRisk(c, st) ? 'At risk' : ''; if (k === 'due') return c.dueDate || ''; if (k === 'status') return campStatusLabel(c.status);
+    return '';
+  }
+  function cmSelOpts(k) { if (k === 'priority') return CAMP_PRIO; if (k === 'status') return CAMP_STATUS.map(function (s) { return s.l; }); if (k === 'risk') return ['At risk']; return []; }
+  function cmFilterActive() { return Object.keys(CM.tcol).some(function (k) { return CM.tcol[k] !== '' && CM.tcol[k] != null; }); }
+  function cmFilterCtl(col) {
+    var k = col[0], type = col[2], v = CM.tcol[k] || '';
+    if (type === 'sel') return '<select data-tc="' + k + '"><option value="">All</option>' + cmSelOpts(k).map(function (o) { return '<option' + (v === o ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('') + '</select>';
+    if (type === 'num') return '<input data-tc="' + k + '" type="number" min="0" placeholder="≥" value="' + esc(v) + '" style="width:64px">';
+    return '<input data-tc="' + k + '" type="text" placeholder="filter" value="' + esc(v) + '">';
+  }
+  function cmPass(c, st) {
+    for (var i = 0; i < CM_COLS.length; i++) { var col = CM_COLS[i], v = CM.tcol[col[0]]; if (v === '' || v == null) continue; var fv = cmFieldVal(c, col[0], st);
+      if (col[2] === 'num') { if (!(+fv >= parseFloat(v))) return false; }
+      else if (col[2] === 'sel') { if (String(fv).toLowerCase() !== String(v).toLowerCase()) return false; }
+      else { if (String(fv).toLowerCase().indexOf(String(v).toLowerCase()) < 0) return false; } }
+    return true;
+  }
+  function cmTable() {
+    var arrow = function (k) { return CM.sort.k === k ? (CM.sort.dir < 0 ? ' ▾' : ' ▴') : ''; };
+    var head = '<tr>' + CM_COLS.map(function (c) { return '<th data-sk="' + c[0] + '">' + c[1] + arrow(c[0]) + '</th>'; }).join('') + '</tr>' +
+      '<tr class="grid-filterrow">' + CM_COLS.map(function (c) { return '<th>' + cmFilterCtl(c) + '</th>'; }).join('') + '</tr>';
+    return '<div class="ct-tcap"><span id="cmCount"></span>' + (cmFilterActive() ? '<button class="btn sm" id="cmClear">Clear filters</button>' : '') + '</div>' +
+      '<div class="gridwrap"><table class="grid" id="cmTable"><thead>' + head + '</thead><tbody id="cmTbody"></tbody></table></div>';
+  }
+  function cmFillTable(camps) {
+    var rows = camps.map(function (c) { return { c: c, st: campaignStats(c) }; }).filter(function (o) { return cmPass(o.c, o.st); });
+    var k = CM.sort.k, d = CM.sort.dir, num = (k === 'progress' || k === 'overdue');
+    rows.sort(function (a, b) { var va = cmFieldVal(a.c, k, a.st), vb = cmFieldVal(b.c, k, b.st); if (num) { va = +va; vb = +vb; } else { va = String(va).toLowerCase(); vb = String(vb).toLowerCase(); } return va < vb ? -d : va > vb ? d : 0; });
+    var tb = document.getElementById('cmTbody'); if (!tb) return;
+    tb.innerHTML = rows.length ? rows.map(function (o) { var c = o.c, st = o.st, risk = campAtRisk(c, st);
+      return '<tr class="cm-row" data-id="' + esc(c.id) + '"><td><a href="#/campaigns/' + esc(c.id) + '"><b>' + esc(c.name) + '</b></a></td>' +
+        '<td class="muted" style="font-size:12px">' + esc(campScopeText(c)) + '</td><td>' + esc(c.owner || '—') + '</td>' +
+        '<td>' + (c.priority ? '<span class="pri ' + esc((c.priority || '').toLowerCase()) + '">' + esc(c.priority) + '</span>' : '—') + '</td>' +
+        '<td>' + pbar(st.pct) + '</td><td>' + (st.overdue ? '<span class="badge crit">' + st.overdue + '</span>' : '<span class="muted">—</span>') + '</td>' +
+        '<td>' + (risk ? '<span class="cm-risk" title="' + esc(risk) + '">at risk</span>' : '<span class="muted">—</span>') + '</td>' +
+        '<td>' + (c.dueDate ? esc(c.dueDate) : '—') + '</td><td><span class="stbadge st-' + esc(c.status) + '">' + esc(campStatusLabel(c.status)) + '</span></td></tr>';
+    }).join('') : '<tr><td colspan="' + CM_COLS.length + '" class="muted" style="text-align:center;padding:20px">No campaigns match these filters.</td></tr>';
+    var cnt = document.getElementById('cmCount'); if (cnt) cnt.innerHTML = 'Showing <b>' + rows.length + '</b> of ' + camps.length + ' campaigns';
+    [].forEach.call(tb.querySelectorAll('.cm-row'), function (r) { r.addEventListener('click', function (e) { if (e.target.closest('a')) return; location.hash = '#/campaigns/' + r.dataset.id; }); });
+  }
+  function cmWireTable() {
+    [].forEach.call(document.querySelectorAll('#cmTable th[data-sk]'), function (th) { th.onclick = function () { var k = th.dataset.sk; if (CM.sort.k === k) CM.sort.dir = -CM.sort.dir; else CM.sort = { k: k, dir: (k === 'progress' || k === 'overdue') ? -1 : 1 }; cmRenderView(); }; });
+    [].forEach.call(document.querySelectorAll('#cmTable .grid-filterrow [data-tc]'), function (el) { var ev = el.tagName === 'SELECT' ? 'change' : 'input'; el.addEventListener(ev, function () { CM.tcol[el.dataset.tc] = el.value; cmFillTable(loadCampaigns()); var active = cmFilterActive(), cap = document.querySelector('#cmBody .ct-tcap'), cl = document.getElementById('cmClear'); if (active && !cl && cap) { var bb = document.createElement('button'); bb.className = 'btn sm'; bb.id = 'cmClear'; bb.textContent = 'Clear filters'; bb.onclick = function () { CM.tcol = {}; cmRenderView(); }; cap.appendChild(bb); } else if (!active && cl) cl.remove(); }); });
+    var clr = document.getElementById('cmClear'); if (clr) clr.onclick = function () { CM.tcol = {}; cmRenderView(); };
+  }
+  function cmWireBoard() {
+    var dragId = null;
+    [].forEach.call(document.querySelectorAll('#cmBoard .cm-card'), function (card) {
+      card.addEventListener('dragstart', function (e) { dragId = card.dataset.id; card.classList.add('drag'); e.dataTransfer.effectAllowed = 'move'; });
+      card.addEventListener('dragend', function () { card.classList.remove('drag'); });
+      card.addEventListener('click', function (e) { if (e.target.closest('a')) return; location.hash = '#/campaigns/' + card.dataset.id; });
+    });
+    [].forEach.call(document.querySelectorAll('#cmBoard .ct-col'), function (col) {
+      col.addEventListener('dragover', function (e) { e.preventDefault(); col.classList.add('drop'); });
+      col.addEventListener('dragleave', function () { col.classList.remove('drop'); });
+      col.addEventListener('drop', function (e) { e.preventDefault(); col.classList.remove('drop'); if (!dragId) return; var c = loadCampaigns().filter(function (x) { return x.id === dragId; })[0]; if (c && (c.status || 'planning') !== col.dataset.k) { campSetStatus(dragId, col.dataset.k); toast('Campaign moved to ' + campStatusLabel(col.dataset.k)); campaignList(); } });
+    });
+  }
+  function cmCoverageGap() {
+    var un = unmanagedOpen();
+    if (!un.length) return '<div class="card"><h3 style="margin:0 0 4px;font-size:14px">Coverage</h3><div class="muted" style="font-size:12.5px">Every open finding is covered by a campaign.</div></div>';
+    var top = un.slice().sort(function (a, b) { return riskScore(b) - riskScore(a); }).slice(0, 8);
+    return '<div class="card cm-gap"><div class="cm-gaphead"><h3 style="margin:0;font-size:14px">Unmanaged open findings <span class="badge warn">' + un.length + '</span></h3>' +
+      '<button class="btn sm primary" id="cmScopeGap">Scope a campaign from these</button></div>' +
+      '<div class="muted" style="font-size:12px;margin:6px 0 10px">Open findings not covered by any campaign, i.e. un-owned risk. Top by risk:</div>' +
+      '<div class="cm-gaplist">' + top.map(function (f) { return '<div class="cm-gapitem"><a class="mono" href="' + CVE_DETAIL + esc(f.cve) + '">' + esc(f.cve) + '</a>' + intelChips(f.cve) + ' ' + sevBadge(f.severity) + ' <span class="host">' + esc(f.host) + '</span></div>'; }).join('') +
+      '</div>' + (un.length > 8 ? '<div class="muted" style="font-size:11.5px;margin-top:8px">plus ' + (un.length - 8) + ' more</div>' : '') + '</div>';
+  }
+  function cmRenderView() {
+    var camps = loadCampaigns(), host = document.getElementById('cmBody'); if (!host) return;
+    host.innerHTML = CM.view === 'table' ? cmTable() : cmBoard(camps);
+    if (CM.view === 'table') { cmWireTable(); cmFillTable(camps); } else cmWireBoard();
+  }
   function campaignList() {
     var camps = loadCampaigns();
+    var tabs = '<div class="ct-tabs" id="cmTabs">' + [['board', 'Board'], ['table', 'Table']].map(function (v) { return '<button class="ct-tab' + (CM.view === v[0] ? ' on' : '') + '" data-v="' + v[0] + '">' + v[1] + '</button>'; }).join('') + '</div>';
     app.innerHTML =
-      '<header class="view"><div class="overline">Operations</div><h1>Remediation Campaigns</h1>' +
-      '<p class="lede">Group findings into campaigns with an owner, due date, and target — then track them to closure. The org-level layer above per-finding triage.</p></header>' +
+      '<header class="view"><div class="overline">Operations</div><h1>Campaign Manager</h1>' +
+      '<p class="lede">Manage your remediation campaigns as a portfolio: progress, risk, and coverage across every campaign. Open one to work its findings in the tracker.</p></header>' +
       privSlim() +
       '<div class="toolbar"><button class="btn primary" id="campNew">+ New campaign</button><button class="btn" id="campSample">Load sample campaigns</button></div>' +
       '<div id="campForm"></div>' +
       (camps.length
-        ? '<div class="card" style="padding:0;overflow-x:auto"><table class="grid"><thead><tr><th>Name</th><th>Scope</th><th>Owner</th><th>Priority</th><th>Progress</th><th>SLA</th><th>Due</th><th>Status</th></tr></thead><tbody>' +
-          camps.map(function (c) {
-            var st = campaignStats(c);
-            return '<tr class="camprow" data-id="' + esc(c.id) + '">' +
-              '<td><a href="#/campaigns/' + esc(c.id) + '"><b>' + esc(c.name) + '</b></a></td>' +
-              '<td class="muted" style="font-size:12px">' + esc(campScopeText(c)) + '</td>' +
-              '<td>' + esc(c.owner || '—') + '</td>' +
-              '<td>' + esc(c.priority || '—') + '</td>' +
-              '<td>' + pbar(st.pct) + ' <span class="muted" style="font-size:11px">' + st.resolved + '/' + st.total + '</span></td>' +
-              '<td>' + (st.overdue ? '<span class="badge crit">' + st.overdue + '</span>' : '<span class="muted">—</span>') + '</td>' +
-              '<td>' + (c.dueDate ? esc(c.dueDate) : '—') + '</td>' +
-              '<td><span class="stbadge st-' + esc(c.status) + '">' + esc(campStatusLabel(c.status)) + '</span></td></tr>';
-          }).join('') + '</tbody></table></div>'
-        : '<div class="card" style="text-align:center;padding:34px 20px"><div class="muted">No campaigns yet — create one to start tracking a remediation push.</div></div>');
+        ? cmPortfolioKpis(camps) + tabs + '<div class="ct-body" id="cmBody"></div>' + '<div style="margin-top:16px">' + cmCoverageGap() + '</div>'
+        : '<div class="card" style="text-align:center;padding:34px 20px"><div class="muted">No campaigns yet. Create one to start tracking a remediation push.</div></div>');
     document.getElementById('campNew').addEventListener('click', function () { renderCampForm(null, 'campForm'); document.getElementById('campForm').scrollIntoView({ block: 'nearest' }); });
     document.getElementById('campSample').addEventListener('click', loadSampleCampaigns);
-    if (_campSeed) {   // arrived via "+ Campaign" (filter) or "Create campaign" (selection) on Findings
-      renderCampForm({ scope: _campSeed }, 'campForm');
-      _campSeed = null;
-    }
-    [].forEach.call(document.querySelectorAll('.camprow'), function (tr) {
-      tr.addEventListener('click', function (e) { if (e.target.closest('a')) return; location.hash = '#/campaigns/' + tr.getAttribute('data-id'); });
-    });
+    if (_campSeed) { renderCampForm({ scope: _campSeed }, 'campForm'); _campSeed = null; }
+    [].forEach.call(document.querySelectorAll('#cmTabs .ct-tab'), function (b) { b.onclick = function () { CM.view = b.dataset.v; campaignList(); }; });
+    var sg = document.getElementById('cmScopeGap'); if (sg) sg.onclick = function () { _campSeed = { dynamic: false, staticKeys: unmanagedOpen().map(keyOf), filt: {} }; renderCampForm({ scope: _campSeed }, 'campForm'); _campSeed = null; document.getElementById('campForm').scrollIntoView({ block: 'nearest' }); };
+    if (camps.length) cmRenderView();
   }
 
   function renderCampForm(c, targetId) {

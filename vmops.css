@@ -373,3 +373,21 @@
   .vmops .ct-lrow .ct-lname { flex:1 1 100%; white-space:normal; }
   .vmops .ct-lrow .ct-lend { margin-left:auto; }
 }
+
+/* ---- Campaign Manager (portfolio over all campaigns) ---- */
+.vmops .badge.warn { background:color-mix(in srgb,var(--high) 18%,transparent); color:var(--high); }
+.vmops .pri.p4 { background:color-mix(in srgb,var(--low) 22%,transparent); color:var(--low); }
+.vmops .cm-card { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:10px 11px; cursor:pointer; display:flex; flex-direction:column; gap:6px; }
+.vmops .cm-card:hover { border-color:color-mix(in srgb,var(--accent) 45%,var(--line)); }
+.vmops .cm-card.risk { border-left:3px solid var(--high); }
+.vmops .cm-card.drag { opacity:.4; }
+.vmops .cm-c1 { display:flex; align-items:center; gap:7px; font-weight:600; font-size:13px; }
+.vmops .cm-c1 a { color:var(--ink); text-decoration:none; }
+.vmops .cm-c1 a:hover { color:var(--accent); }
+.vmops .cm-c3 { display:flex; align-items:center; gap:8px; font-size:11.5px; }
+.vmops .cm-c4 { font-size:11px; }
+.vmops .cm-risk { font-size:9.5px; font-weight:800; letter-spacing:.03em; color:var(--high); border:1px solid var(--high); border-radius:4px; padding:0 4px; line-height:15px; }
+.vmops .cm-gap .cm-gaphead { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.vmops .cm-gaplist { display:flex; flex-direction:column; gap:6px; }
+.vmops .cm-gapitem { display:flex; align-items:center; gap:7px; font-size:12.5px; padding:5px 0; border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent); }
+.vmops .cm-gapitem .host { font-family:var(--mono); font-size:11.5px; color:var(--soft); }
