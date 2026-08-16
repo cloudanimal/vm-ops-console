@@ -55,9 +55,7 @@
   /* ---- top nav ---- */
   nav.top { display:flex; align-items:center; gap:3px; flex-wrap:nowrap; overflow-x:auto; padding:22px 0 4px; border-bottom:1px solid var(--line); scrollbar-width:none; }
   nav.top::-webkit-scrollbar { display:none; }
-  nav.top .brand { font-family:var(--serif); font-size:19px; font-weight:500; margin-right:14px; text-decoration:none; color:var(--ink); white-space:nowrap; flex:0 0 auto; }
-  nav.top .brand.two-line { display:inline-flex; flex-direction:column; justify-content:center; line-height:1.08; font-size:14px; }
-  nav.top .brand.two-line .brand-l2 { color:var(--soft); }
+  nav.top .brand { font-family:var(--sans); font-size:15px; font-weight:600; margin-right:14px; text-decoration:none; color:var(--ink); white-space:nowrap; flex:0 0 auto; }
   nav.top a.tab { font-size:13.5px; color:var(--soft); text-decoration:none; padding:7px 9px; border-radius:8px; white-space:nowrap; flex:0 0 auto; transition:background .15s ease,color .15s ease; }
   nav.top .navsep { flex:0 0 auto; width:1px; height:16px; background:var(--line); margin:0 7px; }
   nav.top .navmenu { flex:0 0 auto; }
@@ -394,7 +392,7 @@
 <div class="wrap">
 
   <nav class="top">
-    <a class="brand two-line" href="#/ask"><span class="brand-l1">Vulnerability</span><span class="brand-l2">Manager</span></a>
+    <a class="brand" href="#/ask">Vulnerability Manager</a>
     <a class="tab" href="#/ask" data-route="ask">Ask&nbsp;AI</a>
     <span class="navsep" aria-hidden="true"></span>
     <a class="tab" href="#/report" data-route="report">Morning Report</a>

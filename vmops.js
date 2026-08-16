@@ -130,10 +130,7 @@
     var el = document.querySelector('nav.top .brand');
     if (el) {
       el.setAttribute('href', '#/' + (STATE.cfg.homeRoute || 'ask'));   // logo goes to the chosen landing page
-      // Stack the brand: all but the last word on line 1, the last word on line 2 (shrunk to fit).
-      var w = name.split(/\s+/).filter(Boolean);
-      if (w.length > 1) { var last = w.pop(); el.innerHTML = '<span class="brand-l1">' + esc(w.join(' ')) + '</span><span class="brand-l2">' + esc(last) + '</span>'; el.classList.add('two-line'); }
-      else { el.textContent = name; el.classList.remove('two-line'); }
+      el.textContent = name; el.classList.remove('two-line');           // single line, nav-matching font
     }
     [].forEach.call(document.querySelectorAll('.brandname'), function (s) { s.textContent = name; });
     try { document.title = name; } catch (e) {}
