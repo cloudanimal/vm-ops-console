@@ -2146,6 +2146,9 @@
   }
   function cmSelOpts(k) { if (k === 'priority') return CAMP_PRIO; if (k === 'status') return CAMP_STATUS.map(function (s) { return s.l; }); if (k === 'risk') return ['At risk']; return []; }
   function cmFilterActive() { return Object.keys(CM.tcol).some(function (k) { return CM.tcol[k] !== '' && CM.tcol[k] != null; }); }
+  // The table view is "dirty" if a column filter is set OR the sort is not the default (name, ascending).
+  function cmViewDirty() { return cmFilterActive() || CM.sort.k !== 'name' || CM.sort.dir !== 1; }
+  function cmResetView() { CM.tcol = {}; CM.sort = { k: 'name', dir: 1 }; cmRenderView(); }
   function cmFilterCtl(col) {
     var k = col[0], type = col[2], v = CM.tcol[k] || '';
     if (type === 'sel') return '<select data-tc="' + k + '"><option value="">All</option>' + cmSelOpts(k).map(function (o) { return '<option' + (v === o ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('') + '</select>';
@@ -2163,7 +2166,7 @@
     var arrow = function (k) { return CM.sort.k === k ? (CM.sort.dir < 0 ? ' ▾' : ' ▴') : ''; };
     var head = '<tr><th class="selcol"></th>' + CM_COLS.map(function (c) { return '<th data-sk="' + c[0] + '">' + c[1] + arrow(c[0]) + '</th>'; }).join('') + '</tr>' +
       '<tr class="grid-filterrow"><th class="selcol"></th>' + CM_COLS.map(function (c) { return '<th>' + cmFilterCtl(c) + '</th>'; }).join('') + '</tr>';
-    return '<div class="ct-tcap"><span id="cmCount"></span>' + (cmFilterActive() ? '<button class="btn sm" id="cmClear">Clear filters</button>' : '') + '</div>' +
+    return '<div class="ct-tcap"><span id="cmCount"></span>' + (cmViewDirty() ? '<button class="btn sm" id="cmReset" title="Clear column filters and reset sorting">↺ Reset view</button>' : '') + '</div>' +
       '<div class="gridwrap"><table class="grid" id="cmTable"><thead>' + head + '</thead><tbody id="cmTbody"></tbody></table></div>';
   }
   function cmFillTable(camps) {
@@ -2184,8 +2187,8 @@
   }
   function cmWireTable() {
     [].forEach.call(document.querySelectorAll('#cmTable th[data-sk]'), function (th) { th.onclick = function () { var k = th.dataset.sk; if (CM.sort.k === k) CM.sort.dir = -CM.sort.dir; else CM.sort = { k: k, dir: (k === 'progress' || k === 'overdue') ? -1 : 1 }; cmRenderView(); }; });
-    [].forEach.call(document.querySelectorAll('#cmTable .grid-filterrow [data-tc]'), function (el) { var ev = el.tagName === 'SELECT' ? 'change' : 'input'; el.addEventListener(ev, function () { CM.tcol[el.dataset.tc] = el.value; cmFillTable(loadCampaigns()); var active = cmFilterActive(), cap = document.querySelector('#cmBody .ct-tcap'), cl = document.getElementById('cmClear'); if (active && !cl && cap) { var bb = document.createElement('button'); bb.className = 'btn sm'; bb.id = 'cmClear'; bb.textContent = 'Clear filters'; bb.onclick = function () { CM.tcol = {}; cmRenderView(); }; cap.appendChild(bb); } else if (!active && cl) cl.remove(); }); });
-    var clr = document.getElementById('cmClear'); if (clr) clr.onclick = function () { CM.tcol = {}; cmRenderView(); };
+    [].forEach.call(document.querySelectorAll('#cmTable .grid-filterrow [data-tc]'), function (el) { var ev = el.tagName === 'SELECT' ? 'change' : 'input'; el.addEventListener(ev, function () { CM.tcol[el.dataset.tc] = el.value; cmFillTable(loadCampaigns()); var dirty = cmViewDirty(), cap = document.querySelector('#cmBody .ct-tcap'), btn = document.getElementById('cmReset'); if (dirty && !btn && cap) { var bb = document.createElement('button'); bb.className = 'btn sm'; bb.id = 'cmReset'; bb.title = 'Clear column filters and reset sorting'; bb.textContent = '↺ Reset view'; bb.onclick = cmResetView; cap.appendChild(bb); } else if (!dirty && btn) btn.remove(); }); });
+    var rb = document.getElementById('cmReset'); if (rb) rb.onclick = cmResetView;
   }
   function cmWireBoard() {
     var dragId = null;
