@@ -137,7 +137,10 @@
   }
   applyBrand();   // vmops.js loads after the nav, so the brand element already exists
 
-  function keyOf(f) { return f.cve + '|' + norm(f.host); }
+  // Scanner sources carry real hostnames (safe to domain-strip via norm); code-scan / SBOM
+  // sources carry package@version or file:line, which norm() would collide, so key those raw.
+  var HOST_SOURCES = { Tenable: 1, Qualys: 1, Rapid7: 1, CrowdStrike: 1, Wiz: 1 };
+  function keyOf(f) { return f.cve + '|' + (HOST_SOURCES[f.source] ? norm(f.host) : String(f.host || '').trim().toUpperCase()); }
   function ovOf(f) { return STATE.ov[keyOf(f)] || {}; }
   function statusOf(f) { return ovOf(f).status || 'new'; }
   function isOpen(f) { return OPEN_STATES.indexOf(statusOf(f)) !== -1; }
@@ -221,7 +224,7 @@
   function riskBreakdownHtml(f) {
     var comps = riskComponents(f), max = Math.max.apply(null, comps.map(function (c) { return c.pts; }).concat([1]));
     return '<div class="rbk">' + comps.map(function (c) {
-      return '<div class="rbk-row"><span>' + esc(c.label) + (c.weight !== 1 ? ' <span class="muted" style="font-size:10px">×' + c.weight + '</span>' : '') + '</span>' +
+      return '<div class="rbk-row"><span>' + esc(c.label) + (c.weight !== 1 ? ' <span class="muted" style="font-size:10px">×' + esc(c.weight) + '</span>' : '') + '</span>' +
         '<span class="rbk-bar"><span class="rbk-fill" style="width:' + (max ? Math.round(c.pts / max * 100) : 0) + '%"></span></span>' +
         '<span class="rbk-pts">' + c.pts + '</span></div>';
     }).join('') + '</div>';
@@ -230,7 +233,7 @@
     var s = 0; riskComponents(f).forEach(function (c) { s += c.pts; });
     var di = dueIn(f); if (di != null && isOpen(f)) s += di < 0 ? 60 + Math.min(40, -di) : Math.max(0, 30 - di);
     s += Math.min(20, (daysSince(f.firstSeen) || 0) / 10);
-    if (!isOpen(f)) s -= 4000;   // resolved/accepted always rank below anything open
+    if (!isOpen(f)) s -= 1e7;   // resolved/accepted always rank below anything open (penalty > any achievable weighted sum)
     return s;
   }
   // Preload the local LEV feed for every CVE-year present in the findings so the LEV signal
@@ -1159,16 +1162,19 @@
       '</div>';
     bg.classList.add('open'); dr.classList.add('open'); showDrawerHandle();
     // Fill the remaining prioritization models: SSVC is derived (instant); EPSS is from the bundled local feed (or an opt-in live FIRST.org lookup, off by default); LEV (local) loads async.
+    // Token per open: a slow async fetch (EPSS/LEV) for a previous finding must not write into a
+    // drawer that has since been re-opened on a different finding.
+    var _seq = (openDrawer._seq = (openDrawer._seq || 0) + 1);
     (function () {
       var it = cveIntel(f.cve), sv = ssvcVerdict(it.kev, it.exploit, f.cvss);
       var se = document.getElementById('drSsvc'); if (se) se.innerHTML = '<b>' + sv.v + '</b>' + (sv.why ? ' · ' + esc(sv.why) : '');
-      var setEpss = function (e) { var el = document.getElementById('drEpss'); if (!el) return; el.className = ''; var v = epssVerdict(e); el.innerHTML = e == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); };
+      var setEpss = function (e) { if (openDrawer._seq !== _seq) return; var el = document.getElementById('drEpss'); if (!el) return; el.className = ''; var v = epssVerdict(e); el.innerHTML = e == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); };
       // Prefer the bundled local feed. Only when the user has opted in (Settings) do we fall back to a live
       // FIRST.org lookup for a CVE missing locally; by default nothing leaves the browser.
       if (it.epss != null) setEpss(it.epss);
       else if (STATE.cfg.epssLive) epssFor(f.cve).then(setEpss);
       else setEpss(null);
-      levFor(f.cve).then(function (l) { var el = document.getElementById('drLev'); if (el) { el.className = ''; var v = levVerdict(l); el.innerHTML = l == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); }
+      levFor(f.cve).then(function (l) { if (openDrawer._seq !== _seq) return; var el = document.getElementById('drLev'); if (el) { el.className = ''; var v = levVerdict(l); el.innerHTML = l == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); }
         // LEV is now cached — refresh the breakdown + score so the LEV row is consistent with it.
         var rb = document.getElementById('drRbk'); if (rb) rb.innerHTML = riskBreakdownHtml(f);
         var rs = document.getElementById('drRisk'); if (rs) rs.textContent = Math.round(riskScore(f)); });
@@ -1211,17 +1217,6 @@
       '\nPlugin: ' + (f.plugin || 'n/a') + ' (' + (f.source || 'scan') + ')\nFirst seen: ' + f.firstSeen +
       '\nSLA due: ' + (dueDate(f) || 'n/a') + '\nRisk detail: ' + CVE_DETAIL_ABS + f.cve;
   }
-  // Build a pre-filled create-ticket deep-link (shared by single + group/bulk ticketing).
-  function ticketUrl(kind, summary, body) {
-    var c = STATE.cfg;
-    if (kind === 'jira') {
-      if (!c.jiraBase) { needSettings('Jira base URL'); return null; }
-      if (c.jiraPid && c.jiraType) return c.jiraBase.replace(/\/$/, '') + '/secure/CreateIssueDetails!init.jspa?pid=' + encodeURIComponent(c.jiraPid) + '&issuetype=' + encodeURIComponent(c.jiraType) + '&summary=' + encodeURIComponent(summary) + '&description=' + encodeURIComponent(body);
-      toast('Set Jira project + issue-type IDs in Settings to pre-fill'); return c.jiraBase.replace(/\/$/, '') + '/secure/CreateIssue!default.jspa';
-    }
-    if (!c.snowBase) { needSettings('ServiceNow base URL'); return null; }
-    return c.snowBase.replace(/\/$/, '') + '/incident.do?sys_id=-1&sysparm_query=' + encodeURIComponent('short_description=' + summary + '^description=' + body);
-  }
   function openTicket(kind, f) { ticketModal(kind, ticketSummary(f), ticketBody(f)); }
   // Practical URL-length bands. Most servers/proxies cap the request URI around 8 KB
   // (Apache LimitRequestLine 8190, Tomcat maxHttpHeaderSize 8192); under ~2 KB is universally safe.
@@ -1238,7 +1233,10 @@
         if (!prefill) return c.jiraBase.replace(/\/$/, '') + '/secure/CreateIssue!default.jspa';
         return c.jiraBase.replace(/\/$/, '') + '/secure/CreateIssueDetails!init.jspa?pid=' + encodeURIComponent(c.jiraPid) + '&issuetype=' + encodeURIComponent(c.jiraType) + '&summary=' + encodeURIComponent(s) + '&description=' + encodeURIComponent(b);
       }
-      return c.snowBase.replace(/\/$/, '') + '/incident.do?sys_id=-1&sysparm_query=' + encodeURIComponent('short_description=' + s + '^description=' + b);
+      // '^' is the ServiceNow sysparm_query condition delimiter; strip it from the values so an
+      // injected separator (e.g. from an imported hostname) cannot forge extra query conditions.
+      var snowSafe = function (x) { return String(x).replace(/\^/g, ' '); };
+      return c.snowBase.replace(/\/$/, '') + '/incident.do?sys_id=-1&sysparm_query=' + encodeURIComponent('short_description=' + snowSafe(s) + '^description=' + snowSafe(b));
     }
     var ov = document.getElementById('ctModal') || (function () { var d = document.createElement('div'); d.id = 'ctModal'; d.className = 'ct-modal vmops'; document.body.appendChild(d); return d; })();
     var target = isJira ? 'Jira' : 'ServiceNow';
@@ -1436,12 +1434,15 @@
   // the older presence-only behavior, so plain CVE exports still work.
   function importScan(incoming) {
     var reimport = STATE.findings.length > 0;
-    var incByKey = {}, existing = {};
-    incoming.forEach(function (f) { incByKey[keyOf(f)] = f; });
+    var incByKey = {}, existing = {}, incSources = {};
+    incoming.forEach(function (f) { incByKey[keyOf(f)] = f; incSources[f.source || 'Tenable'] = 1; });
     STATE.findings.forEach(function (f) { existing[keyOf(f)] = 1; });
     var added = 0; incoming.forEach(function (f) { if (!existing[keyOf(f)]) added++; });
     var fixed = 0, reopened = 0;
     STATE.findings.forEach(function (f) {
+      // Reconcile only findings from the SAME feed as this import — a Tenable rescan must not
+      // auto-resolve findings that came from SARIF, CycloneDX, or another scanner.
+      if (!incSources[f.source || 'Tenable']) return;
       var inc = incByKey[keyOf(f)], inScan = !!inc, incState = inc ? (inc.state || '') : '';
       if (isOpen(f) && !inScan) {
         setOverride(f, { status: 'resolved' }); addUpdate(f, 'Rescan: no longer detected, auto-resolved'); fixed++;
@@ -1487,7 +1488,7 @@
     (doc.runs || []).forEach(function (run) {
       var tool = ((run.tool || {}).driver || {}).name || 'SARIF';
       var rules = {}; (((run.tool || {}).driver || {}).rules || []).forEach(function (r) { rules[r.id] = r; });
-      (run.results || []).forEach(function (res) {
+      (run.results || []).forEach(function (res, ri) {
         var rid = res.ruleId || (res.rule && res.rule.id) || 'finding';
         var rule = rules[rid] || {};
         var props = res.properties || {}, rprops = rule.properties || {};
@@ -1497,7 +1498,8 @@
         var loc = ((((res.locations || [])[0] || {}).physicalLocation) || {});
         var uri = ((loc.artifactLocation || {}).uri) || '';
         var line = ((loc.region || {}).startLine);
-        var host = uri ? (uri + (line ? ':' + line : '')) : (tool + ' finding');
+        // Location-less results share a key otherwise; the result index keeps them distinct.
+        var host = uri ? (uri + (line ? ':' + line : '')) : (tool + ' finding #' + (ri + 1));
         var msg = (res.message && res.message.text) || (rule.shortDescription && rule.shortDescription.text) || rid;
         var name = (rule.name || (rule.shortDescription && rule.shortDescription.text) || rid);
         out.push({ cve: firstCve(rid) || firstCve(msg) || rid, host: host, severity: sev, cvss: !isNaN(ss) ? ss : null, vpr: null,
@@ -1516,11 +1518,11 @@
   function parseCycloneDX(text) {
     var doc = JSON.parse(text);
     var comps = (doc.components || []).map(function (c) {
-      return { name: c.name || '(unnamed)', version: c.version || '', type: c.type || 'library', purl: c.purl || '', ref: c['bom-ref'] || c.purl || (c.name + '@' + (c.version || '')), license: cdxLicense(c), vulns: 0 };
+      return { name: String(c.name || '(unnamed)'), version: c.version || '', type: c.type || 'library', purl: c.purl || '', ref: c['bom-ref'] || c.purl || (c.name + '@' + (c.version || '')), license: cdxLicense(c), vulns: 0 };
     });
     var byRef = {}; comps.forEach(function (c) { byRef[c.ref] = c; });
     var findings = [];
-    (doc.vulnerabilities || []).forEach(function (v) {
+    (doc.vulnerabilities || []).forEach(function (v, vi) {
       var id = v.id || '';
       var ratings = v.ratings || [];
       var score = null, sevStr = '';
@@ -1528,8 +1530,10 @@
       var sev = normSev(sevStr, score);
       (v.affects && v.affects.length ? v.affects : [{ ref: '' }]).forEach(function (a) {
         var comp = byRef[a.ref]; if (comp) comp.vulns++;
-        var host = comp ? (comp.name + (comp.version ? '@' + comp.version : '')) : (a.ref || 'component');
-        findings.push({ cve: firstCve(id) || id || 'VULN', host: host, severity: sev, cvss: score, vpr: null,
+        // Fall back to the vuln index when neither a component nor an id is available, so id-less
+        // vulns do not all collapse onto one key.
+        var host = comp ? (comp.name + (comp.version ? '@' + comp.version : '')) : (a.ref || 'component #' + (vi + 1));
+        findings.push({ cve: firstCve(id) || id || ('VULN-' + (vi + 1)), host: host, severity: sev, cvss: score, vpr: null,
           plugin: (v.source && v.source.name) || 'CycloneDX', name: String((v.description || id)).slice(0, 120),
           desc: String(v.description || id).slice(0, 400), repo: '', source: 'CycloneDX', firstSeen: todayISO(), state: '' });
       });
@@ -1744,6 +1748,11 @@
     var incoming = {}; Object.keys(data.config).forEach(function (k) { if (SETTINGS_SECRET_KEYS.indexOf(k) < 0 && k !== 'sla') incoming[k] = data.config[k]; });
     STATE.cfg = Object.assign({}, DEFAULT_CFG, incoming, keep);
     STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla, (data.config.sla || {}));
+    // Re-merge + coerce risk weights the same way the sliders do, so a hand-edited import cannot
+    // poison the score with a non-numeric weight (NaN) or an unescaped value.
+    var iw = (data.config && data.config.riskWeights) || {}, rw = {};
+    Object.keys(DEFAULT_WEIGHTS).forEach(function (k) { var n = parseFloat(iw[k]); rw[k] = isNaN(n) ? DEFAULT_WEIGHTS[k] : Math.max(0, Math.min(2, n)); });
+    STATE.cfg.riskWeights = rw;
     save('vmops-config', STATE.cfg);
     var addedViews = 0;
     if (Array.isArray(data.views)) {
@@ -2819,8 +2828,11 @@
     var m = {};
     STATE.findings.forEach(function (f) {
       var h = norm(f.host); if (!m[h]) m[h] = { host: f.host, key: h, all: 0, open: 0, sev: 'Low', risk: 0, src: {} };
-      var a = m[h]; a.all++; if (isOpen(f)) { a.open++; a.risk += riskScore(f); }
-      if ((SEV_ORDER[f.severity] != null ? SEV_ORDER[f.severity] : 4) < (SEV_ORDER[a.sev] != null ? SEV_ORDER[a.sev] : 4)) a.sev = f.severity;
+      var a = m[h]; a.all++;
+      if (isOpen(f)) { a.open++; a.risk += riskScore(f);
+        // Max sev reflects OPEN findings only, matching the Open/Risk columns.
+        if ((SEV_ORDER[f.severity] != null ? SEV_ORDER[f.severity] : 4) < (SEV_ORDER[a.sev] != null ? SEV_ORDER[a.sev] : 4)) a.sev = f.severity;
+      }
       if (f.source) a.src[f.source] = 1;
     });
     return Object.keys(m).map(function (k) { return m[k]; });
@@ -2876,6 +2888,13 @@
     if (!STATE.findings.length) return viewEmpty('remediations');
     preloadLev();
     var groups = remediationGroups().sort(function (a, b) { return b.risk - a.risk; });
+    if (!groups.length) {   // findings exist but none open -> friendly empty state, not a zeroed grid
+      app.innerHTML = '<header class="view"><div class="overline">Remediations</div><h1>Fix-first remediations</h1></header>' +
+        privSlim() + '<div class="card" style="text-align:center;padding:40px 24px"><div style="font-family:var(--serif);font-size:20px;margin-bottom:8px">Nothing open to remediate</div>' +
+        '<div class="muted" style="max-width:520px;margin:0 auto 18px;font-size:14px">Every finding is resolved, risk-accepted, or a false positive. Import a new scan or reopen a finding to see remediations here.</div>' +
+        '<a class="btn primary" href="#/findings">Open Findings →</a></div>';
+      return;
+    }
     var kpi = function (n, l) { return '<div class="kpi"><div class="num">' + n + '</div><div class="label">' + l + '</div></div>'; };
     var top = groups[0];
     app.innerHTML =
@@ -2933,7 +2952,7 @@
       '</tbody></table></div>';
   }
 
-  function vmShow(fn){ return function(){ app.className='vmops'; return fn.apply(null, arguments); }; }
+  function vmShow(fn){ var w = function(){ app.className='vmops'; return fn.apply(null, arguments); }; w.isView = true; return w; }
   function goDash() { if ((location.hash||'').indexOf('#/dashboard')===0){ app.className='vmops'; viewDashboard(); } else { location.hash='#/dashboard'; } }
   // Exposed to the host (CVE-Explorer-based) router, which dispatches the ops routes.
   // Read-only snapshot of the current findings (used by the cross-vendor Scanner

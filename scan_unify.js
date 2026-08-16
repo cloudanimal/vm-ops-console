@@ -40,7 +40,8 @@
   }
   function fromQualys() {
     if (!window.QUALYS) return [];
-    return (window.QUALYS.data.detections || []).map(function (d) {
+    // Exclude remediated detections (Qualys marks them Fixed), mirroring the CrowdStrike 'closed' filter.
+    return (window.QUALYS.data.detections || []).filter(function (d) { return d.status !== 'Fixed'; }).map(function (d) {
       return { cve: String(d.cve).toUpperCase(), host: d.host, vendor: 'Qualys', severity: qualysSev(d.sev), cvss: d.cvss };
     });
   }
@@ -90,10 +91,11 @@
   // vendors, shaped like the console's Finding model (so mergeFindings dedups by
   // cve+host and the workbench/Overview/Campaigns pick them up).
   function scannerFindings() {
+    var today = new Date().toISOString().slice(0, 10);   // real date so SLA/age/risk compute correctly
     function toFinding(x) {
       return { cve: x.cve, host: x.host, severity: x.severity, cvss: x.cvss == null ? null : x.cvss, vpr: null,
         plugin: '', name: x.cve + ' (' + x.vendor + ')', desc: x.cve + ' detected by ' + x.vendor,
-        repo: '', source: x.vendor, firstSeen: null, state: '' };
+        repo: '', source: x.vendor, firstSeen: today, state: '' };
     }
     return [].concat(fromQualys(), fromRapid7(), fromCrowdstrike(), fromWiz()).map(toFinding);
   }

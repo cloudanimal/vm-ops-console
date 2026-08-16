@@ -3100,7 +3100,7 @@
     var parts = path.split('/').filter(Boolean); // e.g. ['cve','CVE-...']
     window.scrollTo(0, 0);
     // VM Ops operational pages live in vmops.js; dispatch to them and scope #app to .vmops.
-    if (window.VMOPS && typeof window.VMOPS[parts[0]] === 'function') { setActive(parts[0]); window.VMOPS[parts[0]](); return; }
+    if (window.VMOPS && typeof window.VMOPS[parts[0]] === 'function' && window.VMOPS[parts[0]].isView) { setActive(parts[0]); window.VMOPS[parts[0]](); return; }
     if (parts[0] === 'agent-coverage' && window.ACD) { setActive('agent-coverage'); window.ACD.open(); return; }
     if (parts[0] === 'tvd' && window.TVD) { setActive('tvd'); window.TVD.open(); return; }
     if (parts[0] === 'wiz' && window.WIZ) { setActive('wiz'); window.WIZ.open(); return; }
