@@ -121,7 +121,8 @@
 <tbody>
 
 <tr class="grp"><td colspan="5">Ingestion &amp; correlation</td></tr>
-<tr><td class="feat">Import scanner exports (files)</td><td>Universal (import-first for OSS)</td><td><span class="pill p-have">Have</span> client-side parse of Tenable + sample Qualys/Rapid7/CrowdStrike/Wiz</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">Import scanner exports (files)</td><td>Universal (import-first for OSS)</td><td><span class="pill p-have">Have</span> client-side parse of Tenable CSV, <b>SARIF 2.1.0</b> (CodeQL/Semgrep/Trivy/Grype), and <b>CycloneDX</b> BOMs</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">License / SBOM inventory</td><td>SecObserve pairs vulns + licenses</td><td><span class="pill p-have">Have</span> Licenses &amp; SBOM view: components + license-risk (permissive/copyleft/unknown) from CycloneDX</td><td>Yes</td><td>&mdash;</td></tr>
 <tr><td class="feat">Live API pull from scanners/vendors</td><td>Universal in commercial (150&ndash;375 connectors)</td><td><span class="pill p-backend">Needs backend</span> deep-link + sample only today</td><td>No</td><td><span class="b1">B1</span></td></tr>
 <tr><td class="feat">Deduplicate &amp; correlate across tools</td><td>Universal; AI-graph in leaders</td><td><span class="pill p-have">Have</span> Scanner Coverage dedups by CVE+host, cross-vendor matrix, blind spots</td><td>Yes</td><td>&mdash;</td></tr>
 <tr><td class="feat">Scheduled / continuous ingestion</td><td>Universal in commercial</td><td><span class="pill p-backend">Needs backend</span> (Actions build public datasets, not user scans)</td><td>No</td><td><span class="b2">B2</span></td></tr>
@@ -182,10 +183,14 @@
 <li><b>Configurable risk weighting.</b> Done: per-signal weight sliders and a transparent per-finding breakdown, the "not a black box" scoring the commercial tools sell.</li>
 <li><b>Root-cause grouping.</b> Done: the Remediations view groups findings by shared fix (one patch clears N findings across M assets), the Rapid7 / Dazz idea.</li>
 </ul>
+<h3>Shipped since this analysis</h3>
+<ul class="tight" style="margin-top:0">
+<li><b>SARIF + CycloneDX import.</b> Done: SARIF 2.1.0 code-scanning results and CycloneDX BOMs now import client-side into the Findings workbench.</li>
+<li><b>License / SBOM view.</b> Done: a Licenses &amp; SBOM view inventories components and flags copyleft / unknown licenses, the SecObserve angle.</li>
+</ul>
 <h3>Still open, fully in-browser (no backend)</h3>
 <ul class="tight">
-<li><b>More import parsers.</b> The OSS leaders win on breadth (DefectDojo 200+, SecObserve SARIF/CycloneDX). Every additional file-format parser is pure client-side work and directly narrows the biggest gap.</li>
-<li><b>License / SBOM view.</b> SecObserve pairs vulns with license management; a CycloneDX/SPDX import view is browser-feasible.</li>
+<li><b>Broader parser coverage.</b> SARIF and CycloneDX are in; SPDX and more native vendor CSV/JSON formats would further narrow the breadth gap versus DefectDojo (200+).</li>
 <li><b>Theme presets + custom colors.</b> User-selectable palettes and custom accent colors in Settings.</li>
 </ul>
 </div>

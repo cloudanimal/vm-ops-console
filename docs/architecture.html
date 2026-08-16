@@ -78,7 +78,7 @@
 <tr><td class="k">Persistence</td><td>localStorage + IndexedDB</td><td>Small state in localStorage; larger imported source blobs in IndexedDB via <code>vmstore.js</code>.</td></tr>
 <tr><td class="k">Offline / caching</td><td>Service worker (<code>sw.js</code>)</td><td>Network-first for same-origin app files, cache-first for vendored libraries and sample data.</td></tr>
 <tr><td class="k">Versioning</td><td>Single-source <code>version.js</code></td><td>One <code>APP_VERSION</code> string feeds the footer and the SW cache name (<code>importScripts</code>).</td></tr>
-<tr><td class="k">CSV / spreadsheet parse</td><td>PapaParse, SheetJS (xlsx)</td><td>Vendored locally. Scan exports are parsed entirely client-side.</td></tr>
+<tr><td class="k">Import parsers</td><td>CSV, SARIF 2.1.0, CycloneDX; PapaParse, SheetJS (xlsx)</td><td>Vendored/local. Tenable CSV, SARIF code-scanning results, and CycloneDX BOMs are all parsed entirely client-side.</td></tr>
 <tr><td class="k">Charts / capture</td><td>Chart.js, html2canvas, gifenc</td><td>Vendored locally; used by the Tenable dashboard and export/report tooling.</td></tr>
 <tr><td class="k">On-device AI</td><td>Transformers.js (Ask AI)</td><td>Runs a small language model in the browser; one-time model download from a public CDN, no API key.</td></tr>
 <tr><td class="k">Data enrichment</td><td>Public CVE APIs + pre-built static datasets</td><td>Live: NVD, FIRST EPSS (opt-in), OSV. Pre-built by scheduled GitHub Actions: CISA KEV, EPSS distribution, NIST LEV, exploited-CVE, EOL.</td></tr>
@@ -142,6 +142,7 @@
 <li><b>Finding</b> <code>{ cve, host, severity, cvss, vpr, plugin, name, desc, repo, source, firstSeen, lastSeen, state }</code> — one row per vulnerability-on-host, from an import or a sample source. Stored in <code>vmops-findings</code>.</li>
 <li><b>Override</b> <code>{ status, owner, notes, repo, updates[], ticket{}, updated }</code> — the user's triage layer, kept separate so re-imports never clobber it. Stored in <code>vmops-overrides</code>.</li>
 <li><b>Asset</b> <code>{ crit, owner, tags[] }</code> keyed by normalized host — business context that feeds the risk score. Stored in <code>vmops-assets</code>.</li>
+<li><b>SBOM</b> <code>{ name, at, components[] }</code> — component inventory from an imported CycloneDX BOM (name, version, license, vuln count) for the Licenses &amp; SBOM view. Stored in <code>vmops-sbom</code>.</li>
 <li><b>Campaign</b> <code>{ id, name, scope, owner, priority, dueDate, status, history[] }</code> — remediation campaigns. Stored in <code>vmops-campaigns</code>.</li>
 <li><b>Config</b> — branding, SLA windows, risk weights, ticketing endpoints, nav visibility. Stored in <code>vmops-config</code>. Secrets (API keys) are stored but never exported.</li>
 </ul>

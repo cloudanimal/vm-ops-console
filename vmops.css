@@ -424,3 +424,10 @@
 .vmops .tklen.ok { border-color:color-mix(in srgb,var(--ok) 45%,transparent); } .vmops .tklen.ok .tklen-n { color:var(--ok); }
 .vmops .tklen.warn { border-color:color-mix(in srgb,var(--high) 45%,transparent); } .vmops .tklen.warn .tklen-n { color:var(--high); }
 .vmops .tklen.bad { border-color:color-mix(in srgb,var(--crit) 50%,transparent); } .vmops .tklen.bad .tklen-n { color:var(--crit); }
+
+/* Licenses & SBOM view */
+.vmops .sbom-bar { display:grid; grid-template-columns:260px 1fr 40px; align-items:center; gap:10px; margin:6px 0; font-size:12.5px; }
+.vmops .sbom-bl { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.vmops .sbom-track { height:12px; border-radius:6px; background:color-mix(in srgb,var(--accent) 8%,transparent); border:1px solid var(--line); overflow:hidden; }
+.vmops .sbom-fill { display:block; height:100%; border-radius:6px; }
+.vmops .sbom-n { text-align:right; font-variant-numeric:tabular-nums; font-weight:600; }

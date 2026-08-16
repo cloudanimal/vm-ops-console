@@ -61,6 +61,7 @@
     findings: load('vmops-findings', []),
     ov: load('vmops-overrides', {}),       // key -> {status, owner, notes, updated}
     assets: load('vmops-assets', {}),      // hostNorm -> {crit, owner, tags}
+    sbom: load('vmops-sbom', null),        // {name, at, components:[{name,version,type,license,vulns}]}
     cfg: Object.assign({}, DEFAULT_CFG, load('vmops-config', {})),
     sort: { col: 'risk', dir: -1 },
     filt: defaultFilt()
@@ -1291,7 +1292,9 @@
   // dashboards can read it. Findings also feed the Findings workbench.
   var IMPORT_GROUPS = [
     { title: 'Findings', open: { route: '#/findings', label: 'Open Findings →' }, items: [
-      { id: 'findings', label: 'Scan findings', sub: 'Nessus / Tenable vulnerability CSV → Findings workbench', accept: '.csv,text/csv' }
+      { id: 'findings', label: 'Scan findings', sub: 'Nessus / Tenable vulnerability CSV → Findings workbench', accept: '.csv,text/csv' },
+      { id: 'findings:sarif', label: 'SARIF (code scanning)', sub: 'SAST/SCA SARIF 2.1.0 (CodeQL, Semgrep, Trivy, Grype…) → Findings', accept: '.sarif,.json' },
+      { id: 'findings:cdx', label: 'CycloneDX SBOM', sub: 'Components + licenses + vulnerabilities → Licenses & SBOM + Findings', accept: '.json,.cdx' }
     ] },
     { title: 'Agent coverage', open: { route: '#/agent-coverage', label: 'Open Agent Coverage →' }, items: [
       { id: 'acd:ad', label: 'Active Directory (AD)', sub: 'Computer inventory → Agent Coverage denominator', accept: '.json,.csv' },
@@ -1353,6 +1356,7 @@
   function refreshSourceStatus(id) {
     var el = document.getElementById(stId(id)); if (!el) return;
     if (id === 'findings') { el.innerHTML = STATE.findings.length ? '<span class="ok-txt">✓ ' + STATE.findings.length + ' findings loaded</span>' : 'Not imported yet.'; return; }
+    if (id === 'findings:cdx' && STATE.sbom && STATE.sbom.components) { el.innerHTML = '<span class="ok-txt">✓ ' + STATE.sbom.components.length + ' components</span> · <a href="#/sbom">view</a>'; return; }
     if (!window.VMStore) { el.textContent = 'Browser storage unavailable.'; return; }
     VMStore.get(id).then(function (rec) { el.innerHTML = rec ? '<span class="ok-txt">✓ ' + esc(rec.name) + '</span> · ' + esc(new Date(rec.importedAt).toLocaleString()) : 'Not imported yet.'; }).catch(function () { el.textContent = 'Not imported yet.'; });
   }
@@ -1361,6 +1365,22 @@
     r.onload = function () {
       var text = String(r.result || '');
       var kind = (/\.json$/i.test(file.name) || /^\s*[\[{]/.test(text)) ? 'json' : 'csv';
+      if (id === 'findings:sarif') {
+        var sf; try { sf = parseSarif(text); } catch (e) { return toast('SARIF parse error: ' + e.message); }
+        if (!sf.length) return toast('No results found in that SARIF file');
+        mergeFindings(sf);   // additive: a code scan does not reconcile your scanner findings
+        if (window.VMStore) VMStore.put({ id: id, name: file.name, text: text, kind: 'sarif' });
+        toast('Imported ' + sf.length + ' SARIF result' + (sf.length > 1 ? 's' : '') + ' into Findings'); refreshSourceStatus(id); return;
+      }
+      if (id === 'findings:cdx') {
+        var cdx; try { cdx = parseCycloneDX(text); } catch (e) { return toast('CycloneDX parse error: ' + e.message); }
+        if (!cdx.components.length && !cdx.findings.length) return toast('No components or vulnerabilities in that BOM');
+        STATE.sbom = { name: file.name, at: Date.now(), components: cdx.components }; save('vmops-sbom', STATE.sbom);
+        if (cdx.findings.length) mergeFindings(cdx.findings);
+        if (window.VMStore) VMStore.put({ id: id, name: file.name, text: text, kind: 'cdx' });
+        toast('Imported SBOM: ' + cdx.components.length + ' components' + (cdx.findings.length ? ' · ' + cdx.findings.length + ' vulnerabilities → Findings' : '')); refreshSourceStatus(id);
+        location.hash = '#/sbom'; return;
+      }
       if (id === 'findings') {
         var fs; try { fs = parseCsv(text); } catch (e) { return toast('Parse error: ' + e.message); }
         if (!fs.length) return toast('No CVE rows found in that CSV');
@@ -1378,6 +1398,7 @@
   }
   function clearSource(id) {
     if (id === 'findings') { if (!confirm('Clear all findings, status, owners, and notes from this browser?')) return; STATE.findings = []; STATE.ov = {}; save('vmops-findings', []); save('vmops-overrides', {}); }
+    if (id === 'findings:cdx') { STATE.sbom = null; save('vmops-sbom', null); }
     if (window.VMStore) VMStore.remove(id);
     toast('Cleared'); refreshSourceStatus(id);
   }
@@ -1438,6 +1459,74 @@
     if (s.indexOf('new') > -1) return 'new';
     return '';
   }
+  // ---------- SARIF (code-scanning) + CycloneDX (SBOM) import parsers ----------
+  function sevFromScore(n) { return n == null || isNaN(n) ? '' : n >= 9 ? 'Critical' : n >= 7 ? 'High' : n >= 4 ? 'Medium' : n > 0 ? 'Low' : 'Low'; }
+  function firstCve(s) { var m = String(s || '').match(/CVE-\d{4}-\d+/i); return m ? m[0].toUpperCase() : null; }
+  // SARIF 2.1.0 — one finding per result. Host = file:line; CVE from ruleId/message when present,
+  // else the ruleId is used as the identifier. security-severity (a CVSS-like number) sets severity.
+  function parseSarif(text) {
+    var doc = JSON.parse(text); var out = [];
+    (doc.runs || []).forEach(function (run) {
+      var tool = ((run.tool || {}).driver || {}).name || 'SARIF';
+      var rules = {}; (((run.tool || {}).driver || {}).rules || []).forEach(function (r) { rules[r.id] = r; });
+      (run.results || []).forEach(function (res) {
+        var rid = res.ruleId || (res.rule && res.rule.id) || 'finding';
+        var rule = rules[rid] || {};
+        var props = res.properties || {}, rprops = rule.properties || {};
+        var ss = parseFloat(props['security-severity'] != null ? props['security-severity'] : rprops['security-severity']);
+        var level = res.level || (rule.defaultConfiguration || {}).level || 'warning';
+        var sev = !isNaN(ss) ? sevFromScore(ss) : level === 'error' ? 'High' : level === 'note' || level === 'none' ? 'Low' : 'Medium';
+        var loc = ((((res.locations || [])[0] || {}).physicalLocation) || {});
+        var uri = ((loc.artifactLocation || {}).uri) || '';
+        var line = ((loc.region || {}).startLine);
+        var host = uri ? (uri + (line ? ':' + line : '')) : (tool + ' finding');
+        var msg = (res.message && res.message.text) || (rule.shortDescription && rule.shortDescription.text) || rid;
+        var name = (rule.name || (rule.shortDescription && rule.shortDescription.text) || rid);
+        out.push({ cve: firstCve(rid) || firstCve(msg) || rid, host: host, severity: sev, cvss: !isNaN(ss) ? ss : null, vpr: null,
+          plugin: rid, name: String(name).slice(0, 120), desc: String(msg).slice(0, 400), repo: '', source: tool, firstSeen: todayISO(), state: '' });
+      });
+    });
+    return out;
+  }
+  // CycloneDX BOM (JSON) — returns {findings, components}. Findings come from bom.vulnerabilities;
+  // components + licenses power the Licenses & SBOM view.
+  function cdxLicense(comp) {
+    var ls = comp.licenses || [];
+    var names = ls.map(function (l) { return (l.license && (l.license.id || l.license.name)) || l.expression || ''; }).filter(Boolean);
+    return names.join(', ') || '';
+  }
+  function parseCycloneDX(text) {
+    var doc = JSON.parse(text);
+    var comps = (doc.components || []).map(function (c) {
+      return { name: c.name || '(unnamed)', version: c.version || '', type: c.type || 'library', purl: c.purl || '', ref: c['bom-ref'] || c.purl || (c.name + '@' + (c.version || '')), license: cdxLicense(c), vulns: 0 };
+    });
+    var byRef = {}; comps.forEach(function (c) { byRef[c.ref] = c; });
+    var findings = [];
+    (doc.vulnerabilities || []).forEach(function (v) {
+      var id = v.id || '';
+      var ratings = v.ratings || [];
+      var score = null, sevStr = '';
+      ratings.forEach(function (r) { if (score == null && r.score != null) score = parseFloat(r.score); if (!sevStr && r.severity) sevStr = r.severity; });
+      var sev = normSev(sevStr, score);
+      (v.affects && v.affects.length ? v.affects : [{ ref: '' }]).forEach(function (a) {
+        var comp = byRef[a.ref]; if (comp) comp.vulns++;
+        var host = comp ? (comp.name + (comp.version ? '@' + comp.version : '')) : (a.ref || 'component');
+        findings.push({ cve: firstCve(id) || id || 'VULN', host: host, severity: sev, cvss: score, vpr: null,
+          plugin: (v.source && v.source.name) || 'CycloneDX', name: String((v.description || id)).slice(0, 120),
+          desc: String(v.description || id).slice(0, 400), repo: '', source: 'CycloneDX', firstSeen: todayISO(), state: '' });
+      });
+    });
+    return { findings: findings, components: comps };
+  }
+  // License risk buckets for the SBOM view.
+  function licenseClass(lic) {
+    var s = String(lic || '').toUpperCase();
+    if (!s) return 'unknown';
+    if (/AGPL|GPL|LGPL|MPL|EPL|CDDL|EUPL|OSL|CPL/.test(s)) return 'copyleft';
+    if (/MIT|APACHE|BSD|ISC|ZLIB|UNLICENSE|WTFPL|BSL|0BSD|PYTHON|PSF/.test(s)) return 'permissive';
+    return 'other';
+  }
+
   function parseCsv(text) {
     if (text.charCodeAt(0) === 0xFEFF) text = text.slice(1);
     var rows = [], row = [], fld = '', q = false;
@@ -2783,6 +2872,45 @@
       '<div class="muted" style="font-size:12px;margin-top:10px">Findings are grouped by the product a fix targets (derived from the finding name). Risk removed is the summed risk score of the findings that fix would close.</div>';
   }
 
+  // ========================= Licenses & SBOM =========================
+  // Component inventory from an imported CycloneDX BOM, with a license-risk summary.
+  var LIC_CLASS = { permissive: { l: 'Permissive', c: 'ok' }, copyleft: { l: 'Copyleft', c: 'high' }, other: { l: 'Other', c: 'med' }, unknown: { l: 'Unknown', c: 'crit' } };
+  function viewSbom() {
+    setActive('sbom');
+    var sb = STATE.sbom;
+    if (!sb || !sb.components || !sb.components.length) {
+      app.innerHTML = '<header class="view"><div class="overline">Inventory</div><h1>Licenses &amp; SBOM</h1>' +
+        '<p class="lede">Import a CycloneDX software bill of materials to inventory your components and their licenses, and flag copyleft or unknown-license dependencies. Vulnerabilities in the BOM also flow into the Findings workbench.</p></header>' +
+        privSlim() + '<div class="card" style="text-align:center;padding:40px 24px"><div style="font-family:var(--serif);font-size:20px;margin-bottom:8px">No SBOM imported yet</div>' +
+        '<div class="muted" style="max-width:520px;margin:0 auto 18px;font-size:14px;line-height:1.6">On the Data Import page, choose a CycloneDX JSON file (for example from Syft, Trivy, or cdxgen). It is parsed in your browser and never uploaded.</div>' +
+        '<a class="btn primary" href="#/import">Open Data Import →</a></div>';
+      return;
+    }
+    var comps = sb.components.slice();
+    var byClass = { permissive: 0, copyleft: 0, other: 0, unknown: 0 };
+    var byLic = {};
+    comps.forEach(function (c) { var cl = licenseClass(c.license); byClass[cl]++; var key = c.license || '(none)'; byLic[key] = (byLic[key] || 0) + 1; });
+    var withVulns = comps.filter(function (c) { return c.vulns > 0; }).length;
+    var kpi = function (n, l, cls) { return '<div class="kpi ' + (cls || '') + '"><div class="num">' + n + '</div><div class="label">' + l + '</div></div>'; };
+    var licKeys = Object.keys(byLic).sort(function (a, b) { return byLic[b] - byLic[a]; });
+    var licMax = Math.max.apply(null, licKeys.map(function (k) { return byLic[k]; }).concat([1]));
+    var licBars = licKeys.slice(0, 12).map(function (k) {
+      var cl = licenseClass(k === '(none)' ? '' : k);
+      return '<div class="sbom-bar"><span class="sbom-bl">' + esc(k) + ' <span class="badge ' + LIC_CLASS[cl].c + '" style="font-size:9px">' + LIC_CLASS[cl].l + '</span></span>' +
+        '<span class="sbom-track"><span class="sbom-fill" style="width:' + Math.round(byLic[k] / licMax * 100) + '%;background:var(--' + LIC_CLASS[cl].c + ')"></span></span><span class="sbom-n">' + byLic[k] + '</span></div>';
+    }).join('');
+    comps.sort(function (a, b) { return b.vulns - a.vulns || a.name.localeCompare(b.name); });
+    app.innerHTML =
+      '<header class="view"><div class="overline">Inventory</div><h1>Licenses &amp; SBOM</h1>' +
+      '<p class="lede">Components from <b>' + esc(sb.name || 'the imported BOM') + '</b>' + (sb.at ? ' (' + esc(new Date(sb.at).toLocaleString()) + ')' : '') + '. Copyleft and unknown licenses are flagged for review; vulnerable components link to the Findings workbench.</p></header>' +
+      privSlim() +
+      '<div class="kpis">' + kpi(comps.length, 'Components') + kpi(licKeys.filter(function (k) { return k !== '(none)'; }).length, 'Distinct licenses') + kpi(byClass.copyleft, 'Copyleft', byClass.copyleft ? 'warn' : '') + kpi(byClass.unknown, 'Unknown license', byClass.unknown ? 'crit' : '') + kpi(withVulns, 'With vulnerabilities', withVulns ? 'crit' : '') + '</div>' +
+      '<div class="card"><h3 style="margin:0 0 10px;font-size:13px">Components by license</h3>' + licBars + '</div>' +
+      '<div class="gridwrap"><table class="grid"><thead><tr><th>Component</th><th>Version</th><th>Type</th><th>License</th><th>Class</th><th>Vulns</th></tr></thead><tbody>' +
+      comps.map(function (c) { var cl = licenseClass(c.license); return '<tr><td class="mono">' + esc(c.name) + '</td><td class="mono">' + esc(c.version || '—') + '</td><td class="muted" style="font-size:12px">' + esc(c.type) + '</td><td>' + esc(c.license || '—') + '</td><td><span class="badge ' + LIC_CLASS[cl].c + '">' + LIC_CLASS[cl].l + '</span></td><td>' + (c.vulns ? '<b>' + c.vulns + '</b>' : '—') + '</td></tr>'; }).join('') +
+      '</tbody></table></div>';
+  }
+
   function vmShow(fn){ return function(){ app.className='vmops'; return fn.apply(null, arguments); }; }
   function goDash() { if ((location.hash||'').indexOf('#/dashboard')===0){ app.className='vmops'; viewDashboard(); } else { location.hash='#/dashboard'; } }
   // Exposed to the host (CVE-Explorer-based) router, which dispatches the ops routes.
@@ -2793,7 +2921,7 @@
   // CrowdStrike/Wiz sample) into the shared store so the workbench, Overview, and
   // Campaigns reflect all sources. Returns the new total.
   function loadScannerFindings(list) { if (!list || !list.length) return STATE.findings.length; mergeFindings(list); return STATE.findings.length; }
-  window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), campaigns: vmShow(viewCampaigns), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz), assets: vmShow(viewAssets), remediations: vmShow(viewRemediations),
+  window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), campaigns: vmShow(viewCampaigns), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz), assets: vmShow(viewAssets), remediations: vmShow(viewRemediations), sbom: vmShow(viewSbom),
     getFindings: getFindings, loadScannerFindings: loadScannerFindings,
     remediation: { ensure: ensureRemed, for: remediationFor, copy: copyText } };
 })();
