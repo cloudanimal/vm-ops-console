@@ -3119,7 +3119,13 @@
     if (parts[0] === 'coverage' && window.COVERAGE) { setActive('coverage'); window.COVERAGE.open(); return; }
     if (parts[0] === 'prompt-scanner' && window.PSCAN) { setActive('prompt-scanner'); window.PSCAN.open(); return; }
     var _appEl = document.getElementById('app'); if (_appEl) _appEl.className = '';
-    if (parts.length === 0) return viewAsk();
+    if (parts.length === 0) {
+      // Empty hash -> the user's configured landing page (default Ask AI). Redirect once so the
+      // hash reflects the view; 'ask' renders in place to avoid a needless redirect.
+      var home = 'ask'; try { home = (JSON.parse(localStorage.getItem('vmops-config') || '{}') || {}).homeRoute || 'ask'; } catch (e) {}
+      if (home && home !== 'ask') { location.replace('#/' + home); return; }
+      return viewAsk();
+    }
     if (parts[0] === 'report') return viewReport();
     if (parts[0] === 'search') return viewSearch(parts[1] ? safeDecode(parts[1]) : '');
     if (parts[0] === 'cve' && parts[1]) return viewDetail(safeDecode(parts[1]).toUpperCase());

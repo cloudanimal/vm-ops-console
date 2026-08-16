@@ -49,7 +49,14 @@
     { k: 'kev', l: 'Exploitation (KEV / ransomware / PoC)' }, { k: 'lev', l: 'LEV (already-exploited)' },
     { k: 'ssvc', l: 'SSVC decision' }, { k: 'asset', l: 'Asset criticality' }
   ];
-  var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tioAccess: '', tioSecret: '', meUrl: '', meClientId: '', meClientSecret: '', epssLive: false, recurThreshold: 1, navHidden: [], riskWeights: Object.assign({}, DEFAULT_WEIGHTS) };
+  var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tioAccess: '', tioSecret: '', meUrl: '', meClientId: '', meClientSecret: '', epssLive: false, recurThreshold: 1, navHidden: [], riskWeights: Object.assign({}, DEFAULT_WEIGHTS), homeRoute: 'ask' };
+  // Views the user can pick as the default landing page (empty-hash open); route value + label.
+  var HOME_CHOICES = [
+    ['ask', 'Ask AI'], ['report', 'Morning Report'], ['dashboard', 'Dashboard (Overview)'], ['findings', 'Findings'],
+    ['campaigns', 'Campaigns'], ['assets', 'Asset Inventory'], ['remediations', 'Remediations'], ['sbom', 'Licenses & SBOM'],
+    ['coverage', 'Scanner Coverage'], ['agent-coverage', 'Agent Coverage'], ['tvd', 'Tenable'], ['qualys', 'Qualys'],
+    ['rapid7', 'Rapid7'], ['crowdstrike', 'CrowdStrike'], ['wiz', 'Wiz'], ['faq', 'FAQ'], ['about', 'About']
+  ];
   var DEFAULT_BRAND = 'Vulnerability Manager';
   var DEFAULT_ICON_COLOR = '#28415d';
 
@@ -122,6 +129,7 @@
     window.VM_BRAND = name;   // read by the CVE-shell views (About, footer, diagram, ledes)
     var el = document.querySelector('nav.top .brand');
     if (el) {
+      el.setAttribute('href', '#/' + (STATE.cfg.homeRoute || 'ask'));   // logo goes to the chosen landing page
       // Stack the brand: all but the last word on line 1, the last word on line 2 (shrunk to fit).
       var w = name.split(/\s+/).filter(Boolean);
       if (w.length > 1) { var last = w.pop(); el.innerHTML = '<span class="brand-l1">' + esc(w.join(' ')) + '</span><span class="brand-l2">' + esc(last) + '</span>'; el.classList.add('two-line'); }
@@ -1792,6 +1800,10 @@
         var grid = function (items) { return '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px 16px">' + items.join('') + '</div>'; };
         var html = '<div class="navcfg-h">Top-level menu</div>' + grid(NAV_ITEMS.map(function (it) { return box(it.k, it.label); }));
         NAV_SUBS.forEach(function (g) { html += '<div class="navcfg-h">' + esc(g.group) + '</div>' + grid(g.items.map(function (it) { return box(it.k, it.label); })); });
+        var home = c.homeRoute || 'ask';
+        html += '<div class="navcfg-h">Default landing page</div>' +
+          '<div class="field" style="max-width:340px;margin:0"><label>Open to this view on launch</label><select id="homeRoute">' +
+          HOME_CHOICES.map(function (o) { return '<option value="' + o[0] + '"' + (home === o[0] ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></div>';
         return html;
       })() + '</div>' +
       '<h2>Data import</h2><div class="card">' +
@@ -1865,6 +1877,7 @@
       STATE.cfg.recurThreshold = Math.max(1, parseInt(document.getElementById('recurThreshold').value, 10) || 1);
       var nh = []; [].forEach.call(document.querySelectorAll('.navtoggle'), function (cb) { if (!cb.checked) nh.push(cb.getAttribute('data-nav')); }); STATE.cfg.navHidden = nh;
       var rw = {}; [].forEach.call(document.querySelectorAll('.rw'), function (s) { rw[s.getAttribute('data-w')] = Math.max(0, Math.min(2, parseFloat(s.value) || 0)); }); STATE.cfg.riskWeights = Object.assign({}, DEFAULT_WEIGHTS, rw);
+      var hr = document.getElementById('homeRoute'); if (hr) STATE.cfg.homeRoute = hr.value;
       save('vmops-config', STATE.cfg); applyBrand(); toast('Settings saved');
     });
     [].forEach.call(document.querySelectorAll('.rw'), function (s) { s.addEventListener('input', function () { var el = document.getElementById('rwv-' + s.getAttribute('data-w')); if (el) el.textContent = Number(s.value).toFixed(1); }); });
