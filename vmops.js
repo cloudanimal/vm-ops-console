@@ -127,16 +127,21 @@
   function applyBrand() {
     var name = (STATE.cfg.brand || '').trim() || DEFAULT_BRAND;
     window.VM_BRAND = name;   // read by the CVE-shell views (About, footer, diagram, ledes)
+    var mono = ((STATE.cfg.brandIcon || '').trim() || brandInitials(name)).slice(0, 3);
     var el = document.querySelector('nav.top .brand');
     if (el) {
       el.setAttribute('href', '#/' + (STATE.cfg.homeRoute || 'ask'));   // logo goes to the chosen landing page
-      el.textContent = name; el.classList.remove('two-line');           // single line, nav-matching font
+      el.classList.remove('two-line');
+      // Monogram tile + two-tone name: the last word takes the accent (Wiz) color.
+      var words = name.split(/\s+/).filter(Boolean), lead = '', tail = name;
+      if (words.length > 1) { tail = words.pop(); lead = words.join(' ') + ' '; }
+      el.innerHTML = '<span class="brand-mono">' + esc(mono) + '</span>' +
+        '<span class="brand-txt">' + esc(lead) + '<span class="brand-accent">' + esc(tail) + '</span></span>';
     }
     [].forEach.call(document.querySelectorAll('.brandname'), function (s) { s.textContent = name; });
     try { document.title = name; } catch (e) {}
     // Keep the social/SEO meta tags in sync with the configured name too.
     ['meta[property="og:title"]', 'meta[property="og:site_name"]', 'meta[name="twitter:title"]'].forEach(function (sel) { var m = document.querySelector(sel); if (m) m.setAttribute('content', name); });
-    var mono = ((STATE.cfg.brandIcon || '').trim() || brandInitials(name)).slice(0, 3);
     var col = (STATE.cfg.brandIconColor || '').trim() || DEFAULT_ICON_COLOR;
     var link = document.getElementById('favicon');
     if (link) { var nw = link.cloneNode(false); nw.setAttribute('href', faviconURI(mono, col)); link.parentNode.replaceChild(nw, link); }

@@ -55,7 +55,10 @@
   /* ---- top nav ---- */
   nav.top { display:flex; align-items:center; gap:3px; flex-wrap:nowrap; overflow-x:auto; padding:22px 0 4px; border-bottom:1px solid var(--line); scrollbar-width:none; }
   nav.top::-webkit-scrollbar { display:none; }
-  nav.top .brand { font-family:var(--sans); font-size:15px; font-weight:600; margin-right:14px; text-decoration:none; color:var(--ink); white-space:nowrap; flex:0 0 auto; }
+  nav.top .brand { display:inline-flex; align-items:center; gap:9px; font-family:var(--sans); font-size:15px; font-weight:600; margin-right:14px; text-decoration:none; color:var(--ink); white-space:nowrap; flex:0 0 auto; }
+  nav.top .brand .brand-mono { background:var(--accent); color:var(--badge-ink); font-weight:700; font-size:12px; line-height:1; border-radius:7px; padding:4px 6px; letter-spacing:.02em; }
+  nav.top .brand .brand-txt { color:var(--ink); }
+  nav.top .brand .brand-accent { color:var(--accent); }
   nav.top a.tab { font-size:13.5px; color:var(--soft); text-decoration:none; padding:7px 9px; border-radius:8px; white-space:nowrap; flex:0 0 auto; transition:background .15s ease,color .15s ease; }
   nav.top .navsep { flex:0 0 auto; width:1px; height:16px; background:var(--line); margin:0 7px; }
   nav.top .navmenu { flex:0 0 auto; }
@@ -392,7 +395,7 @@
 <div class="wrap">
 
   <nav class="top">
-    <a class="brand" href="#/ask">Vulnerability Manager</a>
+    <a class="brand" href="#/ask"><span class="brand-mono">VM</span><span class="brand-txt">Vulnerability <span class="brand-accent">Manager</span></span></a>
     <a class="tab" href="#/ask" data-route="ask">Ask&nbsp;AI</a>
     <span class="navsep" aria-hidden="true"></span>
     <a class="tab" href="#/report" data-route="report">Morning Report</a>
