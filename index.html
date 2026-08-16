@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vulnerability Management Console</title>
+<title>Vulnerability Manager</title>
 <meta name="description" content="A browser-local vulnerability-management operations console: CVE intelligence, a findings workbench, a Tenable VM dashboard, and AD-vs-agent coverage — under one nav with a natural-language Ask AI. Built by Joe Cook.">
 <link rel="canonical" href="https://cloudanimal.github.io/vm-ops-console/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Vulnerability Management Console">
-<meta property="og:title" content="Vulnerability Management Console">
+<meta property="og:site_name" content="Vulnerability Manager">
+<meta property="og:title" content="Vulnerability Manager">
 <meta property="og:description" content="A browser-local vulnerability-management operations console: CVE intelligence, a findings workbench, a Tenable VM dashboard, and AD-vs-agent coverage reconciler — one nav, one theme, a natural-language Ask AI. No backend.">
 <meta property="og:url" content="https://cloudanimal.github.io/vm-ops-console/">
 <meta property="og:image" content="https://cloudanimal.github.io/vm-ops-console/assets/og-image.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Vulnerability Management Console">
+<meta name="twitter:title" content="Vulnerability Manager">
 <meta name="twitter:description" content="A browser-local vulnerability-management operations console — CVE intelligence, findings workbench, Tenable dashboard, and agent coverage, with a natural-language Ask AI.">
 <meta name="twitter:image" content="https://cloudanimal.github.io/vm-ops-console/assets/og-image.png?v=2">
 <link rel="icon" id="favicon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2328415d'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='34' fill='%23faf9f7' text-anchor='middle'%3EVM%3C/text%3E%3C/svg%3E">
@@ -392,7 +392,7 @@
 <div class="wrap">
 
   <nav class="top">
-    <a class="brand two-line" href="#/ask"><span class="brand-l1">Vulnerability Management</span><span class="brand-l2">Console</span></a>
+    <a class="brand two-line" href="#/ask"><span class="brand-l1">Vulnerability</span><span class="brand-l2">Manager</span></a>
     <a class="tab" href="#/ask" data-route="ask">Ask&nbsp;AI</a>
     <span class="navsep" aria-hidden="true"></span>
     <a class="tab" href="#/report" data-route="report">Morning Report</a>
@@ -456,7 +456,7 @@
     <a href="https://osv.dev" target="_blank" rel="noopener">OSV.dev</a>, and the
     <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV catalog</a>.
     Built by <a href="https://cloudanimal.github.io" target="_blank" rel="noopener">Joe Cook</a>. <span class="appver" title="Release version"></span>
-    <div class="disclaimer"><span class="brandname">Vulnerability Management Console</span> runs entirely in your browser — public CVE lookups are read-only, and your imported findings, scan data, and settings stay local. Risk signals (CVSS, EPSS, KEV, LEV, SSVC) often disagree by design. Always confirm against the vendor before acting.</div>
+    <div class="disclaimer"><span class="brandname">Vulnerability Manager</span> runs entirely in your browser — public CVE lookups are read-only, and your imported findings, scan data, and settings stay local. Risk signals (CVSS, EPSS, KEV, LEV, SSVC) often disagree by design. Always confirm against the vendor before acting.</div>
   </footer>
 
 </div>
@@ -2217,7 +2217,7 @@
       return s;
     }
     function lbl(x, y, t) { return '<text x="' + x + '" y="' + y + '" text-anchor="middle" font-family="var(--sans)" font-size="10.5" fill="var(--faint)">' + esc(t) + '</text>'; }
-    var a = '<svg viewBox="0 0 760 540" width="100%" style="max-width:760px;height:auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + esc(window.VM_BRAND || 'Vulnerability Management Console') + ' architecture diagram">' +
+    var a = '<svg viewBox="0 0 760 540" width="100%" style="max-width:760px;height:auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + esc(window.VM_BRAND || 'Vulnerability Manager') + ' architecture diagram">' +
       '<defs><marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--soft)"/></marker></defs>';
     // sources — wider box + two wrapped lines so nothing overflows the border
     a += '<rect x="20" y="14" width="720" height="74" rx="9" fill="var(--surface)" stroke="var(--faint)" stroke-width="1.3"/>';
@@ -2230,7 +2230,7 @@
     a += box(40, 250, 330, 50, 'Scheduled GitHub Actions', 'daily · weekly · monthly');
     a += box(40, 348, 330, 50, 'Static datasets', 'data/*.json + manifest.json (committed)');
     // hosting + SPA
-    a += box(40, 440, 680, 50, (window.VM_BRAND || 'Vulnerability Management Console'), 'single-page app · vanilla JS · hash-routed · GitHub Pages', true);
+    a += box(40, 440, 680, 50, (window.VM_BRAND || 'Vulnerability Manager'), 'single-page app · vanilla JS · hash-routed · GitHub Pages', true);
     // arrows (solid = build path, dashed = live)
     function arr(x1, y1, x2, y2, dash) { return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="var(--soft)" stroke-width="1.4"' + (dash ? ' stroke-dasharray="5 4"' : '') + ' marker-end="url(#ah)"/>'; }
     a += arr(205, 88, 205, 148);             // sources -> build scripts
@@ -2536,7 +2536,7 @@
 
   function viewAbout() {
     setActive('about');
-    app.innerHTML = '<header class="view"><div class="overline">About</div><h1>How ' + esc(window.VM_BRAND || 'Vulnerability Management Console') + ' works</h1>' +
+    app.innerHTML = '<header class="view"><div class="overline">About</div><h1>How ' + esc(window.VM_BRAND || 'Vulnerability Manager') + ' works</h1>' +
       '<p class="lede">A vulnerability-management operations console. It pairs a public-CVE intelligence front end with operational tooling — a findings workbench, a Tenable vulnerability dashboard, and an AD-vs-agent coverage reconciler — under one nav, one theme, and one natural-language Ask AI box that runs on-device. Backend-free by default: your scan data, findings, notes, and keys stay in your browser, and the only outbound calls are public CVE lookups. At scale, an optional on-prem connector adds live Tenable / ManageEngine / AD data through Power BI and two-way ServiceNow / Jira ticketing.</p></header>' +
       '<div class="toc"><span class="toc-lab">On this page</span>' +
       ABOUT_SECTIONS.map(function (s) { return '<a class="toc-link" data-to="' + s[0] + '">' + esc(s[1]) + '</a>'; }).join('') + '</div>' +
@@ -2612,7 +2612,7 @@
     setActive('tenable');
     app.innerHTML =
       '<header class="view"><div class="overline">Tenable plugin feed</div><h1>Latest Plugins</h1>' +
-      '<p class="lede">The newest Tenable Nessus plugins — the most recently scannable vulnerabilities — syndicated from Tenable’s public feed and cross-linked to ' + esc(window.VM_BRAND || 'Vulnerability Management Console') + '’s own CVE detail pages.</p></header>' +
+      '<p class="lede">The newest Tenable Nessus plugins — the most recently scannable vulnerabilities — syndicated from Tenable’s public feed and cross-linked to ' + esc(window.VM_BRAND || 'Vulnerability Manager') + '’s own CVE detail pages.</p></header>' +
       tenableSubnav('detections') +
       '<div id="latest">' + spinner('Loading the latest Tenable plugins…') + '</div>';
     renderLatestDetections();
@@ -2630,7 +2630,7 @@
       '<p class="lede">Upload a Tenable or Nessus export (CSV or .nessus) for an instant risk read-out — severity, exploitability, and overlap with CISA KEV — ranked for action.</p></header>' +
       tenableSubnav('analyze') +
       '<div class="privacy"><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>' +
-      '<div><b>100% local — your data never leaves your browser.</b> The file is parsed locally in JavaScript; nothing is uploaded. The only network request is for ' + esc(window.VM_BRAND || 'Vulnerability Management Console') + '’s own KEV reference list, used to cross-reference — your scan data is never sent anywhere. Verify it in your browser’s Network tab, and reloading the page discards everything.</div></div>' +
+      '<div><b>100% local — your data never leaves your browser.</b> The file is parsed locally in JavaScript; nothing is uploaded. The only network request is for ' + esc(window.VM_BRAND || 'Vulnerability Manager') + '’s own KEV reference list, used to cross-reference — your scan data is never sent anywhere. Verify it in your browser’s Network tab, and reloading the page discards everything.</div></div>' +
       '<label class="drop" id="adrop"><input type="file" id="afile" accept=".csv,.nessus,.xml,text/csv,text/xml" hidden>' +
       '<span class="drop-main">Drop a Tenable export here, or click to choose</span>' +
       '<span class="drop-sub">CSV or .nessus — processed entirely on your device</span></label>' +
