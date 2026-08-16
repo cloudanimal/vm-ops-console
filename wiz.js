@@ -25,12 +25,13 @@
     mk('CVE-2021-3711', 'OpenSSL SM2 overflow', 'HIGH', 9.8, false, false, 'openssl 1.1.1k', 'legacy-etl', 'VIRTUAL_MACHINE', 'AWS', 'us-west-2', 'data-eng'),
     mk('CVE-2016-2183', 'SWEET32 (3DES)', 'LOW', 3.7, false, false, 'openssl 1.0.2', 'legacy-etl', 'VIRTUAL_MACHINE', 'AWS', 'us-west-2', 'data-eng')
   ];
+  function daysAgoISO(n) { return new Date(Date.now() - n * 86400000).toISOString().slice(0, 10); }
   function mk(cve, name, sev, score, exploit, kev, pkg, asset, atype, cloud, region, sub) {
     return {
       id: 'vf-' + cve, name: cve, detailedName: name, CVSSSeverity: sev, score: score,
       hasExploit: exploit, hasCisaKevExploit: kev, detectionMethod: 'PACKAGE',
       vulnerableAsset: { name: asset, type: atype, cloudPlatform: cloud, region: region, subscriptionExternalId: sub },
-      remediation: pkg, firstDetectedAt: '2026-08-1' + (cve.length % 5)
+      remediation: pkg, firstDetectedAt: daysAgoISO((cve.length % 5) + 1)   // relative to today so it never goes stale
     };
   }
 
