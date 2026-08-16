@@ -435,3 +435,27 @@
 /* Settings — navigation config subheaders */
 .vmops .navcfg-h { font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--accent); margin:14px 0 8px; }
 .vmops .navcfg-h:first-child { margin-top:0; }
+
+/* Responsive Findings table — on narrow viewports the 15-column fixed layout only shows
+   the first column before horizontal scroll. Switch to auto layout, drop the resize handles,
+   and progressively hide the lowest-priority columns so the essentials fit and stay visible.
+   Column order: 1 sel · 2 CVE · 3 Host · 4 Desc · 5 Sev · 6 Priority · 7 EPSS · 8 VPR ·
+   9 Status · 10 Ticket · 11 SLA · 12 Owner · 13 Repo · 14 First seen · 15 Open */
+@media (max-width:1050px){
+  .vmops table.grid.resizable { table-layout:auto; }
+  .vmops table.grid.resizable th, .vmops table.grid.resizable td { width:auto !important; }
+  .vmops table.grid .col-resize { display:none; }
+  .vmops table.grid th:nth-child(8),  .vmops table.grid td:nth-child(8),
+  .vmops table.grid th:nth-child(13), .vmops table.grid td:nth-child(13),
+  .vmops table.grid th:nth-child(14), .vmops table.grid td:nth-child(14) { display:none; }
+}
+@media (max-width:820px){
+  .vmops table.grid th:nth-child(4),  .vmops table.grid td:nth-child(4),
+  .vmops table.grid th:nth-child(10), .vmops table.grid td:nth-child(10),
+  .vmops table.grid th:nth-child(12), .vmops table.grid td:nth-child(12) { display:none; }
+  .vmops table.grid .dcell { max-width:none; }
+}
+@media (max-width:560px){
+  .vmops table.grid th:nth-child(6),  .vmops table.grid td:nth-child(6),
+  .vmops table.grid th:nth-child(11), .vmops table.grid td:nth-child(11) { display:none; }
+}

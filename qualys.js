@@ -8,21 +8,21 @@
   // Detections: mirrors Qualys VMDR `/api/2.0/fo/asset/host/vm/detection` records.
   // sev = Qualys severity level 1-5 (5 = Critical/Urgent). truRisk = QID TruRisk score.
   var DET = [
-    q(376157, 'CVE-2021-44228', 'Apache Log4j Remote Code Execution (Log4Shell)', 5, 10.0, 98, 'app01.corp.local', '10.4.1.21', 'Linux', 'Active', true, true),
-    q(150004, 'CVE-2019-19781', 'Citrix ADC / Gateway Directory Traversal', 5, 9.8, 96, 'file01.corp.local', '10.4.1.44', 'Citrix ADC', 'Re-Opened', true, true),
+    q(730001, 'CVE-2024-3400', 'Palo Alto PAN-OS GlobalProtect Command Injection', 5, 10.0, 98, 'fw01.corp.local', '10.4.1.1', 'PAN-OS', 'Active', true, true),
+    q(730002, 'CVE-2025-0282', 'Ivanti Connect Secure Stack Overflow RCE', 5, 9.0, 96, 'vpn01.corp.local', '10.4.1.51', 'Ivanti ICS', 'New', true, true),
+    q(730003, 'CVE-2024-47575', 'Fortinet FortiManager Missing Authentication (FortiJump)', 5, 9.8, 95, 'mail01.corp.local', '10.4.1.32', 'FortiManager', 'Active', true, true),
+    q(730004, 'CVE-2024-1709', 'ConnectWise ScreenConnect Authentication Bypass', 5, 10.0, 97, 'app02.corp.local', '10.4.1.22', 'Windows Server', 'New', true, true),
+    q(730005, 'CVE-2023-46604', 'Apache ActiveMQ OpenWire Deserialization RCE', 5, 10.0, 96, 'app01.corp.local', '10.4.1.21', 'Linux', 'Active', true, true),
+    q(730006, 'CVE-2024-4577', 'PHP-CGI Argument Injection (Windows)', 5, 9.8, 94, 'web03.corp.local', '10.4.1.60', 'Windows Server', 'Active', true, true),
+    q(730007, 'CVE-2024-27198', 'JetBrains TeamCity Authentication Bypass', 5, 9.8, 93, 'ci01.corp.local', '10.4.2.10', 'Linux', 'New', true, true),
+    q(730008, 'CVE-2024-40711', 'Veeam Backup & Replication Deserialization RCE', 5, 9.8, 92, 'legacy01.corp.local', '10.4.1.80', 'Windows Server', 'Re-Opened', true, true),
     q(91785, 'CVE-2020-1472', 'Microsoft Netlogon Elevation (Zerologon)', 5, 10.0, 97, 'dc01.corp.local', '10.4.1.10', 'Windows Server', 'Active', true, true),
-    q(50098, 'CVE-2022-42475', 'Fortinet FortiOS SSL-VPN Heap Overflow', 5, 9.8, 95, 'mail01.corp.local', '10.4.1.32', 'FortiOS', 'New', true, true),
-    q(50101, 'CVE-2021-26855', 'Microsoft Exchange ProxyLogon SSRF', 5, 9.1, 94, 'app02.corp.local', '10.4.1.22', 'Windows Server', 'Active', true, true),
-    q(150421, 'CVE-2023-34362', 'Progress MOVEit Transfer SQL Injection', 5, 9.8, 96, 'vpn01.corp.local', '10.4.1.51', 'Windows Server', 'New', true, true),
-    q(376023, 'CVE-2023-4911', 'GNU C Library Buffer Overflow (Looney Tunables)', 4, 7.8, 78, 'app01.corp.local', '10.4.1.21', 'Linux', 'Active', true, false),
-    q(38874, 'CVE-2023-44487', 'HTTP/2 Rapid Reset Denial of Service', 4, 7.5, 72, 'web03.corp.local', '10.4.1.60', 'Linux', 'Active', false, false),
-    q(45021, 'CVE-2023-38545', 'cURL SOCKS5 Heap Buffer Overflow', 4, 8.8, 70, 'web03.corp.local', '10.4.1.60', 'Linux', 'Fixed', false, false),
-    q(38657, 'CVE-2022-1471', 'SnakeYAML Deserialization RCE', 4, 8.3, 68, 'app02.corp.local', '10.4.1.22', 'Linux', 'Active', false, false),
-    q(38773, 'CVE-2023-2650', 'OpenSSL OBJ_obj2txt DoS', 3, 6.5, 41, 'db01.corp.local', '10.4.1.70', 'Linux', 'Active', false, false),
-    q(38863, 'CVE-2021-3711', 'OpenSSL SM2 Decryption Buffer Overflow', 4, 9.8, 74, 'legacy01.corp.local', '10.4.1.80', 'Linux', 'Re-Opened', false, false),
+    q(376157, 'CVE-2021-44228', 'Apache Log4j Remote Code Execution (Log4Shell)', 5, 10.0, 98, 'app01.corp.local', '10.4.1.21', 'Linux', 'Active', true, true),
+    q(730009, 'CVE-2024-24919', 'Check Point Security Gateway Information Disclosure', 4, 8.6, 78, 'fw01.corp.local', '10.4.1.1', 'Gaia', 'Active', true, true),
+    q(730010, 'CVE-2024-38112', 'Microsoft Windows MSHTML Platform Spoofing', 4, 7.5, 74, 'ws-231.corp.local', '10.4.2.31', 'Windows 11', 'New', true, true),
+    q(38773, 'CVE-2023-2650', 'OpenSSL OBJ_obj2txt DoS', 3, 6.5, 41, 'db01.corp.local', '10.4.1.70', 'Linux', 'Fixed', false, false),
     q(38143, 'CVE-2023-0464', 'OpenSSL X.509 Policy Constraints DoS', 3, 5.9, 38, 'db01.corp.local', '10.4.1.70', 'Linux', 'Active', false, false),
-    q(38169, 'CVE-2016-2183', 'SSL/TLS 64-bit Block Cipher (SWEET32)', 2, 3.7, 18, 'legacy01.corp.local', '10.4.1.80', 'Linux', 'Active', false, false),
-    q(105943, 'CVE-2023-36884', 'Microsoft Office / Windows HTML RCE', 4, 7.5, 76, 'ws-231.corp.local', '10.4.2.31', 'Windows 11', 'New', true, false)
+    q(38169, 'CVE-2016-2183', 'SSL/TLS 64-bit Block Cipher (SWEET32)', 2, 3.7, 18, 'legacy01.corp.local', '10.4.1.80', 'Linux', 'Active', false, false)
   ];
   function q(qid, cve, title, sev, cvss, truRisk, host, ip, os, status, patchable, kev) {
     return { qid: qid, cve: cve, title: title, sev: sev, cvss: cvss, truRisk: truRisk,

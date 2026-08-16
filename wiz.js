@@ -9,20 +9,19 @@
   // ---- Synthetic data, shaped like the Wiz API ------------------------------
   // Vulnerability findings: mirrors Wiz `vulnerabilityFindings` GraphQL nodes.
   var FINDINGS = [
-    mk('CVE-2021-44228', 'Log4Shell', 'CRITICAL', 10.0, true, true, 'log4j-core 2.14.1', 'prod-api-7f2', 'VIRTUAL_MACHINE', 'AWS', 'us-east-1', 'prod-payments'),
-    mk('CVE-2023-4911', 'Looney Tunables (glibc)', 'HIGH', 7.8, true, false, 'glibc 2.34', 'prod-api-7f2', 'VIRTUAL_MACHINE', 'AWS', 'us-east-1', 'prod-payments'),
-    mk('CVE-2022-42475', 'FortiOS SSL-VPN', 'CRITICAL', 9.8, true, true, 'fortios 7.2.2', 'edge-fw-01', 'VIRTUAL_MACHINE', 'AWS', 'us-east-1', 'prod-payments'),
-    mk('CVE-2021-26855', 'Exchange ProxyLogon', 'CRITICAL', 9.1, true, true, 'exchange 2019 cu8', 'corp-exch-02', 'VIRTUAL_MACHINE', 'AZURE', 'eastus', 'corp-it'),
-    mk('CVE-2023-34362', 'MOVEit Transfer SQLi', 'CRITICAL', 9.8, true, true, 'moveit 15.0', 'sftp-gw-01', 'VIRTUAL_MACHINE', 'AZURE', 'eastus', 'corp-it'),
+    mk('CVE-2024-3400', 'PAN-OS GlobalProtect cmd injection', 'CRITICAL', 10.0, true, true, 'pan-os 11.1.0', 'edge-fw-01', 'VIRTUAL_MACHINE', 'AWS', 'us-east-1', 'prod-payments'),
+    mk('CVE-2021-44228', 'Log4Shell', 'CRITICAL', 10.0, true, true, 'log4j-core 2.14.1', 'prod-api-7f2', 'CONTAINER_IMAGE', 'AWS', 'us-east-1', 'prod-payments'),
+    mk('CVE-2024-4577', 'PHP-CGI argument injection', 'CRITICAL', 9.8, true, true, 'php 8.1.10', 'orders-svc', 'CONTAINER_IMAGE', 'AWS', 'us-east-1', 'prod-payments'),
+    mk('CVE-2023-46604', 'Apache ActiveMQ RCE', 'CRITICAL', 10.0, true, true, 'activemq 5.17.3', 'mq-broker-1', 'CONTAINER_IMAGE', 'GCP', 'us-central1', 'platform-ci'),
     mk('CVE-2024-3094', 'XZ Utils backdoor', 'CRITICAL', 10.0, false, false, 'xz 5.6.1', 'build-runner-3', 'CONTAINER_IMAGE', 'GCP', 'us-central1', 'platform-ci'),
-    mk('CVE-2023-44487', 'HTTP/2 Rapid Reset', 'HIGH', 7.5, true, false, 'nginx 1.25.2', 'ingress-nginx', 'CONTAINER_IMAGE', 'GCP', 'us-central1', 'platform-ci'),
-    mk('CVE-2023-38545', 'curl SOCKS5 overflow', 'HIGH', 8.8, false, false, 'curl 8.3.0', 'ingress-nginx', 'CONTAINER_IMAGE', 'GCP', 'us-central1', 'platform-ci'),
-    mk('CVE-2022-1471', 'SnakeYAML RCE', 'HIGH', 8.3, false, false, 'snakeyaml 1.30', 'orders-svc', 'CONTAINER_IMAGE', 'AWS', 'us-east-1', 'prod-payments'),
-    mk('CVE-2023-2650', 'OpenSSL OBJ DoS', 'MEDIUM', 6.5, false, false, 'openssl 3.0.8', 'orders-svc', 'CONTAINER_IMAGE', 'AWS', 'us-east-1', 'prod-payments'),
+    mk('CVE-2024-47575', 'FortiManager FortiJump', 'CRITICAL', 9.8, true, true, 'fortimanager 7.4.4', 'net-mgmt-01', 'VIRTUAL_MACHINE', 'AZURE', 'eastus', 'corp-it'),
+    mk('CVE-2025-0282', 'Ivanti Connect Secure RCE', 'CRITICAL', 9.0, true, true, 'ics 22.7r2', 'vpn-ics-01', 'VIRTUAL_MACHINE', 'AZURE', 'eastus', 'corp-it'),
+    mk('CVE-2024-40711', 'Veeam Backup RCE', 'CRITICAL', 9.8, true, true, 'veeam 12.1', 'backup-01', 'VIRTUAL_MACHINE', 'AZURE', 'eastus', 'corp-it'),
     mk('CVE-2020-1472', 'Zerologon', 'CRITICAL', 10.0, true, true, 'netlogon', 'corp-dc-01', 'VIRTUAL_MACHINE', 'AZURE', 'eastus', 'corp-it'),
-    mk('CVE-2019-19781', 'Citrix ADC path traversal', 'CRITICAL', 9.8, true, true, 'netscaler 13.0', 'vpn-adc-01', 'VIRTUAL_MACHINE', 'AZURE', 'westus2', 'corp-it'),
-    mk('CVE-2023-0464', 'OpenSSL policy DoS', 'MEDIUM', 5.9, false, false, 'openssl 3.1.0', 'analytics-fn', 'SERVERLESS', 'GCP', 'us-central1', 'data-eng'),
-    mk('CVE-2021-3711', 'OpenSSL SM2 overflow', 'HIGH', 9.8, false, false, 'openssl 1.1.1k', 'legacy-etl', 'VIRTUAL_MACHINE', 'AWS', 'us-west-2', 'data-eng'),
+    mk('CVE-2024-24919', 'Check Point Gateway disclosure', 'HIGH', 8.6, true, true, 'gaia r81.20', 'vpn-cp-01', 'VIRTUAL_MACHINE', 'AZURE', 'westus2', 'corp-it'),
+    mk('CVE-2024-38112', 'Windows MSHTML spoofing', 'HIGH', 7.5, true, true, 'windows 11 23h2', 'ws-231', 'VIRTUAL_MACHINE', 'AWS', 'us-west-2', 'data-eng'),
+    mk('CVE-2023-2650', 'OpenSSL OBJ DoS', 'MEDIUM', 6.5, false, false, 'openssl 3.0.8', 'analytics-fn', 'SERVERLESS', 'GCP', 'us-central1', 'data-eng'),
+    mk('CVE-2023-0464', 'OpenSSL policy DoS', 'MEDIUM', 5.9, false, false, 'openssl 3.1.0', 'legacy-etl', 'VIRTUAL_MACHINE', 'AWS', 'us-west-2', 'data-eng'),
     mk('CVE-2016-2183', 'SWEET32 (3DES)', 'LOW', 3.7, false, false, 'openssl 1.0.2', 'legacy-etl', 'VIRTUAL_MACHINE', 'AWS', 'us-west-2', 'data-eng')
   ];
   function daysAgoISO(n) { return new Date(Date.now() - n * 86400000).toISOString().slice(0, 10); }

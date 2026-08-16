@@ -10,21 +10,20 @@
   // exprt = ExPRT.AI rating (CROWDSTRIKE's AI exploitability rating).
   // exploit = exploit_status band: Unproven / Available / Easily accessible / Actively used.
   var VULN = [
+    cs('CVE-2024-3400', 'PAN-OS GlobalProtect Command Injection', 'CRITICAL', 10.0, 'Actively used', 'fw01.corp.local', 'Linux', 'PAN-OS 11.1', 'open', 12, 'pan-os 11.1', true),
+    cs('CVE-2025-0282', 'Ivanti Connect Secure Stack Overflow RCE', 'CRITICAL', 9.0, 'Actively used', 'vpn01.corp.local', 'Linux', 'Ivanti ICS 22.7', 'open', 8, 'ics 22.7', true),
+    cs('CVE-2024-1709', 'ConnectWise ScreenConnect Auth Bypass', 'CRITICAL', 10.0, 'Actively used', 'app02.corp.local', 'Windows', 'Server 2022', 'open', 20, 'screenconnect 23.9', true),
+    cs('CVE-2023-46604', 'Apache ActiveMQ OpenWire RCE', 'CRITICAL', 10.0, 'Actively used', 'app01.corp.local', 'Linux', 'Ubuntu 22.04', 'open', 33, 'activemq 5.17.3', true),
+    cs('CVE-2024-47575', 'FortiManager Missing Auth (FortiJump)', 'CRITICAL', 9.8, 'Easily accessible', 'mail01.corp.local', 'Linux', 'FortiManager 7.4', 'open', 9, 'fortimanager 7.4', true),
+    cs('CVE-2024-4577', 'PHP-CGI Argument Injection', 'CRITICAL', 9.8, 'Actively used', 'web03.corp.local', 'Windows', 'Server 2019', 'open', 15, 'php 8.1', true),
+    cs('CVE-2024-27198', 'JetBrains TeamCity Authentication Bypass', 'HIGH', 9.8, 'Available', 'ci01.corp.local', 'Linux', 'Ubuntu 22.04', 'open', 22, 'teamcity 2023.11', false),
+    cs('CVE-2024-40711', 'Veeam Backup Deserialization RCE', 'HIGH', 9.8, 'Available', 'legacy01.corp.local', 'Windows', 'Server 2019', 'reopened', 44, 'veeam 12.1', true),
+    cs('CVE-2020-1472', 'Netlogon Elevation (Zerologon)', 'CRITICAL', 10.0, 'Actively used', 'dc01.corp.local', 'Windows', 'Server 2019', 'open', 30, 'netlogon', true),
     cs('CVE-2021-44228', 'Apache Log4j2 JNDI RCE (Log4Shell)', 'CRITICAL', 10.0, 'Actively used', 'app01.corp.local', 'Linux', 'Ubuntu 20.04', 'open', 41, 'log4j-core 2.14.1', true),
-    cs('CVE-2019-19781', 'Citrix ADC Directory Traversal', 'CRITICAL', 9.8, 'Actively used', 'file01.corp.local', 'Linux', 'Citrix ADC 13.0', 'reopened', 58, 'netscaler 13.0', true),
-    cs('CVE-2020-1472', 'Netlogon Elevation (Zerologon)', 'CRITICAL', 10.0, 'Actively used', 'dc01.corp.local', 'Windows', 'Server 2019', 'open', 33, 'netlogon', true),
-    cs('CVE-2022-42475', 'FortiOS SSL-VPN Heap Overflow', 'CRITICAL', 9.8, 'Easily accessible', 'mail01.corp.local', 'Linux', 'FortiOS 7.2.2', 'open', 12, 'fortios 7.2.2', true),
-    cs('CVE-2021-26855', 'Exchange ProxyLogon SSRF', 'HIGH', 9.1, 'Actively used', 'app02.corp.local', 'Windows', 'Server 2019', 'open', 22, 'exchange 2019 cu8', true),
-    cs('CVE-2023-34362', 'MOVEit Transfer SQL Injection', 'CRITICAL', 9.8, 'Actively used', 'vpn01.corp.local', 'Windows', 'Server 2022', 'open', 9, 'moveit 15.0', true),
-    cs('CVE-2023-4911', 'glibc ld.so Overflow (Looney Tunables)', 'HIGH', 7.8, 'Available', 'app01.corp.local', 'Linux', 'Ubuntu 20.04', 'open', 27, 'glibc 2.34', false),
-    cs('CVE-2023-44487', 'HTTP/2 Rapid Reset DoS', 'MEDIUM', 7.5, 'Available', 'web03.corp.local', 'Linux', 'Ubuntu 22.04', 'open', 15, 'nginx 1.25.2', false),
-    cs('CVE-2023-38545', 'cURL SOCKS5 Heap Overflow', 'HIGH', 8.8, 'Unproven', 'web03.corp.local', 'Linux', 'Ubuntu 22.04', 'closed', 6, 'curl 8.3.0', false),
-    cs('CVE-2022-1471', 'SnakeYAML Deserialization RCE', 'HIGH', 8.3, 'Available', 'app02.corp.local', 'Linux', 'Ubuntu 20.04', 'open', 19, 'snakeyaml 1.30', false),
-    cs('CVE-2023-36884', 'Office / Windows HTML RCE', 'HIGH', 7.5, 'Actively used', 'ws-231.corp.local', 'Windows', 'Windows 11', 'open', 14, 'office 2019', true),
-    cs('CVE-2021-3711', 'OpenSSL SM2 Decryption Overflow', 'HIGH', 9.8, 'Unproven', 'legacy01.corp.local', 'Linux', 'CentOS 7', 'reopened', 44, 'openssl 1.1.1k', false),
-    cs('CVE-2024-3094', 'XZ Utils Backdoor', 'CRITICAL', 10.0, 'Available', 'build-runner-3', 'Linux', 'Debian 12', 'open', 3, 'xz 5.6.1', false),
-    cs('CVE-2023-2650', 'OpenSSL OBJ_obj2txt DoS', 'MEDIUM', 6.5, 'Unproven', 'db01.corp.local', 'Linux', 'Ubuntu 22.04', 'open', 21, 'openssl 3.0.8', false),
-    cs('CVE-2023-20198', 'Cisco IOS XE Web UI Priv Esc', 'CRITICAL', 10.0, 'Actively used', 'core-sw-01', 'Linux', 'IOS XE 17.6', 'open', 7, 'ios-xe 17.6', true)
+    cs('CVE-2024-38112', 'Windows MSHTML Platform Spoofing', 'HIGH', 7.5, 'Actively used', 'ws-231.corp.local', 'Windows', 'Windows 11', 'open', 14, 'windows 11', true),
+    cs('CVE-2024-24919', 'Check Point Security Gateway Disclosure', 'HIGH', 8.6, 'Easily accessible', 'fw01.corp.local', 'Linux', 'Gaia R81.20', 'open', 18, 'gaia r81.20', true),
+    cs('CVE-2023-20198', 'Cisco IOS XE Web UI Priv Esc', 'CRITICAL', 10.0, 'Actively used', 'core-sw-01', 'Linux', 'IOS XE 17.6', 'open', 7, 'ios-xe 17.6', true),
+    cs('CVE-2023-38545', 'cURL SOCKS5 Heap Overflow', 'HIGH', 8.8, 'Unproven', 'web03.corp.local', 'Linux', 'Ubuntu 22.04', 'closed', 6, 'curl 8.3.0', false)
   ];
   function cs(cve, title, exprt, base, exploit, host, platform, os, status, daysOpen, product, kev) {
     return { cve: cve, title: title, exprt: exprt, base: base, exploit: exploit, host: host,

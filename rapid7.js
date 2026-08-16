@@ -9,21 +9,20 @@
   // Vulnerabilities: mirrors InsightVM `/api/3/vulnerabilities` + asset findings.
   // sev = Critical/Severe/Moderate (InsightVM's scale). risk = Real Risk Score (0-1000).
   var VULN = [
-    r('log4j-core-cve-2021-44228', 'CVE-2021-44228', 'Apache Log4j2 JNDI RCE (Log4Shell)', 'Critical', 10.0, 968, 'app01.corp.local', '10.4.1.21', 'Linux', true, true, true, 'Upgrade log4j-core to 2.17.1+'),
-    r('citrix-cve-2019-19781', 'CVE-2019-19781', 'Citrix ADC Directory Traversal', 'Critical', 9.8, 942, 'file01.corp.local', '10.4.1.44', 'Citrix ADC', true, true, true, 'Apply Citrix ADC 13.0-58.30 hotfix'),
+    r('panos-cve-2024-3400', 'CVE-2024-3400', 'PAN-OS GlobalProtect Command Injection', 'Critical', 10.0, 971, 'fw01.corp.local', '10.4.1.1', 'PAN-OS', true, true, true, 'Upgrade PAN-OS to a fixed 10.2/11.0/11.1 release'),
+    r('ivanti-cve-2025-0282', 'CVE-2025-0282', 'Ivanti Connect Secure Stack Overflow RCE', 'Critical', 9.0, 948, 'vpn01.corp.local', '10.4.1.51', 'Ivanti ICS', true, true, true, 'Upgrade Connect Secure to 22.7R2.5+'),
+    r('fortimgr-cve-2024-47575', 'CVE-2024-47575', 'FortiManager Missing Authentication (FortiJump)', 'Critical', 9.8, 940, 'mail01.corp.local', '10.4.1.32', 'FortiManager', true, false, true, 'Upgrade FortiManager to 7.4.5 / 7.2.8+'),
+    r('screenconnect-cve-2024-1709', 'CVE-2024-1709', 'ConnectWise ScreenConnect Authentication Bypass', 'Critical', 10.0, 966, 'app02.corp.local', '10.4.1.22', 'Windows', true, true, true, 'Upgrade ScreenConnect to 23.9.8+'),
+    r('activemq-cve-2023-46604', 'CVE-2023-46604', 'Apache ActiveMQ OpenWire RCE', 'Critical', 10.0, 958, 'app01.corp.local', '10.4.1.21', 'Linux', true, true, true, 'Upgrade ActiveMQ to 5.17.6 / 5.18.3+'),
+    r('phpcgi-cve-2024-4577', 'CVE-2024-4577', 'PHP-CGI Argument Injection', 'Critical', 9.8, 934, 'web03.corp.local', '10.4.1.60', 'Windows', true, true, true, 'Upgrade PHP to 8.1.29 / 8.2.20 / 8.3.8+'),
+    r('teamcity-cve-2024-27198', 'CVE-2024-27198', 'JetBrains TeamCity Authentication Bypass', 'Critical', 9.8, 930, 'ci01.corp.local', '10.4.2.10', 'Linux', true, false, true, 'Upgrade TeamCity to 2023.11.4+'),
+    r('veeam-cve-2024-40711', 'CVE-2024-40711', 'Veeam Backup & Replication Deserialization RCE', 'Critical', 9.8, 928, 'legacy01.corp.local', '10.4.1.80', 'Windows', true, false, true, 'Upgrade Veeam Backup & Replication to 12.2+'),
     r('zerologon-cve-2020-1472', 'CVE-2020-1472', 'Netlogon Elevation of Privilege (Zerologon)', 'Critical', 10.0, 955, 'dc01.corp.local', '10.4.1.10', 'Windows', true, true, true, 'Apply August 2020 rollup + enforce mode'),
-    r('fortios-cve-2022-42475', 'CVE-2022-42475', 'FortiOS SSL-VPN Heap Overflow', 'Critical', 9.8, 930, 'mail01.corp.local', '10.4.1.32', 'FortiOS', true, false, true, 'Upgrade FortiOS to 7.2.3+'),
-    r('proxylogon-cve-2021-26855', 'CVE-2021-26855', 'Exchange Server SSRF (ProxyLogon)', 'Critical', 9.1, 921, 'app02.corp.local', '10.4.1.22', 'Windows', true, true, true, 'Apply Exchange March 2021 SU'),
-    r('moveit-cve-2023-34362', 'CVE-2023-34362', 'MOVEit Transfer SQL Injection', 'Critical', 9.8, 938, 'vpn01.corp.local', '10.4.1.51', 'Windows', true, false, true, 'Upgrade MOVEit to 2023.0.1+'),
-    r('glibc-cve-2023-4911', 'CVE-2023-4911', 'glibc ld.so Buffer Overflow (Looney Tunables)', 'Severe', 7.8, 712, 'app01.corp.local', '10.4.1.21', 'Linux', true, false, false, 'Update glibc via distro patch'),
-    r('http2-cve-2023-44487', 'CVE-2023-44487', 'HTTP/2 Rapid Reset DoS', 'Severe', 7.5, 640, 'web03.corp.local', '10.4.1.60', 'Linux', false, false, false, 'Update nginx to 1.25.3+'),
-    r('curl-cve-2023-38545', 'CVE-2023-38545', 'cURL SOCKS5 Heap Overflow', 'Severe', 8.8, 690, 'web03.corp.local', '10.4.1.60', 'Linux', true, false, false, 'Update curl to 8.4.0+'),
-    r('snakeyaml-cve-2022-1471', 'CVE-2022-1471', 'SnakeYAML Deserialization RCE', 'Severe', 8.3, 655, 'app02.corp.local', '10.4.1.22', 'Linux', false, false, false, 'Upgrade snakeyaml to 2.0+'),
-    r('exch-cve-2021-26855-b', 'CVE-2021-26855', 'Exchange Server SSRF (ProxyLogon)', 'Critical', 9.1, 921, 'app03.corp.local', '10.4.1.23', 'Windows', true, true, true, 'Apply Exchange March 2021 SU'),
-    r('openssl-cve-2021-3711', 'CVE-2021-3711', 'OpenSSL SM2 Decryption Overflow', 'Severe', 9.8, 705, 'legacy01.corp.local', '10.4.1.80', 'Linux', false, false, false, 'Update OpenSSL to 1.1.1l+'),
+    r('log4j-cve-2021-44228', 'CVE-2021-44228', 'Apache Log4j2 JNDI RCE (Log4Shell)', 'Critical', 10.0, 968, 'app01.corp.local', '10.4.1.21', 'Linux', true, true, true, 'Upgrade log4j-core to 2.17.1+'),
+    r('checkpoint-cve-2024-24919', 'CVE-2024-24919', 'Check Point Security Gateway Information Disclosure', 'Severe', 8.6, 742, 'fw01.corp.local', '10.4.1.1', 'Gaia', true, true, true, 'Apply the Check Point hotfix for CVE-2024-24919'),
+    r('mshtml-cve-2024-38112', 'CVE-2024-38112', 'Windows MSHTML Platform Spoofing', 'Severe', 7.5, 760, 'ws-231.corp.local', '10.4.2.31', 'Windows', true, true, true, 'Apply the July 2024 cumulative update'),
     r('openssl-cve-2023-2650', 'CVE-2023-2650', 'OpenSSL OBJ_obj2txt DoS', 'Moderate', 6.5, 410, 'db01.corp.local', '10.4.1.70', 'Linux', false, false, false, 'Update OpenSSL to 3.0.9+'),
-    r('sweet32-cve-2016-2183', 'CVE-2016-2183', 'TLS 64-bit Block Cipher (SWEET32)', 'Moderate', 3.7, 190, 'legacy01.corp.local', '10.4.1.80', 'Linux', false, false, false, 'Disable 3DES cipher suites'),
-    r('office-cve-2023-36884', 'CVE-2023-36884', 'Office / Windows HTML RCE', 'Severe', 7.5, 760, 'ws-231.corp.local', '10.4.2.31', 'Windows', true, true, true, 'Apply July 2023 cumulative update')
+    r('sweet32-cve-2016-2183', 'CVE-2016-2183', 'TLS 64-bit Block Cipher (SWEET32)', 'Moderate', 3.7, 190, 'legacy01.corp.local', '10.4.1.80', 'Linux', false, false, false, 'Disable 3DES cipher suites')
   ];
   function r(id, cve, title, sev, cvss, risk, host, ip, os, msf, mal, kev, rem) {
     return { id: id, cve: cve, title: title, sev: sev, cvss: cvss, risk: risk, host: host, ip: ip, os: os,

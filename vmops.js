@@ -600,6 +600,7 @@
       '<button class="btn sm" id="fCamp" title="Start a remediation campaign from the current filters">+ Campaign</button>' +
       '<details class="colmenu"><summary class="btn sm" title="Show / hide columns">Columns &#9662;</summary><div class="colmenu-pop">' +
       COL_DEFS.filter(function (c) { return c.id !== 'sel' && c.id !== 'act'; }).map(function (c) { var lbl = (typeof c.label === 'string' ? c.label.replace(/<[^>]+>/g, '') : c.id) || c.id; return '<label><input type="checkbox" class="coltoggle" data-col="' + c.id + '"' + (STATE._colHidden[c.id] ? '' : ' checked') + '> ' + esc(lbl) + '</label>'; }).join('') +
+      '<button class="btn sm" id="colReset" style="width:100%;margin-top:8px" title="Reset column widths and show all columns">↺ Reset columns</button>' +
       '</div></details>' +
       '<button class="btn sm" id="fViewDel" title="Delete the active saved view"' + (activeView.indexOf('saved:') === 0 ? '' : ' style="display:none"') + '>Delete view</button>' +
       '<span class="spacer"></span>' +
@@ -666,6 +667,11 @@
         try { localStorage.setItem('vmops-colhidden', JSON.stringify(STATE._colHidden)); } catch (e) {}
         injectColHide(); var gh = document.getElementById('gridHost'); if (gh) gh.style.width = totalW() + 'px';
       });
+    });
+    var cr = document.getElementById('colReset'); if (cr) cr.addEventListener('click', function () {
+      STATE._colW = {}; STATE._colHidden = {};   // back to default widths + all columns visible
+      try { localStorage.removeItem('vmops-colw'); localStorage.removeItem('vmops-colhidden'); } catch (e) {}
+      currentView(); toast('Columns reset');
     });
     var fvd = document.getElementById('fViewDel'); if (fvd) fvd.addEventListener('click', function () {
       if ((STATE._view || '').indexOf('saved:') !== 0) return; var nm = STATE._view.slice(6);
@@ -950,7 +956,9 @@
       h.addEventListener('mousedown', function (e) {
         e.preventDefault(); e.stopPropagation();
         var th = h.parentNode, id = th.getAttribute('data-cw'), startX = e.clientX, startW = th.offsetWidth;
-        function mm(ev) { th.style.width = Math.max(48, startW + (ev.clientX - startX)) + 'px'; recalc(); }
+        // Clamp between 48px and 640px so a column can never be dragged wide enough to push the
+        // rest of the table off-screen (a "Reset columns" button in the Columns menu also recovers).
+        function mm(ev) { th.style.width = Math.max(48, Math.min(640, startW + (ev.clientX - startX))) + 'px'; recalc(); }
         function mu() {
           document.removeEventListener('mousemove', mm); document.removeEventListener('mouseup', mu);
           document.body.style.cursor = ''; document.body.style.userSelect = '';
@@ -1930,20 +1938,21 @@
   }
 
   function SAMPLE() {
-    var hosts = ['app01.corp.local', 'app02.corp.local', 'web01.corp.local', 'db01.corp.local', 'dc01.corp.local', 'vpn01.corp.local', 'mail01.corp.local', 'file01.corp.local', 'mft01.corp.local', 'fw01.corp.local'];
+    var hosts = ['app01.corp.local', 'web01.corp.local', 'db01.corp.local', 'dc01.corp.local', 'vpn01.corp.local', 'fw01.corp.local', 'ci01.corp.local', 'mail01.corp.local', 'file01.corp.local', 'erp01.corp.local'];
+    // A current, CISA-KEV-listed lineup (mostly 2024-2025) plus two canonical classics for recognition.
     var vulns = [
+      ['CVE-2024-3400', 'Palo Alto PAN-OS GlobalProtect', 'Critical', 10.0, 'Command injection in the GlobalProtect feature of PAN-OS enabling unauthenticated remote code execution.'],
+      ['CVE-2025-0282', 'Ivanti Connect Secure RCE', 'Critical', 9.0, 'Stack-based buffer overflow in Ivanti Connect Secure allowing unauthenticated remote code execution.'],
+      ['CVE-2024-47575', 'FortiManager FortiJump', 'Critical', 9.8, 'Missing authentication in the FortiManager fgfmd daemon allowing remote code execution.'],
+      ['CVE-2024-1709', 'ConnectWise ScreenConnect', 'Critical', 10.0, 'Authentication bypass in ScreenConnect enabling full administrative takeover.'],
+      ['CVE-2023-46604', 'Apache ActiveMQ RCE', 'Critical', 10.0, 'Deserialization of untrusted data in the OpenWire protocol enabling remote code execution.'],
+      ['CVE-2024-4577', 'PHP-CGI Argument Injection', 'Critical', 9.8, 'Argument injection in PHP-CGI on Windows enabling unauthenticated remote code execution.'],
+      ['CVE-2024-27198', 'JetBrains TeamCity Auth Bypass', 'Critical', 9.8, 'Authentication bypass in TeamCity allowing an attacker to take administrative control.'],
+      ['CVE-2024-40711', 'Veeam Backup & Replication RCE', 'Critical', 9.8, 'Deserialization of untrusted data enabling unauthenticated remote code execution.'],
+      ['CVE-2024-24919', 'Check Point Quantum Gateway', 'High', 8.6, 'Information disclosure in Check Point Security Gateways with remote access VPN enabled.'],
+      ['CVE-2024-38112', 'Windows MSHTML Spoofing', 'High', 7.5, 'MSHTML platform spoofing flaw abused via crafted internet shortcut (.url) files.'],
       ['CVE-2021-44228', 'Apache Log4j (Log4Shell)', 'Critical', 10.0, 'Remote code execution via JNDI lookups in Apache Log4j 2 message logging.'],
-      ['CVE-2021-26855', 'MS Exchange ProxyLogon', 'Critical', 9.8, 'Pre-auth server-side request forgery chain enabling remote code execution on Exchange.'],
-      ['CVE-2020-1472', 'Netlogon Zerologon', 'Critical', 10.0, 'Netlogon cryptographic flaw allowing unauthenticated domain-controller takeover.'],
-      ['CVE-2019-19781', 'Citrix ADC Path Traversal', 'Critical', 9.8, 'Directory traversal in Citrix ADC/Gateway leading to unauthenticated code execution.'],
-      ['CVE-2023-34362', 'MOVEit Transfer SQLi', 'Critical', 9.8, 'SQL injection in MOVEit Transfer enabling data theft and remote code execution.'],
-      ['CVE-2022-42475', 'FortiOS SSL-VPN', 'Critical', 9.8, 'Heap overflow in FortiOS SSL-VPN allowing unauthenticated remote code execution.'],
-      ['CVE-2017-0144', 'MS17-010 EternalBlue', 'High', 8.1, 'SMBv1 remote code execution exploited by WannaCry and NotPetya.'],
-      ['CVE-2022-3786', 'OpenSSL 3.0.x', 'High', 7.5, 'Buffer overflow in OpenSSL 3.0 punycode certificate name parsing.'],
-      ['CVE-2022-31813', 'Apache HTTP Server', 'Medium', 5.9, 'mod_proxy flaw that can drop X-Forwarded-* headers, bypassing IP-based access control.'],
-      ['CVE-2018-15473', 'OpenSSH user enum', 'Medium', 5.3, 'Username enumeration via authentication timing differences in OpenSSH.'],
-      ['CVE-2021-3156', 'Sudo Baron Samedit', 'High', 7.8, 'Heap buffer overflow in sudo enabling local privilege escalation to root.'],
-      ['CVE-2016-2183', 'SSL/TLS SWEET32', 'Low', 3.7, 'Birthday attack on 64-bit block ciphers (3DES) in TLS/SSL sessions.']
+      ['CVE-2020-1472', 'Netlogon Zerologon', 'Critical', 10.0, 'Netlogon cryptographic flaw allowing unauthenticated domain-controller takeover.']
     ];
     var repoList = ['storefront-web', 'data-platform', 'corp-infra', 'network-edge', 'messaging'];
     var out = [], pid = 100000;
@@ -2962,7 +2971,52 @@
   // CrowdStrike/Wiz sample) into the shared store so the workbench, Overview, and
   // Campaigns reflect all sources. Returns the new total.
   function loadScannerFindings(list) { if (!list || !list.length) return STATE.findings.length; mergeFindings(list); return STATE.findings.length; }
+
+  // ---------- Sample-data generators (Tools > Sample data) ----------
+  // Each source's built-in sample can be generated + loaded on demand from the nav.
+  function SAMPLE_SARIF() {
+    var rule = function (id, name, ss) { return { id: id, name: name, properties: { 'security-severity': ss } }; };
+    var res = function (id, lvl, msg, uri, ln) { return { ruleId: id, level: lvl, message: { text: msg }, locations: [{ physicalLocation: { artifactLocation: { uri: uri }, region: { startLine: ln } } }] }; };
+    return JSON.stringify({ version: '2.1.0', runs: [{ tool: { driver: { name: 'CodeQL', rules: [
+      rule('js/sql-injection', 'SQL injection', '8.8'), rule('py/command-line-injection', 'Command injection', '9.1'),
+      rule('js/hardcoded-credentials', 'Hard-coded credentials', '7.5'), rule('java/xxe', 'XML external entity', '7.8'),
+      rule('js/path-injection', 'Path traversal', '7.2'), rule('CVE-2024-4577', 'Vulnerable php-cgi dependency', '9.8') ] } },
+      results: [
+        res('js/sql-injection', 'error', 'Untrusted input flows to a SQL query.', 'src/api/orders.js', 142),
+        res('py/command-line-injection', 'error', 'Untrusted input used in a shell command.', 'jobs/ingest.py', 88),
+        res('js/hardcoded-credentials', 'warning', 'Hard-coded API token committed to source.', 'src/config/dev.js', 12),
+        res('java/xxe', 'error', 'XML parser is not configured to prevent XXE.', 'svc/src/Parser.java', 57),
+        res('js/path-injection', 'warning', 'User input flows into a file path.', 'src/api/files.js', 33),
+        res('CVE-2024-4577', 'error', 'Vulnerable php-cgi version in the container base image.', 'Dockerfile', 3)
+      ] }] });
+  }
+  function SAMPLE_CDX() {
+    var comp = function (name, ver, lic, eco) { var c = { 'bom-ref': 'pkg:' + (eco || 'npm') + '/' + name + '@' + ver, name: name, version: ver, type: 'library', purl: 'pkg:' + (eco || 'npm') + '/' + name + '@' + ver }; if (lic) c.licenses = [{ license: { id: lic } }]; return c; };
+    return JSON.stringify({ bomFormat: 'CycloneDX', specVersion: '1.5', version: 1,
+      metadata: { component: { name: 'storefront-web', version: '3.4.0', type: 'application' } },
+      components: [
+        comp('lodash', '4.17.21', 'MIT'), comp('express', '4.18.2', 'MIT'), comp('log4j-core', '2.14.1', 'Apache-2.0', 'maven'),
+        comp('PyYAML', '5.3', 'MIT', 'pypi'), comp('requests', '2.31.0', 'Apache-2.0', 'pypi'),
+        comp('readline-gpl', '8.1', 'GPL-3.0-only'), comp('left-pad', '1.3.0', '') ],
+      vulnerabilities: [
+        { id: 'CVE-2021-44228', source: { name: 'OSV' }, description: 'Apache Log4j2 JNDI RCE (Log4Shell)', ratings: [{ score: 10.0, severity: 'critical', method: 'CVSSv3' }], affects: [{ ref: 'pkg:maven/log4j-core@2.14.1' }] },
+        { id: 'CVE-2020-14343', source: { name: 'OSV' }, description: 'PyYAML full_load arbitrary code execution', ratings: [{ score: 9.8, severity: 'critical', method: 'CVSSv3' }], affects: [{ ref: 'pkg:pypi/PyYAML@5.3' }] } ] });
+  }
+  function sampleData(src) {
+    src = String(src || '').toLowerCase();
+    var vmap = { qualys: 'Qualys', rapid7: 'Rapid7', crowdstrike: 'CrowdStrike', wiz: 'Wiz' };
+    var loadCdx = function () { var cdx = parseCycloneDX(SAMPLE_CDX()); STATE.sbom = { name: 'sample-sbom.cdx.json', at: Date.now(), components: cdx.components }; save('vmops-sbom', STATE.sbom); mergeFindings(cdx.findings); };
+    var dest = '#/dashboard', label;
+    if (src === 'tenable') { var s = SAMPLE(); mergeFindings(s); seedSampleOverrides(s); label = 'Tenable'; }
+    else if (vmap[src]) { mergeFindings(window.VMSCAN ? VMSCAN.vendorFindings(vmap[src]) : []); dest = '#/' + src; label = vmap[src]; }
+    else if (src === 'sarif') { mergeFindings(parseSarif(SAMPLE_SARIF())); dest = '#/findings'; label = 'SARIF'; }
+    else if (src === 'cyclonedx') { loadCdx(); dest = '#/sbom'; label = 'CycloneDX'; }
+    else if (src === 'all') { var s2 = SAMPLE(); mergeFindings(s2); seedSampleOverrides(s2); if (window.VMSCAN) mergeFindings(VMSCAN.scannerFindings()); mergeFindings(parseSarif(SAMPLE_SARIF())); loadCdx(); label = 'all sources'; }
+    else return false;
+    toast('Sample data loaded: ' + label + ' (' + STATE.findings.length + ' findings total)'); location.hash = dest; return false;
+  }
+
   window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), campaigns: vmShow(viewCampaigns), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz), assets: vmShow(viewAssets), remediations: vmShow(viewRemediations), sbom: vmShow(viewSbom),
-    getFindings: getFindings, loadScannerFindings: loadScannerFindings,
+    getFindings: getFindings, loadScannerFindings: loadScannerFindings, sampleLoad: sampleData,
     remediation: { ensure: ensureRemed, for: remediationFor, copy: copyText } };
 })();

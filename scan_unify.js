@@ -90,18 +90,24 @@
   // Normalized Finding rows for the OPT-IN workbench loader: the non-Tenable
   // vendors, shaped like the console's Finding model (so mergeFindings dedups by
   // cve+host and the workbench/Overview/Campaigns pick them up).
-  function scannerFindings() {
+  function toFinding(x) {
     var today = new Date().toISOString().slice(0, 10);   // real date so SLA/age/risk compute correctly
-    function toFinding(x) {
-      return { cve: x.cve, host: x.host, severity: x.severity, cvss: x.cvss == null ? null : x.cvss, vpr: null,
-        plugin: '', name: x.cve + ' (' + x.vendor + ')', desc: x.cve + ' detected by ' + x.vendor,
-        repo: '', source: x.vendor, firstSeen: today, state: '' };
-    }
-    return [].concat(fromQualys(), fromRapid7(), fromCrowdstrike(), fromWiz()).map(toFinding);
+    return { cve: x.cve, host: x.host, severity: x.severity, cvss: x.cvss == null ? null : x.cvss, vpr: null,
+      plugin: '', name: x.cve + ' (' + x.vendor + ')', desc: x.cve + ' detected by ' + x.vendor,
+      repo: '', source: x.vendor, firstSeen: today, state: '' };
+  }
+  // Finding-shaped rows for ONE vendor (used by the per-source sample-data generators).
+  function vendorFindings(vendor) {
+    var src = vendor === 'Qualys' ? fromQualys() : vendor === 'Rapid7' ? fromRapid7()
+      : vendor === 'CrowdStrike' ? fromCrowdstrike() : vendor === 'Wiz' ? fromWiz() : [];
+    return src.map(toFinding);
+  }
+  function scannerFindings() {
+    return [].concat(vendorFindings('Qualys'), vendorFindings('Rapid7'), vendorFindings('CrowdStrike'), vendorFindings('Wiz'));
   }
 
   window.VMSCAN = {
     VENDORS: VENDORS, SEV_RANK: SEV_RANK,
-    rows: rows, present: present, byCve: byCve, scannerFindings: scannerFindings, titleSev: titleSev
+    rows: rows, present: present, byCve: byCve, scannerFindings: scannerFindings, vendorFindings: vendorFindings, titleSev: titleSev
   };
 })();
