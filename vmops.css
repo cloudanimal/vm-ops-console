@@ -27,7 +27,7 @@
 .vmops .wfstrip-x:hover { color:var(--accent); }
 .vmops .wfstrip-actions #wfTour { color:var(--accent); }
 .vmops .wfstrip.collapsed { padding:9px 14px; }
-.vmops .wfstrip-row { display:flex; align-items:stretch; gap:4px; margin-top:11px; overflow-x:auto; }
+.vmops .wfstrip-row { display:flex; align-items:stretch; gap:4px; margin-top:8px; padding-top:3px; overflow-x:auto; }
 .vmops .wfstage { flex:1 1 0; min-width:104px; display:flex; flex-direction:column; gap:2px; text-decoration:none; color:inherit; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:11px 12px; transition:border-color .12s, transform .12s; }
 .vmops .wfstage:hover { border-color:var(--accent); transform:translateY(-1px); }
 .vmops .wfstage-top { display:flex; align-items:center; gap:7px; }
