@@ -56,6 +56,11 @@
   @media(max-width:720px){.two{grid-template-columns:1fr}}
   .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
   .card h3{margin-top:2px}
+  .timeline{margin:14px 0 6px;max-width:900px}
+  .tl{display:flex;gap:14px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line)}
+  .tl:first-child{border-top:none}
+  .tl-yr{flex:0 0 62px;font-family:var(--mono);font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;text-align:right}
+  .tl-b{font-size:14px;color:var(--ink)}
 </style>
 </head>
 <body>
@@ -76,6 +81,17 @@
 
 <h2>The landscape</h2>
 <p>Three overlapping categories aggregate scanner findings and prioritize them. Only two of the players are genuinely free and self-hostable (DefectDojo Community and SecObserve); the commercial tiers compete on connector breadth, proprietary risk scoring, and increasingly agentic AI. None of them run as a pure client-side browser application, which is where this console is deliberately different.</p>
+
+<h3>How the category got its name</h3>
+<p>The scanners underneath never really changed; the management layer on top kept getting renamed as its scope widened, roughly every few years. Knowing the lineage helps read the market: a "posture" tool and an "orchestration and correlation" tool are often the same idea at a different point on this line.</p>
+<div class="timeline">
+  <div class="tl"><span class="tl-yr">Base</span><div class="tl-b"><b>AST</b> &middot; Application Security Testing. The scanners themselves: SAST, DAST, IAST, and SCA. Everything below is the layer that sits on top of these.</div></div>
+  <div class="tl"><span class="tl-yr">~2017</span><div class="tl-b"><b>ASTO</b> &middot; Application Security Testing Orchestration. Gartner's first "run and manage many scanners from one place" category. Short-lived as a standalone term.</div></div>
+  <div class="tl"><span class="tl-yr">2019</span><div class="tl-b"><b>ASOC</b> &middot; Application Security Orchestration and Correlation. Introduced in Gartner's 2019 Hype Cycle for Application Security: aggregate, deduplicate, and correlate findings from multiple scanners into a single dashboard. The DefectDojo era of the category.</div></div>
+  <div class="tl"><span class="tl-yr">2023</span><div class="tl-b"><b>ASPM</b> &middot; Application Security Posture Management. Gartner retired the ASOC term in its 2023 Innovation Insight report and replaced it with ASPM, adding six things on top of aggregation: business-context risk scoring, developer remediation workflows, posture trending over time, supply-chain and SBOM visibility, compliance-framework mapping, and an asset inventory with criticality ratings. <b>The current term</b> (Gartner projects 40% of organizations building proprietary applications adopt ASPM by 2026, up from about 5% in 2023).</div></div>
+  <div class="tl"><span class="tl-yr">2022&rarr;</span><div class="tl-b"><b>CTEM</b> &middot; Continuous Threat Exposure Management. Not a rename of ASPM but the program-level framework it feeds into: continuous, exposure-wide prioritization across the whole attack surface, not only application security.</div></div>
+</div>
+<div class="callout"><b>Where this console sits:</b> at the ASPM / RBVM operating layer. It already covers much of what ASPM adds over ASOC &mdash; business-context risk scoring with asset criticality, remediation grouping, an asset inventory, and CycloneDX SBOM visibility, plus remediation campaigns and SLA tracking &mdash; and is designed to feed a CTEM program. The difference is that it runs entirely client-side rather than as a hosted SaaS or self-hosted server. (Posture trending and compliance-framework mapping are the lighter areas today.)</div>
 
 <div class="tblwrap">
 <table>
