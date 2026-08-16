@@ -78,11 +78,6 @@
   nav.top .theme { display:flex; align-items:center; gap:6px; font-family:var(--sans); font-size:13px; color:var(--soft); background:transparent; border:1px solid var(--line); border-radius:8px; padding:7px 10px; cursor:pointer; white-space:nowrap; flex:0 0 auto; transition:border-color .15s ease,color .15s ease; }
   nav.top .theme:hover { color:var(--ink); border-color:var(--accent); }
   nav.top .theme svg { width:15px; height:15px; }
-  nav.top .cmdk-btn { display:flex; align-items:center; gap:6px; font-family:var(--sans); color:var(--soft); background:transparent; border:1px solid var(--line); border-radius:8px; padding:6px 9px; cursor:pointer; white-space:nowrap; flex:0 0 auto; transition:border-color .15s ease,color .15s ease; }
-  nav.top .cmdk-btn:hover { color:var(--ink); border-color:var(--accent); }
-  nav.top .cmdk-btn .cmdk-ico { font-size:16px; line-height:1; }
-  nav.top .cmdk-btn .cmdk-kbd { font-family:var(--sans); font-size:11px; font-weight:600; letter-spacing:.3px; color:var(--faint); border:1px solid var(--line); border-radius:5px; padding:1px 5px; }
-  @media (max-width:820px) { nav.top .cmdk-btn .cmdk-kbd { display:none; } }
   kbd.kbdhint { font-family:var(--sans); font-size:11px; font-weight:600; border:1px solid var(--line); border-radius:5px; padding:1px 5px; color:var(--soft); cursor:pointer; }
   kbd.kbdhint:hover { border-color:var(--accent); color:var(--ink); }
 
@@ -452,7 +447,6 @@
     <a class="tab" href="#/faq" data-route="faq">FAQ</a>
     <a class="tab" href="#/about" data-route="about">About</a>
     <a class="tab" href="#/settings" data-route="settings">Settings</a>
-    <button class="cmdk-btn" id="cmdkBtn" type="button" title="Search / jump to any view or CVE" aria-label="Open command palette"><span class="cmdk-ico" aria-hidden="true">⌕</span><kbd class="cmdk-kbd"></kbd></button>
     <button class="theme" id="themeBtn" type="button" aria-label="Toggle color theme"></button>
   </nav>
 
@@ -3241,14 +3235,10 @@
     function run(c) { if (!c) return; close(); if (typeof c.action === 'function') { c.action(); return; } location.hash = c.hash; }
     function openP() { if (!overlay) build(); open = true; overlay.classList.add('show'); input.value = ''; render(); setTimeout(function () { input.focus(); }, 0); }
     function close() { open = false; if (overlay) overlay.classList.remove('show'); }
-    window.openCommandPalette = openP;   // let visible affordances (nav button, empty states) open it too
+    window.openCommandPalette = openP;   // let the Ask AI / empty-state hints open it (works on touch too)
     document.addEventListener('keydown', function (e) {
       if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) { e.preventDefault(); open ? close() : openP(); }
     });
-    // Visible trigger in the nav — makes the palette discoverable for mouse + touch (no keyboard needed).
-    var isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform || navigator.userAgent || '');
-    var btn = document.getElementById('cmdkBtn');
-    if (btn) { var kb = btn.querySelector('.cmdk-kbd'); if (kb) kb.textContent = isMac ? '⌘K' : 'Ctrl K'; btn.addEventListener('click', function () { open ? close() : openP(); }); }
   })();
 
   // ---------- Guided tour (opt-in) — coachmark walkthrough of the VM workflow ----------
@@ -3265,7 +3255,6 @@
       { sel: '.vmops .wfstage[data-wf="4"]', route: DASH, title: '4 · Campaign', body: 'Group related findings into a remediation campaign with an owner, a due date, and live progress against your SLA.' },
       { sel: '.vmops .wfstage[data-wf="5"]', route: DASH, title: '5 · Remediate', body: 'Track the fix through to done — the PowerShell remediation samples on each finding help your teams patch faster.' },
       { sel: '.vmops .wfstage[data-wf="6"]', route: DASH, title: '6 · Report', body: 'Close the loop. The Morning Report and SLA compliance roll the whole program up into a shareable status read-out.' },
-      { sel: '#cmdkBtn', route: DASH, title: 'Jump anywhere', body: 'This is the command palette. Click it (or press ⌘K / Ctrl-K) to jump to any view or CVE instantly — no hunting through menus.' },
       { sel: null, route: DASH, title: 'That’s the loop', body: 'Inventory → findings → triage → campaign → remediate → report. Press ⌘K / Ctrl-K anytime to jump anywhere, and replay this tour from the “Take a tour” button whenever you like.' }
     ];
     var ring, pop, i = 0, active = false, styled = false;

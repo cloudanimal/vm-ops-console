@@ -24,6 +24,7 @@
     <div id="srcBar" class="hidden" style="background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px">
       <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
         <button class="btn" onclick="toggleSources()" style="font-weight:600" title="Edit sources (click again to close)">Edit Sources</button>
+        <span class="src-filter-hint" style="font-size:12px;color:var(--faint)">Click a source to filter &amp; set validity rules&nbsp;&rarr;</span>
         <span id="srcBarFilters" class="ftoolbar" title="Click a source to scope / set validity rules &amp; health thresholds"></span>
       </div>
       <div id="srcBarControls"></div>
@@ -587,8 +588,9 @@ function render(){
   wireMsel({id:'grp', sel:STATE.grpSel, setMode:v=>STATE.grpMode=v, valuesLen:allGroups.length});
 
   // ---- per-source filter buttons (show the source + loaded row count; open slide-out filter drawers) ----
+  const funnel = `<svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" style="opacity:.55;margin-right:1px;vertical-align:-1px" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>`;
   const fBtn=(src)=>{ const n=activeRuleCount(src); const cnt = src==='ad' ? STATE.ad.length : (STATE[src]||[]).length;
-    return `<button class="btn fbtn" data-src="${src}" title="Filter ${escH(SRC_LABEL[src])}">${escH(SRC_LABEL[src])} <span style="color:var(--ok)">✓</span> ${fmt(cnt)}${n?`<span class="fbadge">${n}</span>`:''}</button>`; };
+    return `<button class="btn fbtn" data-src="${src}" title="Click to filter ${escH(SRC_LABEL[src])} / set validity rules">${funnel}${escH(SRC_LABEL[src])} <span style="color:var(--ok)">✓</span> ${fmt(cnt)}${n?`<span class="fbadge">${n}</span>`:''}</button>`; };
   const ft=$('#srcBarFilters');
   if(ft){ ft.innerHTML = fBtn('ad') + AKEYS.map(k=>fBtn(k)).join('');
     ft.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',()=>openDrawer(b.dataset.src))); }
