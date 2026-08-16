@@ -1,9 +1,16 @@
 {
-  "updated": "2026-08-15",
+  "updated": "2026-08-16",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-14",
-  "previous_date": "2026-08-08",
+  "current_date": "2026-08-15",
+  "previous_date": "2026-08-09",
   "risers": [
+    {
+      "id": "CVE-2026-58644",
+      "now": 0.45478,
+      "prev": 0.06372,
+      "delta": 0.39106,
+      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+    },
     {
       "id": "CVE-2026-34908",
       "now": 0.85194,
@@ -12,25 +19,11 @@
       "name": "Ubiquiti Inc UniFi OS Server"
     },
     {
-      "id": "CVE-2008-5789",
-      "now": 0.4499,
-      "prev": 0.30093,
-      "delta": 0.14897,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in the Recly Interactive Feederator (com_feederator) compon"
-    },
-    {
       "id": "CVE-2024-56064",
       "now": 0.29994,
       "prev": 0.15342,
       "delta": 0.14652,
       "name": "WordPress WP SuperBackup plugin <= 2.3.3 - Unauthenticated Arbitrary File Upload vulnerabi"
-    },
-    {
-      "id": "CVE-2008-5790",
-      "now": 0.36382,
-      "prev": 0.23621,
-      "delta": 0.12761,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in the Recly!Competitions (com_competitions) component 1.0 "
     },
     {
       "id": "CVE-2025-49132",
@@ -54,18 +47,18 @@
       "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
     },
     {
+      "id": "CVE-2026-49049",
+      "now": 0.28307,
+      "prev": 0.17701,
+      "delta": 0.10606,
+      "name": "Joomla Extension - joomshaper.com - Unauthenticated access to Helix3 template ajax handler"
+    },
+    {
       "id": "CVE-2026-48907",
       "now": 0.66013,
       "prev": 0.55914,
       "delta": 0.10099,
       "name": "Joomla Extension - joomlacontenteditor.net - Remote Code Execution in JCE extension for Jo"
-    },
-    {
-      "id": "CVE-2023-37569",
-      "now": 0.33886,
-      "prev": 0.24029,
-      "delta": 0.09857,
-      "name": "OS Command Injection Vulnerability in Emagic Data Center Management Suite"
     },
     {
       "id": "CVE-2026-63077",
@@ -96,13 +89,6 @@
       "name": "Mass Assignment via Onboarding Endpoint Allows Unauthenticated JWT_SECRET Overwrite"
     },
     {
-      "id": "CVE-2008-5793",
-      "now": 0.24367,
-      "prev": 0.15372,
-      "delta": 0.08995,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in the Clickheat - Heatmap stats (com_clickheat) component "
-    },
-    {
       "id": "CVE-2025-43562",
       "now": 0.45123,
       "prev": 0.36537,
@@ -129,13 +115,6 @@
       "prev": 0.4638,
       "delta": 0.07676,
       "name": "Microsoft Exchange Server Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2025-4380",
-      "now": 0.36837,
-      "prev": 0.29404,
-      "delta": 0.07433,
-      "name": "Ads Pro Plugin - Multi-Purpose WordPress Advertising Manager <= 4.89 - Unauthenticated Loc"
     },
     {
       "id": "CVE-2023-32562",
@@ -166,6 +145,20 @@
       "name": "Windows Remote Desktop Gateway (RD Gateway) Denial of Service Vulnerability"
     },
     {
+      "id": "CVE-2025-4380",
+      "now": 0.36837,
+      "prev": 0.30496,
+      "delta": 0.06341,
+      "name": "Ads Pro Plugin - Multi-Purpose WordPress Advertising Manager <= 4.89 - Unauthenticated Loc"
+    },
+    {
+      "id": "CVE-2025-3833",
+      "now": 0.44633,
+      "prev": 0.38367,
+      "delta": 0.06266,
+      "name": "SQL Injection"
+    },
+    {
       "id": "CVE-2021-34484",
       "now": 0.21661,
       "prev": 0.15616,
@@ -178,13 +171,6 @@
       "prev": 0.01155,
       "delta": 0.06028,
       "name": "Orkes Conductor 3.21.21 < 3.30.2 Unauthenticated RCE via GraalVM Script Evaluators"
-    },
-    {
-      "id": "CVE-2025-4443",
-      "now": 0.56831,
-      "prev": 0.51017,
-      "delta": 0.05814,
-      "name": "D-Link DIR-605L sub_454F2C command injection"
     },
     {
       "id": "CVE-2025-30397",
@@ -213,6 +199,20 @@
       "prev": 0.07522,
       "delta": 0.05056,
       "name": "Dahua EIMS capture_handle.action RCE"
+    },
+    {
+      "id": "CVE-2025-44148",
+      "now": 0.57579,
+      "prev": 0.52631,
+      "delta": 0.04948,
+      "name": "Cross Site Scripting (XSS) vulnerability in MailEnable before v10 allows a remote attacker to execute arbitrar"
+    },
+    {
+      "id": "CVE-2014-2120",
+      "now": 0.18919,
+      "prev": 0.14029,
+      "delta": 0.0489,
+      "name": "Cross-site scripting (XSS) vulnerability in the WebVPN login page in Cisco Adaptive Security Appliance (ASA) S"
     }
   ],
   "newly_high": [
@@ -236,6 +236,13 @@
       "prev": 0.4638,
       "delta": 0.07676,
       "name": "Microsoft Exchange Server Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2014-0282",
+      "now": 0.51103,
+      "prev": 0.46767,
+      "delta": 0.04336,
+      "name": "Microsoft Internet Explorer 6 through 11 allows remote attackers to execute arbitrary code or cause a denial o"
     },
     {
       "id": "CVE-2025-5961",
