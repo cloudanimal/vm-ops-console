@@ -42,7 +42,14 @@
   var ST_ORDER = {}; STATUS.forEach(function (s, i) { ST_ORDER[s.k] = i; });   // sort by workflow order (new, triaged, in remediation, resolved...), not alphabetically
   var OPEN_STATES = STATUS.filter(function (s) { return s.open; }).map(function (s) { return s.k; });
   var SEV_ORDER = { Critical: 0, High: 1, Medium: 2, Low: 3, Info: 4 };
-  var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tioAccess: '', tioSecret: '', meUrl: '', meClientId: '', meClientSecret: '', epssLive: false, recurThreshold: 1, navHidden: [] };
+  // Weights let the user tune how the risk models combine (see riskComponents). 1 = default.
+  var DEFAULT_WEIGHTS = { cvss: 1, epss: 1, kev: 1, lev: 1, ssvc: 1, asset: 1 };
+  var RW_SIGNALS = [
+    { k: 'cvss', l: 'CVSS / severity' }, { k: 'epss', l: 'EPSS probability' },
+    { k: 'kev', l: 'Exploitation (KEV / ransomware / PoC)' }, { k: 'lev', l: 'LEV (already-exploited)' },
+    { k: 'ssvc', l: 'SSVC decision' }, { k: 'asset', l: 'Asset criticality' }
+  ];
+  var DEFAULT_CFG = { brand: '', brandIcon: '', brandIconColor: '', sla: { Critical: 7, High: 30, Medium: 90, Low: 180 }, jiraBase: '', jiraPid: '', jiraType: '', snowBase: '', tioAccess: '', tioSecret: '', meUrl: '', meClientId: '', meClientSecret: '', epssLive: false, recurThreshold: 1, navHidden: [], riskWeights: Object.assign({}, DEFAULT_WEIGHTS) };
   var DEFAULT_BRAND = 'Vulnerability Management Console';
   var DEFAULT_ICON_COLOR = '#28415d';
 
@@ -53,11 +60,13 @@
   var STATE = {
     findings: load('vmops-findings', []),
     ov: load('vmops-overrides', {}),       // key -> {status, owner, notes, updated}
+    assets: load('vmops-assets', {}),      // hostNorm -> {crit, owner, tags}
     cfg: Object.assign({}, DEFAULT_CFG, load('vmops-config', {})),
     sort: { col: 'risk', dir: -1 },
     filt: defaultFilt()
   };
   STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla, STATE.cfg.sla || {});
+  STATE.cfg.riskWeights = Object.assign({}, DEFAULT_WEIGHTS, STATE.cfg.riskWeights || {});
   STATE._newKeys = {}; try { (JSON.parse(localStorage.getItem('vmops-newkeys') || '[]') || []).forEach(function (k) { STATE._newKeys[k] = 1; }); } catch (e) {}
   STATE._colW = {}; try { STATE._colW = JSON.parse(localStorage.getItem('vmops-colw') || '{}') || {}; } catch (e) {}
   STATE._colHidden = {}; try { STATE._colHidden = JSON.parse(localStorage.getItem('vmops-colhidden') || '{}') || {}; } catch (e) {}
@@ -155,17 +164,84 @@
     if (it.exploit || sev === 'Critical' || sev === 'High') return 'P2';
     return 'P3';
   }
-  function riskScore(f) { // severity + real exploitation (KEV/ransomware/PoC) + SLA pressure + age
-    var s = (4 - (SEV_ORDER[f.severity] != null ? SEV_ORDER[f.severity] : 4)) * 100;
+  // ---------- Asset register: per-host business context that feeds the risk score ----------
+  // Criticality tiers and the 0..1 fraction each contributes to the asset risk component.
+  var ASSET_CRITS = [
+    { k: 'critical', l: 'Critical', frac: 1 }, { k: 'high', l: 'High', frac: 0.7 },
+    { k: 'medium', l: 'Medium', frac: 0.4 }, { k: 'low', l: 'Low', frac: 0.15 }
+  ];
+  function assetOf(host) { var h = norm(host); return STATE.assets[h] || null; }
+  function assetCrit(host) { var a = assetOf(host); return a && a.crit ? a.crit : ''; }        // '' = unset
+  function assetFrac(host) { var c = assetCrit(host); if (!c) return 0.4; for (var i = 0; i < ASSET_CRITS.length; i++) if (ASSET_CRITS[i].k === c) return ASSET_CRITS[i].frac; return 0.4; }
+  function setAsset(host, patch) { var h = norm(host); var a = STATE.assets[h] || {}; Object.assign(a, patch); if (!a.crit && !a.owner && !(a.tags && a.tags.length)) delete STATE.assets[h]; else STATE.assets[h] = a; save('vmops-assets', STATE.assets); }
+
+  // ---------- Risk model: a transparent weighted blend the user can tune (Settings) ----------
+  // Each signal contributes raw(0..1) * budget * weight. Budgets set the model's default shape;
+  // weights (cfg.riskWeights, 1 = default) let the user re-balance without it being a black box.
+  var RISK_BUDGET = { cvss: 300, epss: 300, kev: 600, lev: 300, ssvc: 300, asset: 300 };
+  var SEV_FRAC = { Critical: 1, High: 0.75, Medium: 0.5, Low: 0.25 };
+  function levCached(cve) { var y = (String(cve).match(/CVE-(\d{4})-/) || [])[1]; var m = y && LEV_CACHE[y]; return (m && m[cve] != null) ? m[cve] : null; }
+  // Raw 0..1 value per signal for a finding.
+  function riskRaw(f) {
     var it = cveIntel(f.cve);
-    if (it.kev) s += 600; if (it.ransomware) s += 250; if (it.exploit) s += 200;
-    if (it.epss != null) s += Math.round(it.epss * 300);   // EPSS probability folds in (0 → +300)
-    if (f.vpr != null) s += Math.round(f.vpr * 20);         // Tenable VPR folds in (0 → +200)
+    var lev = levCached(f.cve);
+    return {
+      cvss: f.cvss != null ? Math.max(0, Math.min(1, f.cvss / 10)) : (SEV_FRAC[f.severity] != null ? SEV_FRAC[f.severity] : 0.5),
+      epss: it.epss != null ? it.epss : 0,
+      kev: it.kev ? 1 : it.ransomware ? 0.85 : it.exploit ? 0.6 : 0,
+      lev: lev != null ? lev : 0,
+      ssvc: (function () { var v = ssvcVerdict(it.kev, it.exploit, f.cvss).v; return v === 'Act' ? 1 : v === 'Attend' ? 0.5 : 0; })(),
+      asset: assetFrac(f.host)
+    };
+  }
+  var RISK_LABEL = { cvss: 'CVSS / severity', epss: 'EPSS', kev: 'Exploitation (KEV)', lev: 'LEV', ssvc: 'SSVC', asset: 'Asset criticality' };
+  // Per-signal point contributions (after weights) — powers the drawer breakdown + transparency.
+  function riskComponents(f) {
+    var raw = riskRaw(f), w = (STATE.cfg && STATE.cfg.riskWeights) || DEFAULT_WEIGHTS, out = [];
+    ['cvss', 'epss', 'kev', 'lev', 'ssvc', 'asset'].forEach(function (k) {
+      out.push({ key: k, label: RISK_LABEL[k], raw: raw[k], weight: w[k] != null ? w[k] : 1, pts: Math.round(raw[k] * RISK_BUDGET[k] * (w[k] != null ? w[k] : 1)) });
+    });
+    return out;
+  }
+  function riskBreakdownHtml(f) {
+    var comps = riskComponents(f), max = Math.max.apply(null, comps.map(function (c) { return c.pts; }).concat([1]));
+    return '<div class="rbk">' + comps.map(function (c) {
+      return '<div class="rbk-row"><span>' + esc(c.label) + (c.weight !== 1 ? ' <span class="muted" style="font-size:10px">×' + c.weight + '</span>' : '') + '</span>' +
+        '<span class="rbk-bar"><span class="rbk-fill" style="width:' + (max ? Math.round(c.pts / max * 100) : 0) + '%"></span></span>' +
+        '<span class="rbk-pts">' + c.pts + '</span></div>';
+    }).join('') + '</div>';
+  }
+  function riskScore(f) { // weighted model (riskComponents) + SLA pressure + age; resolved sinks below open
+    var s = 0; riskComponents(f).forEach(function (c) { s += c.pts; });
     var di = dueIn(f); if (di != null && isOpen(f)) s += di < 0 ? 60 + Math.min(40, -di) : Math.max(0, 30 - di);
     s += Math.min(20, (daysSince(f.firstSeen) || 0) / 10);
-    if (!isOpen(f)) s -= 2000;   // resolved/accepted always rank below anything open
+    if (!isOpen(f)) s -= 4000;   // resolved/accepted always rank below anything open
     return s;
   }
+  // Preload the local LEV feed for every CVE-year present in the findings so the LEV signal
+  // participates in scoring/sorting immediately (otherwise it only loads lazily in the drawer).
+  function preloadLev() {
+    var years = {}; STATE.findings.forEach(function (f) { var y = (String(f.cve).match(/CVE-(\d{4})-/) || [])[1]; if (y) years[y] = 1; });
+    var ys = Object.keys(years).filter(function (y) { return !LEV_CACHE[y]; });
+    if (!ys.length) return;
+    Promise.all(ys.map(function (y) { return fetch('data/lev/' + y + '.json').then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(function (m) { LEV_CACHE[y] = m || {}; }); }))
+      .then(function () { try { window.dispatchEvent(new Event('hashchange')); } catch (e) {} });
+  }
+  // ---------- Root-cause grouping: a "fix key" so one remediation rolls up its findings ----------
+  // Derive the product/package a fix targets from the finding name (strip versions, parentheticals,
+  // trailing qualifiers), so multiple CVEs in the same product collapse to one remediation.
+  function fixLabel(f) {
+    var raw = String(f.name || f.cve || '');
+    var n = raw.replace(/\s*\([^)]*\)\s*/g, ' ').trim();                        // drop "(Log4Shell)", "(Rapid7)"
+    // When the name is just a CVE id (e.g. multi-scanner rows), there is no product to derive —
+    // group by the CVE itself so each fix is one row, not one giant bucket.
+    if (/^CVE-\d/i.test(n) || n === '') return String(f.cve || raw).toUpperCase().replace(/\s*\([^)]*\)\s*/g, '').trim();
+    n = n.replace(/\b\d+(\.\d+)*(\.x)?\b/g, '').replace(/\bv\d+\b/gi, '');       // drop version tokens
+    n = n.replace(/\b(remote code execution|rce|sqli|path traversal|overflow|elevation|ssrf|dos|enum(eration)?|bypass)\b/gi, '');
+    n = n.replace(/\s{2,}/g, ' ').trim();
+    return n || raw.trim();
+  }
+  function fixKey(f) { return fixLabel(f).toLowerCase(); }
   // ---------- the other prioritization models, per CVE (for the drawer): EPSS, NIST LEV, SSVC ----------
   // Same sources the CVE detail page uses: EPSS from the bundled local feed, LEV from the local data/lev/<year>.json,
   // SSVC the simplified Act/Attend/Track derived from exploitation + impact (CISA's authoritative SSVC is on the detail page).
@@ -298,7 +374,7 @@
 
   function viewDashboard() {
     setActive('dashboard');
-    if (!STATE.findings.length) return viewEmpty('dashboard');
+    if (!STATE.findings.length) return viewEmpty('dashboard'); preloadLev();
     var k = kpis();
     var bySev = ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return { s: s, n: STATE.findings.filter(function (f) { return f.severity === s && isOpen(f); }).length }; });
     var byStatus = STATUS.map(function (st) { return { l: st.l, k: st.k, n: STATE.findings.filter(function (f) { return statusOf(f) === st.k; }).length }; });
@@ -465,7 +541,7 @@
     // changes — otherwise the in-page filter handlers (which re-call viewFindings without touching the
     // hash) would re-parse the stale query every render and clobber the user's selection.
     (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=safeDecode(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', open:p.open==='1', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', epssHi:p.epssHi==='1', noTicket:p.noTicket==='1', noowner:p.noowner==='1', recurring:p.recurring==='1', colf:{}, group:STATE.filt.group||'' }; })();
-    if (!STATE.findings.length) return viewEmpty('findings');
+    if (!STATE.findings.length) return viewEmpty('findings'); preloadLev();
     var list = visibleFindings();
     var statusOpts = '<option value="">All statuses</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '"' + (STATE.filt.status === s.k ? ' selected' : '') + '>' + s.l + '</option>'; }).join('');
     var sevOpts = '<option value="">All severities</option>' + ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return '<option' + (STATE.filt.sev === s ? ' selected' : '') + '>' + s + '</option>'; }).join('');
@@ -1039,6 +1115,9 @@
       '<div class="row"><span class="k">First seen</span><span>' + esc(f.firstSeen) + ' (' + (daysSince(f.firstSeen) || 0) + 'd ago)</span></div>' +
       (isRecurring(f) ? '<div class="row"><span class="k">Recurrence</span><span><span class="ichip recur">↻ ' + recurCount(f) + '</span> reopened after being resolved</span></div>' : '') +
       '<div class="row"><span class="k">SLA due</span><span class="pill-sla ' + ss + '">' + (dd ? esc(dd) + (di == null ? '' : ' · ' + (di < 0 ? Math.abs(di) + 'd overdue' : di + 'd left')) : '—') + '</span></div>' +
+      '<div class="row"><span class="k">Asset</span><span>' + (assetCrit(f.host) ? '<span class="badge ' + (assetCrit(f.host) === 'critical' ? 'crit' : assetCrit(f.host) === 'high' ? 'high' : assetCrit(f.host) === 'medium' ? 'med' : 'low') + '">' + esc(assetCrit(f.host).charAt(0).toUpperCase() + assetCrit(f.host).slice(1)) + '</span>' : '<a href="#/assets" class="muted" style="font-size:12px">set criticality ↗</a>') + '</span></div>' +
+      '<div class="row"><span class="k">Risk score</span><span><b id="drRisk">' + Math.round(riskScore(f)) + '</b> <a href="#/settings" class="muted" style="font-size:11px">tune weights ↗</a></span></div>' +
+      '<div class="row" style="display:block"><span class="k" style="display:block;margin-bottom:5px">Risk breakdown</span><span id="drRbk">' + riskBreakdownHtml(f) + '</span></div>' +
       '<div id="drRemed" class="remed"></div>' +
       '<div style="margin-top:16px"><label style="font-size:12px;font-weight:600;color:var(--soft)">Status</label><br>' + statusSelect(f, st).replace('act-status', 'dr-status') + '</div>' +
       '<div class="field"><label>Owner</label><input type="text" id="drOwner" value="' + esc(o.owner || '') + '" placeholder="team or person" style="max-width:none"></div>' +
@@ -1070,7 +1149,10 @@
       if (it.epss != null) setEpss(it.epss);
       else if (STATE.cfg.epssLive) epssFor(f.cve).then(setEpss);
       else setEpss(null);
-      levFor(f.cve).then(function (l) { var el = document.getElementById('drLev'); if (!el) return; el.className = ''; var v = levVerdict(l); el.innerHTML = l == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); });
+      levFor(f.cve).then(function (l) { var el = document.getElementById('drLev'); if (el) { el.className = ''; var v = levVerdict(l); el.innerHTML = l == null ? '<span class="muted">—</span>' : '<b>' + v.v + '</b> · ' + esc(v.why); }
+        // LEV is now cached — refresh the breakdown + score so the LEV row is consistent with it.
+        var rb = document.getElementById('drRbk'); if (rb) rb.innerHTML = riskBreakdownHtml(f);
+        var rs = document.getElementById('drRisk'); if (rs) rs.textContent = Math.round(riskScore(f)); });
     })();
     // Fill the remediation sample (loads data/remediation.json once, then it's instant).
     ensureRemed().then(function () {
@@ -1542,6 +1624,10 @@
       '<h2>Remediation SLA windows (days)</h2><div class="card"><div class="grid2">' +
       ['Critical', 'High', 'Medium', 'Low'].map(function (s) { return '<div class="field"><label>' + s + '</label><input type="number" min="0" data-sla="' + s + '" value="' + esc(c.sla[s]) + '"></div>'; }).join('') +
       '</div><div class="muted" style="font-size:12.5px">SLA due = first-seen date + window. Drives overdue flags and SLA compliance.</div></div>' +
+      '<h2>Risk weighting</h2><div class="card">' +
+      '<div class="muted" style="font-size:12.5px;margin-bottom:12px">The risk score is a transparent blend of six signals, not a black box. Set how much each one counts: <b>1.0</b> is the default, <b>0</b> removes a signal, <b>2.0</b> doubles it. Changes apply everywhere the score is used (sorting, dashboards, asset and remediation risk).</div>' +
+      RW_SIGNALS.map(function (sg) { var v = (c.riskWeights && c.riskWeights[sg.k] != null) ? c.riskWeights[sg.k] : 1; return '<div class="rw-row"><span>' + esc(sg.l) + '</span><input type="range" class="rw" data-w="' + sg.k + '" min="0" max="2" step="0.1" value="' + v + '"><span class="rw-val" id="rwv-' + sg.k + '">' + Number(v).toFixed(1) + '</span></div>'; }).join('') +
+      '<div class="toolbar" style="margin-top:10px"><button class="btn sm" id="rwReset">Reset to defaults</button></div></div>' +
       '<h2>Backup &amp; transfer</h2><div class="card">' +
       '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Export your settings and saved views to a JSON file, for backup (in case this browser gets cleared) or to move them to another browser or a teammate. <b>API keys and secrets are never included</b>, and importing never overwrites this browser\'s own keys. Everything stays local.</div>' +
       '<div class="toolbar"><button class="btn" id="cfgExport">Export settings</button><button class="btn" id="cfgImport">Import settings</button><input type="file" id="cfgFile" accept="application/json,.json" hidden></div></div>' +
@@ -1602,8 +1688,11 @@
       STATE.cfg.epssLive = document.getElementById('epssLive').checked;
       STATE.cfg.recurThreshold = Math.max(1, parseInt(document.getElementById('recurThreshold').value, 10) || 1);
       var nh = []; [].forEach.call(document.querySelectorAll('.navtoggle'), function (cb) { if (!cb.checked) nh.push(cb.getAttribute('data-nav')); }); STATE.cfg.navHidden = nh;
+      var rw = {}; [].forEach.call(document.querySelectorAll('.rw'), function (s) { rw[s.getAttribute('data-w')] = Math.max(0, Math.min(2, parseFloat(s.value) || 0)); }); STATE.cfg.riskWeights = Object.assign({}, DEFAULT_WEIGHTS, rw);
       save('vmops-config', STATE.cfg); applyBrand(); toast('Settings saved');
     });
+    [].forEach.call(document.querySelectorAll('.rw'), function (s) { s.addEventListener('input', function () { var el = document.getElementById('rwv-' + s.getAttribute('data-w')); if (el) el.textContent = Number(s.value).toFixed(1); }); });
+    var rwR = document.getElementById('rwReset'); if (rwR) rwR.addEventListener('click', function () { STATE.cfg.riskWeights = Object.assign({}, DEFAULT_WEIGHTS); save('vmops-config', STATE.cfg); viewSettings(); toast('Risk weights reset'); });
     document.getElementById('resetSla').addEventListener('click', function () { STATE.cfg.sla = Object.assign({}, DEFAULT_CFG.sla); save('vmops-config', STATE.cfg); viewSettings(); toast('SLA windows reset'); });
     document.getElementById('cfgExport').addEventListener('click', exportSettings);
     document.getElementById('cfgImport').addEventListener('click', function () { document.getElementById('cfgFile').click(); });
@@ -2565,6 +2654,89 @@
     ov.onclick = function (e) { if (e.target === ov) close(); };
   }
 
+  // ========================= Asset Inventory =========================
+  // Distinct hosts across all findings, each with an editable business-criticality tier that
+  // feeds the risk score (asset component). This is the denominator the commercial tools call
+  // "asset context" — here it stays local and user-owned.
+  function assetRows() {
+    var m = {};
+    STATE.findings.forEach(function (f) {
+      var h = norm(f.host); if (!m[h]) m[h] = { host: f.host, key: h, all: 0, open: 0, sev: 'Low', risk: 0, src: {} };
+      var a = m[h]; a.all++; if (isOpen(f)) { a.open++; a.risk += riskScore(f); }
+      if ((SEV_ORDER[f.severity] != null ? SEV_ORDER[f.severity] : 4) < (SEV_ORDER[a.sev] != null ? SEV_ORDER[a.sev] : 4)) a.sev = f.severity;
+      if (f.source) a.src[f.source] = 1;
+    });
+    return Object.keys(m).map(function (k) { return m[k]; });
+  }
+  function critSelect(host) {
+    var cur = assetCrit(host);
+    return '<select class="asset-crit" data-host="' + esc(norm(host)) + '"><option value=""' + (cur === '' ? ' selected' : '') + '>—</option>' +
+      ASSET_CRITS.map(function (c) { return '<option value="' + c.k + '"' + (cur === c.k ? ' selected' : '') + '>' + c.l + '</option>'; }).join('') + '</select>';
+  }
+  function viewAssets() {
+    setActive('assets');
+    if (!STATE.findings.length) return viewEmpty('assets');
+    preloadLev();
+    var rows = assetRows().sort(function (a, b) { return b.risk - a.risk; });
+    var assigned = rows.filter(function (r) { return assetCrit(r.host); }).length;
+    var critBiz = rows.filter(function (r) { return assetCrit(r.host) === 'critical'; }).length;
+    var kpi = function (n, l) { return '<div class="kpi"><div class="num">' + n + '</div><div class="label">' + l + '</div></div>'; };
+    app.innerHTML =
+      '<header class="view"><div class="overline">Inventory</div><h1>Asset inventory</h1>' +
+      '<p class="lede">Every host seen across your findings, with a business-criticality tier you assign. Criticality feeds the risk score, so a critical asset raises the priority of the same vulnerability. Stored in this browser only.</p></header>' +
+      privSlim() +
+      '<div class="kpis">' + kpi(rows.length, 'Assets') + kpi(assigned, 'Criticality set') + kpi(rows.length - assigned, 'Unrated') + kpi(critBiz, 'Business-critical') + '</div>' +
+      '<div class="gridwrap"><table class="grid"><thead><tr><th>Host</th><th>Sources</th><th>Open</th><th>Max sev</th><th>Risk</th><th>Criticality</th><th>Owner</th><th>Tags</th></tr></thead><tbody>' +
+      rows.map(function (r) {
+        return '<tr><td class="mono">' + esc(r.host) + '</td>' +
+          '<td class="muted" style="font-size:12px">' + esc(Object.keys(r.src).join(', ')) + '</td>' +
+          '<td>' + r.open + '</td><td>' + sevBadge(r.sev) + '</td><td>' + Math.round(r.risk) + '</td>' +
+          '<td>' + critSelect(r.host) + '</td>' +
+          '<td><input class="asset-owner" data-host="' + esc(r.key) + '" value="' + esc((assetOf(r.host) || {}).owner || '') + '" placeholder="—" style="width:120px"></td>' +
+          '<td><input class="asset-tags" data-host="' + esc(r.key) + '" value="' + esc(((assetOf(r.host) || {}).tags || []).join(', ')) + '" placeholder="e.g. pci, internet-facing" style="width:180px"></td></tr>';
+      }).join('') +
+      '</tbody></table></div>' +
+      '<div class="muted" style="font-size:12px;margin-top:10px">Criticality tiers: Critical, High, Medium, Low. Unrated assets are treated as Medium in scoring. Adjust the weight of asset context under <a href="#/settings">Settings → Risk weighting</a>.</div>';
+    [].forEach.call(document.querySelectorAll('.asset-crit'), function (s) { s.addEventListener('change', function () { setAsset(s.getAttribute('data-host'), { crit: s.value }); viewAssets(); toast('Asset criticality updated'); }); });
+    [].forEach.call(document.querySelectorAll('.asset-owner'), function (i) { i.addEventListener('change', function () { setAsset(i.getAttribute('data-host'), { owner: i.value.trim() }); toast('Saved'); }); });
+    [].forEach.call(document.querySelectorAll('.asset-tags'), function (i) { i.addEventListener('change', function () { setAsset(i.getAttribute('data-host'), { tags: i.value.split(',').map(function (x) { return x.trim(); }).filter(Boolean) }); toast('Saved'); }); });
+  }
+
+  // ========================= Remediations (root-cause grouping) =========================
+  // Group open findings by the fix that resolves them (product/package), so one action shows
+  // how many findings across how many assets it clears — the "one patch, N findings" rollup.
+  function remediationGroups() {
+    var m = {};
+    STATE.findings.filter(isOpen).forEach(function (f) {
+      var k = fixKey(f); if (!m[k]) m[k] = { key: k, label: fixLabel(f), n: 0, hosts: {}, cves: {}, src: {}, sev: 'Low', risk: 0 };
+      var g = m[k]; g.n++; g.hosts[norm(f.host)] = 1; g.cves[f.cve] = 1; if (f.source) g.src[f.source] = 1; g.risk += riskScore(f);
+      if ((SEV_ORDER[f.severity] != null ? SEV_ORDER[f.severity] : 4) < (SEV_ORDER[g.sev] != null ? SEV_ORDER[g.sev] : 4)) g.sev = f.severity;
+    });
+    return Object.keys(m).map(function (k) { var g = m[k]; return { label: g.label, n: g.n, assets: Object.keys(g.hosts).length, cves: Object.keys(g.cves), src: Object.keys(g.src), sev: g.sev, risk: Math.round(g.risk) }; });
+  }
+  function viewRemediations() {
+    setActive('remediations');
+    if (!STATE.findings.length) return viewEmpty('remediations');
+    preloadLev();
+    var groups = remediationGroups().sort(function (a, b) { return b.risk - a.risk; });
+    var kpi = function (n, l) { return '<div class="kpi"><div class="num">' + n + '</div><div class="label">' + l + '</div></div>'; };
+    var top = groups[0];
+    app.innerHTML =
+      '<header class="view"><div class="overline">Remediations</div><h1>Fix-first remediations</h1>' +
+      '<p class="lede">Open findings grouped by the fix that clears them, so you can see the single action that removes the most risk across the most assets. One patch often resolves many findings.</p></header>' +
+      privSlim() +
+      '<div class="kpis">' + kpi(groups.length, 'Distinct fixes') + kpi(STATE.findings.filter(isOpen).length, 'Open findings') + kpi(top ? top.n : 0, 'Top fix clears') + kpi(top ? top.assets : 0, 'across assets') + '</div>' +
+      '<div class="gridwrap"><table class="grid"><thead><tr><th>Fix</th><th>Max sev</th><th>Findings</th><th>Assets</th><th>CVEs</th><th>Risk removed</th></tr></thead><tbody>' +
+      groups.map(function (g) {
+        return '<tr><td><b>Update ' + esc(g.label) + '</b>' + (g.src.length ? '<div class="muted" style="font-size:11px">' + esc(g.src.join(', ')) + '</div>' : '') + '</td>' +
+          '<td>' + sevBadge(g.sev) + '</td><td><b>' + g.n + '</b></td><td>' + g.assets + '</td>' +
+          '<td class="mono" style="font-size:11.5px">' + g.cves.slice(0, 4).map(esc).join(', ') + (g.cves.length > 4 ? ' +' + (g.cves.length - 4) : '') + '</td>' +
+          '<td class="risknum">' + g.risk.toLocaleString() + '</td></tr>';
+      }).join('') +
+      '</tbody></table></div>' +
+      '<div class="muted" style="font-size:12px;margin-top:10px">Findings are grouped by the product a fix targets (derived from the finding name). Risk removed is the summed risk score of the findings that fix would close.</div>';
+  }
+
   function vmShow(fn){ return function(){ app.className='vmops'; return fn.apply(null, arguments); }; }
   function goDash() { if ((location.hash||'').indexOf('#/dashboard')===0){ app.className='vmops'; viewDashboard(); } else { location.hash='#/dashboard'; } }
   // Exposed to the host (CVE-Explorer-based) router, which dispatches the ops routes.
@@ -2575,7 +2747,7 @@
   // CrowdStrike/Wiz sample) into the shared store so the workbench, Overview, and
   // Campaigns reflect all sources. Returns the new total.
   function loadScannerFindings(list) { if (!list || !list.length) return STATE.findings.length; mergeFindings(list); return STATE.findings.length; }
-  window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), campaigns: vmShow(viewCampaigns), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz),
+  window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), campaigns: vmShow(viewCampaigns), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz), assets: vmShow(viewAssets), remediations: vmShow(viewRemediations),
     getFindings: getFindings, loadScannerFindings: loadScannerFindings,
     remediation: { ensure: ensureRemed, for: remediationFor, copy: copyText } };
 })();

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VM Console — Feature Comparison vs the VM / ASPM Market</title>
+<style>
+  :root{
+    --paper:#faf9f7; --ink:#1c1d1f; --soft:#5c6066; --faint:#6b6f76; --line:#ddd8ce;
+    --accent:#28415d; --surface:#fff; --panel:#f1eee7; --badge-ink:#fff;
+    --crit:#a32d2d; --high:#8a4b1d; --med:#7c5a0b; --ok:#2f6b3f; --info:#2b5378;
+    --serif:Georgia,'Times New Roman',serif; --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#14161a; --ink:#ececea; --soft:#a8aeb6; --faint:#868d96; --line:#2a2e35;
+      --accent:#8fb3dd; --surface:#1a1d23; --panel:#1f232a; --badge-ink:#10131a;
+      --crit:#e24b4a; --high:#d98a30; --med:#e0b23a; --ok:#5cba74; --info:#8fb3dd;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;font-size:15px}
+  .wrap{max-width:1160px;margin:0 auto;padding:32px 20px 80px}
+  header.hd{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:26px}
+  .overline{text-transform:uppercase;letter-spacing:.09em;font-size:12px;font-weight:700;color:var(--accent)}
+  h1{font-family:var(--serif);font-size:34px;line-height:1.15;margin:6px 0 8px}
+  h2{font-family:var(--serif);font-size:24px;margin:40px 0 6px;padding-top:14px;border-top:1px solid var(--line)}
+  h3{font-size:16px;margin:22px 0 8px}
+  .lede{color:var(--soft);max-width:820px;font-size:16px}
+  p{max-width:840px}
+  a{color:var(--accent)}
+  .meta{font-size:12.5px;color:var(--faint);margin-top:10px}
+  .callout{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:14px 16px;margin:18px 0;font-size:14px}
+  .legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin:14px 0 6px;font-size:13px}
+  .pill{display:inline-block;font-size:11px;font-weight:700;border-radius:999px;padding:2px 9px;white-space:nowrap;letter-spacing:.02em}
+  .p-have{background:color-mix(in srgb,var(--ok) 16%,transparent);color:var(--ok);border:1px solid color-mix(in srgb,var(--ok) 45%,transparent)}
+  .p-partial{background:color-mix(in srgb,var(--med) 16%,transparent);color:var(--med);border:1px solid color-mix(in srgb,var(--med) 45%,transparent)}
+  .p-road{background:color-mix(in srgb,var(--info) 14%,transparent);color:var(--info);border:1px solid color-mix(in srgb,var(--info) 45%,transparent)}
+  .p-backend{background:color-mix(in srgb,var(--crit) 14%,transparent);color:var(--crit);border:1px solid color-mix(in srgb,var(--crit) 45%,transparent)}
+  .tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:14px 0}
+  table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:720px}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:var(--panel);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--faint);position:sticky;top:0}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover td{background:color-mix(in srgb,var(--accent) 5%,transparent)}
+  .grp td{background:color-mix(in srgb,var(--accent) 8%,transparent);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)}
+  .mono{font-family:var(--mono);font-size:12px}
+  .b1,.b2,.b3,.b4,.b5,.b6{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--crit)}
+  .feat{font-weight:600}
+  .note{font-size:12.5px;color:var(--soft)}
+  ul.tight{margin:6px 0 6px 0;padding-left:20px}
+  ul.tight li{margin:3px 0;max-width:820px}
+  .foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--faint)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.two{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .card h3{margin-top:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hd">
+  <div class="overline">Vulnerability Management Console &middot; Competitive Analysis</div>
+  <h1>Feature comparison vs the VM / ASPM market</h1>
+  <p class="lede">How this browser-first console maps against the vulnerability-aggregation and Application Security Posture Management field, from open-source platforms like DefectDojo and SecObserve to commercial exposure-management and ASPM suites. The goal: cover every capability we can as a standalone browser application, and flag clearly which features require stepping outside the browser into a small backend.</p>
+  <div class="meta">Prepared for Joe Cook. Product research compiled from vendor documentation and public sources; the space is consolidating quickly (Vulcan &rarr; Tenable, Kenna &rarr; Cisco, Avalor &rarr; Zscaler, Dazz &rarr; Wiz, Balbix &rarr; SAFE). Where a vendor did not publish a detail it is marked unclear rather than assumed.</div>
+</header>
+
+<div class="legend">
+  <span><span class="pill p-have">Have today</span> shipped in the console now</span>
+  <span><span class="pill p-partial">Partial</span> present but lighter than market leaders</span>
+  <span><span class="pill p-road">Browser roadmap</span> feasible fully in-browser, not built yet</span>
+  <span><span class="pill p-backend">Needs backend</span> requires the connector / a server</span>
+</div>
+
+<h2>The landscape</h2>
+<p>Three overlapping categories aggregate scanner findings and prioritize them. Only two of the players are genuinely free and self-hostable (DefectDojo Community and SecObserve); the commercial tiers compete on connector breadth, proprietary risk scoring, and increasingly agentic AI. None of them run as a pure client-side browser application, which is where this console is deliberately different.</p>
+
+<div class="tblwrap">
+<table>
+<thead><tr><th>Product</th><th>Category</th><th>License / deploy</th><th>Integrations</th><th>Standout</th></tr></thead>
+<tbody>
+<tr class="grp"><td colspan="5">Open-source aggregators (self-hostable)</td></tr>
+<tr><td><b>DefectDojo</b></td><td>OWASP flagship VM / ASPM</td><td>BSD-3, self-host (Docker/K8s, Postgres); paid Pro</td><td>200+ parsers, import-first + API</td><td>De-facto OSS standard; EPSS + KEV, dedup, bi-directional Jira, RBAC/SSO, full REST API</td></tr>
+<tr><td><b>SecObserve</b></td><td>VM + license management</td><td>BSD-3, self-host (Docker/K8s, Postgres/MySQL, Keycloak); fully free</td><td>Many OSS scanners + SARIF/CycloneDX</td><td>CI/CD-native, rule-engine assessment, security gates, EPSS/KEV, no paywalled features</td></tr>
+<tr><td><b>Faraday</b></td><td>VM + offensive/pentest</td><td>GPL-3 Community (capped), self-host; paid Pro/Corp</td><td>80+ plugins, agents for remote scanning</td><td>Pentest workflow, remote scanning agents; SSO/ticketing/analytics gated to paid</td></tr>
+<tr><td><b>ThreadFix</b></td><td>Hybrid SAST/DAST correlation</td><td>MPL-1.1 legacy; commercial <b>discontinued 2025</b></td><td>Many scanners, bi-directional trackers</td><td>Historical: CWE-based dedup, virtual patching / WAF rule generation (now legacy)</td></tr>
+<tr><td><b>ArcherySec</b></td><td>Scanner orchestration</td><td>GPL-3, self-host; low activity</td><td>Runs ZAP/OpenVAS/Nikto/NMAP itself</td><td>Runs its own scans rather than importing; Jira; basic triage</td></tr>
+<tr><td><b>VulnWhisperer</b></td><td>Scan aggregation to ELK</td><td>OSS, self-host</td><td>Nessus/Tenable.io/Qualys/OpenVAS/Nexpose</td><td>Pulls scans into Elastic/Kibana; no triage UI of its own</td></tr>
+
+<tr class="grp"><td colspan="5">Commercial risk-based VM / exposure management</td></tr>
+<tr><td><b>Nucleus Security</b></td><td>RBVM / exposure mgmt</td><td>SaaS (FedRAMP Mod); quote pricing</td><td>200+ connectors, live pull</td><td>Customizable "beyond CVSS" score, bi-directional Jira/SNOW, deep RBAC, POA&amp;M</td></tr>
+<tr><td><b>Vulcan Cyber</b> (Tenable)</td><td>RBVM / exposure mgmt</td><td>SaaS; folded into Tenable One</td><td>80&ndash;100+ connectors</td><td>Remediation Campaigns, Automation Playbooks, customizable risk; now part of Tenable One</td></tr>
+<tr><td><b>Kenna / Cisco VM</b></td><td>RBVM (category originator)</td><td>SaaS; <b>EoL Jun 2026</b></td><td>~15&ndash;20+ scanner/intel</td><td>Cisco Security Risk Score, origin of EPSS, 20+ threat feeds, ML exploit prediction</td></tr>
+<tr><td><b>Brinqa</b></td><td>Unified exposure mgmt</td><td>SaaS (+ agent gateway); quote pricing</td><td>260+ connectors</td><td>Cyber Risk Graph, BQL API, EPSS/KEV/exploit-maturity, BrinqaIQ + BYO-AI</td></tr>
+<tr><td><b>Seemplicity</b></td><td>Remediation operations</td><td>SaaS; quote pricing</td><td>"100s" of tools</td><td>Ownership routing, bi-directional Jira/SNOW/Slack, SLA accountability, agentic "Seema"</td></tr>
+<tr><td><b>Phoenix Security</b></td><td>ASPM / ASOC</td><td>SaaS; quote pricing</td><td>40+ documented / "320+ sources"</td><td>CVSS+EPSS+KEV+ransomware scoring, ownership graph, campaigns w/ SLAs, AI SAST</td></tr>
+<tr><td><b>Avalor</b> (Zscaler UVM)</td><td>Data-fabric RBVM</td><td>SaaS; folded into Zscaler</td><td>150+ connectors + AnySource/webhooks</td><td>Security data fabric, entity dedup, user-tunable proprietary score, two-way ticketing</td></tr>
+<tr><td><b>Balbix</b> (SAFE)</td><td>Risk quantification + VM</td><td>SaaS; acquired by SAFE 2025</td><td>100+ tools</td><td>AI-native, cyber risk quantification into financial-loss terms</td></tr>
+
+<tr class="grp"><td colspan="5">ASPM / CNAPP (code-to-cloud)</td></tr>
+<tr><td><b>ArmorCode</b></td><td>ASPM aggregator</td><td>SaaS; quote pricing</td><td>350&ndash;375+ integrations</td><td>Context Risk Graph, "Anya" agentic AI, CVSS/EPSS/KEV+reachability, certified SNOW VR app</td></tr>
+<tr><td><b>Cycode</b></td><td>ASPM + native scanners</td><td>SaaS or self-host; quote</td><td>100+ via ConnectorX</td><td>Risk/Context Intelligence Graph, native SAST/SCA/secrets, pipeline blocking, "Maestro" AI</td></tr>
+<tr><td><b>Apiiro</b></td><td>ASPM (code-to-runtime)</td><td>SaaS; quote pricing</td><td>100+ third-party</td><td>Application Risk Graph + Deep Code Analysis, PR material-change detection</td></tr>
+<tr><td><b>OX Security</b></td><td>Active ASPM</td><td>SaaS; quote pricing</td><td>Native + broad ingestion</td><td>Pipeline Bill of Materials, no-code workflows, real-time merge-blocking, KEV/EPSS/reachability</td></tr>
+<tr><td><b>Invicti ASPM</b></td><td>ASPM + DAST</td><td>SaaS; quote pricing</td><td>110+ integrations</td><td>Proof-based DAST validation (near-zero false positives), ASM, CI/CD gating</td></tr>
+<tr><td><b>Snyk</b></td><td>Developer-first AppSec</td><td>SaaS; public pricing (Free/$25 dev)</td><td>Own suite + SCM/CI/IDE</td><td>Function-level reachability, 12-factor Priority Score (CVSS+EPSS), AI auto-fix PRs</td></tr>
+<tr><td><b>Legit / Arnica / Jit</b></td><td>ASPM (dev-native / agentic)</td><td>SaaS; quote (Snyk-style)</td><td>30+&ndash;varies</td><td>Software-factory / pipelineless / agentic-AI remediation flavors of ASPM</td></tr>
+<tr><td><b>Dazz</b> (Wiz)</td><td>Remediation + CNAPP</td><td>SaaS; part of Wiz</td><td>Broad; root-cause aggregation</td><td>Patented root-cause correlation (up to 99% noise cut), code-to-cloud to exact commit/owner</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Feature matrix &mdash; the console vs the market</h2>
+<p>Rows are the capabilities that define this category. For each: how common it is across the products above, where this console stands today, and whether we can close the gap inside the browser or whether it crosses one of the six backend boundaries (numbered <span class="mono">B1</span>&ndash;<span class="mono">B6</span>, explained below).</p>
+
+<div class="tblwrap">
+<table>
+<thead><tr><th style="min-width:190px">Capability</th><th>Market norm</th><th>Our console today</th><th>Browser-only?</th><th>Boundary</th></tr></thead>
+<tbody>
+
+<tr class="grp"><td colspan="5">Ingestion &amp; correlation</td></tr>
+<tr><td class="feat">Import scanner exports (files)</td><td>Universal (import-first for OSS)</td><td><span class="pill p-have">Have</span> client-side parse of Tenable + sample Qualys/Rapid7/CrowdStrike/Wiz</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">Live API pull from scanners/vendors</td><td>Universal in commercial (150&ndash;375 connectors)</td><td><span class="pill p-backend">Needs backend</span> deep-link + sample only today</td><td>No</td><td><span class="b1">B1</span></td></tr>
+<tr><td class="feat">Deduplicate &amp; correlate across tools</td><td>Universal; AI-graph in leaders</td><td><span class="pill p-have">Have</span> Scanner Coverage dedups by CVE+host, cross-vendor matrix, blind spots</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">Scheduled / continuous ingestion</td><td>Universal in commercial</td><td><span class="pill p-backend">Needs backend</span> (Actions build public datasets, not user scans)</td><td>No</td><td><span class="b2">B2</span></td></tr>
+
+<tr class="grp"><td colspan="5">Prioritization</td></tr>
+<tr><td class="feat">Multi-signal risk scoring</td><td>CVSS + EPSS + KEV common; few name all</td><td><span class="pill p-have">Have</span> CVSS + EPSS + KEV + LEV + SSVC + VPR composite (a strength vs the field)</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">User-tunable risk weighting</td><td>Nucleus, Vulcan, Avalor sell "not a black box"</td><td><span class="pill p-have">Have</span> per-signal weight sliders in Settings + a transparent per-finding breakdown</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">Threat / exploit intelligence</td><td>KEV/EPSS/ransomware standard</td><td><span class="pill p-have">Have</span> KEV, EPSS, LEV, exploited, ransomware, EOL; ThreatWake-style feed planned</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">Asset inventory + criticality / business context</td><td>Universal; graph-based in leaders</td><td><span class="pill p-have">Have</span> asset register with per-host criticality tiers that feed the risk score</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">Reachability / runtime context</td><td>ASPM leaders (Snyk, OX, Apiiro)</td><td><span class="pill p-road">Browser roadmap</span> possible with imported topology; limited without runtime data</td><td>Partial</td><td>&mdash;</td></tr>
+
+<tr class="grp"><td colspan="5">Triage &amp; remediation</td></tr>
+<tr><td class="feat">Findings triage workflow (states, owner, notes, bulk)</td><td>Universal</td><td><span class="pill p-have">Have</span> Findings workbench: states, owner, notes, drawer, recurrence, SLA</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">Remediation campaigns / grouping</td><td>Vulcan, Phoenix, leaders</td><td><span class="pill p-have">Have</span> Campaign Manager: 6 views, bulk actions (ahead of most OSS)</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">Root-cause / fix-first grouping</td><td>Rapid7, Dazz (root-cause), Legit chokepoints</td><td><span class="pill p-have">Have</span> Remediations view: one fix, N findings across M assets, ranked by risk removed</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">SLA tracking &amp; breach</td><td>Universal</td><td><span class="pill p-have">Have</span> SLA due dates + configurable thresholds</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">Remediation guidance / fix content</td><td>Growing (AI fix PRs in leaders)</td><td><span class="pill p-have">Have</span> PowerShell remediation playbooks; on-device Ask AI</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">Deep-link to ticketing (pre-filled)</td><td>Common baseline</td><td><span class="pill p-have">Have</span> Jira / ServiceNow deep links today</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">Two-way ticket create + status sync</td><td>Universal in commercial</td><td><span class="pill p-backend">Needs backend</span> connector holds the token, syncs status</td><td>No</td><td><span class="b4">B4</span></td></tr>
+
+<tr class="grp"><td colspan="5">Reporting &amp; collaboration</td></tr>
+<tr><td class="feat">Dashboards &amp; executive reporting</td><td>Universal</td><td><span class="pill p-have">Have</span> multiple dashboards, Morning Report, cross-vendor coverage</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">Export (CSV/XLSX/PDF/JSON/image)</td><td>Common</td><td><span class="pill p-have">Have</span> broad export incl. clipboard + image</td><td>Yes</td><td>&mdash;</td></tr>
+<tr><td class="feat">Notifications (email / Slack / Teams)</td><td>Common</td><td><span class="pill p-backend">Needs backend</span> something must send server-side</td><td>No</td><td><span class="b6">B6</span></td></tr>
+<tr><td class="feat">Inbound webhooks / CI-CD gating</td><td>ASPM leaders</td><td><span class="pill p-backend">Needs backend</span> a URL must be listening</td><td>No</td><td><span class="b5">B5</span></td></tr>
+
+<tr class="grp"><td colspan="5">Platform</td></tr>
+<tr><td class="feat">Multi-user, RBAC, SSO, multi-tenant</td><td>Universal in commercial; RBAC in OSS</td><td><span class="pill p-backend">Needs backend</span> single-user local today</td><td>No</td><td><span class="b3">B3</span></td></tr>
+<tr><td class="feat">Served REST API for automation</td><td>Universal</td><td><span class="pill p-backend">Needs backend</span> (console consumes public CVE APIs, serves none)</td><td>No</td><td><span class="b3">B3</span></td></tr>
+<tr><td class="feat">Local-first, zero-install, data never leaves browser</td><td>None of them</td><td><span class="pill p-have">Have</span> unique: static site, IndexedDB, no account</td><td>Yes</td><td>&mdash;</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>The six backend boundaries</h2>
+<p>Everything flagged <span class="pill p-backend">Needs backend</span> above crosses one of these six lines. The important point: they all collapse to the <b>same</b> small self-contained connector already on the roadmap. One backend, added once, unlocks all six.</p>
+<div class="tblwrap">
+<table>
+<thead><tr><th style="width:70px">Boundary</th><th>What forces it server-side</th><th>Features it unlocks</th></tr></thead>
+<tbody>
+<tr><td class="b1">B1</td><td>Live vendor API calls: browsers block the cross-origin request, and a token in page code would be exposed</td><td>Live Tenable/Qualys/Rapid7/CrowdStrike/Wiz pulls; the full connector catalog</td></tr>
+<tr><td class="b2">B2</td><td>Scheduled work runs when no user (and no open tab) is present</td><td>Continuous ingestion, nightly enrichment, drift detection</td></tr>
+<tr><td class="b3">B3</td><td>Shared state across people needs a shared database and identity</td><td>Multi-user, RBAC, SSO, multi-tenant, a served REST API</td></tr>
+<tr><td class="b4">B4</td><td>Writing back to Jira/ServiceNow and reading status needs a credential holder</td><td>Two-way ticket sync, live ticket status roll-up per campaign</td></tr>
+<tr><td class="b5">B5</td><td>Receiving webhooks / gating a pipeline needs a URL that is always listening</td><td>CI/CD break-the-build, inbound event ingestion</td></tr>
+<tr><td class="b6">B6</td><td>Sending mail or chat messages is a server action, not a page action</td><td>Email / Slack / Teams notifications and digests</td></tr>
+</tbody>
+</table>
+</div>
+<div class="callout"><b>The connector is one small thing, not six.</b> A single self-contained backend (the PocketBase-style option already scoped) holds the tokens, makes outbound calls, caches to a local database, listens for webhooks, and sends notifications. It stays on your machine or network, opt-in and local-first, so the console keeps working on its own and lights up the six boundaries only when you connect it.</div>
+
+<h2>Where we can still win inside the browser</h2>
+<div class="two">
+<div class="card">
+<h3>Shipped since this analysis</h3>
+<ul class="tight">
+<li><b>Full asset inventory + criticality.</b> Done: an asset register with per-host criticality tiers that feed the risk score.</li>
+<li><b>Configurable risk weighting.</b> Done: per-signal weight sliders and a transparent per-finding breakdown, the "not a black box" scoring the commercial tools sell.</li>
+<li><b>Root-cause grouping.</b> Done: the Remediations view groups findings by shared fix (one patch clears N findings across M assets), the Rapid7 / Dazz idea.</li>
+</ul>
+<h3>Still open, fully in-browser (no backend)</h3>
+<ul class="tight">
+<li><b>More import parsers.</b> The OSS leaders win on breadth (DefectDojo 200+, SecObserve SARIF/CycloneDX). Every additional file-format parser is pure client-side work and directly narrows the biggest gap.</li>
+<li><b>License / SBOM view.</b> SecObserve pairs vulns with license management; a CycloneDX/SPDX import view is browser-feasible.</li>
+<li><b>Theme presets + custom colors.</b> User-selectable palettes and custom accent colors in Settings.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Our structural advantages</h3>
+<ul class="tight">
+<li><b>Zero install, zero account, zero egress.</b> No competitor offers a genuinely local-first, open-in-a-browser experience. Data never leaves the machine.</li>
+<li><b>Richest risk-model transparency.</b> Showing CVSS + EPSS + KEV + LEV + SSVC + VPR side by side, and where they disagree, is more transparent than most proprietary single-score tools.</li>
+<li><b>Cross-vendor coverage &amp; blind spots.</b> The Scanner Coverage view answers "which tool missed this," a framing the aggregators rarely surface directly.</li>
+<li><b>Cost.</b> Free and inspectable, versus quote-only enterprise pricing across the commercial field.</li>
+<li><b>Clean upgrade path.</b> Every dashboard already returns vendor-API-shaped data, so the connector swap is small and the local-first promise is preserved.</li>
+</ul>
+</div>
+</div>
+
+<div class="foot">
+Vulnerability Management Console &mdash; competitive analysis. Research compiled from vendor documentation and public sources; product capabilities and ownership change frequently, so verify specifics against current vendor docs before relying on them. Status marks reflect this console as of the current build.
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vulnerability Management Console — Architecture</title>
+<style>
+  :root{
+    --paper:#faf9f7; --ink:#1c1d1f; --soft:#5c6066; --faint:#6b6f76; --line:#ddd8ce;
+    --accent:#28415d; --surface:#fff; --panel:#f1eee7; --badge-ink:#fff;
+    --crit:#a32d2d; --high:#8a4b1d; --med:#7c5a0b; --ok:#2f6b3f; --info:#2b5378;
+    --serif:Georgia,'Times New Roman',serif; --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#14161a; --ink:#ececea; --soft:#a8aeb6; --faint:#868d96; --line:#2a2e35;
+      --accent:#8fb3dd; --surface:#1a1d23; --panel:#1f232a; --badge-ink:#10131a;
+      --crit:#e24b4a; --high:#d98a30; --med:#e0b23a; --ok:#5cba74; --info:#8fb3dd;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;font-size:15px}
+  .wrap{max-width:1000px;margin:0 auto;padding:32px 20px 80px}
+  header.hd{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:26px}
+  .overline{text-transform:uppercase;letter-spacing:.09em;font-size:12px;font-weight:700;color:var(--accent)}
+  h1{font-family:var(--serif);font-size:34px;line-height:1.15;margin:6px 0 8px}
+  h2{font-family:var(--serif);font-size:23px;margin:38px 0 6px;padding-top:14px;border-top:1px solid var(--line)}
+  h3{font-size:15px;margin:20px 0 6px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);font-weight:700}
+  .lede{color:var(--soft);max-width:800px;font-size:16px}
+  p{max-width:820px}
+  a{color:var(--accent)}
+  code{font-family:var(--mono);font-size:12.5px;background:color-mix(in srgb,var(--accent) 8%,transparent);padding:1px 5px;border-radius:5px}
+  .meta{font-size:12.5px;color:var(--faint);margin-top:10px}
+  .callout{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:14px 16px;margin:18px 0;font-size:14px}
+  .tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:14px 0}
+  table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:560px}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:var(--panel);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--faint)}
+  tbody tr:last-child td{border-bottom:none}
+  td.k{font-weight:600;white-space:nowrap}
+  ul.tight{margin:6px 0;padding-left:20px}
+  ul.tight li{margin:4px 0;max-width:820px}
+  .diagram{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;margin:16px 0;overflow-x:auto}
+  pre.ascii{font-family:var(--mono);font-size:12px;line-height:1.4;color:var(--ink);margin:0;white-space:pre}
+  .pill{display:inline-block;font-size:11px;font-weight:700;border-radius:999px;padding:2px 9px;border:1px solid color-mix(in srgb,var(--ok) 45%,transparent);color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,transparent)}
+  .pill.road{color:var(--info);border-color:color-mix(in srgb,var(--info) 45%,transparent);background:color-mix(in srgb,var(--info) 12%,transparent)}
+  .foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hd">
+  <div class="overline">Vulnerability Management Console &middot; Architecture</div>
+  <h1>Architecture &amp; tech stack</h1>
+  <p class="lede">How the console is built: a dependency-light, client-side single-page application that runs entirely in the browser, stores everything locally, and is served as static files from GitHub Pages. This document covers the stack, the module map, the data model, routing, storage, the risk engine, and the planned connector.</p>
+  <div class="meta">Companion to the <a href="feature-comparison.html">feature comparison</a>. Reflects the current build.</div>
+</header>
+
+<h2>Design principles</h2>
+<ul class="tight">
+<li><b>Local-first.</b> Imported findings, scan data, notes, settings, and asset tags live in the browser (IndexedDB and localStorage). Nothing is uploaded.</li>
+<li><b>No build step.</b> Plain ES5-compatible JavaScript, hand-written CSS, and static HTML. Open the folder in any static server and it runs. No bundler, transpiler, or package install.</li>
+<li><b>Dependency-light.</b> A few vendored single-file libraries, each pinned locally; no runtime CDN calls (the strict offline/local posture depends on this).</li>
+<li><b>Opt-in egress.</b> Any behavior that would send data off the machine (for example the live EPSS lookup) is off by default, explained, and toggled in Settings.</li>
+<li><b>Progressive.</b> A service worker precaches the app shell so it works offline and loads instantly on repeat visits.</li>
+</ul>
+
+<h2>Tech stack</h2>
+<div class="tblwrap">
+<table>
+<thead><tr><th>Layer</th><th>Choice</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td class="k">Language</td><td>Vanilla JavaScript (ES5-compatible)</td><td>No framework. Broad browser support; no transpile step.</td></tr>
+<tr><td class="k">UI / rendering</td><td>Direct DOM via template strings</td><td>Views build HTML strings and set <code>innerHTML</code> into <code>#app</code>. No virtual DOM.</td></tr>
+<tr><td class="k">Styling</td><td>Hand-written CSS + CSS custom properties</td><td>Design tokens (<code>--accent</code>, <code>--crit</code>, &hellip;) drive light/dark theming via <code>prefers-color-scheme</code> and a <code>data-theme</code> override.</td></tr>
+<tr><td class="k">Routing</td><td>Hash router (<code>#/route</code>)</td><td>A single <code>route()</code> in <code>index.html</code> dispatches on <code>location.hash</code>; no server routing needed for a static host.</td></tr>
+<tr><td class="k">Persistence</td><td>localStorage + IndexedDB</td><td>Small state in localStorage; larger imported source blobs in IndexedDB via <code>vmstore.js</code>.</td></tr>
+<tr><td class="k">Offline / caching</td><td>Service worker (<code>sw.js</code>)</td><td>Network-first for same-origin app files, cache-first for vendored libraries and sample data.</td></tr>
+<tr><td class="k">Versioning</td><td>Single-source <code>version.js</code></td><td>One <code>APP_VERSION</code> string feeds the footer and the SW cache name (<code>importScripts</code>).</td></tr>
+<tr><td class="k">CSV / spreadsheet parse</td><td>PapaParse, SheetJS (xlsx)</td><td>Vendored locally. Scan exports are parsed entirely client-side.</td></tr>
+<tr><td class="k">Charts / capture</td><td>Chart.js, html2canvas, gifenc</td><td>Vendored locally; used by the Tenable dashboard and export/report tooling.</td></tr>
+<tr><td class="k">On-device AI</td><td>Transformers.js (Ask AI)</td><td>Runs a small language model in the browser; one-time model download from a public CDN, no API key.</td></tr>
+<tr><td class="k">Data enrichment</td><td>Public CVE APIs + pre-built static datasets</td><td>Live: NVD, FIRST EPSS (opt-in), OSV. Pre-built by scheduled GitHub Actions: CISA KEV, EPSS distribution, NIST LEV, exploited-CVE, EOL.</td></tr>
+<tr><td class="k">Hosting / CI</td><td>GitHub Pages + GitHub Actions</td><td>Static hosting; Actions refresh the committed datasets on a schedule and deploy.</td></tr>
+<tr><td class="k">Connector <span class="pill road">roadmap</span></td><td>Single self-contained backend (PocketBase-style)</td><td>Not built. Holds vendor tokens, proxies API calls server-side, caches to a local database. Unlocks live pulls, two-way ticketing, multi-user, notifications.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Runtime shape</h2>
+<div class="diagram">
+<pre class="ascii">
+  Browser (one origin, no account)
+  +-------------------------------------------------------------+
+  |  index.html  — app shell, hash router, command palette      |
+  |     |                                                       |
+  |     |  dispatch #/route                                     |
+  |     v                                                       |
+  |  View modules                                               |
+  |   - vmops.js     findings, campaigns, assets, remediations, |
+  |                  settings, risk engine, drawer              |
+  |   - acd.js       agent coverage      - tvd.js  Tenable      |
+  |   - wiz/qualys/rapid7/crowdstrike.js  scanner dashboards    |
+  |   - scan_unify.js + coverage.js       cross-vendor coverage |
+  |   - pscan.js     prompt/NASL tools                          |
+  |     |                                                       |
+  |     v                                                       |
+  |  vmstore.js  ->  IndexedDB (imported source blobs)          |
+  |  localStorage -> findings, overrides, assets, config, views |
+  |  sw.js        -> offline app-shell cache                    |
+  +-------------------------------------------------------------+
+        |  read-only, opt-in                     |  roadmap
+        v                                        v
+  Public CVE data                          Connector (server)
+  NVD / EPSS / OSV / KEV / LEV             tokens + proxy + cache
+                                           -> Tenable/Qualys/Rapid7/
+                                              CrowdStrike/Wiz/Jira/SNOW
+</pre>
+</div>
+
+<h2>Module map</h2>
+<div class="tblwrap">
+<table>
+<thead><tr><th>File</th><th>Responsibility</th></tr></thead>
+<tbody>
+<tr><td class="k">index.html</td><td>App shell, top nav + dropdowns, hash <code>route()</code> dispatcher, command palette (Cmd/Ctrl-K), theme bootstrap, CVE-explorer views (search, KEV, stats, EOL).</td></tr>
+<tr><td class="k">vmops.js</td><td>The operational core: findings workbench, triage drawer, Campaign Manager, Asset Inventory, Remediations, Settings, the risk engine, and intel loading. Exposes <code>window.VMOPS</code>.</td></tr>
+<tr><td class="k">vmstore.js</td><td>Thin IndexedDB wrapper (<code>window.VMStore</code>) for cached imported source files, shared across dashboards.</td></tr>
+<tr><td class="k">acd.js / tvd.js</td><td>Agent Coverage and Tenable dashboards (native same-origin views, not iframes).</td></tr>
+<tr><td class="k">wiz.js / qualys.js / rapid7.js / crowdstrike.js</td><td>Per-vendor scanner dashboards over API-shaped sample data (<code>scanner.css</code> shared).</td></tr>
+<tr><td class="k">scan_unify.js / coverage.js</td><td>Normalizer (<code>window.VMSCAN</code>) and the cross-vendor Scanner Coverage view.</td></tr>
+<tr><td class="k">pscan.js</td><td>Prompt scanner / NASL tooling.</td></tr>
+<tr><td class="k">sw.js / version.js</td><td>Service worker and the single-source version string.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Data model</h2>
+<p>Everything keys off two records, joined by <code>keyOf(f) = CVE + "|" + normalizedHost</code>.</p>
+<ul class="tight">
+<li><b>Finding</b> <code>{ cve, host, severity, cvss, vpr, plugin, name, desc, repo, source, firstSeen, lastSeen, state }</code> — one row per vulnerability-on-host, from an import or a sample source. Stored in <code>vmops-findings</code>.</li>
+<li><b>Override</b> <code>{ status, owner, notes, repo, updates[], ticket{}, updated }</code> — the user's triage layer, kept separate so re-imports never clobber it. Stored in <code>vmops-overrides</code>.</li>
+<li><b>Asset</b> <code>{ crit, owner, tags[] }</code> keyed by normalized host — business context that feeds the risk score. Stored in <code>vmops-assets</code>.</li>
+<li><b>Campaign</b> <code>{ id, name, scope, owner, priority, dueDate, status, history[] }</code> — remediation campaigns. Stored in <code>vmops-campaigns</code>.</li>
+<li><b>Config</b> — branding, SLA windows, risk weights, ticketing endpoints, nav visibility. Stored in <code>vmops-config</code>. Secrets (API keys) are stored but never exported.</li>
+</ul>
+
+<h2>Risk engine</h2>
+<p>The score is a transparent, user-tunable weighted blend rather than a black box. Each signal contributes <code>raw(0&ndash;1) &times; budget &times; weight</code>, summed, plus operational pressure (SLA and age).</p>
+<div class="tblwrap">
+<table>
+<thead><tr><th>Signal</th><th>Source</th><th>Default budget</th></tr></thead>
+<tbody>
+<tr><td class="k">CVSS / severity</td><td>Finding CVSS, or severity fallback</td><td>300</td></tr>
+<tr><td class="k">EPSS</td><td>Bundled EPSS feed (opt-in live lookup)</td><td>300</td></tr>
+<tr><td class="k">Exploitation (KEV)</td><td>CISA KEV / ransomware / public exploit</td><td>600</td></tr>
+<tr><td class="k">LEV</td><td>NIST LEV local dataset</td><td>300</td></tr>
+<tr><td class="k">SSVC</td><td>Derived Act / Attend / Track</td><td>300</td></tr>
+<tr><td class="k">Asset criticality</td><td>Asset Inventory tier</td><td>300</td></tr>
+</tbody>
+</table>
+</div>
+<p>Weights (0&ndash;2, default 1) are set in Settings; the per-finding drawer shows each signal's exact point contribution. The Remediations view sums these scores per fix to rank "risk removed."</p>
+
+<h2>Deployment &amp; the browser boundary</h2>
+<p>The app deploys as static files to GitHub Pages. Scheduled GitHub Actions rebuild the committed enrichment datasets (KEV, EPSS distribution, LEV, exploited, EOL) so the static data never goes stale. Because it is a pure browser app, six capabilities require the planned connector: live vendor-API pulls, scheduled ingestion, multi-user/RBAC, two-way ticketing, inbound webhooks/CI gating, and notifications. All six collapse to one small self-contained backend that stays on the user's machine or network, keeping the local-first, opt-in posture intact. See the <a href="feature-comparison.html">feature comparison</a> for the full boundary analysis.</p>
+
+<div class="callout"><b>Security &amp; privacy posture.</b> No account, no telemetry, no third-party hosting of user data. Public CVE lookups are read-only. API keys entered in Settings are stored in this browser only, never uploaded and never included in a settings export. Live EPSS lookup is the only optional egress and is off by default.</div>
+
+<div class="foot">
+Vulnerability Management Console &mdash; architecture overview. Reflects the current build; verify specifics against the source before relying on them.
+</div>
+</div>
+</body>
+</html>
