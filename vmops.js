@@ -1203,7 +1203,53 @@
     if (!c.snowBase) { needSettings('ServiceNow base URL'); return null; }
     return c.snowBase.replace(/\/$/, '') + '/incident.do?sys_id=-1&sysparm_query=' + encodeURIComponent('short_description=' + summary + '^description=' + body);
   }
-  function openTicket(kind, f) { var u = ticketUrl(kind, ticketSummary(f), ticketBody(f)); if (u) window.open(u, '_blank', 'noopener'); }
+  function openTicket(kind, f) { ticketModal(kind, ticketSummary(f), ticketBody(f)); }
+  // Practical URL-length bands. Most servers/proxies cap the request URI around 8 KB
+  // (Apache LimitRequestLine 8190, Tomcat maxHttpHeaderSize 8192); under ~2 KB is universally safe.
+  var URL_SAFE = 2000, URL_MAX = 8000;
+  // Pre-edit modal: pre-fills summary + description, lets the user tweak them and watch the deep-link
+  // length before it ever reaches Jira/ServiceNow (where the native create form is also fully editable).
+  function ticketModal(kind, summary, body) {
+    var c = STATE.cfg, isJira = kind === 'jira';
+    if (isJira && !c.jiraBase) return needSettings('Jira base URL');
+    if (!isJira && !c.snowBase) return needSettings('ServiceNow base URL');
+    var prefill = isJira ? (c.jiraPid && c.jiraType) : true;   // Jira needs project + type IDs to pre-fill
+    function urlFor(s, b) {
+      if (isJira) {
+        if (!prefill) return c.jiraBase.replace(/\/$/, '') + '/secure/CreateIssue!default.jspa';
+        return c.jiraBase.replace(/\/$/, '') + '/secure/CreateIssueDetails!init.jspa?pid=' + encodeURIComponent(c.jiraPid) + '&issuetype=' + encodeURIComponent(c.jiraType) + '&summary=' + encodeURIComponent(s) + '&description=' + encodeURIComponent(b);
+      }
+      return c.snowBase.replace(/\/$/, '') + '/incident.do?sys_id=-1&sysparm_query=' + encodeURIComponent('short_description=' + s + '^description=' + b);
+    }
+    var ov = document.getElementById('ctModal') || (function () { var d = document.createElement('div'); d.id = 'ctModal'; d.className = 'ct-modal vmops'; document.body.appendChild(d); return d; })();
+    var target = isJira ? 'Jira' : 'ServiceNow';
+    ov.innerHTML = '<div class="ct-mcard"><button class="x" id="tkX">×</button>' +
+      '<h3 style="margin:0 0 3px">New ' + target + (isJira ? ' issue' : ' incident') + '</h3>' +
+      '<div class="muted" style="font-size:12.5px;margin-bottom:14px">Edit the pre-filled fields, then open the pre-populated ' + target + ' create form. You can still change the ' + (isJira ? 'issue type (Story/Epic), assignee, and any field' : 'fields') + ' in ' + target + ' before you create.</div>' +
+      (isJira && !prefill ? '<div class="muted" style="font-size:12px;margin-bottom:12px;color:var(--high)">Set the Jira project + issue-type IDs in <a href="#/settings">Settings</a> to carry these fields into the create form. Without them, ' + target + ' opens a blank create dialog (use Copy description to paste).</div>' : '') +
+      '<div class="field"><label>Summary</label><input type="text" id="tkSum" value="' + esc(summary) + '" style="max-width:none"></div>' +
+      '<div class="field"><label>Description</label><textarea id="tkBody" style="min-height:150px;font-family:var(--mono);font-size:12.5px">' + esc(body) + '</textarea></div>' +
+      '<div id="tkLen" class="tklen"></div>' +
+      '<div class="toolbar" style="justify-content:flex-end;margin-top:14px"><button class="btn sm" id="tkCopy">Copy description</button><button class="btn sm" id="tkCancel">Cancel</button><button class="btn primary sm" id="tkGo">Open in ' + target + ' ↗</button></div></div>';
+    ov.classList.add('on');
+    var sumEl = document.getElementById('tkSum'), bodyEl = document.getElementById('tkBody'), lenEl = document.getElementById('tkLen');
+    function refresh() {
+      var url = urlFor(sumEl.value, bodyEl.value), n = url.length;
+      var band = n <= URL_SAFE ? 'ok' : n <= URL_MAX ? 'warn' : 'bad';
+      var hint = !prefill ? 'Fields are not carried without project + issue-type IDs.'
+        : band === 'ok' ? 'Well within safe URL length.'
+        : band === 'warn' ? 'Long link. Most servers accept up to ~8 KB, but if the create page errors, shorten the description and paste the rest after.'
+        : 'Too long. Many servers reject URLs over ~8 KB — shorten the description (use Copy description to move detail into ' + target + ' after creating).';
+      lenEl.className = 'tklen ' + band;
+      lenEl.innerHTML = '<span class="tklen-n">Link length: ' + n.toLocaleString() + ' chars</span> <span class="tklen-h">' + hint + '</span>';
+    }
+    sumEl.addEventListener('input', refresh); bodyEl.addEventListener('input', refresh); refresh();
+    var close = function () { ov.classList.remove('on'); };
+    document.getElementById('tkX').onclick = document.getElementById('tkCancel').onclick = close;
+    ov.onclick = function (e) { if (e.target === ov) close(); };
+    document.getElementById('tkCopy').onclick = function () { copyText(bodyEl.value); toast('Description copied'); };
+    document.getElementById('tkGo').onclick = function () { window.open(urlFor(sumEl.value, bodyEl.value), '_blank', 'noopener'); close(); };
+  }
   // One ticket covering a whole selection/group (deep-link → a single ticket listing every host).
   function groupSummary(fs) {
     var cves = {}, hosts = {}; fs.forEach(function (f) { cves[f.cve] = 1; hosts[f.host] = 1; });
@@ -1215,7 +1261,7 @@
     var lines = fs.map(function (f) { return '- ' + f.cve + ' | ' + f.host + ' | ' + f.severity + (priorityOf(f) ? ' | ' + priorityOf(f) : '') + (cveIntel(f.cve).kev ? ' | KEV' : ''); });
     return 'Remediation ticket covering ' + fs.length + ' finding(s):\n' + lines.join('\n') + '\n\nGenerated by ' + (window.VM_BRAND || 'Vulnerability Management Console') + '.';
   }
-  function ticketGroup(kind, fs) { if (!fs.length) return; var u = ticketUrl(kind, groupSummary(fs), groupBody(fs)); if (u) window.open(u, '_blank', 'noopener'); }
+  function ticketGroup(kind, fs) { if (!fs.length) return; ticketModal(kind, groupSummary(fs), groupBody(fs)); }
   function searchTicket(kind, f) {
     var c = STATE.cfg;
     if (kind === 'jira') { if (!c.jiraBase) return needSettings('Jira base URL'); window.open(c.jiraBase.replace(/\/$/, '') + '/issues/?jql=' + encodeURIComponent('text ~ "' + f.cve + '"'), '_blank', 'noopener'); }

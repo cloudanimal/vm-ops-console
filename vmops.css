@@ -412,3 +412,15 @@
 .vmops .rbk-bar { height:8px; border-radius:6px; background:color-mix(in srgb,var(--accent) 10%,transparent); overflow:hidden; }
 .vmops .rbk-fill { display:block; height:100%; background:var(--accent); border-radius:6px; }
 .vmops .rbk-pts { text-align:right; font-variant-numeric:tabular-nums; color:var(--soft); }
+
+/* Ticket pre-edit modal — URL length meter */
+.vmops.ct-modal .field { margin:0 0 12px; }
+.vmops.ct-modal .field label { display:block; font-size:12px; font-weight:600; color:var(--soft); margin-bottom:4px; }
+.vmops.ct-modal .field input, .vmops.ct-modal .field textarea { width:100%; box-sizing:border-box; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:8px 10px; font-family:inherit; font-size:13.5px; }
+.vmops.ct-modal .field input:focus, .vmops.ct-modal .field textarea:focus { outline:none; border-color:var(--accent); }
+.vmops .tklen { font-size:12px; border-radius:8px; padding:8px 10px; border:1px solid var(--line); background:var(--panel); }
+.vmops .tklen .tklen-n { font-weight:700; font-variant-numeric:tabular-nums; }
+.vmops .tklen .tklen-h { color:var(--soft); }
+.vmops .tklen.ok { border-color:color-mix(in srgb,var(--ok) 45%,transparent); } .vmops .tklen.ok .tklen-n { color:var(--ok); }
+.vmops .tklen.warn { border-color:color-mix(in srgb,var(--high) 45%,transparent); } .vmops .tklen.warn .tklen-n { color:var(--high); }
+.vmops .tklen.bad { border-color:color-mix(in srgb,var(--crit) 50%,transparent); } .vmops .tklen.bad .tklen-n { color:var(--crit); }
