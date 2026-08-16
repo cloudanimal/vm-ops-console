@@ -1787,7 +1787,18 @@
     { re: /^#\/faq$/i, hint: 'FAQ / explainers (LEV cadence, data privacy, model disagreement)' },
     { re: /^#\/nasl$/i, hint: 'NASL viewer — read your own Nessus plugin source in-browser' },
     { re: /^#\/prompt-scanner$/i, hint: 'Prompt Scanner — scan agent instructions/prompts for injection & malicious content' },
-    { re: /^#\/eol(\/[^/?]+|\?tag=[^&]+)?$/i, hint: 'End of Life — software lifecycle / end-of-support dates, browsable by category or tag (optionally /product)' }
+    { re: /^#\/eol(\/[^/?]+|\?tag=[^&]+)?$/i, hint: 'End of Life — software lifecycle / end-of-support dates, browsable by category or tag (optionally /product)' },
+    { re: /^#\/campaigns$/i, hint: 'Campaign Manager — remediation campaigns portfolio' },
+    { re: /^#\/assets$/i, hint: 'Asset Inventory — hosts + business criticality that feeds the risk score' },
+    { re: /^#\/remediations$/i, hint: 'Remediations — fix-first, root-cause grouping (one patch, N findings)' },
+    { re: /^#\/sbom$/i, hint: 'Licenses & SBOM — CycloneDX component inventory + license risk' },
+    { re: /^#\/coverage$/i, hint: 'Scanner Coverage — cross-vendor CVE overlap + host-scanner blind spots' },
+    { re: /^#\/agent-coverage$/i, hint: 'Agent Coverage — reconcile scanner/EDR agent presence vs Active Directory' },
+    { re: /^#\/tvd$/i, hint: 'Tenable vulnerability dashboard' },
+    { re: /^#\/qualys$/i, hint: 'Qualys VMDR dashboard (severity 1-5, TruRisk)' },
+    { re: /^#\/rapid7$/i, hint: 'Rapid7 InsightVM dashboard (Real Risk Score)' },
+    { re: /^#\/crowdstrike$/i, hint: 'CrowdStrike Falcon Spotlight dashboard (ExPRT.AI)' },
+    { re: /^#\/wiz$/i, hint: 'Wiz CNAPP dashboard (cloud posture + attack paths)' }
   ];
   function askValidRoute(r) { return typeof r === 'string' && ASK_ROUTES.some(function (x) { return x.re.test(r); }); }
 
@@ -1861,8 +1872,21 @@
     { label: 'AI Prompt Scanner', route: '#/prompt-scanner', phrases: ['scan a prompt for prompt injection', 'check an agent skill or MCP config for malicious instructions', 'scan for prompt injection', 'is this prompt safe', 'detect malicious instructions in agent files'] },
     { label: 'End of Life', phrases: ['is this software end of life', 'end of support date for windows server', 'when does ubuntu reach end of life', 'unsupported or end-of-life software versions', 'software lifecycle and EOL dates', 'is my operating system still supported', 'products past end of support', 'end of life software'],
       build: function (q, s) { var kw = askKeyword(q).toLowerCase().replace(/\b(end|life|eol|support|supported|maintenance|maintained|software|lifecycle|version|versions|reach\w*|still|unsupported|out|when|does|do|did|will|going|go|no|longer|date|dates|os|operating|system|systems)\b/gi, ' ').replace(/\s+/g, ' ').trim(); return kw ? '#/eol/' + encodeURIComponent(kw.replace(/\s+/g, '-')) : '#/eol'; } },
-    { label: 'Import findings', route: '#/import', phrases: ['import scan findings', 'upload my scan results', 'load a Tenable export', 'import vulnerabilities'] },
+    { label: 'Import findings', route: '#/import', phrases: ['import scan findings', 'upload my scan results', 'load a Tenable export', 'import vulnerabilities', 'import a SARIF file', 'import a CycloneDX SBOM', 'upload code scanning results'] },
     { label: 'Settings', route: '#/settings', phrases: ['SLA settings', 'ticketing configuration', 'configure SLA windows', 'jira or servicenow settings'] },
+    { label: 'Risk weighting', route: '#/settings', phrases: ['change how risk is scored', 'tune the risk score weights', 'adjust risk weighting', 'how is the risk score calculated', 'reweight cvss epss kev lev ssvc', 'make the risk score not a black box'] },
+    { label: 'Campaigns', route: '#/campaigns', phrases: ['remediation campaigns', 'my campaigns', 'campaign manager', 'track remediation campaigns', 'campaign progress and coverage'] },
+    { label: 'Unmanaged findings', route: '#/findings?unmanaged=1', phrases: ['findings not in any campaign', 'unmanaged open findings', 'what is not covered by a campaign', 'open findings with no campaign', 'vulnerabilities nobody is managing'] },
+    { label: 'Asset Inventory', route: '#/assets', phrases: ['asset inventory', 'my hosts and their criticality', 'set asset business criticality', 'business critical assets', 'which assets do I have', 'tag an asset as critical'] },
+    { label: 'Remediations', route: '#/remediations', phrases: ['what should I fix first', 'fix-first remediations', 'one patch that clears the most findings', 'group findings by shared fix', 'top remediations by risk removed', 'root-cause remediation'] },
+    { label: 'Licenses & SBOM', route: '#/sbom', phrases: ['software bill of materials', 'sbom', 'component licenses', 'copyleft or unknown licenses', 'license risk', 'what components am I using', 'open source license compliance'] },
+    { label: 'Scanner Coverage', route: '#/coverage', phrases: ['scanner coverage', 'which tools detected this cve', 'cross-vendor coverage', 'blind spots between my scanners', 'do my scanners agree', 'coverage gaps between tools', 'what did only one tool catch'] },
+    { label: 'Agent Coverage', route: '#/agent-coverage', phrases: ['agent coverage', 'hosts missing a scanner agent', 'reconcile agents against active directory', 'crowdstrike sensor coverage', 'endpoint agent gaps'] },
+    { label: 'Tenable dashboard', route: '#/tvd', phrases: ['tenable dashboard', 'my tenable vulnerabilities', 'tenable vm dashboard'] },
+    { label: 'Qualys dashboard', route: '#/qualys', phrases: ['qualys dashboard', 'qualys vmdr', 'qualys detections and trurisk'] },
+    { label: 'Rapid7 dashboard', route: '#/rapid7', phrases: ['rapid7 dashboard', 'insightvm', 'rapid7 real risk score'] },
+    { label: 'CrowdStrike dashboard', route: '#/crowdstrike', phrases: ['crowdstrike dashboard', 'falcon spotlight vulnerabilities', 'exprt.ai ratings'] },
+    { label: 'Wiz dashboard', route: '#/wiz', phrases: ['wiz dashboard', 'cloud cnapp findings', 'wiz attack paths', 'cloud security posture'] },
     { label: 'About', route: '#/about', phrases: ['how does this work', 'data sources and freshness', 'where does the data come from', 'is my data private'] }
   ];
 
@@ -1893,7 +1917,11 @@
     'critical CVEs published this year',
     'known-exploited Fortinet vulnerabilities',
     'how fast are CVEs exploited after disclosure?',
-    'compare CVE-2021-44228 and CVE-2024-3094'
+    'compare CVE-2021-44228 and CVE-2024-3094',
+    'what should I fix first',
+    'open findings not in any campaign',
+    'which tools have coverage blind spots',
+    'copyleft or unknown component licenses'
   ];
 
   function viewAsk() {
