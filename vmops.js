@@ -1902,7 +1902,8 @@
     setActive(active);
     app.innerHTML = '<header class="view"><div class="overline">' + esc(window.VM_BRAND || 'Vulnerability Manager') + '</div><h1>No findings yet</h1>' +
       '<p class="lede">Import a Tenable / Nessus CSV export, or load the sample data set, to start tracking remediation.</p></header>' +
-      '<div class="toolbar"><button class="btn primary" id="goImport">Import findings</button><button class="btn" id="goSample">Load sample data</button></div>';
+      '<div class="toolbar"><button class="btn primary" id="goImport">Import findings</button><button class="btn" id="goSample">Load sample data</button></div>' +
+      '<p class="muted" style="font-size:13px;margin-top:14px">Tip: press <kbd class="kbdhint" onclick="window.openCommandPalette&&window.openCommandPalette()" title="Open the command palette">⌘K</kbd> / <kbd class="kbdhint" onclick="window.openCommandPalette&&window.openCommandPalette()">Ctrl-K</kbd> to jump to any view or CVE.</p>';
     document.getElementById('goImport').addEventListener('click', function () { location.hash = '#/import'; });
     document.getElementById('goSample').addEventListener('click', function () { var _s = SAMPLE(); mergeFindings(_s); seedSampleOverrides(_s); toast('Loaded sample findings'); goDash(); });
   }
