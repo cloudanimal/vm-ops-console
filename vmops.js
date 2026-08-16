@@ -1331,7 +1331,7 @@
       '<header class="view"><div class="overline">Settings · Data Import</div><h1>Data import</h1>' +
       '<p class="lede">Bring in each data source once, here. Files are parsed in your browser and cached locally (IndexedDB) — nothing is uploaded. Imported sources feed the matching dashboard; scan findings feed the Findings workbench. Re-importing findings merges and preserves your status, owner, and notes.</p></header>' +
       privSlim() +
-      '<div class="toolbar"><a class="btn sm" href="#/settings">← Settings</a><span class="spacer"></span><a class="btn sm" href="sharepoint-test.html" target="_blank" rel="noopener">SharePoint tester ↗</a><button class="btn sm" id="loadSample">Load sample findings</button><button class="btn sm" id="loadMultiScan" title="Also load Qualys, Rapid7, CrowdStrike, and Wiz sample findings so the workbench reflects every source">Load multi-scanner sample</button></div>' +
+      '<div class="toolbar"><a class="btn sm" href="#/settings">← Settings</a><span class="spacer"></span><button class="btn sm" id="loadSample">Load sample findings</button><button class="btn sm" id="loadMultiScan" title="Also load Qualys, Rapid7, CrowdStrike, and Wiz sample findings so the workbench reflects every source">Load multi-scanner sample</button></div>' +
       IMPORT_GROUPS.map(function (g) {
         return '<div class="import-grouprow"><h2 class="import-grouphdr">' + esc(g.title) + '</h2>' +
           (g.open ? '<a class="btn sm import-open" href="' + g.open.route + '">' + esc(g.open.label) + '</a>' : '') +
@@ -1790,9 +1790,6 @@
       '<label style="display:flex;align-items:center;gap:9px;font-size:13.5px;cursor:pointer"><input type="checkbox" id="tourAuto" style="flex:none;width:16px;height:16px"' + (load('vmops-tour-auto', false) ? ' checked' : '') + '> Show the guided tour automatically on first visit</label>' +
       '<div class="muted" style="font-size:12.5px;margin:9px 0 12px">A quick coachmark walkthrough of the workflow — the dashboard strip, findings, campaigns, and reporting. Replay it anytime from the “Take a tour” button on the Dashboard, or with ⌘K / Ctrl-K → “Guided tour”.</div>' +
       '<button class="btn" id="tourStart">Start tour now</button></div>' +
-      '<h2>SharePoint access tester</h2><div class="card">' +
-      '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Diagnostic: paste a SharePoint / OneDrive sharing link and test which method can read the file in-browser — anonymous (blocked) vs. Microsoft Graph (<code>downloadUrl</code>, works after sign-in). Opens in a new tab; your link &amp; token stay there, nothing is uploaded.</div>' +
-      '<a class="btn" href="sharepoint-test.html" target="_blank" rel="noopener">Open SharePoint Access Tester ↗</a></div>' +
       '<h2>Remediation samples</h2><div class="card">' +
       '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Add your own remediation scripts — they appear in the finding drawer and CVE detail under “Remediation”. Saved in <b>this browser only</b> and merged with the built-in samples (yours take priority). Match a <b>specific CVE</b>, or a <b>keyword pattern</b> tested against the finding name/description. Placeholders <code>{CVE}</code> <code>{HOST}</code> <code>{NAME}</code> are substituted. <b>Export</b> gives you a JSON blob to fold into the shipped set.</div>' +
       '<div id="remedList"></div>' +
