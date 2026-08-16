@@ -1802,8 +1802,9 @@
         NAV_SUBS.forEach(function (g) { html += '<div class="navcfg-h">' + esc(g.group) + '</div>' + grid(g.items.map(function (it) { return box(it.k, it.label); })); });
         var home = c.homeRoute || 'ask';
         html += '<div class="navcfg-h">Default landing page</div>' +
-          '<div class="field" style="max-width:340px;margin:0"><label>Open to this view on launch</label><select id="homeRoute">' +
-          HOME_CHOICES.map(function (o) { return '<option value="' + o[0] + '"' + (home === o[0] ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></div>';
+          '<label style="display:flex;align-items:center;gap:8px;font-size:13px;flex-wrap:wrap">Open to this view on launch' +
+          '<select id="homeRoute" style="font-family:var(--sans);font-size:13px;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)">' +
+          HOME_CHOICES.map(function (o) { return '<option value="' + o[0] + '"' + (home === o[0] ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select></label>';
         return html;
       })() + '</div>' +
       '<h2>Data import</h2><div class="card">' +
