@@ -431,3 +431,7 @@
 .vmops .sbom-track { height:12px; border-radius:6px; background:color-mix(in srgb,var(--accent) 8%,transparent); border:1px solid var(--line); overflow:hidden; }
 .vmops .sbom-fill { display:block; height:100%; border-radius:6px; }
 .vmops .sbom-n { text-align:right; font-variant-numeric:tabular-nums; font-weight:600; }
+
+/* Settings — navigation config subheaders */
+.vmops .navcfg-h { font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--accent); margin:14px 0 8px; }
+.vmops .navcfg-h:first-child { margin-top:0; }

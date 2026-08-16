@@ -99,9 +99,23 @@
     { k: 'faq', label: 'FAQ', sel: '.tab[data-route="faq"]' },
     { k: 'about', label: 'About', sel: '.tab[data-route="about"]' }
   ];
+  // Sub-items inside the dropdown menus, individually hideable. Keyed by data-route (unique across the nav).
+  var NAV_SUBS = [
+    { group: 'Dashboards menu', parent: 'dashboards', items: [
+      { k: 'dashboard', label: 'Overview' }, { k: 'assets', label: 'Asset Inventory' }, { k: 'remediations', label: 'Remediations' },
+      { k: 'sbom', label: 'Licenses & SBOM' }, { k: 'agent-coverage', label: 'Agent Coverage' }, { k: 'coverage', label: 'Scanner Coverage' },
+      { k: 'tvd', label: 'Tenable' }, { k: 'qualys', label: 'Qualys' }, { k: 'rapid7', label: 'Rapid7' }, { k: 'crowdstrike', label: 'CrowdStrike' }, { k: 'wiz', label: 'Wiz' }
+    ] },
+    { group: 'Tools menu', parent: 'tools', items: [
+      { k: 'tenable', label: 'Tenable Analyzer' }, { k: 'prompt-scanner', label: 'AI Prompt Scanner' }, { k: 'nasl', label: 'NASL Viewer' },
+      { k: 'search', label: 'CVE Search' }, { k: 'exploited', label: 'Exploited' }, { k: 'stats', label: 'CVE Statistics' },
+      { k: 'browse', label: 'Browse the corpus' }, { k: 'latest', label: 'Latest CVEs' }, { k: 'triage', label: 'Triage' }, { k: 'eol', label: 'End of Life' }
+    ] }
+  ];
   function applyNavHidden() {
     var hidden = STATE.cfg.navHidden || [];
     NAV_ITEMS.forEach(function (it) { var el = document.querySelector('nav.top ' + it.sel); if (el) el.style.display = hidden.indexOf(it.k) > -1 ? 'none' : ''; });
+    NAV_SUBS.forEach(function (g) { g.items.forEach(function (it) { var el = document.querySelector('nav.top .navmenu-list a[data-route="' + it.k + '"]'); if (el) el.style.display = hidden.indexOf(it.k) > -1 ? 'none' : ''; }); });
   }
   function applyBrand() {
     var name = (STATE.cfg.brand || '').trim() || DEFAULT_BRAND;
@@ -1748,8 +1762,15 @@
       '<div class="field"><label>Icon color</label><input type="color" id="brandIconColor" value="' + esc((c.brandIconColor || '').trim() || DEFAULT_ICON_COLOR) + '" style="width:60px;padding:3px;height:38px"></div></div>' +
       '<div class="muted" style="font-size:12.5px">Sets the name in the top nav, the browser tab, and the page icon (favicon; 1 to 3 letters on a colored tile). A multi-word name stacks onto two lines in the nav (the last word drops to the second line). Leave the name blank to use “' + esc(DEFAULT_BRAND) + '”; leave the monogram blank to derive it from the name.</div></div>' +
       '<h2>Navigation</h2><div class="card">' +
-      '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Choose which items appear in the top menu bar. Unchecking hides an item from the nav; you can still reach it by a direct link, and Settings always stays visible.</div>' +
-      '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px 16px">' + NAV_ITEMS.map(function (it) { var vis = (c.navHidden || []).indexOf(it.k) < 0; return '<label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" class="navtoggle" data-nav="' + it.k + '" style="flex:none;width:16px;height:16px"' + (vis ? ' checked' : '') + '> ' + esc(it.label) + '</label>'; }).join('') + '</div></div>' +
+      '<div class="muted" style="font-size:12.5px;margin-bottom:12px">Choose which items appear in the top menu bar and inside each dropdown. Unchecking hides an item from the nav; you can still reach it by a direct link, and Settings always stays visible.</div>' +
+      (function () {
+        var vis = function (k) { return (c.navHidden || []).indexOf(k) < 0; };
+        var box = function (k, label) { return '<label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer"><input type="checkbox" class="navtoggle" data-nav="' + k + '" style="flex:none;width:16px;height:16px"' + (vis(k) ? ' checked' : '') + '> ' + esc(label) + '</label>'; };
+        var grid = function (items) { return '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px 16px">' + items.join('') + '</div>'; };
+        var html = '<div class="navcfg-h">Top-level menu</div>' + grid(NAV_ITEMS.map(function (it) { return box(it.k, it.label); }));
+        NAV_SUBS.forEach(function (g) { html += '<div class="navcfg-h">' + esc(g.group) + '</div>' + grid(g.items.map(function (it) { return box(it.k, it.label); })); });
+        return html;
+      })() + '</div>' +
       '<h2>Data import</h2><div class="card">' +
       '<div class="muted" style="font-size:13px;margin-bottom:12px">Bring in each data source — Active Directory, ManageEngine, Tenable.io, CrowdStrike, and scan findings. Files are parsed and cached in your browser and feed the dashboards.</div>' +
       '<a class="btn primary" href="#/import">Open Data Import →</a></div>' +
