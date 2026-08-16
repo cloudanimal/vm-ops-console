@@ -303,7 +303,9 @@
   // ---------- filtering / sorting ----------
   function visibleFindings() {
     var f = STATE.filt;
+    var _managed = f.unmanaged ? managedKeys() : null;   // built once, not per-row
     var list = STATE.findings.filter(function (x) {
+      if (f.unmanaged) { if (!isOpen(x)) return false; if (_managed[keyOf(x)]) return false; }   // open + in no campaign
       if (f.open && !isOpen(x)) return false;
       if (f.status && statusOf(x) !== f.status) return false;
       if (f.sev && x.severity !== f.sev) return false;
@@ -531,7 +533,7 @@
   }
 
   // ---------- saved + preset views (one-click filter sets) ----------
-  function defaultFilt() { return { q: '', status: '', sev: '', owner: '', repo: '', open: false, overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, noTicket: false, noowner: false, recurring: false, colf: {}, group: '' }; }
+  function defaultFilt() { return { q: '', status: '', sev: '', owner: '', repo: '', open: false, overdue: false, seen: '', exploited: false, fresh: false, epssHi: false, noTicket: false, noowner: false, recurring: false, unmanaged: false, colf: {}, group: '' }; }
   var PRESET_VIEWS = [
     { id: 'exploited', name: 'Exploited (KEV / PoC)', filt: { exploited: true } },
     { id: 'epsshi', name: 'EPSS ≥ 50%', filt: { epssHi: true } },
@@ -546,7 +548,7 @@
   // True when any finding filter is set (so the toolbar can offer "Clear filters").
   function filtActive() {
     var f = STATE.filt, d = defaultFilt();
-    var keys = ['q', 'status', 'sev', 'owner', 'repo', 'open', 'overdue', 'seen', 'exploited', 'fresh', 'epssHi', 'noTicket', 'noowner', 'recurring', 'group'];
+    var keys = ['q', 'status', 'sev', 'owner', 'repo', 'open', 'overdue', 'seen', 'exploited', 'fresh', 'epssHi', 'noTicket', 'noowner', 'recurring', 'unmanaged', 'group'];
     for (var i = 0; i < keys.length; i++) { if (f[keys[i]] !== d[keys[i]]) return true; }
     return !!(f.colf && Object.keys(f.colf).length);
   }
@@ -555,7 +557,7 @@
     // Apply a deep-link query (e.g. Ask AI -> #/findings?sev=Critical&overdue=1) ONLY when it actually
     // changes — otherwise the in-page filter handlers (which re-call viewFindings without touching the
     // hash) would re-parse the stale query every render and clobber the user's selection.
-    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=safeDecode(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', open:p.open==='1', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', epssHi:p.epssHi==='1', noTicket:p.noTicket==='1', noowner:p.noowner==='1', recurring:p.recurring==='1', colf:{}, group:STATE.filt.group||'' }; })();
+    (function(){ var q=(location.hash.split('?')[1]||''); if(q===STATE._findingsQuery) return; STATE._findingsQuery=q; if(!q) return; var p={}; q.split('&').forEach(function(kv){var a=kv.split('=');p[a[0]]=safeDecode(a[1]||'');}); STATE.filt={ q:p.q||'', status:p.status||'', sev:p.sev||'', owner:p.owner||'', repo:p.repo||'', open:p.open==='1', overdue:p.overdue==='1', seen:p.seen||'', exploited:p.exploited==='1', fresh:p.fresh==='1', epssHi:p.epssHi==='1', noTicket:p.noTicket==='1', noowner:p.noowner==='1', recurring:p.recurring==='1', unmanaged:p.unmanaged==='1', colf:{}, group:STATE.filt.group||'' }; })();
     if (!STATE.findings.length) return viewEmpty('findings'); preloadLev();
     var list = visibleFindings();
     var statusOpts = '<option value="">All statuses</option>' + STATUS.map(function (s) { return '<option value="' + s.k + '"' + (STATE.filt.status === s.k ? ' selected' : '') + '>' + s.l + '</option>'; }).join('');
@@ -586,6 +588,7 @@
       '<button class="btn sm" id="fExploit" style="' + (STATE.filt.exploited ? 'border-color:var(--crit);color:var(--crit)' : '') + '" title="KEV-listed or with a public exploit">Exploited only</button>' +
       '<button class="btn sm" id="fEpssHi" style="' + (STATE.filt.epssHi ? 'border-color:var(--crit);color:var(--crit)' : '') + '" title="EPSS ≥ 50% (high near-term exploitation probability)">EPSS ≥ 50%</button>' +
       '<button class="btn sm" id="fNoTicket" style="' + (STATE.filt.noTicket ? 'border-color:var(--high);color:var(--high)' : '') + '" title="Open findings with no linked ticket — needs a ticket">No ticket</button>' +
+      '<button class="btn sm" id="fUnmanaged" style="' + (STATE.filt.unmanaged ? 'border-color:var(--accent);color:var(--accent)' : '') + '" title="Open findings not covered by any campaign — select these to scope a new campaign">Unmanaged only</button>' +
       (Object.keys(STATE._newKeys || {}).length ? '<button class="btn sm" id="fFresh" style="' + (STATE.filt.fresh ? 'border-color:var(--accent);color:var(--accent)' : '') + '" title="Added in the most recent scan">New only</button>' : '') +
       '<button class="btn sm" id="fRecur" style="' + (STATE.filt.recurring ? 'border-color:var(--high);color:var(--high)' : '') + '" title="Findings that were resolved and came back (recurring / flapping)">Recurring</button>' +
       '<select id="fGroup" title="Group findings"><option value="">No grouping</option><option value="cve"' + (STATE.filt.group === 'cve' ? ' selected' : '') + '>Group by CVE</option><option value="product"' + (STATE.filt.group === 'product' ? ' selected' : '') + '>Group by product / fix</option><option value="host"' + (STATE.filt.group === 'host' ? ' selected' : '') + '>Group by host</option></select>' +
@@ -633,6 +636,7 @@
     }); })();
     document.getElementById('fOverdue').addEventListener('click', function () { STATE.filt.overdue = !STATE.filt.overdue; viewFindings(); });
     document.getElementById('fExploit').addEventListener('click', function () { STATE.filt.exploited = !STATE.filt.exploited; viewFindings(); });
+    var fUn = document.getElementById('fUnmanaged'); if (fUn) fUn.addEventListener('click', function () { STATE.filt.unmanaged = !STATE.filt.unmanaged; viewFindings(); });
     document.getElementById('fEpssHi').addEventListener('click', function () { STATE.filt.epssHi = !STATE.filt.epssHi; viewFindings(); });
     document.getElementById('fNoTicket').addEventListener('click', function () { STATE.filt.noTicket = !STATE.filt.noTicket; viewFindings(); });
     var fFresh = document.getElementById('fFresh'); if (fFresh) fFresh.addEventListener('click', function () { STATE.filt.fresh = !STATE.filt.fresh; viewFindings(); });
