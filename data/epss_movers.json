@@ -1,15 +1,29 @@
 {
-  "updated": "2026-08-16",
+  "updated": "2026-08-17",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-15",
-  "previous_date": "2026-08-09",
+  "current_date": "2026-08-17",
+  "previous_date": "2026-08-10",
   "risers": [
+    {
+      "id": "CVE-2024-57726",
+      "now": 0.66601,
+      "prev": 0.088,
+      "delta": 0.57801,
+      "name": "SimpleHelp remote support software v5.5.7 and before has a vulnerability that allows low-privileges technician"
+    },
     {
       "id": "CVE-2026-58644",
       "now": 0.45478,
       "prev": 0.06372,
       "delta": 0.39106,
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2001-0506",
+      "now": 0.68934,
+      "prev": 0.3,
+      "delta": 0.38934,
+      "name": "Buffer overflow in ssinc.dll in IIS 5.0 and 4.0 allows local users to gain system privileges via a Server-Side"
     },
     {
       "id": "CVE-2026-34908",
@@ -26,13 +40,6 @@
       "name": "WordPress WP SuperBackup plugin <= 2.3.3 - Unauthenticated Arbitrary File Upload vulnerabi"
     },
     {
-      "id": "CVE-2025-49132",
-      "now": 0.53389,
-      "prev": 0.41137,
-      "delta": 0.12252,
-      "name": "Pterodactyl Panel Allows Unauthenticated Arbitrary Remote Code Execution"
-    },
-    {
       "id": "CVE-2008-3873",
       "now": 0.15749,
       "prev": 0.03663,
@@ -45,6 +52,13 @@
       "prev": 0.44182,
       "delta": 0.10924,
       "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
+    },
+    {
+      "id": "CVE-2023-40028",
+      "now": 0.68357,
+      "prev": 0.57565,
+      "delta": 0.10792,
+      "name": "Arbitrary file read via symlinks in Ghost"
     },
     {
       "id": "CVE-2026-49049",
@@ -61,11 +75,11 @@
       "name": "Joomla Extension - joomlacontenteditor.net - Remote Code Execution in JCE extension for Jo"
     },
     {
-      "id": "CVE-2026-63077",
-      "now": 0.10722,
-      "prev": 0.0101,
-      "delta": 0.09712,
-      "name": "JetBrains TeamCity"
+      "id": "CVE-2002-0150",
+      "now": 0.49477,
+      "prev": 0.39833,
+      "delta": 0.09644,
+      "name": "Buffer overflow in Internet Information Server (IIS) 4.0, 5.0, and 5.1 allows remote attackers to spoof the sa"
     },
     {
       "id": "CVE-2026-15733",
@@ -73,6 +87,20 @@
       "prev": 0.03902,
       "delta": 0.09643,
       "name": "WGDashboard Remote Code Execution vulnerability"
+    },
+    {
+      "id": "CVE-2002-0147",
+      "now": 0.61761,
+      "prev": 0.52162,
+      "delta": 0.09599,
+      "name": "Buffer overflow in the ASP data transfer mechanism in Internet Information Server (IIS) 4.0, 5.0, and 5.1 allo"
+    },
+    {
+      "id": "CVE-2002-0149",
+      "now": 0.62704,
+      "prev": 0.53195,
+      "delta": 0.09509,
+      "name": "Buffer overflow in ASP Server-Side Include Function in IIS 4.0, 5.0 and 5.1 allows remote attackers to cause a"
     },
     {
       "id": "CVE-2021-34448",
@@ -87,6 +115,13 @@
       "prev": 0.08603,
       "delta": 0.09147,
       "name": "Mass Assignment via Onboarding Endpoint Allows Unauthenticated JWT_SECRET Overwrite"
+    },
+    {
+      "id": "CVE-2025-5306",
+      "now": 0.31452,
+      "prev": 0.2282,
+      "delta": 0.08632,
+      "name": "Command Injection in Netflow path"
     },
     {
       "id": "CVE-2025-43562",
@@ -117,11 +152,25 @@
       "name": "Microsoft Exchange Server Remote Code Execution Vulnerability"
     },
     {
+      "id": "CVE-2002-0071",
+      "now": 0.33643,
+      "prev": 0.26054,
+      "delta": 0.07589,
+      "name": "Buffer overflow in the ism.dll ISAPI extension that implements HTR scripting in Internet Information Server (I"
+    },
+    {
       "id": "CVE-2023-32562",
       "now": 0.45562,
       "prev": 0.38414,
       "delta": 0.07148,
       "name": "Ivanti Avalanche"
+    },
+    {
+      "id": "CVE-2002-0364",
+      "now": 0.31005,
+      "prev": 0.23901,
+      "delta": 0.07104,
+      "name": "Buffer overflow in the chunked encoding transfer mechanism in IIS 4.0 and 5.0 allows attackers to execute arbi"
     },
     {
       "id": "CVE-2023-32564",
@@ -131,11 +180,25 @@
       "name": "Ivanti Avalanche"
     },
     {
+      "id": "CVE-2009-0043",
+      "now": 0.53296,
+      "prev": 0.46451,
+      "delta": 0.06845,
+      "name": "The smmsnmpd service in CA Service Metric Analysis r11.0 through r11.1 SP1 and Service Level Management 3.5 do"
+    },
+    {
       "id": "CVE-2021-36948",
       "now": 0.26733,
       "prev": 0.1991,
       "delta": 0.06823,
       "name": "Windows Update Medic Service Elevation of Privilege Vulnerability"
+    },
+    {
+      "id": "CVE-2025-47981",
+      "now": 0.32227,
+      "prev": 0.25457,
+      "delta": 0.0677,
+      "name": "SPNEGO Extended Negotiation (NEGOEX) Security Mechanism Remote Code Execution Vulnerabilit"
     },
     {
       "id": "CVE-2025-30394",
@@ -145,83 +208,27 @@
       "name": "Windows Remote Desktop Gateway (RD Gateway) Denial of Service Vulnerability"
     },
     {
-      "id": "CVE-2025-4380",
-      "now": 0.36837,
-      "prev": 0.30496,
-      "delta": 0.06341,
-      "name": "Ads Pro Plugin - Multi-Purpose WordPress Advertising Manager <= 4.89 - Unauthenticated Loc"
-    },
-    {
       "id": "CVE-2025-3833",
       "now": 0.44633,
       "prev": 0.38367,
       "delta": 0.06266,
       "name": "SQL Injection"
-    },
-    {
-      "id": "CVE-2021-34484",
-      "now": 0.21661,
-      "prev": 0.15616,
-      "delta": 0.06045,
-      "name": "Windows User Profile Service Elevation of Privilege Vulnerability"
-    },
-    {
-      "id": "CVE-2026-58138",
-      "now": 0.07183,
-      "prev": 0.01155,
-      "delta": 0.06028,
-      "name": "Orkes Conductor 3.21.21 < 3.30.2 Unauthenticated RCE via GraalVM Script Evaluators"
-    },
-    {
-      "id": "CVE-2025-30397",
-      "now": 0.26835,
-      "prev": 0.21318,
-      "delta": 0.05517,
-      "name": "Scripting Engine Memory Corruption Vulnerability"
-    },
-    {
-      "id": "CVE-2025-47269",
-      "now": 0.42958,
-      "prev": 0.37817,
-      "delta": 0.05141,
-      "name": "code-server session cookie can be extracted by having user visit specially crafted proxy U"
-    },
-    {
-      "id": "CVE-2025-43560",
-      "now": 0.19427,
-      "prev": 0.14299,
-      "delta": 0.05128,
-      "name": "ColdFusion | Improper Input Validation (CWE-20)"
-    },
-    {
-      "id": "CVE-2024-13985",
-      "now": 0.12578,
-      "prev": 0.07522,
-      "delta": 0.05056,
-      "name": "Dahua EIMS capture_handle.action RCE"
-    },
-    {
-      "id": "CVE-2025-44148",
-      "now": 0.57579,
-      "prev": 0.52631,
-      "delta": 0.04948,
-      "name": "Cross Site Scripting (XSS) vulnerability in MailEnable before v10 allows a remote attacker to execute arbitrar"
-    },
-    {
-      "id": "CVE-2014-2120",
-      "now": 0.18919,
-      "prev": 0.14029,
-      "delta": 0.0489,
-      "name": "Cross-site scripting (XSS) vulnerability in the WebVPN login page in Cisco Adaptive Security Appliance (ASA) S"
     }
   ],
   "newly_high": [
     {
-      "id": "CVE-2025-49132",
-      "now": 0.53389,
-      "prev": 0.41137,
-      "delta": 0.12252,
-      "name": "Pterodactyl Panel Allows Unauthenticated Arbitrary Remote Code Execution"
+      "id": "CVE-2024-57726",
+      "now": 0.66601,
+      "prev": 0.088,
+      "delta": 0.57801,
+      "name": "SimpleHelp remote support software v5.5.7 and before has a vulnerability that allows low-privileges technician"
+    },
+    {
+      "id": "CVE-2001-0506",
+      "now": 0.68934,
+      "prev": 0.3,
+      "delta": 0.38934,
+      "name": "Buffer overflow in ssinc.dll in IIS 5.0 and 4.0 allows local users to gain system privileges via a Server-Side"
     },
     {
       "id": "CVE-2025-43566",
@@ -236,6 +243,20 @@
       "prev": 0.4638,
       "delta": 0.07676,
       "name": "Microsoft Exchange Server Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2009-0043",
+      "now": 0.53296,
+      "prev": 0.46451,
+      "delta": 0.06845,
+      "name": "The smmsnmpd service in CA Service Metric Analysis r11.0 through r11.1 SP1 and Service Level Management 3.5 do"
+    },
+    {
+      "id": "CVE-2025-49533",
+      "now": 0.52247,
+      "prev": 0.46529,
+      "delta": 0.05718,
+      "name": "Adobe Experience Manager (MS) | Deserialization of Untrusted Data (CWE-502)"
     },
     {
       "id": "CVE-2014-0282",
