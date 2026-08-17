@@ -1,61 +1,61 @@
 {
-  "updated": "2026-08-10",
+  "updated": "2026-08-17",
   "source": "fkie-cad NVD mirror (counted locally, by cweId)",
   "weaknesses": [
     {
       "cwe": "CWE-79",
       "name": "Cross-site Scripting",
-      "count": 24187
+      "count": 24191
     },
     {
       "cwe": "CWE-787",
       "name": "Out-of-bounds Write",
-      "count": 11793
+      "count": 11809
     },
     {
       "cwe": "CWE-89",
       "name": "SQL Injection",
-      "count": 11483
+      "count": 11489
     },
     {
       "cwe": "CWE-119",
       "name": "Improper Restriction of Memory Buffer",
-      "count": 11323
+      "count": 11332
     },
     {
       "cwe": "CWE-20",
       "name": "Improper Input Validation",
-      "count": 8862
+      "count": 8860
     },
     {
       "cwe": "CWE-200",
       "name": "Information Exposure",
-      "count": 6562
+      "count": 6563
     },
     {
       "cwe": "CWE-125",
       "name": "Out-of-bounds Read",
-      "count": 6019
+      "count": 6038
     },
     {
       "cwe": "CWE-22",
       "name": "Path Traversal",
-      "count": 5719
+      "count": 5710
     },
     {
       "cwe": "CWE-416",
       "name": "Use After Free",
-      "count": 5055
+      "count": 5079
     },
     {
       "cwe": "CWE-352",
       "name": "Cross-Site Request Forgery",
-      "count": 4586
+      "count": 4592
     },
     {
       "cwe": "CWE-476",
       "name": "NULL Pointer Dereference",
-      "count": 4231
+      "count": 4262
     },
     {
       "cwe": "CWE-78",
@@ -65,42 +65,42 @@
     {
       "cwe": "CWE-94",
       "name": "Code Injection",
-      "count": 3162
+      "count": 3167
     },
     {
       "cwe": "CWE-287",
       "name": "Improper Authentication",
-      "count": 3021
+      "count": 3029
     },
     {
       "cwe": "CWE-190",
       "name": "Integer Overflow",
-      "count": 2383
+      "count": 2386
     },
     {
       "cwe": "CWE-862",
       "name": "Missing Authorization",
-      "count": 2123
+      "count": 2132
     },
     {
       "cwe": "CWE-434",
       "name": "Unrestricted File Upload",
-      "count": 2101
+      "count": 2102
     },
     {
       "cwe": "CWE-863",
       "name": "Incorrect Authorization",
-      "count": 1350
+      "count": 1357
     },
     {
       "cwe": "CWE-269",
       "name": "Improper Privilege Management",
-      "count": 1287
+      "count": 1294
     },
     {
       "cwe": "CWE-798",
       "name": "Hard-coded Credentials",
-      "count": 1169
+      "count": 1170
     },
     {
       "cwe": "CWE-732",
@@ -110,17 +110,17 @@
     {
       "cwe": "CWE-502",
       "name": "Deserialization of Untrusted Data",
-      "count": 1112
+      "count": 1115
     },
     {
       "cwe": "CWE-306",
       "name": "Missing Authentication",
-      "count": 1055
+      "count": 1060
     },
     {
       "cwe": "CWE-918",
       "name": "Server-Side Request Forgery",
-      "count": 976
+      "count": 972
     }
   ]
 }
