@@ -23,6 +23,15 @@ Everything runs in your browser. Scan exports, findings, notes, and API keys sta
 
 Static single-page app, vanilla JS, hash routing, `localStorage` + `IndexedDB`. No build step. CVE data is refreshed by scheduled GitHub Actions into `data/` (requires repo secrets — see the workflows in `.github/workflows/`).
 
+## Documentation
+
+Official docs live in [`docs/`](docs/) (hub: [`docs/index.html`](https://cloudanimal.github.io/vm-ops-console/docs/)), kept current as features ship:
+
+- [Feature comparison vs the VM / ASPM market](docs/feature-comparison.html) — the canonical capability map, including a dedicated **DefectDojo parity scorecard** and the six backend boundaries.
+- [Architecture & tech stack](docs/architecture.html) — modules, routing, data model, risk engine.
+- [DefectDojo feature-parity gap analysis](docs/DEFECTDOJO-PARITY.md) — full gap table (Have / Partial / Browser-roadmap / Needs-backend) with a UX note per capability and a ranked top-ten of in-browser gaps to close next.
+- [DefectDojo feature inventory](docs/DEFECTDOJO-FEATURE-INVENTORY.md) — raw feature/settings capture from both live demos (OSS + PRO).
+
 ## Privacy
 
 Open the Network tab — there are no uploads of your data. Imported scan data and findings never leave the browser. Risk signals (CVSS, EPSS, KEV, LEV, SSVC) often disagree by design; always confirm against the vendor before acting.
