@@ -3270,6 +3270,17 @@
             rev.set(t.id, { campaignId: '__unmanaged__', key: keyOf(f), listId: unListId, "static": false, unmanaged: true });
           });
 
+          // synthetic "All findings" list — every finding regardless of campaign or status.
+          // Cross-campaign view: per-finding edits (status/owner/notes/due) round-trip like any
+          // task, but membership move/delete is refused (treated as unmanaged).
+          var allListId = 'li::__all__';
+          lists.push({ id: allListId, spaceId: space.id, folderId: null, name: 'All findings', defaultView: 'list', statuses: mappedStatuses(), _all: true });
+          (STATE.findings || []).forEach(function (f, i) {
+            var t = buildTask(f, '__all__', allListId, i);
+            tasks.push(t);
+            rev.set(t.id, { campaignId: '__all__', key: keyOf(f), listId: allListId, "static": false, unmanaged: true });
+          });
+
           this._meta.currentUser = ME_ID;
           this._state = { meta: this._meta, members: members, spaces: [space], folders: folders, lists: lists, tasks: tasks };
           return this._state;
