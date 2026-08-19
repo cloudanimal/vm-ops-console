@@ -380,6 +380,7 @@
 <link rel="stylesheet" href="wiz.css">
 <link rel="stylesheet" href="scanner.css">
 <link rel="stylesheet" href="pscan.css">
+<link rel="stylesheet" href="campaigns-v2/campaigns-v2.css">
 <script src="version.js"></script>
 <script src="vendor/papaparse.min.js"></script>
 <script src="vendor/xlsx.full.min.js"></script>
@@ -416,7 +417,13 @@
       </div>
     </div>
     <a class="tab" href="#/findings" data-route="findings">Findings</a>
-    <a class="tab" href="#/campaigns" data-route="campaigns">Campaigns</a>
+    <div class="navmenu" data-menu="campaigns">
+      <button class="navmenu-btn" type="button" aria-haspopup="true" aria-expanded="false">Campaigns <span class="caret">▾</span></button>
+      <div class="navmenu-list" role="menu">
+        <a href="#/campaigns" data-route="campaigns">Campaigns v1</a>
+        <a href="#/campaigns-v2" data-route="campaigns-v2">Campaigns v2</a>
+      </div>
+    </div>
     <span class="navsep" aria-hidden="true"></span>
     <div class="navmenu" data-menu="tools">
       <button class="navmenu-btn" type="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret">▾</span></button>
@@ -477,6 +484,7 @@
 <script src="scan_unify.js"></script>
 <script src="coverage.js"></script>
 <script src="pscan.js"></script>
+<script src="campaigns-v2/campaigns-v2.js"></script>
 
 <script>
 (function () {
@@ -3104,6 +3112,7 @@
   }
   function route() {
     try {
+    if (window._cv2Cleanup) { try { window._cv2Cleanup(); } catch (e) {} window._cv2Cleanup = null; }  // tear down Campaigns v2 before leaving
     clearInterval(freshTimer);   // stop the freshness auto-refresh when leaving About
     if (aboutScroll) { window.removeEventListener('scroll', aboutScroll); aboutScroll = null; }
     var hash = location.hash.replace(/^#/, '') || '/';

@@ -101,13 +101,16 @@
     { k: 'report', label: 'Morning Report', sel: '.tab[data-route="report"]' },
     { k: 'dashboards', label: 'Dashboards', sel: '.navmenu[data-menu="dashboards"]' },
     { k: 'findings', label: 'Findings', sel: '.tab[data-route="findings"]' },
-    { k: 'campaigns', label: 'Campaigns', sel: '.tab[data-route="campaigns"]' },
+    { k: 'campaigns', label: 'Campaigns', sel: '.navmenu[data-menu="campaigns"]' },
     { k: 'tools', label: 'Tools', sel: '.navmenu[data-menu="tools"]' },
     { k: 'faq', label: 'FAQ', sel: '.tab[data-route="faq"]' },
     { k: 'about', label: 'About', sel: '.tab[data-route="about"]' }
   ];
   // Sub-items inside the dropdown menus, individually hideable. Keyed by data-route (unique across the nav).
   var NAV_SUBS = [
+    { group: 'Campaigns menu', parent: 'campaigns', items: [
+      { k: 'campaigns', label: 'Campaigns v1' }, { k: 'campaigns-v2', label: 'Campaigns v2' }
+    ] },
     { group: 'Dashboards menu', parent: 'dashboards', items: [
       { k: 'dashboard', label: 'Overview' }, { k: 'assets', label: 'Asset Inventory' }, { k: 'remediations', label: 'Remediations' },
       { k: 'sbom', label: 'Licenses & SBOM' }, { k: 'agent-coverage', label: 'Agent Coverage' }, { k: 'coverage', label: 'Scanner Coverage' },
@@ -3038,7 +3041,34 @@
     toast('Sample data loaded: ' + label + ' (' + STATE.findings.length + ' findings total)'); location.hash = dest; return false;
   }
 
-  window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), campaigns: vmShow(viewCampaigns), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz), assets: vmShow(viewAssets), remediations: vmShow(viewRemediations), sbom: vmShow(viewSbom),
-    getFindings: getFindings, loadScannerFindings: loadScannerFindings, sampleLoad: sampleData,
+  // ===================== Campaigns v2 (ClickUp-style workspace, shared data) =====================
+  // v2 is its own route so the generic dispatcher does not intercept it under #/campaigns/<id>.
+  // The clone app lives in campaigns-v2/campaigns-v2.js under window.CV2; the console host router
+  // mounts it here and tears it down via window._cv2Cleanup on the next route change.
+  function vmShowCv2(fn) { var w = function () { app.className = 'cv2'; return fn.apply(null, arguments); }; w.isView = true; return w; }
+
+  // Shared-data adapter placeholder: the real projection over STATE.findings + vmops-campaigns
+  // + vmops-overrides is built in a later phase. For now it is an inert stub so the mount
+  // contract holds and the empty v2 pane renders.
+  var cv2Store = {
+    load: function () { return this; }
+  };
+
+  function viewCampaignsV2() {
+    setActive('campaigns-v2');
+    app.innerHTML = '<div id="cv2root" class="cv2"></div>';
+    var root = document.getElementById('cv2root');
+    try {
+      cv2Store.load();
+      if (window.CV2 && window.CV2.mount) window.CV2.mount(root, cv2Store);
+      else root.innerHTML = '<div style="padding:24px;color:var(--ink)">Campaigns v2 module not loaded.</div>';
+    } catch (e) {
+      root.innerHTML = '<div style="padding:24px;color:var(--ink)">Campaigns v2 failed to load: ' + esc(String((e && e.message) || e)) + '</div>';
+      if (window.console) console.error('[cv2]', e);
+    }
+  }
+
+  window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), campaigns: vmShow(viewCampaigns), 'campaigns-v2': vmShowCv2(viewCampaignsV2), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz), assets: vmShow(viewAssets), remediations: vmShow(viewRemediations), sbom: vmShow(viewSbom),
+    getFindings: getFindings, loadScannerFindings: loadScannerFindings, sampleLoad: sampleData, cv2Store: cv2Store,
     remediation: { ensure: ensureRemed, for: remediationFor, copy: copyText } };
 })();

@@ -1,0 +1,4 @@
+/* Campaigns v2 — ClickUp-style workspace, merged into vm-ops-console.
+   Real styles arrive in phase P4 (styles.css run through the #cv2root prefix transform).
+   Everything here is scoped under #cv2root so it never bleeds into the console. */
+#cv2root { position: relative; }
