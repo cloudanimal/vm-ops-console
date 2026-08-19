@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18",
+  "updated": "2026-08-19",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,583 +7,584 @@
   "items": [
     {
       "id": null,
-      "title": "Alpine: htop: security update to 3.4.1-r2",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446046",
-      "cves": [
-        "CVE-2024-37676"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: htop: security update to 3.4.1-r2",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446046",
-      "cves": [
-        "CVE-2024-37676"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: htop: security update to 3.4.1-r1",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446045",
-      "cves": [
-        "CVE-2024-37676"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: htop: security update to 3.4.1-r1",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446045",
-      "cves": [
-        "CVE-2024-37676"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/apache/answer, github.com/apache/incubator-answer (GHSA-4gw2-vg4x-7p29)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446044",
-      "cves": [
-        "CVE-2026-25700"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/apache/answer, github.com/apache/incubator-answer (GHSA-4gw2-vg4x-7p29)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446044",
-      "cves": [
-        "CVE-2026-25700"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.docx4j:docx4j-core (GHSA-gc95-3vw8-vg43)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446043",
-      "cves": [
-        "CVE-2026-53752"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.docx4j:docx4j-core (GHSA-gc95-3vw8-vg43)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446043",
-      "cves": [
-        "CVE-2026-53752"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for software.sslmate.com/src/go-pkcs12 (GHSA-mpwr-8vm7-h73f)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446042",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for software.sslmate.com/src/go-pkcs12 (GHSA-mpwr-8vm7-h73f)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446042",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.http4k:http4k-security-digest (GHSA-vxxm-wwqh-mh47)",
+      "title": "SCA: security update for org.springframework.boot:spring-boot-starter-mail (GHSA-9wxp-w4px-32vh)",
       "severity": "Medium",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446041",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446106",
       "cves": [
-        "CVE-2026-54147"
+        "CVE-2026-40992"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for org.http4k:http4k-security-digest (GHSA-vxxm-wwqh-mh47)",
+      "title": "SCA: security update for org.springframework.boot:spring-boot-starter-mail (GHSA-9wxp-w4px-32vh)",
       "severity": "Medium",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446041",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446106",
       "cves": [
-        "CVE-2026-54147"
+        "CVE-2026-40992"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for mlflow (GHSA-3p64-6gvh-82v5)",
+      "title": "SCA: security update for vllm (GHSA-wcwg-c5fc-9vrc)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446105",
+      "cves": [
+        "CVE-2026-5497"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for vllm (GHSA-wcwg-c5fc-9vrc)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446105",
+      "cves": [
+        "CVE-2026-5497"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for org.springframework.webflow:spring-webflow (GHSA-9ggw-87m9-9gfc)",
       "severity": "Medium",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446040",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446104",
       "cves": [
-        "CVE-2026-69146"
+        "CVE-2026-40985"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for mlflow (GHSA-3p64-6gvh-82v5)",
+      "title": "SCA: security update for org.springframework.webflow:spring-webflow (GHSA-9ggw-87m9-9gfc)",
       "severity": "Medium",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446040",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446104",
       "cves": [
-        "CVE-2026-69146"
+        "CVE-2026-40985"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for mlflow (GHSA-gqch-g4w5-7qcw)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446039",
-      "cves": [
-        "CVE-2026-69148"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for mlflow (GHSA-gqch-g4w5-7qcw)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446039",
-      "cves": [
-        "CVE-2026-69148"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for atomic-agents-stack (GHSA-j659-8xh6-5pq5)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446038",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for atomic-agents-stack (GHSA-j659-8xh6-5pq5)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446038",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.http4k:http4k-core (GHSA-g4w2-6h2r-3m3w)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446037",
-      "cves": [
-        "CVE-2026-53659"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.http4k:http4k-core (GHSA-g4w2-6h2r-3m3w)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446037",
-      "cves": [
-        "CVE-2026-53659"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.http4k:http4k-security-digest (GHSA-p28p-j94q-pg32)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446036",
-      "cves": [
-        "CVE-2026-54148"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.http4k:http4k-security-digest (GHSA-p28p-j94q-pg32)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446036",
-      "cves": [
-        "CVE-2026-54148"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for atomic-agents-stack (GHSA-xhcr-cqfr-m3hv)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446035",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for atomic-agents-stack (GHSA-xhcr-cqfr-m3hv)",
-      "severity": "High",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446035",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for chrome-devtools-mcp (GHSA-8qf9-62x2-82pp)",
-      "severity": "Medium",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446034",
-      "cves": [
-        "CVE-2026-53766"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for chrome-devtools-mcp (GHSA-8qf9-62x2-82pp)",
-      "severity": "Medium",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446034",
-      "cves": [
-        "CVE-2026-53766"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for mlflow (GHSA-7gwp-5pfp-969j)",
+      "title": "SCA: security update for resdata (GHSA-pr85-w493-9w3x)",
       "severity": "Critical",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446033",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446103",
       "cves": [
-        "CVE-2026-64849"
+        "CVE-2026-55209"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for mlflow (GHSA-7gwp-5pfp-969j)",
+      "title": "SCA: security update for resdata (GHSA-pr85-w493-9w3x)",
       "severity": "Critical",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446033",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446103",
       "cves": [
-        "CVE-2026-64849"
+        "CVE-2026-55209"
       ]
     },
     {
-      "id": "337071",
-      "title": "IBM HTTP Server 8.5.x / 9.x Web Server Plug-in RCE (7274072)",
+      "id": null,
+      "title": "SCA: security update for mtdowling/jmespath.php (GHSA-pcw8-m77r-2528)",
       "severity": "Critical",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/337071",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446102",
       "cves": [
-        "CVE-2026-8620",
-        "CVE-2026-8633"
+        "CVE-2026-54133"
       ]
     },
     {
-      "id": "337070",
-      "title": "Dart Packages Installed (macOS)",
-      "severity": "Info",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/337070",
-      "cves": []
+      "id": null,
+      "title": "SCA: security update for mtdowling/jmespath.php (GHSA-pcw8-m77r-2528)",
+      "severity": "Critical",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446102",
+      "cves": [
+        "CVE-2026-54133"
+      ]
     },
     {
-      "id": "337069",
-      "title": "Dart SDK Installed (macOS)",
-      "severity": "Info",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/337069",
-      "cves": []
-    },
-    {
-      "id": "337068",
-      "title": "Dart Packages Installed (Linux)",
-      "severity": "Info",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/337068",
-      "cves": []
-    },
-    {
-      "id": "337067",
-      "title": "Dart SDK Installed (Linux)",
-      "severity": "Info",
-      "date": "Tue, 18 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/337067",
+      "id": null,
+      "title": "SCA: security update for monai (GHSA-qxq5-qhx6-94qw)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446101",
       "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/cilium/ebpf (GHSA-xhgw-qwwf-pg32)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446032",
-      "cves": [
-        "CVE-2026-10722"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/cilium/ebpf (GHSA-xhgw-qwwf-pg32)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446032",
-      "cves": [
-        "CVE-2026-10722"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for websocket-driver (GHSA-ghhp-3qvg-889p)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446031",
-      "cves": [
-        "CVE-2026-54463"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for websocket-driver (GHSA-ghhp-3qvg-889p)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446031",
-      "cves": [
-        "CVE-2026-54463"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for websocket-driver (GHSA-33ph-fccm-39pj)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446030",
-      "cves": [
-        "CVE-2026-54464"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for websocket-driver (GHSA-33ph-fccm-39pj)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446030",
-      "cves": [
-        "CVE-2026-54464"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for websocket-driver (GHSA-8j3g-f24p-4mpw)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446029",
-      "cves": [
-        "CVE-2026-54465"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for websocket-driver (GHSA-8j3g-f24p-4mpw)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446029",
-      "cves": [
-        "CVE-2026-54465"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for @medplum/core (GHSA-m44r-7c5h-m6mj)",
+      "title": "SCA: security update for monai (GHSA-qxq5-qhx6-94qw)",
       "severity": "High",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446028",
-      "cves": [
-        "CVE-2026-53728"
-      ]
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446101",
+      "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for @medplum/core (GHSA-m44r-7c5h-m6mj)",
+      "title": "SCA: security update for monai (GHSA-wg9g-w2j2-8pgr)",
       "severity": "High",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446028",
-      "cves": [
-        "CVE-2026-53728"
-      ]
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446100",
+      "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/QuantumNous/new-api (GHSA-v828-m3pf-vq9q)",
+      "title": "SCA: security update for monai (GHSA-wg9g-w2j2-8pgr)",
       "severity": "High",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446027",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446100",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for devpi-server (GHSA-m5pq-69xg-vcq3)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446099",
       "cves": [
-        "CVE-2026-64868"
+        "CVE-2026-54723"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/QuantumNous/new-api (GHSA-v828-m3pf-vq9q)",
+      "title": "SCA: security update for devpi-server (GHSA-m5pq-69xg-vcq3)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446099",
+      "cves": [
+        "CVE-2026-54723"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for kobako (GHSA-7pwq-q9jf-539h)",
+      "severity": "Critical",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446098",
+      "cves": [
+        "CVE-2026-55107"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for kobako (GHSA-7pwq-q9jf-539h)",
+      "severity": "Critical",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446098",
+      "cves": [
+        "CVE-2026-55107"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for surfio (GHSA-rcr2-hggw-43wm)",
+      "severity": "Critical",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446097",
+      "cves": [
+        "CVE-2026-55211"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for surfio (GHSA-rcr2-hggw-43wm)",
+      "severity": "Critical",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446097",
+      "cves": [
+        "CVE-2026-55211"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for froxlor/froxlor (GHSA-xpr4-8vp6-c87j)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446096",
+      "cves": [
+        "CVE-2026-55593"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for froxlor/froxlor (GHSA-xpr4-8vp6-c87j)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446096",
+      "cves": [
+        "CVE-2026-55593"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lemur (GHSA-xpmj-wjcp-6pww)",
       "severity": "High",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446027",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446095",
       "cves": [
-        "CVE-2026-64868"
+        "CVE-2026-70666"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/QuantumNous/new-api (GHSA-p845-629j-rcj6)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446026",
-      "cves": [
-        "CVE-2026-64866"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/QuantumNous/new-api (GHSA-p845-629j-rcj6)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446026",
-      "cves": [
-        "CVE-2026-64866"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/QuantumNous/new-api (GHSA-j6gc-4893-qwmp)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446025",
-      "cves": [
-        "CVE-2026-64865"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/QuantumNous/new-api (GHSA-j6gc-4893-qwmp)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446025",
-      "cves": [
-        "CVE-2026-64865"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for glances (GHSA-qcpp-8x79-hhp3)",
+      "title": "SCA: security update for lemur (GHSA-xpmj-wjcp-6pww)",
       "severity": "High",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446024",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446095",
       "cves": [
-        "CVE-2026-68518"
+        "CVE-2026-70666"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for glances (GHSA-qcpp-8x79-hhp3)",
+      "title": "SCA: security update for lemur (GHSA-g7p5-89mh-248h)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446094",
+      "cves": [
+        "CVE-2026-71317"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lemur (GHSA-g7p5-89mh-248h)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446094",
+      "cves": [
+        "CVE-2026-71317"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lemur (GHSA-4h97-p9wq-chqj)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446093",
+      "cves": [
+        "CVE-2026-71322"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lemur (GHSA-4h97-p9wq-chqj)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446093",
+      "cves": [
+        "CVE-2026-71322"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for librenms/librenms (GHSA-7gww-x7fh-jf9j)",
       "severity": "High",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446024",
-      "cves": [
-        "CVE-2026-68518"
-      ]
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446092",
+      "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for @astrojs/vercel (GHSA-x27w-589x-frm2)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446023",
-      "cves": [
-        "CVE-2026-73424"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for @astrojs/vercel (GHSA-x27w-589x-frm2)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446023",
-      "cves": [
-        "CVE-2026-73424"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/gruntwork-io/terragrunt (GHSA-8394-6f8r-whxg)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446022",
-      "cves": [
-        "CVE-2026-45099"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/gruntwork-io/terragrunt (GHSA-8394-6f8r-whxg)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446022",
-      "cves": [
-        "CVE-2026-45099"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for sqlparse (GHSA-3496-9g83-7v6x)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446021",
-      "cves": [
-        "CVE-2026-59894"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for sqlparse (GHSA-3496-9g83-7v6x)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446021",
-      "cves": [
-        "CVE-2026-59894"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for deepmerge-ts (GHSA-ggr8-5vv4-36mx)",
+      "title": "SCA: security update for librenms/librenms (GHSA-7gww-x7fh-jf9j)",
       "severity": "High",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446020",
-      "cves": [
-        "CVE-2026-40345"
-      ]
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446092",
+      "cves": []
     },
     {
       "id": null,
-      "title": "SCA: security update for deepmerge-ts (GHSA-ggr8-5vv4-36mx)",
+      "title": "SCA: security update for github.com/moby/go-archive (GHSA-hfg8-hc9c-6c3h)",
       "severity": "High",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446020",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446091",
       "cves": [
-        "CVE-2026-40345"
+        "CVE-2026-17106"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for glances (GHSA-4h34-v6r8-mmjc)",
-      "severity": "Medium",
-      "date": "Mon, 17 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446019",
+      "title": "SCA: security update for github.com/moby/go-archive (GHSA-hfg8-hc9c-6c3h)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446091",
       "cves": [
-        "CVE-2026-68520"
+        "CVE-2026-17106"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for MONAI (GHSA-rghg-q7wp-9767)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446090",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for MONAI (GHSA-rghg-q7wp-9767)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446090",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for froxlor/froxlor (GHSA-5rw4-4665-cvwf)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446089",
+      "cves": [
+        "CVE-2026-54543"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for froxlor/froxlor (GHSA-5rw4-4665-cvwf)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446089",
+      "cves": [
+        "CVE-2026-54543"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for linuxfabrik-lib (GHSA-rh9c-rqvg-f7pr)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446088",
+      "cves": [
+        "CVE-2026-73974"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for linuxfabrik-lib (GHSA-rh9c-rqvg-f7pr)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446088",
+      "cves": [
+        "CVE-2026-73974"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for froxlor/froxlor (GHSA-7788-ghfq-c6mh)",
+      "severity": "Critical",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446087",
+      "cves": [
+        "CVE-2026-62988"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for froxlor/froxlor (GHSA-7788-ghfq-c6mh)",
+      "severity": "Critical",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446087",
+      "cves": [
+        "CVE-2026-62988"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lemur (GHSA-v5rc-cpwc-cfpr)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446086",
+      "cves": [
+        "CVE-2026-55166",
+        "CVE-2026-71303"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lemur (GHSA-v5rc-cpwc-cfpr)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446086",
+      "cves": [
+        "CVE-2026-55166",
+        "CVE-2026-71303"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for org.springframework.webflow:spring-webflow (GHSA-hw5c-xm3c-v96w)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446085",
+      "cves": [
+        "CVE-2026-40986"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for org.springframework.webflow:spring-webflow (GHSA-hw5c-xm3c-v96w)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446085",
+      "cves": [
+        "CVE-2026-40986"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for meshcentral (GHSA-c7hr-448w-65px)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446084",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for meshcentral (GHSA-c7hr-448w-65px)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446084",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for mineadmin/mineadmin (GHSA-59xm-4m8c-g3xj)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446083",
+      "cves": [
+        "CVE-2026-55224"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for mineadmin/mineadmin (GHSA-59xm-4m8c-g3xj)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446083",
+      "cves": [
+        "CVE-2026-55224"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for froxlor/froxlor (GHSA-43gm-9rr3-cx7g)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446082",
+      "cves": [
+        "CVE-2026-54347"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for froxlor/froxlor (GHSA-43gm-9rr3-cx7g)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446082",
+      "cves": [
+        "CVE-2026-54347"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for froxlor/froxlor (GHSA-w27m-rmmf-g5w4)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446081",
+      "cves": [
+        "CVE-2026-54348"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for froxlor/froxlor (GHSA-w27m-rmmf-g5w4)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446081",
+      "cves": [
+        "CVE-2026-54348"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lemur (GHSA-f3qq-49m6-rw8f)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446080",
+      "cves": [
+        "CVE-2026-70667"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lemur (GHSA-f3qq-49m6-rw8f)",
+      "severity": "Medium",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446080",
+      "cves": [
+        "CVE-2026-70667"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lemur (GHSA-6c8m-q6g9-vrw3)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446079",
+      "cves": [
+        "CVE-2026-71307"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lemur (GHSA-6c8m-q6g9-vrw3)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446079",
+      "cves": [
+        "CVE-2026-71307"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lemur (GHSA-cfh6-pv5c-38jv)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446078",
+      "cves": [
+        "CVE-2026-71308"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lemur (GHSA-cfh6-pv5c-38jv)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446078",
+      "cves": [
+        "CVE-2026-71308"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lemur (GHSA-pxmc-2ffp-8j67)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446077",
+      "cves": [
+        "CVE-2026-71417"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lemur (GHSA-pxmc-2ffp-8j67)",
+      "severity": "High",
+      "date": "Wed, 19 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446077",
+      "cves": [
+        "CVE-2026-71417"
       ]
     }
   ]

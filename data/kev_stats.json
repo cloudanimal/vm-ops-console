@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-18",
-  "total": 1666,
+  "updated": "2026-08-19",
+  "total": 1670,
   "ransomware_count": 349,
   "by_year": {
     "2021": 311,
@@ -8,12 +8,12 @@
     "2023": 187,
     "2024": 186,
     "2025": 245,
-    "2026": 182
+    "2026": 186
   },
   "top_vendors": [
     [
       "Microsoft",
-      383
+      385
     ],
     [
       "Cisco",
@@ -21,7 +21,7 @@
     ],
     [
       "Apple",
-      93
+      94
     ],
     [
       "Adobe",
@@ -170,7 +170,7 @@
       10
     ],
     [
-      "Fortinet FortiOS",
+      "Microsoft SharePoint",
       9
     ]
   ]
