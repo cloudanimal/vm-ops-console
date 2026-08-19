@@ -101,13 +101,16 @@
     { k: 'report', label: 'Morning Report', sel: '.tab[data-route="report"]' },
     { k: 'dashboards', label: 'Dashboards', sel: '.navmenu[data-menu="dashboards"]' },
     { k: 'findings', label: 'Findings', sel: '.tab[data-route="findings"]' },
-    { k: 'campaigns', label: 'Campaigns', sel: '.tab[data-route="campaigns"]' },
+    { k: 'campaigns', label: 'Campaigns', sel: '.navmenu[data-menu="campaigns"]' },
     { k: 'tools', label: 'Tools', sel: '.navmenu[data-menu="tools"]' },
     { k: 'faq', label: 'FAQ', sel: '.tab[data-route="faq"]' },
     { k: 'about', label: 'About', sel: '.tab[data-route="about"]' }
   ];
   // Sub-items inside the dropdown menus, individually hideable. Keyed by data-route (unique across the nav).
   var NAV_SUBS = [
+    { group: 'Campaigns menu', parent: 'campaigns', items: [
+      { k: 'campaigns', label: 'Campaigns v1' }, { k: 'campaigns-v2', label: 'Campaigns v2' }
+    ] },
     { group: 'Dashboards menu', parent: 'dashboards', items: [
       { k: 'dashboard', label: 'Overview' }, { k: 'assets', label: 'Asset Inventory' }, { k: 'remediations', label: 'Remediations' },
       { k: 'sbom', label: 'Licenses & SBOM' }, { k: 'agent-coverage', label: 'Agent Coverage' }, { k: 'coverage', label: 'Scanner Coverage' },
@@ -3038,7 +3041,409 @@
     toast('Sample data loaded: ' + label + ' (' + STATE.findings.length + ' findings total)'); location.hash = dest; return false;
   }
 
-  window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), campaigns: vmShow(viewCampaigns), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz), assets: vmShow(viewAssets), remediations: vmShow(viewRemediations), sbom: vmShow(viewSbom),
-    getFindings: getFindings, loadScannerFindings: loadScannerFindings, sampleLoad: sampleData,
+  // ===================== Campaigns v2 (ClickUp-style workspace, shared data) =====================
+  // v2 is its own route so the generic dispatcher does not intercept it under #/campaigns/<id>.
+  // The clone app lives in campaigns-v2/campaigns-v2.js under window.CV2; the console host router
+  // mounts it here and tears it down via window._cv2Cleanup on the next route change.
+  function vmShowCv2(fn) { var w = function () { app.className = 'cv2'; return fn.apply(null, arguments); }; w.isView = true; return w; }
+
+    // Shared-data adapter for Campaigns v2 (P5+P6). Drop-in replacement for the inert
+    // cv2Store stub. Backs the clone's task Store (window.CV2) with the console's REAL data:
+    // STATE.findings + vmops-campaigns + vmops-overrides. Authored INSIDE the vmops.js IIFE so
+    // it closes over the console primitives below.
+    //
+    // DEPENDS ON these real vmops.js identifiers (all defined earlier in this IIFE):
+    //   STATE            (line 67)   -> STATE.findings, STATE.ov, STATE.cfg
+    //   keyOf            (line 158)  finding identity
+    //   ovOf             (line 159)  override lookup
+    //   statusOf         (line 160)  current status key ('new'..'false_positive')
+    //   isOpen           (line 161)
+    //   STATUS           (line 33)   the 6 status objects {k,l,open}
+    //   SLABEL           (line 41)   status key -> label
+    //   dueDate          (line 163)  firstSeen + SLA -> 'YYYY-MM-DD' | null
+    //   save             (line 64)   save(key,val) -> boolean (used to build setOverrideChecked)
+    //   loadCampaigns    (line 2016)
+    //   saveCampaigns    (line 2017) -> boolean
+    //   campaignFindings (line 2023)
+    //   unmanagedOpen    (line 2129)
+    //   findByKey        (line 941)
+    //   owners           (line 317)  distinct override-owner strings
+    //   cveIntel         (line 187)  KEV/exploit lookup
+    //   ensureIntel      (line 172)  lazy-load KEV/exploit datasets (async)
+    //   toast            (line 14)   console toast (used in place of the clone's CV2.U.toast)
+    // Also reads window.CV2.rerender at runtime (guarded). setOverride/addUpdate (296/303) exist
+    // and are mirrored here by setOverrideChecked() so the localStorage save() boolean can be
+    // checked (fix #8); their write semantics are byte-identical (Object.assign + updated stamp).
+    var cv2Store = (function () {
+      'use strict';
+
+      // ---- status projection: 6 CONSOLE keys as clone statuses (pass-through statusId) ----
+      var ST_COLOR = { new: '#868a96', triaged: '#7b68ee', in_remediation: '#49ccf9', resolved: '#2ecc8f', risk_accepted: '#f5a623', false_positive: '#b0b4bd' };
+      var ST_TYPE = { new: 'open', triaged: 'open', in_remediation: 'active', resolved: 'closed', risk_accepted: 'closed', false_positive: 'closed' };
+      function mappedStatuses() {
+        return STATUS.map(function (s) { return { id: s.k, name: s.l, color: ST_COLOR[s.k] || '#868a96', type: ST_TYPE[s.k] || 'open' }; });
+      }
+      var DEFAULT_STATUSES = mappedStatuses();
+      function statusClosed(k) { return ST_TYPE[k] === 'closed'; }
+
+      // ---- campaign-status folder labels (presentational grouping) ----
+      var CAMP_ST_LABEL = { planning: 'Planning', active: 'Active', paused: 'Paused', completed: 'Completed', cancelled: 'Cancelled' };
+      var CAMP_ST_ORDER = ['active', 'planning', 'paused', 'completed', 'cancelled'];
+
+      // ---- severity -> priority / colors ----
+      var SEV_PRIO = { Critical: 1, High: 2, Medium: 3, Low: 4 };
+      var SEV_COLOR = { Critical: '#e8506e', High: '#fd71af', Medium: '#f5a623', Low: '#49ccf9', Info: '#868a96' };
+      function sevToPrio(sev) { return SEV_PRIO[sev] || null; }
+
+      // ---- synthetic member colors ----
+      var MEMBER_PALETTE = ['#7b68ee', '#49ccf9', '#2ecc8f', '#f5a623', '#fd71af', '#e8506e', '#3d9df6', '#9b8cff'];
+      function colorFor(str) {
+        var h = 0, s = String(str || '');
+        for (var i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) >>> 0; }
+        return MEMBER_PALETTE[h % MEMBER_PALETTE.length];
+      }
+
+      var ME_ID = 'u_me', IMPORT_ID = 'u_import';
+      var _seq = 0;
+      function cvid(p) { return p + '_' + Date.now().toString(36) + '_' + (_seq++).toString(36); }
+      function nowISO() { return new Date().toISOString(); }
+      function toEpoch(v) { if (!v) return Date.now(); var t = (typeof v === 'string' && v.length === 10) ? Date.parse(v + 'T00:00:00') : Date.parse(v); return isNaN(t) ? Date.now() : t; }
+
+      // ---- checked override write: mirrors setOverride() but returns the save() boolean (fix #8) ----
+      function setOverrideChecked(f, patch) {
+        var k = keyOf(f), o = STATE.ov[k] || {};
+        Object.assign(o, patch, { updated: nowISO() });
+        STATE.ov[k] = o;
+        return save('vmops-overrides', STATE.ov);
+      }
+
+      // ---- comments <-> ov.updates (newest-first canonical; oldest-first for clone; stable cid) ----
+      // Deterministic fallback cid for legacy v1 updates that predate v2 (never persisted on read).
+      function cidOf(u, i) { return u.cid || ('cm_' + i + '_' + (Date.parse(u.at) || 0)); }
+      function updatesToComments(updates) {
+        var arr = (updates || []).slice(); // newest-first
+        // reverse to oldest-first for the clone drawer (which appends new comments at the end)
+        var out = [];
+        for (var i = arr.length - 1; i >= 0; i--) {
+          var u = arr[i];
+          out.push({ id: cidOf(u, i), authorId: u.authorId || IMPORT_ID, text: u.text, ts: Date.parse(u.at) || 0 });
+        }
+        return out;
+      }
+      // Reconcile the clone's (oldest-first) comment array back into ov.updates (newest-first).
+      // add = new incoming id not present -> unshift; delete = existing cid missing from incoming -> drop.
+      function reconcileComments(f, incoming) {
+        incoming = incoming || [];
+        var ov = ovOf(f);
+        var existing = (ov.updates || []).slice(); // newest-first
+        var wantIds = {}; incoming.forEach(function (c) { wantIds[c.id] = 1; });
+        // delete: keep only entries whose (stable-or-derived) cid is still wanted, preserve newest-first
+        var next = existing.filter(function (u, i) { return wantIds[cidOf(u, i)]; });
+        // add: any incoming comment whose id matches no existing entry is new -> unshift newest-first
+        var haveIds = {}; existing.forEach(function (u, i) { haveIds[cidOf(u, i)] = 1; });
+        incoming.forEach(function (c) {
+          if (!haveIds[c.id]) {
+            next.unshift({ at: nowISO(), text: c.text, cid: c.id || cvid('cm'), authorId: c.authorId || ME_ID });
+          }
+        });
+        return setOverrideChecked(f, { updates: next });
+      }
+      // Prepend a status-change log to updates (folded into the single batched write; carries cid/authorId).
+      function prependLog(f, text) {
+        var ov = ovOf(f);
+        return [{ at: nowISO(), text: text, cid: cvid('cm'), authorId: ME_ID }].concat(ov.updates || []);
+      }
+
+      // ---- intel + severity tags ----
+      function intelTags(f) {
+        var it = cveIntel(f.cve), out = [];
+        out.push({ name: f.severity || 'Info', color: SEV_COLOR[f.severity] || '#868a96' });
+        if (it.kev) out.push({ name: 'KEV', color: '#f5a623' });
+        if (it.ransomware) out.push({ name: 'Ransomware', color: '#e8506e' });
+        if (it.exploit) out.push({ name: 'Exploited', color: '#fd71af' });
+        return out;
+      }
+
+      // ---- build one fully-materialized clone task from a finding (fix #9: arrays never undefined) ----
+      function buildTask(f, token, listId, order) {
+        var ov = ovOf(f), k = keyOf(f);
+        var due = ('due' in ov) ? (ov.due || null) : dueDate(f); // fix #7 sentinel
+        return {
+          id: token + '::' + k,
+          listId: listId,
+          parentId: null,
+          name: f.name || f.cve || k,
+          statusId: statusOf(f),
+          priority: (ov.v2prio != null ? ov.v2prio : sevToPrio(f.severity)),
+          assignees: ov.owner ? ['own::' + ov.owner] : [],
+          description: ov.notes || '',
+          dueDate: due,
+          tags: intelTags(f),
+          checklist: Array.isArray(ov.checklist) ? ov.checklist : [],
+          comments: updatesToComments(ov.updates),
+          startDate: ov.v2start || null,
+          timeEstimate: 0,
+          timeSpent: 0,
+          archived: false,
+          order: order || 0,
+          createdAt: toEpoch(f.firstSeen),
+          updatedAt: toEpoch(ov.updated || f.firstSeen)
+        };
+      }
+
+      // ---- adapter object ----
+      var store = {
+        idbAvailable: true,
+        staleSeed: false,
+        _state: null,
+        _meta: { currentUser: ME_ID, timer: null }, // persistent across rebuilds (keeps live timer)
+        _rev: null,      // Map<taskId,{campaignId,key,listId,static,unmanaged}>
+        _revPrev: null,  // previous generation (tombstone) so in-flight drawer actions resolve (fix #2)
+
+        get state() { return this._state; },
+        get me() { return ME_ID; },
+
+        _resolve: function (id) {
+          var r = this._rev && this._rev.get(id);
+          if (r) return r;
+          r = this._revPrev && this._revPrev.get(id);
+          return r || null;
+        },
+
+        // ---------- projection ----------
+        load: function () {
+          this.buildState();
+          // populate KEV/exploit tags once intel is available, then re-project (non-blocking)
+          try {
+            var self = this;
+            ensureIntel().then(function () { self.buildState(); if (window.CV2 && window.CV2.rerender) window.CV2.rerender(); });
+          } catch (e) {}
+          return this;
+        },
+
+        buildState: function () {
+          this._revPrev = this._rev || new Map();
+          this._rev = new Map();
+
+          // members: me + import author + one per distinct override owner
+          var members = [
+            { id: ME_ID, name: 'Me', color: '#7b68ee' },
+            { id: IMPORT_ID, name: 'System', color: '#868a96' }
+          ];
+          owners().forEach(function (o) { members.push({ id: 'own::' + o, name: o, color: colorFor(o) }); });
+
+          var space = { id: 'sp::campaigns', name: 'Remediation Campaigns', color: '#7b68ee', collapsed: false };
+          var camps = loadCampaigns();
+
+          // folders by campaign.status (presentational; only for statuses actually present)
+          var present = {}; camps.forEach(function (c) { present[c.status || 'planning'] = 1; });
+          var folders = [];
+          CAMP_ST_ORDER.forEach(function (st) {
+            if (present[st]) folders.push({ id: 'fo::' + st, spaceId: space.id, name: CAMP_ST_LABEL[st] || st, collapsed: false });
+          });
+
+          var lists = [], tasks = [], rev = this._rev;
+
+          camps.forEach(function (c) {
+            var isStatic = !!(c.scope && c.scope.dynamic === false);
+            var st = c.status || 'planning';
+            var listId = 'li::' + c.id;
+            lists.push({
+              id: listId, spaceId: space.id, folderId: present[st] ? 'fo::' + st : null,
+              name: c.name || '(untitled campaign)', defaultView: isStatic ? 'list' : 'board',
+              statuses: mappedStatuses(), _campaignId: c.id, _static: isStatic
+            });
+            var fs = campaignFindings(c);
+            fs.forEach(function (f, i) {
+              var t = buildTask(f, c.id, listId, i);
+              tasks.push(t);
+              rev.set(t.id, { campaignId: c.id, key: keyOf(f), listId: listId, "static": isStatic, unmanaged: false });
+            });
+          });
+
+          // synthetic unmanaged list (open findings in no campaign)
+          var unListId = 'li::__unmanaged__';
+          lists.push({ id: unListId, spaceId: space.id, folderId: null, name: 'Unmanaged · open, no campaign', defaultView: 'list', statuses: mappedStatuses(), _unmanaged: true });
+          unmanagedOpen().forEach(function (f, i) {
+            var t = buildTask(f, '__unmanaged__', unListId, i);
+            tasks.push(t);
+            rev.set(t.id, { campaignId: '__unmanaged__', key: keyOf(f), listId: unListId, "static": false, unmanaged: true });
+          });
+
+          // synthetic "All findings" list — every finding regardless of campaign or status.
+          // Cross-campaign view: per-finding edits (status/owner/notes/due) round-trip like any
+          // task, but membership move/delete is refused (treated as unmanaged).
+          var allListId = 'li::__all__';
+          lists.push({ id: allListId, spaceId: space.id, folderId: null, name: 'All findings', defaultView: 'list', statuses: mappedStatuses(), _all: true });
+          (STATE.findings || []).forEach(function (f, i) {
+            var t = buildTask(f, '__all__', allListId, i);
+            tasks.push(t);
+            rev.set(t.id, { campaignId: '__all__', key: keyOf(f), listId: allListId, "static": false, unmanaged: true });
+          });
+
+          this._meta.currentUser = ME_ID;
+          this._state = { meta: this._meta, members: members, spaces: [space], folders: folders, lists: lists, tasks: tasks };
+          return this._state;
+        },
+
+        save: function () { return true; },   // console writes persist synchronously already
+        flush: function () { return true; },
+
+        // ---------- read-through lookups ----------
+        member: function (id) { var m = this._state.members; for (var i = 0; i < m.length; i++) if (m[i].id === id) return m[i]; return null; },
+        space: function (id) { var s = this._state.spaces; for (var i = 0; i < s.length; i++) if (s[i].id === id) return s[i]; return null; },
+        folder: function (id) { var fo = this._state.folders; for (var i = 0; i < fo.length; i++) if (fo[i].id === id) return fo[i]; return null; },
+        list: function (id) { var l = this._state.lists; for (var i = 0; i < l.length; i++) if (l[i].id === id) return l[i]; return null; },
+        task: function (id) { var t = this._state.tasks; for (var i = 0; i < t.length; i++) if (t[i].id === id) return t[i]; return null; },
+        listsInSpace: function (spaceId) { return this._state.lists.filter(function (l) { return l.spaceId === spaceId; }); },
+        listsInFolder: function (folderId) { return this._state.lists.filter(function (l) { return l.folderId === folderId; }); },
+        foldersInSpace: function (spaceId) { return this._state.folders.filter(function (f) { return f.spaceId === spaceId; }); },
+        rootLists: function (spaceId) { return this._state.lists.filter(function (l) { return l.spaceId === spaceId && !l.folderId; }); },
+        tasksIn: function (listId) { return this._state.tasks.filter(function (t) { return t.listId === listId && !t.parentId; }); },
+        allTasks: function () { return this._state.tasks.slice(); },
+        subtasks: function () { return []; },
+        statusesFor: function (listId) { var l = this.list(listId); return (l && l.statuses) || DEFAULT_STATUSES; },
+        status: function (listId, statusId) {
+          var sts = this.statusesFor(listId);
+          for (var i = 0; i < sts.length; i++) if (sts[i].id === statusId) return sts[i];
+          return sts[0] || { name: '', color: '#868a96', type: 'open' };
+        },
+        isDone: function (t) { if (!t) return false; return statusClosed(t.statusId); },
+        listPath: function (listId) {
+          var l = this.list(listId); if (!l) return [];
+          var out = []; var sp = this.space(l.spaceId); if (sp) out.push(sp);
+          var f = l.folderId ? this.folder(l.folderId) : null; if (f) out.push(f);
+          out.push(l); return out;
+        },
+        allTags: function () {
+          var seen = {}, out = [];
+          this._state.tasks.forEach(function (t) { (t.tags || []).forEach(function (tg) { if (!seen[tg.name]) { seen[tg.name] = 1; out.push(tg); } }); });
+          return out;
+        },
+
+        // ---------- write-back router (fixes #2,#3,#5,#6,#7,#8) ----------
+        updateTask: function (id, patch) {
+          var ref = this._resolve(id); if (!ref) return null;              // fix #2
+          var f = findByKey(ref.key); if (!f) return null;                 // fix #2
+          patch = patch || {};
+          var ov = ovOf(f), merged = {};
+
+          if ('statusId' in patch && patch.statusId !== statusOf(f)) {     // fix #3 no-op guard
+            merged.status = patch.statusId;
+            merged.updates = prependLog(f, 'Status → ' + (SLABEL[patch.statusId] || patch.statusId));
+          }
+          if ('assignees' in patch) {
+            var owner = this._ownerFromAssignees(patch.assignees);          // fix #6 member()-based, single owner
+            if (owner !== (ov.owner || '')) merged.owner = owner;
+          }
+          if ('description' in patch && patch.description !== (ov.notes || '')) merged.notes = patch.description;
+          if ('dueDate' in patch) {
+            var due = (patch.dueDate == null ? '' : patch.dueDate);        // fix #7 '' = cleared
+            if (!('due' in ov) || due !== ov.due) merged.due = due;
+          }
+          if ('checklist' in patch) merged.checklist = patch.checklist;
+          if ('startDate' in patch && (patch.startDate || null) !== (ov.v2start || null)) merged.v2start = patch.startDate || null; // fix #5 additive
+          if ('priority' in patch && patch.priority !== ov.v2prio) merged.v2prio = (patch.priority == null ? null : patch.priority); // fix #5 additive
+          // name / tags: source-owned -> ignored defensively (controls hidden in v2 build)
+
+          if (Object.keys(merged).length) {                               // fix #8 single checked write
+            if (!setOverrideChecked(f, merged)) { toast('Storage full — change not saved'); this.buildState(); return this.task(id); }
+          }
+          if ('comments' in patch) reconcileComments(f, patch.comments);  // fix #4
+          if ('listId' in patch) this._moveMembership(ref, patch.listId); // fix #6
+
+          this.buildState(); if (window.CV2 && window.CV2.rerender) window.CV2.rerender();
+          return this.task(id);
+        },
+
+        _ownerFromAssignees: function (assignees) {
+          if (!assignees || !assignees.length) return '';                 // empty clears owner
+          var m = this.member(assignees[0]);
+          if (!m) return '';
+          if (m.id === ME_ID || m.id === IMPORT_ID) return m.name;
+          return m.name; // 'own::<owner>' member name IS the owner string
+        },
+
+        toggleDone: function (id) {
+          var ref = this._resolve(id); if (!ref) return;                  // fix #2
+          var f = findByKey(ref.key); if (!f) return;
+          var cur = statusOf(f), merged = {}, target;
+          if (statusClosed(cur)) { target = ovOf(f).v2prevOpen || 'new'; } // fix #10 restore prior open
+          else { target = 'resolved'; merged.v2prevOpen = cur; }          // fix #10 stash prior open
+          if (target !== cur) { merged.status = target; merged.updates = prependLog(f, 'Status → ' + (SLABEL[target] || target)); }
+          if (Object.keys(merged).length) { if (!setOverrideChecked(f, merged)) toast('Storage full — change not saved'); }
+          this.buildState(); if (window.CV2 && window.CV2.rerender) window.CV2.rerender();
+        },
+
+        _moveMembership: function (ref, targetListId) {                   // fix #6 both-static-only
+          // never touch membership unless BOTH endpoints are static campaigns
+          if (ref.unmanaged || !ref["static"]) { toast('Membership follows the campaign scope'); return; }
+          if (targetListId === 'li::__unmanaged__' || targetListId.indexOf('li::') !== 0) { toast('Move only between static campaigns'); return; }
+          var targetId = targetListId.slice(4);
+          if (targetId === ref.campaignId) return;
+          var camps = loadCampaigns();
+          var src = null, dst = null;
+          camps.forEach(function (c) { if (c.id === ref.campaignId) src = c; if (c.id === targetId) dst = c; });
+          var dstStatic = dst && dst.scope && dst.scope.dynamic === false && dst.scope.staticKeys;
+          var srcStatic = src && src.scope && src.scope.dynamic === false && src.scope.staticKeys;
+          if (!srcStatic || !dstStatic) { toast('Move only between static campaigns'); return; }
+          var i = src.scope.staticKeys.indexOf(ref.key);
+          if (i >= 0) src.scope.staticKeys.splice(i, 1);
+          if (dst.scope.staticKeys.indexOf(ref.key) === -1) dst.scope.staticKeys.push(ref.key);
+          if (!saveCampaigns(camps)) toast('Storage full — move not saved');
+        },
+
+        deleteTask: function (id) {
+          var ref = this._resolve(id); if (!ref) return;
+          if (ref.unmanaged || !ref["static"]) { toast('Membership follows the campaign scope — manage it from the console'); return; }
+          var camps = loadCampaigns(), c = null;
+          camps.forEach(function (x) { if (x.id === ref.campaignId) c = x; });
+          if (!c || !c.scope || c.scope.dynamic !== false || !c.scope.staticKeys) { toast('Cannot remove from this campaign'); return; }
+          var i = c.scope.staticKeys.indexOf(ref.key);
+          if (i >= 0) { c.scope.staticKeys.splice(i, 1); if (!saveCampaigns(camps)) toast('Storage full — not saved'); }
+          this.buildState(); if (window.CV2 && window.CV2.rerender) window.CV2.rerender();
+        },
+
+        // ---------- neutralized creation / structure (guard console data) ----------
+        addTask: function () {                                            // fix #1 non-null throwaway
+          toast('Findings come from imports — add them on the Data Import page');
+          return { id: '__noop__', listId: null, name: '', statusId: 'new', assignees: [], tags: [], checklist: [], comments: [], archived: false };
+        },
+        addSpace: function () { return null; },
+        addFolder: function () { return null; },
+        addList: function () { return null; },
+        deleteFolder: function () { },
+        deleteSpace: function () { },
+        deleteList: function () { },
+
+        // ---------- time: ephemeral (no data write) ----------
+        startTimer: function (id) { this._meta.timer = { taskId: id, startedAt: Date.now() }; },
+        stopTimer: function () { var t = this._meta.timer; this._meta.timer = null; return t ? (Date.now() - t.startedAt) : 0; },
+
+        // ---------- data I/O: guarded ----------
+        reset: function () { toast('Manage data from the console'); return false; },
+        importJSON: function () { toast('Import findings from the Data Import page'); throw new Error('Import is disabled in Campaigns v2'); },
+        exportJSON: function () { return JSON.stringify(this._state, null, 2); }
+      };
+
+      return store;
+    })();
+
+  function viewCampaignsV2() {
+    setActive('campaigns-v2');
+    app.innerHTML = '<div id="cv2root" class="cv2"></div>';
+    var root = document.getElementById('cv2root');
+    try {
+      cv2Store.load();
+      if (window.CV2 && window.CV2.mount) window.CV2.mount(root, cv2Store);
+      else root.innerHTML = '<div style="padding:24px;color:var(--ink)">Campaigns v2 module not loaded.</div>';
+    } catch (e) {
+      root.innerHTML = '<div style="padding:24px;color:var(--ink)">Campaigns v2 failed to load: ' + esc(String((e && e.message) || e)) + '</div>';
+      if (window.console) console.error('[cv2]', e);
+    }
+  }
+
+  window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), campaigns: vmShow(viewCampaigns), 'campaigns-v2': vmShowCv2(viewCampaignsV2), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz), assets: vmShow(viewAssets), remediations: vmShow(viewRemediations), sbom: vmShow(viewSbom),
+    getFindings: getFindings, loadScannerFindings: loadScannerFindings, sampleLoad: sampleData, cv2Store: cv2Store,
     remediation: { ensure: ensureRemed, for: remediationFor, copy: copyText } };
 })();
