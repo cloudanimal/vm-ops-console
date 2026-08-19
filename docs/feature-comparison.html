@@ -223,6 +223,66 @@
 </div>
 </div>
 
+<h2>DefectDojo parity at a glance</h2>
+<p>DefectDojo is the open-source standard this console is most often measured against, so it earns its own scorecard. The comparison below is about features, functionality, and settings only, not DefectDojo's interface, which we deliberately do not copy. The pattern is consistent: the analysis and triage layer is at or ahead of open-source DefectDojo and runs entirely in the browser, while the enterprise platform tier (live connectors, multi-user with RBAC and SSO, and two-way ticketing) is exactly the set of things that need the one small connector.</p>
+
+<div class="legend">
+  <span><span class="pill p-have">Have today</span> shipped in the console now</span>
+  <span><span class="pill p-partial">Partial</span> present but lighter than DefectDojo</span>
+  <span><span class="pill p-road">Browser roadmap</span> feasible fully in-browser, not built yet</span>
+  <span><span class="pill p-backend">Needs backend</span> requires the connector / a server</span>
+</div>
+
+<div class="tblwrap">
+<table>
+<thead><tr><th style="min-width:200px">Capability</th><th>DefectDojo tier</th><th>Our console</th><th>Boundary</th></tr></thead>
+<tbody>
+
+<tr class="grp"><td colspan="4">Findings, triage, and identity</td></tr>
+<tr><td class="feat">Findings workbench, filters, bulk actions, notes</td><td>OSS</td><td><span class="pill p-have">Have</span> broader facets (KEV, EPSS high, recurring, fresh, no-ticket) with undo-first bulk</td><td>&mdash;</td></tr>
+<tr><td class="feat">Finding status model</td><td>OSS (eight states)</td><td><span class="pill p-partial">Partial</span> six states; verified and out-of-scope are the additions</td><td>&mdash;</td></tr>
+<tr><td class="feat">Risk acceptance that survives reimport</td><td>OSS</td><td><span class="pill p-have">Have</span> stored as an override, not a deletion; expiry and reason are the additions</td><td>&mdash;</td></tr>
+<tr><td class="feat">False positive history, similar findings</td><td>OSS</td><td><span class="pill p-road">Browser roadmap</span> local signature matching, suggested not auto-applied</td><td>&mdash;</td></tr>
+
+<tr class="grp"><td colspan="4">Import, parsers, and dedup</td></tr>
+<tr><td class="feat">Reimport reconciliation (close old, reactivate, recurrence)</td><td>OSS</td><td><span class="pill p-have">Have</span> auto-resolve gone, reopen re-detected with recurrence count; a do-not-reactivate toggle is the addition</td><td>&mdash;</td></tr>
+<tr><td class="feat">Parser breadth</td><td>OSS (500+ reports, 330+ tools)</td><td><span class="pill p-partial">Partial</span> Tenable CSV, SARIF, CycloneDX plus coverage feeds; SPDX and more native formats next</td><td>&mdash;</td></tr>
+<tr><td class="feat">No-code universal parser (map any CSV or JSON)</td><td>PRO</td><td><span class="pill p-road">Browser roadmap</span> a column-mapping panel we can ship with no server</td><td>&mdash;</td></tr>
+<tr><td class="feat">Deduplication and cross-tool correlation</td><td>OSS</td><td><span class="pill p-have">Have</span> identity key of CVE plus normalized host, cross-vendor coverage matrix and blind spots</td><td>&mdash;</td></tr>
+<tr><td class="feat">API-import parsers (Blackduck, SonarQube, Vulners)</td><td>OSS</td><td><span class="pill p-backend">Needs backend</span> cross-origin token calls</td><td><span class="b1">B1</span></td></tr>
+
+<tr class="grp"><td colspan="4">Risk, assets, and SLA</td></tr>
+<tr><td class="feat">Composite risk score, user-tunable weights</td><td>OSS feeds EPSS and KEV; scoring is lighter</td><td><span class="pill p-have">Have</span> CVSS, EPSS, KEV, LEV, SSVC, VPR and asset criticality with a transparent per-finding breakdown</td><td>&mdash;</td></tr>
+<tr><td class="feat">Asset inventory with criticality</td><td>OSS</td><td><span class="pill p-have">Have</span> per-host tiers that feed the score</td><td>&mdash;</td></tr>
+<tr><td class="feat">Asset grading A to F, benchmarks (CIS, OWASP ASVS)</td><td>OSS</td><td><span class="pill p-road">Browser roadmap</span> a letter grade and checklist derived locally from thresholds</td><td>&mdash;</td></tr>
+<tr><td class="feat">CVE-centric blast-radius rollup</td><td>PRO (Vulnerability Explorer)</td><td><span class="pill p-partial">Partial</span> CVE Explorer and remediation grouping; an explicit assets-impacted rollup is next</td><td>&mdash;</td></tr>
+<tr><td class="feat">Per-severity SLA and breach state</td><td>OSS (plus named configs)</td><td><span class="pill p-have">Have</span> editable windows and badges; named SLA profiles are the addition</td><td>&mdash;</td></tr>
+
+<tr class="grp"><td colspan="4">Remediation, SBOM, and reporting</td></tr>
+<tr><td class="feat">Remediation campaigns and root-cause grouping</td><td>Commercial norm; OSS lighter</td><td><span class="pill p-have">Have</span> two campaign workspaces plus one fix clears N findings across M assets</td><td>&mdash;</td></tr>
+<tr><td class="feat">SBOM and component inventory with license risk</td><td>OSS</td><td><span class="pill p-have">Have</span> CycloneDX components and license classes; finding-linked counts are the addition</td><td>&mdash;</td></tr>
+<tr><td class="feat">Report builder and posture trending</td><td>OSS builder; ASPM trending</td><td><span class="pill p-road">Browser roadmap</span> assemble printable reports and snapshot counts on import for trends</td><td>&mdash;</td></tr>
+
+<tr class="grp"><td colspan="4">Compliance and AI</td></tr>
+<tr><td class="feat">Regulations registry and framework mapping</td><td>OSS</td><td><span class="pill p-road">Browser roadmap</span> a bundled library attached to assets, all local</td><td>&mdash;</td></tr>
+<tr><td class="feat">On-device natural-language assistant</td><td>PRO ships a server MCP</td><td><span class="pill p-have">Have</span> Ask AI runs fully on device, no key and no egress</td><td>&mdash;</td></tr>
+<tr><td class="feat">Automated triage rules</td><td>PRO (Triage Engine, beta)</td><td><span class="pill p-road">Browser roadmap</span> local rules with a dry-run preview</td><td>&mdash;</td></tr>
+
+<tr class="grp"><td colspan="4">Platform tier (the connector)</td></tr>
+<tr><td class="feat">Live API pull, 134-connector catalog</td><td>PRO</td><td><span class="pill p-backend">Needs backend</span> dashboards already return vendor-shaped data, so the swap is small</td><td><span class="b1">B1</span> <span class="b2">B2</span></td></tr>
+<tr><td class="feat">Two-way Jira and ServiceNow ticketing</td><td>OSS (Jira), PRO (downstream)</td><td><span class="pill p-backend">Needs backend</span> deep-link and key-link today</td><td><span class="b4">B4</span></td></tr>
+<tr><td class="feat">Inbound webhooks and CI/CD gating</td><td>OSS (Jira webhook), PRO (importer, CLI)</td><td><span class="pill p-backend">Needs backend</span> a URL must be listening</td><td><span class="b5">B5</span></td></tr>
+<tr><td class="feat">Notifications (email, Slack, Teams, webhook)</td><td>OSS</td><td><span class="pill p-backend">Needs backend</span> in-app alerts are local; sending is server-side</td><td><span class="b6">B6</span></td></tr>
+<tr><td class="feat">Multi-user, RBAC, configuration permissions, SSO, served API and MCP</td><td>OSS (RBAC, SSO, API), PRO (MCP)</td><td><span class="pill p-backend">Needs backend</span> single-user local today</td><td><span class="b3">B3</span></td></tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="callout"><b>The honest positioning.</b> Measured on features rather than interface, the console already meets or beats open-source DefectDojo on the analysis layer: a more transparent multi-signal risk model, reimport reconciliation that keeps triage as the source of truth, cross-vendor coverage and blind-spot detection, root-cause remediation, and an assistant that runs entirely on device where DefectDojo's is a server. Most of the remaining open-source gaps (asset grading, a regulations library and framework mapping, a universal no-code parser, a report builder, posture trending, and local triage rules) are winnable fully in the browser. The features that are genuinely out of reach are the same platform tier every product in this space charges for: live connectors, scheduled ingestion, two-way ticketing, inbound webhooks, notification sending, and multi-user with RBAC and SSO. All of them sit behind the one small opt-in connector, so they arrive together without giving up the local-first promise.</div>
+
+<p class="note">Comparison basis: DefectDojo open-source v3.2.201 and current documentation (parser count now cited as 500-plus reports across 330-plus tools; the universal parser and deduplication tuning are Pro features; Pro starts near 300 dollars per month on storage-based tiering). Tier labels mark whether a capability is open-source or Pro in DefectDojo. Status marks reflect this console as of the current build.</p>
+
 <div class="foot">
 Vulnerability Management Console &mdash; competitive analysis. Research compiled from vendor documentation and public sources; product capabilities and ownership change frequently, so verify specifics against current vendor docs before relying on them. Status marks reflect this console as of the current build.
 </div>
