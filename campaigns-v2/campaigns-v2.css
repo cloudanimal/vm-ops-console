@@ -41,7 +41,9 @@
 
 /* the clone grid root IS #cv2root — confined to the pane (position:relative;overflow:hidden),
  * bounded height (100dvh minus the console nav+wrap band; 180px is a placeholder to tune). */
-#cv2root{display:grid;grid-template-columns:var(--sb-w) 1fr;height:calc(100dvh - 180px);overflow:hidden;position:relative}
+/* Full-bleed: break out of the console's centered .wrap column and fill the whole
+   window below the nav. top is set precisely at runtime (cv2Fit) to the nav's height. */
+#cv2root{display:grid;grid-template-columns:var(--sb-w) 1fr;position:fixed;top:64px;left:0;right:0;bottom:0;height:auto;overflow:hidden}
 /* when the sidebar is hidden it leaves the grid flow, so main must own the only column */
 #cv2root.sb-collapsed{grid-template-columns:1fr}
 #cv2root.sb-collapsed #cv2-sidebar{display:none}

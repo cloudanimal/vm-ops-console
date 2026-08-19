@@ -3429,6 +3429,16 @@
       return store;
     })();
 
+  // The v2 pane is position:fixed and full-bleed; pin its top edge exactly to the
+  // nav's height so it fills the window below the nav (the nav band can change height
+  // when it wraps at narrow widths). Self-cleaning: no-ops when the pane is absent.
+  function cv2Fit() {
+    var r = document.getElementById('cv2root'); if (!r) return;
+    var nav = document.querySelector('nav.top');
+    r.style.top = (nav ? Math.round(nav.getBoundingClientRect().bottom) : 64) + 'px';
+  }
+  if (!window._cv2FitBound) { window._cv2FitBound = true; window.addEventListener('resize', cv2Fit); }
+
   function viewCampaignsV2() {
     setActive('campaigns-v2');
     app.innerHTML = '<div id="cv2root" class="cv2"></div>';
@@ -3441,6 +3451,7 @@
       root.innerHTML = '<div style="padding:24px;color:var(--ink)">Campaigns v2 failed to load: ' + esc(String((e && e.message) || e)) + '</div>';
       if (window.console) console.error('[cv2]', e);
     }
+    cv2Fit();
   }
 
   window.VMOPS = { dashboard: vmShow(viewDashboard), findings: vmShow(viewFindings), campaigns: vmShow(viewCampaigns), 'campaigns-v2': vmShowCv2(viewCampaignsV2), import: vmShow(viewImport), settings: vmShow(viewSettings), wiz: vmShow(viewWiz), assets: vmShow(viewAssets), remediations: vmShow(viewRemediations), sbom: vmShow(viewSbom),
