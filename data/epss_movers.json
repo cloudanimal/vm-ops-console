@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-19",
+  "updated": "2026-08-20",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-19",
-  "previous_date": "2026-08-12",
+  "current_date": "2026-08-20",
+  "previous_date": "2026-08-13",
   "risers": [
     {
       "id": "CVE-2024-57726",
@@ -33,6 +33,13 @@
       "name": "An issue was discovered on TP-Link TL-WR840N v5 00000005 0.9.1 3.16 v0001.0 Build 170608 Rel.58696n and TL-WR8"
     },
     {
+      "id": "CVE-2026-20896",
+      "now": 0.62381,
+      "prev": 0.31809,
+      "delta": 0.30572,
+      "name": "Gitea Docker image trusts spoofable reverse-proxy headers by default"
+    },
+    {
       "id": "CVE-2026-33824",
       "now": 0.77898,
       "prev": 0.5585,
@@ -45,6 +52,13 @@
       "prev": 0.75594,
       "delta": 0.21274,
       "name": "Jenkins project Jenkins Pipeline: Groovy Plugin"
+    },
+    {
+      "id": "CVE-2022-1281",
+      "now": 0.43036,
+      "prev": 0.23194,
+      "delta": 0.19842,
+      "name": "Photo Gallery < 1.6.3 - Unauthenticated SQL Injection"
     },
     {
       "id": "CVE-2026-3891",
@@ -61,6 +75,13 @@
       "name": "WordPress WP SuperBackup plugin <= 2.3.3 - Unauthenticated Arbitrary File Upload vulnerabi"
     },
     {
+      "id": "CVE-2020-10204",
+      "now": 0.38166,
+      "prev": 0.25219,
+      "delta": 0.12947,
+      "name": "Sonatype Nexus Repository before 3.21.2 allows Remote Code Execution."
+    },
+    {
       "id": "CVE-2023-2914",
       "now": 0.39935,
       "prev": 0.27012,
@@ -73,6 +94,13 @@
       "prev": 0.03663,
       "delta": 0.12086,
       "name": "The System.setClipboard method in ActionScript in Adobe Flash Player 9.0.124.0 and earlier allows remote attac"
+    },
+    {
+      "id": "CVE-2021-42292",
+      "now": 0.43277,
+      "prev": 0.31949,
+      "delta": 0.11328,
+      "name": "Microsoft Excel Security Feature Bypass Vulnerability"
     },
     {
       "id": "CVE-2025-43566",
@@ -94,6 +122,13 @@
       "prev": 0.17701,
       "delta": 0.10606,
       "name": "Joomla Extension - joomshaper.com - Unauthenticated access to Helix3 template ajax handler"
+    },
+    {
+      "id": "CVE-2009-1025",
+      "now": 0.40077,
+      "prev": 0.29834,
+      "delta": 0.10243,
+      "name": "PHP remote file inclusion vulnerability in linkadmin.php in Beerwin PHPLinkAdmin 1.0 allows remote attackers t"
     },
     {
       "id": "CVE-2002-0150",
@@ -124,13 +159,6 @@
       "name": "Buffer overflow in ASP Server-Side Include Function in IIS 4.0, 5.0 and 5.1 allows remote attackers to cause a"
     },
     {
-      "id": "CVE-2026-72898",
-      "now": 0.104,
-      "prev": 0.01074,
-      "delta": 0.09326,
-      "name": "Metabase SQL injection via password reset endpoint"
-    },
-    {
       "id": "CVE-2026-50160",
       "now": 0.1775,
       "prev": 0.08603,
@@ -143,6 +171,13 @@
       "prev": 0.13746,
       "delta": 0.08961,
       "name": "A remote command execution (RCE) vulnerability in the /api/runscript endpoint of FUXA 1.1.13 allows attackers "
+    },
+    {
+      "id": "CVE-2026-32255",
+      "now": 0.18981,
+      "prev": 0.10069,
+      "delta": 0.08912,
+      "name": "Kan is Vulnerable to Unauthenticated SSRF via Attachment Download Endpoint"
     },
     {
       "id": "CVE-2025-5306",
@@ -178,41 +213,6 @@
       "prev": 0.23901,
       "delta": 0.07104,
       "name": "Buffer overflow in the chunked encoding transfer mechanism in IIS 4.0 and 5.0 allows attackers to execute arbi"
-    },
-    {
-      "id": "CVE-2009-0043",
-      "now": 0.53296,
-      "prev": 0.46451,
-      "delta": 0.06845,
-      "name": "The smmsnmpd service in CA Service Metric Analysis r11.0 through r11.1 SP1 and Service Level Management 3.5 do"
-    },
-    {
-      "id": "CVE-2025-47981",
-      "now": 0.32227,
-      "prev": 0.25457,
-      "delta": 0.0677,
-      "name": "SPNEGO Extended Negotiation (NEGOEX) Security Mechanism Remote Code Execution Vulnerabilit"
-    },
-    {
-      "id": "CVE-2025-30394",
-      "now": 0.30495,
-      "prev": 0.24118,
-      "delta": 0.06377,
-      "name": "Windows Remote Desktop Gateway (RD Gateway) Denial of Service Vulnerability"
-    },
-    {
-      "id": "CVE-2025-3833",
-      "now": 0.44633,
-      "prev": 0.38367,
-      "delta": 0.06266,
-      "name": "SQL Injection"
-    },
-    {
-      "id": "CVE-2006-4889",
-      "now": 0.16416,
-      "prev": 0.10168,
-      "delta": 0.06248,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in Telekorn SignKorn Guestbook (SL) 1.3 and earlier, when r"
     }
   ],
   "newly_high": [
@@ -236,6 +236,13 @@
       "prev": 0.35365,
       "delta": 0.32688,
       "name": "An issue was discovered on TP-Link TL-WR840N v5 00000005 0.9.1 3.16 v0001.0 Build 170608 Rel.58696n and TL-WR8"
+    },
+    {
+      "id": "CVE-2026-20896",
+      "now": 0.62381,
+      "prev": 0.31809,
+      "delta": 0.30572,
+      "name": "Gitea Docker image trusts spoofable reverse-proxy headers by default"
     },
     {
       "id": "CVE-2025-43566",
@@ -266,25 +273,11 @@
       "name": "Microsoft Internet Explorer 6 through 11 allows remote attackers to execute arbitrary code or cause a denial o"
     },
     {
-      "id": "CVE-2020-28579",
-      "now": 0.50734,
-      "prev": 0.4929,
-      "delta": 0.01444,
-      "name": "Trend Micro Trend Micro InterScan Web Security Virtual Appliance"
-    },
-    {
       "id": "CVE-2018-5430",
       "now": 0.50077,
       "prev": 0.48753,
       "delta": 0.01324,
       "name": "TIBCO JasperReports Server Information Disclosure Vulnerability"
-    },
-    {
-      "id": "CVE-2017-11890",
-      "now": 0.50051,
-      "prev": 0.49398,
-      "delta": 0.00653,
-      "name": "Microsoft Corporation Internet Explorer"
     }
   ]
 }
