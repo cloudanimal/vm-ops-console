@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-20",
+  "updated": "2026-08-21",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-20",
-  "previous_date": "2026-08-13",
+  "current_date": "2026-08-21",
+  "previous_date": "2026-08-14",
   "risers": [
     {
       "id": "CVE-2024-57726",
@@ -68,13 +68,6 @@
       "name": "Pix for WooCommerce <= 1.5.0 - Unauthenticated Arbitrary File Upload"
     },
     {
-      "id": "CVE-2024-56064",
-      "now": 0.29994,
-      "prev": 0.15342,
-      "delta": 0.14652,
-      "name": "WordPress WP SuperBackup plugin <= 2.3.3 - Unauthenticated Arbitrary File Upload vulnerabi"
-    },
-    {
       "id": "CVE-2020-10204",
       "now": 0.38166,
       "prev": 0.25219,
@@ -89,25 +82,11 @@
       "name": "Rockwell Automation ThinManager Thinserver Software Vulnerable to Input Validation Vulnera"
     },
     {
-      "id": "CVE-2008-3873",
-      "now": 0.15749,
-      "prev": 0.03663,
-      "delta": 0.12086,
-      "name": "The System.setClipboard method in ActionScript in Adobe Flash Player 9.0.124.0 and earlier allows remote attac"
-    },
-    {
       "id": "CVE-2021-42292",
       "now": 0.43277,
       "prev": 0.31949,
       "delta": 0.11328,
       "name": "Microsoft Excel Security Feature Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2025-43566",
-      "now": 0.55106,
-      "prev": 0.44182,
-      "delta": 0.10924,
-      "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
     },
     {
       "id": "CVE-2023-40028",
@@ -138,13 +117,6 @@
       "name": "Buffer overflow in Internet Information Server (IIS) 4.0, 5.0, and 5.1 allows remote attackers to spoof the sa"
     },
     {
-      "id": "CVE-2026-15733",
-      "now": 0.13545,
-      "prev": 0.03902,
-      "delta": 0.09643,
-      "name": "WGDashboard Remote Code Execution vulnerability"
-    },
-    {
       "id": "CVE-2002-0147",
       "now": 0.61761,
       "prev": 0.52162,
@@ -159,11 +131,18 @@
       "name": "Buffer overflow in ASP Server-Side Include Function in IIS 4.0, 5.0 and 5.1 allows remote attackers to cause a"
     },
     {
-      "id": "CVE-2026-50160",
-      "now": 0.1775,
-      "prev": 0.08603,
-      "delta": 0.09147,
-      "name": "Mass Assignment via Onboarding Endpoint Allows Unauthenticated JWT_SECRET Overwrite"
+      "id": "CVE-2026-32255",
+      "now": 0.18981,
+      "prev": 0.09574,
+      "delta": 0.09407,
+      "name": "Kan is Vulnerable to Unauthenticated SSRF via Attachment Download Endpoint"
+    },
+    {
+      "id": "CVE-2025-37924",
+      "now": 0.20703,
+      "prev": 0.11689,
+      "delta": 0.09014,
+      "name": "ksmbd: fix use-after-free in kerberos authentication"
     },
     {
       "id": "CVE-2023-33831",
@@ -173,25 +152,11 @@
       "name": "A remote command execution (RCE) vulnerability in the /api/runscript endpoint of FUXA 1.1.13 allows attackers "
     },
     {
-      "id": "CVE-2026-32255",
-      "now": 0.18981,
-      "prev": 0.10069,
-      "delta": 0.08912,
-      "name": "Kan is Vulnerable to Unauthenticated SSRF via Attachment Download Endpoint"
-    },
-    {
       "id": "CVE-2025-5306",
       "now": 0.31452,
       "prev": 0.2282,
       "delta": 0.08632,
       "name": "Command Injection in Netflow path"
-    },
-    {
-      "id": "CVE-2025-43562",
-      "now": 0.45123,
-      "prev": 0.36537,
-      "delta": 0.08586,
-      "name": "ColdFusion | Improper Neutralization of Special Elements used in an OS Command ('OS Comman"
     },
     {
       "id": "CVE-2002-0071",
@@ -213,6 +178,41 @@
       "prev": 0.23901,
       "delta": 0.07104,
       "name": "Buffer overflow in the chunked encoding transfer mechanism in IIS 4.0 and 5.0 allows attackers to execute arbi"
+    },
+    {
+      "id": "CVE-2013-3895",
+      "now": 0.2964,
+      "prev": 0.22627,
+      "delta": 0.07013,
+      "name": "Microsoft SharePoint Server 2007 SP3 and 2010 SP1 and SP2 allows remote attackers to conduct clickjacking atta"
+    },
+    {
+      "id": "CVE-2009-0043",
+      "now": 0.53296,
+      "prev": 0.46451,
+      "delta": 0.06845,
+      "name": "The smmsnmpd service in CA Service Metric Analysis r11.0 through r11.1 SP1 and Service Level Management 3.5 do"
+    },
+    {
+      "id": "CVE-2025-47981",
+      "now": 0.32227,
+      "prev": 0.25457,
+      "delta": 0.0677,
+      "name": "SPNEGO Extended Negotiation (NEGOEX) Security Mechanism Remote Code Execution Vulnerabilit"
+    },
+    {
+      "id": "CVE-2026-25895",
+      "now": 0.10353,
+      "prev": 0.03913,
+      "delta": 0.0644,
+      "name": "FUXA Unauthenticated Remote Code Execution via Arbitrary File Write in Upload API"
+    },
+    {
+      "id": "CVE-2013-3889",
+      "now": 0.27399,
+      "prev": 0.21117,
+      "delta": 0.06282,
+      "name": "Microsoft Excel 2007 SP3, 2010 SP1 and SP2, 2013, and 2013 RT; Office 2007 SP3, 2010 SP1 and SP2, 2013, and 20"
     }
   ],
   "newly_high": [
@@ -245,13 +245,6 @@
       "name": "Gitea Docker image trusts spoofable reverse-proxy headers by default"
     },
     {
-      "id": "CVE-2025-43566",
-      "now": 0.55106,
-      "prev": 0.44182,
-      "delta": 0.10924,
-      "name": "ColdFusion | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'"
-    },
-    {
       "id": "CVE-2009-0043",
       "now": 0.53296,
       "prev": 0.46451,
@@ -271,6 +264,13 @@
       "prev": 0.46767,
       "delta": 0.04336,
       "name": "Microsoft Internet Explorer 6 through 11 allows remote attackers to execute arbitrary code or cause a denial o"
+    },
+    {
+      "id": "CVE-2022-28171",
+      "now": 0.52057,
+      "prev": 0.49858,
+      "delta": 0.02199,
+      "name": "hikvision DS-A71024/48/72R,DS-A80624S,DS-A81016S,DS-A72024/72R,DS-A80316S,DS-A82024D"
     },
     {
       "id": "CVE-2018-5430",
