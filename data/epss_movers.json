@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-21",
+  "updated": "2026-08-22",
   "source": "FIRST EPSS",
   "current_date": "2026-08-21",
-  "previous_date": "2026-08-14",
+  "previous_date": "2026-08-15",
   "risers": [
     {
       "id": "CVE-2024-57726",
@@ -10,13 +10,6 @@
       "prev": 0.088,
       "delta": 0.57801,
       "name": "SimpleHelp remote support software v5.5.7 and before has a vulnerability that allows low-privileges technician"
-    },
-    {
-      "id": "CVE-2026-58644",
-      "now": 0.45478,
-      "prev": 0.06372,
-      "delta": 0.39106,
-      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2001-0506",
@@ -96,18 +89,18 @@
       "name": "Arbitrary file read via symlinks in Ghost"
     },
     {
-      "id": "CVE-2026-49049",
-      "now": 0.28307,
-      "prev": 0.17701,
-      "delta": 0.10606,
-      "name": "Joomla Extension - joomshaper.com - Unauthenticated access to Helix3 template ajax handler"
-    },
-    {
       "id": "CVE-2009-1025",
       "now": 0.40077,
       "prev": 0.29834,
       "delta": 0.10243,
       "name": "PHP remote file inclusion vulnerability in linkadmin.php in Beerwin PHPLinkAdmin 1.0 allows remote attackers t"
+    },
+    {
+      "id": "CVE-2026-32255",
+      "now": 0.18981,
+      "prev": 0.09049,
+      "delta": 0.09932,
+      "name": "Kan is Vulnerable to Unauthenticated SSRF via Attachment Download Endpoint"
     },
     {
       "id": "CVE-2002-0150",
@@ -129,13 +122,6 @@
       "prev": 0.53195,
       "delta": 0.09509,
       "name": "Buffer overflow in ASP Server-Side Include Function in IIS 4.0, 5.0 and 5.1 allows remote attackers to cause a"
-    },
-    {
-      "id": "CVE-2026-32255",
-      "now": 0.18981,
-      "prev": 0.09574,
-      "delta": 0.09407,
-      "name": "Kan is Vulnerable to Unauthenticated SSRF via Attachment Download Endpoint"
     },
     {
       "id": "CVE-2025-37924",
@@ -213,6 +199,20 @@
       "prev": 0.21117,
       "delta": 0.06282,
       "name": "Microsoft Excel 2007 SP3, 2010 SP1 and SP2, 2013, and 2013 RT; Office 2007 SP3, 2010 SP1 and SP2, 2013, and 20"
+    },
+    {
+      "id": "CVE-2006-4889",
+      "now": 0.16416,
+      "prev": 0.10168,
+      "delta": 0.06248,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in Telekorn SignKorn Guestbook (SL) 1.3 and earlier, when r"
+    },
+    {
+      "id": "CVE-2008-6482",
+      "now": 0.22086,
+      "prev": 0.15873,
+      "delta": 0.06213,
+      "name": "PHP remote file inclusion vulnerability in admin.treeg.php in the Flash Tree Gallery (com_treeg) component 1.0"
     }
   ],
   "newly_high": [
@@ -257,13 +257,6 @@
       "prev": 0.46529,
       "delta": 0.05718,
       "name": "Adobe Experience Manager (MS) | Deserialization of Untrusted Data (CWE-502)"
-    },
-    {
-      "id": "CVE-2014-0282",
-      "now": 0.51103,
-      "prev": 0.46767,
-      "delta": 0.04336,
-      "name": "Microsoft Internet Explorer 6 through 11 allows remote attackers to execute arbitrary code or cause a denial o"
     },
     {
       "id": "CVE-2022-28171",

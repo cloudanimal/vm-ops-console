@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-21",
-  "total": 1673,
+  "updated": "2026-08-22",
+  "total": 1674,
   "ransomware_count": 352,
   "by_year": {
     "2021": 311,
@@ -8,7 +8,7 @@
     "2023": 187,
     "2024": 186,
     "2025": 245,
-    "2026": 189
+    "2026": 190
   },
   "top_vendors": [
     [
@@ -65,7 +65,7 @@
     ],
     [
       "Synacor",
-      18
+      19
     ],
     [
       "SonicWall",
@@ -126,15 +126,15 @@
       25
     ],
     [
+      "Synacor Zimbra Collaboration Suite (ZCS)",
+      17
+    ],
+    [
       "Microsoft Exchange Server",
       17
     ],
     [
       "Adobe ColdFusion",
-      16
-    ],
-    [
-      "Synacor Zimbra Collaboration Suite (ZCS)",
       16
     ],
     [
