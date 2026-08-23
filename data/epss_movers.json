@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-22",
+  "updated": "2026-08-23",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-21",
-  "previous_date": "2026-08-15",
+  "current_date": "2026-08-22",
+  "previous_date": "2026-08-16",
   "risers": [
     {
       "id": "CVE-2024-57726",
@@ -82,11 +82,11 @@
       "name": "Microsoft Excel Security Feature Bypass Vulnerability"
     },
     {
-      "id": "CVE-2023-40028",
-      "now": 0.68357,
-      "prev": 0.57565,
-      "delta": 0.10792,
-      "name": "Arbitrary file read via symlinks in Ghost"
+      "id": "CVE-2002-0283",
+      "now": 0.2837,
+      "prev": 0.17165,
+      "delta": 0.11205,
+      "name": "Windows XP with port 445 open allows remote attackers to cause a denial of service (CPU consumption) via a flo"
     },
     {
       "id": "CVE-2009-1025",
@@ -159,6 +159,20 @@
       "name": "Double free vulnerability in the krb5_rd_cred function for MIT Kerberos 5 (krb5) 1.3.1 and earlier may allow l"
     },
     {
+      "id": "CVE-2001-1243",
+      "now": 0.70505,
+      "prev": 0.63188,
+      "delta": 0.07317,
+      "name": "Scripting.FileSystemObject in asp.dll for Microsoft IIS 4.0 and 5.0 allows local or remote attackers to cause "
+    },
+    {
+      "id": "CVE-2023-38836",
+      "now": 0.76276,
+      "prev": 0.69003,
+      "delta": 0.07273,
+      "name": "File Upload vulnerability in BoidCMS v.2.0.0 allows a remote attacker to execute arbitrary code by adding a GI"
+    },
+    {
       "id": "CVE-2002-0364",
       "now": 0.31005,
       "prev": 0.23901,
@@ -180,13 +194,6 @@
       "name": "The smmsnmpd service in CA Service Metric Analysis r11.0 through r11.1 SP1 and Service Level Management 3.5 do"
     },
     {
-      "id": "CVE-2025-47981",
-      "now": 0.32227,
-      "prev": 0.25457,
-      "delta": 0.0677,
-      "name": "SPNEGO Extended Negotiation (NEGOEX) Security Mechanism Remote Code Execution Vulnerabilit"
-    },
-    {
       "id": "CVE-2026-25895",
       "now": 0.10353,
       "prev": 0.03913,
@@ -206,13 +213,6 @@
       "prev": 0.10168,
       "delta": 0.06248,
       "name": "Multiple PHP remote file inclusion vulnerabilities in Telekorn SignKorn Guestbook (SL) 1.3 and earlier, when r"
-    },
-    {
-      "id": "CVE-2008-6482",
-      "now": 0.22086,
-      "prev": 0.15873,
-      "delta": 0.06213,
-      "name": "PHP remote file inclusion vulnerability in admin.treeg.php in the Flash Tree Gallery (com_treeg) component 1.0"
     }
   ],
   "newly_high": [
@@ -254,8 +254,8 @@
     {
       "id": "CVE-2025-49533",
       "now": 0.52247,
-      "prev": 0.46529,
-      "delta": 0.05718,
+      "prev": 0.48117,
+      "delta": 0.0413,
       "name": "Adobe Experience Manager (MS) | Deserialization of Untrusted Data (CWE-502)"
     },
     {
@@ -264,6 +264,13 @@
       "prev": 0.49858,
       "delta": 0.02199,
       "name": "hikvision DS-A71024/48/72R,DS-A80624S,DS-A81016S,DS-A72024/72R,DS-A80316S,DS-A82024D"
+    },
+    {
+      "id": "CVE-2025-5394",
+      "now": 0.50879,
+      "prev": 0.49465,
+      "delta": 0.01414,
+      "name": "Alone \u2013 Charity Multipurpose Non-profit WordPress Theme <= 7.8.3 - Missing Authorization t"
     },
     {
       "id": "CVE-2018-5430",

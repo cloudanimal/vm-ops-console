@@ -1,10 +1,244 @@
 {
-  "updated": "2026-08-22",
+  "updated": "2026-08-23",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
+    {
+      "id": null,
+      "title": "Alpine: quickjs-ng: security update to 0.11.0-r2",
+      "severity": "Medium",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446243",
+      "cves": [
+        "CVE-2026-0821",
+        "CVE-2026-0822",
+        "CVE-2026-1144",
+        "CVE-2026-1145"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: quickjs-ng: security update to 0.11.0-r2",
+      "severity": "Medium",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446243",
+      "cves": [
+        "CVE-2026-0821",
+        "CVE-2026-0822",
+        "CVE-2026-1144",
+        "CVE-2026-1145"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: quickjs-ng: security update to 0.11.0-r1",
+      "severity": "Medium",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446242",
+      "cves": [
+        "CVE-2026-0821",
+        "CVE-2026-0822",
+        "CVE-2026-1144",
+        "CVE-2026-1145"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: quickjs-ng: security update to 0.11.0-r1",
+      "severity": "Medium",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446242",
+      "cves": [
+        "CVE-2026-0821",
+        "CVE-2026-0822",
+        "CVE-2026-1144",
+        "CVE-2026-1145"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: quickjs-ng: security update to 0.10.0-r0",
+      "severity": "High",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446241",
+      "cves": [
+        "CVE-2025-46687",
+        "CVE-2025-46688"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: quickjs-ng: security update to 0.10.0-r0",
+      "severity": "High",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446241",
+      "cves": [
+        "CVE-2025-46687",
+        "CVE-2025-46688"
+      ]
+    },
+    {
+      "id": "339038",
+      "title": "openSUSE 16: bugwarden / bugwarden-bash-completion / bugwarden-fish-completion / etc (openSUSE-SU-2026:21613-1)",
+      "severity": "Medium",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339038",
+      "cves": []
+    },
+    {
+      "id": "339037",
+      "title": "openSUSE 16 Security Update : git-lfs (openSUSE-SU-2026:21621-1)",
+      "severity": "High",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339037",
+      "cves": [
+        "CVE-2025-22869",
+        "CVE-2025-26625"
+      ]
+    },
+    {
+      "id": "339036",
+      "title": "openSUSE 16 Security Update : chromium (openSUSE-SU-2026:21609-1)",
+      "severity": "Critical",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339036",
+      "cves": [
+        "CVE-2026-76033",
+        "CVE-2026-76034",
+        "CVE-2026-76035",
+        "CVE-2026-76036",
+        "CVE-2026-76037",
+        "CVE-2026-76038",
+        "CVE-2026-76039",
+        "CVE-2026-76040",
+        "CVE-2026-76041",
+        "CVE-2026-76042",
+        "CVE-2026-76043",
+        "CVE-2026-76044",
+        "CVE-2026-76045",
+        "CVE-2026-76046",
+        "CVE-2026-76047"
+      ]
+    },
+    {
+      "id": "339035",
+      "title": "openSUSE 16 Security Update : redis (openSUSE-SU-2026:21612-1)",
+      "severity": "High",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339035",
+      "cves": [
+        "CVE-2026-23479",
+        "CVE-2026-23631",
+        "CVE-2026-25243",
+        "CVE-2026-25588",
+        "CVE-2026-25589",
+        "CVE-2026-62356"
+      ]
+    },
+    {
+      "id": "339034",
+      "title": "openSUSE 16: weechat / weechat-devel / weechat-lang / weechat-lua / weechat-perl / etc (openSUSE-SU-2026:21615-1)",
+      "severity": "High",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339034",
+      "cves": [
+        "CVE-2026-53524",
+        "CVE-2026-53525"
+      ]
+    },
+    {
+      "id": "339033",
+      "title": "openSUSE 16 Security Update : apptainer (openSUSE-SU-2026:21611-1)",
+      "severity": "High",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339033",
+      "cves": [
+        "CVE-2026-17106"
+      ]
+    },
+    {
+      "id": "339032",
+      "title": "Fedora 43 : AusweisApp2 (2026-44f6d8f2e7)",
+      "severity": "High",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339032",
+      "cves": []
+    },
+    {
+      "id": "339031",
+      "title": "MiracleLinux 9 : gstreamer1-plugins-good-1.22.12-7.el9_8.2 (AXSA:2026-1617:03)",
+      "severity": "High",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339031",
+      "cves": [
+        "CVE-2026-18649"
+      ]
+    },
+    {
+      "id": "339030",
+      "title": "MiracleLinux 9 : python-idna-2.10-8.el9_8 (AXSA:2026-1620:02)",
+      "severity": "Medium",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339030",
+      "cves": [
+        "CVE-2026-45409"
+      ]
+    },
+    {
+      "id": "339029",
+      "title": "MiracleLinux 8 : grafana-9.2.10-32.el8_10.1 (AXSA:2026-1616:23)",
+      "severity": "High",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339029",
+      "cves": [
+        "CVE-2026-33377",
+        "CVE-2026-42127"
+      ]
+    },
+    {
+      "id": "339028",
+      "title": "MiracleLinux 9 : gimp-3.0.4-4.el9_8.9 (AXSA:2026-1618:09)",
+      "severity": "High",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339028",
+      "cves": [
+        "CVE-2026-42169",
+        "CVE-2026-66758",
+        "CVE-2026-66759"
+      ]
+    },
+    {
+      "id": "339027",
+      "title": "MiracleLinux 9 : nghttp2-1.43.0-6.el9_8.2 (AXSA:2026-1622:04)",
+      "severity": "Medium",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339027",
+      "cves": [
+        "CVE-2026-58055"
+      ]
+    },
+    {
+      "id": "339026",
+      "title": "MiracleLinux 8 : perl-Date-Manip-6.60-3.el8_10.1 (AXSA:2026-1619:01)",
+      "severity": "High",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339026",
+      "cves": [
+        "CVE-2026-60075"
+      ]
+    },
+    {
+      "id": "339025",
+      "title": "MiracleLinux 9 : python3.9-3.9.25-7.el9_8.3 (AXSA:2026-1621:07)",
+      "severity": "High",
+      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339025",
+      "cves": [
+        "CVE-2026-11940"
+      ]
+    },
     {
       "id": null,
       "title": "SCA: security update for org.springframework.ws:spring-ws-security (GHSA-5x25-c2rf-f2jx)",
@@ -404,232 +638,6 @@
       "cves": [
         "CVE-2026-76904"
       ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for yourls/yourls (GHSA-5h77-88j3-r659)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446220",
-      "cves": [
-        "CVE-2026-63135"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for yourls/yourls (GHSA-5h77-88j3-r659)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446220",
-      "cves": [
-        "CVE-2026-63135"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for getgrav/grav (GHSA-8hgv-xc77-jmcr)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446219",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for getgrav/grav (GHSA-8hgv-xc77-jmcr)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446219",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for defuddle (GHSA-jg4p-g6xj-4qmf)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446218",
-      "cves": [
-        "CVE-2026-61824"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for defuddle (GHSA-jg4p-g6xj-4qmf)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446218",
-      "cves": [
-        "CVE-2026-61824"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.springframework.graphql:spring-graphql (GHSA-phxq-526m-79px)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446217",
-      "cves": [
-        "CVE-2026-41856"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.springframework.graphql:spring-graphql (GHSA-phxq-526m-79px)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446217",
-      "cves": [
-        "CVE-2026-41856"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.springframework.graphql:spring-graphql (GHSA-m39w-hqxx-3r48)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446216",
-      "cves": [
-        "CVE-2026-41700"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.springframework.graphql:spring-graphql (GHSA-m39w-hqxx-3r48)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446216",
-      "cves": [
-        "CVE-2026-41700"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.springframework.boot:spring-boot-autoconfigure (GHSA-ggg2-9786-hwc8)",
-      "severity": "Medium",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446215",
-      "cves": [
-        "CVE-2026-41001"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.springframework.boot:spring-boot-autoconfigure (GHSA-ggg2-9786-hwc8)",
-      "severity": "Medium",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446215",
-      "cves": [
-        "CVE-2026-41001"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.springframework.ws:spring-ws-security (GHSA-8qq9-r6cc-qjv9)",
-      "severity": "Low",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446214",
-      "cves": [
-        "CVE-2026-41000"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.springframework.ws:spring-ws-security (GHSA-8qq9-r6cc-qjv9)",
-      "severity": "Low",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446214",
-      "cves": [
-        "CVE-2026-41000"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for xinference (GHSA-x2rj-828p-hx9m)",
-      "severity": "Critical",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446213",
-      "cves": [
-        "CVE-2026-61539"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for xinference (GHSA-x2rj-828p-hx9m)",
-      "severity": "Critical",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446213",
-      "cves": [
-        "CVE-2026-61539"
-      ]
-    },
-    {
-      "id": "338833",
-      "title": "Photon OS 5.0: Openssl PHSA-2026-5.0-92-0969",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/338833",
-      "cves": []
-    },
-    {
-      "id": "338832",
-      "title": "Fedora 46 : gum (2026-023898bef1)",
-      "severity": "Medium",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/338832",
-      "cves": [
-        "CVE-2026-25680",
-        "CVE-2026-25681",
-        "CVE-2026-42506"
-      ]
-    },
-    {
-      "id": "338831",
-      "title": "Fedora 44 : rsync (2026-bfae8723e2)",
-      "severity": "Critical",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/338831",
-      "cves": [
-        "CVE-2026-53783",
-        "CVE-2026-53784",
-        "CVE-2026-53785",
-        "CVE-2026-53786",
-        "CVE-2026-53788",
-        "CVE-2026-53789",
-        "CVE-2026-53790",
-        "CVE-2026-53791",
-        "CVE-2026-53792",
-        "CVE-2026-53793",
-        "CVE-2026-53794",
-        "CVE-2026-53795",
-        "CVE-2026-53796",
-        "CVE-2026-53797",
-        "CVE-2026-53798",
-        "CVE-2026-53799",
-        "CVE-2026-53800",
-        "CVE-2026-53801",
-        "CVE-2026-53802",
-        "CVE-2026-53803",
-        "CVE-2026-70452",
-        "CVE-2026-70453",
-        "CVE-2026-70454",
-        "CVE-2026-70455",
-        "CVE-2026-70456",
-        "CVE-2026-70457",
-        "CVE-2026-70458",
-        "CVE-2026-70459",
-        "CVE-2026-70460",
-        "CVE-2026-70461",
-        "CVE-2026-70462",
-        "CVE-2026-70463",
-        "CVE-2026-70464"
-      ]
-    },
-    {
-      "id": "338830",
-      "title": "Fedora 44 : kernel (2026-e57251bf72)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/338830",
-      "cves": []
     }
   ]
 }
