@@ -1,22 +1,57 @@
 {
-  "updated": "2026-08-23",
+  "updated": "2026-08-24",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-22",
-  "previous_date": "2026-08-16",
+  "current_date": "2026-08-24",
+  "previous_date": "2026-08-17",
   "risers": [
     {
-      "id": "CVE-2024-57726",
-      "now": 0.66601,
-      "prev": 0.088,
-      "delta": 0.57801,
-      "name": "SimpleHelp remote support software v5.5.7 and before has a vulnerability that allows low-privileges technician"
+      "id": "CVE-2026-63077",
+      "now": 0.84733,
+      "prev": 0.10722,
+      "delta": 0.74011,
+      "name": "JetBrains TeamCity"
     },
     {
-      "id": "CVE-2001-0506",
-      "now": 0.68934,
-      "prev": 0.3,
-      "delta": 0.38934,
-      "name": "Buffer overflow in ssinc.dll in IIS 5.0 and 4.0 allows local users to gain system privileges via a Server-Side"
+      "id": "CVE-2026-72898",
+      "now": 0.79215,
+      "prev": 0.104,
+      "delta": 0.68815,
+      "name": "Metabase SQL injection via password reset endpoint"
+    },
+    {
+      "id": "CVE-2026-45659",
+      "now": 0.76075,
+      "prev": 0.09863,
+      "delta": 0.66212,
+      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2026-6875",
+      "now": 0.77584,
+      "prev": 0.26734,
+      "delta": 0.5085,
+      "name": "Sandbox Escape in ServiceNow AI Platform"
+    },
+    {
+      "id": "CVE-2026-59310",
+      "now": 0.45878,
+      "prev": 0.0114,
+      "delta": 0.44738,
+      "name": "vCenter directory-traversal vulnerability"
+    },
+    {
+      "id": "CVE-2025-71257",
+      "now": 0.44576,
+      "prev": 0.05186,
+      "delta": 0.3939,
+      "name": "BMC FootPrints ITSM 20.20.02 <= 20.24.01.001 Authentication Bypass"
+    },
+    {
+      "id": "CVE-2026-46442",
+      "now": 0.3634,
+      "prev": 0.03489,
+      "delta": 0.32851,
+      "name": "Flowise: Authenticated Host RCE via POST /api/v1/node-custom-function and NodeVM Sandbox E"
     },
     {
       "id": "CVE-2018-11714",
@@ -26,18 +61,130 @@
       "name": "An issue was discovered on TP-Link TL-WR840N v5 00000005 0.9.1 3.16 v0001.0 Build 170608 Rel.58696n and TL-WR8"
     },
     {
-      "id": "CVE-2026-20896",
-      "now": 0.62381,
-      "prev": 0.31809,
-      "delta": 0.30572,
-      "name": "Gitea Docker image trusts spoofable reverse-proxy headers by default"
+      "id": "CVE-2026-61511",
+      "now": 0.33995,
+      "prev": 0.01715,
+      "delta": 0.3228,
+      "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
     },
     {
-      "id": "CVE-2026-33824",
-      "now": 0.77898,
-      "prev": 0.5585,
-      "delta": 0.22048,
-      "name": "Windows Internet Key Exchange (IKE) Service Extensions Remote Code Execution Vulnerability"
+      "id": "CVE-2026-28318",
+      "now": 0.40012,
+      "prev": 0.08351,
+      "delta": 0.31661,
+      "name": "SolarWinds Serv-U Unauthenticated Denial of Service Vulnerability"
+    },
+    {
+      "id": "CVE-2020-13671",
+      "now": 0.3535,
+      "prev": 0.04356,
+      "delta": 0.30994,
+      "name": "Drupal Drupal Core"
+    },
+    {
+      "id": "CVE-2026-64638",
+      "now": 0.31204,
+      "prev": 0.00894,
+      "delta": 0.3031,
+      "name": "WordPress WordPress"
+    },
+    {
+      "id": "CVE-2025-20333",
+      "now": 0.70385,
+      "prev": 0.40391,
+      "delta": 0.29994,
+      "name": "Cisco Cisco Secure Firewall Adaptive Security Appliance (ASA) Software"
+    },
+    {
+      "id": "CVE-2026-33112",
+      "now": 0.32712,
+      "prev": 0.03097,
+      "delta": 0.29615,
+      "name": "Microsoft SharePoint Server Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2019-2215",
+      "now": 0.72105,
+      "prev": 0.43823,
+      "delta": 0.28282,
+      "name": "Android"
+    },
+    {
+      "id": "CVE-2021-21224",
+      "now": 0.84173,
+      "prev": 0.5624,
+      "delta": 0.27933,
+      "name": "Google Chrome"
+    },
+    {
+      "id": "CVE-2025-68686",
+      "now": 0.2915,
+      "prev": 0.01264,
+      "delta": 0.27886,
+      "name": "Fortinet FortiOS"
+    },
+    {
+      "id": "CVE-2021-21551",
+      "now": 0.79249,
+      "prev": 0.53116,
+      "delta": 0.26133,
+      "name": "Dell dbutil"
+    },
+    {
+      "id": "CVE-2021-20124",
+      "now": 0.96308,
+      "prev": 0.70659,
+      "delta": 0.25649,
+      "name": "Draytek VigorConnect"
+    },
+    {
+      "id": "CVE-2026-71362",
+      "now": 0.25136,
+      "prev": 0.00478,
+      "delta": 0.24658,
+      "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
+    },
+    {
+      "id": "CVE-2024-21182",
+      "now": 0.74162,
+      "prev": 0.4997,
+      "delta": 0.24192,
+      "name": "Oracle Corporation WebLogic Server"
+    },
+    {
+      "id": "CVE-2019-13720",
+      "now": 0.72977,
+      "prev": 0.4914,
+      "delta": 0.23837,
+      "name": "Google Chrome"
+    },
+    {
+      "id": "CVE-2025-28137",
+      "now": 0.36065,
+      "prev": 0.13511,
+      "delta": 0.22554,
+      "name": "The TOTOLINK A810R V4.1.2cu.5182_B20201026 were found to contain a pre-auth remote command execution vulnerabi"
+    },
+    {
+      "id": "CVE-2024-29849",
+      "now": 0.38433,
+      "prev": 0.16673,
+      "delta": 0.2176,
+      "name": "Veeam Backup & Replication"
+    },
+    {
+      "id": "CVE-2025-9377",
+      "now": 0.33524,
+      "prev": 0.11788,
+      "delta": 0.21736,
+      "name": "Authenticated RCE via Parental Control command injection"
+    },
+    {
+      "id": "CVE-2019-0768",
+      "now": 0.48501,
+      "prev": 0.26782,
+      "delta": 0.21719,
+      "name": "Microsoft Internet Explorer 11"
     },
     {
       "id": "CVE-2019-1003030",
@@ -47,188 +194,55 @@
       "name": "Jenkins project Jenkins Pipeline: Groovy Plugin"
     },
     {
-      "id": "CVE-2022-1281",
-      "now": 0.43036,
-      "prev": 0.23194,
-      "delta": 0.19842,
-      "name": "Photo Gallery < 1.6.3 - Unauthenticated SQL Injection"
+      "id": "CVE-2024-43468",
+      "now": 0.82148,
+      "prev": 0.6111,
+      "delta": 0.21038,
+      "name": "Microsoft Configuration Manager Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2026-3891",
-      "now": 0.2506,
-      "prev": 0.08797,
-      "delta": 0.16263,
-      "name": "Pix for WooCommerce <= 1.5.0 - Unauthenticated Arbitrary File Upload"
+      "id": "CVE-2026-32201",
+      "now": 0.42814,
+      "prev": 0.22772,
+      "delta": 0.20042,
+      "name": "Microsoft SharePoint Server Spoofing Vulnerability"
     },
     {
-      "id": "CVE-2020-10204",
-      "now": 0.38166,
-      "prev": 0.25219,
-      "delta": 0.12947,
-      "name": "Sonatype Nexus Repository before 3.21.2 allows Remote Code Execution."
-    },
-    {
-      "id": "CVE-2023-2914",
-      "now": 0.39935,
-      "prev": 0.27012,
-      "delta": 0.12923,
-      "name": "Rockwell Automation ThinManager Thinserver Software Vulnerable to Input Validation Vulnera"
-    },
-    {
-      "id": "CVE-2021-42292",
-      "now": 0.43277,
-      "prev": 0.31949,
-      "delta": 0.11328,
-      "name": "Microsoft Excel Security Feature Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2002-0283",
-      "now": 0.2837,
-      "prev": 0.17165,
-      "delta": 0.11205,
-      "name": "Windows XP with port 445 open allows remote attackers to cause a denial of service (CPU consumption) via a flo"
-    },
-    {
-      "id": "CVE-2009-1025",
-      "now": 0.40077,
-      "prev": 0.29834,
-      "delta": 0.10243,
-      "name": "PHP remote file inclusion vulnerability in linkadmin.php in Beerwin PHPLinkAdmin 1.0 allows remote attackers t"
-    },
-    {
-      "id": "CVE-2026-32255",
-      "now": 0.18981,
-      "prev": 0.09049,
-      "delta": 0.09932,
-      "name": "Kan is Vulnerable to Unauthenticated SSRF via Attachment Download Endpoint"
-    },
-    {
-      "id": "CVE-2002-0150",
-      "now": 0.49477,
-      "prev": 0.39833,
-      "delta": 0.09644,
-      "name": "Buffer overflow in Internet Information Server (IIS) 4.0, 5.0, and 5.1 allows remote attackers to spoof the sa"
-    },
-    {
-      "id": "CVE-2002-0147",
-      "now": 0.61761,
-      "prev": 0.52162,
-      "delta": 0.09599,
-      "name": "Buffer overflow in the ASP data transfer mechanism in Internet Information Server (IIS) 4.0, 5.0, and 5.1 allo"
-    },
-    {
-      "id": "CVE-2002-0149",
-      "now": 0.62704,
-      "prev": 0.53195,
-      "delta": 0.09509,
-      "name": "Buffer overflow in ASP Server-Side Include Function in IIS 4.0, 5.0 and 5.1 allows remote attackers to cause a"
-    },
-    {
-      "id": "CVE-2025-37924",
-      "now": 0.20703,
-      "prev": 0.11689,
-      "delta": 0.09014,
-      "name": "ksmbd: fix use-after-free in kerberos authentication"
-    },
-    {
-      "id": "CVE-2023-33831",
-      "now": 0.22707,
-      "prev": 0.13746,
-      "delta": 0.08961,
-      "name": "A remote command execution (RCE) vulnerability in the /api/runscript endpoint of FUXA 1.1.13 allows attackers "
-    },
-    {
-      "id": "CVE-2025-5306",
-      "now": 0.31452,
-      "prev": 0.2282,
-      "delta": 0.08632,
-      "name": "Command Injection in Netflow path"
-    },
-    {
-      "id": "CVE-2002-0071",
-      "now": 0.33643,
-      "prev": 0.26054,
-      "delta": 0.07589,
-      "name": "Buffer overflow in the ism.dll ISAPI extension that implements HTR scripting in Internet Information Server (I"
-    },
-    {
-      "id": "CVE-2004-0643",
-      "now": 0.08927,
-      "prev": 0.01425,
-      "delta": 0.07502,
-      "name": "Double free vulnerability in the krb5_rd_cred function for MIT Kerberos 5 (krb5) 1.3.1 and earlier may allow l"
-    },
-    {
-      "id": "CVE-2001-1243",
-      "now": 0.70505,
-      "prev": 0.63188,
-      "delta": 0.07317,
-      "name": "Scripting.FileSystemObject in asp.dll for Microsoft IIS 4.0 and 5.0 allows local or remote attackers to cause "
-    },
-    {
-      "id": "CVE-2023-38836",
-      "now": 0.76276,
-      "prev": 0.69003,
-      "delta": 0.07273,
-      "name": "File Upload vulnerability in BoidCMS v.2.0.0 allows a remote attacker to execute arbitrary code by adding a GI"
-    },
-    {
-      "id": "CVE-2002-0364",
-      "now": 0.31005,
-      "prev": 0.23901,
-      "delta": 0.07104,
-      "name": "Buffer overflow in the chunked encoding transfer mechanism in IIS 4.0 and 5.0 allows attackers to execute arbi"
-    },
-    {
-      "id": "CVE-2013-3895",
-      "now": 0.2964,
-      "prev": 0.22627,
-      "delta": 0.07013,
-      "name": "Microsoft SharePoint Server 2007 SP3 and 2010 SP1 and SP2 allows remote attackers to conduct clickjacking atta"
-    },
-    {
-      "id": "CVE-2009-0043",
-      "now": 0.53296,
-      "prev": 0.46451,
-      "delta": 0.06845,
-      "name": "The smmsnmpd service in CA Service Metric Analysis r11.0 through r11.1 SP1 and Service Level Management 3.5 do"
-    },
-    {
-      "id": "CVE-2026-25895",
-      "now": 0.10353,
-      "prev": 0.03913,
-      "delta": 0.0644,
-      "name": "FUXA Unauthenticated Remote Code Execution via Arbitrary File Write in Upload API"
-    },
-    {
-      "id": "CVE-2013-3889",
-      "now": 0.27399,
-      "prev": 0.21117,
-      "delta": 0.06282,
-      "name": "Microsoft Excel 2007 SP3, 2010 SP1 and SP2, 2013, and 2013 RT; Office 2007 SP3, 2010 SP1 and SP2, 2013, and 20"
-    },
-    {
-      "id": "CVE-2006-4889",
-      "now": 0.16416,
-      "prev": 0.10168,
-      "delta": 0.06248,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in Telekorn SignKorn Guestbook (SL) 1.3 and earlier, when r"
+      "id": "CVE-2026-9198",
+      "now": 0.37327,
+      "prev": 0.17352,
+      "delta": 0.19975,
+      "name": "Unauthenticated Remote Code Execution via Auto-Login Bypass and Code Validation"
     }
   ],
   "newly_high": [
     {
-      "id": "CVE-2024-57726",
-      "now": 0.66601,
-      "prev": 0.088,
-      "delta": 0.57801,
-      "name": "SimpleHelp remote support software v5.5.7 and before has a vulnerability that allows low-privileges technician"
+      "id": "CVE-2026-63077",
+      "now": 0.84733,
+      "prev": 0.10722,
+      "delta": 0.74011,
+      "name": "JetBrains TeamCity"
     },
     {
-      "id": "CVE-2001-0506",
-      "now": 0.68934,
-      "prev": 0.3,
-      "delta": 0.38934,
-      "name": "Buffer overflow in ssinc.dll in IIS 5.0 and 4.0 allows local users to gain system privileges via a Server-Side"
+      "id": "CVE-2026-72898",
+      "now": 0.79215,
+      "prev": 0.104,
+      "delta": 0.68815,
+      "name": "Metabase SQL injection via password reset endpoint"
+    },
+    {
+      "id": "CVE-2026-45659",
+      "now": 0.76075,
+      "prev": 0.09863,
+      "delta": 0.66212,
+      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2026-6875",
+      "now": 0.77584,
+      "prev": 0.26734,
+      "delta": 0.5085,
+      "name": "Sandbox Escape in ServiceNow AI Platform"
     },
     {
       "id": "CVE-2018-11714",
@@ -238,25 +252,81 @@
       "name": "An issue was discovered on TP-Link TL-WR840N v5 00000005 0.9.1 3.16 v0001.0 Build 170608 Rel.58696n and TL-WR8"
     },
     {
-      "id": "CVE-2026-20896",
-      "now": 0.62381,
-      "prev": 0.31809,
-      "delta": 0.30572,
-      "name": "Gitea Docker image trusts spoofable reverse-proxy headers by default"
+      "id": "CVE-2025-20333",
+      "now": 0.70385,
+      "prev": 0.40391,
+      "delta": 0.29994,
+      "name": "Cisco Cisco Secure Firewall Adaptive Security Appliance (ASA) Software"
     },
     {
-      "id": "CVE-2009-0043",
-      "now": 0.53296,
-      "prev": 0.46451,
-      "delta": 0.06845,
-      "name": "The smmsnmpd service in CA Service Metric Analysis r11.0 through r11.1 SP1 and Service Level Management 3.5 do"
+      "id": "CVE-2019-2215",
+      "now": 0.72105,
+      "prev": 0.43823,
+      "delta": 0.28282,
+      "name": "Android"
     },
     {
-      "id": "CVE-2025-49533",
-      "now": 0.52247,
-      "prev": 0.48117,
-      "delta": 0.0413,
-      "name": "Adobe Experience Manager (MS) | Deserialization of Untrusted Data (CWE-502)"
+      "id": "CVE-2024-21182",
+      "now": 0.74162,
+      "prev": 0.4997,
+      "delta": 0.24192,
+      "name": "Oracle Corporation WebLogic Server"
+    },
+    {
+      "id": "CVE-2019-13720",
+      "now": 0.72977,
+      "prev": 0.4914,
+      "delta": 0.23837,
+      "name": "Google Chrome"
+    },
+    {
+      "id": "CVE-2025-53690",
+      "now": 0.51094,
+      "prev": 0.31405,
+      "delta": 0.19689,
+      "name": "Sitecore Products ViewState Deserialization Vulnerability"
+    },
+    {
+      "id": "CVE-2015-2502",
+      "now": 0.51127,
+      "prev": 0.38705,
+      "delta": 0.12422,
+      "name": "Microsoft Internet Explorer 7 through 11 allows remote attackers to execute arbitrary code or cause a denial o"
+    },
+    {
+      "id": "CVE-2015-2419",
+      "now": 0.53407,
+      "prev": 0.44688,
+      "delta": 0.08719,
+      "name": "JScript 9 in Microsoft Internet Explorer 10 and 11 allows remote attackers to execute arbitrary code or cause "
+    },
+    {
+      "id": "CVE-2019-1367",
+      "now": 0.52729,
+      "prev": 0.44999,
+      "delta": 0.0773,
+      "name": "Microsoft Internet Explorer 9"
+    },
+    {
+      "id": "CVE-2017-8620",
+      "now": 0.57328,
+      "prev": 0.49619,
+      "delta": 0.07709,
+      "name": "Microsoft Corporation Microsoft Windows Search Component"
+    },
+    {
+      "id": "CVE-2025-9528",
+      "now": 0.5419,
+      "prev": 0.47654,
+      "delta": 0.06536,
+      "name": "Linksys E1700 systemCommand os command injection"
+    },
+    {
+      "id": "CVE-2025-2945",
+      "now": 0.52366,
+      "prev": 0.46751,
+      "delta": 0.05615,
+      "name": "pgAdmin 4: Remote Code Execution in Query Tool and Cloud Deployment"
     },
     {
       "id": "CVE-2022-28171",
@@ -271,13 +341,6 @@
       "prev": 0.49465,
       "delta": 0.01414,
       "name": "Alone \u2013 Charity Multipurpose Non-profit WordPress Theme <= 7.8.3 - Missing Authorization t"
-    },
-    {
-      "id": "CVE-2018-5430",
-      "now": 0.50077,
-      "prev": 0.48753,
-      "delta": 0.01324,
-      "name": "TIBCO JasperReports Server Information Disclosure Vulnerability"
     }
   ]
 }
