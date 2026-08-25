@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-24",
+  "updated": "2026-08-25",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-24",
-  "previous_date": "2026-08-17",
+  "current_date": "2026-08-25",
+  "previous_date": "2026-08-18",
   "risers": [
     {
       "id": "CVE-2026-63077",
@@ -10,6 +10,13 @@
       "prev": 0.10722,
       "delta": 0.74011,
       "name": "JetBrains TeamCity"
+    },
+    {
+      "id": "CVE-2026-61511",
+      "now": 0.70766,
+      "prev": 0.01715,
+      "delta": 0.69051,
+      "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
     },
     {
       "id": "CVE-2026-72898",
@@ -59,13 +66,6 @@
       "prev": 0.35365,
       "delta": 0.32688,
       "name": "An issue was discovered on TP-Link TL-WR840N v5 00000005 0.9.1 3.16 v0001.0 Build 170608 Rel.58696n and TL-WR8"
-    },
-    {
-      "id": "CVE-2026-61511",
-      "now": 0.33995,
-      "prev": 0.01715,
-      "delta": 0.3228,
-      "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
     },
     {
       "id": "CVE-2026-28318",
@@ -208,11 +208,11 @@
       "name": "Microsoft SharePoint Server Spoofing Vulnerability"
     },
     {
-      "id": "CVE-2026-9198",
-      "now": 0.37327,
-      "prev": 0.17352,
-      "delta": 0.19975,
-      "name": "Unauthenticated Remote Code Execution via Auto-Login Bypass and Code Validation"
+      "id": "CVE-2022-1281",
+      "now": 0.43036,
+      "prev": 0.23194,
+      "delta": 0.19842,
+      "name": "Photo Gallery < 1.6.3 - Unauthenticated SQL Injection"
     }
   ],
   "newly_high": [
@@ -222,6 +222,13 @@
       "prev": 0.10722,
       "delta": 0.74011,
       "name": "JetBrains TeamCity"
+    },
+    {
+      "id": "CVE-2026-61511",
+      "now": 0.70766,
+      "prev": 0.01715,
+      "delta": 0.69051,
+      "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
     },
     {
       "id": "CVE-2026-72898",
@@ -323,10 +330,17 @@
     },
     {
       "id": "CVE-2025-2945",
-      "now": 0.52366,
+      "now": 0.52647,
       "prev": 0.46751,
-      "delta": 0.05615,
+      "delta": 0.05896,
       "name": "pgAdmin 4: Remote Code Execution in Query Tool and Cloud Deployment"
+    },
+    {
+      "id": "CVE-2025-5394",
+      "now": 0.5207,
+      "prev": 0.49465,
+      "delta": 0.02605,
+      "name": "Alone \u2013 Charity Multipurpose Non-profit WordPress Theme <= 7.8.3 - Missing Authorization t"
     },
     {
       "id": "CVE-2022-28171",
@@ -334,13 +348,6 @@
       "prev": 0.49858,
       "delta": 0.02199,
       "name": "hikvision DS-A71024/48/72R,DS-A80624S,DS-A81016S,DS-A72024/72R,DS-A80316S,DS-A82024D"
-    },
-    {
-      "id": "CVE-2025-5394",
-      "now": 0.50879,
-      "prev": 0.49465,
-      "delta": 0.01414,
-      "name": "Alone \u2013 Charity Multipurpose Non-profit WordPress Theme <= 7.8.3 - Missing Authorization t"
     }
   ]
 }

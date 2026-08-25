@@ -1,828 +1,641 @@
 {
-  "updated": "2026-08-24",
+  "updated": "2026-08-25",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
     {
-      "id": "339064",
-      "title": "openSUSE 16 Security Update : chromium (openSUSE-SU-2026:21624-1)",
+      "id": null,
+      "title": "Alpine: multiple libkcapi packages: security update to 1.5.1-r0",
       "severity": "High",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339064",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446263",
       "cves": [
-        "CVE-2026-76017",
-        "CVE-2026-76018",
-        "CVE-2026-76019",
-        "CVE-2026-76020",
-        "CVE-2026-76021",
-        "CVE-2026-76022",
-        "CVE-2026-76023"
+        "CVE-2026-71225",
+        "CVE-2026-71226",
+        "CVE-2026-71227"
       ]
     },
     {
-      "id": "339063",
-      "title": "GLSA-202608-21 : GNU Emacs: Arbitrary code execution",
+      "id": null,
+      "title": "Alpine: multiple libkcapi packages: security update to 1.5.1-r0",
       "severity": "High",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339063",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446263",
+      "cves": [
+        "CVE-2026-71225",
+        "CVE-2026-71226",
+        "CVE-2026-71227"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/mattermost/mattermost-server, github.com/mattermost/mattermost/server/v8 (GHSA-c28q-m4gf-vg4q)",
+      "severity": "Medium",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446262",
+      "cves": [
+        "CVE-2026-6689"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/mattermost/mattermost-server, github.com/mattermost/mattermost/server/v8 (GHSA-c28q-m4gf-vg4q)",
+      "severity": "Medium",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446262",
+      "cves": [
+        "CVE-2026-6689"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/mattermost/mattermost-server, github.com/mattermost/mattermost/server/v8 (GHSA-3vmp-whvv-5v9v)",
+      "severity": "Medium",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446261",
+      "cves": [
+        "CVE-2026-6046"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/mattermost/mattermost-server, github.com/mattermost/mattermost/server/v8 (GHSA-3vmp-whvv-5v9v)",
+      "severity": "Medium",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446261",
+      "cves": [
+        "CVE-2026-6046"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/mattermost/mattermost-server, github.com/mattermost/mattermost/server/v8 (GHSA-9p44-r552-4wp9)",
+      "severity": "Medium",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446260",
+      "cves": [
+        "CVE-2026-7184"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/mattermost/mattermost-server, github.com/mattermost/mattermost/server/v8 (GHSA-9p44-r552-4wp9)",
+      "severity": "Medium",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446260",
+      "cves": [
+        "CVE-2026-7184"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/mattermost/mattermost-server, github.com/mattermost/mattermost/server/v8 (GHSA-8qq9-cqj8-82w4)",
+      "severity": "High",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446259",
+      "cves": [
+        "CVE-2026-6961"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/mattermost/mattermost-server, github.com/mattermost/mattermost/server/v8 (GHSA-8qq9-cqj8-82w4)",
+      "severity": "High",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446259",
+      "cves": [
+        "CVE-2026-6961"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/mattermost/mattermost-server, github.com/mattermost/mattermost/server/v8 (GHSA-6hxm-w4hv-vgvw)",
+      "severity": "High",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446258",
+      "cves": [
+        "CVE-2026-7387"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/mattermost/mattermost-server, github.com/mattermost/mattermost/server/v8 (GHSA-6hxm-w4hv-vgvw)",
+      "severity": "High",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446258",
+      "cves": [
+        "CVE-2026-7387"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/mattermost/mattermost-server, github.com/mattermost/mattermost/server/v8 (GHSA-rp4v-qc77-phm4)",
+      "severity": "Medium",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446257",
+      "cves": [
+        "CVE-2026-3433"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/mattermost/mattermost-server, github.com/mattermost/mattermost/server/v8 (GHSA-rp4v-qc77-phm4)",
+      "severity": "Medium",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446257",
+      "cves": [
+        "CVE-2026-3433"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/mattermost/mattermost-server, github.com/mattermost/mattermost/server/v8 (GHSA-m2w9-h2mm-79qr)",
+      "severity": "High",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446256",
+      "cves": [
+        "CVE-2026-6739"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/mattermost/mattermost-server, github.com/mattermost/mattermost/server/v8 (GHSA-m2w9-h2mm-79qr)",
+      "severity": "High",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446256",
+      "cves": [
+        "CVE-2026-6739"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for openclaw (GHSA-p68j-q8j9-jwf5)",
+      "severity": "High",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446255",
       "cves": []
     },
     {
-      "id": "339062",
-      "title": "GLSA-202608-22 : needrestart: Multiple vulnerabilities",
+      "id": null,
+      "title": "SCA: security update for openclaw (GHSA-p68j-q8j9-jwf5)",
       "severity": "High",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339062",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446255",
       "cves": []
     },
     {
-      "id": "339061",
-      "title": "MiracleLinux 8 : cups-filters-1.20.0-36.el8_10.1 (AXSA:2026-1626:02)",
-      "severity": "High",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339061",
-      "cves": [
-        "CVE-2026-64612"
-      ]
-    },
-    {
-      "id": "339060",
-      "title": "MiracleLinux 9 : sg3_utils-1.47-10.el9_8.1 (AXSA:2026-1623:02)",
-      "severity": "High",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339060",
-      "cves": [
-        "CVE-2026-16313"
-      ]
-    },
-    {
-      "id": "339059",
-      "title": "MiracleLinux 9 : haproxy-2.8.14-3.el9_8.2 (AXSA:2026-1627:03)",
+      "id": null,
+      "title": "SCA: security update for github.com/googleapis/mcp-toolbox (GHSA-76g7-m3xw-x9gr)",
       "severity": "Critical",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339059",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446254",
       "cves": [
-        "CVE-2026-55203",
-        "CVE-2026-55204"
-      ]
-    },
-    {
-      "id": "339058",
-      "title": "MiracleLinux 9 : java-17-openjdk-17.0.20.0.8-1.2.el9.ML.1 (AXSA:2026-1630:13)",
-      "severity": "High",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339058",
-      "cves": [
-        "CVE-2026-41254",
-        "CVE-2026-46917",
-        "CVE-2026-46968",
-        "CVE-2026-47010",
-        "CVE-2026-47021",
-        "CVE-2026-47027",
-        "CVE-2026-47059",
-        "CVE-2026-47063",
-        "CVE-2026-60147"
-      ]
-    },
-    {
-      "id": "339057",
-      "title": "MiracleLinux 9 : thunderbird-140.13.0-1.el9_8.ML.1 (AXSA:2026-1625:19)",
-      "severity": "Critical",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339057",
-      "cves": [
-        "CVE-2026-14899",
-        "CVE-2026-15718",
-        "CVE-2026-15719",
-        "CVE-2026-16349",
-        "CVE-2026-16350",
-        "CVE-2026-16351",
-        "CVE-2026-16352",
-        "CVE-2026-16353",
-        "CVE-2026-16354",
-        "CVE-2026-16355",
-        "CVE-2026-16356",
-        "CVE-2026-16357",
-        "CVE-2026-16358",
-        "CVE-2026-16359",
-        "CVE-2026-16360",
-        "CVE-2026-16361",
-        "CVE-2026-16362",
-        "CVE-2026-16363",
-        "CVE-2026-16368",
-        "CVE-2026-16369",
-        "CVE-2026-16371",
-        "CVE-2026-16374",
-        "CVE-2026-16375",
-        "CVE-2026-16377",
-        "CVE-2026-16379",
-        "CVE-2026-16381",
-        "CVE-2026-16383",
-        "CVE-2026-16387",
-        "CVE-2026-16390",
-        "CVE-2026-16391",
-        "CVE-2026-16396",
-        "CVE-2026-16405",
-        "CVE-2026-16412"
-      ]
-    },
-    {
-      "id": "339056",
-      "title": "MiracleLinux 9 : vim-8.2.2637-26.el9_8.13.ML.1 (AXSA:2026-1631:22)",
-      "severity": "High",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339056",
-      "cves": [
-        "CVE-2026-55693",
-        "CVE-2026-57455",
-        "CVE-2026-57456",
-        "CVE-2026-59856",
-        "CVE-2026-59858"
-      ]
-    },
-    {
-      "id": "339055",
-      "title": "MiracleLinux 9 : bind-9.16.23-40.el9_8.8 (AXSA:2026-1632:09)",
-      "severity": "High",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339055",
-      "cves": [
-        "CVE-2026-10723",
-        "CVE-2026-11331",
-        "CVE-2026-11622",
-        "CVE-2026-11721",
-        "CVE-2026-13204",
-        "CVE-2026-13321"
-      ]
-    },
-    {
-      "id": "339054",
-      "title": "MiracleLinux 9 : freerdp-2.11.7-7.el9_8.5 (AXSA:2026-1629:26)",
-      "severity": "Critical",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339054",
-      "cves": [
-        "CVE-2026-64624",
-        "CVE-2026-67289",
-        "CVE-2026-67299",
-        "CVE-2026-68580"
-      ]
-    },
-    {
-      "id": "339053",
-      "title": "RHEL 8 : libtiff (RHSA-2026:58545)",
-      "severity": "High",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339053",
-      "cves": [
-        "CVE-2026-12912"
-      ]
-    },
-    {
-      "id": "339052",
-      "title": "RHEL 9 : webkit2gtk3 (RHSA-2026:58550)",
-      "severity": "High",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339052",
-      "cves": [
-        "CVE-2024-4367",
-        "CVE-2026-39872",
-        "CVE-2026-43663",
-        "CVE-2026-43676",
-        "CVE-2026-43699",
-        "CVE-2026-43701",
-        "CVE-2026-43705",
-        "CVE-2026-43707",
-        "CVE-2026-43712",
-        "CVE-2026-43713",
-        "CVE-2026-43715",
-        "CVE-2026-43716",
-        "CVE-2026-43720",
-        "CVE-2026-43721",
-        "CVE-2026-43725",
-        "CVE-2026-43726",
-        "CVE-2026-43727",
-        "CVE-2026-43731",
-        "CVE-2026-43732",
-        "CVE-2026-43734",
-        "CVE-2026-43740",
-        "CVE-2026-43742",
-        "CVE-2026-43745",
-        "CVE-2026-64787"
-      ]
-    },
-    {
-      "id": "339051",
-      "title": "RHEL 9 : libarchive (RHSA-2026:58574)",
-      "severity": "High",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339051",
-      "cves": [
-        "CVE-2026-14164"
-      ]
-    },
-    {
-      "id": "339050",
-      "title": "RHEL 10 : python-urwid (RHSA-2026:58561)",
-      "severity": "Critical",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339050",
-      "cves": [
-        "CVE-2026-9323"
-      ]
-    },
-    {
-      "id": "339049",
-      "title": "RHEL 9 : libarchive (RHSA-2026:58573)",
-      "severity": "High",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339049",
-      "cves": [
-        "CVE-2026-14164"
-      ]
-    },
-    {
-      "id": "339048",
-      "title": "Debian dla-4751 : designate - security update",
-      "severity": "Critical",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339048",
-      "cves": [
-        "CVE-2026-71193",
-        "CVE-2026-71194"
-      ]
-    },
-    {
-      "id": "339047",
-      "title": "Debian dla-4752 : firmware-nvidia-gsp - security update",
-      "severity": "Critical",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339047",
-      "cves": [
-        "CVE-2022-21813",
-        "CVE-2022-21814",
-        "CVE-2022-28181",
-        "CVE-2022-28183",
-        "CVE-2022-28184",
-        "CVE-2022-28185",
-        "CVE-2022-28191",
-        "CVE-2022-28192",
-        "CVE-2022-31607",
-        "CVE-2022-31608",
-        "CVE-2022-31615",
-        "CVE-2022-34670",
-        "CVE-2022-34674",
-        "CVE-2022-34675",
-        "CVE-2022-34677",
-        "CVE-2022-34679",
-        "CVE-2022-34680",
-        "CVE-2022-34682",
-        "CVE-2022-34684",
-        "CVE-2022-42254",
-        "CVE-2022-42255",
-        "CVE-2022-42256",
-        "CVE-2022-42257",
-        "CVE-2022-42258",
-        "CVE-2022-42259",
-        "CVE-2022-42260",
-        "CVE-2022-42261",
-        "CVE-2022-42262",
-        "CVE-2022-42263",
-        "CVE-2022-42264",
-        "CVE-2022-42265",
-        "CVE-2023-0180",
-        "CVE-2023-0183",
-        "CVE-2023-0184",
-        "CVE-2023-0185",
-        "CVE-2023-0187",
-        "CVE-2023-0188",
-        "CVE-2023-0189",
-        "CVE-2023-0190",
-        "CVE-2023-0191",
-        "CVE-2023-0194",
-        "CVE-2023-0195",
-        "CVE-2023-0198",
-        "CVE-2023-0199",
-        "CVE-2023-25515",
-        "CVE-2023-25516",
-        "CVE-2023-31022",
-        "CVE-2024-0074",
-        "CVE-2024-0075",
-        "CVE-2024-0078",
-        "CVE-2024-0090",
-        "CVE-2024-0092",
-        "CVE-2024-0126",
-        "CVE-2024-0131",
-        "CVE-2024-0147",
-        "CVE-2024-0149",
-        "CVE-2024-0150",
-        "CVE-2025-23244",
-        "CVE-2025-23279",
-        "CVE-2025-23280",
-        "CVE-2025-23282",
-        "CVE-2025-23286",
-        "CVE-2025-23300",
-        "CVE-2025-23330",
-        "CVE-2025-23332",
-        "CVE-2025-23345",
-        "CVE-2025-33219"
-      ]
-    },
-    {
-      "id": "339046",
-      "title": "Debian dla-4753 : firmware-nvidia-gsp - security update",
-      "severity": "High",
-      "date": "Mon, 24 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339046",
-      "cves": [
-        "CVE-2025-23280",
-        "CVE-2025-23282",
-        "CVE-2025-23300",
-        "CVE-2025-23330",
-        "CVE-2025-23332",
-        "CVE-2025-23345",
-        "CVE-2025-33219"
+        "CVE-2026-11624"
       ]
     },
     {
       "id": null,
-      "title": "Alpine: multiple perl-yaml-syck packages: security update to 1.47-r0",
+      "title": "SCA: security update for github.com/googleapis/mcp-toolbox (GHSA-76g7-m3xw-x9gr)",
       "severity": "Critical",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446244",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446254",
       "cves": [
-        "CVE-2025-11683",
-        "CVE-2026-13713",
-        "CVE-2026-57075",
-        "CVE-2026-57076",
-        "CVE-2026-57077"
+        "CVE-2026-11624"
       ]
     },
     {
       "id": null,
-      "title": "Alpine: multiple perl-yaml-syck packages: security update to 1.47-r0",
-      "severity": "Critical",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446244",
-      "cves": [
-        "CVE-2025-11683",
-        "CVE-2026-13713",
-        "CVE-2026-57075",
-        "CVE-2026-57076",
-        "CVE-2026-57077"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: quickjs-ng: security update to 0.11.0-r2",
+      "title": "SCA: security update for openclaw (GHSA-275c-xpvc-jgfw)",
       "severity": "Medium",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446243",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446253",
       "cves": [
-        "CVE-2026-0821",
-        "CVE-2026-0822",
-        "CVE-2026-1144",
-        "CVE-2026-1145"
+        "CVE-2026-53830"
       ]
     },
     {
       "id": null,
-      "title": "Alpine: quickjs-ng: security update to 0.11.0-r2",
+      "title": "SCA: security update for openclaw (GHSA-275c-xpvc-jgfw)",
       "severity": "Medium",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446243",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446253",
       "cves": [
-        "CVE-2026-0821",
-        "CVE-2026-0822",
-        "CVE-2026-1144",
-        "CVE-2026-1145"
+        "CVE-2026-53830"
       ]
     },
     {
       "id": null,
-      "title": "Alpine: quickjs-ng: security update to 0.11.0-r1",
+      "title": "SCA: security update for org.sakaiproject.profile2:profile2-api, org.sakaiproject.profile2:profile2-impl (GHSA-9284-fjc3-fmmj)",
       "severity": "Medium",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446242",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446252",
       "cves": [
-        "CVE-2026-0821",
-        "CVE-2026-0822",
-        "CVE-2026-1144",
-        "CVE-2026-1145"
+        "CVE-2026-54050"
       ]
     },
     {
       "id": null,
-      "title": "Alpine: quickjs-ng: security update to 0.11.0-r1",
+      "title": "SCA: security update for org.sakaiproject.profile2:profile2-api, org.sakaiproject.profile2:profile2-impl (GHSA-9284-fjc3-fmmj)",
       "severity": "Medium",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446242",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446252",
       "cves": [
-        "CVE-2026-0821",
-        "CVE-2026-0822",
-        "CVE-2026-1144",
-        "CVE-2026-1145"
+        "CVE-2026-54050"
       ]
     },
     {
       "id": null,
-      "title": "Alpine: quickjs-ng: security update to 0.10.0-r0",
+      "title": "SCA: security update for django-cms (GHSA-8jj7-4v57-frf5)",
       "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446241",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446251",
       "cves": [
-        "CVE-2025-46687",
-        "CVE-2025-46688"
+        "CVE-2026-54623"
       ]
     },
     {
       "id": null,
-      "title": "Alpine: quickjs-ng: security update to 0.10.0-r0",
+      "title": "SCA: security update for django-cms (GHSA-8jj7-4v57-frf5)",
       "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446241",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446251",
       "cves": [
-        "CVE-2025-46687",
-        "CVE-2025-46688"
+        "CVE-2026-54623"
       ]
     },
     {
-      "id": "339045",
-      "title": "Fedora 43 : GitPython (2026-fe4c3064c5)",
+      "id": null,
+      "title": "SCA: security update for github.com/mhsanaei/3x-ui/v3 (GHSA-jm48-m3rr-9hgg)",
       "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339045",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446250",
+      "cves": [
+        "CVE-2026-55477"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/mhsanaei/3x-ui/v3 (GHSA-jm48-m3rr-9hgg)",
+      "severity": "High",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446250",
+      "cves": [
+        "CVE-2026-55477"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/tinfoil-factory/netfoil (GHSA-4ph6-mjv7-3fq6)",
+      "severity": "High",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446249",
       "cves": []
     },
     {
-      "id": "339044",
-      "title": "Fedora 43 : tcpreplay (2026-096ad5e804)",
+      "id": null,
+      "title": "SCA: security update for github.com/tinfoil-factory/netfoil (GHSA-4ph6-mjv7-3fq6)",
       "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339044",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446249",
       "cves": []
     },
     {
-      "id": "339043",
-      "title": "Fedora 44 : tcpreplay (2026-836c3dec74)",
+      "id": null,
+      "title": "SCA: security update for django-cms (GHSA-fwjf-m4qw-9f2x)",
+      "severity": "Medium",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446248",
+      "cves": [
+        "CVE-2026-54625"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for django-cms (GHSA-fwjf-m4qw-9f2x)",
+      "severity": "Medium",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446248",
+      "cves": [
+        "CVE-2026-54625"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/gorilla/websocket (GHSA-w67g-5rqw-f597)",
       "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339043",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446247",
       "cves": []
     },
     {
-      "id": "339042",
-      "title": "Debian dsa-6461 : thunderbird - security update",
+      "id": null,
+      "title": "SCA: security update for github.com/gorilla/websocket (GHSA-w67g-5rqw-f597)",
+      "severity": "High",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446247",
+      "cves": []
+    },
+    {
+      "id": "339347",
+      "title": "JetBrains TeamCity < 2020.2 Multiple Vulnerabilities",
+      "severity": "High",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339347",
+      "cves": [
+        "CVE-2021-25773",
+        "CVE-2021-25776"
+      ]
+    },
+    {
+      "id": "339346",
+      "title": "JetBrains TeamCity < 2022.10.4 / 2023.x < 2023.05 Multiple Vulnerabilities",
       "severity": "Critical",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339042",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339346",
       "cves": [
-        "CVE-2026-74934",
-        "CVE-2026-74935",
-        "CVE-2026-74936",
-        "CVE-2026-74939",
-        "CVE-2026-74940",
-        "CVE-2026-74941",
-        "CVE-2026-74942",
-        "CVE-2026-74943",
-        "CVE-2026-74944",
-        "CVE-2026-74945",
-        "CVE-2026-74946",
-        "CVE-2026-74948",
-        "CVE-2026-74949",
-        "CVE-2026-74953",
-        "CVE-2026-74957",
-        "CVE-2026-74959",
-        "CVE-2026-74960",
-        "CVE-2026-74962",
-        "CVE-2026-74963",
-        "CVE-2026-74964",
-        "CVE-2026-74965",
-        "CVE-2026-74967",
-        "CVE-2026-74969",
-        "CVE-2026-74971",
-        "CVE-2026-74972",
-        "CVE-2026-74973",
-        "CVE-2026-74974",
-        "CVE-2026-74976",
-        "CVE-2026-74983",
-        "CVE-2026-74987",
-        "CVE-2026-74990"
+        "CVE-2023-34218",
+        "CVE-2023-34219",
+        "CVE-2023-34220",
+        "CVE-2023-34227",
+        "CVE-2023-34229"
       ]
     },
     {
-      "id": "339041",
-      "title": "Debian dsa-6460 : openjdk-25-dbg - security update",
+      "id": "339345",
+      "title": "JetBrains TeamCity < 2020.2.2 Multiple Vulnerabilities",
       "severity": "Medium",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339041",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339345",
       "cves": [
-        "CVE-2026-60589",
-        "CVE-2026-61308",
-        "CVE-2026-70906",
-        "CVE-2026-70907"
+        "CVE-2021-26309",
+        "CVE-2021-26310",
+        "CVE-2021-31904",
+        "CVE-2021-31906",
+        "CVE-2021-31907"
       ]
     },
     {
-      "id": "339040",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-19542",
+      "id": "339344",
+      "title": "JetBrains TeamCity < 2019.1 Multiple Vulnerabilities",
       "severity": "Critical",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339040",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339344",
       "cves": [
-        "CVE-2026-19542"
+        "CVE-2019-15035",
+        "CVE-2019-15036",
+        "CVE-2019-15038",
+        "CVE-2019-15039",
+        "CVE-2019-15042"
       ]
     },
     {
-      "id": "339039",
-      "title": "GitLab 18.8 < 19.0.6 / 19.1 < 19.1.4 / 19.2 < 19.2.2 (CVE-2026-10053)",
+      "id": "339343",
+      "title": "JetBrains TeamCity < 2021.1 Multiple Vulnerabilities",
       "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339039",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339343",
       "cves": [
-        "CVE-2026-10053"
+        "CVE-2021-37546",
+        "CVE-2021-37548",
+        "CVE-2021-43196"
       ]
     },
     {
-      "id": "339038",
-      "title": "openSUSE 16: bugwarden / bugwarden-bash-completion / bugwarden-fish-completion / etc (openSUSE-SU-2026:21613-1)",
+      "id": "339342",
+      "title": "JetBrains TeamCity < 2021.1.1 (CVE-2021-37545)",
+      "severity": "High",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339342",
+      "cves": [
+        "CVE-2021-37545"
+      ]
+    },
+    {
+      "id": "339341",
+      "title": "JetBrains TeamCity < 2020.1.1 (CVE-2020-15828)",
       "severity": "Medium",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339038",
-      "cves": []
-    },
-    {
-      "id": "339037",
-      "title": "openSUSE 16 Security Update : git-lfs (openSUSE-SU-2026:21621-1)",
-      "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339037",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339341",
       "cves": [
-        "CVE-2025-22869",
-        "CVE-2025-26625"
+        "CVE-2020-15828"
       ]
     },
     {
-      "id": "339036",
-      "title": "openSUSE 16 Security Update : chromium (openSUSE-SU-2026:21609-1)",
+      "id": "339340",
+      "title": "JetBrains TeamCity < 2021.1.3 Multiple Vulnerabilities",
       "severity": "Critical",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339036",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339340",
       "cves": [
-        "CVE-2026-76033",
-        "CVE-2026-76034",
-        "CVE-2026-76035",
-        "CVE-2026-76036",
-        "CVE-2026-76037",
-        "CVE-2026-76038",
-        "CVE-2026-76039",
-        "CVE-2026-76040",
-        "CVE-2026-76041",
-        "CVE-2026-76042",
-        "CVE-2026-76043",
-        "CVE-2026-76044",
-        "CVE-2026-76045",
-        "CVE-2026-76046",
-        "CVE-2026-76047"
+        "CVE-2021-43201",
+        "CVE-2021-43202"
       ]
     },
     {
-      "id": "339035",
-      "title": "openSUSE 16 Security Update : redis (openSUSE-SU-2026:21612-1)",
+      "id": "339339",
+      "title": "JetBrains TeamCity < 2020.2.85695 (CVE-2020-35667)",
       "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339035",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339339",
       "cves": [
-        "CVE-2026-23479",
-        "CVE-2026-23631",
-        "CVE-2026-25243",
-        "CVE-2026-25588",
-        "CVE-2026-25589",
-        "CVE-2026-62356"
+        "CVE-2020-35667"
       ]
     },
     {
-      "id": "339034",
-      "title": "openSUSE 16: weechat / weechat-devel / weechat-lang / weechat-lua / weechat-perl / etc (openSUSE-SU-2026:21615-1)",
+      "id": "339338",
+      "title": "JetBrains TeamCity < 2020.1 Multiple Vulnerabilities",
       "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339034",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339338",
       "cves": [
-        "CVE-2026-53524",
-        "CVE-2026-53525"
+        "CVE-2020-15825",
+        "CVE-2020-15826"
       ]
     },
     {
-      "id": "339033",
-      "title": "openSUSE 16 Security Update : apptainer (openSUSE-SU-2026:21611-1)",
+      "id": "339337",
+      "title": "JetBrains TeamCity < 2021.2 Multiple Vulnerabilities",
       "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339033",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339337",
       "cves": [
-        "CVE-2026-17106"
+        "CVE-2022-24332",
+        "CVE-2022-24333",
+        "CVE-2022-24335",
+        "CVE-2022-24337"
       ]
     },
     {
-      "id": "339032",
-      "title": "Fedora 43 : AusweisApp2 (2026-44f6d8f2e7)",
-      "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339032",
-      "cves": []
-    },
-    {
-      "id": "339031",
-      "title": "MiracleLinux 9 : gstreamer1-plugins-good-1.22.12-7.el9_8.2 (AXSA:2026-1617:03)",
-      "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339031",
+      "id": "339336",
+      "title": "JetBrains TeamCity < 2021.2.3 Multiple Vulnerabilities",
+      "severity": "Critical",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339336",
       "cves": [
-        "CVE-2026-18649"
+        "CVE-2022-25263",
+        "CVE-2022-25264"
       ]
     },
     {
-      "id": "339030",
-      "title": "MiracleLinux 9 : python-idna-2.10-8.el9_8 (AXSA:2026-1620:02)",
+      "id": "339335",
+      "title": "JetBrains TeamCity < 2025.07 (CVE-2025-54531) (Windows)",
+      "severity": "Critical",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339335",
+      "cves": [
+        "CVE-2025-54531"
+      ]
+    },
+    {
+      "id": "339334",
+      "title": "JetBrains TeamCity < 2021.2.2 XSS (CVE-2022-25261)",
       "severity": "Medium",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339030",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339334",
       "cves": [
-        "CVE-2026-45409"
+        "CVE-2022-25261"
       ]
     },
     {
-      "id": "339029",
-      "title": "MiracleLinux 8 : grafana-9.2.10-32.el8_10.1 (AXSA:2026-1616:23)",
-      "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339029",
-      "cves": [
-        "CVE-2026-33377",
-        "CVE-2026-42127"
-      ]
-    },
-    {
-      "id": "339028",
-      "title": "MiracleLinux 9 : gimp-3.0.4-4.el9_8.9 (AXSA:2026-1618:09)",
-      "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339028",
-      "cves": [
-        "CVE-2026-42169",
-        "CVE-2026-66758",
-        "CVE-2026-66759"
-      ]
-    },
-    {
-      "id": "339027",
-      "title": "MiracleLinux 9 : nghttp2-1.43.0-6.el9_8.2 (AXSA:2026-1622:04)",
+      "id": "339333",
+      "title": "JetBrains TeamCity < 2020.1.2 (CVE-2020-27627)",
       "severity": "Medium",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339027",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339333",
       "cves": [
-        "CVE-2026-58055"
+        "CVE-2020-27627"
       ]
     },
     {
-      "id": "339026",
-      "title": "MiracleLinux 8 : perl-Date-Manip-6.60-3.el8_10.1 (AXSA:2026-1619:01)",
+      "id": "339332",
+      "title": "JetBrains TeamCity < 2018.2.2 Multiple Vulnerabilities",
       "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339026",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339332",
       "cves": [
-        "CVE-2026-60075"
+        "CVE-2019-12841",
+        "CVE-2019-12842",
+        "CVE-2019-12846"
       ]
     },
     {
-      "id": "339025",
-      "title": "MiracleLinux 9 : python3.9-3.9.25-7.el9_8.3 (AXSA:2026-1621:07)",
-      "severity": "High",
-      "date": "Sun, 23 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339025",
+      "id": "339331",
+      "title": "JetBrains TeamCity < 2021.2.1 Multiple Vulnerabilities",
+      "severity": "Critical",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339331",
       "cves": [
-        "CVE-2026-11940"
+        "CVE-2022-24330",
+        "CVE-2022-24334",
+        "CVE-2022-24336",
+        "CVE-2022-24339",
+        "CVE-2022-24342"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for org.springframework.ws:spring-ws-security (GHSA-5x25-c2rf-f2jx)",
+      "id": "339330",
+      "title": "JetBrains TeamCity < 2020.2.1 Multiple Vulnerabilities",
       "severity": "Medium",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446240",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339330",
       "cves": [
-        "CVE-2026-40997"
+        "CVE-2021-25774",
+        "CVE-2021-25775",
+        "CVE-2021-25777",
+        "CVE-2021-25778"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for org.springframework.ws:spring-ws-security (GHSA-5x25-c2rf-f2jx)",
+      "id": "339329",
+      "title": "JetBrains TeamCity < 2025.11.6 / 2026.x < 2026.1.2 Multiple Vulnerabilities",
+      "severity": "Critical",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339329",
+      "cves": [
+        "CVE-2026-65906",
+        "CVE-2026-65907"
+      ]
+    },
+    {
+      "id": "339328",
+      "title": "JetBrains TeamCity < 2019.2.3 Multiple Vulnerabilities",
       "severity": "Medium",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446240",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339328",
       "cves": [
-        "CVE-2026-40997"
+        "CVE-2020-15829",
+        "CVE-2020-15830",
+        "CVE-2020-15831"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for org.springframework.ws:spring-ws-security (GHSA-gg9r-wr4p-w63h)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446239",
-      "cves": [
-        "CVE-2026-40994"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.springframework.ws:spring-ws-security (GHSA-gg9r-wr4p-w63h)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446239",
-      "cves": [
-        "CVE-2026-40994"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for unleash-server (GHSA-5vf6-jrqr-78fj)",
+      "id": "339327",
+      "title": "JetBrains TeamCity < 2019.1.2 Multiple Vulnerabilities",
       "severity": "Medium",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446238",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339327",
       "cves": [
-        "CVE-2026-63004"
+        "CVE-2019-15848",
+        "CVE-2019-18363",
+        "CVE-2019-18366",
+        "CVE-2019-18367"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for unleash-server (GHSA-5vf6-jrqr-78fj)",
+      "id": "339326",
+      "title": "JetBrains TeamCity < 2019.1.4 Multiple Vulnerabilities",
+      "severity": "Critical",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339326",
+      "cves": [
+        "CVE-2019-18364",
+        "CVE-2019-18365",
+        "CVE-2020-11686"
+      ]
+    },
+    {
+      "id": "339325",
+      "title": "JetBrains TeamCity < 2019.2.2 Multiple Vulnerabilities",
+      "severity": "High",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339325",
+      "cves": [
+        "CVE-2020-11687",
+        "CVE-2020-11938"
+      ]
+    },
+    {
+      "id": "339324",
+      "title": "JetBrains TeamCity < 2022.04.3 (CVE-2022-38133)",
       "severity": "Medium",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446238",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339324",
       "cves": [
-        "CVE-2026-63004"
+        "CVE-2022-38133"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for github.com/getkin/kin-openapi (GHSA-mmfr-pmjx-hw9w)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446237",
+      "id": "339323",
+      "title": "JetBrains TeamCity < 2018.2.3 Multiple Vulnerabilities",
+      "severity": "Medium",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339323",
       "cves": [
-        "CVE-2026-76905"
+        "CVE-2019-12843",
+        "CVE-2019-12844",
+        "CVE-2019-12845"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for github.com/getkin/kin-openapi (GHSA-mmfr-pmjx-hw9w)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446237",
+      "id": "339322",
+      "title": "JetBrains TeamCity < 2021.1.4 (CVE-2022-24331)",
+      "severity": "Critical",
+      "date": "Tue, 25 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/339322",
       "cves": [
-        "CVE-2026-76905"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for @keystone-6/core (GHSA-cqmq-8755-7xvh)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446236",
-      "cves": [
-        "CVE-2026-63421"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for @keystone-6/core (GHSA-cqmq-8755-7xvh)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446236",
-      "cves": [
-        "CVE-2026-63421"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/runatlantis/atlantis (GHSA-26w5-6g95-gj28)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/446235",
-      "cves": [
-        "CVE-2026-64679"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/runatlantis/atlantis (GHSA-26w5-6g95-gj28)",
-      "severity": "High",
-      "date": "Sat, 22 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/446235",
-      "cves": [
-        "CVE-2026-64679"
+        "CVE-2022-24331"
       ]
     }
   ]
