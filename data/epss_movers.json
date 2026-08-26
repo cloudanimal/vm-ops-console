@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-25",
+  "updated": "2026-08-26",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-25",
-  "previous_date": "2026-08-18",
+  "current_date": "2026-08-26",
+  "previous_date": "2026-08-19",
   "risers": [
     {
       "id": "CVE-2026-63077",
@@ -42,9 +42,16 @@
     {
       "id": "CVE-2026-59310",
       "now": 0.45878,
-      "prev": 0.0114,
-      "delta": 0.44738,
+      "prev": 0.02405,
+      "delta": 0.43473,
       "name": "vCenter directory-traversal vulnerability"
+    },
+    {
+      "id": "CVE-2020-10221",
+      "now": 0.80221,
+      "prev": 0.36754,
+      "delta": 0.43467,
+      "name": "lib/ajaxHandlers/ajaxAddTemplate.php in rConfig through 3.94 allows remote attackers to execute arbitrary OS c"
     },
     {
       "id": "CVE-2025-71257",
@@ -59,13 +66,6 @@
       "prev": 0.03489,
       "delta": 0.32851,
       "name": "Flowise: Authenticated Host RCE via POST /api/v1/node-custom-function and NodeVM Sandbox E"
-    },
-    {
-      "id": "CVE-2018-11714",
-      "now": 0.68053,
-      "prev": 0.35365,
-      "delta": 0.32688,
-      "name": "An issue was discovered on TP-Link TL-WR840N v5 00000005 0.9.1 3.16 v0001.0 Build 170608 Rel.58696n and TL-WR8"
     },
     {
       "id": "CVE-2026-28318",
@@ -90,9 +90,9 @@
     },
     {
       "id": "CVE-2025-20333",
-      "now": 0.70385,
+      "now": 0.70651,
       "prev": 0.40391,
-      "delta": 0.29994,
+      "delta": 0.3026,
       "name": "Cisco Cisco Secure Firewall Adaptive Security Appliance (ASA) Software"
     },
     {
@@ -131,18 +131,18 @@
       "name": "Dell dbutil"
     },
     {
+      "id": "CVE-2026-66066",
+      "now": 0.27861,
+      "prev": 0.01767,
+      "delta": 0.26094,
+      "name": "Action Pack: Possible arbitrary file read and remote code execution in Active Storage vari"
+    },
+    {
       "id": "CVE-2021-20124",
       "now": 0.96308,
       "prev": 0.70659,
       "delta": 0.25649,
       "name": "Draytek VigorConnect"
-    },
-    {
-      "id": "CVE-2026-71362",
-      "now": 0.25136,
-      "prev": 0.00478,
-      "delta": 0.24658,
-      "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
     },
     {
       "id": "CVE-2024-21182",
@@ -157,6 +157,13 @@
       "prev": 0.4914,
       "delta": 0.23837,
       "name": "Google Chrome"
+    },
+    {
+      "id": "CVE-2026-71362",
+      "now": 0.25136,
+      "prev": 0.01301,
+      "delta": 0.23835,
+      "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
     },
     {
       "id": "CVE-2025-28137",
@@ -185,13 +192,6 @@
       "prev": 0.26782,
       "delta": 0.21719,
       "name": "Microsoft Internet Explorer 11"
-    },
-    {
-      "id": "CVE-2019-1003030",
-      "now": 0.96868,
-      "prev": 0.75594,
-      "delta": 0.21274,
-      "name": "Jenkins project Jenkins Pipeline: Groovy Plugin"
     },
     {
       "id": "CVE-2024-43468",
@@ -252,17 +252,17 @@
       "name": "Sandbox Escape in ServiceNow AI Platform"
     },
     {
-      "id": "CVE-2018-11714",
-      "now": 0.68053,
-      "prev": 0.35365,
-      "delta": 0.32688,
-      "name": "An issue was discovered on TP-Link TL-WR840N v5 00000005 0.9.1 3.16 v0001.0 Build 170608 Rel.58696n and TL-WR8"
+      "id": "CVE-2020-10221",
+      "now": 0.80221,
+      "prev": 0.36754,
+      "delta": 0.43467,
+      "name": "lib/ajaxHandlers/ajaxAddTemplate.php in rConfig through 3.94 allows remote attackers to execute arbitrary OS c"
     },
     {
       "id": "CVE-2025-20333",
-      "now": 0.70385,
+      "now": 0.70651,
       "prev": 0.40391,
-      "delta": 0.29994,
+      "delta": 0.3026,
       "name": "Cisco Cisco Secure Firewall Adaptive Security Appliance (ASA) Software"
     },
     {
@@ -334,6 +334,13 @@
       "prev": 0.46751,
       "delta": 0.05896,
       "name": "pgAdmin 4: Remote Code Execution in Query Tool and Cloud Deployment"
+    },
+    {
+      "id": "CVE-2023-4547",
+      "now": 0.51732,
+      "prev": 0.48533,
+      "delta": 0.03199,
+      "name": "SPA-Cart eCommerce CMS search cross site scripting"
     },
     {
       "id": "CVE-2025-5394",
