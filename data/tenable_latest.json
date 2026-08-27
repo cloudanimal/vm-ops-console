@@ -1,571 +1,746 @@
 {
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
     {
-      "id": "339656",
-      "title": "MiracleLinux 9 : dotnet9.0-9.0.120-1.el9_8.ML.1 (AXSA:2026-1650:17)",
+      "id": null,
+      "title": "SCA: security update for silverstripe/userforms (GHSA-g8wr-r2v2-vqc6)",
       "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339656",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446380",
       "cves": [
-        "CVE-2026-62899",
-        "CVE-2026-62900",
-        "CVE-2026-62901",
-        "CVE-2026-62909"
+        "CVE-2026-54721"
       ]
     },
     {
-      "id": "339655",
-      "title": "MiracleLinux 8 : python3.12-3.12.14-1.el8_10 (AXSA:2026-1655:20)",
+      "id": null,
+      "title": "SCA: security update for silverstripe/userforms (GHSA-g8wr-r2v2-vqc6)",
       "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339655",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446380",
       "cves": [
-        "CVE-2026-11940"
+        "CVE-2026-54721"
       ]
     },
     {
-      "id": "339654",
-      "title": "MiracleLinux 9 : java-25-openjdk-25.0.4.0.7-1.1.el9.ML.1 (AXSA:2026-1651:08)",
+      "id": null,
+      "title": "SCA: security update for github.com/crossplane/crossplane-runtime/v2 (GHSA-mf7q-r4rv-jv94)",
       "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339654",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446379",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/crossplane/crossplane-runtime/v2 (GHSA-mf7q-r4rv-jv94)",
+      "severity": "High",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446379",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for symbiote/silverstripe-advancedworkflow (GHSA-39mm-rwm3-29jp)",
+      "severity": "High",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446378",
       "cves": [
-        "CVE-2026-41254",
-        "CVE-2026-46917",
-        "CVE-2026-46968",
-        "CVE-2026-47010",
-        "CVE-2026-47021",
-        "CVE-2026-47027",
-        "CVE-2026-47059",
-        "CVE-2026-47063",
-        "CVE-2026-60147"
+        "CVE-2026-54718"
       ]
     },
     {
-      "id": "339653",
-      "title": "MiracleLinux 9 : kernel-5.14.0-687.24.1.el9_8 (AXSA:2026-1649:67)",
+      "id": null,
+      "title": "SCA: security update for symbiote/silverstripe-advancedworkflow (GHSA-39mm-rwm3-29jp)",
       "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339653",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446378",
       "cves": [
-        "CVE-2025-71066",
-        "CVE-2026-46113",
-        "CVE-2026-53359"
+        "CVE-2026-54718"
       ]
     },
     {
-      "id": "339652",
-      "title": "MiracleLinux 8 : python3-3.6.8-78.el8_10.ML.1 (AXSA:2026-1652:10)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339652",
+      "id": null,
+      "title": "SCA: security update for silverstripe/framework (GHSA-gvrw-qqp5-jgc5)",
+      "severity": "Medium",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446377",
       "cves": [
-        "CVE-2026-11940"
+        "CVE-2026-54720"
       ]
     },
     {
-      "id": "339651",
-      "title": "MiracleLinux 9 : dotnet10.0-10.0.111-1.el9_8.ML.1 (AXSA:2026-1654:18)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339651",
+      "id": null,
+      "title": "SCA: security update for silverstripe/framework (GHSA-gvrw-qqp5-jgc5)",
+      "severity": "Medium",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446377",
       "cves": [
-        "CVE-2026-62899",
-        "CVE-2026-62900",
-        "CVE-2026-62901",
-        "CVE-2026-62909"
+        "CVE-2026-54720"
       ]
     },
     {
-      "id": "339650",
-      "title": "Oracle Linux 9 : httpd (ELSA-2026-59347)",
-      "severity": "Critical",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339650",
+      "id": null,
+      "title": "SCA: security update for cakephp/queue (GHSA-r5pm-vrc5-3m73)",
+      "severity": "Low",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446376",
       "cves": [
-        "CVE-2023-38709",
-        "CVE-2024-42516",
-        "CVE-2026-24072",
-        "CVE-2026-28780",
-        "CVE-2026-29167",
-        "CVE-2026-29169",
-        "CVE-2026-33006",
-        "CVE-2026-33007",
-        "CVE-2026-33857",
-        "CVE-2026-34032",
-        "CVE-2026-34355",
-        "CVE-2026-34356",
-        "CVE-2026-42535",
-        "CVE-2026-42536",
-        "CVE-2026-43951",
-        "CVE-2026-44119",
-        "CVE-2026-44185",
-        "CVE-2026-44186",
-        "CVE-2026-44631"
+        "CVE-2026-54713"
       ]
     },
     {
-      "id": "339649",
-      "title": "Oracle Linux 9 : mod_http2 (ELSA-2026-59387)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339649",
+      "id": null,
+      "title": "SCA: security update for cakephp/queue (GHSA-r5pm-vrc5-3m73)",
+      "severity": "Low",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446376",
       "cves": [
-        "CVE-2026-43951",
-        "CVE-2026-48913"
+        "CVE-2026-54713"
       ]
     },
     {
-      "id": "339648",
-      "title": "Oracle Linux 7 : ELSA-2026-50117-0: / xorg-x11-server (ELSA-2026-501170)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339648",
+      "id": null,
+      "title": "SCA: security update for libreoffice-convert (GHSA-gmxc-r82q-347r)",
+      "severity": "Medium",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446375",
       "cves": [
-        "CVE-2025-26594",
-        "CVE-2025-26595",
-        "CVE-2025-26596",
-        "CVE-2025-26597",
-        "CVE-2025-26598",
-        "CVE-2025-26599",
-        "CVE-2025-26600",
-        "CVE-2025-49175",
-        "CVE-2025-49176",
-        "CVE-2025-49178",
-        "CVE-2025-49179",
-        "CVE-2025-49180",
-        "CVE-2025-62229",
-        "CVE-2025-62230",
-        "CVE-2025-62231",
-        "CVE-2026-33999",
-        "CVE-2026-34000",
-        "CVE-2026-34001",
-        "CVE-2026-34002",
-        "CVE-2026-34003",
-        "CVE-2026-50256",
-        "CVE-2026-50257",
-        "CVE-2026-50258",
-        "CVE-2026-50259",
-        "CVE-2026-50260",
-        "CVE-2026-50261",
-        "CVE-2026-50262",
-        "CVE-2026-50263",
-        "CVE-2026-50264",
-        "CVE-2026-55999"
+        "CVE-2026-54732"
       ]
     },
     {
-      "id": "339647",
-      "title": "Dotnetnuke < 10.3.3 Unauthorized likes on private journal posts (GHSA-r4c4-vmqp-vxf2)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339647",
-      "cves": []
+      "id": null,
+      "title": "SCA: security update for libreoffice-convert (GHSA-gmxc-r82q-347r)",
+      "severity": "Medium",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446375",
+      "cves": [
+        "CVE-2026-54732"
+      ]
     },
     {
-      "id": "339646",
-      "title": "Dotnetnuke < 10.3.3 User registration approval authorization bypass (GHSA-fpr5-67pq-3hf5)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339646",
-      "cves": []
+      "id": null,
+      "title": "SCA: security update for n8n-nodes-sqlite3 (GHSA-q7m3-rhxg-7vxr)",
+      "severity": "Medium",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446374",
+      "cves": [
+        "CVE-2026-54687"
+      ]
     },
     {
-      "id": "339645",
-      "title": "Dotnetnuke < 10.3.3 Authorization bypass in image processor (GHSA-g8w5-h3rm-g8rj)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339645",
-      "cves": []
+      "id": null,
+      "title": "SCA: security update for n8n-nodes-sqlite3 (GHSA-q7m3-rhxg-7vxr)",
+      "severity": "Medium",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446374",
+      "cves": [
+        "CVE-2026-54687"
+      ]
     },
     {
-      "id": "339644",
-      "title": "Dotnetnuke < 10.3.3 Portal administrator remote code execution (GHSA-hxc3-xv8x-w2g3)",
+      "id": null,
+      "title": "SCA: security update for koillection/koillection (GHSA-gmxh-hjfv-qc2w)",
       "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339644",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446373",
+      "cves": [
+        "CVE-2026-50888"
+      ]
     },
     {
-      "id": "339643",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104589)",
+      "id": null,
+      "title": "SCA: security update for koillection/koillection (GHSA-gmxh-hjfv-qc2w)",
+      "severity": "High",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446373",
+      "cves": [
+        "CVE-2026-50888"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/akuity/kargo (GHSA-g7gw-m874-7rmf)",
+      "severity": "Medium",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/446372",
+      "cves": [
+        "CVE-2026-42350"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/akuity/kargo (GHSA-g7gw-m874-7rmf)",
+      "severity": "Medium",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/446372",
+      "cves": [
+        "CVE-2026-42350"
+      ]
+    },
+    {
+      "id": "341093",
+      "title": "RHEL 9 : kernel (RHSA-2026:60484)",
       "severity": "Critical",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339643",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341093",
+      "cves": [
+        "CVE-2026-74581"
+      ]
     },
     {
-      "id": "339642",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104562)",
+      "id": "341092",
+      "title": "RHEL 9 : kernel (RHSA-2026:60486)",
       "severity": "Critical",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339642",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341092",
+      "cves": [
+        "CVE-2026-74581"
+      ]
     },
     {
-      "id": "339641",
-      "title": "Unity Linux 20.1050e Security Update: kernel (UTSA-2026-104532)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339641",
-      "cves": []
-    },
-    {
-      "id": "339640",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104546)",
+      "id": "341091",
+      "title": "RockyLinux 8 : kernel-rt (RLSA-2026:59737)",
       "severity": "Critical",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339640",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341091",
+      "cves": [
+        "CVE-2026-52924",
+        "CVE-2026-63886",
+        "CVE-2026-63913",
+        "CVE-2026-64189",
+        "CVE-2026-64191",
+        "CVE-2026-64276",
+        "CVE-2026-64277",
+        "CVE-2026-64320"
+      ]
     },
     {
-      "id": "339639",
-      "title": "Unity Linux 20.1050e Security Update: kernel (UTSA-2026-104536)",
+      "id": "341090",
+      "title": "RockyLinux 9 : golang (RLSA-2026:60304)",
+      "severity": "Medium",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341090",
+      "cves": [
+        "CVE-2026-33818",
+        "CVE-2026-56853",
+        "CVE-2026-56858",
+        "CVE-2026-56859",
+        "CVE-2026-56860",
+        "CVE-2026-56862"
+      ]
+    },
+    {
+      "id": "341089",
+      "title": "RockyLinux 9 : kernel (RLSA-2026:59723)",
+      "severity": "Medium",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341089",
+      "cves": [
+        "CVE-2025-68211",
+        "CVE-2026-23003",
+        "CVE-2026-43114",
+        "CVE-2026-52920",
+        "CVE-2026-52924",
+        "CVE-2026-53131",
+        "CVE-2026-53185",
+        "CVE-2026-53268",
+        "CVE-2026-64189",
+        "CVE-2026-64191",
+        "CVE-2026-64276",
+        "CVE-2026-64277",
+        "CVE-2026-74581"
+      ]
+    },
+    {
+      "id": "341088",
+      "title": "RockyLinux 9 : assertj-core (RLSA-2026:60215)",
+      "severity": "High",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341088",
+      "cves": [
+        "CVE-2026-24400"
+      ]
+    },
+    {
+      "id": "341087",
+      "title": "RockyLinux 9 : attr (RLSA-2026:60226)",
+      "severity": "High",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341087",
+      "cves": [
+        "CVE-2026-54371"
+      ]
+    },
+    {
+      "id": "341086",
+      "title": "RockyLinux 10 : golang (RLSA-2026:60306)",
+      "severity": "Medium",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341086",
+      "cves": [
+        "CVE-2026-33818",
+        "CVE-2026-56853",
+        "CVE-2026-56858",
+        "CVE-2026-56859",
+        "CVE-2026-56860",
+        "CVE-2026-56862"
+      ]
+    },
+    {
+      "id": "341085",
+      "title": "GitLab 18.3 < 19.1.7 / 19.2 < 19.2.5 / 19.3 < 19.3.1 (CVE-2026-4398)",
+      "severity": "Medium",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341085",
+      "cves": [
+        "CVE-2026-4398"
+      ]
+    },
+    {
+      "id": "341084",
+      "title": "Debian dsa-6475 : suricata-update - security update",
+      "severity": "High",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341084",
+      "cves": [
+        "CVE-2026-63347"
+      ]
+    },
+    {
+      "id": "341083",
+      "title": "Debian dsa-6476 : chromium - security update",
+      "severity": "High",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341083",
+      "cves": [
+        "CVE-2026-76017",
+        "CVE-2026-76018",
+        "CVE-2026-76019",
+        "CVE-2026-76020",
+        "CVE-2026-76021",
+        "CVE-2026-76022",
+        "CVE-2026-76023"
+      ]
+    },
+    {
+      "id": "341082",
+      "title": "Adobe Substance 3D Sampler <= 6.0.1 Multiple Arbitrary Code Execution Vulnerabilities (APSB26-121)",
+      "severity": "High",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341082",
+      "cves": [
+        "CVE-2026-48417",
+        "CVE-2026-48418",
+        "CVE-2026-48419",
+        "CVE-2026-48420",
+        "CVE-2026-48421",
+        "CVE-2026-48422",
+        "CVE-2026-48423",
+        "CVE-2026-48424",
+        "CVE-2026-48425",
+        "CVE-2026-71382"
+      ]
+    },
+    {
+      "id": "341081",
+      "title": "MiracleLinux 9 : sqlite-3.34.1-11.el9_8 (AXSA:2026-1681:03)",
+      "severity": "High",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341081",
+      "cves": [
+        "CVE-2026-11822",
+        "CVE-2026-11824"
+      ]
+    },
+    {
+      "id": "341080",
+      "title": "MiracleLinux 8 : kernel-4.18.0-553.154.1.el8_10 (AXSA:2026-1678:68)",
+      "severity": "High",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341080",
+      "cves": [
+        "CVE-2026-64496"
+      ]
+    },
+    {
+      "id": "341079",
+      "title": "MiracleLinux 9 : php:8.3 (AXSA:2026-1659:01)",
       "severity": "Critical",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339639",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341079",
+      "cves": [
+        "CVE-2026-17543",
+        "CVE-2026-7260"
+      ]
     },
     {
-      "id": "339638",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104586)",
+      "id": "341078",
+      "title": "MiracleLinux 8 : nginx:1.24 nginx-1.24.0-3.module+el8+2034+1ca1f0a6.4.ML.1 (AXSA:2026-1679:01)",
       "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339638",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341078",
+      "cves": [
+        "CVE-2026-56434",
+        "CVE-2026-60005"
+      ]
     },
     {
-      "id": "339637",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104569)",
+      "id": "341077",
+      "title": "MiracleLinux 8 : kernel-4.18.0-553.153.1.el8_10 (AXSA:2026-1646:66)",
       "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339637",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341077",
+      "cves": [
+        "CVE-2025-54518"
+      ]
     },
     {
-      "id": "339636",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104603)",
+      "id": "341076",
+      "title": "MiracleLinux 9 : ruby:4.0 (AXSA:2026-1667:01)",
+      "severity": "Medium",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341076",
+      "cves": [
+        "CVE-2026-27820",
+        "CVE-2026-42256",
+        "CVE-2026-42257",
+        "CVE-2026-47240",
+        "CVE-2026-47241",
+        "CVE-2026-47242"
+      ]
+    },
+    {
+      "id": "341075",
+      "title": "MiracleLinux 8 : gstreamer1-plugins-good-1.16.1-7.el8_10.7 (AXSA:2026-1677:06)",
+      "severity": "High",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341075",
+      "cves": [
+        "CVE-2026-18295",
+        "CVE-2026-18296",
+        "CVE-2026-18298",
+        "CVE-2026-18299"
+      ]
+    },
+    {
+      "id": "341074",
+      "title": "MiracleLinux 9 : mrtg-2.17.7-12.el9_8.1 (AXSA:2026-1680:02)",
+      "severity": "High",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341074",
+      "cves": [
+        "CVE-2026-72694"
+      ]
+    },
+    {
+      "id": "341073",
+      "title": "Fedora 46 : perl-Net-OAuth (2026-96404091a4)",
       "severity": "Critical",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339636",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341073",
+      "cves": [
+        "CVE-2026-72889"
+      ]
     },
     {
-      "id": "339635",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104617)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339635",
-      "cves": []
-    },
-    {
-      "id": "339634",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104605)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339634",
-      "cves": []
-    },
-    {
-      "id": "339633",
-      "title": "Unity Linux 20.1050e Security Update: kernel (UTSA-2026-104535)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339633",
-      "cves": []
-    },
-    {
-      "id": "339632",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104616)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339632",
-      "cves": []
-    },
-    {
-      "id": "339631",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104582)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339631",
-      "cves": []
-    },
-    {
-      "id": "339630",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104607)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339630",
-      "cves": []
-    },
-    {
-      "id": "339629",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104577)",
+      "id": "341072",
+      "title": "Oracle Linux 8 : kernel (ELSA-2026-59821)",
       "severity": "Critical",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339629",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341072",
+      "cves": [
+        "CVE-2026-63886",
+        "CVE-2026-63913",
+        "CVE-2026-64189",
+        "CVE-2026-64191",
+        "CVE-2026-64276",
+        "CVE-2026-64277",
+        "CVE-2026-64320"
+      ]
     },
     {
-      "id": "339628",
-      "title": "Unity Linux 20.1050e Security Update: kernel (UTSA-2026-104539)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339628",
-      "cves": []
-    },
-    {
-      "id": "339627",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104560)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339627",
-      "cves": []
-    },
-    {
-      "id": "339626",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104548)",
+      "id": "341071",
+      "title": "Oracle Linux 8 : ELSA-2026-60329-0: / mingw-openssl (ELSA-2026-603290)",
       "severity": "Critical",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339626",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341071",
+      "cves": [
+        "CVE-2024-5535"
+      ]
     },
     {
-      "id": "339625",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104585)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339625",
-      "cves": []
+      "id": "341070",
+      "title": "Oracle Linux 9 : kernel (ELSA-2026-59723)",
+      "severity": "Medium",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341070",
+      "cves": [
+        "CVE-2025-68211",
+        "CVE-2026-23003",
+        "CVE-2026-43114",
+        "CVE-2026-52920",
+        "CVE-2026-53131",
+        "CVE-2026-53185",
+        "CVE-2026-53268",
+        "CVE-2026-64189",
+        "CVE-2026-64191",
+        "CVE-2026-64276",
+        "CVE-2026-64277",
+        "CVE-2026-74581"
+      ]
     },
     {
-      "id": "339624",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104566)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339624",
-      "cves": []
-    },
-    {
-      "id": "339623",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104575)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339623",
-      "cves": []
-    },
-    {
-      "id": "339622",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104600)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339622",
-      "cves": []
-    },
-    {
-      "id": "339621",
-      "title": "Unity Linux 20.1050e Security Update: kernel (UTSA-2026-104530)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339621",
-      "cves": []
-    },
-    {
-      "id": "339620",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104598)",
+      "id": "341069",
+      "title": "FreeBSD : net/rsync -- multiple vulnerabilities (fee67ad5-a05e-11f1-ad2b-40b034429ecf)",
       "severity": "Critical",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339620",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341069",
       "cves": []
     },
     {
-      "id": "339619",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104610)",
+      "id": "341068",
+      "title": "FreeBSD : conduit -- authentication bypass vulnerability (1ff5a036-a13e-11f1-a129-901b0e9408dc)",
       "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339619",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341068",
       "cves": []
     },
     {
-      "id": "339618",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104606)",
+      "id": "341067",
+      "title": "GLSA-202608-31 : Chromium, Google Chrome, Microsoft Edge, Opera, Vivaldi: Multiple Vulnerabilities",
       "severity": "Critical",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339618",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341067",
       "cves": []
     },
     {
-      "id": "339617",
-      "title": "Unity Linux 20.1050e Security Update: kernel (UTSA-2026-104533)",
+      "id": "341066",
+      "title": "GLSA-202608-28 : Chromium, Google Chrome, Microsoft Edge. Opera: Multiple Vulnerabilities",
       "severity": "Critical",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339617",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341066",
       "cves": []
     },
     {
-      "id": "339616",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104550)",
+      "id": "341065",
+      "title": "GLSA-202608-29 : Chromium, Google Chrome, Microsoft Edge, Opera: Multiple Vulnerabilities",
       "severity": "Critical",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339616",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341065",
       "cves": []
     },
     {
-      "id": "339615",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104591)",
+      "id": "341064",
+      "title": "GLSA-202608-30 : OpenRGB: Multiple Vulnerabilities",
       "severity": "Critical",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339615",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341064",
       "cves": []
     },
     {
-      "id": "339614",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104590)",
+      "id": "341063",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-80183",
       "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339614",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341063",
+      "cves": [
+        "CVE-2026-80183"
+      ]
     },
     {
-      "id": "339613",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104602)",
+      "id": "341062",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-77652",
       "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339613",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341062",
+      "cves": [
+        "CVE-2026-77652"
+      ]
     },
     {
-      "id": "339612",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104592)",
+      "id": "341061",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-79921",
       "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339612",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341061",
+      "cves": [
+        "CVE-2026-79921"
+      ]
     },
     {
-      "id": "339611",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104547)",
+      "id": "341060",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-80489",
       "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339611",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341060",
+      "cves": [
+        "CVE-2026-80489"
+      ]
     },
     {
-      "id": "339610",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104584)",
+      "id": "341059",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-80158",
+      "severity": "Medium",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341059",
+      "cves": [
+        "CVE-2026-80158"
+      ]
+    },
+    {
+      "id": "341058",
+      "title": "Adobe Substance 3D Designer < 16.0.5 Multiple Vulnerabilities (APSB26-115)",
       "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339610",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341058",
+      "cves": [
+        "CVE-2026-48426",
+        "CVE-2026-48427",
+        "CVE-2026-48428",
+        "CVE-2026-48429",
+        "CVE-2026-48430",
+        "CVE-2026-48431",
+        "CVE-2026-48432",
+        "CVE-2026-48433",
+        "CVE-2026-71564"
+      ]
     },
     {
-      "id": "339609",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104551)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339609",
-      "cves": []
-    },
-    {
-      "id": "339608",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104578)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339608",
-      "cves": []
-    },
-    {
-      "id": "339607",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104604)",
+      "id": "341057",
+      "title": "Debian dsa-6469 : xrdp - security update",
       "severity": "Critical",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339607",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341057",
+      "cves": [
+        "CVE-2026-32105",
+        "CVE-2026-32107",
+        "CVE-2026-32623",
+        "CVE-2026-32624",
+        "CVE-2026-33145",
+        "CVE-2026-33516",
+        "CVE-2026-33689",
+        "CVE-2026-35512",
+        "CVE-2026-41252",
+        "CVE-2026-41521",
+        "CVE-2026-42218",
+        "CVE-2026-44178",
+        "CVE-2026-44978",
+        "CVE-2026-54538",
+        "CVE-2026-55238",
+        "CVE-2026-55639",
+        "CVE-2026-55645"
+      ]
     },
     {
-      "id": "339606",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104561)",
+      "id": "341056",
+      "title": "Debian dsa-6472 : bubblewrap - security update",
       "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339606",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341056",
       "cves": []
     },
     {
-      "id": "339605",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104588)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339605",
-      "cves": []
-    },
-    {
-      "id": "339604",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104543)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339604",
-      "cves": []
-    },
-    {
-      "id": "339603",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104609)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339603",
-      "cves": []
-    },
-    {
-      "id": "339602",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104552)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339602",
-      "cves": []
-    },
-    {
-      "id": "339601",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104553)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339601",
-      "cves": []
-    },
-    {
-      "id": "339600",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104571)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339600",
-      "cves": []
-    },
-    {
-      "id": "339599",
-      "title": "Unity Linux 20.1050e Security Update: kernel (UTSA-2026-104541)",
-      "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339599",
-      "cves": []
-    },
-    {
-      "id": "339598",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104556)",
+      "id": "341055",
+      "title": "Debian dsa-6470 : gimp - security update",
       "severity": "Critical",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339598",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341055",
+      "cves": [
+        "CVE-2026-18301",
+        "CVE-2026-18302",
+        "CVE-2026-18303",
+        "CVE-2026-18304",
+        "CVE-2026-18305",
+        "CVE-2026-18306",
+        "CVE-2026-18307",
+        "CVE-2026-18308",
+        "CVE-2026-42170",
+        "CVE-2026-58379",
+        "CVE-2026-58380",
+        "CVE-2026-58381",
+        "CVE-2026-58384",
+        "CVE-2026-59088",
+        "CVE-2026-59090",
+        "CVE-2026-66758",
+        "CVE-2026-66759"
+      ]
     },
     {
-      "id": "339597",
-      "title": "Unity Linux 20.1050a Security Update: kernel (UTSA-2026-104581)",
+      "id": "341054",
+      "title": "Debian dsa-6473 : libdbi-perl - security update",
+      "severity": "Critical",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341054",
+      "cves": [
+        "CVE-2026-14380",
+        "CVE-2026-14739",
+        "CVE-2026-14740",
+        "CVE-2026-15043",
+        "CVE-2026-15392",
+        "CVE-2026-60081",
+        "CVE-2026-60082",
+        "CVE-2026-73193",
+        "CVE-2026-73194"
+      ]
+    },
+    {
+      "id": "341053",
+      "title": "Debian dsa-6474 : cockpit - security update",
       "severity": "High",
-      "date": "Wed, 26 Aug 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/339597",
-      "cves": []
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341053",
+      "cves": [
+        "CVE-2026-4802",
+        "CVE-2026-76235"
+      ]
+    },
+    {
+      "id": "341052",
+      "title": "Debian dsa-6471 : libwireshark-data - security update",
+      "severity": "Low",
+      "date": "Thu, 27 Aug 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/341052",
+      "cves": [
+        "CVE-2026-15163",
+        "CVE-2026-15164",
+        "CVE-2026-15166",
+        "CVE-2026-15167",
+        "CVE-2026-15168",
+        "CVE-2026-15169",
+        "CVE-2026-15170",
+        "CVE-2026-15171",
+        "CVE-2026-15172",
+        "CVE-2026-15174",
+        "CVE-2026-76879",
+        "CVE-2026-76880",
+        "CVE-2026-76881",
+        "CVE-2026-76882",
+        "CVE-2026-76883",
+        "CVE-2026-76884",
+        "CVE-2026-76885",
+        "CVE-2026-76886",
+        "CVE-2026-76887",
+        "CVE-2026-76888",
+        "CVE-2026-76889",
+        "CVE-2026-76890",
+        "CVE-2026-76891",
+        "CVE-2026-76917",
+        "CVE-2026-76918",
+        "CVE-2026-76919",
+        "CVE-2026-76920",
+        "CVE-2026-76921",
+        "CVE-2026-76922",
+        "CVE-2026-76923",
+        "CVE-2026-76924",
+        "CVE-2026-76926",
+        "CVE-2026-76927",
+        "CVE-2026-76928",
+        "CVE-2026-76929"
+      ]
     }
   ]
 }

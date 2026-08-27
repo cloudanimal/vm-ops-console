@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-26",
-  "previous_date": "2026-08-19",
+  "current_date": "2026-08-27",
+  "previous_date": "2026-08-20",
   "risers": [
     {
       "id": "CVE-2026-63077",
@@ -40,6 +40,13 @@
       "name": "Sandbox Escape in ServiceNow AI Platform"
     },
     {
+      "id": "CVE-2026-18577",
+      "now": 0.54068,
+      "prev": 0.04103,
+      "delta": 0.49965,
+      "name": "Incomplete patch leads to administrative account takeover"
+    },
+    {
       "id": "CVE-2026-59310",
       "now": 0.45878,
       "prev": 0.02405,
@@ -54,11 +61,25 @@
       "name": "lib/ajaxHandlers/ajaxAddTemplate.php in rConfig through 3.94 allows remote attackers to execute arbitrary OS c"
     },
     {
+      "id": "CVE-2026-18556",
+      "now": 0.40158,
+      "prev": 0.00492,
+      "delta": 0.39666,
+      "name": "Unauthenticated administrative account takeover"
+    },
+    {
       "id": "CVE-2025-71257",
       "now": 0.44576,
       "prev": 0.05186,
       "delta": 0.3939,
       "name": "BMC FootPrints ITSM 20.20.02 <= 20.24.01.001 Authentication Bypass"
+    },
+    {
+      "id": "CVE-2026-55040",
+      "now": 0.39652,
+      "prev": 0.05489,
+      "delta": 0.34163,
+      "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
     },
     {
       "id": "CVE-2026-46442",
@@ -145,6 +166,13 @@
       "name": "Draytek VigorConnect"
     },
     {
+      "id": "CVE-2026-53435",
+      "now": 0.44283,
+      "prev": 0.19035,
+      "delta": 0.25248,
+      "name": "Jenkins Project Jenkins"
+    },
+    {
       "id": "CVE-2024-21182",
       "now": 0.74162,
       "prev": 0.4997,
@@ -185,34 +213,6 @@
       "prev": 0.11788,
       "delta": 0.21736,
       "name": "Authenticated RCE via Parental Control command injection"
-    },
-    {
-      "id": "CVE-2019-0768",
-      "now": 0.48501,
-      "prev": 0.26782,
-      "delta": 0.21719,
-      "name": "Microsoft Internet Explorer 11"
-    },
-    {
-      "id": "CVE-2024-43468",
-      "now": 0.82148,
-      "prev": 0.6111,
-      "delta": 0.21038,
-      "name": "Microsoft Configuration Manager Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2026-32201",
-      "now": 0.42814,
-      "prev": 0.22772,
-      "delta": 0.20042,
-      "name": "Microsoft SharePoint Server Spoofing Vulnerability"
-    },
-    {
-      "id": "CVE-2022-1281",
-      "now": 0.43036,
-      "prev": 0.23194,
-      "delta": 0.19842,
-      "name": "Photo Gallery < 1.6.3 - Unauthenticated SQL Injection"
     }
   ],
   "newly_high": [
@@ -252,6 +252,13 @@
       "name": "Sandbox Escape in ServiceNow AI Platform"
     },
     {
+      "id": "CVE-2026-18577",
+      "now": 0.54068,
+      "prev": 0.04103,
+      "delta": 0.49965,
+      "name": "Incomplete patch leads to administrative account takeover"
+    },
+    {
       "id": "CVE-2020-10221",
       "now": 0.80221,
       "prev": 0.36754,
@@ -287,6 +294,13 @@
       "name": "Google Chrome"
     },
     {
+      "id": "CVE-2019-1068",
+      "now": 0.52845,
+      "prev": 0.33015,
+      "delta": 0.1983,
+      "name": "Microsoft Microsoft SQL Server 2014 Service Pack 2 for 32-bit Systems (GDR)"
+    },
+    {
       "id": "CVE-2025-53690",
       "now": 0.51094,
       "prev": 0.31405,
@@ -294,11 +308,32 @@
       "name": "Sitecore Products ViewState Deserialization Vulnerability"
     },
     {
+      "id": "CVE-2023-0028",
+      "now": 0.56018,
+      "prev": 0.40916,
+      "delta": 0.15102,
+      "name": "Cross-site Scripting (XSS) - Stored in linagora/twake"
+    },
+    {
       "id": "CVE-2015-2502",
       "now": 0.51127,
       "prev": 0.38705,
       "delta": 0.12422,
       "name": "Microsoft Internet Explorer 7 through 11 allows remote attackers to execute arbitrary code or cause a denial o"
+    },
+    {
+      "id": "CVE-2023-4547",
+      "now": 0.5971,
+      "prev": 0.48533,
+      "delta": 0.11177,
+      "name": "SPA-Cart eCommerce CMS search cross site scripting"
+    },
+    {
+      "id": "CVE-2012-6441",
+      "now": 0.57148,
+      "prev": 0.46967,
+      "delta": 0.10181,
+      "name": "Rockwell Automation ControlLogix PLC Information Exposure"
     },
     {
       "id": "CVE-2015-2419",
@@ -336,13 +371,6 @@
       "name": "pgAdmin 4: Remote Code Execution in Query Tool and Cloud Deployment"
     },
     {
-      "id": "CVE-2023-4547",
-      "now": 0.51732,
-      "prev": 0.48533,
-      "delta": 0.03199,
-      "name": "SPA-Cart eCommerce CMS search cross site scripting"
-    },
-    {
       "id": "CVE-2025-5394",
       "now": 0.5207,
       "prev": 0.49465,
@@ -355,6 +383,13 @@
       "prev": 0.49858,
       "delta": 0.02199,
       "name": "hikvision DS-A71024/48/72R,DS-A80624S,DS-A81016S,DS-A72024/72R,DS-A80316S,DS-A82024D"
+    },
+    {
+      "id": "CVE-2025-47188",
+      "now": 0.50237,
+      "prev": 0.48579,
+      "delta": 0.01658,
+      "name": "A vulnerability in the Mitel 6800 Series, 6900 Series, and 6900w Series SIP Phones through 6.4 SP4 (R6.4.0.400"
     }
   ]
 }
