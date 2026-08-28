@@ -1,14 +1,14 @@
 {
-  "updated": "2026-08-27",
+  "updated": "2026-08-28",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-27",
-  "previous_date": "2026-08-20",
+  "current_date": "2026-08-28",
+  "previous_date": "2026-08-21",
   "risers": [
     {
       "id": "CVE-2026-63077",
-      "now": 0.84733,
+      "now": 0.87709,
       "prev": 0.10722,
-      "delta": 0.74011,
+      "delta": 0.76987,
       "name": "JetBrains TeamCity"
     },
     {
@@ -75,11 +75,39 @@
       "name": "BMC FootPrints ITSM 20.20.02 <= 20.24.01.001 Authentication Bypass"
     },
     {
+      "id": "CVE-2018-11139",
+      "now": 0.77493,
+      "prev": 0.42917,
+      "delta": 0.34576,
+      "name": "The '/common/ajax_email_connection_test.php' script in the Quest KACE System Management Appliance 8.0.318 is a"
+    },
+    {
+      "id": "CVE-2018-11132",
+      "now": 0.52521,
+      "prev": 0.18285,
+      "delta": 0.34236,
+      "name": "In order to perform actions that require higher privileges, the Quest KACE System Management Appliance 8.0.318"
+    },
+    {
       "id": "CVE-2026-55040",
       "now": 0.39652,
       "prev": 0.05489,
       "delta": 0.34163,
       "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
+    },
+    {
+      "id": "CVE-2026-53435",
+      "now": 0.53131,
+      "prev": 0.19035,
+      "delta": 0.34096,
+      "name": "Jenkins Project Jenkins"
+    },
+    {
+      "id": "CVE-2018-8033",
+      "now": 0.59646,
+      "prev": 0.25743,
+      "delta": 0.33903,
+      "name": "Apache Software Foundation Apache OFBiz"
     },
     {
       "id": "CVE-2026-46442",
@@ -117,6 +145,13 @@
       "name": "Cisco Cisco Secure Firewall Adaptive Security Appliance (ASA) Software"
     },
     {
+      "id": "CVE-2023-49105",
+      "now": 0.41192,
+      "prev": 0.11074,
+      "delta": 0.30118,
+      "name": "An issue was discovered in ownCloud owncloud/core before 10.13.1. An attacker can access, modify, or delete an"
+    },
+    {
       "id": "CVE-2026-33112",
       "now": 0.32712,
       "prev": 0.03097,
@@ -124,11 +159,25 @@
       "name": "Microsoft SharePoint Server Remote Code Execution Vulnerability"
     },
     {
+      "id": "CVE-2017-3241",
+      "now": 0.62197,
+      "prev": 0.32839,
+      "delta": 0.29358,
+      "name": "Oracle Java SE"
+    },
+    {
       "id": "CVE-2019-2215",
       "now": 0.72105,
       "prev": 0.43823,
       "delta": 0.28282,
       "name": "Android"
+    },
+    {
+      "id": "CVE-2018-5925",
+      "now": 0.38896,
+      "prev": 0.10886,
+      "delta": 0.2801,
+      "name": "HP Inc. HP inkjet printers"
     },
     {
       "id": "CVE-2021-21224",
@@ -145,82 +194,33 @@
       "name": "Fortinet FortiOS"
     },
     {
+      "id": "CVE-2019-13510",
+      "now": 0.39247,
+      "prev": 0.12042,
+      "delta": 0.27205,
+      "name": "Rockwell Automation Arena Simulation Software versions 16.00.00 and earlier"
+    },
+    {
+      "id": "CVE-2018-14665",
+      "now": 0.536,
+      "prev": 0.2704,
+      "delta": 0.2656,
+      "name": "A flaw was found in xorg-x11-server before 1.20.3. An incorrect permission check for -modulepath and -logfile "
+    },
+    {
       "id": "CVE-2021-21551",
       "now": 0.79249,
       "prev": 0.53116,
       "delta": 0.26133,
       "name": "Dell dbutil"
-    },
-    {
-      "id": "CVE-2026-66066",
-      "now": 0.27861,
-      "prev": 0.01767,
-      "delta": 0.26094,
-      "name": "Action Pack: Possible arbitrary file read and remote code execution in Active Storage vari"
-    },
-    {
-      "id": "CVE-2021-20124",
-      "now": 0.96308,
-      "prev": 0.70659,
-      "delta": 0.25649,
-      "name": "Draytek VigorConnect"
-    },
-    {
-      "id": "CVE-2026-53435",
-      "now": 0.44283,
-      "prev": 0.19035,
-      "delta": 0.25248,
-      "name": "Jenkins Project Jenkins"
-    },
-    {
-      "id": "CVE-2024-21182",
-      "now": 0.74162,
-      "prev": 0.4997,
-      "delta": 0.24192,
-      "name": "Oracle Corporation WebLogic Server"
-    },
-    {
-      "id": "CVE-2019-13720",
-      "now": 0.72977,
-      "prev": 0.4914,
-      "delta": 0.23837,
-      "name": "Google Chrome"
-    },
-    {
-      "id": "CVE-2026-71362",
-      "now": 0.25136,
-      "prev": 0.01301,
-      "delta": 0.23835,
-      "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
-    },
-    {
-      "id": "CVE-2025-28137",
-      "now": 0.36065,
-      "prev": 0.13511,
-      "delta": 0.22554,
-      "name": "The TOTOLINK A810R V4.1.2cu.5182_B20201026 were found to contain a pre-auth remote command execution vulnerabi"
-    },
-    {
-      "id": "CVE-2024-29849",
-      "now": 0.38433,
-      "prev": 0.16673,
-      "delta": 0.2176,
-      "name": "Veeam Backup & Replication"
-    },
-    {
-      "id": "CVE-2025-9377",
-      "now": 0.33524,
-      "prev": 0.11788,
-      "delta": 0.21736,
-      "name": "Authenticated RCE via Parental Control command injection"
     }
   ],
   "newly_high": [
     {
       "id": "CVE-2026-63077",
-      "now": 0.84733,
+      "now": 0.87709,
       "prev": 0.10722,
-      "delta": 0.74011,
+      "delta": 0.76987,
       "name": "JetBrains TeamCity"
     },
     {
@@ -266,11 +266,46 @@
       "name": "lib/ajaxHandlers/ajaxAddTemplate.php in rConfig through 3.94 allows remote attackers to execute arbitrary OS c"
     },
     {
+      "id": "CVE-2018-11139",
+      "now": 0.77493,
+      "prev": 0.42917,
+      "delta": 0.34576,
+      "name": "The '/common/ajax_email_connection_test.php' script in the Quest KACE System Management Appliance 8.0.318 is a"
+    },
+    {
+      "id": "CVE-2018-11132",
+      "now": 0.52521,
+      "prev": 0.18285,
+      "delta": 0.34236,
+      "name": "In order to perform actions that require higher privileges, the Quest KACE System Management Appliance 8.0.318"
+    },
+    {
+      "id": "CVE-2026-53435",
+      "now": 0.53131,
+      "prev": 0.19035,
+      "delta": 0.34096,
+      "name": "Jenkins Project Jenkins"
+    },
+    {
+      "id": "CVE-2018-8033",
+      "now": 0.59646,
+      "prev": 0.25743,
+      "delta": 0.33903,
+      "name": "Apache Software Foundation Apache OFBiz"
+    },
+    {
       "id": "CVE-2025-20333",
       "now": 0.70651,
       "prev": 0.40391,
       "delta": 0.3026,
       "name": "Cisco Cisco Secure Firewall Adaptive Security Appliance (ASA) Software"
+    },
+    {
+      "id": "CVE-2017-3241",
+      "now": 0.62197,
+      "prev": 0.32839,
+      "delta": 0.29358,
+      "name": "Oracle Java SE"
     },
     {
       "id": "CVE-2019-2215",
@@ -280,6 +315,20 @@
       "name": "Android"
     },
     {
+      "id": "CVE-2018-14665",
+      "now": 0.536,
+      "prev": 0.2704,
+      "delta": 0.2656,
+      "name": "A flaw was found in xorg-x11-server before 1.20.3. An incorrect permission check for -modulepath and -logfile "
+    },
+    {
+      "id": "CVE-2018-11235",
+      "now": 0.74023,
+      "prev": 0.48752,
+      "delta": 0.25271,
+      "name": "In Git before 2.13.7, 2.14.x before 2.14.4, 2.15.x before 2.15.2, 2.16.x before 2.16.4, and 2.17.x before 2.17"
+    },
+    {
       "id": "CVE-2024-21182",
       "now": 0.74162,
       "prev": 0.4997,
@@ -287,11 +336,39 @@
       "name": "Oracle Corporation WebLogic Server"
     },
     {
+      "id": "CVE-2019-0768",
+      "now": 0.50789,
+      "prev": 0.26782,
+      "delta": 0.24007,
+      "name": "Microsoft Internet Explorer 11"
+    },
+    {
       "id": "CVE-2019-13720",
       "now": 0.72977,
       "prev": 0.4914,
       "delta": 0.23837,
       "name": "Google Chrome"
+    },
+    {
+      "id": "CVE-2018-1323",
+      "now": 0.67359,
+      "prev": 0.46397,
+      "delta": 0.20962,
+      "name": "Apache Software Foundation Apache Tomcat Connectors"
+    },
+    {
+      "id": "CVE-2019-0221",
+      "now": 0.66484,
+      "prev": 0.45571,
+      "delta": 0.20913,
+      "name": "Apache Apache Tomcat"
+    },
+    {
+      "id": "CVE-2018-0706",
+      "now": 0.68714,
+      "prev": 0.48688,
+      "delta": 0.20026,
+      "name": "QNAP Q'center Virtual Appliance"
     },
     {
       "id": "CVE-2019-1068",
@@ -306,6 +383,13 @@
       "prev": 0.31405,
       "delta": 0.19689,
       "name": "Sitecore Products ViewState Deserialization Vulnerability"
+    },
+    {
+      "id": "CVE-2018-8474",
+      "now": 0.55354,
+      "prev": 0.38177,
+      "delta": 0.17177,
+      "name": "Microsoft Microsoft Lync"
     },
     {
       "id": "CVE-2023-0028",
@@ -341,55 +425,6 @@
       "prev": 0.44688,
       "delta": 0.08719,
       "name": "JScript 9 in Microsoft Internet Explorer 10 and 11 allows remote attackers to execute arbitrary code or cause "
-    },
-    {
-      "id": "CVE-2019-1367",
-      "now": 0.52729,
-      "prev": 0.44999,
-      "delta": 0.0773,
-      "name": "Microsoft Internet Explorer 9"
-    },
-    {
-      "id": "CVE-2017-8620",
-      "now": 0.57328,
-      "prev": 0.49619,
-      "delta": 0.07709,
-      "name": "Microsoft Corporation Microsoft Windows Search Component"
-    },
-    {
-      "id": "CVE-2025-9528",
-      "now": 0.5419,
-      "prev": 0.47654,
-      "delta": 0.06536,
-      "name": "Linksys E1700 systemCommand os command injection"
-    },
-    {
-      "id": "CVE-2025-2945",
-      "now": 0.52647,
-      "prev": 0.46751,
-      "delta": 0.05896,
-      "name": "pgAdmin 4: Remote Code Execution in Query Tool and Cloud Deployment"
-    },
-    {
-      "id": "CVE-2025-5394",
-      "now": 0.5207,
-      "prev": 0.49465,
-      "delta": 0.02605,
-      "name": "Alone \u2013 Charity Multipurpose Non-profit WordPress Theme <= 7.8.3 - Missing Authorization t"
-    },
-    {
-      "id": "CVE-2022-28171",
-      "now": 0.52057,
-      "prev": 0.49858,
-      "delta": 0.02199,
-      "name": "hikvision DS-A71024/48/72R,DS-A80624S,DS-A81016S,DS-A72024/72R,DS-A80316S,DS-A82024D"
-    },
-    {
-      "id": "CVE-2025-47188",
-      "now": 0.50237,
-      "prev": 0.48579,
-      "delta": 0.01658,
-      "name": "A vulnerability in the Mitel 6800 Series, 6900 Series, and 6900w Series SIP Phones through 6.4 SP4 (R6.4.0.400"
     }
   ]
 }
