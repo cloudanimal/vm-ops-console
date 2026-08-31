@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24",
+  "updated": "2026-08-31",
   "source": "fkie-cad NVD mirror (counted locally)",
   "note": "NVD data via the fkie-cad GitHub mirror; no NVD API key. CVEs are bucketed by publication year. Severity buckets use the primary CVSS v3 base severity (CVEs without a v3 score are absent from the split). KEV counts use the CISA KEV enrichment (cisaExploitAdd) carried in the NVD record.",
   "dimensions": [
@@ -10,7 +10,7 @@
     "LOW",
     "kev"
   ],
-  "grand_total": 381223,
+  "grand_total": 383994,
   "by_year": {
     "1999": {
       "total": 923,
@@ -142,9 +142,9 @@
     },
     "2015": {
       "total": 6595,
-      "kev": 43,
+      "kev": 45,
       "CRITICAL": 45,
-      "HIGH": 99,
+      "HIGH": 100,
       "MEDIUM": 55,
       "LOW": 6
     },
@@ -174,7 +174,7 @@
     },
     "2019": {
       "total": 18938,
-      "kev": 128,
+      "kev": 129,
       "CRITICAL": 2625,
       "HIGH": 7130,
       "MEDIUM": 7075,
@@ -190,7 +190,7 @@
     },
     "2021": {
       "total": 21950,
-      "kev": 213,
+      "kev": 214,
       "CRITICAL": 2545,
       "HIGH": 7454,
       "MEDIUM": 7822,
@@ -198,7 +198,7 @@
     },
     "2022": {
       "total": 26431,
-      "kev": 130,
+      "kev": 131,
       "CRITICAL": 4153,
       "HIGH": 9196,
       "MEDIUM": 9382,
@@ -206,10 +206,10 @@
     },
     "2023": {
       "total": 30949,
-      "kev": 164,
+      "kev": 165,
       "CRITICAL": 4396,
-      "HIGH": 9896,
-      "MEDIUM": 11863,
+      "HIGH": 9897,
+      "MEDIUM": 11861,
       "LOW": 370
     },
     "2024": {
@@ -224,28 +224,28 @@
       "total": 49972,
       "kev": 195,
       "CRITICAL": 3364,
-      "HIGH": 4992,
-      "MEDIUM": 8078,
+      "HIGH": 4994,
+      "MEDIUM": 8079,
       "LOW": 225
     },
     "2026": {
-      "total": 56630,
-      "kev": 126,
-      "CRITICAL": 1972,
-      "HIGH": 4615,
-      "MEDIUM": 5694,
-      "LOW": 204
+      "total": 59401,
+      "kev": 131,
+      "CRITICAL": 1943,
+      "HIGH": 4523,
+      "MEDIUM": 5656,
+      "LOW": 196
     }
   },
   "severity_totals": {
-    "CRITICAL": 30573,
-    "HIGH": 76332,
-    "MEDIUM": 83047,
-    "LOW": 3256
+    "CRITICAL": 30544,
+    "HIGH": 76244,
+    "MEDIUM": 83008,
+    "LOW": 3248
   },
   "profile": {
-    "network": 138445,
-    "wormable": 57250,
-    "kev_total": 1674
+    "network": 138292,
+    "wormable": 57236,
+    "kev_total": 1685
   }
 }
