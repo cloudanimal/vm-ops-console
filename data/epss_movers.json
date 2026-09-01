@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-31",
+  "updated": "2026-09-01",
   "source": "FIRST EPSS",
-  "current_date": "2026-08-31",
-  "previous_date": "2026-08-24",
+  "current_date": "2026-09-01",
+  "previous_date": "2026-08-25",
   "risers": [
     {
       "id": "CVE-2026-18577",
@@ -17,13 +17,6 @@
       "prev": 0.36754,
       "delta": 0.43467,
       "name": "lib/ajaxHandlers/ajaxAddTemplate.php in rConfig through 3.94 allows remote attackers to execute arbitrary OS c"
-    },
-    {
-      "id": "CVE-2026-61511",
-      "now": 0.70766,
-      "prev": 0.33995,
-      "delta": 0.36771,
-      "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
     },
     {
       "id": "CVE-2026-18556",
@@ -96,6 +89,13 @@
       "name": "SPA-Cart eCommerce CMS search cross site scripting"
     },
     {
+      "id": "CVE-2020-36847",
+      "now": 0.44471,
+      "prev": 0.3236,
+      "delta": 0.12111,
+      "name": "Simple File List < 4.2.3 - Remote Code Execution"
+    },
+    {
       "id": "CVE-2017-7504",
       "now": 0.41019,
       "prev": 0.29323,
@@ -124,18 +124,18 @@
       "name": "Planyo online reservation system <= 3.0 - Unauthenticated Server-Side Request Forgery via "
     },
     {
+      "id": "CVE-2025-60689",
+      "now": 0.17485,
+      "prev": 0.08124,
+      "delta": 0.09361,
+      "name": "An unauthenticated command injection vulnerability exists in the Start_EPI function of the httpd binary on Lin"
+    },
+    {
       "id": "CVE-2026-66066",
       "now": 0.27861,
       "prev": 0.18952,
       "delta": 0.08909,
       "name": "Action Pack: Possible arbitrary file read and remote code execution in Active Storage vari"
-    },
-    {
-      "id": "CVE-2026-40217",
-      "now": 0.15056,
-      "prev": 0.06496,
-      "delta": 0.0856,
-      "name": "BerriAI LiteLLM"
     },
     {
       "id": "CVE-2019-1068",
@@ -145,13 +145,6 @@
       "name": "Microsoft Microsoft SQL Server 2014 Service Pack 2 for 32-bit Systems (GDR)"
     },
     {
-      "id": "CVE-2024-1708",
-      "now": 0.9549,
-      "prev": 0.87558,
-      "delta": 0.07932,
-      "name": "Improper limitation of a pathname to a restricted directory (\u201cpath traversal\u201d)"
-    },
-    {
       "id": "CVE-2023-4548",
       "now": 0.27885,
       "prev": 0.20112,
@@ -159,11 +152,11 @@
       "name": "SPA-Cart eCommerce CMS GET Parameter search sql injection"
     },
     {
-      "id": "CVE-2023-25826",
-      "now": 0.42765,
-      "prev": 0.35604,
-      "delta": 0.07161,
-      "name": "Remote Code Execution in OpenTSDB"
+      "id": "CVE-2014-4077",
+      "now": 0.54856,
+      "prev": 0.47679,
+      "delta": 0.07177,
+      "name": "Microsoft Windows Server 2003 SP2, Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, and O"
     },
     {
       "id": "CVE-2020-1301",
@@ -173,13 +166,6 @@
       "name": "Microsoft Windows"
     },
     {
-      "id": "CVE-2006-5020",
-      "now": 0.17089,
-      "prev": 0.10596,
-      "delta": 0.06493,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in SolidState 0.4 and earlier allow remote attackers to exe"
-    },
-    {
       "id": "CVE-2008-4071",
       "now": 0.18427,
       "prev": 0.12213,
@@ -187,18 +173,18 @@
       "name": "A certain ActiveX control in Adobe Acrobat 9, when used with Microsoft Windows Vista and Internet Explorer 7, "
     },
     {
-      "id": "CVE-2006-5048",
-      "now": 0.15756,
-      "prev": 0.09749,
-      "delta": 0.06007,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in Security Images (com_securityimages) component 3.0.5 and"
-    },
-    {
       "id": "CVE-2009-0026",
       "now": 0.26778,
       "prev": 0.21633,
       "delta": 0.05145,
       "name": "Multiple cross-site scripting (XSS) vulnerabilities in Apache Jackrabbit before 1.5.2 allow remote attackers t"
+    },
+    {
+      "id": "CVE-2026-0599",
+      "now": 0.27631,
+      "prev": 0.22494,
+      "delta": 0.05137,
+      "name": "Unbounded External Image Fetch in Validation Leads to Resource-Exhaustion DoS in huggingfa"
     },
     {
       "id": "CVE-2025-6793",
@@ -213,6 +199,20 @@
       "prev": 0.02781,
       "delta": 0.0502,
       "name": "Command Injection"
+    },
+    {
+      "id": "CVE-2026-5027",
+      "now": 0.36141,
+      "prev": 0.31661,
+      "delta": 0.0448,
+      "name": "Langflow - Path Traversal Arbitrary File Write via upload_user_file"
+    },
+    {
+      "id": "CVE-2025-34077",
+      "now": 0.14307,
+      "prev": 0.09903,
+      "delta": 0.04404,
+      "name": "WordPress Pie Register Plugin \u2264 3.7.1.4 Authentication Bypass RCE"
     }
   ],
   "newly_high": [
@@ -229,13 +229,6 @@
       "prev": 0.36754,
       "delta": 0.43467,
       "name": "lib/ajaxHandlers/ajaxAddTemplate.php in rConfig through 3.94 allows remote attackers to execute arbitrary OS c"
-    },
-    {
-      "id": "CVE-2026-61511",
-      "now": 0.70766,
-      "prev": 0.33995,
-      "delta": 0.36771,
-      "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
     },
     {
       "id": "CVE-2017-9417",
@@ -280,6 +273,13 @@
       "name": "Microsoft Microsoft SQL Server 2014 Service Pack 2 for 32-bit Systems (GDR)"
     },
     {
+      "id": "CVE-2014-4077",
+      "now": 0.54856,
+      "prev": 0.47679,
+      "delta": 0.07177,
+      "name": "Microsoft Windows Server 2003 SP2, Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, and O"
+    },
+    {
       "id": "CVE-2022-31126",
       "now": 0.52137,
       "prev": 0.49937,
@@ -292,6 +292,13 @@
       "prev": 0.48579,
       "delta": 0.01658,
       "name": "A vulnerability in the Mitel 6800 Series, 6900 Series, and 6900w Series SIP Phones through 6.4 SP4 (R6.4.0.400"
+    },
+    {
+      "id": "CVE-2025-34300",
+      "now": 0.50696,
+      "prev": 0.49742,
+      "delta": 0.00954,
+      "name": "Sawtooth Software Lighthouse Studio < 9.16.14 Pre-Authentication RCE"
     }
   ]
 }
