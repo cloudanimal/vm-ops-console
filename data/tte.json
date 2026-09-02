@@ -1,11 +1,11 @@
 {
- "updated": "2026-08-02",
+ "updated": "2026-09-02",
  "window_start": 2018,
  "sources": {
-  "cisa_kev": 1656,
+  "cisa_kev": 1687,
   "vulncheck_kev": 0,
   "vulncheck_xdb": 0,
-  "cves_with_tte": 1624
+  "cves_with_tte": 1655
  },
  "by_year": {
   "2018": {
@@ -15,9 +15,9 @@
    "zero_day_pct": 0.0
   },
   "2019": {
-   "n": 117,
+   "n": 118,
    "median": 939,
-   "trimmed_mean": 982.8,
+   "trimmed_mean": 993.4,
    "zero_day_pct": 0.0
   },
   "2020": {
@@ -27,22 +27,22 @@
    "zero_day_pct": 0.0
   },
   "2021": {
-   "n": 213,
+   "n": 214,
    "median": 194,
-   "trimmed_mean": 293.4,
+   "trimmed_mean": 299.6,
    "zero_day_pct": 0.033
   },
   "2022": {
-   "n": 129,
+   "n": 130,
    "median": 21,
-   "trimmed_mean": 116.5,
-   "zero_day_pct": 0.279
+   "trimmed_mean": 123.3,
+   "zero_day_pct": 0.277
   },
   "2023": {
-   "n": 164,
-   "median": 6,
-   "trimmed_mean": 81.1,
-   "zero_day_pct": 0.287
+   "n": 165,
+   "median": 7,
+   "trimmed_mean": 85.6,
+   "zero_day_pct": 0.285
   },
   "2024": {
    "n": 164,
@@ -51,50 +51,50 @@
    "zero_day_pct": 0.226
   },
   "2025": {
-   "n": 184,
+   "n": 185,
    "median": 6,
-   "trimmed_mean": 34.4,
-   "zero_day_pct": 0.261
+   "trimmed_mean": 35.7,
+   "zero_day_pct": 0.259
   },
   "2026": {
-   "n": 101,
+   "n": 125,
    "median": 4,
-   "trimmed_mean": 8.9,
-   "zero_day_pct": 0.307
+   "trimmed_mean": 11.0,
+   "zero_day_pct": 0.272
   }
  },
  "survival": [
   {
    "t": 0,
-   "pct": 0.873
+   "pct": 0.874
   },
   {
    "t": 1,
-   "pct": 0.844
+   "pct": 0.842
   },
   {
    "t": 7,
-   "pct": 0.764
+   "pct": 0.761
   },
   {
    "t": 30,
-   "pct": 0.692
+   "pct": 0.687
   },
   {
    "t": 90,
-   "pct": 0.615
+   "pct": 0.61
   },
   {
    "t": 180,
-   "pct": 0.547
+   "pct": 0.541
   },
   {
    "t": 365,
-   "pct": 0.461
+   "pct": 0.456
   },
   {
    "t": 730,
-   "pct": 0.362
+   "pct": 0.359
   }
  ],
  "milestones": [
