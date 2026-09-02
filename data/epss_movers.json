@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-01",
+  "updated": "2026-09-02",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-01",
-  "previous_date": "2026-08-25",
+  "current_date": "2026-09-02",
+  "previous_date": "2026-08-26",
   "risers": [
     {
       "id": "CVE-2026-18577",
@@ -10,13 +10,6 @@
       "prev": 0.06153,
       "delta": 0.47915,
       "name": "Incomplete patch leads to administrative account takeover"
-    },
-    {
-      "id": "CVE-2020-10221",
-      "now": 0.80221,
-      "prev": 0.36754,
-      "delta": 0.43467,
-      "name": "lib/ajaxHandlers/ajaxAddTemplate.php in rConfig through 3.94 allows remote attackers to execute arbitrary OS c"
     },
     {
       "id": "CVE-2026-18556",
@@ -47,6 +40,13 @@
       "name": "Zimbra Collaboration"
     },
     {
+      "id": "CVE-2026-48558",
+      "now": 0.30045,
+      "prev": 0.12381,
+      "delta": 0.17664,
+      "name": "SimpleHelp Authentication Bypass via Missing OIDC JWT Signature Verification"
+    },
+    {
       "id": "CVE-2017-8225",
       "now": 0.35359,
       "prev": 0.18005,
@@ -75,39 +75,18 @@
       "name": "Cross-site Scripting (XSS) - Stored in linagora/twake"
     },
     {
-      "id": "CVE-2025-34027",
-      "now": 0.4522,
-      "prev": 0.32337,
-      "delta": 0.12883,
-      "name": "Versa Concerto Authentication Bypass File Write Remote Code Execution"
-    },
-    {
-      "id": "CVE-2023-4547",
-      "now": 0.61308,
-      "prev": 0.48533,
-      "delta": 0.12775,
-      "name": "SPA-Cart eCommerce CMS search cross site scripting"
-    },
-    {
       "id": "CVE-2020-36847",
-      "now": 0.44471,
+      "now": 0.44746,
       "prev": 0.3236,
-      "delta": 0.12111,
+      "delta": 0.12386,
       "name": "Simple File List < 4.2.3 - Remote Code Execution"
     },
     {
-      "id": "CVE-2017-7504",
-      "now": 0.41019,
-      "prev": 0.29323,
-      "delta": 0.11696,
-      "name": "Red Hat, Inc. JBoss"
-    },
-    {
-      "id": "CVE-2003-0659",
-      "now": 0.43036,
-      "prev": 0.31839,
-      "delta": 0.11197,
-      "name": "Buffer overflow in a function in User32.dll on Windows NT through Server 2003 allows local users to execute ar"
+      "id": "CVE-2026-9198",
+      "now": 0.45213,
+      "prev": 0.34734,
+      "delta": 0.10479,
+      "name": "Unauthenticated Remote Code Execution via Auto-Login Bypass and Code Validation"
     },
     {
       "id": "CVE-2012-6441",
@@ -115,6 +94,13 @@
       "prev": 0.46967,
       "delta": 0.10181,
       "name": "Rockwell Automation ControlLogix PLC Information Exposure"
+    },
+    {
+      "id": "CVE-2023-4547",
+      "now": 0.61308,
+      "prev": 0.51732,
+      "delta": 0.09576,
+      "name": "SPA-Cart eCommerce CMS search cross site scripting"
     },
     {
       "id": "CVE-2026-3576",
@@ -131,25 +117,11 @@
       "name": "An unauthenticated command injection vulnerability exists in the Start_EPI function of the httpd binary on Lin"
     },
     {
-      "id": "CVE-2026-66066",
-      "now": 0.27861,
-      "prev": 0.18952,
-      "delta": 0.08909,
-      "name": "Action Pack: Possible arbitrary file read and remote code execution in Active Storage vari"
-    },
-    {
       "id": "CVE-2019-1068",
       "now": 0.52845,
       "prev": 0.44665,
       "delta": 0.0818,
       "name": "Microsoft Microsoft SQL Server 2014 Service Pack 2 for 32-bit Systems (GDR)"
-    },
-    {
-      "id": "CVE-2023-4548",
-      "now": 0.27885,
-      "prev": 0.20112,
-      "delta": 0.07773,
-      "name": "SPA-Cart eCommerce CMS GET Parameter search sql injection"
     },
     {
       "id": "CVE-2014-4077",
@@ -164,6 +136,13 @@
       "prev": 0.36708,
       "delta": 0.0706,
       "name": "Microsoft Windows"
+    },
+    {
+      "id": "CVE-2023-4548",
+      "now": 0.27885,
+      "prev": 0.20831,
+      "delta": 0.07054,
+      "name": "SPA-Cart eCommerce CMS GET Parameter search sql injection"
     },
     {
       "id": "CVE-2008-4071",
@@ -185,6 +164,13 @@
       "prev": 0.22494,
       "delta": 0.05137,
       "name": "Unbounded External Image Fetch in Validation Leads to Resource-Exhaustion DoS in huggingfa"
+    },
+    {
+      "id": "CVE-2025-5961",
+      "now": 0.57566,
+      "prev": 0.5253,
+      "delta": 0.05036,
+      "name": "Migration, Backup, Staging \u2013 WPvivid Backup & Migration <= 0.9.116 - Authenticated (Admini"
     },
     {
       "id": "CVE-2025-6793",
@@ -213,6 +199,20 @@
       "prev": 0.09903,
       "delta": 0.04404,
       "name": "WordPress Pie Register Plugin \u2264 3.7.1.4 Authentication Bypass RCE"
+    },
+    {
+      "id": "CVE-2006-0988",
+      "now": 0.59508,
+      "prev": 0.55311,
+      "delta": 0.04197,
+      "name": "The default configuration of the DNS Server service on Windows Server 2003 and Windows 2000, and the Microsoft"
+    },
+    {
+      "id": "CVE-2024-33610",
+      "now": 0.5002,
+      "prev": 0.45842,
+      "delta": 0.04178,
+      "name": "Sharp Corporation Multiple MFPs (multifunction printers)"
     }
   ],
   "newly_high": [
@@ -222,13 +222,6 @@
       "prev": 0.06153,
       "delta": 0.47915,
       "name": "Incomplete patch leads to administrative account takeover"
-    },
-    {
-      "id": "CVE-2020-10221",
-      "now": 0.80221,
-      "prev": 0.36754,
-      "delta": 0.43467,
-      "name": "lib/ajaxHandlers/ajaxAddTemplate.php in rConfig through 3.94 allows remote attackers to execute arbitrary OS c"
     },
     {
       "id": "CVE-2017-9417",
@@ -252,13 +245,6 @@
       "name": "Cross-site Scripting (XSS) - Stored in linagora/twake"
     },
     {
-      "id": "CVE-2023-4547",
-      "now": 0.61308,
-      "prev": 0.48533,
-      "delta": 0.12775,
-      "name": "SPA-Cart eCommerce CMS search cross site scripting"
-    },
-    {
       "id": "CVE-2012-6441",
       "now": 0.57148,
       "prev": 0.46967,
@@ -278,6 +264,13 @@
       "prev": 0.47679,
       "delta": 0.07177,
       "name": "Microsoft Windows Server 2003 SP2, Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, and O"
+    },
+    {
+      "id": "CVE-2024-33610",
+      "now": 0.5002,
+      "prev": 0.45842,
+      "delta": 0.04178,
+      "name": "Sharp Corporation Multiple MFPs (multifunction printers)"
     },
     {
       "id": "CVE-2022-31126",
