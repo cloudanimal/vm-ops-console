@@ -1,30 +1,9 @@
 {
-  "updated": "2026-09-02",
+  "updated": "2026-09-03",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-02",
-  "previous_date": "2026-08-26",
+  "current_date": "2026-09-03",
+  "previous_date": "2026-08-27",
   "risers": [
-    {
-      "id": "CVE-2026-18577",
-      "now": 0.54068,
-      "prev": 0.06153,
-      "delta": 0.47915,
-      "name": "Incomplete patch leads to administrative account takeover"
-    },
-    {
-      "id": "CVE-2026-18556",
-      "now": 0.40158,
-      "prev": 0.03928,
-      "delta": 0.3623,
-      "name": "Unauthenticated administrative account takeover"
-    },
-    {
-      "id": "CVE-2026-55040",
-      "now": 0.39652,
-      "prev": 0.05578,
-      "delta": 0.34074,
-      "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
-    },
     {
       "id": "CVE-2023-49105",
       "now": 0.43205,
@@ -33,11 +12,18 @@
       "name": "An issue was discovered in ownCloud owncloud/core before 10.13.1. An attacker can access, modify, or delete an"
     },
     {
-      "id": "CVE-2026-73570",
-      "now": 0.20528,
-      "prev": 0.01506,
-      "delta": 0.19022,
-      "name": "Zimbra Collaboration"
+      "id": "CVE-2026-9198",
+      "now": 0.57019,
+      "prev": 0.34734,
+      "delta": 0.22285,
+      "name": "Unauthenticated Remote Code Execution via Auto-Login Bypass and Code Validation"
+    },
+    {
+      "id": "CVE-2026-23744",
+      "now": 0.65216,
+      "prev": 0.45026,
+      "delta": 0.2019,
+      "name": "REC in MCPJam inspector due to HTTP Endpoint exposes"
     },
     {
       "id": "CVE-2026-48558",
@@ -61,20 +47,6 @@
       "name": "Broadcom BCM43xx Wi-Fi chips allow remote attackers to execute arbitrary code via unspecified vectors, aka the"
     },
     {
-      "id": "CVE-2026-53435",
-      "now": 0.53131,
-      "prev": 0.3766,
-      "delta": 0.15471,
-      "name": "Jenkins Project Jenkins"
-    },
-    {
-      "id": "CVE-2023-0028",
-      "now": 0.56018,
-      "prev": 0.40916,
-      "delta": 0.15102,
-      "name": "Cross-site Scripting (XSS) - Stored in linagora/twake"
-    },
-    {
       "id": "CVE-2020-36847",
       "now": 0.44746,
       "prev": 0.3236,
@@ -82,32 +54,25 @@
       "name": "Simple File List < 4.2.3 - Remote Code Execution"
     },
     {
-      "id": "CVE-2026-9198",
-      "now": 0.45213,
-      "prev": 0.34734,
-      "delta": 0.10479,
-      "name": "Unauthenticated Remote Code Execution via Auto-Login Bypass and Code Validation"
+      "id": "CVE-2026-73570",
+      "now": 0.32383,
+      "prev": 0.20528,
+      "delta": 0.11855,
+      "name": "Zimbra Collaboration"
     },
     {
-      "id": "CVE-2012-6441",
-      "now": 0.57148,
-      "prev": 0.46967,
-      "delta": 0.10181,
-      "name": "Rockwell Automation ControlLogix PLC Information Exposure"
+      "id": "CVE-2026-9586",
+      "now": 0.11845,
+      "prev": 0.00695,
+      "delta": 0.1115,
+      "name": "Unauthenticated SQL Injection Leading to Remote Code Execution in Switchvox SMB"
     },
     {
-      "id": "CVE-2023-4547",
-      "now": 0.61308,
-      "prev": 0.51732,
-      "delta": 0.09576,
-      "name": "SPA-Cart eCommerce CMS search cross site scripting"
-    },
-    {
-      "id": "CVE-2026-3576",
-      "now": 0.12943,
-      "prev": 0.03548,
-      "delta": 0.09395,
-      "name": "Planyo online reservation system <= 3.0 - Unauthenticated Server-Side Request Forgery via "
+      "id": "CVE-2019-6553",
+      "now": 0.60094,
+      "prev": 0.50031,
+      "delta": 0.10063,
+      "name": "Rockwell Automation RSLinx Classic"
     },
     {
       "id": "CVE-2025-60689",
@@ -117,11 +82,25 @@
       "name": "An unauthenticated command injection vulnerability exists in the Start_EPI function of the httpd binary on Lin"
     },
     {
-      "id": "CVE-2019-1068",
-      "now": 0.52845,
-      "prev": 0.44665,
-      "delta": 0.0818,
-      "name": "Microsoft Microsoft SQL Server 2014 Service Pack 2 for 32-bit Systems (GDR)"
+      "id": "CVE-2026-48710",
+      "now": 0.11042,
+      "prev": 0.01905,
+      "delta": 0.09137,
+      "name": "Starlette has missing Host header validation that poisons request.url.path, bypassing path"
+    },
+    {
+      "id": "CVE-2018-10466",
+      "now": 0.17197,
+      "prev": 0.08318,
+      "delta": 0.08879,
+      "name": "Zoho ManageEngine ADAudit Plus before 5.0.0 build 5100 allows blind SQL Injection."
+    },
+    {
+      "id": "CVE-2026-53435",
+      "now": 0.53131,
+      "prev": 0.44283,
+      "delta": 0.08848,
+      "name": "Jenkins Project Jenkins"
     },
     {
       "id": "CVE-2014-4077",
@@ -138,11 +117,18 @@
       "name": "Microsoft Windows"
     },
     {
-      "id": "CVE-2023-4548",
-      "now": 0.27885,
-      "prev": 0.20831,
-      "delta": 0.07054,
-      "name": "SPA-Cart eCommerce CMS GET Parameter search sql injection"
+      "id": "CVE-2022-2633",
+      "now": 0.33818,
+      "prev": 0.27193,
+      "delta": 0.06625,
+      "name": "plugins360 All-in-One Video Gallery"
+    },
+    {
+      "id": "CVE-2025-20297",
+      "now": 0.25892,
+      "prev": 0.1967,
+      "delta": 0.06222,
+      "name": "Reflected Cross-Site Scripting (XSS) on Splunk Enterprise through dashboard PDF generation"
     },
     {
       "id": "CVE-2008-4071",
@@ -173,18 +159,18 @@
       "name": "Migration, Backup, Staging \u2013 WPvivid Backup & Migration <= 0.9.116 - Authenticated (Admini"
     },
     {
-      "id": "CVE-2025-6793",
-      "now": 0.17303,
-      "prev": 0.12281,
-      "delta": 0.05022,
-      "name": "Marvell QConvergeConsole QLogicDownloadImpl Directory Traversal Arbitrary File Deletion an"
+      "id": "CVE-2019-1429",
+      "now": 0.7729,
+      "prev": 0.72626,
+      "delta": 0.04664,
+      "name": "Microsoft Internet Explorer 9"
     },
     {
-      "id": "CVE-2026-19681",
-      "now": 0.07801,
-      "prev": 0.02781,
-      "delta": 0.0502,
-      "name": "Command Injection"
+      "id": "CVE-2024-53676",
+      "now": 0.56287,
+      "prev": 0.51625,
+      "delta": 0.04662,
+      "name": "Hewlett Packard Enterprise (HPE) HPE Insight Remote Support"
     },
     {
       "id": "CVE-2026-5027",
@@ -199,6 +185,20 @@
       "prev": 0.09903,
       "delta": 0.04404,
       "name": "WordPress Pie Register Plugin \u2264 3.7.1.4 Authentication Bypass RCE"
+    },
+    {
+      "id": "CVE-2026-60004",
+      "now": 0.86777,
+      "prev": 0.824,
+      "delta": 0.04377,
+      "name": "Gitea Gitea"
+    },
+    {
+      "id": "CVE-2024-7074",
+      "now": 0.17188,
+      "prev": 0.12966,
+      "delta": 0.04222,
+      "name": "Authenticated Arbitrary File Upload in Multiple WSO2 Products via SOAP Admin Service Leadi"
     },
     {
       "id": "CVE-2006-0988",
@@ -217,11 +217,18 @@
   ],
   "newly_high": [
     {
-      "id": "CVE-2026-18577",
-      "now": 0.54068,
-      "prev": 0.06153,
-      "delta": 0.47915,
-      "name": "Incomplete patch leads to administrative account takeover"
+      "id": "CVE-2026-9198",
+      "now": 0.57019,
+      "prev": 0.34734,
+      "delta": 0.22285,
+      "name": "Unauthenticated Remote Code Execution via Auto-Login Bypass and Code Validation"
+    },
+    {
+      "id": "CVE-2026-23744",
+      "now": 0.65216,
+      "prev": 0.45026,
+      "delta": 0.2019,
+      "name": "REC in MCPJam inspector due to HTTP Endpoint exposes"
     },
     {
       "id": "CVE-2017-9417",
@@ -233,30 +240,9 @@
     {
       "id": "CVE-2026-53435",
       "now": 0.53131,
-      "prev": 0.3766,
-      "delta": 0.15471,
+      "prev": 0.44283,
+      "delta": 0.08848,
       "name": "Jenkins Project Jenkins"
-    },
-    {
-      "id": "CVE-2023-0028",
-      "now": 0.56018,
-      "prev": 0.40916,
-      "delta": 0.15102,
-      "name": "Cross-site Scripting (XSS) - Stored in linagora/twake"
-    },
-    {
-      "id": "CVE-2012-6441",
-      "now": 0.57148,
-      "prev": 0.46967,
-      "delta": 0.10181,
-      "name": "Rockwell Automation ControlLogix PLC Information Exposure"
-    },
-    {
-      "id": "CVE-2019-1068",
-      "now": 0.52845,
-      "prev": 0.44665,
-      "delta": 0.0818,
-      "name": "Microsoft Microsoft SQL Server 2014 Service Pack 2 for 32-bit Systems (GDR)"
     },
     {
       "id": "CVE-2014-4077",
@@ -278,13 +264,6 @@
       "prev": 0.49937,
       "delta": 0.022,
       "name": "Unauthenticated Remote Code Execution in Roxy-wi"
-    },
-    {
-      "id": "CVE-2025-47188",
-      "now": 0.50237,
-      "prev": 0.48579,
-      "delta": 0.01658,
-      "name": "A vulnerability in the Mitel 6800 Series, 6900 Series, and 6900w Series SIP Phones through 6.4 SP4 (R6.4.0.400"
     },
     {
       "id": "CVE-2025-34300",
