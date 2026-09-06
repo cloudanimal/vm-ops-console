@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-05",
+  "updated": "2026-09-06",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-05",
-  "previous_date": "2026-08-29",
+  "current_date": "2026-09-06",
+  "previous_date": "2026-08-30",
   "risers": [
     {
       "id": "CVE-2026-48710",
@@ -47,18 +47,18 @@
       "name": "SimpleHelp Authentication Bypass via Missing OIDC JWT Signature Verification"
     },
     {
-      "id": "CVE-2017-9417",
-      "now": 0.54647,
-      "prev": 0.4165,
-      "delta": 0.12997,
-      "name": "Broadcom BCM43xx Wi-Fi chips allow remote attackers to execute arbitrary code via unspecified vectors, aka the"
+      "id": "CVE-2017-8225",
+      "now": 0.35359,
+      "prev": 0.18005,
+      "delta": 0.17354,
+      "name": "On Wireless IP Camera (P2P) WIFICAM devices, access to .ini files (containing credentials) is not correctly ch"
     },
     {
-      "id": "CVE-2020-36847",
-      "now": 0.44746,
-      "prev": 0.3236,
-      "delta": 0.12386,
-      "name": "Simple File List < 4.2.3 - Remote Code Execution"
+      "id": "CVE-2026-72898",
+      "now": 0.94217,
+      "prev": 0.79215,
+      "delta": 0.15002,
+      "name": "Metabase SQL injection via password reset endpoint"
     },
     {
       "id": "CVE-2026-73570",
@@ -66,6 +66,13 @@
       "prev": 0.20528,
       "delta": 0.11855,
       "name": "Zimbra Collaboration"
+    },
+    {
+      "id": "CVE-2020-36847",
+      "now": 0.44746,
+      "prev": 0.33343,
+      "delta": 0.11403,
+      "name": "Simple File List < 4.2.3 - Remote Code Execution"
     },
     {
       "id": "CVE-2026-9586",
@@ -90,9 +97,9 @@
     },
     {
       "id": "CVE-2018-10466",
-      "now": 0.15844,
-      "prev": 0.07642,
-      "delta": 0.08202,
+      "now": 0.17197,
+      "prev": 0.08318,
+      "delta": 0.08879,
       "name": "Zoho ManageEngine ADAudit Plus before 5.0.0 build 5100 allows blind SQL Injection."
     },
     {
@@ -115,13 +122,6 @@
       "prev": 0.47679,
       "delta": 0.07177,
       "name": "Microsoft Windows Server 2003 SP2, Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, and O"
-    },
-    {
-      "id": "CVE-2020-1301",
-      "now": 0.43768,
-      "prev": 0.36708,
-      "delta": 0.0706,
-      "name": "Microsoft Windows"
     },
     {
       "id": "CVE-2022-2633",
@@ -152,11 +152,11 @@
       "name": "A certain ActiveX control in Adobe Acrobat 9, when used with Microsoft Windows Vista and Internet Explorer 7, "
     },
     {
-      "id": "CVE-2009-0026",
-      "now": 0.26778,
-      "prev": 0.21633,
-      "delta": 0.05145,
-      "name": "Multiple cross-site scripting (XSS) vulnerabilities in Apache Jackrabbit before 1.5.2 allow remote attackers t"
+      "id": "CVE-2006-5220",
+      "now": 0.14581,
+      "prev": 0.09006,
+      "delta": 0.05575,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in WebYep 1.1.9, when register_globals is enabled, allow re"
     },
     {
       "id": "CVE-2026-0599",
@@ -171,6 +171,13 @@
       "prev": 0.5253,
       "delta": 0.05036,
       "name": "Migration, Backup, Staging \u2013 WPvivid Backup & Migration <= 0.9.116 - Authenticated (Admini"
+    },
+    {
+      "id": "CVE-2006-4812",
+      "now": 0.20376,
+      "prev": 0.15388,
+      "delta": 0.04988,
+      "name": "Integer overflow in PHP 5 up to 5.1.6 and 4 before 4.3.0 allows remote attackers to execute arbitrary code via"
     },
     {
       "id": "CVE-2025-52378",
@@ -206,13 +213,6 @@
       "prev": 0.31661,
       "delta": 0.0448,
       "name": "Langflow - Path Traversal Arbitrary File Write via upload_user_file"
-    },
-    {
-      "id": "CVE-2024-7074",
-      "now": 0.17188,
-      "prev": 0.12966,
-      "delta": 0.04222,
-      "name": "Authenticated Arbitrary File Upload in Multiple WSO2 Products via SOAP Admin Service Leadi"
     }
   ],
   "newly_high": [
@@ -229,13 +229,6 @@
       "prev": 0.45026,
       "delta": 0.20819,
       "name": "REC in MCPJam inspector due to HTTP Endpoint exposes"
-    },
-    {
-      "id": "CVE-2017-9417",
-      "now": 0.54647,
-      "prev": 0.4165,
-      "delta": 0.12997,
-      "name": "Broadcom BCM43xx Wi-Fi chips allow remote attackers to execute arbitrary code via unspecified vectors, aka the"
     },
     {
       "id": "CVE-2014-4077",
@@ -257,13 +250,6 @@
       "prev": 0.47001,
       "delta": 0.03265,
       "name": "Dataease H2 Database Remote Code Execution (RCE) Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2022-31126",
-      "now": 0.52137,
-      "prev": 0.49937,
-      "delta": 0.022,
-      "name": "Unauthenticated Remote Code Execution in Roxy-wi"
     }
   ]
 }
