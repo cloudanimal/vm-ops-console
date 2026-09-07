@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-06",
+  "updated": "2026-09-07",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-06",
-  "previous_date": "2026-08-30",
+  "current_date": "2026-09-07",
+  "previous_date": "2026-08-31",
   "risers": [
     {
       "id": "CVE-2026-48710",
@@ -33,6 +33,13 @@
       "name": "REC in MCPJam inspector due to HTTP Endpoint exposes"
     },
     {
+      "id": "CVE-2019-19844",
+      "now": 0.53561,
+      "prev": 0.35052,
+      "delta": 0.18509,
+      "name": "Django before 1.11.27, 2.x before 2.2.9, and 3.x before 3.0.1 allows account takeover. A suitably crafted emai"
+    },
+    {
       "id": "CVE-2022-22274",
       "now": 0.75521,
       "prev": 0.57591,
@@ -47,17 +54,10 @@
       "name": "SimpleHelp Authentication Bypass via Missing OIDC JWT Signature Verification"
     },
     {
-      "id": "CVE-2017-8225",
-      "now": 0.35359,
-      "prev": 0.18005,
-      "delta": 0.17354,
-      "name": "On Wireless IP Camera (P2P) WIFICAM devices, access to .ini files (containing credentials) is not correctly ch"
-    },
-    {
       "id": "CVE-2026-72898",
       "now": 0.94217,
-      "prev": 0.79215,
-      "delta": 0.15002,
+      "prev": 0.82323,
+      "delta": 0.11894,
       "name": "Metabase SQL injection via password reset endpoint"
     },
     {
@@ -66,6 +66,13 @@
       "prev": 0.20528,
       "delta": 0.11855,
       "name": "Zimbra Collaboration"
+    },
+    {
+      "id": "CVE-2022-26258",
+      "now": 0.91981,
+      "prev": 0.80377,
+      "delta": 0.11604,
+      "name": "D-Link DIR-820L 1.05B03 was discovered to contain remote command execution (RCE) vulnerability via HTTP POST t"
     },
     {
       "id": "CVE-2020-36847",
@@ -89,6 +96,13 @@
       "name": "Rockwell Automation RSLinx Classic"
     },
     {
+      "id": "CVE-2025-5473",
+      "now": 0.23483,
+      "prev": 0.13808,
+      "delta": 0.09675,
+      "name": "GIMP ICO File Parsing Integer Overflow Remote Code Execution Vulnerability"
+    },
+    {
       "id": "CVE-2025-60689",
       "now": 0.17485,
       "prev": 0.0819,
@@ -101,6 +115,13 @@
       "prev": 0.08318,
       "delta": 0.08879,
       "name": "Zoho ManageEngine ADAudit Plus before 5.0.0 build 5100 allows blind SQL Injection."
+    },
+    {
+      "id": "CVE-2023-3959",
+      "now": 0.48765,
+      "prev": 0.40396,
+      "delta": 0.08369,
+      "name": "Zavio IP Camera Stack-Based Buffer Overflow"
     },
     {
       "id": "CVE-2025-34117",
@@ -124,6 +145,13 @@
       "name": "Microsoft Windows Server 2003 SP2, Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, and O"
     },
     {
+      "id": "CVE-2025-34511",
+      "now": 0.22318,
+      "prev": 0.15621,
+      "delta": 0.06697,
+      "name": "Sitecore PowerShell Extension RCE via Unrestricted Upload"
+    },
+    {
       "id": "CVE-2022-2633",
       "now": 0.33818,
       "prev": 0.27193,
@@ -145,11 +173,11 @@
       "name": "Reflected Cross-Site Scripting (XSS) on Splunk Enterprise through dashboard PDF generation"
     },
     {
-      "id": "CVE-2008-4071",
-      "now": 0.18427,
-      "prev": 0.12213,
-      "delta": 0.06214,
-      "name": "A certain ActiveX control in Adobe Acrobat 9, when used with Microsoft Windows Vista and Internet Explorer 7, "
+      "id": "CVE-2023-37941",
+      "now": 0.35455,
+      "prev": 0.2944,
+      "delta": 0.06015,
+      "name": "Apache Superset: Metadata db write access can lead to remote code execution"
     },
     {
       "id": "CVE-2006-5220",
@@ -185,34 +213,6 @@
       "prev": 0.06674,
       "delta": 0.04936,
       "name": "Cross-Site Scripting (XSS) vulnerability in Nexxt Solutions NCM-X1800 Mesh Router firmware UV1.2.7 and below a"
-    },
-    {
-      "id": "CVE-2025-7083",
-      "now": 0.45869,
-      "prev": 0.40983,
-      "delta": 0.04886,
-      "name": "Belkin F9K1122 webs mp os command injection"
-    },
-    {
-      "id": "CVE-2019-1429",
-      "now": 0.7729,
-      "prev": 0.72626,
-      "delta": 0.04664,
-      "name": "Microsoft Internet Explorer 9"
-    },
-    {
-      "id": "CVE-2024-53676",
-      "now": 0.56287,
-      "prev": 0.51625,
-      "delta": 0.04662,
-      "name": "Hewlett Packard Enterprise (HPE) HPE Insight Remote Support"
-    },
-    {
-      "id": "CVE-2026-5027",
-      "now": 0.36141,
-      "prev": 0.31661,
-      "delta": 0.0448,
-      "name": "Langflow - Path Traversal Arbitrary File Write via upload_user_file"
     }
   ],
   "newly_high": [
@@ -229,6 +229,13 @@
       "prev": 0.45026,
       "delta": 0.20819,
       "name": "REC in MCPJam inspector due to HTTP Endpoint exposes"
+    },
+    {
+      "id": "CVE-2019-19844",
+      "now": 0.53561,
+      "prev": 0.35052,
+      "delta": 0.18509,
+      "name": "Django before 1.11.27, 2.x before 2.2.9, and 3.x before 3.0.1 allows account takeover. A suitably crafted emai"
     },
     {
       "id": "CVE-2014-4077",
@@ -250,6 +257,13 @@
       "prev": 0.47001,
       "delta": 0.03265,
       "name": "Dataease H2 Database Remote Code Execution (RCE) Bypass Vulnerability"
+    },
+    {
+      "id": "CVE-2025-41646",
+      "now": 0.51548,
+      "prev": 0.49051,
+      "delta": 0.02497,
+      "name": "RevPi Webstatus application is vulnerable to an authentication bypass"
     }
   ]
 }
