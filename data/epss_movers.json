@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-07",
+  "updated": "2026-09-08",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-07",
-  "previous_date": "2026-08-31",
+  "current_date": "2026-09-08",
+  "previous_date": "2026-09-01",
   "risers": [
     {
       "id": "CVE-2026-48710",
@@ -10,6 +10,13 @@
       "prev": 0.02099,
       "delta": 0.34158,
       "name": "Starlette has missing Host header validation that poisons request.url.path, bypassing path"
+    },
+    {
+      "id": "CVE-2023-41064",
+      "now": 0.4506,
+      "prev": 0.15263,
+      "delta": 0.29797,
+      "name": "Apple macOS"
     },
     {
       "id": "CVE-2025-34300",
@@ -47,6 +54,13 @@
       "name": "SonicWall SonicOS"
     },
     {
+      "id": "CVE-2003-0542",
+      "now": 0.30428,
+      "prev": 0.1273,
+      "delta": 0.17698,
+      "name": "Multiple stack-based buffer overflows in (1) mod_alias and (2) mod_rewrite for Apache before 1.3.29 allow atta"
+    },
+    {
       "id": "CVE-2026-48558",
       "now": 0.30045,
       "prev": 0.12381,
@@ -75,18 +89,18 @@
       "name": "D-Link DIR-820L 1.05B03 was discovered to contain remote command execution (RCE) vulnerability via HTTP POST t"
     },
     {
-      "id": "CVE-2020-36847",
-      "now": 0.44746,
-      "prev": 0.33343,
-      "delta": 0.11403,
-      "name": "Simple File List < 4.2.3 - Remote Code Execution"
-    },
-    {
       "id": "CVE-2026-9586",
       "now": 0.11845,
-      "prev": 0.00695,
-      "delta": 0.1115,
+      "prev": 0.00434,
+      "delta": 0.11411,
       "name": "Unauthenticated SQL Injection Leading to Remote Code Execution in Switchvox SMB"
+    },
+    {
+      "id": "CVE-2022-0342",
+      "now": 0.94858,
+      "prev": 0.8442,
+      "delta": 0.10438,
+      "name": "Zyxel USG/ZyWALL series firmware"
     },
     {
       "id": "CVE-2019-6553",
@@ -101,13 +115,6 @@
       "prev": 0.13808,
       "delta": 0.09675,
       "name": "GIMP ICO File Parsing Integer Overflow Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2025-60689",
-      "now": 0.17485,
-      "prev": 0.0819,
-      "delta": 0.09295,
-      "name": "An unauthenticated command injection vulnerability exists in the Start_EPI function of the httpd binary on Lin"
     },
     {
       "id": "CVE-2018-10466",
@@ -125,9 +132,9 @@
     },
     {
       "id": "CVE-2025-34117",
-      "now": 0.27649,
+      "now": 0.27854,
       "prev": 0.19921,
-      "delta": 0.07728,
+      "delta": 0.07933,
       "name": "Netcore / Netis Routers RCE via UDP Port 53413 Backdoor"
     },
     {
@@ -136,13 +143,6 @@
       "prev": 0.00377,
       "delta": 0.07289,
       "name": "Potential authentication bypass leading to administrative access in Artifactory"
-    },
-    {
-      "id": "CVE-2014-4077",
-      "now": 0.54856,
-      "prev": 0.47679,
-      "delta": 0.07177,
-      "name": "Microsoft Windows Server 2003 SP2, Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, and O"
     },
     {
       "id": "CVE-2025-34511",
@@ -157,6 +157,13 @@
       "prev": 0.27193,
       "delta": 0.06625,
       "name": "plugins360 All-in-One Video Gallery"
+    },
+    {
+      "id": "CVE-2021-32761",
+      "now": 0.37633,
+      "prev": 0.31049,
+      "delta": 0.06584,
+      "name": "Integer overflow issues with *BIT commands on 32-bit systems"
     },
     {
       "id": "CVE-2025-67038",
@@ -185,13 +192,6 @@
       "prev": 0.09006,
       "delta": 0.05575,
       "name": "Multiple PHP remote file inclusion vulnerabilities in WebYep 1.1.9, when register_globals is enabled, allow re"
-    },
-    {
-      "id": "CVE-2026-0599",
-      "now": 0.27631,
-      "prev": 0.22494,
-      "delta": 0.05137,
-      "name": "Unbounded External Image Fetch in Validation Leads to Resource-Exhaustion DoS in huggingfa"
     },
     {
       "id": "CVE-2025-5961",
@@ -236,13 +236,6 @@
       "prev": 0.35052,
       "delta": 0.18509,
       "name": "Django before 1.11.27, 2.x before 2.2.9, and 3.x before 3.0.1 allows account takeover. A suitably crafted emai"
-    },
-    {
-      "id": "CVE-2014-4077",
-      "now": 0.54856,
-      "prev": 0.47679,
-      "delta": 0.07177,
-      "name": "Microsoft Windows Server 2003 SP2, Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, and O"
     },
     {
       "id": "CVE-2024-33610",
