@@ -1,19 +1,19 @@
 {
-  "updated": "2026-09-08",
-  "total": 1695,
-  "ransomware_count": 354,
+  "updated": "2026-09-09",
+  "total": 1699,
+  "ransomware_count": 358,
   "by_year": {
     "2021": 311,
     "2022": 555,
     "2023": 187,
     "2024": 186,
     "2025": 245,
-    "2026": 211
+    "2026": 215
   },
   "top_vendors": [
     [
       "Microsoft",
-      386
+      388
     ],
     [
       "Cisco",
@@ -25,7 +25,7 @@
     ],
     [
       "Adobe",
-      80
+      81
     ],
     [
       "Google",
@@ -95,7 +95,7 @@
   "top_products": [
     [
       "Microsoft Windows",
-      172
+      174
     ],
     [
       "Apple Multiple Products",

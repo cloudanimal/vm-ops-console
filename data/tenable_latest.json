@@ -1,714 +1,638 @@
 {
-  "updated": "2026-09-08",
+  "updated": "2026-09-09",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
     {
-      "id": "343794",
-      "title": "Fedora 43 : perl-XML-Bare (2026-14e358a2a2)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343794",
-      "cves": [
-        "CVE-2026-13401",
-        "CVE-2026-57074"
-      ]
-    },
-    {
-      "id": "343793",
-      "title": "Fedora 43 : chromium (2026-c3be138e4c)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343793",
-      "cves": [
-        "CVE-2026-85042",
-        "CVE-2026-85043",
-        "CVE-2026-85044",
-        "CVE-2026-85045",
-        "CVE-2026-85046",
-        "CVE-2026-85047",
-        "CVE-2026-85048",
-        "CVE-2026-85049",
-        "CVE-2026-85050",
-        "CVE-2026-85051",
-        "CVE-2026-85052",
-        "CVE-2026-85053"
-      ]
-    },
-    {
-      "id": "343792",
-      "title": "Fedora 43 : nsd (2026-3ff003d397)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343792",
-      "cves": [
-        "CVE-2026-18664",
-        "CVE-2026-18916",
-        "CVE-2026-19401",
-        "CVE-2026-19538"
-      ]
-    },
-    {
-      "id": "343791",
-      "title": "Fedora 44 : libsoup3 (2026-3f60ccf61f)",
+      "id": "344284",
+      "title": "MiracleLinux 9 : grafana-pcp-5.1.1-17.el9_8.1 (AXSA:2026-1792:12)",
       "severity": "Medium",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343791",
-      "cves": []
-    },
-    {
-      "id": "343790",
-      "title": "Fedora 44 : perl-XML-Bare (2026-5c3f4c8337)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343790",
-      "cves": [
-        "CVE-2026-13401",
-        "CVE-2026-57074"
-      ]
-    },
-    {
-      "id": "343789",
-      "title": "Fedora 43 : chirp (2026-23b8df7771)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343789",
-      "cves": []
-    },
-    {
-      "id": "343788",
-      "title": "Fedora 43 : emacs (2026-6b1a89dfe6)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343788",
-      "cves": [
-        "CVE-2026-79992"
-      ]
-    },
-    {
-      "id": "343787",
-      "title": "Fedora 43 : perl-Net-OAuth (2026-370bd8b5f0)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343787",
-      "cves": []
-    },
-    {
-      "id": "343786",
-      "title": "Fedora 44 : perl-Net-OAuth (2026-e33554bf9f)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343786",
-      "cves": []
-    },
-    {
-      "id": "343785",
-      "title": "Fedora 44 : chirp (2026-20feeb23e0)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343785",
-      "cves": []
-    },
-    {
-      "id": "343784",
-      "title": "Fedora 44 : corosync (2026-e97124c200)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343784",
-      "cves": [
-        "CVE-2026-81665",
-        "CVE-2026-81666"
-      ]
-    },
-    {
-      "id": "343783",
-      "title": "Fedora 44 : baresip / libre (2026-27c291e67c)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343783",
-      "cves": []
-    },
-    {
-      "id": "343782",
-      "title": "Fedora 44 : nsd (2026-bf1539678e)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343782",
-      "cves": [
-        "CVE-2026-18664",
-        "CVE-2026-18916",
-        "CVE-2026-19401",
-        "CVE-2026-19538"
-      ]
-    },
-    {
-      "id": "343781",
-      "title": "Fedora 43 : GitPython (2026-e6bd4d25ab)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343781",
-      "cves": []
-    },
-    {
-      "id": "343780",
-      "title": "Fedora 43 : baresip / libre (2026-3edf59885d)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343780",
-      "cves": []
-    },
-    {
-      "id": "343779",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-86317",
-      "severity": "Medium",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343779",
-      "cves": [
-        "CVE-2026-86317"
-      ]
-    },
-    {
-      "id": "343778",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-19204",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343778",
-      "cves": [
-        "CVE-2026-19204"
-      ]
-    },
-    {
-      "id": "343777",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-6377",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343777",
-      "cves": [
-        "CVE-2026-6377"
-      ]
-    },
-    {
-      "id": "343776",
-      "title": "RHEL 10 : acl (RHSA-2026:64805)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343776",
-      "cves": [
-        "CVE-2026-54369"
-      ]
-    },
-    {
-      "id": "343775",
-      "title": "RHEL 8 : kernel-rt (RHSA-2026:64770)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343775",
-      "cves": [
-        "CVE-2026-43493",
-        "CVE-2026-53002",
-        "CVE-2026-64007",
-        "CVE-2026-64563",
-        "CVE-2026-68343",
-        "CVE-2026-72129",
-        "CVE-2026-74480"
-      ]
-    },
-    {
-      "id": "343774",
-      "title": "RHEL 9 : 389-ds-base (RHSA-2026:64781)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343774",
-      "cves": [
-        "CVE-2026-18355",
-        "CVE-2026-18453",
-        "CVE-2026-18922",
-        "CVE-2026-76560"
-      ]
-    },
-    {
-      "id": "343773",
-      "title": "RHEL 10 : 389-ds-base (RHSA-2026:64804)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343773",
-      "cves": [
-        "CVE-2026-18355",
-        "CVE-2026-18453",
-        "CVE-2026-18922",
-        "CVE-2026-76560"
-      ]
-    },
-    {
-      "id": "343772",
-      "title": "RHEL 8 : gegl (RHSA-2026:64802)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343772",
-      "cves": [
-        "CVE-2026-2050"
-      ]
-    },
-    {
-      "id": "343771",
-      "title": "RHEL 8 : 389-ds:1.4 (RHSA-2026:64791)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343771",
-      "cves": [
-        "CVE-2026-18355",
-        "CVE-2026-18453",
-        "CVE-2026-18922",
-        "CVE-2026-76560"
-      ]
-    },
-    {
-      "id": "343770",
-      "title": "RHEL 10 : git-lfs (RHSA-2026:64788)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343770",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344284",
       "cves": [
         "CVE-2026-33818",
-        "CVE-2026-56860",
-        "CVE-2026-56862"
-      ]
-    },
-    {
-      "id": "343769",
-      "title": "RHEL 9 : 389-ds-base (RHSA-2026:64783)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343769",
-      "cves": [
-        "CVE-2026-18355",
-        "CVE-2026-18453",
-        "CVE-2026-18922",
-        "CVE-2026-76560"
-      ]
-    },
-    {
-      "id": "343768",
-      "title": "RHEL 9 : redhat-ds:12 (RHSA-2026:64779)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343768",
-      "cves": [
-        "CVE-2026-18355",
-        "CVE-2026-18453",
-        "CVE-2026-18922",
-        "CVE-2026-19843",
-        "CVE-2026-76560"
-      ]
-    },
-    {
-      "id": "343767",
-      "title": "RHEL 9 : 389-ds-base (RHSA-2026:64778)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343767",
-      "cves": [
-        "CVE-2026-18355",
-        "CVE-2026-18453",
-        "CVE-2026-18922",
-        "CVE-2026-76560"
-      ]
-    },
-    {
-      "id": "343766",
-      "title": "RHEL 8 : xmlrpc-c (RHSA-2026:64772)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343766",
-      "cves": [
-        "CVE-2026-15928"
-      ]
-    },
-    {
-      "id": "343765",
-      "title": "RHEL 10 : nodejs22 (RHSA-2026:64817)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343765",
-      "cves": [
-        "CVE-2026-14257",
-        "CVE-2026-56846",
-        "CVE-2026-56848",
-        "CVE-2026-58043",
-        "CVE-2026-69152",
-        "CVE-2026-69192"
-      ]
-    },
-    {
-      "id": "343764",
-      "title": "RHEL 10 : valkey (RHSA-2026:64796)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343764",
-      "cves": [
-        "CVE-2026-56684",
-        "CVE-2026-63639",
-        "CVE-2026-66373"
-      ]
-    },
-    {
-      "id": "343763",
-      "title": "RHEL 8 : 389-ds:1.4 (RHSA-2026:64789)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343763",
-      "cves": [
-        "CVE-2026-18355",
-        "CVE-2026-18453",
-        "CVE-2026-18922",
-        "CVE-2026-76560"
-      ]
-    },
-    {
-      "id": "343762",
-      "title": "RHEL 8 : python3 (RHSA-2026:64806)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343762",
-      "cves": [
-        "CVE-2026-11940"
-      ]
-    },
-    {
-      "id": "343761",
-      "title": "RHEL 8 : 389-ds:1.4 (RHSA-2026:64776)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343761",
-      "cves": [
-        "CVE-2026-18355",
-        "CVE-2026-18453",
-        "CVE-2026-18922",
-        "CVE-2026-76560"
-      ]
-    },
-    {
-      "id": "343760",
-      "title": "RHEL 8 : rhc (RHSA-2026:64786)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343760",
-      "cves": [
-        "CVE-2026-33818",
-        "CVE-2026-56853",
-        "CVE-2026-56860",
-        "CVE-2026-56862"
-      ]
-    },
-    {
-      "id": "343759",
-      "title": "RHEL 9 : python3.14-cryptography (RHSA-2026:64774)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343759",
-      "cves": [
-        "CVE-2026-69248",
-        "CVE-2026-69249"
-      ]
-    },
-    {
-      "id": "343758",
-      "title": "RHEL 8 : gegl (RHSA-2026:64801)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343758",
-      "cves": [
-        "CVE-2026-2050"
-      ]
-    },
-    {
-      "id": "343757",
-      "title": "RHEL 10 : skopeo (RHSA-2026:64818)",
-      "severity": "Medium",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343757",
-      "cves": [
-        "CVE-2026-33818",
-        "CVE-2026-42499",
-        "CVE-2026-56853",
         "CVE-2026-56858",
         "CVE-2026-56860",
         "CVE-2026-56862"
       ]
     },
     {
-      "id": "343756",
-      "title": "RHEL 9 : redhat-ds:12 (RHSA-2026:64782)",
+      "id": "344283",
+      "title": "Oracle Linux 9 : ELSA-2026-64800-0: / glib2 (ELSA-2026-648000)",
       "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343756",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344283",
       "cves": [
-        "CVE-2026-19843"
+        "CVE-2026-16118"
       ]
     },
     {
-      "id": "343755",
-      "title": "RHEL 10 : kernel (RHSA-2026:64767)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343755",
-      "cves": [
-        "CVE-2025-40149",
-        "CVE-2026-43114",
-        "CVE-2026-46056",
-        "CVE-2026-46099",
-        "CVE-2026-46145",
-        "CVE-2026-46155",
-        "CVE-2026-53006",
-        "CVE-2026-53016",
-        "CVE-2026-63886",
-        "CVE-2026-64304"
-      ]
-    },
-    {
-      "id": "343754",
-      "title": "RHEL 10 : 389-ds-base (RHSA-2026:64769)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343754",
-      "cves": []
-    },
-    {
-      "id": "343753",
-      "title": "RHEL 8 : redhat-ds:11 (RHSA-2026:64792)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343753",
-      "cves": [
-        "CVE-2026-18355",
-        "CVE-2026-18453",
-        "CVE-2026-18922",
-        "CVE-2026-19843",
-        "CVE-2026-76560"
-      ]
-    },
-    {
-      "id": "343752",
-      "title": "RHEL 7 : 389-ds-base (RHSA-2026:64771)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343752",
-      "cves": [
-        "CVE-2026-18355",
-        "CVE-2026-18453",
-        "CVE-2026-18922",
-        "CVE-2026-76560"
-      ]
-    },
-    {
-      "id": "343751",
-      "title": "RHEL 8 : gegl (RHSA-2026:64803)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343751",
-      "cves": [
-        "CVE-2026-2050"
-      ]
-    },
-    {
-      "id": "343750",
-      "title": "RHEL 10 : 389-ds-base (RHSA-2026:64768)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343750",
-      "cves": []
-    },
-    {
-      "id": "343749",
-      "title": "RHEL 8 : expat (RHSA-2026:64809)",
+      "id": "344282",
+      "title": "Oracle Linux 9 : ELSA-2026-64812-0: / expat (ELSA-2026-648120)",
       "severity": "Medium",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343749",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344282",
       "cves": [
         "CVE-2026-50219",
         "CVE-2026-56132"
       ]
     },
     {
-      "id": "343748",
-      "title": "EulerOS 2.0 SP12 : libinput (EulerOS-SA-2026-3351)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343748",
-      "cves": [
-        "CVE-2026-50292"
-      ]
-    },
-    {
-      "id": "343747",
-      "title": "EulerOS 2.0 SP12 : kernel (EulerOS-SA-2026-3345)",
+      "id": "344281",
+      "title": "Oracle Linux 9 : ELSA-2026-64774-0: / python3.14-cryptography (ELSA-2026-647740)",
       "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343747",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344281",
       "cves": [
-        "CVE-2025-54518",
-        "CVE-2026-23247",
-        "CVE-2026-23302",
-        "CVE-2026-31424",
-        "CVE-2026-31487"
+        "CVE-2026-69248",
+        "CVE-2026-69249"
       ]
     },
     {
-      "id": "343746",
-      "title": "EulerOS 2.0 SP12 : libarchive (EulerOS-SA-2026-3274)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343746",
-      "cves": [
-        "CVE-2026-14164"
-      ]
-    },
-    {
-      "id": "343745",
-      "title": "EulerOS 2.0 SP12 : perl-Archive-Tar (EulerOS-SA-2026-3290)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343745",
-      "cves": [
-        "CVE-2026-42496"
-      ]
-    },
-    {
-      "id": "343744",
-      "title": "EulerOS 2.0 SP12 : alsa-lib (EulerOS-SA-2026-3322)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343744",
-      "cves": [
-        "CVE-2026-56109"
-      ]
-    },
-    {
-      "id": "343743",
-      "title": "EulerOS 2.0 SP12 : xorg-x11-server (EulerOS-SA-2026-3395)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343743",
-      "cves": [
-        "CVE-2025-26597",
-        "CVE-2026-50256",
-        "CVE-2026-50257",
-        "CVE-2026-50258",
-        "CVE-2026-50259",
-        "CVE-2026-50260",
-        "CVE-2026-50261",
-        "CVE-2026-50264",
-        "CVE-2026-55999"
-      ]
-    },
-    {
-      "id": "343742",
-      "title": "EulerOS 2.0 SP12 : python3 (EulerOS-SA-2026-3380)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343742",
-      "cves": [
-        "CVE-2025-4330",
-        "CVE-2026-0672",
-        "CVE-2026-11940",
-        "CVE-2026-2297",
-        "CVE-2026-3644",
-        "CVE-2026-4224",
-        "CVE-2026-4519",
-        "CVE-2026-6019",
-        "CVE-2026-6100",
-        "CVE-2026-7210",
-        "CVE-2026-7774",
-        "CVE-2026-9669"
-      ]
-    },
-    {
-      "id": "343741",
-      "title": "EulerOS 2.0 SP12 : krb5 (EulerOS-SA-2026-3271)",
+      "id": "344280",
+      "title": "Oracle Linux 9 : ELSA-2026-63129-0: / kernel (ELSA-2026-631290)",
       "severity": "Medium",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343741",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344280",
       "cves": [
-        "CVE-2026-11850"
+        "CVE-2025-40064",
+        "CVE-2026-45970",
+        "CVE-2026-46185",
+        "CVE-2026-53073",
+        "CVE-2026-53391",
+        "CVE-2026-53392",
+        "CVE-2026-53397",
+        "CVE-2026-53399",
+        "CVE-2026-63800",
+        "CVE-2026-63808",
+        "CVE-2026-63824",
+        "CVE-2026-63886",
+        "CVE-2026-63887",
+        "CVE-2026-64002",
+        "CVE-2026-64018",
+        "CVE-2026-64268",
+        "CVE-2026-64298",
+        "CVE-2026-64304",
+        "CVE-2026-64387",
+        "CVE-2026-64438",
+        "CVE-2026-64490",
+        "CVE-2026-68145",
+        "CVE-2026-68166",
+        "CVE-2026-68480",
+        "CVE-2026-72069",
+        "CVE-2026-72130"
       ]
     },
     {
-      "id": "343740",
-      "title": "EulerOS 2.0 SP12 : bind (EulerOS-SA-2026-3249)",
+      "id": "344279",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87555",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344279",
+      "cves": [
+        "CVE-2026-87555"
+      ]
+    },
+    {
+      "id": "344278",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87550",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344278",
+      "cves": [
+        "CVE-2026-87550"
+      ]
+    },
+    {
+      "id": "344277",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87570",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344277",
+      "cves": [
+        "CVE-2026-87570"
+      ]
+    },
+    {
+      "id": "344276",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87579",
       "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343740",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344276",
       "cves": [
-        "CVE-2026-3039",
-        "CVE-2026-3592",
-        "CVE-2026-5946"
+        "CVE-2026-87579"
       ]
     },
     {
-      "id": "343739",
-      "title": "EulerOS 2.0 SP12 : glib2 (EulerOS-SA-2026-3336)",
-      "severity": "Critical",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343739",
+      "id": "344275",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87647",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344275",
       "cves": [
-        "CVE-2026-58010",
-        "CVE-2026-58011",
-        "CVE-2026-58012",
-        "CVE-2026-58013",
-        "CVE-2026-58014",
-        "CVE-2026-58015",
-        "CVE-2026-58016"
+        "CVE-2026-87647"
       ]
     },
     {
-      "id": "343738",
-      "title": "EulerOS 2.0 SP12 : wget (EulerOS-SA-2026-3319)",
+      "id": "344274",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87627",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344274",
+      "cves": [
+        "CVE-2026-87627"
+      ]
+    },
+    {
+      "id": "344273",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87602",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344273",
+      "cves": [
+        "CVE-2026-87602"
+      ]
+    },
+    {
+      "id": "344272",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87567",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344272",
+      "cves": [
+        "CVE-2026-87567"
+      ]
+    },
+    {
+      "id": "344271",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87658",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344271",
+      "cves": [
+        "CVE-2026-87658"
+      ]
+    },
+    {
+      "id": "344270",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87554",
       "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343738",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344270",
       "cves": [
-        "CVE-2026-58469",
-        "CVE-2026-58470",
-        "CVE-2026-58471",
-        "CVE-2026-58472"
+        "CVE-2026-87554"
       ]
     },
     {
-      "id": "343737",
-      "title": "EulerOS 2.0 SP12 : openssl (EulerOS-SA-2026-3288)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343737",
+      "id": "344269",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87619",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344269",
       "cves": [
-        "CVE-2026-34180",
-        "CVE-2026-45447",
-        "CVE-2026-7383",
-        "CVE-2026-9076"
+        "CVE-2026-87619"
       ]
     },
     {
-      "id": "343736",
-      "title": "EulerOS 2.0 SP12 : perl-HTML-Parser (EulerOS-SA-2026-3368)",
+      "id": "344268",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87514",
       "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343736",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344268",
       "cves": [
-        "CVE-2026-8829"
+        "CVE-2026-87514"
       ]
     },
     {
-      "id": "343735",
-      "title": "EulerOS 2.0 SP12 : libssh2 (EulerOS-SA-2026-3279)",
-      "severity": "High",
-      "date": "Tue, 08 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/343735",
+      "id": "344267",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87507",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344267",
       "cves": [
-        "CVE-2025-15661",
-        "CVE-2026-55199",
-        "CVE-2026-58050",
-        "CVE-2026-58051"
+        "CVE-2026-87507"
+      ]
+    },
+    {
+      "id": "344266",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87636",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344266",
+      "cves": [
+        "CVE-2026-87636"
+      ]
+    },
+    {
+      "id": "344265",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87612",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344265",
+      "cves": [
+        "CVE-2026-87612"
+      ]
+    },
+    {
+      "id": "344264",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87598",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344264",
+      "cves": [
+        "CVE-2026-87598"
+      ]
+    },
+    {
+      "id": "344263",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87580",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344263",
+      "cves": [
+        "CVE-2026-87580"
+      ]
+    },
+    {
+      "id": "344262",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87482",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344262",
+      "cves": [
+        "CVE-2026-87482"
+      ]
+    },
+    {
+      "id": "344261",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87641",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344261",
+      "cves": [
+        "CVE-2026-87641"
+      ]
+    },
+    {
+      "id": "344260",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87592",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344260",
+      "cves": [
+        "CVE-2026-87592"
+      ]
+    },
+    {
+      "id": "344259",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87589",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344259",
+      "cves": [
+        "CVE-2026-87589"
+      ]
+    },
+    {
+      "id": "344258",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87490",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344258",
+      "cves": [
+        "CVE-2026-87490"
+      ]
+    },
+    {
+      "id": "344257",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87581",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344257",
+      "cves": [
+        "CVE-2026-87581"
+      ]
+    },
+    {
+      "id": "344256",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87510",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344256",
+      "cves": [
+        "CVE-2026-87510"
+      ]
+    },
+    {
+      "id": "344255",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87484",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344255",
+      "cves": [
+        "CVE-2026-87484"
+      ]
+    },
+    {
+      "id": "344254",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87633",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344254",
+      "cves": [
+        "CVE-2026-87633"
+      ]
+    },
+    {
+      "id": "344253",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87515",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344253",
+      "cves": [
+        "CVE-2026-87515"
+      ]
+    },
+    {
+      "id": "344252",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87642",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344252",
+      "cves": [
+        "CVE-2026-87642"
+      ]
+    },
+    {
+      "id": "344251",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87560",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344251",
+      "cves": [
+        "CVE-2026-87560"
+      ]
+    },
+    {
+      "id": "344250",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87625",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344250",
+      "cves": [
+        "CVE-2026-87625"
+      ]
+    },
+    {
+      "id": "344249",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87549",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344249",
+      "cves": [
+        "CVE-2026-87549"
+      ]
+    },
+    {
+      "id": "344248",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87532",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344248",
+      "cves": [
+        "CVE-2026-87532"
+      ]
+    },
+    {
+      "id": "344247",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87603",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344247",
+      "cves": [
+        "CVE-2026-87603"
+      ]
+    },
+    {
+      "id": "344246",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87639",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344246",
+      "cves": [
+        "CVE-2026-87639"
+      ]
+    },
+    {
+      "id": "344245",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87623",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344245",
+      "cves": [
+        "CVE-2026-87623"
+      ]
+    },
+    {
+      "id": "344244",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87614",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344244",
+      "cves": [
+        "CVE-2026-87614"
+      ]
+    },
+    {
+      "id": "344243",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87737",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344243",
+      "cves": [
+        "CVE-2026-87737"
+      ]
+    },
+    {
+      "id": "344242",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87470",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344242",
+      "cves": [
+        "CVE-2026-87470"
+      ]
+    },
+    {
+      "id": "344241",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87466",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344241",
+      "cves": [
+        "CVE-2026-87466"
+      ]
+    },
+    {
+      "id": "344240",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87546",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344240",
+      "cves": [
+        "CVE-2026-87546"
+      ]
+    },
+    {
+      "id": "344239",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87456",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344239",
+      "cves": [
+        "CVE-2026-87456"
+      ]
+    },
+    {
+      "id": "344238",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87451",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344238",
+      "cves": [
+        "CVE-2026-87451"
+      ]
+    },
+    {
+      "id": "344237",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87474",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344237",
+      "cves": [
+        "CVE-2026-87474"
+      ]
+    },
+    {
+      "id": "344236",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87444",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344236",
+      "cves": [
+        "CVE-2026-87444"
+      ]
+    },
+    {
+      "id": "344235",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87489",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344235",
+      "cves": [
+        "CVE-2026-87489"
+      ]
+    },
+    {
+      "id": "344234",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87766",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344234",
+      "cves": [
+        "CVE-2026-87766"
+      ]
+    },
+    {
+      "id": "344233",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87638",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344233",
+      "cves": [
+        "CVE-2026-87638"
+      ]
+    },
+    {
+      "id": "344232",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87545",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344232",
+      "cves": [
+        "CVE-2026-87545"
+      ]
+    },
+    {
+      "id": "344231",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87594",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344231",
+      "cves": [
+        "CVE-2026-87594"
+      ]
+    },
+    {
+      "id": "344230",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87635",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344230",
+      "cves": [
+        "CVE-2026-87635"
+      ]
+    },
+    {
+      "id": "344229",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87611",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344229",
+      "cves": [
+        "CVE-2026-87611"
+      ]
+    },
+    {
+      "id": "344228",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87630",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344228",
+      "cves": [
+        "CVE-2026-87630"
+      ]
+    },
+    {
+      "id": "344227",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87541",
+      "severity": "Medium",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344227",
+      "cves": [
+        "CVE-2026-87541"
+      ]
+    },
+    {
+      "id": "344226",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87558",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344226",
+      "cves": [
+        "CVE-2026-87558"
+      ]
+    },
+    {
+      "id": "344225",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-87578",
+      "severity": "High",
+      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344225",
+      "cves": [
+        "CVE-2026-87578"
       ]
     }
   ]

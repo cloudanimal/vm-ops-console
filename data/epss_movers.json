@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-08",
+  "updated": "2026-09-09",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-08",
-  "previous_date": "2026-09-01",
+  "current_date": "2026-09-09",
+  "previous_date": "2026-09-02",
   "risers": [
     {
       "id": "CVE-2026-48710",
@@ -24,13 +24,6 @@
       "prev": 0.50696,
       "delta": 0.27435,
       "name": "Sawtooth Software Lighthouse Studio < 9.16.14 Pre-Authentication RCE"
-    },
-    {
-      "id": "CVE-2026-9198",
-      "now": 0.57019,
-      "prev": 0.34734,
-      "delta": 0.22285,
-      "name": "Unauthenticated Remote Code Execution via Auto-Login Bypass and Code Validation"
     },
     {
       "id": "CVE-2026-23744",
@@ -61,11 +54,18 @@
       "name": "Multiple stack-based buffer overflows in (1) mod_alias and (2) mod_rewrite for Apache before 1.3.29 allow atta"
     },
     {
-      "id": "CVE-2026-48558",
-      "now": 0.30045,
-      "prev": 0.12381,
-      "delta": 0.17664,
-      "name": "SimpleHelp Authentication Bypass via Missing OIDC JWT Signature Verification"
+      "id": "CVE-2026-9198",
+      "now": 0.60597,
+      "prev": 0.45213,
+      "delta": 0.15384,
+      "name": "Unauthenticated Remote Code Execution via Auto-Login Bypass and Code Validation"
+    },
+    {
+      "id": "CVE-2026-83549",
+      "now": 0.13843,
+      "prev": 0.00917,
+      "delta": 0.12926,
+      "name": "SonicWall SMA1000"
     },
     {
       "id": "CVE-2026-72898",
@@ -89,10 +89,17 @@
       "name": "D-Link DIR-820L 1.05B03 was discovered to contain remote command execution (RCE) vulnerability via HTTP POST t"
     },
     {
+      "id": "CVE-2025-31140",
+      "now": 0.28035,
+      "prev": 0.17028,
+      "delta": 0.11007,
+      "name": "JetBrains TeamCity"
+    },
+    {
       "id": "CVE-2026-9586",
       "now": 0.11845,
-      "prev": 0.00434,
-      "delta": 0.11411,
+      "prev": 0.01088,
+      "delta": 0.10757,
       "name": "Unauthenticated SQL Injection Leading to Remote Code Execution in Switchvox SMB"
     },
     {
@@ -138,11 +145,11 @@
       "name": "Netcore / Netis Routers RCE via UDP Port 53413 Backdoor"
     },
     {
-      "id": "CVE-2026-82329",
-      "now": 0.07666,
-      "prev": 0.00377,
-      "delta": 0.07289,
-      "name": "Potential authentication bypass leading to administrative access in Artifactory"
+      "id": "CVE-2026-83548",
+      "now": 0.07447,
+      "prev": 0.00266,
+      "delta": 0.07181,
+      "name": "SonicWall SMA1000"
     },
     {
       "id": "CVE-2025-34511",
@@ -150,6 +157,13 @@
       "prev": 0.15621,
       "delta": 0.06697,
       "name": "Sitecore PowerShell Extension RCE via Unrestricted Upload"
+    },
+    {
+      "id": "CVE-2018-15982",
+      "now": 0.89146,
+      "prev": 0.82456,
+      "delta": 0.0669,
+      "name": "Flash Player versions 31.0.0.153 and earlier, and 31.0.0.108 and earlier have a use after free vulnerability. "
     },
     {
       "id": "CVE-2022-2633",
@@ -166,11 +180,11 @@
       "name": "Integer overflow issues with *BIT commands on 32-bit systems"
     },
     {
-      "id": "CVE-2025-67038",
-      "now": 0.21985,
-      "prev": 0.15667,
-      "delta": 0.06318,
-      "name": "Lantronix EDS5000, G520, and X300 OS Command Injection"
+      "id": "CVE-2026-82329",
+      "now": 0.07666,
+      "prev": 0.01242,
+      "delta": 0.06424,
+      "name": "Potential authentication bypass leading to administrative access in Artifactory"
     },
     {
       "id": "CVE-2025-20297",
@@ -194,35 +208,14 @@
       "name": "Multiple PHP remote file inclusion vulnerabilities in WebYep 1.1.9, when register_globals is enabled, allow re"
     },
     {
-      "id": "CVE-2025-5961",
-      "now": 0.57566,
-      "prev": 0.5253,
-      "delta": 0.05036,
-      "name": "Migration, Backup, Staging \u2013 WPvivid Backup & Migration <= 0.9.116 - Authenticated (Admini"
-    },
-    {
-      "id": "CVE-2006-4812",
-      "now": 0.20376,
-      "prev": 0.15388,
-      "delta": 0.04988,
-      "name": "Integer overflow in PHP 5 up to 5.1.6 and 4 before 4.3.0 allows remote attackers to execute arbitrary code via"
-    },
-    {
       "id": "CVE-2025-52378",
-      "now": 0.1161,
+      "now": 0.12036,
       "prev": 0.06674,
-      "delta": 0.04936,
+      "delta": 0.05362,
       "name": "Cross-Site Scripting (XSS) vulnerability in Nexxt Solutions NCM-X1800 Mesh Router firmware UV1.2.7 and below a"
     }
   ],
   "newly_high": [
-    {
-      "id": "CVE-2026-9198",
-      "now": 0.57019,
-      "prev": 0.34734,
-      "delta": 0.22285,
-      "name": "Unauthenticated Remote Code Execution via Auto-Login Bypass and Code Validation"
-    },
     {
       "id": "CVE-2026-23744",
       "now": 0.65845,
@@ -238,11 +231,11 @@
       "name": "Django before 1.11.27, 2.x before 2.2.9, and 3.x before 3.0.1 allows account takeover. A suitably crafted emai"
     },
     {
-      "id": "CVE-2024-33610",
-      "now": 0.5002,
-      "prev": 0.45842,
-      "delta": 0.04178,
-      "name": "Sharp Corporation Multiple MFPs (multifunction printers)"
+      "id": "CVE-2026-9198",
+      "now": 0.60597,
+      "prev": 0.45213,
+      "delta": 0.15384,
+      "name": "Unauthenticated Remote Code Execution via Auto-Login Bypass and Code Validation"
     },
     {
       "id": "CVE-2025-49002",
@@ -257,6 +250,13 @@
       "prev": 0.49051,
       "delta": 0.02497,
       "name": "RevPi Webstatus application is vulnerable to an authentication bypass"
+    },
+    {
+      "id": "CVE-2023-34124",
+      "now": 0.50195,
+      "prev": 0.49077,
+      "delta": 0.01118,
+      "name": "SonicWall GMS"
     }
   ]
 }
