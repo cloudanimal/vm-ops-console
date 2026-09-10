@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-09",
-  "total": 1699,
+  "updated": "2026-09-10",
+  "total": 1703,
   "ransomware_count": 358,
   "by_year": {
     "2021": 311,
@@ -8,7 +8,7 @@
     "2023": 187,
     "2024": 186,
     "2025": 245,
-    "2026": 215
+    "2026": 219
   },
   "top_vendors": [
     [
@@ -17,7 +17,7 @@
     ],
     [
       "Cisco",
-      96
+      97
     ],
     [
       "Apple",
@@ -29,7 +29,7 @@
     ],
     [
       "Google",
-      73
+      74
     ],
     [
       "Oracle",
@@ -45,7 +45,7 @@
     ],
     [
       "Fortinet",
-      29
+      30
     ],
     [
       "Linux",
@@ -61,7 +61,7 @@
     ],
     [
       "Citrix",
-      23
+      24
     ],
     [
       "SonicWall",
@@ -103,7 +103,7 @@
     ],
     [
       "Google Chromium V8",
-      40
+      41
     ],
     [
       "Microsoft Internet Explorer",

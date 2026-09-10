@@ -1,15 +1,15 @@
 {
-  "updated": "2026-09-09",
+  "updated": "2026-09-10",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-09",
-  "previous_date": "2026-09-02",
+  "current_date": "2026-09-10",
+  "previous_date": "2026-09-03",
   "risers": [
     {
-      "id": "CVE-2026-48710",
-      "now": 0.36257,
-      "prev": 0.02099,
-      "delta": 0.34158,
-      "name": "Starlette has missing Host header validation that poisons request.url.path, bypassing path"
+      "id": "CVE-2026-20079",
+      "now": 0.74697,
+      "prev": 0.35946,
+      "delta": 0.38751,
+      "name": "Cisco Secure Firewall Management Center Authentication Bypass Remote Code Execution Vulner"
     },
     {
       "id": "CVE-2023-41064",
@@ -26,11 +26,18 @@
       "name": "Sawtooth Software Lighthouse Studio < 9.16.14 Pre-Authentication RCE"
     },
     {
-      "id": "CVE-2026-23744",
-      "now": 0.65845,
-      "prev": 0.45026,
-      "delta": 0.20819,
-      "name": "REC in MCPJam inspector due to HTTP Endpoint exposes"
+      "id": "CVE-2026-48710",
+      "now": 0.36257,
+      "prev": 0.11042,
+      "delta": 0.25215,
+      "name": "Starlette has missing Host header validation that poisons request.url.path, bypassing path"
+    },
+    {
+      "id": "CVE-2025-54988",
+      "now": 0.37713,
+      "prev": 0.15038,
+      "delta": 0.22675,
+      "name": "Apache Tika PDF parser module: XXE vulnerability in PDFParser's handling of XFA"
     },
     {
       "id": "CVE-2019-19844",
@@ -54,18 +61,11 @@
       "name": "Multiple stack-based buffer overflows in (1) mod_alias and (2) mod_rewrite for Apache before 1.3.29 allow atta"
     },
     {
-      "id": "CVE-2026-9198",
-      "now": 0.60597,
-      "prev": 0.45213,
-      "delta": 0.15384,
-      "name": "Unauthenticated Remote Code Execution via Auto-Login Bypass and Code Validation"
-    },
-    {
-      "id": "CVE-2026-83549",
-      "now": 0.13843,
-      "prev": 0.00917,
-      "delta": 0.12926,
-      "name": "SonicWall SMA1000"
+      "id": "CVE-2020-29134",
+      "now": 0.27184,
+      "prev": 0.15025,
+      "delta": 0.12159,
+      "name": "The TOTVS Fluig platform allows path traversal through the parameter \"file = .. /\" encoded in base64. This aff"
     },
     {
       "id": "CVE-2026-72898",
@@ -73,13 +73,6 @@
       "prev": 0.82323,
       "delta": 0.11894,
       "name": "Metabase SQL injection via password reset endpoint"
-    },
-    {
-      "id": "CVE-2026-73570",
-      "now": 0.32383,
-      "prev": 0.20528,
-      "delta": 0.11855,
-      "name": "Zimbra Collaboration"
     },
     {
       "id": "CVE-2022-26258",
@@ -96,25 +89,11 @@
       "name": "JetBrains TeamCity"
     },
     {
-      "id": "CVE-2026-9586",
-      "now": 0.11845,
-      "prev": 0.01088,
-      "delta": 0.10757,
-      "name": "Unauthenticated SQL Injection Leading to Remote Code Execution in Switchvox SMB"
-    },
-    {
       "id": "CVE-2022-0342",
       "now": 0.94858,
       "prev": 0.8442,
       "delta": 0.10438,
       "name": "Zyxel USG/ZyWALL series firmware"
-    },
-    {
-      "id": "CVE-2019-6553",
-      "now": 0.60094,
-      "prev": 0.50031,
-      "delta": 0.10063,
-      "name": "Rockwell Automation RSLinx Classic"
     },
     {
       "id": "CVE-2025-5473",
@@ -124,18 +103,18 @@
       "name": "GIMP ICO File Parsing Integer Overflow Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2018-10466",
-      "now": 0.17197,
-      "prev": 0.08318,
-      "delta": 0.08879,
-      "name": "Zoho ManageEngine ADAudit Plus before 5.0.0 build 5100 allows blind SQL Injection."
-    },
-    {
       "id": "CVE-2023-3959",
       "now": 0.48765,
       "prev": 0.40396,
       "delta": 0.08369,
       "name": "Zavio IP Camera Stack-Based Buffer Overflow"
+    },
+    {
+      "id": "CVE-2021-22146",
+      "now": 0.35781,
+      "prev": 0.27788,
+      "delta": 0.07993,
+      "name": "All versions of Elastic Cloud Enterprise has the Elasticsearch \u201canonymous\u201d user enabled by default in deployed"
     },
     {
       "id": "CVE-2025-34117",
@@ -145,10 +124,24 @@
       "name": "Netcore / Netis Routers RCE via UDP Port 53413 Backdoor"
     },
     {
-      "id": "CVE-2026-83548",
-      "now": 0.07447,
-      "prev": 0.00266,
-      "delta": 0.07181,
+      "id": "CVE-2022-34718",
+      "now": 0.54423,
+      "prev": 0.46601,
+      "delta": 0.07822,
+      "name": "Windows TCP/IP Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2025-66516",
+      "now": 0.87688,
+      "prev": 0.80336,
+      "delta": 0.07352,
+      "name": "Apache Tika core, Apache Tika parsers, Apache Tika PDF parser module: Update to CVE-2025-5"
+    },
+    {
+      "id": "CVE-2026-83549",
+      "now": 0.08505,
+      "prev": 0.01625,
+      "delta": 0.0688,
       "name": "SonicWall SMA1000"
     },
     {
@@ -166,32 +159,11 @@
       "name": "Flash Player versions 31.0.0.153 and earlier, and 31.0.0.108 and earlier have a use after free vulnerability. "
     },
     {
-      "id": "CVE-2022-2633",
-      "now": 0.33818,
-      "prev": 0.27193,
-      "delta": 0.06625,
-      "name": "plugins360 All-in-One Video Gallery"
-    },
-    {
       "id": "CVE-2021-32761",
       "now": 0.37633,
       "prev": 0.31049,
       "delta": 0.06584,
       "name": "Integer overflow issues with *BIT commands on 32-bit systems"
-    },
-    {
-      "id": "CVE-2026-82329",
-      "now": 0.07666,
-      "prev": 0.01242,
-      "delta": 0.06424,
-      "name": "Potential authentication bypass leading to administrative access in Artifactory"
-    },
-    {
-      "id": "CVE-2025-20297",
-      "now": 0.25892,
-      "prev": 0.1967,
-      "delta": 0.06222,
-      "name": "Reflected Cross-Site Scripting (XSS) on Splunk Enterprise through dashboard PDF generation"
     },
     {
       "id": "CVE-2023-37941",
@@ -208,20 +180,48 @@
       "name": "Multiple PHP remote file inclusion vulnerabilities in WebYep 1.1.9, when register_globals is enabled, allow re"
     },
     {
+      "id": "CVE-2019-12276",
+      "now": 0.5916,
+      "prev": 0.53705,
+      "delta": 0.05455,
+      "name": "A Path Traversal vulnerability in Controllers/LetsEncryptController.cs in LetsEncryptController in GrandNode 4"
+    },
+    {
       "id": "CVE-2025-52378",
       "now": 0.12036,
       "prev": 0.06674,
       "delta": 0.05362,
       "name": "Cross-Site Scripting (XSS) vulnerability in Nexxt Solutions NCM-X1800 Mesh Router firmware UV1.2.7 and below a"
+    },
+    {
+      "id": "CVE-2006-4812",
+      "now": 0.20376,
+      "prev": 0.15388,
+      "delta": 0.04988,
+      "name": "Integer overflow in PHP 5 up to 5.1.6 and 4 before 4.3.0 allows remote attackers to execute arbitrary code via"
+    },
+    {
+      "id": "CVE-2025-7083",
+      "now": 0.45869,
+      "prev": 0.40983,
+      "delta": 0.04886,
+      "name": "Belkin F9K1122 webs mp os command injection"
+    },
+    {
+      "id": "CVE-2023-4528",
+      "now": 0.3186,
+      "prev": 0.27069,
+      "delta": 0.04791,
+      "name": "JSCAPE MFT Server Unsafe Deserialization on Management Port"
     }
   ],
   "newly_high": [
     {
-      "id": "CVE-2026-23744",
-      "now": 0.65845,
-      "prev": 0.45026,
-      "delta": 0.20819,
-      "name": "REC in MCPJam inspector due to HTTP Endpoint exposes"
+      "id": "CVE-2026-20079",
+      "now": 0.74697,
+      "prev": 0.35946,
+      "delta": 0.38751,
+      "name": "Cisco Secure Firewall Management Center Authentication Bypass Remote Code Execution Vulner"
     },
     {
       "id": "CVE-2019-19844",
@@ -231,11 +231,11 @@
       "name": "Django before 1.11.27, 2.x before 2.2.9, and 3.x before 3.0.1 allows account takeover. A suitably crafted emai"
     },
     {
-      "id": "CVE-2026-9198",
-      "now": 0.60597,
-      "prev": 0.45213,
-      "delta": 0.15384,
-      "name": "Unauthenticated Remote Code Execution via Auto-Login Bypass and Code Validation"
+      "id": "CVE-2022-34718",
+      "now": 0.54423,
+      "prev": 0.46601,
+      "delta": 0.07822,
+      "name": "Windows TCP/IP Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2025-49002",
@@ -257,6 +257,13 @@
       "prev": 0.49077,
       "delta": 0.01118,
       "name": "SonicWall GMS"
+    },
+    {
+      "id": "CVE-2022-36633",
+      "now": 0.50275,
+      "prev": 0.49476,
+      "delta": 0.00799,
+      "name": "Teleport 9.3.6 is vulnerable to Command injection leading to Remote Code Execution. An attacker can craft a ma"
     }
   ]
 }
