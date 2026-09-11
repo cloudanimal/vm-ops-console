@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-10",
+  "updated": "2026-09-11",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,590 +7,602 @@
   "items": [
     {
       "id": null,
-      "title": "SCA: security update for wwbn/avideo (GHSA-rg7q-4223-phjw)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447879",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for wwbn/avideo (GHSA-rg7q-4223-phjw)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447879",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for esphome-device-builder (GHSA-vv4j-m4vr-f3g6)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447878",
-      "cves": [
-        "CVE-2026-59177"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for esphome-device-builder (GHSA-vv4j-m4vr-f3g6)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447878",
-      "cves": [
-        "CVE-2026-59177"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for open-webui (GHSA-jqhh-cjmq-vmv6)",
+      "title": "SCA: security update for psd-tools (GHSA-2rmg-vrx8-9j2f)",
       "severity": "Medium",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447877",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447955",
       "cves": [
-        "CVE-2026-88002"
+        "CVE-2026-49836"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for open-webui (GHSA-jqhh-cjmq-vmv6)",
+      "title": "SCA: security update for psd-tools (GHSA-2rmg-vrx8-9j2f)",
       "severity": "Medium",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447877",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447955",
       "cves": [
-        "CVE-2026-88002"
+        "CVE-2026-49836"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/candid82/joker (GHSA-m835-3cm9-rggg)",
+      "title": "SCA: security update for @jhb.software/payload-alt-text-plugin (GHSA-4qpv-39hg-f7fx)",
       "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447876",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447954",
       "cves": [
-        "CVE-2026-59172"
+        "CVE-2026-59965"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/candid82/joker (GHSA-m835-3cm9-rggg)",
+      "title": "SCA: security update for @jhb.software/payload-alt-text-plugin (GHSA-4qpv-39hg-f7fx)",
       "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447876",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447954",
       "cves": [
-        "CVE-2026-59172"
+        "CVE-2026-59965"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for @openhop/server (GHSA-g72f-jw3w-mgh7)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447875",
+      "title": "SCA: security update for github.com/rclone/rclone (GHSA-p569-5gjg-9cmj)",
+      "severity": "Critical",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447953",
       "cves": [
-        "CVE-2026-59179"
+        "CVE-2026-88044"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for @openhop/server (GHSA-g72f-jw3w-mgh7)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447875",
+      "title": "SCA: security update for github.com/rclone/rclone (GHSA-p569-5gjg-9cmj)",
+      "severity": "Critical",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447953",
       "cves": [
-        "CVE-2026-59179"
+        "CVE-2026-88044"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for open-webui (GHSA-5x7x-4c3c-qf5w)",
+      "title": "SCA: security update for @angular/compiler, @angular/core (GHSA-hh8m-fm6v-7cvg)",
       "severity": "Medium",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447874",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447952",
       "cves": [
-        "CVE-2026-88001"
+        "CVE-2026-88057"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for open-webui (GHSA-5x7x-4c3c-qf5w)",
+      "title": "SCA: security update for @angular/compiler, @angular/core (GHSA-hh8m-fm6v-7cvg)",
       "severity": "Medium",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447874",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447952",
       "cves": [
-        "CVE-2026-88001"
+        "CVE-2026-88057"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for open-webui (GHSA-3cgp-3cqx-j8w2)",
+      "title": "SCA: security update for litellm (GHSA-j37q-q7p9-vpwm)",
       "severity": "Medium",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447873",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447951",
       "cves": [
-        "CVE-2026-88000"
+        "CVE-2026-12795"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for open-webui (GHSA-3cgp-3cqx-j8w2)",
+      "title": "SCA: security update for litellm (GHSA-j37q-q7p9-vpwm)",
       "severity": "Medium",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447873",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447951",
       "cves": [
-        "CVE-2026-88000"
+        "CVE-2026-12795"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for @yeger/turbo-graph (GHSA-2r5q-h53f-9rp3)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447872",
-      "cves": [
-        "CVE-2026-59160"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for @yeger/turbo-graph (GHSA-2r5q-h53f-9rp3)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447872",
-      "cves": [
-        "CVE-2026-59160"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for wwbn/avideo (GHSA-wprj-9cvc-5w37)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447871",
-      "cves": [
-        "CVE-2026-56341"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for wwbn/avideo (GHSA-wprj-9cvc-5w37)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447871",
-      "cves": [
-        "CVE-2026-56341"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/ncarlier/webhookd (GHSA-v25g-mvwr-f5fp)",
+      "title": "SCA: security update for n8n (GHSA-cqr2-h44g-v75v)",
       "severity": "Medium",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447870",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447950",
       "cves": [
-        "CVE-2026-59157"
+        "CVE-2026-86085"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/ncarlier/webhookd (GHSA-v25g-mvwr-f5fp)",
+      "title": "SCA: security update for n8n (GHSA-cqr2-h44g-v75v)",
       "severity": "Medium",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447870",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447950",
       "cves": [
-        "CVE-2026-59157"
+        "CVE-2026-86085"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for nuxt (GHSA-xppm-jmw6-fhmf)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447869",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for nuxt (GHSA-xppm-jmw6-fhmf)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447869",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for functype-mcp-server (GHSA-wcjj-9m6g-2fr2)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447868",
-      "cves": [
-        "CVE-2026-59176"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for functype-mcp-server (GHSA-wcjj-9m6g-2fr2)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447868",
-      "cves": [
-        "CVE-2026-59176"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/identrail/identrail (GHSA-cp3j-m783-3ph5)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447867",
-      "cves": [
-        "CVE-2026-59185"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/identrail/identrail (GHSA-cp3j-m783-3ph5)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447867",
-      "cves": [
-        "CVE-2026-59185"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for nuxt-ollama (GHSA-fxg7-897c-57mp)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447866",
-      "cves": [
-        "CVE-2026-59158"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for nuxt-ollama (GHSA-fxg7-897c-57mp)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447866",
-      "cves": [
-        "CVE-2026-59158"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.geonetwork-opensource:gn-web-app (GHSA-5hx7-j24v-rffj)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447865",
-      "cves": [
-        "CVE-2026-55864"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for org.geonetwork-opensource:gn-web-app (GHSA-5hx7-j24v-rffj)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447865",
-      "cves": [
-        "CVE-2026-55864"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/komari-monitor/komari (GHSA-hxjg-93wc-h8p8)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447864",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/komari-monitor/komari (GHSA-hxjg-93wc-h8p8)",
-      "severity": "High",
-      "date": "Thu, 10 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447864",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.DiaSymReader.Native (GHSA-4qhr-qf46-fcrx)",
-      "severity": "High",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447863",
-      "cves": [
-        "CVE-2026-71328"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.DiaSymReader.Native (GHSA-4qhr-qf46-fcrx)",
-      "severity": "High",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447863",
-      "cves": [
-        "CVE-2026-71328"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for smol-toml (GHSA-7w5x-hrqm-74c2)",
-      "severity": "High",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447862",
-      "cves": [
-        "CVE-2026-85730"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for smol-toml (GHSA-7w5x-hrqm-74c2)",
-      "severity": "High",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447862",
-      "cves": [
-        "CVE-2026-85730"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.DiaSymReader.Native (GHSA-63gh-g2x5-x69v)",
-      "severity": "High",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447861",
-      "cves": [
-        "CVE-2026-71328"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.DiaSymReader.Native (GHSA-63gh-g2x5-x69v)",
-      "severity": "High",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447861",
-      "cves": [
-        "CVE-2026-71328"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for decidim-elections (GHSA-9mvp-w4rr-5c6x)",
+      "title": "SCA: security update for open-webui (GHSA-p78m-89r6-pgf7)",
       "severity": "Medium",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447860",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447949",
       "cves": [
-        "CVE-2026-44282"
+        "CVE-2026-87015"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for decidim-elections (GHSA-9mvp-w4rr-5c6x)",
+      "title": "SCA: security update for open-webui (GHSA-p78m-89r6-pgf7)",
       "severity": "Medium",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447860",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447949",
       "cves": [
-        "CVE-2026-44282"
+        "CVE-2026-87015"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.Server.IISIntegration (GHSA-8cp2-47hg-mfgh)",
-      "severity": "Medium",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447859",
-      "cves": [
-        "CVE-2026-69304"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.Server.IISIntegration (GHSA-8cp2-47hg-mfgh)",
-      "severity": "Medium",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447859",
-      "cves": [
-        "CVE-2026-69304"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for githacker (GHSA-hr3m-4qwq-3mgc)",
-      "severity": "Medium",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447858",
-      "cves": [
-        "CVE-2026-50024"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for githacker (GHSA-hr3m-4qwq-3mgc)",
-      "severity": "Medium",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447858",
-      "cves": [
-        "CVE-2026-50024"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.DiaSymReader.Native (GHSA-527h-q9f6-p7qx)",
+      "title": "SCA: security update for github.com/rclone/rclone (GHSA-f8g7-2xjc-7mfh)",
       "severity": "High",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447857",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447948",
       "cves": [
-        "CVE-2026-69439"
+        "CVE-2026-88016"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for Microsoft.DiaSymReader.Native (GHSA-527h-q9f6-p7qx)",
+      "title": "SCA: security update for github.com/rclone/rclone (GHSA-f8g7-2xjc-7mfh)",
       "severity": "High",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447857",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447948",
       "cves": [
-        "CVE-2026-69439"
+        "CVE-2026-88016"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/lf-edge/ekuiper/v2 (GHSA-g8rh-fjm6-h2h9)",
+      "title": "SCA: security update for litellm (GHSA-mf52-j94g-746m)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447947",
+      "cves": [
+        "CVE-2026-12772"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for litellm (GHSA-mf52-j94g-746m)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447947",
+      "cves": [
+        "CVE-2026-12772"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for litellm (GHSA-6qr3-3g89-m4jj)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447946",
+      "cves": [
+        "CVE-2026-12770"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for litellm (GHSA-6qr3-3g89-m4jj)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447946",
+      "cves": [
+        "CVE-2026-12770"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for litellm (GHSA-4jcj-7x88-m979)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447945",
+      "cves": [
+        "CVE-2026-12773"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for litellm (GHSA-4jcj-7x88-m979)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447945",
+      "cves": [
+        "CVE-2026-12773"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for litellm (GHSA-qmf3-4767-5fg3)",
       "severity": "Low",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447856",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447944",
       "cves": [
-        "CVE-2025-24978"
+        "CVE-2026-12771"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/lf-edge/ekuiper/v2 (GHSA-g8rh-fjm6-h2h9)",
+      "title": "SCA: security update for litellm (GHSA-qmf3-4767-5fg3)",
       "severity": "Low",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447856",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447944",
       "cves": [
-        "CVE-2025-24978"
+        "CVE-2026-12771"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/lf-edge/ekuiper/v2 (GHSA-c23q-fw86-9h5x)",
-      "severity": "Medium",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447855",
-      "cves": [
-        "CVE-2025-58363"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/lf-edge/ekuiper/v2 (GHSA-c23q-fw86-9h5x)",
-      "severity": "Medium",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447855",
-      "cves": [
-        "CVE-2025-58363"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/golang-fips/openssl (GHSA-3h3x-2hwv-hr52)",
+      "title": "SCA: security update for @angular/platform-server (GHSA-f6mr-pjwc-34m4)",
       "severity": "High",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447854",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447943",
       "cves": [
-        "CVE-2024-9355"
+        "CVE-2026-88056"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/golang-fips/openssl (GHSA-3h3x-2hwv-hr52)",
+      "title": "SCA: security update for @angular/platform-server (GHSA-f6mr-pjwc-34m4)",
       "severity": "High",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447854",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447943",
       "cves": [
-        "CVE-2024-9355"
+        "CVE-2026-88056"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/lf-edge/ekuiper/v2 (GHSA-pqqc-8v73-9gg2)",
+      "title": "SCA: security update for @angular/platform-server (GHSA-v3p8-whq6-r5jg)",
+      "severity": "High",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447942",
+      "cves": [
+        "CVE-2026-88060"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @angular/platform-server (GHSA-v3p8-whq6-r5jg)",
+      "severity": "High",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447942",
+      "cves": [
+        "CVE-2026-88060"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-pf83-w3f9-8m37)",
       "severity": "Medium",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447853",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447941",
       "cves": [
-        "CVE-2025-24979"
+        "CVE-2026-86084"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for github.com/lf-edge/ekuiper/v2 (GHSA-pqqc-8v73-9gg2)",
+      "title": "SCA: security update for n8n (GHSA-pf83-w3f9-8m37)",
       "severity": "Medium",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447853",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447941",
       "cves": [
-        "CVE-2025-24979"
+        "CVE-2026-86084"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for sqladmin (GHSA-ccg5-9c8w-xh6v)",
+      "title": "SCA: security update for github.com/rclone/rclone (GHSA-2p48-j3qc-rx9f)",
+      "severity": "High",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447940",
+      "cves": [
+        "CVE-2026-88045"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/rclone/rclone (GHSA-2p48-j3qc-rx9f)",
+      "severity": "High",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447940",
+      "cves": [
+        "CVE-2026-88045"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for pimcore/pimcore (GHSA-23rh-xw42-fq82)",
+      "severity": "High",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447939",
+      "cves": [
+        "CVE-2026-55416"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for pimcore/pimcore (GHSA-23rh-xw42-fq82)",
+      "severity": "High",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447939",
+      "cves": [
+        "CVE-2026-55416"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/traefik/traefik/v2, github.com/traefik/traefik/v3 (GHSA-7ghq-v6jf-g56c)",
       "severity": "Medium",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447852",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447938",
       "cves": [
-        "CVE-2026-54529"
+        "CVE-2026-88012"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for sqladmin (GHSA-ccg5-9c8w-xh6v)",
+      "title": "SCA: security update for github.com/traefik/traefik/v2, github.com/traefik/traefik/v3 (GHSA-7ghq-v6jf-g56c)",
       "severity": "Medium",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447852",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447938",
       "cves": [
-        "CVE-2026-54529"
+        "CVE-2026-88012"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for Microsoft.DiaSymReader.Native (GHSA-mqvm-gmc4-6rv2)",
+      "title": "SCA: security update for n8n (GHSA-6xcw-7xm6-48c6)",
       "severity": "High",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447851",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447937",
       "cves": [
-        "CVE-2026-69439"
+        "CVE-2026-86083"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for Microsoft.DiaSymReader.Native (GHSA-mqvm-gmc4-6rv2)",
+      "title": "SCA: security update for n8n (GHSA-6xcw-7xm6-48c6)",
       "severity": "High",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447851",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447937",
       "cves": [
-        "CVE-2026-69439"
+        "CVE-2026-86083"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for Microsoft.DiaSymReader.Native (GHSA-2j8r-3c22-8565)",
-      "severity": "High",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447850",
+      "title": "SCA: security update for n8n (GHSA-65xw-2v52-jhxc)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447936",
       "cves": [
-        "CVE-2026-69522"
+        "CVE-2026-86994"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for Microsoft.DiaSymReader.Native (GHSA-2j8r-3c22-8565)",
-      "severity": "High",
-      "date": "Wed, 09 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447850",
+      "title": "SCA: security update for n8n (GHSA-65xw-2v52-jhxc)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447936",
       "cves": [
-        "CVE-2026-69522"
+        "CVE-2026-86994"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for open-webui (GHSA-wpmr-8h3q-fwj7)",
+      "severity": "High",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447935",
+      "cves": [
+        "CVE-2026-87016"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for open-webui (GHSA-wpmr-8h3q-fwj7)",
+      "severity": "High",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447935",
+      "cves": [
+        "CVE-2026-87016"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for open-webui (GHSA-wjwr-xfp9-r66p)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447934",
+      "cves": [
+        "CVE-2026-87014"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for open-webui (GHSA-wjwr-xfp9-r66p)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447934",
+      "cves": [
+        "CVE-2026-87014"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/traefik/traefik/v2, github.com/traefik/traefik/v3 (GHSA-rf44-j88r-hh8c)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447933",
+      "cves": [
+        "CVE-2026-88011"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/traefik/traefik/v2, github.com/traefik/traefik/v3 (GHSA-rf44-j88r-hh8c)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447933",
+      "cves": [
+        "CVE-2026-88011"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @angular/common (GHSA-p297-fm68-3q8c)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447932",
+      "cves": [
+        "CVE-2026-88059"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @angular/common (GHSA-p297-fm68-3q8c)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447932",
+      "cves": [
+        "CVE-2026-88059"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-35jj-42hp-8gmq)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447931",
+      "cves": [
+        "CVE-2026-86077"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-35jj-42hp-8gmq)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447931",
+      "cves": [
+        "CVE-2026-86077"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for open-webui (GHSA-v39v-59xw-j98g)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447930",
+      "cves": [
+        "CVE-2026-87012"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for open-webui (GHSA-v39v-59xw-j98g)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447930",
+      "cves": [
+        "CVE-2026-87012"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-pq6c-vh67-xpm3)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447929",
+      "cves": [
+        "CVE-2026-86993"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-pq6c-vh67-xpm3)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447929",
+      "cves": [
+        "CVE-2026-86993"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for open-webui (GHSA-3g9q-v48f-hh9w)",
+      "severity": "High",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447928",
+      "cves": [
+        "CVE-2026-87011"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for open-webui (GHSA-3g9q-v48f-hh9w)",
+      "severity": "High",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447928",
+      "cves": [
+        "CVE-2026-87011"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-f2cp-m7mv-8jpv)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447927",
+      "cves": [
+        "CVE-2026-86079"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for n8n (GHSA-f2cp-m7mv-8jpv)",
+      "severity": "Medium",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447927",
+      "cves": [
+        "CVE-2026-86079"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/rclone/rclone (GHSA-xwwr-4h3p-r22c)",
+      "severity": "Critical",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/447926",
+      "cves": [
+        "CVE-2026-88018"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/rclone/rclone (GHSA-xwwr-4h3p-r22c)",
+      "severity": "Critical",
+      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/447926",
+      "cves": [
+        "CVE-2026-88018"
       ]
     }
   ]
