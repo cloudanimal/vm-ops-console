@@ -1,10 +1,58 @@
 {
-  "updated": "2026-09-11",
+  "updated": "2026-09-12",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
+    {
+      "id": "344993",
+      "title": "Fedora 43 : srt (2026-dfc8680f21)",
+      "severity": "High",
+      "date": "Sat, 12 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344993",
+      "cves": []
+    },
+    {
+      "id": "344992",
+      "title": "Fedora 43 : bluez (2026-6ed52ea50e)",
+      "severity": "Critical",
+      "date": "Sat, 12 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344992",
+      "cves": []
+    },
+    {
+      "id": "344991",
+      "title": "Fedora 44 : nagios-plugins (2026-c2fbd942bc)",
+      "severity": "High",
+      "date": "Sat, 12 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344991",
+      "cves": []
+    },
+    {
+      "id": "344990",
+      "title": "Fedora 44 : mingw-expat (2026-5660612c34)",
+      "severity": "High",
+      "date": "Sat, 12 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344990",
+      "cves": []
+    },
+    {
+      "id": "344989",
+      "title": "Fedora 43 : nagios-plugins (2026-7ac5fb031f)",
+      "severity": "High",
+      "date": "Sat, 12 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344989",
+      "cves": []
+    },
+    {
+      "id": "344988",
+      "title": "Fedora 43 : mingw-expat (2026-4a2ee61320)",
+      "severity": "High",
+      "date": "Sat, 12 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/344988",
+      "cves": []
+    },
     {
       "id": null,
       "title": "SCA: security update for psd-tools (GHSA-2rmg-vrx8-9j2f)",
@@ -543,66 +591,6 @@
       "link": "https://www.tenable.com/plugins/container-security/447929",
       "cves": [
         "CVE-2026-86993"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for open-webui (GHSA-3g9q-v48f-hh9w)",
-      "severity": "High",
-      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447928",
-      "cves": [
-        "CVE-2026-87011"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for open-webui (GHSA-3g9q-v48f-hh9w)",
-      "severity": "High",
-      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447928",
-      "cves": [
-        "CVE-2026-87011"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for n8n (GHSA-f2cp-m7mv-8jpv)",
-      "severity": "Medium",
-      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447927",
-      "cves": [
-        "CVE-2026-86079"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for n8n (GHSA-f2cp-m7mv-8jpv)",
-      "severity": "Medium",
-      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447927",
-      "cves": [
-        "CVE-2026-86079"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/rclone/rclone (GHSA-xwwr-4h3p-r22c)",
-      "severity": "Critical",
-      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/447926",
-      "cves": [
-        "CVE-2026-88018"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/rclone/rclone (GHSA-xwwr-4h3p-r22c)",
-      "severity": "Critical",
-      "date": "Fri, 11 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/447926",
-      "cves": [
-        "CVE-2026-88018"
       ]
     }
   ]
