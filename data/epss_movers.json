@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-13",
+  "updated": "2026-09-14",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-13",
-  "previous_date": "2026-09-06",
+  "current_date": "2026-09-14",
+  "previous_date": "2026-09-07",
   "risers": [
     {
       "id": "CVE-2026-20079",
@@ -31,13 +31,6 @@
       "prev": 0.15038,
       "delta": 0.22675,
       "name": "Apache Tika PDF parser module: XXE vulnerability in PDFParser's handling of XFA"
-    },
-    {
-      "id": "CVE-2019-19844",
-      "now": 0.53561,
-      "prev": 0.35052,
-      "delta": 0.18509,
-      "name": "Django before 1.11.27, 2.x before 2.2.9, and 3.x before 3.0.1 allows account takeover. A suitably crafted emai"
     },
     {
       "id": "CVE-2003-0542",
@@ -75,13 +68,6 @@
       "name": "The TOTVS Fluig platform allows path traversal through the parameter \"file = .. /\" encoded in base64. This aff"
     },
     {
-      "id": "CVE-2022-26258",
-      "now": 0.91981,
-      "prev": 0.80377,
-      "delta": 0.11604,
-      "name": "D-Link DIR-820L 1.05B03 was discovered to contain remote command execution (RCE) vulnerability via HTTP POST t"
-    },
-    {
       "id": "CVE-2026-55040",
       "now": 0.50585,
       "prev": 0.39652,
@@ -94,20 +80,6 @@
       "prev": 0.8442,
       "delta": 0.10438,
       "name": "Zyxel USG/ZyWALL series firmware"
-    },
-    {
-      "id": "CVE-2025-5473",
-      "now": 0.23483,
-      "prev": 0.13808,
-      "delta": 0.09675,
-      "name": "GIMP ICO File Parsing Integer Overflow Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2023-3959",
-      "now": 0.48765,
-      "prev": 0.40396,
-      "delta": 0.08369,
-      "name": "Zavio IP Camera Stack-Based Buffer Overflow"
     },
     {
       "id": "CVE-2021-22146",
@@ -138,13 +110,6 @@
       "name": "SonicWall SMA1000"
     },
     {
-      "id": "CVE-2025-34511",
-      "now": 0.22318,
-      "prev": 0.15621,
-      "delta": 0.06697,
-      "name": "Sitecore PowerShell Extension RCE via Unrestricted Upload"
-    },
-    {
       "id": "CVE-2018-15982",
       "now": 0.89146,
       "prev": 0.82456,
@@ -173,11 +138,11 @@
       "name": "FactoryTalk View Machine Edition Vulnerable to Remote Code Execution"
     },
     {
-      "id": "CVE-2023-37941",
-      "now": 0.35455,
-      "prev": 0.2944,
-      "delta": 0.06015,
-      "name": "Apache Superset: Metadata db write access can lead to remote code execution"
+      "id": "CVE-2006-5302",
+      "now": 0.15591,
+      "prev": 0.09644,
+      "delta": 0.05947,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in Redaction System 1.0000 allow remote attackers to execut"
     },
     {
       "id": "CVE-2014-100005",
@@ -213,6 +178,41 @@
       "prev": 0.17873,
       "delta": 0.05312,
       "name": "Windows KDC Proxy Service (KPSSVC) Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2023-4528",
+      "now": 0.3186,
+      "prev": 0.27069,
+      "delta": 0.04791,
+      "name": "JSCAPE MFT Server Unsafe Deserialization on Management Port"
+    },
+    {
+      "id": "CVE-2019-25224",
+      "now": 0.21415,
+      "prev": 0.16682,
+      "delta": 0.04733,
+      "name": "WP Database Backup < 5.2 - Unauthenticated OS Command Injection"
+    },
+    {
+      "id": "CVE-2022-2863",
+      "now": 0.25286,
+      "prev": 0.20668,
+      "delta": 0.04618,
+      "name": "WPvivid Backup < 0.9.76 - Admin+ Arbitrary File Read"
+    },
+    {
+      "id": "CVE-2021-34730",
+      "now": 0.185,
+      "prev": 0.13941,
+      "delta": 0.04559,
+      "name": "Cisco Small Business RV110W, RV130, RV130W, and RV215W Routers Remote Command Execution an"
+    },
+    {
+      "id": "CVE-2010-0308",
+      "now": 0.27347,
+      "prev": 0.22858,
+      "delta": 0.04489,
+      "name": "lib/rfc1035.c in Squid 2.x, 3.0 through 3.0.STABLE22, and 3.1 through 3.1.0.15 allows remote attackers to caus"
     }
   ],
   "newly_high": [
@@ -229,13 +229,6 @@
       "prev": 0.30045,
       "delta": 0.34268,
       "name": "SimpleHelp Authentication Bypass via Missing OIDC JWT Signature Verification"
-    },
-    {
-      "id": "CVE-2019-19844",
-      "now": 0.53561,
-      "prev": 0.35052,
-      "delta": 0.18509,
-      "name": "Django before 1.11.27, 2.x before 2.2.9, and 3.x before 3.0.1 allows account takeover. A suitably crafted emai"
     },
     {
       "id": "CVE-2025-5301",
@@ -259,11 +252,18 @@
       "name": "Windows TCP/IP Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2025-41646",
-      "now": 0.51548,
-      "prev": 0.49051,
-      "delta": 0.02497,
-      "name": "RevPi Webstatus application is vulnerable to an authentication bypass"
+      "id": "CVE-2021-35621",
+      "now": 0.50018,
+      "prev": 0.47845,
+      "delta": 0.02173,
+      "name": "Oracle Corporation MySQL Cluster"
+    },
+    {
+      "id": "CVE-2020-8010",
+      "now": 0.50717,
+      "prev": 0.48665,
+      "delta": 0.02052,
+      "name": "CA Technologies - A Broadcom Company CA Unified Infrastructure Management (Nimsoft/UIM)"
     },
     {
       "id": "CVE-2025-40598",
