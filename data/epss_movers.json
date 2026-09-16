@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-15",
+  "updated": "2026-09-16",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-15",
-  "previous_date": "2026-09-08",
+  "current_date": "2026-09-16",
+  "previous_date": "2026-09-09",
   "risers": [
     {
       "id": "CVE-2026-20079",
@@ -26,6 +26,13 @@
       "name": "Apache Tika PDF parser module: XXE vulnerability in PDFParser's handling of XFA"
     },
     {
+      "id": "CVE-2026-1281",
+      "now": 0.98487,
+      "prev": 0.81788,
+      "delta": 0.16699,
+      "name": "Ivanti Endpoint Manager Mobile"
+    },
+    {
       "id": "CVE-2025-5301",
       "now": 0.62356,
       "prev": 0.46099,
@@ -47,6 +54,13 @@
       "name": "Paperclip Vulnerable to Unauthenticated Remote Code Execution via Import Authorization Byp"
     },
     {
+      "id": "CVE-2026-1340",
+      "now": 0.98592,
+      "prev": 0.862,
+      "delta": 0.12392,
+      "name": "Ivanti Endpoint Manager Mobile"
+    },
+    {
       "id": "CVE-2020-29134",
       "now": 0.27184,
       "prev": 0.15025,
@@ -59,6 +73,20 @@
       "prev": 0.39652,
       "delta": 0.10933,
       "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
+    },
+    {
+      "id": "CVE-2026-59726",
+      "now": 0.16428,
+      "prev": 0.06883,
+      "delta": 0.09545,
+      "name": "Ruflo: Unauthenticated RCE in MCP bridge default docker-compose deployment"
+    },
+    {
+      "id": "CVE-2022-24785",
+      "now": 0.13904,
+      "prev": 0.0552,
+      "delta": 0.08384,
+      "name": "Path Traversal in Moment.js"
     },
     {
       "id": "CVE-2021-22146",
@@ -82,13 +110,6 @@
       "name": "Apache Tika core, Apache Tika parsers, Apache Tika PDF parser module: Update to CVE-2025-5"
     },
     {
-      "id": "CVE-2018-15982",
-      "now": 0.89146,
-      "prev": 0.81971,
-      "delta": 0.07175,
-      "name": "Flash Player versions 31.0.0.153 and earlier, and 31.0.0.108 and earlier have a use after free vulnerability. "
-    },
-    {
       "id": "CVE-2026-41948",
       "now": 0.14453,
       "prev": 0.0739,
@@ -96,11 +117,11 @@
       "name": "Dify v1.14.1 Path Traversal via Plugin Daemon Internal API Access"
     },
     {
-      "id": "CVE-2026-83549",
-      "now": 0.08505,
-      "prev": 0.01625,
-      "delta": 0.0688,
-      "name": "SonicWall SMA1000"
+      "id": "CVE-2016-0956",
+      "now": 0.51151,
+      "prev": 0.44533,
+      "delta": 0.06618,
+      "name": "The Servlets Post component 2.3.6 in Apache Sling, as used in Adobe Experience Manager 5.6.1, 6.0.0, and 6.1.0"
     },
     {
       "id": "CVE-2023-39780",
@@ -145,6 +166,13 @@
       "name": "Microsoft SharePoint Server Remote Code Execution Vulnerability"
     },
     {
+      "id": "CVE-2026-0768",
+      "now": 0.07669,
+      "prev": 0.02261,
+      "delta": 0.05408,
+      "name": "Langflow code Code Injection Remote Code Execution Vulnerability"
+    },
+    {
       "id": "CVE-2022-47949",
       "now": 0.22265,
       "prev": 0.16888,
@@ -185,34 +213,6 @@
       "prev": 0.16682,
       "delta": 0.04733,
       "name": "WP Database Backup < 5.2 - Unauthenticated OS Command Injection"
-    },
-    {
-      "id": "CVE-2021-34730",
-      "now": 0.185,
-      "prev": 0.13831,
-      "delta": 0.04669,
-      "name": "Cisco Small Business RV110W, RV130, RV130W, and RV215W Routers Remote Command Execution an"
-    },
-    {
-      "id": "CVE-2022-2863",
-      "now": 0.25286,
-      "prev": 0.20668,
-      "delta": 0.04618,
-      "name": "WPvivid Backup < 0.9.76 - Admin+ Arbitrary File Read"
-    },
-    {
-      "id": "CVE-2024-43425",
-      "now": 0.87363,
-      "prev": 0.83122,
-      "delta": 0.04241,
-      "name": "Moodle: remote code execution via calculated question types"
-    },
-    {
-      "id": "CVE-2026-83548",
-      "now": 0.04667,
-      "prev": 0.0071,
-      "delta": 0.03957,
-      "name": "SonicWall SMA1000"
     }
   ],
   "newly_high": [
@@ -252,11 +252,25 @@
       "name": "Windows TCP/IP Remote Code Execution Vulnerability"
     },
     {
+      "id": "CVE-2016-0956",
+      "now": 0.51151,
+      "prev": 0.44533,
+      "delta": 0.06618,
+      "name": "The Servlets Post component 2.3.6 in Apache Sling, as used in Adobe Experience Manager 5.6.1, 6.0.0, and 6.1.0"
+    },
+    {
       "id": "CVE-2021-35621",
       "now": 0.50018,
       "prev": 0.47845,
       "delta": 0.02173,
       "name": "Oracle Corporation MySQL Cluster"
+    },
+    {
+      "id": "CVE-2025-54782",
+      "now": 0.51324,
+      "prev": 0.49181,
+      "delta": 0.02143,
+      "name": "@nestjs/devtools-integration's CSRF to Sandbox Escape Allows for RCE against JS Developers"
     },
     {
       "id": "CVE-2020-8010",
@@ -271,20 +285,6 @@
       "prev": 0.48728,
       "delta": 0.01961,
       "name": "SonicWall SMA 100 Series"
-    },
-    {
-      "id": "CVE-2025-54782",
-      "now": 0.51324,
-      "prev": 0.49994,
-      "delta": 0.0133,
-      "name": "@nestjs/devtools-integration's CSRF to Sandbox Escape Allows for RCE against JS Developers"
-    },
-    {
-      "id": "CVE-2023-34124",
-      "now": 0.50195,
-      "prev": 0.49077,
-      "delta": 0.01118,
-      "name": "SonicWall GMS"
     },
     {
       "id": "CVE-2022-36633",
