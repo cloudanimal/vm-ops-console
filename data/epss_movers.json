@@ -1,16 +1,9 @@
 {
-  "updated": "2026-09-16",
+  "updated": "2026-09-17",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-16",
-  "previous_date": "2026-09-09",
+  "current_date": "2026-09-17",
+  "previous_date": "2026-09-10",
   "risers": [
-    {
-      "id": "CVE-2026-20079",
-      "now": 0.75752,
-      "prev": 0.35946,
-      "delta": 0.39806,
-      "name": "Cisco Secure Firewall Management Center Authentication Bypass Remote Code Execution Vulner"
-    },
     {
       "id": "CVE-2026-48558",
       "now": 0.64313,
@@ -19,17 +12,10 @@
       "name": "SimpleHelp Authentication Bypass via Missing OIDC JWT Signature Verification"
     },
     {
-      "id": "CVE-2025-54988",
-      "now": 0.37713,
-      "prev": 0.15038,
-      "delta": 0.22675,
-      "name": "Apache Tika PDF parser module: XXE vulnerability in PDFParser's handling of XFA"
-    },
-    {
       "id": "CVE-2026-1281",
-      "now": 0.98487,
+      "now": 0.98575,
       "prev": 0.81788,
-      "delta": 0.16699,
+      "delta": 0.16787,
       "name": "Ivanti Endpoint Manager Mobile"
     },
     {
@@ -55,17 +41,10 @@
     },
     {
       "id": "CVE-2026-1340",
-      "now": 0.98592,
+      "now": 0.98676,
       "prev": 0.862,
-      "delta": 0.12392,
+      "delta": 0.12476,
       "name": "Ivanti Endpoint Manager Mobile"
-    },
-    {
-      "id": "CVE-2020-29134",
-      "now": 0.27184,
-      "prev": 0.15025,
-      "delta": 0.12159,
-      "name": "The TOTVS Fluig platform allows path traversal through the parameter \"file = .. /\" encoded in base64. This aff"
     },
     {
       "id": "CVE-2026-55040",
@@ -87,27 +66,6 @@
       "prev": 0.0552,
       "delta": 0.08384,
       "name": "Path Traversal in Moment.js"
-    },
-    {
-      "id": "CVE-2021-22146",
-      "now": 0.35781,
-      "prev": 0.27788,
-      "delta": 0.07993,
-      "name": "All versions of Elastic Cloud Enterprise has the Elasticsearch \u201canonymous\u201d user enabled by default in deployed"
-    },
-    {
-      "id": "CVE-2022-34718",
-      "now": 0.54423,
-      "prev": 0.46601,
-      "delta": 0.07822,
-      "name": "Windows TCP/IP Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2025-66516",
-      "now": 0.87688,
-      "prev": 0.80336,
-      "delta": 0.07352,
-      "name": "Apache Tika core, Apache Tika parsers, Apache Tika PDF parser module: Update to CVE-2025-5"
     },
     {
       "id": "CVE-2026-41948",
@@ -136,6 +94,13 @@
       "prev": 0.10974,
       "delta": 0.063,
       "name": "FactoryTalk View Machine Edition Vulnerable to Remote Code Execution"
+    },
+    {
+      "id": "CVE-2015-8605",
+      "now": 0.82728,
+      "prev": 0.7645,
+      "delta": 0.06278,
+      "name": "ISC DHCP 4.x before 4.1-ESV-R12-P1, 4.2.x, and 4.3.x before 4.3.3-P1 allows remote attackers to cause a denial"
     },
     {
       "id": "CVE-2006-5392",
@@ -213,16 +178,44 @@
       "prev": 0.16682,
       "delta": 0.04733,
       "name": "WP Database Backup < 5.2 - Unauthenticated OS Command Injection"
+    },
+    {
+      "id": "CVE-2021-34730",
+      "now": 0.185,
+      "prev": 0.13831,
+      "delta": 0.04669,
+      "name": "Cisco Small Business RV110W, RV130, RV130W, and RV215W Routers Remote Command Execution an"
+    },
+    {
+      "id": "CVE-2022-2863",
+      "now": 0.25286,
+      "prev": 0.20668,
+      "delta": 0.04618,
+      "name": "WPvivid Backup < 0.9.76 - Admin+ Arbitrary File Read"
+    },
+    {
+      "id": "CVE-2009-1904",
+      "now": 0.12775,
+      "prev": 0.08375,
+      "delta": 0.044,
+      "name": "The BigDecimal library in Ruby 1.8.6 before p369 and 1.8.7 before p173 allows context-dependent attackers to c"
+    },
+    {
+      "id": "CVE-2024-43425",
+      "now": 0.87363,
+      "prev": 0.83122,
+      "delta": 0.04241,
+      "name": "Moodle: remote code execution via calculated question types"
+    },
+    {
+      "id": "CVE-2026-1492",
+      "now": 0.27989,
+      "prev": 0.24229,
+      "delta": 0.0376,
+      "name": "User Registration & Membership <= 5.1.2 - Unauthenticated Privilege Escalation via Members"
     }
   ],
   "newly_high": [
-    {
-      "id": "CVE-2026-20079",
-      "now": 0.75752,
-      "prev": 0.35946,
-      "delta": 0.39806,
-      "name": "Cisco Secure Firewall Management Center Authentication Bypass Remote Code Execution Vulner"
-    },
     {
       "id": "CVE-2026-48558",
       "now": 0.64313,
@@ -243,13 +236,6 @@
       "prev": 0.39652,
       "delta": 0.10933,
       "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2022-34718",
-      "now": 0.54423,
-      "prev": 0.46601,
-      "delta": 0.07822,
-      "name": "Windows TCP/IP Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2016-0956",
@@ -285,13 +271,6 @@
       "prev": 0.48728,
       "delta": 0.01961,
       "name": "SonicWall SMA 100 Series"
-    },
-    {
-      "id": "CVE-2022-36633",
-      "now": 0.50275,
-      "prev": 0.49476,
-      "delta": 0.00799,
-      "name": "Teleport 9.3.6 is vulnerable to Command injection leading to Remote Code Execution. An attacker can craft a ma"
     }
   ]
 }
