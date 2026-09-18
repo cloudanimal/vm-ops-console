@@ -1,15 +1,15 @@
 {
-  "updated": "2026-09-17",
+  "updated": "2026-09-18",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-17",
-  "previous_date": "2026-09-10",
+  "current_date": "2026-09-18",
+  "previous_date": "2026-09-11",
   "risers": [
     {
-      "id": "CVE-2026-48558",
-      "now": 0.64313,
-      "prev": 0.30045,
-      "delta": 0.34268,
-      "name": "SimpleHelp Authentication Bypass via Missing OIDC JWT Signature Verification"
+      "id": "CVE-2013-5223",
+      "now": 0.50833,
+      "prev": 0.33567,
+      "delta": 0.17266,
+      "name": "Multiple cross-site scripting (XSS) vulnerabilities in D-Link DSL-2760U Gateway (Rev. E1) allow remote authent"
     },
     {
       "id": "CVE-2026-1281",
@@ -33,25 +33,11 @@
       "name": "Printer web page invalid command execution"
     },
     {
-      "id": "CVE-2026-41679",
-      "now": 0.18852,
-      "prev": 0.04673,
-      "delta": 0.14179,
-      "name": "Paperclip Vulnerable to Unauthenticated Remote Code Execution via Import Authorization Byp"
-    },
-    {
       "id": "CVE-2026-1340",
       "now": 0.98676,
       "prev": 0.862,
       "delta": 0.12476,
       "name": "Ivanti Endpoint Manager Mobile"
-    },
-    {
-      "id": "CVE-2026-55040",
-      "now": 0.50585,
-      "prev": 0.39652,
-      "delta": 0.10933,
-      "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
     },
     {
       "id": "CVE-2026-59726",
@@ -66,6 +52,13 @@
       "prev": 0.0552,
       "delta": 0.08384,
       "name": "Path Traversal in Moment.js"
+    },
+    {
+      "id": "CVE-2025-34511",
+      "now": 0.29814,
+      "prev": 0.22318,
+      "delta": 0.07496,
+      "name": "Sitecore PowerShell Extension RCE via Unrestricted Upload"
     },
     {
       "id": "CVE-2026-41948",
@@ -103,6 +96,13 @@
       "name": "ISC DHCP 4.x before 4.1-ESV-R12-P1, 4.2.x, and 4.3.x before 4.3.3-P1 allows remote attackers to cause a denial"
     },
     {
+      "id": "CVE-2025-34510",
+      "now": 0.24299,
+      "prev": 0.18035,
+      "delta": 0.06264,
+      "name": "Sitecore XM, XC, and XP Post-Auth RCE via Zip Slip"
+    },
+    {
       "id": "CVE-2006-5392",
       "now": 0.16031,
       "prev": 0.09923,
@@ -117,27 +117,6 @@
       "name": "Multiple PHP remote file inclusion vulnerabilities in Redaction System 1.0000 allow remote attackers to execut"
     },
     {
-      "id": "CVE-2014-100005",
-      "now": 0.48146,
-      "prev": 0.42414,
-      "delta": 0.05732,
-      "name": "Multiple cross-site request forgery (CSRF) vulnerabilities in D-Link DIR-600 router (rev. Bx) with firmware be"
-    },
-    {
-      "id": "CVE-2025-47166",
-      "now": 0.2116,
-      "prev": 0.15666,
-      "delta": 0.05494,
-      "name": "Microsoft SharePoint Server Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2026-0768",
-      "now": 0.07669,
-      "prev": 0.02261,
-      "delta": 0.05408,
-      "name": "Langflow code Code Injection Remote Code Execution Vulnerability"
-    },
-    {
       "id": "CVE-2022-47949",
       "now": 0.22265,
       "prev": 0.16888,
@@ -145,25 +124,18 @@
       "name": "The Nintendo NetworkBuffer class, as used in Animal Crossing: New Horizons before 2.0.6 and other products, al"
     },
     {
+      "id": "CVE-2026-0768",
+      "now": 0.07669,
+      "prev": 0.0231,
+      "delta": 0.05359,
+      "name": "Langflow code Code Injection Remote Code Execution Vulnerability"
+    },
+    {
       "id": "CVE-2024-32030",
       "now": 0.39428,
       "prev": 0.34085,
       "delta": 0.05343,
       "name": "Remote code execution via JNDI resolution in JMX metrics collection in Kafka UI"
-    },
-    {
-      "id": "CVE-2025-47163",
-      "now": 0.20455,
-      "prev": 0.15131,
-      "delta": 0.05324,
-      "name": "Microsoft SharePoint Server Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2025-33071",
-      "now": 0.23185,
-      "prev": 0.17873,
-      "delta": 0.05312,
-      "name": "Windows KDC Proxy Service (KPSSVC) Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2026-35029",
@@ -175,8 +147,8 @@
     {
       "id": "CVE-2019-25224",
       "now": 0.21415,
-      "prev": 0.16682,
-      "delta": 0.04733,
+      "prev": 0.16552,
+      "delta": 0.04863,
       "name": "WP Database Backup < 5.2 - Unauthenticated OS Command Injection"
     },
     {
@@ -208,20 +180,48 @@
       "name": "Moodle: remote code execution via calculated question types"
     },
     {
-      "id": "CVE-2026-1492",
-      "now": 0.27989,
-      "prev": 0.24229,
-      "delta": 0.0376,
-      "name": "User Registration & Membership <= 5.1.2 - Unauthenticated Privilege Escalation via Members"
+      "id": "CVE-2025-12420",
+      "now": 0.53188,
+      "prev": 0.49059,
+      "delta": 0.04129,
+      "name": "Unauthenticated Privilege Escalation in ServiceNow AI Platform"
+    },
+    {
+      "id": "CVE-2025-34508",
+      "now": 0.73226,
+      "prev": 0.69099,
+      "delta": 0.04127,
+      "name": "ZendTo < 6.15-8 Path Traversal"
+    },
+    {
+      "id": "CVE-2026-59310",
+      "now": 0.49675,
+      "prev": 0.45878,
+      "delta": 0.03797,
+      "name": "vCenter directory-traversal vulnerability"
+    },
+    {
+      "id": "CVE-2016-6808",
+      "now": 0.22685,
+      "prev": 0.18989,
+      "delta": 0.03696,
+      "name": "Buffer overflow in Apache Tomcat Connectors (mod_jk) before 1.2.42."
+    },
+    {
+      "id": "CVE-2006-0097",
+      "now": 0.12248,
+      "prev": 0.08572,
+      "delta": 0.03676,
+      "name": "Stack-based buffer overflow in the create_named_pipe function in libmysql.c in PHP 4.3.10 and 4.4.x before 4.4"
     }
   ],
   "newly_high": [
     {
-      "id": "CVE-2026-48558",
-      "now": 0.64313,
-      "prev": 0.30045,
-      "delta": 0.34268,
-      "name": "SimpleHelp Authentication Bypass via Missing OIDC JWT Signature Verification"
+      "id": "CVE-2013-5223",
+      "now": 0.50833,
+      "prev": 0.33567,
+      "delta": 0.17266,
+      "name": "Multiple cross-site scripting (XSS) vulnerabilities in D-Link DSL-2760U Gateway (Rev. E1) allow remote authent"
     },
     {
       "id": "CVE-2025-5301",
@@ -231,18 +231,18 @@
       "name": "Reflected Cross-Site Scripting in ONLYOFFICE Docs (DocumentServer)"
     },
     {
-      "id": "CVE-2026-55040",
-      "now": 0.50585,
-      "prev": 0.39652,
-      "delta": 0.10933,
-      "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
-    },
-    {
       "id": "CVE-2016-0956",
       "now": 0.51151,
       "prev": 0.44533,
       "delta": 0.06618,
       "name": "The Servlets Post component 2.3.6 in Apache Sling, as used in Adobe Experience Manager 5.6.1, 6.0.0, and 6.1.0"
+    },
+    {
+      "id": "CVE-2025-12420",
+      "now": 0.53188,
+      "prev": 0.49059,
+      "delta": 0.04129,
+      "name": "Unauthenticated Privilege Escalation in ServiceNow AI Platform"
     },
     {
       "id": "CVE-2021-35621",

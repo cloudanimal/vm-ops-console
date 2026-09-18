@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-17",
-  "total": 1713,
+  "updated": "2026-09-18",
+  "total": 1715,
   "ransomware_count": 360,
   "by_year": {
     "2021": 311,
@@ -8,7 +8,7 @@
     "2023": 187,
     "2024": 186,
     "2025": 245,
-    "2026": 229
+    "2026": 231
   },
   "top_vendors": [
     [
@@ -44,12 +44,12 @@
       35
     ],
     [
-      "Fortinet",
+      "Linux",
       30
     ],
     [
-      "Linux",
-      28
+      "Fortinet",
+      30
     ],
     [
       "D-Link",
@@ -114,12 +114,12 @@
       33
     ],
     [
-      "Microsoft Office",
-      29
+      "Linux Kernel",
+      30
     ],
     [
-      "Linux Kernel",
-      28
+      "Microsoft Office",
+      29
     ],
     [
       "Microsoft Win32k",
