@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-19",
+  "updated": "2026-09-20",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-19",
-  "previous_date": "2026-09-12",
+  "current_date": "2026-09-20",
+  "previous_date": "2026-09-13",
   "risers": [
     {
       "id": "CVE-2021-42392",
@@ -26,20 +26,6 @@
       "name": "Ivanti Endpoint Manager Mobile"
     },
     {
-      "id": "CVE-2025-5301",
-      "now": 0.62356,
-      "prev": 0.46099,
-      "delta": 0.16257,
-      "name": "Reflected Cross-Site Scripting in ONLYOFFICE Docs (DocumentServer)"
-    },
-    {
-      "id": "CVE-2023-3710",
-      "now": 0.4904,
-      "prev": 0.33094,
-      "delta": 0.15946,
-      "name": "Printer web page invalid command execution"
-    },
-    {
       "id": "CVE-2024-42010",
       "now": 0.66661,
       "prev": 0.5281,
@@ -49,16 +35,9 @@
     {
       "id": "CVE-2026-85706",
       "now": 0.14563,
-      "prev": 0.01148,
-      "delta": 0.13415,
+      "prev": 0.01164,
+      "delta": 0.13399,
       "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') in GitLab"
-    },
-    {
-      "id": "CVE-2025-40598",
-      "now": 0.61877,
-      "prev": 0.48728,
-      "delta": 0.13149,
-      "name": "SonicWall SMA 100 Series"
     },
     {
       "id": "CVE-2026-1340",
@@ -66,6 +45,13 @@
       "prev": 0.862,
       "delta": 0.12476,
       "name": "Ivanti Endpoint Manager Mobile"
+    },
+    {
+      "id": "CVE-2025-40598",
+      "now": 0.61596,
+      "prev": 0.50689,
+      "delta": 0.10907,
+      "name": "SonicWall SMA 100 Series"
     },
     {
       "id": "CVE-2026-42018",
@@ -80,6 +66,13 @@
       "prev": 0.06883,
       "delta": 0.09545,
       "name": "Ruflo: Unauthenticated RCE in MCP bridge default docker-compose deployment"
+    },
+    {
+      "id": "CVE-2025-53778",
+      "now": 0.4762,
+      "prev": 0.38886,
+      "delta": 0.08734,
+      "name": "Windows NTLM Elevation of Privilege Vulnerability"
     },
     {
       "id": "CVE-2022-24785",
@@ -124,11 +117,11 @@
       "name": "The Servlets Post component 2.3.6 in Apache Sling, as used in Adobe Experience Manager 5.6.1, 6.0.0, and 6.1.0"
     },
     {
-      "id": "CVE-2023-2071",
-      "now": 0.17274,
-      "prev": 0.10974,
-      "delta": 0.063,
-      "name": "FactoryTalk View Machine Edition Vulnerable to Remote Code Execution"
+      "id": "CVE-2006-5392",
+      "now": 0.16455,
+      "prev": 0.09923,
+      "delta": 0.06532,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in OpenDock FullCore 4.4 and earlier allow remote attackers"
     },
     {
       "id": "CVE-2015-8605",
@@ -145,11 +138,11 @@
       "name": "Sitecore XM, XC, and XP Post-Auth RCE via Zip Slip"
     },
     {
-      "id": "CVE-2006-5392",
-      "now": 0.16031,
-      "prev": 0.09923,
-      "delta": 0.06108,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in OpenDock FullCore 4.4 and earlier allow remote attackers"
+      "id": "CVE-2014-7187",
+      "now": 0.64622,
+      "prev": 0.58462,
+      "delta": 0.0616,
+      "name": "Off-by-one error in the read_token_word function in parse.y in GNU Bash through 4.3 bash43-026 allows remote a"
     },
     {
       "id": "CVE-2025-2760",
@@ -167,10 +160,17 @@
     },
     {
       "id": "CVE-2026-0768",
-      "now": 0.07669,
+      "now": 0.07775,
       "prev": 0.0231,
-      "delta": 0.05359,
+      "delta": 0.05465,
       "name": "Langflow code Code Injection Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2014-6277",
+      "now": 0.69775,
+      "prev": 0.64326,
+      "delta": 0.05449,
+      "name": "GNU Bash through 4.3 bash43-026 does not properly parse function definitions in the values of environment vari"
     },
     {
       "id": "CVE-2024-32030",
@@ -187,6 +187,20 @@
       "name": "LiteLLM affected by privilege escalation via unrestricted proxy configuration endpoint"
     },
     {
+      "id": "CVE-2024-32640",
+      "now": 0.76558,
+      "prev": 0.71554,
+      "delta": 0.05004,
+      "name": "MasaCMS SQL Injection vulnerability"
+    },
+    {
+      "id": "CVE-2016-6433",
+      "now": 0.80696,
+      "prev": 0.7575,
+      "delta": 0.04946,
+      "name": "The Threat Management Console in Cisco Firepower Management Center 5.2.0 through 6.0.1 allows remote authentic"
+    },
+    {
       "id": "CVE-2018-1217",
       "now": 0.50874,
       "prev": 0.45957,
@@ -199,20 +213,6 @@
       "prev": 0.16552,
       "delta": 0.04863,
       "name": "WP Database Backup < 5.2 - Unauthenticated OS Command Injection"
-    },
-    {
-      "id": "CVE-2021-34730",
-      "now": 0.185,
-      "prev": 0.13831,
-      "delta": 0.04669,
-      "name": "Cisco Small Business RV110W, RV130, RV130W, and RV215W Routers Remote Command Execution an"
-    },
-    {
-      "id": "CVE-2022-2863",
-      "now": 0.25286,
-      "prev": 0.20668,
-      "delta": 0.04618,
-      "name": "WPvivid Backup < 0.9.76 - Admin+ Arbitrary File Read"
     }
   ],
   "newly_high": [
@@ -222,20 +222,6 @@
       "prev": 0.33567,
       "delta": 0.17266,
       "name": "Multiple cross-site scripting (XSS) vulnerabilities in D-Link DSL-2760U Gateway (Rev. E1) allow remote authent"
-    },
-    {
-      "id": "CVE-2025-5301",
-      "now": 0.62356,
-      "prev": 0.46099,
-      "delta": 0.16257,
-      "name": "Reflected Cross-Site Scripting in ONLYOFFICE Docs (DocumentServer)"
-    },
-    {
-      "id": "CVE-2025-40598",
-      "now": 0.61877,
-      "prev": 0.48728,
-      "delta": 0.13149,
-      "name": "SonicWall SMA 100 Series"
     },
     {
       "id": "CVE-2016-0956",
@@ -250,6 +236,13 @@
       "prev": 0.45957,
       "delta": 0.04917,
       "name": "Dell EMC Avamar, Integrated Data Protection Appliance"
+    },
+    {
+      "id": "CVE-2026-59310",
+      "now": 0.50377,
+      "prev": 0.45878,
+      "delta": 0.04499,
+      "name": "vCenter directory-traversal vulnerability"
     },
     {
       "id": "CVE-2025-12420",
