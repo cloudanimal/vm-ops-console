@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-21",
+  "updated": "2026-09-22",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-21",
-  "previous_date": "2026-09-14",
+  "current_date": "2026-09-22",
+  "previous_date": "2026-09-15",
   "risers": [
     {
       "id": "CVE-2026-58644",
@@ -12,151 +12,11 @@
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2018-11139",
-      "now": 0.77493,
-      "prev": 0.42917,
-      "delta": 0.34576,
-      "name": "The '/common/ajax_email_connection_test.php' script in the Quest KACE System Management Appliance 8.0.318 is a"
-    },
-    {
-      "id": "CVE-2018-11132",
-      "now": 0.52521,
-      "prev": 0.18285,
-      "delta": 0.34236,
-      "name": "In order to perform actions that require higher privileges, the Quest KACE System Management Appliance 8.0.318"
-    },
-    {
-      "id": "CVE-2018-8033",
-      "now": 0.59646,
-      "prev": 0.25743,
-      "delta": 0.33903,
-      "name": "Apache Software Foundation Apache OFBiz"
-    },
-    {
-      "id": "CVE-2017-3241",
-      "now": 0.62197,
-      "prev": 0.32839,
-      "delta": 0.29358,
-      "name": "Oracle Java SE"
-    },
-    {
-      "id": "CVE-2018-5925",
-      "now": 0.38896,
-      "prev": 0.10886,
-      "delta": 0.2801,
-      "name": "HP Inc. HP inkjet printers"
-    },
-    {
-      "id": "CVE-2019-13510",
-      "now": 0.39247,
-      "prev": 0.12042,
-      "delta": 0.27205,
-      "name": "Rockwell Automation Arena Simulation Software versions 16.00.00 and earlier"
-    },
-    {
-      "id": "CVE-2018-14665",
-      "now": 0.536,
-      "prev": 0.2704,
-      "delta": 0.2656,
-      "name": "A flaw was found in xorg-x11-server before 1.20.3. An incorrect permission check for -modulepath and -logfile "
-    },
-    {
-      "id": "CVE-2019-8953",
-      "now": 0.78349,
-      "prev": 0.52236,
-      "delta": 0.26113,
-      "name": "The HAProxy package before 0.59_16 for pfSense has XSS via the desc (aka Description) or table_actionsaclN par"
-    },
-    {
-      "id": "CVE-2018-11235",
-      "now": 0.74023,
-      "prev": 0.48752,
-      "delta": 0.25271,
-      "name": "In Git before 2.13.7, 2.14.x before 2.14.4, 2.15.x before 2.15.2, 2.16.x before 2.16.4, and 2.17.x before 2.17"
-    },
-    {
-      "id": "CVE-2018-4404",
-      "now": 0.37523,
-      "prev": 0.13919,
-      "delta": 0.23604,
-      "name": "In iOS before 11.4 and macOS High Sierra before 10.13.5, a memory corruption issue exists and was addressed wi"
-    },
-    {
-      "id": "CVE-2018-1323",
-      "now": 0.67359,
-      "prev": 0.46397,
-      "delta": 0.20962,
-      "name": "Apache Software Foundation Apache Tomcat Connectors"
-    },
-    {
-      "id": "CVE-2019-0221",
-      "now": 0.66484,
-      "prev": 0.45571,
-      "delta": 0.20913,
-      "name": "Apache Apache Tomcat"
-    },
-    {
-      "id": "CVE-2018-8011",
-      "now": 0.76646,
-      "prev": 0.56037,
-      "delta": 0.20609,
-      "name": "mod_md, DoS via Coredumps on specially crafted requests"
-    },
-    {
-      "id": "CVE-2017-18014",
-      "now": 0.22614,
-      "prev": 0.02307,
-      "delta": 0.20307,
-      "name": "An NC-25986 issue was discovered in the Logging subsystem of Sophos XG Firewall with SFOS before 17.0.3 MR3. A"
-    },
-    {
-      "id": "CVE-2018-4237",
-      "now": 0.33764,
-      "prev": 0.13749,
-      "delta": 0.20015,
-      "name": "An issue was discovered in certain Apple products. iOS before 11.4 is affected. macOS before 10.13.5 is affect"
-    },
-    {
       "id": "CVE-2021-42392",
       "now": 0.83176,
       "prev": 0.63211,
       "delta": 0.19965,
       "name": "h2database h2"
-    },
-    {
-      "id": "CVE-2019-12347",
-      "now": 0.7845,
-      "prev": 0.58576,
-      "delta": 0.19874,
-      "name": "In pfSense 2.4.4-p3, a stored XSS vulnerability occurs when attackers inject a payload into the Name or Descri"
-    },
-    {
-      "id": "CVE-2018-8897",
-      "now": 0.38295,
-      "prev": 0.18485,
-      "delta": 0.1981,
-      "name": "A statement in the System Programming Guide of the Intel 64 and IA-32 Architectures Software Developer's Manua"
-    },
-    {
-      "id": "CVE-2017-13861",
-      "now": 0.34682,
-      "prev": 0.14888,
-      "delta": 0.19794,
-      "name": "An issue was discovered in certain Apple products. iOS before 11.2 is affected. tvOS before 11.2 is affected. "
-    },
-    {
-      "id": "CVE-2018-0706",
-      "now": 0.68374,
-      "prev": 0.48688,
-      "delta": 0.19686,
-      "name": "QNAP Q'center Virtual Appliance"
-    },
-    {
-      "id": "CVE-2017-1000083",
-      "now": 0.68845,
-      "prev": 0.51076,
-      "delta": 0.17769,
-      "name": "backend/comics/comics-document.c (aka the comic book backend) in GNOME Evince before 3.24.1 allows remote atta"
     },
     {
       "id": "CVE-2013-5223",
@@ -166,13 +26,6 @@
       "name": "Multiple cross-site scripting (XSS) vulnerabilities in D-Link DSL-2760U Gateway (Rev. E1) allow remote authent"
     },
     {
-      "id": "CVE-2018-8474",
-      "now": 0.55354,
-      "prev": 0.38177,
-      "delta": 0.17177,
-      "name": "Microsoft Microsoft Lync"
-    },
-    {
       "id": "CVE-2026-1281",
       "now": 0.98575,
       "prev": 0.81788,
@@ -180,39 +33,186 @@
       "name": "Ivanti Endpoint Manager Mobile"
     },
     {
-      "id": "CVE-2016-3947",
-      "now": 0.30621,
-      "prev": 0.1462,
-      "delta": 0.16001,
-      "name": "Heap-based buffer overflow in the Icmp6::Recv function in icmp/Icmp6.cc in the pinger utility in Squid before "
+      "id": "CVE-2024-42010",
+      "now": 0.66661,
+      "prev": 0.5281,
+      "delta": 0.13851,
+      "name": "mod_css_styles in Roundcube through 1.5.7 and 1.6.x through 1.6.7 insufficiently filters Cascading Style Sheet"
     },
     {
-      "id": "CVE-2018-5711",
-      "now": 0.28717,
-      "prev": 0.13204,
-      "delta": 0.15513,
-      "name": "gd_gif_in.c in the GD Graphics Library (aka libgd), as used in PHP before 5.6.33, 7.0.x before 7.0.27, 7.1.x b"
+      "id": "CVE-2025-40598",
+      "now": 0.64314,
+      "prev": 0.50689,
+      "delta": 0.13625,
+      "name": "SonicWall SMA 100 Series"
     },
     {
-      "id": "CVE-2016-3227",
-      "now": 0.40557,
-      "prev": 0.25462,
-      "delta": 0.15095,
-      "name": "Use-after-free vulnerability in the DNS Server component in Microsoft Windows Server 2012 Gold and R2 allows r"
+      "id": "CVE-2026-1340",
+      "now": 0.98676,
+      "prev": 0.862,
+      "delta": 0.12476,
+      "name": "Ivanti Endpoint Manager Mobile"
     },
     {
-      "id": "CVE-2018-1000001",
-      "now": 0.28404,
-      "prev": 0.13368,
-      "delta": 0.15036,
-      "name": "In glibc 2.26 and earlier there is confusion in the usage of getcwd() by realpath() which can be used to write"
+      "id": "CVE-2024-36465",
+      "now": 0.39895,
+      "prev": 0.29502,
+      "delta": 0.10393,
+      "name": "SQL injection in Zabbix API"
     },
     {
-      "id": "CVE-2018-11218",
-      "now": 0.73691,
-      "prev": 0.59006,
-      "delta": 0.14685,
-      "name": "Memory Corruption was discovered in the cmsgpack library in the Lua subsystem in Redis before 3.2.12, 4.x befo"
+      "id": "CVE-2026-42018",
+      "now": 0.11038,
+      "prev": 0.0092,
+      "delta": 0.10118,
+      "name": "Anonymous user token generation exposure in JFrog Artifactory"
+    },
+    {
+      "id": "CVE-2023-41991",
+      "now": 0.1446,
+      "prev": 0.04547,
+      "delta": 0.09913,
+      "name": "Apple iOS and iPadOS"
+    },
+    {
+      "id": "CVE-2026-59726",
+      "now": 0.16428,
+      "prev": 0.06883,
+      "delta": 0.09545,
+      "name": "Ruflo: Unauthenticated RCE in MCP bridge default docker-compose deployment"
+    },
+    {
+      "id": "CVE-2025-6216",
+      "now": 0.47775,
+      "prev": 0.38527,
+      "delta": 0.09248,
+      "name": "Allegra calculateTokenExpDate Password Recovery Authentication Bypass Vulnerability"
+    },
+    {
+      "id": "CVE-2025-53778",
+      "now": 0.4762,
+      "prev": 0.38886,
+      "delta": 0.08734,
+      "name": "Windows NTLM Elevation of Privilege Vulnerability"
+    },
+    {
+      "id": "CVE-2022-24785",
+      "now": 0.13904,
+      "prev": 0.0552,
+      "delta": 0.08384,
+      "name": "Path Traversal in Moment.js"
+    },
+    {
+      "id": "CVE-2026-42016",
+      "now": 0.09058,
+      "prev": 0.00886,
+      "delta": 0.08172,
+      "name": "Incorrect authorization validation of user token in JFrog Artifactory allows Privilege Esc"
+    },
+    {
+      "id": "CVE-2025-34511",
+      "now": 0.29814,
+      "prev": 0.22318,
+      "delta": 0.07496,
+      "name": "Sitecore PowerShell Extension RCE via Unrestricted Upload"
+    },
+    {
+      "id": "CVE-2013-10059",
+      "now": 0.26572,
+      "prev": 0.1911,
+      "delta": 0.07462,
+      "name": "D-Link Routers tools_vct.htm OS Command Injection"
+    },
+    {
+      "id": "CVE-2026-86218",
+      "now": 0.07494,
+      "prev": 0.00744,
+      "delta": 0.0675,
+      "name": "pre-authentication remote code execution"
+    },
+    {
+      "id": "CVE-2023-41992",
+      "now": 0.0956,
+      "prev": 0.02918,
+      "delta": 0.06642,
+      "name": "Apple macOS"
+    },
+    {
+      "id": "CVE-2016-0956",
+      "now": 0.51151,
+      "prev": 0.44533,
+      "delta": 0.06618,
+      "name": "The Servlets Post component 2.3.6 in Apache Sling, as used in Adobe Experience Manager 5.6.1, 6.0.0, and 6.1.0"
+    },
+    {
+      "id": "CVE-2015-8605",
+      "now": 0.82728,
+      "prev": 0.7645,
+      "delta": 0.06278,
+      "name": "ISC DHCP 4.x before 4.1-ESV-R12-P1, 4.2.x, and 4.3.x before 4.3.3-P1 allows remote attackers to cause a denial"
+    },
+    {
+      "id": "CVE-2025-34510",
+      "now": 0.24299,
+      "prev": 0.18035,
+      "delta": 0.06264,
+      "name": "Sitecore XM, XC, and XP Post-Auth RCE via Zip Slip"
+    },
+    {
+      "id": "CVE-2006-5506",
+      "now": 0.16297,
+      "prev": 0.10092,
+      "delta": 0.06205,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in WiClear 0.10 allow remote attackers to execute arbitrary"
+    },
+    {
+      "id": "CVE-2014-7187",
+      "now": 0.64622,
+      "prev": 0.58462,
+      "delta": 0.0616,
+      "name": "Off-by-one error in the read_token_word function in parse.y in GNU Bash through 4.3 bash43-026 allows remote a"
+    },
+    {
+      "id": "CVE-2025-2760",
+      "now": 0.18759,
+      "prev": 0.12653,
+      "delta": 0.06106,
+      "name": "GIMP XWD File Parsing Integer Overflow Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2026-0768",
+      "now": 0.07775,
+      "prev": 0.0231,
+      "delta": 0.05465,
+      "name": "Langflow code Code Injection Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2014-6277",
+      "now": 0.69775,
+      "prev": 0.64326,
+      "delta": 0.05449,
+      "name": "GNU Bash through 4.3 bash43-026 does not properly parse function definitions in the values of environment vari"
+    },
+    {
+      "id": "CVE-2024-32640",
+      "now": 0.76558,
+      "prev": 0.71554,
+      "delta": 0.05004,
+      "name": "MasaCMS SQL Injection vulnerability"
+    },
+    {
+      "id": "CVE-2013-10048",
+      "now": 0.17052,
+      "prev": 0.12099,
+      "delta": 0.04953,
+      "name": "D-Link Devices command.php Unauthenticated RCE"
+    },
+    {
+      "id": "CVE-2016-6433",
+      "now": 0.80696,
+      "prev": 0.7575,
+      "delta": 0.04946,
+      "name": "The Threat Management Console in Cisco Firepower Management Center 5.2.0 through 6.0.1 allows remote authentic"
     }
   ],
   "newly_high": [
@@ -224,69 +224,6 @@
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2018-11139",
-      "now": 0.77493,
-      "prev": 0.42917,
-      "delta": 0.34576,
-      "name": "The '/common/ajax_email_connection_test.php' script in the Quest KACE System Management Appliance 8.0.318 is a"
-    },
-    {
-      "id": "CVE-2018-11132",
-      "now": 0.52521,
-      "prev": 0.18285,
-      "delta": 0.34236,
-      "name": "In order to perform actions that require higher privileges, the Quest KACE System Management Appliance 8.0.318"
-    },
-    {
-      "id": "CVE-2018-8033",
-      "now": 0.59646,
-      "prev": 0.25743,
-      "delta": 0.33903,
-      "name": "Apache Software Foundation Apache OFBiz"
-    },
-    {
-      "id": "CVE-2017-3241",
-      "now": 0.62197,
-      "prev": 0.32839,
-      "delta": 0.29358,
-      "name": "Oracle Java SE"
-    },
-    {
-      "id": "CVE-2018-14665",
-      "now": 0.536,
-      "prev": 0.2704,
-      "delta": 0.2656,
-      "name": "A flaw was found in xorg-x11-server before 1.20.3. An incorrect permission check for -modulepath and -logfile "
-    },
-    {
-      "id": "CVE-2018-11235",
-      "now": 0.74023,
-      "prev": 0.48752,
-      "delta": 0.25271,
-      "name": "In Git before 2.13.7, 2.14.x before 2.14.4, 2.15.x before 2.15.2, 2.16.x before 2.16.4, and 2.17.x before 2.17"
-    },
-    {
-      "id": "CVE-2018-1323",
-      "now": 0.67359,
-      "prev": 0.46397,
-      "delta": 0.20962,
-      "name": "Apache Software Foundation Apache Tomcat Connectors"
-    },
-    {
-      "id": "CVE-2019-0221",
-      "now": 0.66484,
-      "prev": 0.45571,
-      "delta": 0.20913,
-      "name": "Apache Apache Tomcat"
-    },
-    {
-      "id": "CVE-2018-0706",
-      "now": 0.68374,
-      "prev": 0.48688,
-      "delta": 0.19686,
-      "name": "QNAP Q'center Virtual Appliance"
-    },
-    {
       "id": "CVE-2013-5223",
       "now": 0.50833,
       "prev": 0.33567,
@@ -294,11 +231,18 @@
       "name": "Multiple cross-site scripting (XSS) vulnerabilities in D-Link DSL-2760U Gateway (Rev. E1) allow remote authent"
     },
     {
-      "id": "CVE-2018-8474",
-      "now": 0.55354,
-      "prev": 0.38177,
-      "delta": 0.17177,
-      "name": "Microsoft Microsoft Lync"
+      "id": "CVE-2016-0956",
+      "now": 0.51151,
+      "prev": 0.44533,
+      "delta": 0.06618,
+      "name": "The Servlets Post component 2.3.6 in Apache Sling, as used in Adobe Experience Manager 5.6.1, 6.0.0, and 6.1.0"
+    },
+    {
+      "id": "CVE-2018-1217",
+      "now": 0.50874,
+      "prev": 0.45957,
+      "delta": 0.04917,
+      "name": "Dell EMC Avamar, Integrated Data Protection Appliance"
     },
     {
       "id": "CVE-2026-59310",
@@ -313,13 +257,6 @@
       "prev": 0.49059,
       "delta": 0.04129,
       "name": "Unauthenticated Privilege Escalation in ServiceNow AI Platform"
-    },
-    {
-      "id": "CVE-2019-0768",
-      "now": 0.50789,
-      "prev": 0.48501,
-      "delta": 0.02288,
-      "name": "Microsoft Internet Explorer 11"
     }
   ]
 }
