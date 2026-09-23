@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-22",
+  "updated": "2026-09-23",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-22",
-  "previous_date": "2026-09-15",
+  "current_date": "2026-09-23",
+  "previous_date": "2026-09-16",
   "risers": [
     {
       "id": "CVE-2026-58644",
@@ -26,13 +26,6 @@
       "name": "Multiple cross-site scripting (XSS) vulnerabilities in D-Link DSL-2760U Gateway (Rev. E1) allow remote authent"
     },
     {
-      "id": "CVE-2026-1281",
-      "now": 0.98575,
-      "prev": 0.81788,
-      "delta": 0.16787,
-      "name": "Ivanti Endpoint Manager Mobile"
-    },
-    {
       "id": "CVE-2024-42010",
       "now": 0.66661,
       "prev": 0.5281,
@@ -45,13 +38,6 @@
       "prev": 0.50689,
       "delta": 0.13625,
       "name": "SonicWall SMA 100 Series"
-    },
-    {
-      "id": "CVE-2026-1340",
-      "now": 0.98676,
-      "prev": 0.862,
-      "delta": 0.12476,
-      "name": "Ivanti Endpoint Manager Mobile"
     },
     {
       "id": "CVE-2024-36465",
@@ -68,20 +54,6 @@
       "name": "Anonymous user token generation exposure in JFrog Artifactory"
     },
     {
-      "id": "CVE-2023-41991",
-      "now": 0.1446,
-      "prev": 0.04547,
-      "delta": 0.09913,
-      "name": "Apple iOS and iPadOS"
-    },
-    {
-      "id": "CVE-2026-59726",
-      "now": 0.16428,
-      "prev": 0.06883,
-      "delta": 0.09545,
-      "name": "Ruflo: Unauthenticated RCE in MCP bridge default docker-compose deployment"
-    },
-    {
       "id": "CVE-2025-6216",
       "now": 0.47775,
       "prev": 0.38527,
@@ -89,18 +61,18 @@
       "name": "Allegra calculateTokenExpDate Password Recovery Authentication Bypass Vulnerability"
     },
     {
+      "id": "CVE-2023-41991",
+      "now": 0.1338,
+      "prev": 0.04547,
+      "delta": 0.08833,
+      "name": "Apple iOS and iPadOS"
+    },
+    {
       "id": "CVE-2025-53778",
       "now": 0.4762,
       "prev": 0.38886,
       "delta": 0.08734,
       "name": "Windows NTLM Elevation of Privilege Vulnerability"
-    },
-    {
-      "id": "CVE-2022-24785",
-      "now": 0.13904,
-      "prev": 0.0552,
-      "delta": 0.08384,
-      "name": "Path Traversal in Moment.js"
     },
     {
       "id": "CVE-2026-42016",
@@ -132,17 +104,10 @@
     },
     {
       "id": "CVE-2023-41992",
-      "now": 0.0956,
+      "now": 0.09515,
       "prev": 0.02918,
-      "delta": 0.06642,
+      "delta": 0.06597,
       "name": "Apple macOS"
-    },
-    {
-      "id": "CVE-2016-0956",
-      "now": 0.51151,
-      "prev": 0.44533,
-      "delta": 0.06618,
-      "name": "The Servlets Post component 2.3.6 in Apache Sling, as used in Adobe Experience Manager 5.6.1, 6.0.0, and 6.1.0"
     },
     {
       "id": "CVE-2015-8605",
@@ -180,11 +145,11 @@
       "name": "GIMP XWD File Parsing Integer Overflow Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2026-0768",
-      "now": 0.07775,
-      "prev": 0.0231,
-      "delta": 0.05465,
-      "name": "Langflow code Code Injection Remote Code Execution Vulnerability"
+      "id": "CVE-2006-5517",
+      "now": 0.14701,
+      "prev": 0.09081,
+      "delta": 0.0562,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in Rhode Island Open Meetings Filing Application (OMFA) all"
     },
     {
       "id": "CVE-2014-6277",
@@ -192,6 +157,13 @@
       "prev": 0.64326,
       "delta": 0.05449,
       "name": "GNU Bash through 4.3 bash43-026 does not properly parse function definitions in the values of environment vari"
+    },
+    {
+      "id": "CVE-2023-43770",
+      "now": 0.6366,
+      "prev": 0.58483,
+      "delta": 0.05177,
+      "name": "Roundcube before 1.4.14, 1.5.x before 1.5.4, and 1.6.x before 1.6.3 allows XSS via text/plain e-mail messages "
     },
     {
       "id": "CVE-2024-32640",
@@ -213,6 +185,34 @@
       "prev": 0.7575,
       "delta": 0.04946,
       "name": "The Threat Management Console in Cisco Firepower Management Center 5.2.0 through 6.0.1 allows remote authentic"
+    },
+    {
+      "id": "CVE-2018-1217",
+      "now": 0.50874,
+      "prev": 0.45957,
+      "delta": 0.04917,
+      "name": "Dell EMC Avamar, Integrated Data Protection Appliance"
+    },
+    {
+      "id": "CVE-2021-23336",
+      "now": 0.40736,
+      "prev": 0.35963,
+      "delta": 0.04773,
+      "name": "Web Cache Poisoning"
+    },
+    {
+      "id": "CVE-2025-50154",
+      "now": 0.30217,
+      "prev": 0.25564,
+      "delta": 0.04653,
+      "name": "Microsoft Windows File Explorer Spoofing Vulnerability"
+    },
+    {
+      "id": "CVE-2026-59310",
+      "now": 0.50377,
+      "prev": 0.45878,
+      "delta": 0.04499,
+      "name": "vCenter directory-traversal vulnerability"
     }
   ],
   "newly_high": [
@@ -229,13 +229,6 @@
       "prev": 0.33567,
       "delta": 0.17266,
       "name": "Multiple cross-site scripting (XSS) vulnerabilities in D-Link DSL-2760U Gateway (Rev. E1) allow remote authent"
-    },
-    {
-      "id": "CVE-2016-0956",
-      "now": 0.51151,
-      "prev": 0.44533,
-      "delta": 0.06618,
-      "name": "The Servlets Post component 2.3.6 in Apache Sling, as used in Adobe Experience Manager 5.6.1, 6.0.0, and 6.1.0"
     },
     {
       "id": "CVE-2018-1217",

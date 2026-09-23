@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-22",
+  "updated": "2026-09-23",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,729 +7,604 @@
   "items": [
     {
       "id": null,
-      "title": "SCA: security update for RestrictedPython (GHSA-hp3v-5vw7-fx9w)",
+      "title": "SCA: security update for ca.uhn.hapi.fhir:org.hl7.fhir.r5, ca.uhn.hapi.fhir:org.hl7.fhir.validation, ca.uhn.hapi.fhir:org.hl7.fhir.validation.cli (GHSA-3w98-rrpr-fprr)",
       "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/448153",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/448266",
       "cves": [
-        "CVE-2026-76825"
+        "CVE-2026-81875"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for RestrictedPython (GHSA-hp3v-5vw7-fx9w)",
+      "title": "SCA: security update for ca.uhn.hapi.fhir:org.hl7.fhir.r5, ca.uhn.hapi.fhir:org.hl7.fhir.validation, ca.uhn.hapi.fhir:org.hl7.fhir.validation.cli (GHSA-3w98-rrpr-fprr)",
       "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/448153",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/448266",
       "cves": [
-        "CVE-2026-76825"
+        "CVE-2026-81875"
       ]
     },
     {
-      "id": "348730",
-      "title": "SUSE SLED15 / SLES15 Security Update : libsoup (SUSE-SU-2026:4273-1)",
+      "id": null,
+      "title": "SCA: security update for github.com/frain-dev/convoy (GHSA-p5vg-v7mj-f6q4)",
       "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348730",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/448265",
       "cves": [
-        "CVE-2026-85197",
-        "CVE-2026-85534"
+        "CVE-2026-81505"
       ]
     },
     {
-      "id": "348729",
-      "title": "SUSE SLES12: openCryptoki / openCryptoki-32bit / openCryptoki-64bit / etc (SUSE-SU-2026:2685-2)",
+      "id": null,
+      "title": "SCA: security update for github.com/frain-dev/convoy (GHSA-p5vg-v7mj-f6q4)",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/448265",
+      "cves": [
+        "CVE-2026-81505"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for io.moquette:moquette-broker (GHSA-9jjc-fw8x-fmwx)",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/448264",
+      "cves": [
+        "CVE-2026-85058"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for io.moquette:moquette-broker (GHSA-9jjc-fw8x-fmwx)",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/448264",
+      "cves": [
+        "CVE-2026-85058"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @vendure/core (GHSA-xf65-r35x-wmmv)",
       "severity": "Medium",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348729",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/448263",
       "cves": [
-        "CVE-2026-40253"
+        "CVE-2026-63461"
       ]
     },
     {
-      "id": "348728",
-      "title": "SUSE SLED15 / SLES15 Security Update : jq (SUSE-SU-2026:4275-1)",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348728",
-      "cves": [
-        "CVE-2015-8863",
-        "CVE-2023-50246",
-        "CVE-2023-50268",
-        "CVE-2024-53427",
-        "CVE-2025-9403",
-        "CVE-2026-33948",
-        "CVE-2026-40164",
-        "CVE-2026-40612",
-        "CVE-2026-41256",
-        "CVE-2026-41257",
-        "CVE-2026-43894",
-        "CVE-2026-43895",
-        "CVE-2026-43896",
-        "CVE-2026-44777",
-        "CVE-2026-47770",
-        "CVE-2026-49839",
-        "CVE-2026-54679"
-      ]
-    },
-    {
-      "id": "348727",
-      "title": "SUSE SLES15 Security Update : google-guest-agent (SUSE-SU-2026:4270-1)",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348727",
-      "cves": [
-        "CVE-2026-33186",
-        "CVE-2026-56852",
-        "CVE-2026-56854",
-        "CVE-2026-56855",
-        "CVE-2026-78662",
-        "CVE-2026-84303",
-        "CVE-2026-84304",
-        "CVE-2026-84445"
-      ]
-    },
-    {
-      "id": "348726",
-      "title": "SUSE SLES12: dovecot22 / dovecot22-backend-mysql / dovecot22-backend-pgsql / etc (SUSE-SU-2026:4271-1)",
+      "id": null,
+      "title": "SCA: security update for @vendure/core (GHSA-xf65-r35x-wmmv)",
       "severity": "Medium",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348726",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/448263",
       "cves": [
-        "CVE-2026-40016"
+        "CVE-2026-63461"
       ]
     },
     {
-      "id": "348725",
-      "title": "SUSE SLES12 Security Update : google-guest-agent (SUSE-SU-2026:4272-1)",
+      "id": null,
+      "title": "SCA: security update for litellm (GHSA-hx8v-g79f-8w5f)",
+      "severity": "Medium",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/448262",
+      "cves": [
+        "CVE-2026-59823"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for litellm (GHSA-hx8v-g79f-8w5f)",
+      "severity": "Medium",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/448262",
+      "cves": [
+        "CVE-2026-59823"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for getgrav/grav (GHSA-c4wf-2xxc-68qm)",
       "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348725",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/448261",
       "cves": [
-        "CVE-2026-33186",
-        "CVE-2026-56852",
-        "CVE-2026-56854",
-        "CVE-2026-56855",
-        "CVE-2026-78662",
-        "CVE-2026-84303",
-        "CVE-2026-84304",
-        "CVE-2026-84445"
+        "CVE-2026-65608"
       ]
     },
     {
-      "id": "348724",
-      "title": "SUSE SLES15 Security Update : libsoup (SUSE-SU-2026:4274-1)",
+      "id": null,
+      "title": "SCA: security update for getgrav/grav (GHSA-c4wf-2xxc-68qm)",
       "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348724",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/448261",
       "cves": [
-        "CVE-2026-85197",
-        "CVE-2026-85534"
+        "CVE-2026-65608"
       ]
     },
     {
-      "id": "348723",
-      "title": "SUSE SLED15: gdk-pixbuf-loader-libheif / libheif-aom / libheif-dav1d / etc (SUSE-SU-2026:4276-1)",
+      "id": null,
+      "title": "SCA: security update for Umbraco.Cms (GHSA-wr57-hqmp-fgvh)",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/448260",
+      "cves": [
+        "CVE-2026-69197"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for Umbraco.Cms (GHSA-wr57-hqmp-fgvh)",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/448260",
+      "cves": [
+        "CVE-2026-69197"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for AccessControl (GHSA-pq59-9fq7-m886)",
+      "severity": "Medium",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/448259",
+      "cves": [
+        "CVE-2026-77401"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for AccessControl (GHSA-pq59-9fq7-m886)",
+      "severity": "Medium",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/448259",
+      "cves": [
+        "CVE-2026-77401"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for chamilo/chamilo-lms (GHSA-g4c3-4g96-6g4m)",
       "severity": "Critical",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348723",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/448258",
       "cves": [
-        "CVE-2026-84383",
-        "CVE-2026-84384",
-        "CVE-2026-84444",
-        "CVE-2026-84446",
-        "CVE-2026-84447",
-        "CVE-2026-84448",
-        "CVE-2026-84450",
-        "CVE-2026-84451"
+        "CVE-2026-45140"
       ]
     },
     {
-      "id": "348722",
-      "title": "RHEL 10 : openexr (RHSA-2026:69609)",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348722",
-      "cves": [
-        "CVE-2026-68515"
-      ]
-    },
-    {
-      "id": "348721",
-      "title": "RHEL 9 : postgresql:15 (RHSA-2026:69698)",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348721",
-      "cves": [
-        "CVE-2026-14662",
-        "CVE-2026-14664",
-        "CVE-2026-14669",
-        "CVE-2026-14677",
-        "CVE-2026-14680",
-        "CVE-2026-15742",
-        "CVE-2026-16239",
-        "CVE-2026-19385",
-        "CVE-2026-6471"
-      ]
-    },
-    {
-      "id": "348720",
-      "title": "RHEL 8 : kernel (RHSA-2026:69837)",
-      "severity": "Medium",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348720",
-      "cves": [
-        "CVE-2026-31692",
-        "CVE-2026-46150",
-        "CVE-2026-52993",
-        "CVE-2026-53002",
-        "CVE-2026-53185",
-        "CVE-2026-63887",
-        "CVE-2026-63888",
-        "CVE-2026-64268",
-        "CVE-2026-64564"
-      ]
-    },
-    {
-      "id": "348719",
-      "title": "RHEL 7 : mod_auth_openidc (RHSA-2026:69715)",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348719",
-      "cves": [
-        "CVE-2026-54789"
-      ]
-    },
-    {
-      "id": "348718",
-      "title": "RHEL 9 : rsyslog (RHSA-2026:69540)",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348718",
-      "cves": [
-        "CVE-2026-78002"
-      ]
-    },
-    {
-      "id": "348717",
-      "title": "RHEL 9 : mod_auth_openidc (RHSA-2026:69716)",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348717",
-      "cves": [
-        "CVE-2026-54789"
-      ]
-    },
-    {
-      "id": "348716",
-      "title": "RHEL 9 : mod_auth_openidc (RHSA-2026:69718)",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348716",
-      "cves": [
-        "CVE-2026-54789"
-      ]
-    },
-    {
-      "id": "348715",
-      "title": "RHEL 9 : mod_auth_openidc (RHSA-2026:69720)",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348715",
-      "cves": [
-        "CVE-2026-54789"
-      ]
-    },
-    {
-      "id": "348714",
-      "title": "RHEL 8 : mod_auth_openidc:2.3 (RHSA-2026:69717)",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348714",
-      "cves": [
-        "CVE-2026-54789"
-      ]
-    },
-    {
-      "id": "348713",
-      "title": "RHEL 8 : mod_auth_openidc:2.3 (RHSA-2026:69713)",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348713",
-      "cves": [
-        "CVE-2026-54789"
-      ]
-    },
-    {
-      "id": "348712",
-      "title": "RHEL 10 : mod_auth_openidc (RHSA-2026:69719)",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348712",
-      "cves": [
-        "CVE-2026-54789"
-      ]
-    },
-    {
-      "id": "348711",
-      "title": "RHEL 8 : mod_auth_openidc:2.3 (RHSA-2026:69712)",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348711",
-      "cves": [
-        "CVE-2026-54789"
-      ]
-    },
-    {
-      "id": "348710",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-54633",
-      "severity": "Medium",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348710",
-      "cves": [
-        "CVE-2026-54633"
-      ]
-    },
-    {
-      "id": "348709",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-76151",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348709",
-      "cves": [
-        "CVE-2026-76151"
-      ]
-    },
-    {
-      "id": "348708",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-93451",
-      "severity": "Medium",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348708",
-      "cves": [
-        "CVE-2026-93451"
-      ]
-    },
-    {
-      "id": "348707",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-93331",
-      "severity": "Medium",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348707",
-      "cves": [
-        "CVE-2026-93331"
-      ]
-    },
-    {
-      "id": "348706",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-93433",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348706",
-      "cves": [
-        "CVE-2026-93433"
-      ]
-    },
-    {
-      "id": "348705",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-93676",
-      "severity": "Low",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348705",
-      "cves": [
-        "CVE-2026-93676"
-      ]
-    },
-    {
-      "id": "348704",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-85717",
-      "severity": "Medium",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348704",
-      "cves": [
-        "CVE-2026-85717"
-      ]
-    },
-    {
-      "id": "348703",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-85718",
-      "severity": "Medium",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348703",
-      "cves": [
-        "CVE-2026-85718"
-      ]
-    },
-    {
-      "id": "348702",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-75892",
-      "severity": "Medium",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348702",
-      "cves": [
-        "CVE-2026-75892"
-      ]
-    },
-    {
-      "id": "348701",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-53534",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348701",
-      "cves": [
-        "CVE-2026-53534"
-      ]
-    },
-    {
-      "id": "348700",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-93452",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348700",
-      "cves": [
-        "CVE-2026-93452"
-      ]
-    },
-    {
-      "id": "348699",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-65970",
-      "severity": "Medium",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348699",
-      "cves": [
-        "CVE-2026-65970"
-      ]
-    },
-    {
-      "id": "348698",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-85716",
-      "severity": "Low",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348698",
-      "cves": [
-        "CVE-2026-85716"
-      ]
-    },
-    {
-      "id": "348697",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-67549",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348697",
-      "cves": [
-        "CVE-2026-67549"
-      ]
-    },
-    {
-      "id": "348696",
-      "title": "Slackware Linux 15.0 / current util-linux  Vulnerability (SSA:2026-264-01)",
-      "severity": "High",
-      "date": "Tue, 22 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348696",
-      "cves": []
-    },
-    {
-      "id": "348695",
-      "title": "Oracle Linux 9 : curl (ELSA-2026-69126)",
+      "id": null,
+      "title": "SCA: security update for chamilo/chamilo-lms (GHSA-g4c3-4g96-6g4m)",
       "severity": "Critical",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348695",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/448258",
       "cves": [
-        "CVE-2026-8458"
+        "CVE-2026-45140"
       ]
     },
     {
-      "id": "348694",
-      "title": "Oracle Linux 10 : yggdrasil (ELSA-2026-69308)",
+      "id": null,
+      "title": "SCA: security update for ca.uhn.hapi.fhir:org.hl7.fhir.r5, ca.uhn.hapi.fhir:org.hl7.fhir.validation, ca.uhn.hapi.fhir:org.hl7.fhir.validation.cli (GHSA-gq9c-wmrm-5hvr)",
       "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348694",
-      "cves": []
-    },
-    {
-      "id": "348693",
-      "title": "Oracle Linux 9 : sudo (ELSA-2026-69123)",
-      "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348693",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/448257",
       "cves": [
-        "CVE-2026-82474"
+        "CVE-2026-81876"
       ]
     },
     {
-      "id": "348692",
-      "title": "RHEL 8 : tesseract (RHSA-2026:69495)",
+      "id": null,
+      "title": "SCA: security update for ca.uhn.hapi.fhir:org.hl7.fhir.r5, ca.uhn.hapi.fhir:org.hl7.fhir.validation, ca.uhn.hapi.fhir:org.hl7.fhir.validation.cli (GHSA-gq9c-wmrm-5hvr)",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/448257",
+      "cves": [
+        "CVE-2026-81876"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lmdeploy (GHSA-2vh9-42vm-xmv2)",
+      "severity": "Critical",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/448256",
+      "cves": [
+        "CVE-2025-66455"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for lmdeploy (GHSA-2vh9-42vm-xmv2)",
+      "severity": "Critical",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/448256",
+      "cves": [
+        "CVE-2025-66455"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for hatchet (GHSA-phg3-3g28-wq9v)",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/448255",
+      "cves": [
+        "CVE-2026-61687"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for hatchet (GHSA-phg3-3g28-wq9v)",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/448255",
+      "cves": [
+        "CVE-2026-61687"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/lucasdillmann/nginx-ignition (GHSA-jr34-h97m-9hpx)",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/448254",
+      "cves": [
+        "CVE-2022-32149",
+        "CVE-2026-61629"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/lucasdillmann/nginx-ignition (GHSA-jr34-h97m-9hpx)",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/448254",
+      "cves": [
+        "CVE-2022-32149",
+        "CVE-2026-61629"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/lucasdillmann/nginx-ignition (GHSA-pxcx-fv34-x9p5)",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/448253",
+      "cves": [
+        "CVE-2026-61628"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/lucasdillmann/nginx-ignition (GHSA-pxcx-fv34-x9p5)",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/448253",
+      "cves": [
+        "CVE-2026-61628"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/lucasdillmann/nginx-ignition (GHSA-hf33-q6cf-c66f)",
       "severity": "Medium",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348692",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/448252",
       "cves": [
-        "CVE-2026-73066"
+        "CVE-2026-61630"
       ]
     },
     {
-      "id": "348691",
-      "title": "RHEL 10 : yggdrasil (RHSA-2026:69308)",
+      "id": null,
+      "title": "SCA: security update for github.com/lucasdillmann/nginx-ignition (GHSA-hf33-q6cf-c66f)",
+      "severity": "Medium",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/448252",
+      "cves": [
+        "CVE-2026-61630"
+      ]
+    },
+    {
+      "id": "349263",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-92014",
       "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348691",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349263",
       "cves": [
-        "CVE-2026-33818",
-        "CVE-2026-42504",
-        "CVE-2026-56859",
-        "CVE-2026-56860",
-        "CVE-2026-56862"
+        "CVE-2026-92014"
       ]
     },
     {
-      "id": "348690",
-      "title": "RHEL 8 : libxml2 (RHSA-2026:69655)",
+      "id": "349262",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91737",
       "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348690",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349262",
       "cves": [
-        "CVE-2025-9714",
-        "CVE-2026-6653"
+        "CVE-2026-91737"
       ]
     },
     {
-      "id": "348689",
-      "title": "RHEL 9 : osbuild-composer (RHSA-2026:69293)",
+      "id": "349261",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-92025",
       "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348689",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349261",
       "cves": [
-        "CVE-2026-25681",
-        "CVE-2026-27136",
-        "CVE-2026-41178",
-        "CVE-2026-42502",
-        "CVE-2026-55677"
+        "CVE-2026-92025"
       ]
     },
     {
-      "id": "348688",
-      "title": "RHEL 8 : gstreamer1-plugins-base (RHSA-2026:69531)",
+      "id": "349260",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91717",
+      "severity": "Medium",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349260",
+      "cves": [
+        "CVE-2026-91717"
+      ]
+    },
+    {
+      "id": "349259",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-92005",
       "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348688",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349259",
       "cves": [
-        "CVE-2026-18297"
+        "CVE-2026-92005"
       ]
     },
     {
-      "id": "348687",
-      "title": "RHEL 10 : firefox (RHSA-2026:69461)",
+      "id": "349258",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91720",
+      "severity": "Medium",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349258",
+      "cves": [
+        "CVE-2026-91720"
+      ]
+    },
+    {
+      "id": "349257",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-92027",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349257",
+      "cves": [
+        "CVE-2026-92027"
+      ]
+    },
+    {
+      "id": "349256",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91732",
+      "severity": "Medium",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349256",
+      "cves": [
+        "CVE-2026-91732"
+      ]
+    },
+    {
+      "id": "349255",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91726",
+      "severity": "Medium",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349255",
+      "cves": [
+        "CVE-2026-91726"
+      ]
+    },
+    {
+      "id": "349254",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91722",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349254",
+      "cves": [
+        "CVE-2026-91722"
+      ]
+    },
+    {
+      "id": "349253",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-92022",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349253",
+      "cves": [
+        "CVE-2026-92022"
+      ]
+    },
+    {
+      "id": "349252",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91714",
+      "severity": "Medium",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349252",
+      "cves": [
+        "CVE-2026-91714"
+      ]
+    },
+    {
+      "id": "349251",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91712",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349251",
+      "cves": [
+        "CVE-2026-91712"
+      ]
+    },
+    {
+      "id": "349250",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91711",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349250",
+      "cves": [
+        "CVE-2026-91711"
+      ]
+    },
+    {
+      "id": "349249",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91745",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349249",
+      "cves": [
+        "CVE-2026-91745"
+      ]
+    },
+    {
+      "id": "349248",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-92006",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349248",
+      "cves": [
+        "CVE-2026-92006"
+      ]
+    },
+    {
+      "id": "349247",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91739",
+      "severity": "Medium",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349247",
+      "cves": [
+        "CVE-2026-91739"
+      ]
+    },
+    {
+      "id": "349246",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91729",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349246",
+      "cves": [
+        "CVE-2026-91729"
+      ]
+    },
+    {
+      "id": "349245",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-92024",
+      "severity": "High",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349245",
+      "cves": [
+        "CVE-2026-92024"
+      ]
+    },
+    {
+      "id": "349244",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-92018",
       "severity": "Critical",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348687",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349244",
       "cves": [
-        "CVE-2026-92005",
-        "CVE-2026-92006",
-        "CVE-2026-92007",
-        "CVE-2026-92008",
-        "CVE-2026-92009",
-        "CVE-2026-92010",
-        "CVE-2026-92011",
-        "CVE-2026-92012",
-        "CVE-2026-92013",
-        "CVE-2026-92014",
-        "CVE-2026-92015",
-        "CVE-2026-92016",
-        "CVE-2026-92017",
-        "CVE-2026-92018",
-        "CVE-2026-92019",
-        "CVE-2026-92020",
-        "CVE-2026-92021",
-        "CVE-2026-92022",
-        "CVE-2026-92023",
-        "CVE-2026-92024",
-        "CVE-2026-92025",
-        "CVE-2026-92026",
-        "CVE-2026-92027",
-        "CVE-2026-92028",
-        "CVE-2026-92029",
-        "CVE-2026-92030",
-        "CVE-2026-92031",
-        "CVE-2026-92032"
+        "CVE-2026-92018"
       ]
     },
     {
-      "id": "348686",
-      "title": "RHEL 10 : rsyslog (RHSA-2026:69541)",
+      "id": "349243",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91738",
       "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348686",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349243",
       "cves": [
-        "CVE-2026-78002"
+        "CVE-2026-91738"
       ]
     },
     {
-      "id": "348685",
-      "title": "RHEL 10 : libarchive (RHSA-2026:69553)",
-      "severity": "Low",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348685",
-      "cves": [
-        "CVE-2026-15028",
-        "CVE-2026-16517"
-      ]
-    },
-    {
-      "id": "348684",
-      "title": "RHEL 8 : redis:6 (RHSA-2026:69542)",
+      "id": "349242",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-92028",
       "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348684",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349242",
       "cves": [
-        "CVE-2026-66373",
-        "CVE-2026-81934"
+        "CVE-2026-92028"
       ]
     },
     {
-      "id": "348683",
-      "title": "RHEL 8 : redis:6 (RHSA-2026:69533)",
+      "id": "349241",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-92009",
       "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348683",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349241",
       "cves": [
-        "CVE-2026-66373",
-        "CVE-2026-81934"
+        "CVE-2026-92009"
       ]
     },
     {
-      "id": "348682",
-      "title": "RHEL 9 : redis:7 (RHSA-2026:69520)",
+      "id": "349240",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91709",
       "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348682",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349240",
       "cves": [
-        "CVE-2026-66373",
-        "CVE-2026-72568",
-        "CVE-2026-81934",
-        "CVE-2026-92925"
+        "CVE-2026-91709"
       ]
     },
     {
-      "id": "348681",
-      "title": "RHEL 9 : firefox (RHSA-2026:69462)",
-      "severity": "Critical",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348681",
-      "cves": [
-        "CVE-2026-92005",
-        "CVE-2026-92006",
-        "CVE-2026-92007",
-        "CVE-2026-92008",
-        "CVE-2026-92009",
-        "CVE-2026-92010",
-        "CVE-2026-92011",
-        "CVE-2026-92012",
-        "CVE-2026-92013",
-        "CVE-2026-92014",
-        "CVE-2026-92015",
-        "CVE-2026-92016",
-        "CVE-2026-92017",
-        "CVE-2026-92018",
-        "CVE-2026-92019",
-        "CVE-2026-92020",
-        "CVE-2026-92021",
-        "CVE-2026-92022",
-        "CVE-2026-92023",
-        "CVE-2026-92024",
-        "CVE-2026-92025",
-        "CVE-2026-92026",
-        "CVE-2026-92027",
-        "CVE-2026-92028",
-        "CVE-2026-92029",
-        "CVE-2026-92030",
-        "CVE-2026-92031",
-        "CVE-2026-92032"
-      ]
-    },
-    {
-      "id": "348680",
-      "title": "RHEL 8 : freerdp (RHSA-2026:69387)",
+      "id": "349239",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-92013",
       "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348680",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349239",
       "cves": [
-        "CVE-2026-55193"
+        "CVE-2026-92013"
       ]
     },
     {
-      "id": "348679",
-      "title": "RHEL 8 : redis:6 (RHSA-2026:69534)",
+      "id": "349238",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91741",
       "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348679",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349238",
       "cves": [
-        "CVE-2026-66373",
-        "CVE-2026-81934"
+        "CVE-2026-91741"
       ]
     },
     {
-      "id": "348678",
-      "title": "TencentOS Server 2: fontforge (TSSA-2026:1041)",
+      "id": "349237",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-92011",
       "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348678",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349237",
       "cves": [
-        "CVE-2025-15269",
-        "CVE-2025-15275",
-        "CVE-2025-15279"
+        "CVE-2026-92011"
       ]
     },
     {
-      "id": "348677",
-      "title": "TencentOS Server 2: gdk-pixbuf2 (TSSA-2026:1038)",
+      "id": "349236",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91718",
       "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348677",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349236",
       "cves": [
-        "CVE-2026-5201"
+        "CVE-2026-91718"
       ]
     },
     {
-      "id": "348676",
-      "title": "TencentOS Server 2: bind (TSSA-2026:1039)",
+      "id": "349235",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91731",
       "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348676",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349235",
       "cves": [
-        "CVE-2026-1519"
+        "CVE-2026-91731"
       ]
     },
     {
-      "id": "348675",
-      "title": "TencentOS Server 3: gstreamer1-plugins-bad-free (TSSA-2026:1028)",
+      "id": "349234",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-91748",
       "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348675",
+      "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/349234",
       "cves": [
-        "CVE-2026-19387"
-      ]
-    },
-    {
-      "id": "348674",
-      "title": "TencentOS Server 2: freerdp (TSSA-2026:1042)",
-      "severity": "Critical",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348674",
-      "cves": [
-        "CVE-2026-64624",
-        "CVE-2026-67289",
-        "CVE-2026-67299",
-        "CVE-2026-68580"
-      ]
-    },
-    {
-      "id": "348673",
-      "title": "TencentOS Server 2: python-tornado (TSSA-2026:1040)",
-      "severity": "High",
-      "date": "Mon, 21 Sep 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/348673",
-      "cves": [
-        "CVE-2026-31958",
-        "CVE-2026-35536"
+        "CVE-2026-91748"
       ]
     }
   ]
