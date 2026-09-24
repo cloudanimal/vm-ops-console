@@ -1,15 +1,57 @@
 {
-  "updated": "2026-09-23",
+  "updated": "2026-09-24",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-23",
-  "previous_date": "2026-09-16",
+  "current_date": "2026-09-24",
+  "previous_date": "2026-09-17",
   "risers": [
     {
-      "id": "CVE-2026-58644",
-      "now": 0.60944,
-      "prev": 0.15873,
-      "delta": 0.45071,
-      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+      "id": "CVE-2026-19478",
+      "now": 0.60204,
+      "prev": 0.05811,
+      "delta": 0.54393,
+      "name": "Improper Control of Generation of Code ('Code Injection') in GitLab"
+    },
+    {
+      "id": "CVE-2026-85046",
+      "now": 0.48881,
+      "prev": 0.01462,
+      "delta": 0.47419,
+      "name": "Google Chrome"
+    },
+    {
+      "id": "CVE-2026-2441",
+      "now": 0.55101,
+      "prev": 0.22378,
+      "delta": 0.32723,
+      "name": "Google Chrome"
+    },
+    {
+      "id": "CVE-2026-21962",
+      "now": 0.70915,
+      "prev": 0.42475,
+      "delta": 0.2844,
+      "name": "Oracle Corporation Oracle HTTP Server, Oracle Weblogic Server Proxy Plug-in"
+    },
+    {
+      "id": "CVE-2021-44026",
+      "now": 0.69882,
+      "prev": 0.41856,
+      "delta": 0.28026,
+      "name": "Roundcube before 1.3.17 and 1.4.x before 1.4.12 is prone to a potential SQL injection via search or search_par"
+    },
+    {
+      "id": "CVE-2026-20316",
+      "now": 0.35096,
+      "prev": 0.11153,
+      "delta": 0.23943,
+      "name": "Cisco Secure Firewall Management Center Software Static Credential Vulnerability"
+    },
+    {
+      "id": "CVE-2023-48365",
+      "now": 0.47453,
+      "prev": 0.24491,
+      "delta": 0.22962,
+      "name": "Qlik Sense Enterprise for Windows before August 2023 Patch 2 allows unauthenticated remote code execution, aka"
     },
     {
       "id": "CVE-2021-42392",
@@ -19,11 +61,74 @@
       "name": "h2database h2"
     },
     {
+      "id": "CVE-2019-19006",
+      "now": 0.55946,
+      "prev": 0.36615,
+      "delta": 0.19331,
+      "name": "Sangoma FreePBX 115.0.16.26 and below, 14.0.13.11 and below, 13.0.197.13 and below have Incorrect Access Contr"
+    },
+    {
+      "id": "CVE-2022-40303",
+      "now": 0.41365,
+      "prev": 0.22965,
+      "delta": 0.184,
+      "name": "An issue was discovered in libxml2 before 2.10.3. When parsing a multi-gigabyte XML document with the XML_PARS"
+    },
+    {
+      "id": "CVE-2021-3518",
+      "now": 0.21859,
+      "prev": 0.03653,
+      "delta": 0.18206,
+      "name": "libxml2"
+    },
+    {
       "id": "CVE-2013-5223",
       "now": 0.50833,
       "prev": 0.33567,
       "delta": 0.17266,
       "name": "Multiple cross-site scripting (XSS) vulnerabilities in D-Link DSL-2760U Gateway (Rev. E1) allow remote authent"
+    },
+    {
+      "id": "CVE-2019-15752",
+      "now": 0.48628,
+      "prev": 0.31918,
+      "delta": 0.1671,
+      "name": "Docker Desktop Community Edition before 2.1.0.1 allows local users to gain privileges by placing a Trojan hors"
+    },
+    {
+      "id": "CVE-2025-27636",
+      "now": 0.96922,
+      "prev": 0.81126,
+      "delta": 0.15796,
+      "name": "Apache Camel: Camel Message Header Injection via Improper Filtering"
+    },
+    {
+      "id": "CVE-2025-21377",
+      "now": 0.39926,
+      "prev": 0.24457,
+      "delta": 0.15469,
+      "name": "NTLM Hash Disclosure Spoofing Vulnerability"
+    },
+    {
+      "id": "CVE-2013-0096",
+      "now": 0.30887,
+      "prev": 0.16097,
+      "delta": 0.1479,
+      "name": "Writer in Microsoft Windows Essentials 2011 and 2012 allows remote attackers to bypass proxy settings and over"
+    },
+    {
+      "id": "CVE-2026-0628",
+      "now": 0.21237,
+      "prev": 0.0663,
+      "delta": 0.14607,
+      "name": "Google Chrome"
+    },
+    {
+      "id": "CVE-2025-2746",
+      "now": 0.7304,
+      "prev": 0.59052,
+      "delta": 0.13988,
+      "name": "Kentico Xperience <= 13.0.172 Staging Sync Server Digest Password Authentication Bypass"
     },
     {
       "id": "CVE-2024-42010",
@@ -40,6 +145,62 @@
       "name": "SonicWall SMA 100 Series"
     },
     {
+      "id": "CVE-2019-0221",
+      "now": 0.59194,
+      "prev": 0.45571,
+      "delta": 0.13623,
+      "name": "Apache Apache Tomcat"
+    },
+    {
+      "id": "CVE-2025-52876",
+      "now": 0.37601,
+      "prev": 0.24475,
+      "delta": 0.13126,
+      "name": "JetBrains TeamCity"
+    },
+    {
+      "id": "CVE-2026-76460",
+      "now": 0.14026,
+      "prev": 0.00915,
+      "delta": 0.13111,
+      "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
+    },
+    {
+      "id": "CVE-2025-52877",
+      "now": 0.36716,
+      "prev": 0.23835,
+      "delta": 0.12881,
+      "name": "JetBrains TeamCity"
+    },
+    {
+      "id": "CVE-2026-20079",
+      "now": 0.8818,
+      "prev": 0.75752,
+      "delta": 0.12428,
+      "name": "Cisco Secure Firewall Management Center Authentication Bypass Remote Code Execution Vulner"
+    },
+    {
+      "id": "CVE-2026-86218",
+      "now": 0.12928,
+      "prev": 0.00744,
+      "delta": 0.12184,
+      "name": "pre-authentication remote code execution"
+    },
+    {
+      "id": "CVE-2022-23134",
+      "now": 0.9526,
+      "prev": 0.84657,
+      "delta": 0.10603,
+      "name": "Possible view of the setup pages by unauthenticated users if config file already exists"
+    },
+    {
+      "id": "CVE-2025-62593",
+      "now": 0.2729,
+      "prev": 0.16888,
+      "delta": 0.10402,
+      "name": "Ray is vulnerable to RCE via Safari & Firefox Browsers through DNS Rebinding Attack"
+    },
+    {
       "id": "CVE-2024-36465",
       "now": 0.39895,
       "prev": 0.29502,
@@ -47,181 +208,48 @@
       "name": "SQL injection in Zabbix API"
     },
     {
-      "id": "CVE-2026-42018",
-      "now": 0.11038,
-      "prev": 0.0092,
-      "delta": 0.10118,
-      "name": "Anonymous user token generation exposure in JFrog Artifactory"
-    },
-    {
-      "id": "CVE-2025-6216",
-      "now": 0.47775,
-      "prev": 0.38527,
-      "delta": 0.09248,
-      "name": "Allegra calculateTokenExpDate Password Recovery Authentication Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2023-41991",
-      "now": 0.1338,
-      "prev": 0.04547,
-      "delta": 0.08833,
-      "name": "Apple iOS and iPadOS"
-    },
-    {
-      "id": "CVE-2025-53778",
-      "now": 0.4762,
-      "prev": 0.38886,
-      "delta": 0.08734,
-      "name": "Windows NTLM Elevation of Privilege Vulnerability"
-    },
-    {
-      "id": "CVE-2026-42016",
-      "now": 0.09058,
-      "prev": 0.00886,
-      "delta": 0.08172,
-      "name": "Incorrect authorization validation of user token in JFrog Artifactory allows Privilege Esc"
-    },
-    {
-      "id": "CVE-2025-34511",
-      "now": 0.29814,
-      "prev": 0.22318,
-      "delta": 0.07496,
-      "name": "Sitecore PowerShell Extension RCE via Unrestricted Upload"
-    },
-    {
-      "id": "CVE-2013-10059",
-      "now": 0.26572,
-      "prev": 0.1911,
-      "delta": 0.07462,
-      "name": "D-Link Routers tools_vct.htm OS Command Injection"
-    },
-    {
-      "id": "CVE-2026-86218",
-      "now": 0.07494,
-      "prev": 0.00744,
-      "delta": 0.0675,
-      "name": "pre-authentication remote code execution"
-    },
-    {
-      "id": "CVE-2023-41992",
-      "now": 0.09515,
-      "prev": 0.02918,
-      "delta": 0.06597,
-      "name": "Apple macOS"
-    },
-    {
-      "id": "CVE-2015-8605",
-      "now": 0.82728,
-      "prev": 0.7645,
-      "delta": 0.06278,
-      "name": "ISC DHCP 4.x before 4.1-ESV-R12-P1, 4.2.x, and 4.3.x before 4.3.3-P1 allows remote attackers to cause a denial"
-    },
-    {
-      "id": "CVE-2025-34510",
-      "now": 0.24299,
-      "prev": 0.18035,
-      "delta": 0.06264,
-      "name": "Sitecore XM, XC, and XP Post-Auth RCE via Zip Slip"
-    },
-    {
-      "id": "CVE-2006-5506",
-      "now": 0.16297,
-      "prev": 0.10092,
-      "delta": 0.06205,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in WiClear 0.10 allow remote attackers to execute arbitrary"
-    },
-    {
-      "id": "CVE-2014-7187",
-      "now": 0.64622,
-      "prev": 0.58462,
-      "delta": 0.0616,
-      "name": "Off-by-one error in the read_token_word function in parse.y in GNU Bash through 4.3 bash43-026 allows remote a"
-    },
-    {
-      "id": "CVE-2025-2760",
-      "now": 0.18759,
-      "prev": 0.12653,
-      "delta": 0.06106,
-      "name": "GIMP XWD File Parsing Integer Overflow Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2006-5517",
-      "now": 0.14701,
-      "prev": 0.09081,
-      "delta": 0.0562,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in Rhode Island Open Meetings Filing Application (OMFA) all"
-    },
-    {
-      "id": "CVE-2014-6277",
-      "now": 0.69775,
-      "prev": 0.64326,
-      "delta": 0.05449,
-      "name": "GNU Bash through 4.3 bash43-026 does not properly parse function definitions in the values of environment vari"
-    },
-    {
-      "id": "CVE-2023-43770",
-      "now": 0.6366,
-      "prev": 0.58483,
-      "delta": 0.05177,
-      "name": "Roundcube before 1.4.14, 1.5.x before 1.5.4, and 1.6.x before 1.6.3 allows XSS via text/plain e-mail messages "
-    },
-    {
-      "id": "CVE-2024-32640",
-      "now": 0.76558,
-      "prev": 0.71554,
-      "delta": 0.05004,
-      "name": "MasaCMS SQL Injection vulnerability"
-    },
-    {
-      "id": "CVE-2013-10048",
-      "now": 0.17052,
-      "prev": 0.12099,
-      "delta": 0.04953,
-      "name": "D-Link Devices command.php Unauthenticated RCE"
-    },
-    {
-      "id": "CVE-2016-6433",
-      "now": 0.80696,
-      "prev": 0.7575,
-      "delta": 0.04946,
-      "name": "The Threat Management Console in Cisco Firepower Management Center 5.2.0 through 6.0.1 allows remote authentic"
-    },
-    {
-      "id": "CVE-2018-1217",
-      "now": 0.50874,
-      "prev": 0.45957,
-      "delta": 0.04917,
-      "name": "Dell EMC Avamar, Integrated Data Protection Appliance"
-    },
-    {
-      "id": "CVE-2021-23336",
-      "now": 0.40736,
-      "prev": 0.35963,
-      "delta": 0.04773,
-      "name": "Web Cache Poisoning"
-    },
-    {
-      "id": "CVE-2025-50154",
-      "now": 0.30217,
-      "prev": 0.25564,
-      "delta": 0.04653,
-      "name": "Microsoft Windows File Explorer Spoofing Vulnerability"
-    },
-    {
-      "id": "CVE-2026-59310",
-      "now": 0.50377,
-      "prev": 0.45878,
-      "delta": 0.04499,
-      "name": "vCenter directory-traversal vulnerability"
+      "id": "CVE-2025-11833",
+      "now": 0.60329,
+      "prev": 0.51005,
+      "delta": 0.09324,
+      "name": "Post SMTP \u2013 Complete SMTP Solution with Logs, Alerts, Backup SMTP & Mobile App <= 3.6.0 - "
     }
   ],
   "newly_high": [
     {
-      "id": "CVE-2026-58644",
-      "now": 0.60944,
-      "prev": 0.15873,
-      "delta": 0.45071,
-      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+      "id": "CVE-2026-19478",
+      "now": 0.60204,
+      "prev": 0.05811,
+      "delta": 0.54393,
+      "name": "Improper Control of Generation of Code ('Code Injection') in GitLab"
+    },
+    {
+      "id": "CVE-2026-2441",
+      "now": 0.55101,
+      "prev": 0.22378,
+      "delta": 0.32723,
+      "name": "Google Chrome"
+    },
+    {
+      "id": "CVE-2026-21962",
+      "now": 0.70915,
+      "prev": 0.42475,
+      "delta": 0.2844,
+      "name": "Oracle Corporation Oracle HTTP Server, Oracle Weblogic Server Proxy Plug-in"
+    },
+    {
+      "id": "CVE-2021-44026",
+      "now": 0.69882,
+      "prev": 0.41856,
+      "delta": 0.28026,
+      "name": "Roundcube before 1.3.17 and 1.4.x before 1.4.12 is prone to a potential SQL injection via search or search_par"
+    },
+    {
+      "id": "CVE-2019-19006",
+      "now": 0.55946,
+      "prev": 0.36615,
+      "delta": 0.19331,
+      "name": "Sangoma FreePBX 115.0.16.26 and below, 14.0.13.11 and below, 13.0.197.13 and below have Incorrect Access Contr"
     },
     {
       "id": "CVE-2013-5223",
@@ -231,6 +259,13 @@
       "name": "Multiple cross-site scripting (XSS) vulnerabilities in D-Link DSL-2760U Gateway (Rev. E1) allow remote authent"
     },
     {
+      "id": "CVE-2019-0221",
+      "now": 0.59194,
+      "prev": 0.45571,
+      "delta": 0.13623,
+      "name": "Apache Apache Tomcat"
+    },
+    {
       "id": "CVE-2018-1217",
       "now": 0.50874,
       "prev": 0.45957,
@@ -238,11 +273,11 @@
       "name": "Dell EMC Avamar, Integrated Data Protection Appliance"
     },
     {
-      "id": "CVE-2026-59310",
-      "now": 0.50377,
-      "prev": 0.45878,
-      "delta": 0.04499,
-      "name": "vCenter directory-traversal vulnerability"
+      "id": "CVE-2025-15467",
+      "now": 0.52446,
+      "prev": 0.48211,
+      "delta": 0.04235,
+      "name": "Stack buffer overflow in CMS (Auth)EnvelopedData parsing"
     },
     {
       "id": "CVE-2025-12420",
