@@ -1,9 +1,37 @@
 {
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-24",
-  "previous_date": "2026-09-17",
+  "current_date": "2026-09-25",
+  "previous_date": "2026-09-18",
   "risers": [
+    {
+      "id": "CVE-2026-85706",
+      "now": 0.91425,
+      "prev": 0.14563,
+      "delta": 0.76862,
+      "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') in GitLab"
+    },
+    {
+      "id": "CVE-2026-48908",
+      "now": 0.88512,
+      "prev": 0.15086,
+      "delta": 0.73426,
+      "name": "Joomla Extension - joomshaper.com - Remote Code Execution in SP Pagebuilder extension for "
+    },
+    {
+      "id": "CVE-2026-71362",
+      "now": 0.89616,
+      "prev": 0.2452,
+      "delta": 0.65096,
+      "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
+    },
+    {
+      "id": "CVE-2024-57728",
+      "now": 0.64664,
+      "prev": 0.06982,
+      "delta": 0.57682,
+      "name": "SimpleHelp remote support software v5.5.7 and before allows admin users to upload arbitrary files anywhere on "
+    },
     {
       "id": "CVE-2026-19478",
       "now": 0.60204,
@@ -17,6 +45,13 @@
       "prev": 0.01462,
       "delta": 0.47419,
       "name": "Google Chrome"
+    },
+    {
+      "id": "CVE-2025-62593",
+      "now": 0.62459,
+      "prev": 0.16888,
+      "delta": 0.45571,
+      "name": "Ray is vulnerable to RCE via Safari & Firefox Browsers through DNS Rebinding Attack"
     },
     {
       "id": "CVE-2026-2441",
@@ -38,6 +73,13 @@
       "prev": 0.41856,
       "delta": 0.28026,
       "name": "Roundcube before 1.3.17 and 1.4.x before 1.4.12 is prone to a potential SQL injection via search or search_par"
+    },
+    {
+      "id": "CVE-2026-76461",
+      "now": 0.28269,
+      "prev": 0.02009,
+      "delta": 0.2626,
+      "name": "Cisco Secure Email Gateway SQL Injection Vulnerability"
     },
     {
       "id": "CVE-2026-20316",
@@ -80,13 +122,6 @@
       "prev": 0.03653,
       "delta": 0.18206,
       "name": "libxml2"
-    },
-    {
-      "id": "CVE-2013-5223",
-      "now": 0.50833,
-      "prev": 0.33567,
-      "delta": 0.17266,
-      "name": "Multiple cross-site scripting (XSS) vulnerabilities in D-Link DSL-2760U Gateway (Rev. E1) allow remote authent"
     },
     {
       "id": "CVE-2019-15752",
@@ -152,18 +187,18 @@
       "name": "Apache Apache Tomcat"
     },
     {
+      "id": "CVE-2026-76460",
+      "now": 0.14026,
+      "prev": 0.00784,
+      "delta": 0.13242,
+      "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
+    },
+    {
       "id": "CVE-2025-52876",
       "now": 0.37601,
       "prev": 0.24475,
       "delta": 0.13126,
       "name": "JetBrains TeamCity"
-    },
-    {
-      "id": "CVE-2026-76460",
-      "now": 0.14026,
-      "prev": 0.00915,
-      "delta": 0.13111,
-      "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
     },
     {
       "id": "CVE-2025-52877",
@@ -178,50 +213,50 @@
       "prev": 0.75752,
       "delta": 0.12428,
       "name": "Cisco Secure Firewall Management Center Authentication Bypass Remote Code Execution Vulner"
-    },
-    {
-      "id": "CVE-2026-86218",
-      "now": 0.12928,
-      "prev": 0.00744,
-      "delta": 0.12184,
-      "name": "pre-authentication remote code execution"
-    },
-    {
-      "id": "CVE-2022-23134",
-      "now": 0.9526,
-      "prev": 0.84657,
-      "delta": 0.10603,
-      "name": "Possible view of the setup pages by unauthenticated users if config file already exists"
-    },
-    {
-      "id": "CVE-2025-62593",
-      "now": 0.2729,
-      "prev": 0.16888,
-      "delta": 0.10402,
-      "name": "Ray is vulnerable to RCE via Safari & Firefox Browsers through DNS Rebinding Attack"
-    },
-    {
-      "id": "CVE-2024-36465",
-      "now": 0.39895,
-      "prev": 0.29502,
-      "delta": 0.10393,
-      "name": "SQL injection in Zabbix API"
-    },
-    {
-      "id": "CVE-2025-11833",
-      "now": 0.60329,
-      "prev": 0.51005,
-      "delta": 0.09324,
-      "name": "Post SMTP \u2013 Complete SMTP Solution with Logs, Alerts, Backup SMTP & Mobile App <= 3.6.0 - "
     }
   ],
   "newly_high": [
+    {
+      "id": "CVE-2026-85706",
+      "now": 0.91425,
+      "prev": 0.14563,
+      "delta": 0.76862,
+      "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') in GitLab"
+    },
+    {
+      "id": "CVE-2026-48908",
+      "now": 0.88512,
+      "prev": 0.15086,
+      "delta": 0.73426,
+      "name": "Joomla Extension - joomshaper.com - Remote Code Execution in SP Pagebuilder extension for "
+    },
+    {
+      "id": "CVE-2026-71362",
+      "now": 0.89616,
+      "prev": 0.2452,
+      "delta": 0.65096,
+      "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
+    },
+    {
+      "id": "CVE-2024-57728",
+      "now": 0.64664,
+      "prev": 0.06982,
+      "delta": 0.57682,
+      "name": "SimpleHelp remote support software v5.5.7 and before allows admin users to upload arbitrary files anywhere on "
+    },
     {
       "id": "CVE-2026-19478",
       "now": 0.60204,
       "prev": 0.05811,
       "delta": 0.54393,
       "name": "Improper Control of Generation of Code ('Code Injection') in GitLab"
+    },
+    {
+      "id": "CVE-2025-62593",
+      "now": 0.62459,
+      "prev": 0.16888,
+      "delta": 0.45571,
+      "name": "Ray is vulnerable to RCE via Safari & Firefox Browsers through DNS Rebinding Attack"
     },
     {
       "id": "CVE-2026-2441",
@@ -252,13 +287,6 @@
       "name": "Sangoma FreePBX 115.0.16.26 and below, 14.0.13.11 and below, 13.0.197.13 and below have Incorrect Access Contr"
     },
     {
-      "id": "CVE-2013-5223",
-      "now": 0.50833,
-      "prev": 0.33567,
-      "delta": 0.17266,
-      "name": "Multiple cross-site scripting (XSS) vulnerabilities in D-Link DSL-2760U Gateway (Rev. E1) allow remote authent"
-    },
-    {
       "id": "CVE-2019-0221",
       "now": 0.59194,
       "prev": 0.45571,
@@ -268,8 +296,8 @@
     {
       "id": "CVE-2018-1217",
       "now": 0.50874,
-      "prev": 0.45957,
-      "delta": 0.04917,
+      "prev": 0.45323,
+      "delta": 0.05551,
       "name": "Dell EMC Avamar, Integrated Data Protection Appliance"
     },
     {
@@ -280,11 +308,11 @@
       "name": "Stack buffer overflow in CMS (Auth)EnvelopedData parsing"
     },
     {
-      "id": "CVE-2025-12420",
-      "now": 0.53188,
-      "prev": 0.49059,
-      "delta": 0.04129,
-      "name": "Unauthenticated Privilege Escalation in ServiceNow AI Platform"
+      "id": "CVE-2025-40552",
+      "now": 0.51997,
+      "prev": 0.49734,
+      "delta": 0.02263,
+      "name": "SolarWinds Web Help Desk Authentication Bypass Vulnerability"
     }
   ]
 }
