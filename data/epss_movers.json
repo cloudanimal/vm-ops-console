@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-25",
+  "updated": "2026-09-26",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-25",
-  "previous_date": "2026-09-18",
+  "current_date": "2026-09-26",
+  "previous_date": "2026-09-19",
   "risers": [
     {
       "id": "CVE-2026-85706",
@@ -20,9 +20,9 @@
     },
     {
       "id": "CVE-2026-71362",
-      "now": 0.89616,
+      "now": 0.87507,
       "prev": 0.2452,
-      "delta": 0.65096,
+      "delta": 0.62987,
       "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
     },
     {
@@ -96,13 +96,6 @@
       "name": "Qlik Sense Enterprise for Windows before August 2023 Patch 2 allows unauthenticated remote code execution, aka"
     },
     {
-      "id": "CVE-2021-42392",
-      "now": 0.83176,
-      "prev": 0.63211,
-      "delta": 0.19965,
-      "name": "h2database h2"
-    },
-    {
       "id": "CVE-2019-19006",
       "now": 0.55946,
       "prev": 0.36615,
@@ -166,20 +159,6 @@
       "name": "Kentico Xperience <= 13.0.172 Staging Sync Server Digest Password Authentication Bypass"
     },
     {
-      "id": "CVE-2024-42010",
-      "now": 0.66661,
-      "prev": 0.5281,
-      "delta": 0.13851,
-      "name": "mod_css_styles in Roundcube through 1.5.7 and 1.6.x through 1.6.7 insufficiently filters Cascading Style Sheet"
-    },
-    {
-      "id": "CVE-2025-40598",
-      "now": 0.64314,
-      "prev": 0.50689,
-      "delta": 0.13625,
-      "name": "SonicWall SMA 100 Series"
-    },
-    {
       "id": "CVE-2019-0221",
       "now": 0.59194,
       "prev": 0.45571,
@@ -213,6 +192,27 @@
       "prev": 0.75752,
       "delta": 0.12428,
       "name": "Cisco Secure Firewall Management Center Authentication Bypass Remote Code Execution Vulner"
+    },
+    {
+      "id": "CVE-2009-0595",
+      "now": 0.34398,
+      "prev": 0.22207,
+      "delta": 0.12191,
+      "name": "PHP remote file inclusion vulnerability in skysilver/login.tpl.php in phpSkelSite 1.4, when register_globals i"
+    },
+    {
+      "id": "CVE-2025-20282",
+      "now": 0.38719,
+      "prev": 0.27498,
+      "delta": 0.11221,
+      "name": "Cisco ISE API Unauthenticated Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2022-23134",
+      "now": 0.9526,
+      "prev": 0.84657,
+      "delta": 0.10603,
+      "name": "Possible view of the setup pages by unauthenticated users if config file already exists"
     }
   ],
   "newly_high": [
@@ -232,9 +232,9 @@
     },
     {
       "id": "CVE-2026-71362",
-      "now": 0.89616,
+      "now": 0.87507,
       "prev": 0.2452,
-      "delta": 0.65096,
+      "delta": 0.62987,
       "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
     },
     {
@@ -294,11 +294,11 @@
       "name": "Apache Apache Tomcat"
     },
     {
-      "id": "CVE-2018-1217",
-      "now": 0.50874,
-      "prev": 0.45323,
-      "delta": 0.05551,
-      "name": "Dell EMC Avamar, Integrated Data Protection Appliance"
+      "id": "CVE-2023-41064",
+      "now": 0.53403,
+      "prev": 0.4506,
+      "delta": 0.08343,
+      "name": "Apple macOS"
     },
     {
       "id": "CVE-2025-15467",
