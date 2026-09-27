@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-26",
+  "updated": "2026-09-27",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-26",
-  "previous_date": "2026-09-19",
+  "current_date": "2026-09-27",
+  "previous_date": "2026-09-20",
   "risers": [
     {
       "id": "CVE-2026-85706",
@@ -110,6 +110,13 @@
       "name": "An issue was discovered in libxml2 before 2.10.3. When parsing a multi-gigabyte XML document with the XML_PARS"
     },
     {
+      "id": "CVE-2025-34152",
+      "now": 0.86839,
+      "prev": 0.68599,
+      "delta": 0.1824,
+      "name": "Shenzhen Aitemi M300 Wi-Fi Repeater OS Command Injection via Time Parameter"
+    },
+    {
       "id": "CVE-2021-3518",
       "now": 0.21859,
       "prev": 0.03653,
@@ -206,13 +213,6 @@
       "prev": 0.27498,
       "delta": 0.11221,
       "name": "Cisco ISE API Unauthenticated Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2022-23134",
-      "now": 0.9526,
-      "prev": 0.84657,
-      "delta": 0.10603,
-      "name": "Possible view of the setup pages by unauthenticated users if config file already exists"
     }
   ],
   "newly_high": [
@@ -313,6 +313,13 @@
       "prev": 0.49734,
       "delta": 0.02263,
       "name": "SolarWinds Web Help Desk Authentication Bypass Vulnerability"
+    },
+    {
+      "id": "CVE-2009-4655",
+      "now": 0.50517,
+      "prev": 0.49864,
+      "delta": 0.00653,
+      "name": "The dhost web service in Novell eDirectory 8.8.5 uses a predictable session cookie, which makes it easier for "
     }
   ]
 }
