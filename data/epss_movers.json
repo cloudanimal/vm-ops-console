@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-27",
+  "updated": "2026-09-28",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-27",
-  "previous_date": "2026-09-20",
+  "current_date": "2026-09-28",
+  "previous_date": "2026-09-21",
   "risers": [
     {
       "id": "CVE-2026-85706",
@@ -33,11 +33,25 @@
       "name": "SimpleHelp remote support software v5.5.7 and before allows admin users to upload arbitrary files anywhere on "
     },
     {
+      "id": "CVE-2016-3251",
+      "now": 0.58073,
+      "prev": 0.03429,
+      "delta": 0.54644,
+      "name": "The GDI component in the kernel-mode drivers in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP"
+    },
+    {
       "id": "CVE-2026-19478",
       "now": 0.60204,
       "prev": 0.05811,
       "delta": 0.54393,
       "name": "Improper Control of Generation of Code ('Code Injection') in GitLab"
+    },
+    {
+      "id": "CVE-2017-3191",
+      "now": 0.62527,
+      "prev": 0.14097,
+      "delta": 0.4843,
+      "name": "D-Link DIR-130"
     },
     {
       "id": "CVE-2026-85046",
@@ -54,6 +68,125 @@
       "name": "Ray is vulnerable to RCE via Safari & Firefox Browsers through DNS Rebinding Attack"
     },
     {
+      "id": "CVE-2018-0258",
+      "now": 0.48199,
+      "prev": 0.0622,
+      "delta": 0.41979,
+      "name": "Cisco Prime File Upload Servlet"
+    },
+    {
+      "id": "CVE-2017-9829",
+      "now": 0.68744,
+      "prev": 0.27591,
+      "delta": 0.41153,
+      "name": "'/cgi-bin/admin/downloadMedias.cgi' of the web service in most of the VIVOTEK Network Cameras is vulnerable, w"
+    },
+    {
+      "id": "CVE-2018-3924",
+      "now": 0.4414,
+      "prev": 0.03021,
+      "delta": 0.41119,
+      "name": "Foxit Foxit"
+    },
+    {
+      "id": "CVE-2016-3272",
+      "now": 0.43284,
+      "prev": 0.03189,
+      "delta": 0.40095,
+      "name": "The kernel in Microsoft Windows 8.1, Windows Server 2012 Gold and R2, Windows RT 8.1, and Windows 10 Gold and "
+    },
+    {
+      "id": "CVE-2019-7111",
+      "now": 0.55894,
+      "prev": 0.16067,
+      "delta": 0.39827,
+      "name": "Adobe Adobe Acrobat and Reader"
+    },
+    {
+      "id": "CVE-2016-6603",
+      "now": 0.8704,
+      "prev": 0.48798,
+      "delta": 0.38242,
+      "name": "ZOHO WebNMS Framework 5.2 and 5.2 SP1 allows remote attackers to bypass authentication and impersonate arbitra"
+    },
+    {
+      "id": "CVE-2018-16283",
+      "now": 0.6307,
+      "prev": 0.25129,
+      "delta": 0.37941,
+      "name": "The Wechat Broadcast plugin 1.2.0 and earlier for WordPress allows Directory Traversal via the Image.php url p"
+    },
+    {
+      "id": "CVE-2015-5259",
+      "now": 0.57037,
+      "prev": 0.19351,
+      "delta": 0.37686,
+      "name": "Integer overflow in the read_string function in libsvn_ra_svn/marshal.c in Apache Subversion 1.9.x before 1.9."
+    },
+    {
+      "id": "CVE-2017-6343",
+      "now": 0.60349,
+      "prev": 0.22769,
+      "delta": 0.3758,
+      "name": "The web interface on Dahua DHI-HCVR7216A-S3 devices with NVR Firmware 3.210.0001.10 2016-06-06, Camera Firmwar"
+    },
+    {
+      "id": "CVE-2018-18990",
+      "now": 0.39487,
+      "prev": 0.02631,
+      "delta": 0.36856,
+      "name": "ICS-CERT LCDS Laquis SCADA"
+    },
+    {
+      "id": "CVE-2018-11714",
+      "now": 0.68053,
+      "prev": 0.31923,
+      "delta": 0.3613,
+      "name": "An issue was discovered on TP-Link TL-WR840N v5 00000005 0.9.1 3.16 v0001.0 Build 170608 Rel.58696n and TL-WR8"
+    },
+    {
+      "id": "CVE-2017-6360",
+      "now": 0.66146,
+      "prev": 0.30541,
+      "delta": 0.35605,
+      "name": "QNAP QTS before 4.2.4 Build 20170313 allows attackers to gain administrator privileges and obtain sensitive in"
+    },
+    {
+      "id": "CVE-2019-9733",
+      "now": 0.52948,
+      "prev": 0.17434,
+      "delta": 0.35514,
+      "name": "An issue was discovered in JFrog Artifactory 6.7.3. By default, the access-admin account is used to reset the "
+    },
+    {
+      "id": "CVE-2016-4264",
+      "now": 0.69044,
+      "prev": 0.3419,
+      "delta": 0.34854,
+      "name": "The Office Open XML (OOXML) feature in Adobe ColdFusion 10 before Update 21 and 11 before Update 10 allows rem"
+    },
+    {
+      "id": "CVE-2017-14942",
+      "now": 0.60857,
+      "prev": 0.2684,
+      "delta": 0.34017,
+      "name": "Intelbras WRN 150 devices allow remote attackers to read the configuration file, and consequently bypass authe"
+    },
+    {
+      "id": "CVE-2015-8399",
+      "now": 0.60241,
+      "prev": 0.26862,
+      "delta": 0.33379,
+      "name": "Atlassian Confluence before 5.8.17 allows remote authenticated users to read configuration files via the decor"
+    },
+    {
+      "id": "CVE-2016-6195",
+      "now": 0.68493,
+      "prev": 0.35666,
+      "delta": 0.32827,
+      "name": "SQL injection vulnerability in forumrunner/includes/moderation.php in vBulletin before 4.2.2 Patch Level 5 and"
+    },
+    {
       "id": "CVE-2026-2441",
       "now": 0.55101,
       "prev": 0.22378,
@@ -61,158 +194,25 @@
       "name": "Google Chrome"
     },
     {
-      "id": "CVE-2026-21962",
-      "now": 0.70915,
-      "prev": 0.42475,
-      "delta": 0.2844,
-      "name": "Oracle Corporation Oracle HTTP Server, Oracle Weblogic Server Proxy Plug-in"
+      "id": "CVE-2017-7309",
+      "now": 0.57319,
+      "prev": 0.24902,
+      "delta": 0.32417,
+      "name": "A cross-site scripting (XSS) vulnerability in the MantisBT Configuration Report page (adm_config_report.php) a"
     },
     {
-      "id": "CVE-2021-44026",
-      "now": 0.69882,
-      "prev": 0.41856,
-      "delta": 0.28026,
-      "name": "Roundcube before 1.3.17 and 1.4.x before 1.4.12 is prone to a potential SQL injection via search or search_par"
+      "id": "CVE-2019-12276",
+      "now": 0.57099,
+      "prev": 0.26452,
+      "delta": 0.30647,
+      "name": "A Path Traversal vulnerability in Controllers/LetsEncryptController.cs in LetsEncryptController in GrandNode 4"
     },
     {
-      "id": "CVE-2026-76461",
-      "now": 0.28269,
-      "prev": 0.02009,
-      "delta": 0.2626,
-      "name": "Cisco Secure Email Gateway SQL Injection Vulnerability"
-    },
-    {
-      "id": "CVE-2026-20316",
-      "now": 0.35096,
-      "prev": 0.11153,
-      "delta": 0.23943,
-      "name": "Cisco Secure Firewall Management Center Software Static Credential Vulnerability"
-    },
-    {
-      "id": "CVE-2023-48365",
-      "now": 0.47453,
-      "prev": 0.24491,
-      "delta": 0.22962,
-      "name": "Qlik Sense Enterprise for Windows before August 2023 Patch 2 allows unauthenticated remote code execution, aka"
-    },
-    {
-      "id": "CVE-2019-19006",
-      "now": 0.55946,
-      "prev": 0.36615,
-      "delta": 0.19331,
-      "name": "Sangoma FreePBX 115.0.16.26 and below, 14.0.13.11 and below, 13.0.197.13 and below have Incorrect Access Contr"
-    },
-    {
-      "id": "CVE-2022-40303",
-      "now": 0.41365,
-      "prev": 0.22965,
-      "delta": 0.184,
-      "name": "An issue was discovered in libxml2 before 2.10.3. When parsing a multi-gigabyte XML document with the XML_PARS"
-    },
-    {
-      "id": "CVE-2025-34152",
-      "now": 0.86839,
-      "prev": 0.68599,
-      "delta": 0.1824,
-      "name": "Shenzhen Aitemi M300 Wi-Fi Repeater OS Command Injection via Time Parameter"
-    },
-    {
-      "id": "CVE-2021-3518",
-      "now": 0.21859,
-      "prev": 0.03653,
-      "delta": 0.18206,
-      "name": "libxml2"
-    },
-    {
-      "id": "CVE-2019-15752",
-      "now": 0.48628,
-      "prev": 0.31918,
-      "delta": 0.1671,
-      "name": "Docker Desktop Community Edition before 2.1.0.1 allows local users to gain privileges by placing a Trojan hors"
-    },
-    {
-      "id": "CVE-2025-27636",
-      "now": 0.96922,
-      "prev": 0.81126,
-      "delta": 0.15796,
-      "name": "Apache Camel: Camel Message Header Injection via Improper Filtering"
-    },
-    {
-      "id": "CVE-2025-21377",
-      "now": 0.39926,
-      "prev": 0.24457,
-      "delta": 0.15469,
-      "name": "NTLM Hash Disclosure Spoofing Vulnerability"
-    },
-    {
-      "id": "CVE-2013-0096",
-      "now": 0.30887,
-      "prev": 0.16097,
-      "delta": 0.1479,
-      "name": "Writer in Microsoft Windows Essentials 2011 and 2012 allows remote attackers to bypass proxy settings and over"
-    },
-    {
-      "id": "CVE-2026-0628",
-      "now": 0.21237,
-      "prev": 0.0663,
-      "delta": 0.14607,
-      "name": "Google Chrome"
-    },
-    {
-      "id": "CVE-2025-2746",
-      "now": 0.7304,
-      "prev": 0.59052,
-      "delta": 0.13988,
-      "name": "Kentico Xperience <= 13.0.172 Staging Sync Server Digest Password Authentication Bypass"
-    },
-    {
-      "id": "CVE-2019-0221",
-      "now": 0.59194,
-      "prev": 0.45571,
-      "delta": 0.13623,
-      "name": "Apache Apache Tomcat"
-    },
-    {
-      "id": "CVE-2026-76460",
-      "now": 0.14026,
-      "prev": 0.00784,
-      "delta": 0.13242,
-      "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2025-52876",
-      "now": 0.37601,
-      "prev": 0.24475,
-      "delta": 0.13126,
-      "name": "JetBrains TeamCity"
-    },
-    {
-      "id": "CVE-2025-52877",
-      "now": 0.36716,
-      "prev": 0.23835,
-      "delta": 0.12881,
-      "name": "JetBrains TeamCity"
-    },
-    {
-      "id": "CVE-2026-20079",
-      "now": 0.8818,
-      "prev": 0.75752,
-      "delta": 0.12428,
-      "name": "Cisco Secure Firewall Management Center Authentication Bypass Remote Code Execution Vulner"
-    },
-    {
-      "id": "CVE-2009-0595",
-      "now": 0.34398,
-      "prev": 0.22207,
-      "delta": 0.12191,
-      "name": "PHP remote file inclusion vulnerability in skysilver/login.tpl.php in phpSkelSite 1.4, when register_globals i"
-    },
-    {
-      "id": "CVE-2025-20282",
-      "now": 0.38719,
-      "prev": 0.27498,
-      "delta": 0.11221,
-      "name": "Cisco ISE API Unauthenticated Remote Code Execution Vulnerability"
+      "id": "CVE-2018-18323",
+      "now": 0.70736,
+      "prev": 0.40307,
+      "delta": 0.30429,
+      "name": "CentOS-WebPanel.com (aka CWP) CentOS Web Panel 0.9.8.480 has Local File Inclusion via directory traversal with"
     }
   ],
   "newly_high": [
@@ -245,11 +245,25 @@
       "name": "SimpleHelp remote support software v5.5.7 and before allows admin users to upload arbitrary files anywhere on "
     },
     {
+      "id": "CVE-2016-3251",
+      "now": 0.58073,
+      "prev": 0.03429,
+      "delta": 0.54644,
+      "name": "The GDI component in the kernel-mode drivers in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP"
+    },
+    {
       "id": "CVE-2026-19478",
       "now": 0.60204,
       "prev": 0.05811,
       "delta": 0.54393,
       "name": "Improper Control of Generation of Code ('Code Injection') in GitLab"
+    },
+    {
+      "id": "CVE-2017-3191",
+      "now": 0.62527,
+      "prev": 0.14097,
+      "delta": 0.4843,
+      "name": "D-Link DIR-130"
     },
     {
       "id": "CVE-2025-62593",
@@ -259,6 +273,97 @@
       "name": "Ray is vulnerable to RCE via Safari & Firefox Browsers through DNS Rebinding Attack"
     },
     {
+      "id": "CVE-2017-9829",
+      "now": 0.68744,
+      "prev": 0.27591,
+      "delta": 0.41153,
+      "name": "'/cgi-bin/admin/downloadMedias.cgi' of the web service in most of the VIVOTEK Network Cameras is vulnerable, w"
+    },
+    {
+      "id": "CVE-2019-7111",
+      "now": 0.55894,
+      "prev": 0.16067,
+      "delta": 0.39827,
+      "name": "Adobe Adobe Acrobat and Reader"
+    },
+    {
+      "id": "CVE-2016-6603",
+      "now": 0.8704,
+      "prev": 0.48798,
+      "delta": 0.38242,
+      "name": "ZOHO WebNMS Framework 5.2 and 5.2 SP1 allows remote attackers to bypass authentication and impersonate arbitra"
+    },
+    {
+      "id": "CVE-2018-16283",
+      "now": 0.6307,
+      "prev": 0.25129,
+      "delta": 0.37941,
+      "name": "The Wechat Broadcast plugin 1.2.0 and earlier for WordPress allows Directory Traversal via the Image.php url p"
+    },
+    {
+      "id": "CVE-2015-5259",
+      "now": 0.57037,
+      "prev": 0.19351,
+      "delta": 0.37686,
+      "name": "Integer overflow in the read_string function in libsvn_ra_svn/marshal.c in Apache Subversion 1.9.x before 1.9."
+    },
+    {
+      "id": "CVE-2017-6343",
+      "now": 0.60349,
+      "prev": 0.22769,
+      "delta": 0.3758,
+      "name": "The web interface on Dahua DHI-HCVR7216A-S3 devices with NVR Firmware 3.210.0001.10 2016-06-06, Camera Firmwar"
+    },
+    {
+      "id": "CVE-2018-11714",
+      "now": 0.68053,
+      "prev": 0.31923,
+      "delta": 0.3613,
+      "name": "An issue was discovered on TP-Link TL-WR840N v5 00000005 0.9.1 3.16 v0001.0 Build 170608 Rel.58696n and TL-WR8"
+    },
+    {
+      "id": "CVE-2017-6360",
+      "now": 0.66146,
+      "prev": 0.30541,
+      "delta": 0.35605,
+      "name": "QNAP QTS before 4.2.4 Build 20170313 allows attackers to gain administrator privileges and obtain sensitive in"
+    },
+    {
+      "id": "CVE-2019-9733",
+      "now": 0.52948,
+      "prev": 0.17434,
+      "delta": 0.35514,
+      "name": "An issue was discovered in JFrog Artifactory 6.7.3. By default, the access-admin account is used to reset the "
+    },
+    {
+      "id": "CVE-2016-4264",
+      "now": 0.69044,
+      "prev": 0.3419,
+      "delta": 0.34854,
+      "name": "The Office Open XML (OOXML) feature in Adobe ColdFusion 10 before Update 21 and 11 before Update 10 allows rem"
+    },
+    {
+      "id": "CVE-2017-14942",
+      "now": 0.60857,
+      "prev": 0.2684,
+      "delta": 0.34017,
+      "name": "Intelbras WRN 150 devices allow remote attackers to read the configuration file, and consequently bypass authe"
+    },
+    {
+      "id": "CVE-2015-8399",
+      "now": 0.60241,
+      "prev": 0.26862,
+      "delta": 0.33379,
+      "name": "Atlassian Confluence before 5.8.17 allows remote authenticated users to read configuration files via the decor"
+    },
+    {
+      "id": "CVE-2016-6195",
+      "now": 0.68493,
+      "prev": 0.35666,
+      "delta": 0.32827,
+      "name": "SQL injection vulnerability in forumrunner/includes/moderation.php in vBulletin before 4.2.2 Patch Level 5 and"
+    },
+    {
       "id": "CVE-2026-2441",
       "now": 0.55101,
       "prev": 0.22378,
@@ -266,60 +371,60 @@
       "name": "Google Chrome"
     },
     {
-      "id": "CVE-2026-21962",
-      "now": 0.70915,
-      "prev": 0.42475,
-      "delta": 0.2844,
-      "name": "Oracle Corporation Oracle HTTP Server, Oracle Weblogic Server Proxy Plug-in"
+      "id": "CVE-2017-7309",
+      "now": 0.57319,
+      "prev": 0.24902,
+      "delta": 0.32417,
+      "name": "A cross-site scripting (XSS) vulnerability in the MantisBT Configuration Report page (adm_config_report.php) a"
     },
     {
-      "id": "CVE-2021-44026",
-      "now": 0.69882,
-      "prev": 0.41856,
-      "delta": 0.28026,
-      "name": "Roundcube before 1.3.17 and 1.4.x before 1.4.12 is prone to a potential SQL injection via search or search_par"
+      "id": "CVE-2019-12276",
+      "now": 0.57099,
+      "prev": 0.26452,
+      "delta": 0.30647,
+      "name": "A Path Traversal vulnerability in Controllers/LetsEncryptController.cs in LetsEncryptController in GrandNode 4"
     },
     {
-      "id": "CVE-2019-19006",
-      "now": 0.55946,
-      "prev": 0.36615,
-      "delta": 0.19331,
-      "name": "Sangoma FreePBX 115.0.16.26 and below, 14.0.13.11 and below, 13.0.197.13 and below have Incorrect Access Contr"
+      "id": "CVE-2018-18323",
+      "now": 0.70736,
+      "prev": 0.40307,
+      "delta": 0.30429,
+      "name": "CentOS-WebPanel.com (aka CWP) CentOS Web Panel 0.9.8.480 has Local File Inclusion via directory traversal with"
     },
     {
-      "id": "CVE-2019-0221",
-      "now": 0.59194,
-      "prev": 0.45571,
-      "delta": 0.13623,
-      "name": "Apache Apache Tomcat"
+      "id": "CVE-2019-6443",
+      "now": 0.66881,
+      "prev": 0.36614,
+      "delta": 0.30267,
+      "name": "An issue was discovered in NTPsec before 1.1.3. Because of a bug in ctl_getitem, there is a stack-based buffer"
     },
     {
-      "id": "CVE-2023-41064",
-      "now": 0.53403,
-      "prev": 0.4506,
-      "delta": 0.08343,
-      "name": "Apple macOS"
+      "id": "CVE-2019-5434",
+      "now": 0.57022,
+      "prev": 0.26832,
+      "delta": 0.3019,
+      "name": "Revive Adserver"
     },
     {
-      "id": "CVE-2025-15467",
-      "now": 0.52446,
-      "prev": 0.48211,
-      "delta": 0.04235,
-      "name": "Stack buffer overflow in CMS (Auth)EnvelopedData parsing"
+      "id": "CVE-2018-10956",
+      "now": 0.54967,
+      "prev": 0.24914,
+      "delta": 0.30053,
+      "name": "IPConfigure Orchid Core VMS 2.0.5 allows Directory Traversal."
     },
     {
-      "id": "CVE-2025-40552",
-      "now": 0.51997,
-      "prev": 0.49734,
-      "delta": 0.02263,
-      "name": "SolarWinds Web Help Desk Authentication Bypass Vulnerability"
+      "id": "CVE-2015-4074",
+      "now": 0.5651,
+      "prev": 0.26828,
+      "delta": 0.29682,
+      "name": "Directory traversal vulnerability in the Helpdesk Pro plugin before 1.4.0 for Joomla! allows remote attackers "
     },
     {
-      "id": "CVE-2009-4655",
-      "now": 0.50517,
-      "prev": 0.49864,
-      "delta": 0.00653,
-      "name": "The dhost web service in Novell eDirectory 8.8.5 uses a predictable session cookie, which makes it easier for "
+      "id": "CVE-2014-3206",
+      "now": 0.51014,
+      "prev": 0.21447,
+      "delta": 0.29567,
+      "name": "Seagate BlackArmor NAS allows remote attackers to execute arbitrary code via the session parameter to localhos"
     }
   ]
 }
