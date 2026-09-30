@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-29",
-  "previous_date": "2026-09-22",
+  "current_date": "2026-09-30",
+  "previous_date": "2026-09-23",
   "risers": [
     {
       "id": "CVE-2026-85706",
@@ -10,6 +10,13 @@
       "prev": 0.09287,
       "delta": 0.82138,
       "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') in GitLab"
+    },
+    {
+      "id": "CVE-2026-81578",
+      "now": 0.85169,
+      "prev": 0.0329,
+      "delta": 0.81879,
+      "name": "PaperCut MF/NG: Authentication Bypass"
     },
     {
       "id": "CVE-2026-48908",
@@ -24,6 +31,13 @@
       "prev": 0.2452,
       "delta": 0.62987,
       "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
+    },
+    {
+      "id": "CVE-2026-82078",
+      "now": 0.61394,
+      "prev": 0.03574,
+      "delta": 0.5782,
+      "name": "PaperCut MF/NG: Unsafe Dynamic Class Loading in Database Connector"
     },
     {
       "id": "CVE-2024-57728",
@@ -96,18 +110,25 @@
       "name": "Cisco Secure Firewall Management Center Software Static Credential Vulnerability"
     },
     {
-      "id": "CVE-2023-48365",
-      "now": 0.47453,
-      "prev": 0.24491,
-      "delta": 0.22962,
-      "name": "Qlik Sense Enterprise for Windows before August 2023 Patch 2 allows unauthenticated remote code execution, aka"
-    },
-    {
       "id": "CVE-2019-18610",
       "now": 0.50076,
       "prev": 0.29645,
       "delta": 0.20431,
       "name": "An issue was discovered in manager.c in Sangoma Asterisk through 13.x, 16.x, 17.x and Certified Asterisk 13.21"
+    },
+    {
+      "id": "CVE-2023-48365",
+      "now": 0.47453,
+      "prev": 0.27693,
+      "delta": 0.1976,
+      "name": "Qlik Sense Enterprise for Windows before August 2023 Patch 2 allows unauthenticated remote code execution, aka"
+    },
+    {
+      "id": "CVE-2026-87902",
+      "now": 0.19756,
+      "prev": 0.0042,
+      "delta": 0.19336,
+      "name": "WordPress WordPress"
     },
     {
       "id": "CVE-2019-19006",
@@ -136,6 +157,20 @@
       "prev": 0.03653,
       "delta": 0.18206,
       "name": "libxml2"
+    },
+    {
+      "id": "CVE-2026-93616",
+      "now": 0.19654,
+      "prev": 0.02422,
+      "delta": 0.17232,
+      "name": "Directory Traversal and File upload allows execution of arbitrary script on the Management"
+    },
+    {
+      "id": "CVE-2022-21449",
+      "now": 0.77151,
+      "prev": 0.60336,
+      "delta": 0.16815,
+      "name": "Oracle Corporation Java SE JDK and JRE"
     },
     {
       "id": "CVE-2019-15752",
@@ -178,41 +213,6 @@
       "prev": 0.0663,
       "delta": 0.14607,
       "name": "Google Chrome"
-    },
-    {
-      "id": "CVE-2018-7286",
-      "now": 0.52733,
-      "prev": 0.38268,
-      "delta": 0.14465,
-      "name": "An issue was discovered in Asterisk through 13.19.1, 14.x through 14.7.5, and 15.x through 15.2.1, and Certifi"
-    },
-    {
-      "id": "CVE-2025-2746",
-      "now": 0.7304,
-      "prev": 0.59052,
-      "delta": 0.13988,
-      "name": "Kentico Xperience <= 13.0.172 Staging Sync Server Digest Password Authentication Bypass"
-    },
-    {
-      "id": "CVE-2019-0221",
-      "now": 0.59194,
-      "prev": 0.45571,
-      "delta": 0.13623,
-      "name": "Apache Apache Tomcat"
-    },
-    {
-      "id": "CVE-2026-76460",
-      "now": 0.14026,
-      "prev": 0.00784,
-      "delta": 0.13242,
-      "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2025-52876",
-      "now": 0.37601,
-      "prev": 0.24475,
-      "delta": 0.13126,
-      "name": "JetBrains TeamCity"
     }
   ],
   "newly_high": [
@@ -222,6 +222,13 @@
       "prev": 0.09287,
       "delta": 0.82138,
       "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') in GitLab"
+    },
+    {
+      "id": "CVE-2026-81578",
+      "now": 0.85169,
+      "prev": 0.0329,
+      "delta": 0.81879,
+      "name": "PaperCut MF/NG: Authentication Bypass"
     },
     {
       "id": "CVE-2026-48908",
@@ -236,6 +243,13 @@
       "prev": 0.2452,
       "delta": 0.62987,
       "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
+    },
+    {
+      "id": "CVE-2026-82078",
+      "now": 0.61394,
+      "prev": 0.03574,
+      "delta": 0.5782,
+      "name": "PaperCut MF/NG: Unsafe Dynamic Class Loading in Database Connector"
     },
     {
       "id": "CVE-2024-57728",
@@ -327,6 +341,13 @@
       "prev": 0.44784,
       "delta": 0.08619,
       "name": "Apple macOS"
+    },
+    {
+      "id": "CVE-2002-0422",
+      "now": 0.51038,
+      "prev": 0.44065,
+      "delta": 0.06973,
+      "name": "IIS 5 and 5.1 supporting WebDAV methods allows remote attackers to determine the internal IP address of the sy"
     },
     {
       "id": "CVE-2025-15467",
