@@ -1,22 +1,43 @@
 {
-  "updated": "2026-09-30",
+  "updated": "2026-10-01",
   "source": "FIRST EPSS",
-  "current_date": "2026-09-30",
-  "previous_date": "2026-09-23",
+  "current_date": "2026-10-01",
+  "previous_date": "2026-09-24",
   "risers": [
     {
+      "id": "CVE-2026-71362",
+      "now": 0.87507,
+      "prev": 0.02335,
+      "delta": 0.85172,
+      "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
+    },
+    {
       "id": "CVE-2026-85706",
-      "now": 0.91425,
+      "now": 0.92956,
       "prev": 0.09287,
-      "delta": 0.82138,
+      "delta": 0.83669,
       "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') in GitLab"
     },
     {
       "id": "CVE-2026-81578",
       "now": 0.85169,
-      "prev": 0.0329,
-      "delta": 0.81879,
+      "prev": 0.04481,
+      "delta": 0.80688,
       "name": "PaperCut MF/NG: Authentication Bypass"
+    },
+    {
+      "id": "CVE-2026-42271",
+      "now": 0.9257,
+      "prev": 0.12754,
+      "delta": 0.79816,
+      "name": "LiteLLM: Authenticated command execution via MCP stdio test endpoints"
+    },
+    {
+      "id": "CVE-2026-63077",
+      "now": 0.8957,
+      "prev": 0.09763,
+      "delta": 0.79807,
+      "name": "JetBrains TeamCity"
     },
     {
       "id": "CVE-2026-48908",
@@ -26,20 +47,6 @@
       "name": "Joomla Extension - joomshaper.com - Remote Code Execution in SP Pagebuilder extension for "
     },
     {
-      "id": "CVE-2026-71362",
-      "now": 0.87507,
-      "prev": 0.2452,
-      "delta": 0.62987,
-      "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
-    },
-    {
-      "id": "CVE-2026-82078",
-      "now": 0.61394,
-      "prev": 0.03574,
-      "delta": 0.5782,
-      "name": "PaperCut MF/NG: Unsafe Dynamic Class Loading in Database Connector"
-    },
-    {
       "id": "CVE-2024-57728",
       "now": 0.64664,
       "prev": 0.06982,
@@ -47,11 +54,11 @@
       "name": "SimpleHelp remote support software v5.5.7 and before allows admin users to upload arbitrary files anywhere on "
     },
     {
-      "id": "CVE-2026-19478",
-      "now": 0.60204,
-      "prev": 0.05811,
-      "delta": 0.54393,
-      "name": "Improper Control of Generation of Code ('Code Injection') in GitLab"
+      "id": "CVE-2026-82078",
+      "now": 0.61394,
+      "prev": 0.03843,
+      "delta": 0.57551,
+      "name": "PaperCut MF/NG: Unsafe Dynamic Class Loading in Database Connector"
     },
     {
       "id": "CVE-2008-4546",
@@ -61,53 +68,18 @@
       "name": "Adobe Flash Player before 9.0.277.0 and 10.x before 10.1.53.64, and Adobe AIR before 2.0.2.12610, allows remot"
     },
     {
-      "id": "CVE-2026-85046",
-      "now": 0.48881,
-      "prev": 0.01462,
-      "delta": 0.47419,
-      "name": "Google Chrome"
-    },
-    {
       "id": "CVE-2025-62593",
       "now": 0.62459,
-      "prev": 0.16888,
-      "delta": 0.45571,
+      "prev": 0.2729,
+      "delta": 0.35169,
       "name": "Ray is vulnerable to RCE via Safari & Firefox Browsers through DNS Rebinding Attack"
-    },
-    {
-      "id": "CVE-2026-2441",
-      "now": 0.55101,
-      "prev": 0.22378,
-      "delta": 0.32723,
-      "name": "Google Chrome"
-    },
-    {
-      "id": "CVE-2026-21962",
-      "now": 0.70915,
-      "prev": 0.42475,
-      "delta": 0.2844,
-      "name": "Oracle Corporation Oracle HTTP Server, Oracle Weblogic Server Proxy Plug-in"
-    },
-    {
-      "id": "CVE-2021-44026",
-      "now": 0.69882,
-      "prev": 0.41856,
-      "delta": 0.28026,
-      "name": "Roundcube before 1.3.17 and 1.4.x before 1.4.12 is prone to a potential SQL injection via search or search_par"
     },
     {
       "id": "CVE-2026-76461",
       "now": 0.28269,
-      "prev": 0.02009,
-      "delta": 0.2626,
+      "prev": 0.02018,
+      "delta": 0.26251,
       "name": "Cisco Secure Email Gateway SQL Injection Vulnerability"
-    },
-    {
-      "id": "CVE-2026-20316",
-      "now": 0.35096,
-      "prev": 0.11153,
-      "delta": 0.23943,
-      "name": "Cisco Secure Firewall Management Center Software Static Credential Vulnerability"
     },
     {
       "id": "CVE-2019-18610",
@@ -115,34 +87,6 @@
       "prev": 0.29645,
       "delta": 0.20431,
       "name": "An issue was discovered in manager.c in Sangoma Asterisk through 13.x, 16.x, 17.x and Certified Asterisk 13.21"
-    },
-    {
-      "id": "CVE-2023-48365",
-      "now": 0.47453,
-      "prev": 0.27693,
-      "delta": 0.1976,
-      "name": "Qlik Sense Enterprise for Windows before August 2023 Patch 2 allows unauthenticated remote code execution, aka"
-    },
-    {
-      "id": "CVE-2026-87902",
-      "now": 0.19756,
-      "prev": 0.0042,
-      "delta": 0.19336,
-      "name": "WordPress WordPress"
-    },
-    {
-      "id": "CVE-2019-19006",
-      "now": 0.55946,
-      "prev": 0.36615,
-      "delta": 0.19331,
-      "name": "Sangoma FreePBX 115.0.16.26 and below, 14.0.13.11 and below, 13.0.197.13 and below have Incorrect Access Contr"
-    },
-    {
-      "id": "CVE-2022-40303",
-      "now": 0.41365,
-      "prev": 0.22965,
-      "delta": 0.184,
-      "name": "An issue was discovered in libxml2 before 2.10.3. When parsing a multi-gigabyte XML document with the XML_PARS"
     },
     {
       "id": "CVE-2025-34152",
@@ -152,18 +96,18 @@
       "name": "Shenzhen Aitemi M300 Wi-Fi Repeater OS Command Injection via Time Parameter"
     },
     {
-      "id": "CVE-2021-3518",
-      "now": 0.21859,
-      "prev": 0.03653,
-      "delta": 0.18206,
-      "name": "libxml2"
-    },
-    {
       "id": "CVE-2026-93616",
       "now": 0.19654,
-      "prev": 0.02422,
-      "delta": 0.17232,
+      "prev": 0.02421,
+      "delta": 0.17233,
       "name": "Directory Traversal and File upload allows execution of arbitrary script on the Management"
+    },
+    {
+      "id": "CVE-2026-87902",
+      "now": 0.19756,
+      "prev": 0.02877,
+      "delta": 0.16879,
+      "name": "WordPress WordPress"
     },
     {
       "id": "CVE-2022-21449",
@@ -171,148 +115,6 @@
       "prev": 0.60336,
       "delta": 0.16815,
       "name": "Oracle Corporation Java SE JDK and JRE"
-    },
-    {
-      "id": "CVE-2019-15752",
-      "now": 0.48628,
-      "prev": 0.31918,
-      "delta": 0.1671,
-      "name": "Docker Desktop Community Edition before 2.1.0.1 allows local users to gain privileges by placing a Trojan hors"
-    },
-    {
-      "id": "CVE-2008-6221",
-      "now": 0.53983,
-      "prev": 0.37692,
-      "delta": 0.16291,
-      "name": "PHP remote file inclusion vulnerability in config.dadamail.php in the Dada Mail Manager (com_dadamail) compone"
-    },
-    {
-      "id": "CVE-2025-27636",
-      "now": 0.96922,
-      "prev": 0.81126,
-      "delta": 0.15796,
-      "name": "Apache Camel: Camel Message Header Injection via Improper Filtering"
-    },
-    {
-      "id": "CVE-2025-21377",
-      "now": 0.39926,
-      "prev": 0.24457,
-      "delta": 0.15469,
-      "name": "NTLM Hash Disclosure Spoofing Vulnerability"
-    },
-    {
-      "id": "CVE-2013-0096",
-      "now": 0.30887,
-      "prev": 0.16097,
-      "delta": 0.1479,
-      "name": "Writer in Microsoft Windows Essentials 2011 and 2012 allows remote attackers to bypass proxy settings and over"
-    },
-    {
-      "id": "CVE-2026-0628",
-      "now": 0.21237,
-      "prev": 0.0663,
-      "delta": 0.14607,
-      "name": "Google Chrome"
-    }
-  ],
-  "newly_high": [
-    {
-      "id": "CVE-2026-85706",
-      "now": 0.91425,
-      "prev": 0.09287,
-      "delta": 0.82138,
-      "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') in GitLab"
-    },
-    {
-      "id": "CVE-2026-81578",
-      "now": 0.85169,
-      "prev": 0.0329,
-      "delta": 0.81879,
-      "name": "PaperCut MF/NG: Authentication Bypass"
-    },
-    {
-      "id": "CVE-2026-48908",
-      "now": 0.88512,
-      "prev": 0.15086,
-      "delta": 0.73426,
-      "name": "Joomla Extension - joomshaper.com - Remote Code Execution in SP Pagebuilder extension for "
-    },
-    {
-      "id": "CVE-2026-71362",
-      "now": 0.87507,
-      "prev": 0.2452,
-      "delta": 0.62987,
-      "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
-    },
-    {
-      "id": "CVE-2026-82078",
-      "now": 0.61394,
-      "prev": 0.03574,
-      "delta": 0.5782,
-      "name": "PaperCut MF/NG: Unsafe Dynamic Class Loading in Database Connector"
-    },
-    {
-      "id": "CVE-2024-57728",
-      "now": 0.64664,
-      "prev": 0.06982,
-      "delta": 0.57682,
-      "name": "SimpleHelp remote support software v5.5.7 and before allows admin users to upload arbitrary files anywhere on "
-    },
-    {
-      "id": "CVE-2026-19478",
-      "now": 0.60204,
-      "prev": 0.05811,
-      "delta": 0.54393,
-      "name": "Improper Control of Generation of Code ('Code Injection') in GitLab"
-    },
-    {
-      "id": "CVE-2008-4546",
-      "now": 0.65868,
-      "prev": 0.16769,
-      "delta": 0.49099,
-      "name": "Adobe Flash Player before 9.0.277.0 and 10.x before 10.1.53.64, and Adobe AIR before 2.0.2.12610, allows remot"
-    },
-    {
-      "id": "CVE-2025-62593",
-      "now": 0.62459,
-      "prev": 0.16888,
-      "delta": 0.45571,
-      "name": "Ray is vulnerable to RCE via Safari & Firefox Browsers through DNS Rebinding Attack"
-    },
-    {
-      "id": "CVE-2026-2441",
-      "now": 0.55101,
-      "prev": 0.22378,
-      "delta": 0.32723,
-      "name": "Google Chrome"
-    },
-    {
-      "id": "CVE-2026-21962",
-      "now": 0.70915,
-      "prev": 0.42475,
-      "delta": 0.2844,
-      "name": "Oracle Corporation Oracle HTTP Server, Oracle Weblogic Server Proxy Plug-in"
-    },
-    {
-      "id": "CVE-2021-44026",
-      "now": 0.69882,
-      "prev": 0.41856,
-      "delta": 0.28026,
-      "name": "Roundcube before 1.3.17 and 1.4.x before 1.4.12 is prone to a potential SQL injection via search or search_par"
-    },
-    {
-      "id": "CVE-2019-18610",
-      "now": 0.50076,
-      "prev": 0.29645,
-      "delta": 0.20431,
-      "name": "An issue was discovered in manager.c in Sangoma Asterisk through 13.x, 16.x, 17.x and Certified Asterisk 13.21"
-    },
-    {
-      "id": "CVE-2019-19006",
-      "now": 0.55946,
-      "prev": 0.36615,
-      "delta": 0.19331,
-      "name": "Sangoma FreePBX 115.0.16.26 and below, 14.0.13.11 and below, 13.0.197.13 and below have Incorrect Access Contr"
     },
     {
       "id": "CVE-2008-6221",
@@ -329,11 +131,181 @@
       "name": "An issue was discovered in Asterisk through 13.19.1, 14.x through 14.7.5, and 15.x through 15.2.1, and Certifi"
     },
     {
-      "id": "CVE-2019-0221",
-      "now": 0.59194,
-      "prev": 0.45571,
-      "delta": 0.13623,
-      "name": "Apache Apache Tomcat"
+      "id": "CVE-2009-0595",
+      "now": 0.34398,
+      "prev": 0.22207,
+      "delta": 0.12191,
+      "name": "PHP remote file inclusion vulnerability in skysilver/login.tpl.php in phpSkelSite 1.4, when register_globals i"
+    },
+    {
+      "id": "CVE-2025-43300",
+      "now": 0.32498,
+      "prev": 0.21994,
+      "delta": 0.10504,
+      "name": "Apple iOS and iPadOS"
+    },
+    {
+      "id": "CVE-2025-20282",
+      "now": 0.38719,
+      "prev": 0.29303,
+      "delta": 0.09416,
+      "name": "Cisco ISE API Unauthenticated Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2002-0409",
+      "now": 0.28085,
+      "prev": 0.19323,
+      "delta": 0.08762,
+      "name": "orderdetails.aspx, as made available to Microsoft .NET developers as example code and demonstrated on www.ibuy"
+    },
+    {
+      "id": "CVE-2023-41064",
+      "now": 0.53403,
+      "prev": 0.44784,
+      "delta": 0.08619,
+      "name": "Apple macOS"
+    },
+    {
+      "id": "CVE-2018-7284",
+      "now": 0.66167,
+      "prev": 0.57662,
+      "delta": 0.08505,
+      "name": "A Buffer Overflow issue was discovered in Asterisk through 13.19.1, 14.x through 14.7.5, and 15.x through 15.2"
+    },
+    {
+      "id": "CVE-2022-4262",
+      "now": 0.2351,
+      "prev": 0.15983,
+      "delta": 0.07527,
+      "name": "Google Chrome"
+    },
+    {
+      "id": "CVE-2026-22778",
+      "now": 0.1116,
+      "prev": 0.03805,
+      "delta": 0.07355,
+      "name": "vLLM leaks a heap address when PIL throws an error"
+    },
+    {
+      "id": "CVE-2025-34033",
+      "now": 0.11206,
+      "prev": 0.03873,
+      "delta": 0.07333,
+      "name": "5VTechnologies Blue Angel Software Suite OS Command Injection"
+    },
+    {
+      "id": "CVE-2002-0422",
+      "now": 0.51038,
+      "prev": 0.44065,
+      "delta": 0.06973,
+      "name": "IIS 5 and 5.1 supporting WebDAV methods allows remote attackers to determine the internal IP address of the sy"
+    },
+    {
+      "id": "CVE-2026-85102",
+      "now": 0.07546,
+      "prev": 0.00988,
+      "delta": 0.06558,
+      "name": "Improper Certificate Validation in Quantum Security Gateway"
+    },
+    {
+      "id": "CVE-2006-5627",
+      "now": 0.17089,
+      "prev": 0.10596,
+      "delta": 0.06493,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in QnECMS 2.5.6 and earlier allow remote attackers to execu"
+    }
+  ],
+  "newly_high": [
+    {
+      "id": "CVE-2026-71362",
+      "now": 0.87507,
+      "prev": 0.02335,
+      "delta": 0.85172,
+      "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
+    },
+    {
+      "id": "CVE-2026-85706",
+      "now": 0.92956,
+      "prev": 0.09287,
+      "delta": 0.83669,
+      "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') in GitLab"
+    },
+    {
+      "id": "CVE-2026-81578",
+      "now": 0.85169,
+      "prev": 0.04481,
+      "delta": 0.80688,
+      "name": "PaperCut MF/NG: Authentication Bypass"
+    },
+    {
+      "id": "CVE-2026-42271",
+      "now": 0.9257,
+      "prev": 0.12754,
+      "delta": 0.79816,
+      "name": "LiteLLM: Authenticated command execution via MCP stdio test endpoints"
+    },
+    {
+      "id": "CVE-2026-63077",
+      "now": 0.8957,
+      "prev": 0.09763,
+      "delta": 0.79807,
+      "name": "JetBrains TeamCity"
+    },
+    {
+      "id": "CVE-2026-48908",
+      "now": 0.88512,
+      "prev": 0.15086,
+      "delta": 0.73426,
+      "name": "Joomla Extension - joomshaper.com - Remote Code Execution in SP Pagebuilder extension for "
+    },
+    {
+      "id": "CVE-2024-57728",
+      "now": 0.64664,
+      "prev": 0.06982,
+      "delta": 0.57682,
+      "name": "SimpleHelp remote support software v5.5.7 and before allows admin users to upload arbitrary files anywhere on "
+    },
+    {
+      "id": "CVE-2026-82078",
+      "now": 0.61394,
+      "prev": 0.03843,
+      "delta": 0.57551,
+      "name": "PaperCut MF/NG: Unsafe Dynamic Class Loading in Database Connector"
+    },
+    {
+      "id": "CVE-2008-4546",
+      "now": 0.65868,
+      "prev": 0.16769,
+      "delta": 0.49099,
+      "name": "Adobe Flash Player before 9.0.277.0 and 10.x before 10.1.53.64, and Adobe AIR before 2.0.2.12610, allows remot"
+    },
+    {
+      "id": "CVE-2025-62593",
+      "now": 0.62459,
+      "prev": 0.2729,
+      "delta": 0.35169,
+      "name": "Ray is vulnerable to RCE via Safari & Firefox Browsers through DNS Rebinding Attack"
+    },
+    {
+      "id": "CVE-2019-18610",
+      "now": 0.50076,
+      "prev": 0.29645,
+      "delta": 0.20431,
+      "name": "An issue was discovered in manager.c in Sangoma Asterisk through 13.x, 16.x, 17.x and Certified Asterisk 13.21"
+    },
+    {
+      "id": "CVE-2008-6221",
+      "now": 0.53983,
+      "prev": 0.37692,
+      "delta": 0.16291,
+      "name": "PHP remote file inclusion vulnerability in config.dadamail.php in the Dada Mail Manager (com_dadamail) compone"
+    },
+    {
+      "id": "CVE-2018-7286",
+      "now": 0.52733,
+      "prev": 0.38268,
+      "delta": 0.14465,
+      "name": "An issue was discovered in Asterisk through 13.19.1, 14.x through 14.7.5, and 15.x through 15.2.1, and Certifi"
     },
     {
       "id": "CVE-2023-41064",
@@ -348,13 +320,6 @@
       "prev": 0.44065,
       "delta": 0.06973,
       "name": "IIS 5 and 5.1 supporting WebDAV methods allows remote attackers to determine the internal IP address of the sy"
-    },
-    {
-      "id": "CVE-2025-15467",
-      "now": 0.52446,
-      "prev": 0.48211,
-      "delta": 0.04235,
-      "name": "Stack buffer overflow in CMS (Auth)EnvelopedData parsing"
     },
     {
       "id": "CVE-2025-40552",
