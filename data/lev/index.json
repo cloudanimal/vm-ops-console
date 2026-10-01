@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-01",
+  "updated": "2026-10-01",
   "method": "NIST CSWP 41 LEV, 30-day windows",
   "epss_start": "2021-04-14",
-  "snapshots_used": 66,
+  "snapshots_used": 67,
   "years": [
     1999,
     2000,
@@ -33,5 +33,5 @@
     2025,
     2026
   ],
-  "total_cves": 373124
+  "total_cves": 386110
 }
