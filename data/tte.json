@@ -1,11 +1,11 @@
 {
- "updated": "2026-09-02",
+ "updated": "2026-10-02",
  "window_start": 2018,
  "sources": {
-  "cisa_kev": 1687,
+  "cisa_kev": 1731,
   "vulncheck_kev": 0,
   "vulncheck_xdb": 0,
-  "cves_with_tte": 1655
+  "cves_with_tte": 1699
  },
  "by_year": {
   "2018": {
@@ -51,50 +51,50 @@
    "zero_day_pct": 0.226
   },
   "2025": {
-   "n": 185,
+   "n": 188,
    "median": 6,
-   "trimmed_mean": 35.7,
-   "zero_day_pct": 0.259
+   "trimmed_mean": 39.5,
+   "zero_day_pct": 0.255
   },
   "2026": {
-   "n": 125,
-   "median": 4,
-   "trimmed_mean": 11.0,
-   "zero_day_pct": 0.272
+   "n": 166,
+   "median": 3,
+   "trimmed_mean": 12.5,
+   "zero_day_pct": 0.289
   }
  },
  "survival": [
   {
    "t": 0,
-   "pct": 0.874
+   "pct": 0.869
   },
   {
    "t": 1,
-   "pct": 0.842
+   "pct": 0.835
   },
   {
    "t": 7,
-   "pct": 0.761
+   "pct": 0.752
   },
   {
    "t": 30,
-   "pct": 0.687
+   "pct": 0.677
   },
   {
    "t": 90,
-   "pct": 0.61
+   "pct": 0.597
   },
   {
    "t": 180,
-   "pct": 0.541
+   "pct": 0.53
   },
   {
    "t": 365,
-   "pct": 0.456
+   "pct": 0.444
   },
   {
    "t": 730,
-   "pct": 0.359
+   "pct": 0.35
   }
  ],
  "milestones": [
