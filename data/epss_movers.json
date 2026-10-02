@@ -1,23 +1,9 @@
 {
-  "updated": "2026-10-01",
+  "updated": "2026-10-02",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-01",
-  "previous_date": "2026-09-24",
+  "current_date": "2026-10-02",
+  "previous_date": "2026-09-25",
   "risers": [
-    {
-      "id": "CVE-2026-71362",
-      "now": 0.87507,
-      "prev": 0.02335,
-      "delta": 0.85172,
-      "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
-    },
-    {
-      "id": "CVE-2026-85706",
-      "now": 0.92956,
-      "prev": 0.09287,
-      "delta": 0.83669,
-      "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') in GitLab"
-    },
     {
       "id": "CVE-2026-81578",
       "now": 0.85169,
@@ -40,20 +26,6 @@
       "name": "JetBrains TeamCity"
     },
     {
-      "id": "CVE-2026-48908",
-      "now": 0.88512,
-      "prev": 0.15086,
-      "delta": 0.73426,
-      "name": "Joomla Extension - joomshaper.com - Remote Code Execution in SP Pagebuilder extension for "
-    },
-    {
-      "id": "CVE-2024-57728",
-      "now": 0.64664,
-      "prev": 0.06982,
-      "delta": 0.57682,
-      "name": "SimpleHelp remote support software v5.5.7 and before allows admin users to upload arbitrary files anywhere on "
-    },
-    {
       "id": "CVE-2026-82078",
       "now": 0.61394,
       "prev": 0.03843,
@@ -68,18 +40,39 @@
       "name": "Adobe Flash Player before 9.0.277.0 and 10.x before 10.1.53.64, and Adobe AIR before 2.0.2.12610, allows remot"
     },
     {
-      "id": "CVE-2025-62593",
-      "now": 0.62459,
-      "prev": 0.2729,
-      "delta": 0.35169,
-      "name": "Ray is vulnerable to RCE via Safari & Firefox Browsers through DNS Rebinding Attack"
+      "id": "CVE-2026-87902",
+      "now": 0.45501,
+      "prev": 0.02877,
+      "delta": 0.42624,
+      "name": "WordPress WordPress"
     },
     {
-      "id": "CVE-2026-76461",
-      "now": 0.28269,
-      "prev": 0.02018,
-      "delta": 0.26251,
-      "name": "Cisco Secure Email Gateway SQL Injection Vulnerability"
+      "id": "CVE-2026-32201",
+      "now": 0.43378,
+      "prev": 0.00983,
+      "delta": 0.42395,
+      "name": "Microsoft SharePoint Server Spoofing Vulnerability"
+    },
+    {
+      "id": "CVE-2000-0979",
+      "now": 0.74658,
+      "prev": 0.44987,
+      "delta": 0.29671,
+      "name": "File and Print Sharing service in Windows 95, Windows 98, and Windows Me does not properly check the password "
+    },
+    {
+      "id": "CVE-2026-27654",
+      "now": 0.25066,
+      "prev": 0.01515,
+      "delta": 0.23551,
+      "name": "NGINX ngx_http_dav_module vulnerability"
+    },
+    {
+      "id": "CVE-2023-30804",
+      "now": 0.33962,
+      "prev": 0.12816,
+      "delta": 0.21146,
+      "name": "Sangfor Next-Gen Application Firewall Authenticated File Disclosure"
     },
     {
       "id": "CVE-2019-18610",
@@ -96,20 +89,6 @@
       "name": "Shenzhen Aitemi M300 Wi-Fi Repeater OS Command Injection via Time Parameter"
     },
     {
-      "id": "CVE-2026-93616",
-      "now": 0.19654,
-      "prev": 0.02421,
-      "delta": 0.17233,
-      "name": "Directory Traversal and File upload allows execution of arbitrary script on the Management"
-    },
-    {
-      "id": "CVE-2026-87902",
-      "now": 0.19756,
-      "prev": 0.02877,
-      "delta": 0.16879,
-      "name": "WordPress WordPress"
-    },
-    {
       "id": "CVE-2022-21449",
       "now": 0.77151,
       "prev": 0.60336,
@@ -124,6 +103,20 @@
       "name": "PHP remote file inclusion vulnerability in config.dadamail.php in the Dada Mail Manager (com_dadamail) compone"
     },
     {
+      "id": "CVE-2026-19490",
+      "now": 0.23158,
+      "prev": 0.0701,
+      "delta": 0.16148,
+      "name": "NetScaler ADC and NetScaler Gateway Security Bulletin for CVE-2026-19490"
+    },
+    {
+      "id": "CVE-2021-20041",
+      "now": 0.21197,
+      "prev": 0.066,
+      "delta": 0.14597,
+      "name": "SonicWall SonicWall SMA100"
+    },
+    {
       "id": "CVE-2018-7286",
       "now": 0.52733,
       "prev": 0.38268,
@@ -131,18 +124,25 @@
       "name": "An issue was discovered in Asterisk through 13.19.1, 14.x through 14.7.5, and 15.x through 15.2.1, and Certifi"
     },
     {
-      "id": "CVE-2009-0595",
-      "now": 0.34398,
-      "prev": 0.22207,
-      "delta": 0.12191,
-      "name": "PHP remote file inclusion vulnerability in skysilver/login.tpl.php in phpSkelSite 1.4, when register_globals i"
-    },
-    {
       "id": "CVE-2025-43300",
       "now": 0.32498,
       "prev": 0.21994,
       "delta": 0.10504,
       "name": "Apple iOS and iPadOS"
+    },
+    {
+      "id": "CVE-2026-8510",
+      "now": 0.10525,
+      "prev": 0.00304,
+      "delta": 0.10221,
+      "name": "Google Chrome"
+    },
+    {
+      "id": "CVE-2026-4480",
+      "now": 0.1393,
+      "prev": 0.04307,
+      "delta": 0.09623,
+      "name": "Samba: samba: remote code execution in printing subsystem via unescaped job description"
     },
     {
       "id": "CVE-2025-20282",
@@ -166,6 +166,13 @@
       "name": "Apple macOS"
     },
     {
+      "id": "CVE-2022-27924",
+      "now": 0.93908,
+      "prev": 0.85398,
+      "delta": 0.0851,
+      "name": "Zimbra Collaboration (aka ZCS) 8.8.15 and 9.0 allows an unauthenticated attacker to inject arbitrary memcache "
+    },
+    {
       "id": "CVE-2018-7284",
       "now": 0.66167,
       "prev": 0.57662,
@@ -185,13 +192,6 @@
       "prev": 0.03805,
       "delta": 0.07355,
       "name": "vLLM leaks a heap address when PIL throws an error"
-    },
-    {
-      "id": "CVE-2025-34033",
-      "now": 0.11206,
-      "prev": 0.03873,
-      "delta": 0.07333,
-      "name": "5VTechnologies Blue Angel Software Suite OS Command Injection"
     },
     {
       "id": "CVE-2002-0422",
@@ -217,20 +217,6 @@
   ],
   "newly_high": [
     {
-      "id": "CVE-2026-71362",
-      "now": 0.87507,
-      "prev": 0.02335,
-      "delta": 0.85172,
-      "name": "Adobe Commerce | Incorrect Authorization (CWE-863)"
-    },
-    {
-      "id": "CVE-2026-85706",
-      "now": 0.92956,
-      "prev": 0.09287,
-      "delta": 0.83669,
-      "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') in GitLab"
-    },
-    {
       "id": "CVE-2026-81578",
       "now": 0.85169,
       "prev": 0.04481,
@@ -252,20 +238,6 @@
       "name": "JetBrains TeamCity"
     },
     {
-      "id": "CVE-2026-48908",
-      "now": 0.88512,
-      "prev": 0.15086,
-      "delta": 0.73426,
-      "name": "Joomla Extension - joomshaper.com - Remote Code Execution in SP Pagebuilder extension for "
-    },
-    {
-      "id": "CVE-2024-57728",
-      "now": 0.64664,
-      "prev": 0.06982,
-      "delta": 0.57682,
-      "name": "SimpleHelp remote support software v5.5.7 and before allows admin users to upload arbitrary files anywhere on "
-    },
-    {
       "id": "CVE-2026-82078",
       "now": 0.61394,
       "prev": 0.03843,
@@ -280,11 +252,11 @@
       "name": "Adobe Flash Player before 9.0.277.0 and 10.x before 10.1.53.64, and Adobe AIR before 2.0.2.12610, allows remot"
     },
     {
-      "id": "CVE-2025-62593",
-      "now": 0.62459,
-      "prev": 0.2729,
-      "delta": 0.35169,
-      "name": "Ray is vulnerable to RCE via Safari & Firefox Browsers through DNS Rebinding Attack"
+      "id": "CVE-2000-0979",
+      "now": 0.74658,
+      "prev": 0.44987,
+      "delta": 0.29671,
+      "name": "File and Print Sharing service in Windows 95, Windows 98, and Windows Me does not properly check the password "
     },
     {
       "id": "CVE-2019-18610",
@@ -320,13 +292,6 @@
       "prev": 0.44065,
       "delta": 0.06973,
       "name": "IIS 5 and 5.1 supporting WebDAV methods allows remote attackers to determine the internal IP address of the sy"
-    },
-    {
-      "id": "CVE-2025-40552",
-      "now": 0.51997,
-      "prev": 0.49734,
-      "delta": 0.02263,
-      "name": "SolarWinds Web Help Desk Authentication Bypass Vulnerability"
     },
     {
       "id": "CVE-2009-4655",

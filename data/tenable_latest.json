@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01",
+  "updated": "2026-10-02",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,602 +7,602 @@
   "items": [
     {
       "id": null,
-      "title": "Google: dev-vcs/git: security update to 18244.448.20",
+      "title": "Echo: linux: security update to 6.1.137-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461527",
+      "cves": [
+        "CVE-2025-37881"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: linux: security update to 6.1.137-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461527",
+      "cves": [
+        "CVE-2025-37881"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: linux: security update to 6.1.135-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461525",
+      "cves": [
+        "CVE-2025-23140"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: linux: security update to 6.1.135-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461525",
+      "cves": [
+        "CVE-2025-23140"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: postgresql-15: security update to 15.18postgresql-17: security update to 17.10",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451949",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461523",
       "cves": [
-        "CVE-2025-27614"
+        "CVE-2026-6477"
       ]
     },
     {
       "id": null,
-      "title": "Google: dev-vcs/git: security update to 18244.448.20",
+      "title": "Echo: postgresql-15: security update to 15.18postgresql-17: security update to 17.10",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451949",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461523",
       "cves": [
-        "CVE-2025-27614"
+        "CVE-2026-6477"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.291.109",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451947",
-      "cves": [
-        "CVE-2025-21980"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.291.109",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451947",
-      "cves": [
-        "CVE-2025-21980"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.291.3",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451931",
-      "cves": [
-        "CVE-2024-56779"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.291.3",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451931",
-      "cves": [
-        "CVE-2024-56779"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.236.64",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451915",
-      "cves": [
-        "CVE-2024-50060"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.236.64",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451915",
-      "cves": [
-        "CVE-2024-50060"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.236.26",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451912",
-      "cves": [
-        "CVE-2024-50015"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.236.26",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451912",
-      "cves": [
-        "CVE-2024-50015"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.151.33",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451902",
-      "cves": [
-        "CVE-2024-45016"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.151.33",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451902",
-      "cves": [
-        "CVE-2024-45016"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.236.5",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451900",
-      "cves": [
-        "CVE-2024-45003"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.236.5",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451900",
-      "cves": [
-        "CVE-2024-45003"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.151.9",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451880",
-      "cves": [
-        "CVE-2024-40937"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.151.9",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451880",
-      "cves": [
-        "CVE-2024-40937"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.151.9",
+      "title": "Echo: chromium: security update to 151.0.7922.71-1~deb12u1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451867",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461521",
       "cves": [
-        "CVE-2024-33621"
+        "CVE-2026-17887"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.151.9",
+      "title": "Echo: chromium: security update to 151.0.7922.71-1~deb12u1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451867",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461521",
       "cves": [
-        "CVE-2024-33621"
+        "CVE-2026-17887"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.151.9",
+      "title": "Echo: chromium: security update to 153.0.8010.47-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461519",
+      "cves": [
+        "CVE-2026-91717"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 153.0.8010.47-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461519",
+      "cves": [
+        "CVE-2026-91717"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 148.0.7778.215-1~deb12u1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451863",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461517",
       "cves": [
-        "CVE-2024-27397"
+        "CVE-2026-10014"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.151.9",
+      "title": "Echo: chromium: security update to 148.0.7778.215-1~deb12u1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451863",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461517",
       "cves": [
-        "CVE-2024-27397"
+        "CVE-2026-10014"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.85.5",
+      "title": "Echo: sanitize-html: security update to 2.17.5",
       "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451862",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461516",
       "cves": [
-        "CVE-2024-26987"
+        "CVE-2026-53606"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.85.5",
+      "title": "Echo: sanitize-html: security update to 2.17.5",
       "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451862",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461516",
       "cves": [
-        "CVE-2024-26987"
+        "CVE-2026-53606"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18203.0.0",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451853",
-      "cves": [
-        "CVE-2023-52787"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18203.0.0",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451853",
-      "cves": [
-        "CVE-2023-52787"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18080.0.0",
+      "title": "Echo: linux: security update to 6.1.164-1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451852",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461515",
       "cves": [
-        "CVE-2023-52772"
+        "CVE-2026-23221"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18080.0.0",
+      "title": "Echo: linux: security update to 6.1.164-1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451852",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461515",
       "cves": [
-        "CVE-2023-52772"
+        "CVE-2026-23221"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18054.0.0",
+      "title": "Echo: linux: security update to 6.1.176-1",
       "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451848",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461514",
       "cves": [
-        "CVE-2023-46862"
+        "CVE-2026-53037"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18054.0.0",
+      "title": "Echo: linux: security update to 6.1.176-1",
       "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451848",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461514",
       "cves": [
-        "CVE-2023-46862"
+        "CVE-2026-53037"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.85.5",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451846",
-      "cves": [
-        "CVE-2024-26880"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.85.5",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451846",
-      "cves": [
-        "CVE-2024-26880"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18026.0.0",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451845",
-      "cves": [
-        "CVE-2023-34324"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18026.0.0",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451845",
-      "cves": [
-        "CVE-2023-34324"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: app-editors/vim, app-editors/vim-core: security update to 18244.1.19",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451843",
-      "cves": [
-        "CVE-2023-2426"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: app-editors/vim, app-editors/vim-core: security update to 18244.1.19",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451843",
-      "cves": [
-        "CVE-2023-2426"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.521.55",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451841",
-      "cves": [
-        "CVE-2025-38057"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.521.55",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451841",
-      "cves": [
-        "CVE-2025-38057"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.1.44",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451840",
-      "cves": [
-        "CVE-2024-26642"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.1.44",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451840",
-      "cves": [
-        "CVE-2024-26642"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.382.49",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451839",
-      "cves": [
-        "CVE-2025-37948"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.382.49",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451839",
-      "cves": [
-        "CVE-2025-37948"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: app-editors/vim, app-editors/vim-core: security update to 18244.382.60",
+      "title": "Echo: authlib: security update to 1.6.6+echo.1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451834",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461513",
       "cves": [
-        "CVE-2025-27423"
+        "CVE-2026-28490"
       ]
     },
     {
       "id": null,
-      "title": "Google: app-editors/vim, app-editors/vim-core: security update to 18244.382.60",
+      "title": "Echo: authlib: security update to 1.6.6+echo.1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451834",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461513",
       "cves": [
-        "CVE-2025-27423"
+        "CVE-2026-28490"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18137.0.0",
+      "title": "Echo: linux: security update to 6.1.135-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461512",
+      "cves": [
+        "CVE-2025-23161"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: linux: security update to 6.1.135-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461512",
+      "cves": [
+        "CVE-2025-23161"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 152.0.7977.64-1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451832",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461511",
       "cves": [
-        "CVE-2023-6531"
+        "CVE-2026-79224"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18137.0.0",
+      "title": "Echo: chromium: security update to 152.0.7977.64-1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451832",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461511",
       "cves": [
-        "CVE-2023-6531"
+        "CVE-2026-79224"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 17872.0.0",
+      "title": "Echo: chromium: security update to 150.0.7871.46-1~deb12u1",
       "severity": "Critical",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451830",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461510",
       "cves": [
-        "CVE-2023-54258"
+        "CVE-2026-14121"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 17872.0.0",
+      "title": "Echo: chromium: security update to 150.0.7871.46-1~deb12u1",
       "severity": "Critical",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451830",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461510",
       "cves": [
-        "CVE-2023-54258"
+        "CVE-2026-14121"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.291.93",
+      "title": "Echo: chromium: security update to 148.0.7778.215-1~deb12u1",
+      "severity": "Critical",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461509",
+      "cves": [
+        "CVE-2026-9886"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 148.0.7778.215-1~deb12u1",
+      "severity": "Critical",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461509",
+      "cves": [
+        "CVE-2026-9886"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: pg-partman: security update to 5.5.0-1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451828",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461508",
       "cves": [
-        "CVE-2025-21756"
+        "CVE-2026-61818"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.291.93",
+      "title": "Echo: pg-partman: security update to 5.5.0-1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451828",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461508",
       "cves": [
-        "CVE-2025-21756"
+        "CVE-2026-61818"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 17872.0.0",
+      "title": "Echo: chromium: security update to 148.0.7778.215-1~deb12u1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451826",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461507",
       "cves": [
-        "CVE-2023-53718"
+        "CVE-2026-9975"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 17872.0.0",
+      "title": "Echo: chromium: security update to 148.0.7778.215-1~deb12u1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451826",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461507",
       "cves": [
-        "CVE-2023-53718"
+        "CVE-2026-9975"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1: security update to 18244.448.50",
+      "title": "Echo: bind9: security update to 1:9.20.29-1~deb13u1",
+      "severity": "High",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461506",
+      "cves": [
+        "CVE-2026-19666"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: bind9: security update to 1:9.20.29-1~deb13u1",
+      "severity": "High",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461506",
+      "cves": [
+        "CVE-2026-19666"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: libsoup3: security update to 3.6.5-8",
       "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451824",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461505",
       "cves": [
-        "CVE-2025-38441"
+        "CVE-2026-1467"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1: security update to 18244.448.50",
+      "title": "Echo: libsoup3: security update to 3.6.5-8",
       "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451824",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461505",
       "cves": [
-        "CVE-2025-38441"
+        "CVE-2026-1467"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.448.6",
+      "title": "Echo: linux: security update to 6.1.153-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461504",
+      "cves": [
+        "CVE-2025-39801"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: linux: security update to 6.1.153-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461504",
+      "cves": [
+        "CVE-2025-39801"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 152.0.7977.64-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461503",
+      "cves": [
+        "CVE-2026-79287"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 152.0.7977.64-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461503",
+      "cves": [
+        "CVE-2026-79287"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 154.0.8037.57-1~deb13u1",
+      "severity": "Critical",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461502",
+      "cves": [
+        "CVE-2026-95356"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 154.0.8037.57-1~deb13u1",
+      "severity": "Critical",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461502",
+      "cves": [
+        "CVE-2026-95356"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: fluidsynth: security update to 2.4.4+dfsg-1+deb13u2+e1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451822",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461501",
       "cves": [
-        "CVE-2025-38342"
+        "CVE-2026-61714"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.448.6",
+      "title": "Echo: fluidsynth: security update to 2.4.4+dfsg-1+deb13u2+e1",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451822",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461501",
       "cves": [
-        "CVE-2025-38342"
+        "CVE-2026-61714"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.291.3",
+      "title": "Echo: chromium: security update to 149.0.7827.102-1~deb12u1",
+      "severity": "Critical",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461500",
+      "cves": [
+        "CVE-2026-11697"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 149.0.7827.102-1~deb12u1",
+      "severity": "Critical",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461500",
+      "cves": [
+        "CVE-2026-11697"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: linux: security update to 6.1.176-1",
       "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451819",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461499",
       "cves": [
-        "CVE-2024-53680"
+        "CVE-2026-31596"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.291.3",
+      "title": "Echo: linux: security update to 6.1.176-1",
       "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451819",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461499",
       "cves": [
-        "CVE-2024-53680"
+        "CVE-2026-31596"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.382.49",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451816",
-      "cves": [
-        "CVE-2025-38035"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/csql-kernel-6_1, sys-kernel/lakitu-kernel-6_1: security update to 18244.382.49",
-      "severity": "Medium",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451816",
-      "cves": [
-        "CVE-2025-38035"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.291.73",
+      "title": "Echo: imagemagick: security update to 8:7.1.1.43+dfsg1-1+deb13u4+e2",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/451808",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461498",
       "cves": [
-        "CVE-2025-21858"
+        "CVE-2026-24481"
       ]
     },
     {
       "id": null,
-      "title": "Google: sys-kernel/lakitu-kernel-6_1: security update to 18244.291.73",
+      "title": "Echo: imagemagick: security update to 8:7.1.1.43+dfsg1-1+deb13u4+e2",
       "severity": "High",
-      "date": "Thu, 01 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/451808",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461498",
       "cves": [
-        "CVE-2025-21858"
+        "CVE-2026-24481"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: linux: security update to 6.1.170-1",
+      "severity": "High",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461497",
+      "cves": [
+        "CVE-2026-23274"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: linux: security update to 6.1.170-1",
+      "severity": "High",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461497",
+      "cves": [
+        "CVE-2026-23274"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: pillow: security update to 12.3.0",
+      "severity": "High",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461496",
+      "cves": [
+        "CVE-2026-54060"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: pillow: security update to 12.3.0",
+      "severity": "High",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461496",
+      "cves": [
+        "CVE-2026-54060"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: linux: security update to 6.10.11-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461495",
+      "cves": [
+        "CVE-2024-46776"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: linux: security update to 6.10.11-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461495",
+      "cves": [
+        "CVE-2024-46776"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: linux: security update to 6.1.170-1",
+      "severity": "Critical",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461494",
+      "cves": [
+        "CVE-2026-31414"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: linux: security update to 6.1.170-1",
+      "severity": "Critical",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461494",
+      "cves": [
+        "CVE-2026-31414"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: linux: security update to 6.10.9-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/461493",
+      "cves": [
+        "CVE-2024-46730"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: linux: security update to 6.10.9-1",
+      "severity": "Medium",
+      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/461493",
+      "cves": [
+        "CVE-2024-46730"
       ]
     }
   ]
