@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-02",
+  "updated": "2026-10-03",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-02",
-  "previous_date": "2026-09-25",
+  "current_date": "2026-10-03",
+  "previous_date": "2026-09-26",
   "risers": [
     {
       "id": "CVE-2026-81578",
@@ -40,13 +40,6 @@
       "name": "Adobe Flash Player before 9.0.277.0 and 10.x before 10.1.53.64, and Adobe AIR before 2.0.2.12610, allows remot"
     },
     {
-      "id": "CVE-2026-87902",
-      "now": 0.45501,
-      "prev": 0.02877,
-      "delta": 0.42624,
-      "name": "WordPress WordPress"
-    },
-    {
       "id": "CVE-2026-32201",
       "now": 0.43378,
       "prev": 0.00983,
@@ -55,10 +48,17 @@
     },
     {
       "id": "CVE-2000-0979",
-      "now": 0.74658,
+      "now": 0.75054,
       "prev": 0.44987,
-      "delta": 0.29671,
+      "delta": 0.30067,
       "name": "File and Print Sharing service in Windows 95, Windows 98, and Windows Me does not properly check the password "
+    },
+    {
+      "id": "CVE-2026-87902",
+      "now": 0.45501,
+      "prev": 0.18166,
+      "delta": 0.27335,
+      "name": "WordPress WordPress"
     },
     {
       "id": "CVE-2026-27654",
@@ -80,6 +80,13 @@
       "prev": 0.29645,
       "delta": 0.20431,
       "name": "An issue was discovered in manager.c in Sangoma Asterisk through 13.x, 16.x, 17.x and Certified Asterisk 13.21"
+    },
+    {
+      "id": "CVE-2020-15999",
+      "now": 0.63894,
+      "prev": 0.44303,
+      "delta": 0.19591,
+      "name": "Google Chrome"
     },
     {
       "id": "CVE-2025-34152",
@@ -124,6 +131,13 @@
       "name": "An issue was discovered in Asterisk through 13.19.1, 14.x through 14.7.5, and 15.x through 15.2.1, and Certifi"
     },
     {
+      "id": "CVE-2023-4427",
+      "now": 0.48481,
+      "prev": 0.34414,
+      "delta": 0.14067,
+      "name": "Google Chrome"
+    },
+    {
       "id": "CVE-2025-43300",
       "now": 0.32498,
       "prev": 0.21994,
@@ -145,25 +159,11 @@
       "name": "Samba: samba: remote code execution in printing subsystem via unescaped job description"
     },
     {
-      "id": "CVE-2025-20282",
-      "now": 0.38719,
-      "prev": 0.29303,
-      "delta": 0.09416,
-      "name": "Cisco ISE API Unauthenticated Remote Code Execution Vulnerability"
-    },
-    {
       "id": "CVE-2002-0409",
       "now": 0.28085,
       "prev": 0.19323,
       "delta": 0.08762,
       "name": "orderdetails.aspx, as made available to Microsoft .NET developers as example code and demonstrated on www.ibuy"
-    },
-    {
-      "id": "CVE-2023-41064",
-      "now": 0.53403,
-      "prev": 0.44784,
-      "delta": 0.08619,
-      "name": "Apple macOS"
     },
     {
       "id": "CVE-2022-27924",
@@ -194,6 +194,13 @@
       "name": "vLLM leaks a heap address when PIL throws an error"
     },
     {
+      "id": "CVE-2023-43654",
+      "now": 0.42495,
+      "prev": 0.355,
+      "delta": 0.06995,
+      "name": "TorchServe Server-Side Request Forgery"
+    },
+    {
       "id": "CVE-2002-0422",
       "now": 0.51038,
       "prev": 0.44065,
@@ -206,13 +213,6 @@
       "prev": 0.00988,
       "delta": 0.06558,
       "name": "Improper Certificate Validation in Quantum Security Gateway"
-    },
-    {
-      "id": "CVE-2006-5627",
-      "now": 0.17089,
-      "prev": 0.10596,
-      "delta": 0.06493,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in QnECMS 2.5.6 and earlier allow remote attackers to execu"
     }
   ],
   "newly_high": [
@@ -253,9 +253,9 @@
     },
     {
       "id": "CVE-2000-0979",
-      "now": 0.74658,
+      "now": 0.75054,
       "prev": 0.44987,
-      "delta": 0.29671,
+      "delta": 0.30067,
       "name": "File and Print Sharing service in Windows 95, Windows 98, and Windows Me does not properly check the password "
     },
     {
@@ -264,6 +264,13 @@
       "prev": 0.29645,
       "delta": 0.20431,
       "name": "An issue was discovered in manager.c in Sangoma Asterisk through 13.x, 16.x, 17.x and Certified Asterisk 13.21"
+    },
+    {
+      "id": "CVE-2020-15999",
+      "now": 0.63894,
+      "prev": 0.44303,
+      "delta": 0.19591,
+      "name": "Google Chrome"
     },
     {
       "id": "CVE-2008-6221",
@@ -278,13 +285,6 @@
       "prev": 0.38268,
       "delta": 0.14465,
       "name": "An issue was discovered in Asterisk through 13.19.1, 14.x through 14.7.5, and 15.x through 15.2.1, and Certifi"
-    },
-    {
-      "id": "CVE-2023-41064",
-      "now": 0.53403,
-      "prev": 0.44784,
-      "delta": 0.08619,
-      "name": "Apple macOS"
     },
     {
       "id": "CVE-2002-0422",

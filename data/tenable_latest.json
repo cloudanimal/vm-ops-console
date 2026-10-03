@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02",
+  "updated": "2026-10-03",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,602 +7,602 @@
   "items": [
     {
       "id": null,
-      "title": "Echo: linux: security update to 6.1.137-1",
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.0.47",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461527",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472488",
       "cves": [
-        "CVE-2025-37881"
+        "CVE-2025-38639"
       ]
     },
     {
       "id": null,
-      "title": "Echo: linux: security update to 6.1.137-1",
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.113",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461527",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472487",
       "cves": [
-        "CVE-2025-37881"
+        "CVE-2025-71120"
       ]
     },
     {
       "id": null,
-      "title": "Echo: linux: security update to 6.1.135-1",
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.0.53",
+      "severity": "High",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472486",
+      "cves": [
+        "CVE-2025-38707"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.72",
+      "severity": "High",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472485",
+      "cves": [
+        "CVE-2025-40297"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.113",
+      "severity": "High",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472484",
+      "cves": [
+        "CVE-2025-68782"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.24",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461525",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472483",
       "cves": [
-        "CVE-2025-23140"
+        "CVE-2026-23173"
       ]
     },
     {
       "id": null,
-      "title": "Echo: linux: security update to 6.1.135-1",
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.0.12",
+      "severity": "High",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472482",
+      "cves": [
+        "CVE-2025-38445"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.0.87",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461525",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472481",
       "cves": [
-        "CVE-2025-23140"
+        "CVE-2025-39931"
       ]
     },
     {
       "id": null,
-      "title": "Echo: postgresql-15: security update to 15.18postgresql-17: security update to 17.10",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461523",
-      "cves": [
-        "CVE-2026-6477"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: postgresql-15: security update to 15.18postgresql-17: security update to 17.10",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461523",
-      "cves": [
-        "CVE-2026-6477"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 151.0.7922.71-1~deb12u1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461521",
-      "cves": [
-        "CVE-2026-17887"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 151.0.7922.71-1~deb12u1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461521",
-      "cves": [
-        "CVE-2026-17887"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 153.0.8010.47-1",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.99",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461519",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472480",
       "cves": [
-        "CVE-2026-91717"
+        "CVE-2026-23352"
       ]
     },
     {
       "id": null,
-      "title": "Echo: chromium: security update to 153.0.8010.47-1",
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.0.12",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461519",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472479",
       "cves": [
-        "CVE-2026-91717"
+        "CVE-2025-38457"
       ]
     },
     {
       "id": null,
-      "title": "Echo: chromium: security update to 148.0.7778.215-1~deb12u1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461517",
-      "cves": [
-        "CVE-2026-10014"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 148.0.7778.215-1~deb12u1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461517",
-      "cves": [
-        "CVE-2026-10014"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: sanitize-html: security update to 2.17.5",
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.0.87",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461516",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472478",
       "cves": [
-        "CVE-2026-53606"
+        "CVE-2025-39947"
       ]
     },
     {
       "id": null,
-      "title": "Echo: sanitize-html: security update to 2.17.5",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.174",
+      "severity": "High",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472477",
+      "cves": [
+        "CVE-2026-31392"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.395.4",
+      "severity": "High",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472476",
+      "cves": [
+        "CVE-2026-43365"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.395.4",
+      "severity": "High",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472475",
+      "cves": [
+        "CVE-2026-43449"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: x11-drivers/nvidia-drivers-open535, x11-drivers/nvidia-drivers535: security update to 19216.395.31",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461516",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472474",
       "cves": [
-        "CVE-2026-53606"
+        "CVE-2026-24195"
       ]
     },
     {
       "id": null,
-      "title": "Echo: linux: security update to 6.1.164-1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461515",
-      "cves": [
-        "CVE-2026-23221"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: linux: security update to 6.1.164-1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461515",
-      "cves": [
-        "CVE-2026-23221"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: linux: security update to 6.1.176-1",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.72",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461514",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472473",
       "cves": [
-        "CVE-2026-53037"
+        "CVE-2025-71266"
       ]
     },
     {
       "id": null,
-      "title": "Echo: linux: security update to 6.1.176-1",
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.3",
+      "severity": "High",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472472",
+      "cves": [
+        "CVE-2025-40173"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.3",
+      "severity": "High",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472472",
+      "cves": [
+        "CVE-2025-40173"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_12: security update to 19216.220.72",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461514",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472471",
       "cves": [
-        "CVE-2026-53037"
+        "CVE-2026-23254"
       ]
     },
     {
       "id": null,
-      "title": "Echo: authlib: security update to 1.6.6+echo.1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461513",
-      "cves": [
-        "CVE-2026-28490"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: authlib: security update to 1.6.6+echo.1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461513",
-      "cves": [
-        "CVE-2026-28490"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: linux: security update to 6.1.135-1",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_12: security update to 19216.220.72",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461512",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472471",
       "cves": [
-        "CVE-2025-23161"
+        "CVE-2026-23254"
       ]
     },
     {
       "id": null,
-      "title": "Echo: linux: security update to 6.1.135-1",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_12: security update to 19216.104.133",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461512",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472470",
       "cves": [
-        "CVE-2025-23161"
+        "CVE-2025-71151"
       ]
     },
     {
       "id": null,
-      "title": "Echo: chromium: security update to 152.0.7977.64-1",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_12: security update to 19216.104.133",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472470",
+      "cves": [
+        "CVE-2025-71151"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.57",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472469",
+      "cves": [
+        "CVE-2026-23404"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.57",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472469",
+      "cves": [
+        "CVE-2026-23404"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.174",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472468",
+      "cves": [
+        "CVE-2026-23374"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.174",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472468",
+      "cves": [
+        "CVE-2026-23374"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.72",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472467",
+      "cves": [
+        "CVE-2025-71267"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.72",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472467",
+      "cves": [
+        "CVE-2025-71267"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.0.47",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472466",
+      "cves": [
+        "CVE-2025-38571"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.0.47",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472466",
+      "cves": [
+        "CVE-2025-38571"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.0.53",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472465",
+      "cves": [
+        "CVE-2025-22125"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.0.53",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472465",
+      "cves": [
+        "CVE-2025-22125"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_12: security update to 19216.220.99",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472464",
+      "cves": [
+        "CVE-2026-23297"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_12: security update to 19216.220.99",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472464",
+      "cves": [
+        "CVE-2026-23297"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_12: security update to 19216.104.133",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472463",
+      "cves": [
+        "CVE-2026-23003"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_12: security update to 19216.104.133",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472463",
+      "cves": [
+        "CVE-2026-23003"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.395.4",
       "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461511",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472462",
       "cves": [
-        "CVE-2026-79224"
+        "CVE-2026-43040"
       ]
     },
     {
       "id": null,
-      "title": "Echo: chromium: security update to 152.0.7977.64-1",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.395.4",
       "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461511",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472462",
       "cves": [
-        "CVE-2026-79224"
+        "CVE-2026-43040"
       ]
     },
     {
       "id": null,
-      "title": "Echo: chromium: security update to 150.0.7871.46-1~deb12u1",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.149",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472461",
+      "cves": [
+        "CVE-2026-23097"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.149",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472461",
+      "cves": [
+        "CVE-2026-23097"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.133",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472460",
+      "cves": [
+        "CVE-2026-22977"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.133",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472460",
+      "cves": [
+        "CVE-2026-22977"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.174",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472459",
+      "cves": [
+        "CVE-2026-31418"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.174",
+      "severity": "Medium",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472459",
+      "cves": [
+        "CVE-2026-31418"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.3",
+      "severity": "High",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472458",
+      "cves": [
+        "CVE-2025-40123"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.3",
+      "severity": "High",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472458",
+      "cves": [
+        "CVE-2025-40123"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.3",
       "severity": "Critical",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461510",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472457",
       "cves": [
-        "CVE-2026-14121"
+        "CVE-2025-40099"
       ]
     },
     {
       "id": null,
-      "title": "Echo: chromium: security update to 150.0.7871.46-1~deb12u1",
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.3",
       "severity": "Critical",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461510",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472457",
       "cves": [
-        "CVE-2026-14121"
+        "CVE-2025-40099"
       ]
     },
     {
       "id": null,
-      "title": "Echo: chromium: security update to 148.0.7778.215-1~deb12u1",
-      "severity": "Critical",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461509",
-      "cves": [
-        "CVE-2026-9886"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 148.0.7778.215-1~deb12u1",
-      "severity": "Critical",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461509",
-      "cves": [
-        "CVE-2026-9886"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: pg-partman: security update to 5.5.0-1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461508",
-      "cves": [
-        "CVE-2026-61818"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: pg-partman: security update to 5.5.0-1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461508",
-      "cves": [
-        "CVE-2026-61818"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 148.0.7778.215-1~deb12u1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461507",
-      "cves": [
-        "CVE-2026-9975"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 148.0.7778.215-1~deb12u1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461507",
-      "cves": [
-        "CVE-2026-9975"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: bind9: security update to 1:9.20.29-1~deb13u1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461506",
-      "cves": [
-        "CVE-2026-19666"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: bind9: security update to 1:9.20.29-1~deb13u1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461506",
-      "cves": [
-        "CVE-2026-19666"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: libsoup3: security update to 3.6.5-8",
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.0.12",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461505",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472456",
       "cves": [
-        "CVE-2026-1467"
+        "CVE-2025-38472"
       ]
     },
     {
       "id": null,
-      "title": "Echo: libsoup3: security update to 3.6.5-8",
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.0.12",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461505",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472456",
       "cves": [
-        "CVE-2026-1467"
+        "CVE-2025-38472"
       ]
     },
     {
       "id": null,
-      "title": "Echo: linux: security update to 6.1.153-1",
-      "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461504",
-      "cves": [
-        "CVE-2025-39801"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: linux: security update to 6.1.153-1",
-      "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461504",
-      "cves": [
-        "CVE-2025-39801"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 152.0.7977.64-1",
-      "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461503",
-      "cves": [
-        "CVE-2026-79287"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 152.0.7977.64-1",
-      "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461503",
-      "cves": [
-        "CVE-2026-79287"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 154.0.8037.57-1~deb13u1",
-      "severity": "Critical",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461502",
-      "cves": [
-        "CVE-2026-95356"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 154.0.8037.57-1~deb13u1",
-      "severity": "Critical",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461502",
-      "cves": [
-        "CVE-2026-95356"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: fluidsynth: security update to 2.4.4+dfsg-1+deb13u2+e1",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.174",
       "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461501",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472455",
       "cves": [
-        "CVE-2026-61714"
+        "CVE-2026-31407"
       ]
     },
     {
       "id": null,
-      "title": "Echo: fluidsynth: security update to 2.4.4+dfsg-1+deb13u2+e1",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.174",
       "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461501",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472455",
       "cves": [
-        "CVE-2026-61714"
+        "CVE-2026-31407"
       ]
     },
     {
       "id": null,
-      "title": "Echo: chromium: security update to 149.0.7827.102-1~deb12u1",
-      "severity": "Critical",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461500",
-      "cves": [
-        "CVE-2026-11697"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 149.0.7827.102-1~deb12u1",
-      "severity": "Critical",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461500",
-      "cves": [
-        "CVE-2026-11697"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: linux: security update to 6.1.176-1",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.133",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461499",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472454",
       "cves": [
-        "CVE-2026-31596"
+        "CVE-2025-71149"
       ]
     },
     {
       "id": null,
-      "title": "Echo: linux: security update to 6.1.176-1",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.133",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461499",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472454",
       "cves": [
-        "CVE-2026-31596"
+        "CVE-2025-71149"
       ]
     },
     {
       "id": null,
-      "title": "Echo: imagemagick: security update to 8:7.1.1.43+dfsg1-1+deb13u4+e2",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.99",
       "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461498",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472453",
       "cves": [
-        "CVE-2026-24481"
+        "CVE-2026-23340"
       ]
     },
     {
       "id": null,
-      "title": "Echo: imagemagick: security update to 8:7.1.1.43+dfsg1-1+deb13u4+e2",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.99",
       "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461498",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472453",
       "cves": [
-        "CVE-2026-24481"
+        "CVE-2026-23340"
       ]
     },
     {
       "id": null,
-      "title": "Echo: linux: security update to 6.1.170-1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461497",
-      "cves": [
-        "CVE-2026-23274"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: linux: security update to 6.1.170-1",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461497",
-      "cves": [
-        "CVE-2026-23274"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: pillow: security update to 12.3.0",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461496",
-      "cves": [
-        "CVE-2026-54060"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: pillow: security update to 12.3.0",
-      "severity": "High",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461496",
-      "cves": [
-        "CVE-2026-54060"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: linux: security update to 6.10.11-1",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.174",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461495",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472452",
       "cves": [
-        "CVE-2024-46776"
+        "CVE-2026-31451"
       ]
     },
     {
       "id": null,
-      "title": "Echo: linux: security update to 6.10.11-1",
+      "title": "Google: sys-kernel/cchost-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.220.174",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461495",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472452",
       "cves": [
-        "CVE-2024-46776"
+        "CVE-2026-31451"
       ]
     },
     {
       "id": null,
-      "title": "Echo: linux: security update to 6.1.170-1",
-      "severity": "Critical",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461494",
-      "cves": [
-        "CVE-2026-31414"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: linux: security update to 6.1.170-1",
-      "severity": "Critical",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461494",
-      "cves": [
-        "CVE-2026-31414"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: linux: security update to 6.10.9-1",
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.89",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/461493",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/472451",
       "cves": [
-        "CVE-2024-46730"
+        "CVE-2025-40346"
       ]
     },
     {
       "id": null,
-      "title": "Echo: linux: security update to 6.10.9-1",
+      "title": "Google: sys-kernel/csql-kernel-6_12, sys-kernel/csql-kernel-6_6: security update to 19216.104.89",
       "severity": "Medium",
-      "date": "Fri, 02 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/461493",
+      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/472451",
       "cves": [
-        "CVE-2024-46730"
+        "CVE-2025-40346"
       ]
     }
   ]
