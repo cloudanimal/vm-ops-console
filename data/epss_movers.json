@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-03",
+  "updated": "2026-10-04",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-03",
-  "previous_date": "2026-09-26",
+  "current_date": "2026-10-04",
+  "previous_date": "2026-09-27",
   "risers": [
     {
       "id": "CVE-2026-81578",
@@ -89,13 +89,6 @@
       "name": "Google Chrome"
     },
     {
-      "id": "CVE-2025-34152",
-      "now": 0.86839,
-      "prev": 0.68599,
-      "delta": 0.1824,
-      "name": "Shenzhen Aitemi M300 Wi-Fi Repeater OS Command Injection via Time Parameter"
-    },
-    {
       "id": "CVE-2022-21449",
       "now": 0.77151,
       "prev": 0.60336,
@@ -159,6 +152,13 @@
       "name": "Samba: samba: remote code execution in printing subsystem via unescaped job description"
     },
     {
+      "id": "CVE-2025-8943",
+      "now": 0.74787,
+      "prev": 0.65771,
+      "delta": 0.09016,
+      "name": "Unsupervised OS command execution leads to remote code execution by unauthenticated networ"
+    },
+    {
       "id": "CVE-2002-0409",
       "now": 0.28085,
       "prev": 0.19323,
@@ -187,13 +187,6 @@
       "name": "Google Chrome"
     },
     {
-      "id": "CVE-2026-22778",
-      "now": 0.1116,
-      "prev": 0.03805,
-      "delta": 0.07355,
-      "name": "vLLM leaks a heap address when PIL throws an error"
-    },
-    {
       "id": "CVE-2023-43654",
       "now": 0.42495,
       "prev": 0.355,
@@ -213,6 +206,13 @@
       "prev": 0.00988,
       "delta": 0.06558,
       "name": "Improper Certificate Validation in Quantum Security Gateway"
+    },
+    {
+      "id": "CVE-2006-5627",
+      "now": 0.17089,
+      "prev": 0.10596,
+      "delta": 0.06493,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in QnECMS 2.5.6 and earlier allow remote attackers to execu"
     }
   ],
   "newly_high": [
@@ -292,13 +292,6 @@
       "prev": 0.44065,
       "delta": 0.06973,
       "name": "IIS 5 and 5.1 supporting WebDAV methods allows remote attackers to determine the internal IP address of the sy"
-    },
-    {
-      "id": "CVE-2009-4655",
-      "now": 0.50517,
-      "prev": 0.49864,
-      "delta": 0.00653,
-      "name": "The dhost web service in Novell eDirectory 8.8.5 uses a predictable session cookie, which makes it easier for "
     }
   ]
 }
