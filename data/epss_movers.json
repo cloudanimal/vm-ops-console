@@ -1,14 +1,14 @@
 {
-  "updated": "2026-10-04",
+  "updated": "2026-10-05",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-04",
-  "previous_date": "2026-09-27",
+  "current_date": "2026-10-05",
+  "previous_date": "2026-09-28",
   "risers": [
     {
       "id": "CVE-2026-81578",
-      "now": 0.85169,
+      "now": 0.84594,
       "prev": 0.04481,
-      "delta": 0.80688,
+      "delta": 0.80113,
       "name": "PaperCut MF/NG: Authentication Bypass"
     },
     {
@@ -19,18 +19,18 @@
       "name": "LiteLLM: Authenticated command execution via MCP stdio test endpoints"
     },
     {
-      "id": "CVE-2026-63077",
-      "now": 0.8957,
-      "prev": 0.09763,
-      "delta": 0.79807,
-      "name": "JetBrains TeamCity"
-    },
-    {
       "id": "CVE-2026-82078",
       "now": 0.61394,
       "prev": 0.03843,
       "delta": 0.57551,
       "name": "PaperCut MF/NG: Unsafe Dynamic Class Loading in Database Connector"
+    },
+    {
+      "id": "CVE-2026-55040",
+      "now": 0.69536,
+      "prev": 0.17535,
+      "delta": 0.52001,
+      "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
     },
     {
       "id": "CVE-2008-4546",
@@ -55,9 +55,9 @@
     },
     {
       "id": "CVE-2026-87902",
-      "now": 0.45501,
-      "prev": 0.18166,
-      "delta": 0.27335,
+      "now": 0.46117,
+      "prev": 0.22488,
+      "delta": 0.23629,
       "name": "WordPress WordPress"
     },
     {
@@ -73,13 +73,6 @@
       "prev": 0.12816,
       "delta": 0.21146,
       "name": "Sangfor Next-Gen Application Firewall Authenticated File Disclosure"
-    },
-    {
-      "id": "CVE-2019-18610",
-      "now": 0.50076,
-      "prev": 0.29645,
-      "delta": 0.20431,
-      "name": "An issue was discovered in manager.c in Sangoma Asterisk through 13.x, 16.x, 17.x and Certified Asterisk 13.21"
     },
     {
       "id": "CVE-2020-15999",
@@ -117,25 +110,11 @@
       "name": "SonicWall SonicWall SMA100"
     },
     {
-      "id": "CVE-2018-7286",
-      "now": 0.52733,
-      "prev": 0.38268,
-      "delta": 0.14465,
-      "name": "An issue was discovered in Asterisk through 13.19.1, 14.x through 14.7.5, and 15.x through 15.2.1, and Certifi"
-    },
-    {
       "id": "CVE-2023-4427",
       "now": 0.48481,
       "prev": 0.34414,
       "delta": 0.14067,
       "name": "Google Chrome"
-    },
-    {
-      "id": "CVE-2025-43300",
-      "now": 0.32498,
-      "prev": 0.21994,
-      "delta": 0.10504,
-      "name": "Apple iOS and iPadOS"
     },
     {
       "id": "CVE-2026-8510",
@@ -173,13 +152,6 @@
       "name": "Zimbra Collaboration (aka ZCS) 8.8.15 and 9.0 allows an unauthenticated attacker to inject arbitrary memcache "
     },
     {
-      "id": "CVE-2018-7284",
-      "now": 0.66167,
-      "prev": 0.57662,
-      "delta": 0.08505,
-      "name": "A Buffer Overflow issue was discovered in Asterisk through 13.19.1, 14.x through 14.7.5, and 15.x through 15.2"
-    },
-    {
       "id": "CVE-2022-4262",
       "now": 0.2351,
       "prev": 0.15983,
@@ -201,26 +173,54 @@
       "name": "IIS 5 and 5.1 supporting WebDAV methods allows remote attackers to determine the internal IP address of the sy"
     },
     {
-      "id": "CVE-2026-85102",
-      "now": 0.07546,
-      "prev": 0.00988,
-      "delta": 0.06558,
-      "name": "Improper Certificate Validation in Quantum Security Gateway"
+      "id": "CVE-2025-37098",
+      "now": 0.46337,
+      "prev": 0.39966,
+      "delta": 0.06371,
+      "name": "Hewlett Packard Enterprise Insight Remote Support"
     },
     {
-      "id": "CVE-2006-5627",
-      "now": 0.17089,
-      "prev": 0.10596,
-      "delta": 0.06493,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in QnECMS 2.5.6 and earlier allow remote attackers to execu"
+      "id": "CVE-2006-5768",
+      "now": 0.15829,
+      "prev": 0.09795,
+      "delta": 0.06034,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in Cyberfolio 2.0 RC1 and earlier, when register_globals is"
+    },
+    {
+      "id": "CVE-2026-77692",
+      "now": 0.06558,
+      "prev": 0.00672,
+      "delta": 0.05886,
+      "name": "Unauthenticated remote crash of named via a single DoH SIG(0) request"
+    },
+    {
+      "id": "CVE-2024-54146",
+      "now": 0.46129,
+      "prev": 0.40996,
+      "delta": 0.05133,
+      "name": "Cacti has a SQL Injection vulnerability when view host template"
+    },
+    {
+      "id": "CVE-2023-30591",
+      "now": 0.58692,
+      "prev": 0.53804,
+      "delta": 0.04888,
+      "name": "NodeBB Pre-Authentication Denial-of-Service"
+    },
+    {
+      "id": "CVE-2026-86060",
+      "now": 0.06392,
+      "prev": 0.01849,
+      "delta": 0.04543,
+      "name": "SSH session privilege manipulation via a crafted username in Mikrotik RouterOS"
     }
   ],
   "newly_high": [
     {
       "id": "CVE-2026-81578",
-      "now": 0.85169,
+      "now": 0.84594,
       "prev": 0.04481,
-      "delta": 0.80688,
+      "delta": 0.80113,
       "name": "PaperCut MF/NG: Authentication Bypass"
     },
     {
@@ -231,18 +231,18 @@
       "name": "LiteLLM: Authenticated command execution via MCP stdio test endpoints"
     },
     {
-      "id": "CVE-2026-63077",
-      "now": 0.8957,
-      "prev": 0.09763,
-      "delta": 0.79807,
-      "name": "JetBrains TeamCity"
-    },
-    {
       "id": "CVE-2026-82078",
       "now": 0.61394,
       "prev": 0.03843,
       "delta": 0.57551,
       "name": "PaperCut MF/NG: Unsafe Dynamic Class Loading in Database Connector"
+    },
+    {
+      "id": "CVE-2026-55040",
+      "now": 0.69536,
+      "prev": 0.17535,
+      "delta": 0.52001,
+      "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
     },
     {
       "id": "CVE-2008-4546",
@@ -259,13 +259,6 @@
       "name": "File and Print Sharing service in Windows 95, Windows 98, and Windows Me does not properly check the password "
     },
     {
-      "id": "CVE-2019-18610",
-      "now": 0.50076,
-      "prev": 0.29645,
-      "delta": 0.20431,
-      "name": "An issue was discovered in manager.c in Sangoma Asterisk through 13.x, 16.x, 17.x and Certified Asterisk 13.21"
-    },
-    {
       "id": "CVE-2020-15999",
       "now": 0.63894,
       "prev": 0.44303,
@@ -280,18 +273,18 @@
       "name": "PHP remote file inclusion vulnerability in config.dadamail.php in the Dada Mail Manager (com_dadamail) compone"
     },
     {
-      "id": "CVE-2018-7286",
-      "now": 0.52733,
-      "prev": 0.38268,
-      "delta": 0.14465,
-      "name": "An issue was discovered in Asterisk through 13.19.1, 14.x through 14.7.5, and 15.x through 15.2.1, and Certifi"
-    },
-    {
       "id": "CVE-2002-0422",
       "now": 0.51038,
       "prev": 0.44065,
       "delta": 0.06973,
       "name": "IIS 5 and 5.1 supporting WebDAV methods allows remote attackers to determine the internal IP address of the sy"
+    },
+    {
+      "id": "CVE-2023-36808",
+      "now": 0.51733,
+      "prev": 0.47836,
+      "delta": 0.03897,
+      "name": "GLPI vulnerable to SQL injection through Computer Virtual Machine information"
     }
   ]
 }

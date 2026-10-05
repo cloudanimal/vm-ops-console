@@ -1,10 +1,28 @@
 {
-  "updated": "2026-10-04",
+  "updated": "2026-10-05",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
+    {
+      "id": "362916",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-105217",
+      "severity": "Low",
+      "date": "Mon, 05 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/362916",
+      "cves": [
+        "CVE-2026-105217"
+      ]
+    },
+    {
+      "id": "362915",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-66020",
+      "severity": "Medium",
+      "date": "Mon, 05 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/362915",
+      "cves": []
+    },
     {
       "id": null,
       "title": "Chainguard: superset-5.0: security update to 5.0.0-r40",
@@ -23,6 +41,140 @@
       "link": "https://www.tenable.com/plugins/container-security/472568",
       "cves": [
         "CVE-2026-77387"
+      ]
+    },
+    {
+      "id": "362914",
+      "title": "Debian dla-4819 : libapache2-mod-php8.2 - security update",
+      "severity": "Medium",
+      "date": "Sun, 04 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/362914",
+      "cves": [
+        "CVE-2025-1218",
+        "CVE-2025-14181",
+        "CVE-2026-6103",
+        "CVE-2026-91765",
+        "CVE-2026-91766",
+        "CVE-2026-91767",
+        "CVE-2026-91768",
+        "CVE-2026-91769",
+        "CVE-2026-92842",
+        "CVE-2026-93682"
+      ]
+    },
+    {
+      "id": "362913",
+      "title": "Debian dla-4818 : libxen-dev - security update",
+      "severity": "Critical",
+      "date": "Sun, 04 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/362913",
+      "cves": [
+        "CVE-2025-10263",
+        "CVE-2025-54505",
+        "CVE-2025-54518",
+        "CVE-2025-58150",
+        "CVE-2026-23553",
+        "CVE-2026-23554",
+        "CVE-2026-23556",
+        "CVE-2026-23557",
+        "CVE-2026-23558",
+        "CVE-2026-42487",
+        "CVE-2026-42488",
+        "CVE-2026-42489",
+        "CVE-2026-42490",
+        "CVE-2026-42493",
+        "CVE-2026-42494",
+        "CVE-2026-42495",
+        "CVE-2026-62423",
+        "CVE-2026-62424",
+        "CVE-2026-62425",
+        "CVE-2026-62426",
+        "CVE-2026-62427",
+        "CVE-2026-62428",
+        "CVE-2026-62429",
+        "CVE-2026-62430",
+        "CVE-2026-62431",
+        "CVE-2026-62432",
+        "CVE-2026-62433",
+        "CVE-2026-62434",
+        "CVE-2026-62435",
+        "CVE-2026-62436"
+      ]
+    },
+    {
+      "id": "362912",
+      "title": "Debian dsa-6542 : ruby-rack-session - security update",
+      "severity": "Critical",
+      "date": "Sun, 04 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/362912",
+      "cves": [
+        "CVE-2026-39324"
+      ]
+    },
+    {
+      "id": "362911",
+      "title": "FreeBSD : libexpat -- Improper Handling of Unicode Encoding (7fed71c4-be3a-11f1-ab8d-00a0980083d7)",
+      "severity": "High",
+      "date": "Sun, 04 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/362911",
+      "cves": []
+    },
+    {
+      "id": "362910",
+      "title": "FreeBSD : bind920 -- multiple vulnerabilities (45921d77-b346-11f1-952f-589cfc023192)",
+      "severity": "Medium",
+      "date": "Sun, 04 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/362910",
+      "cves": [
+        "CVE-2026-19033",
+        "CVE-2026-19662",
+        "CVE-2026-19666",
+        "CVE-2026-19667",
+        "CVE-2026-19668",
+        "CVE-2026-19941",
+        "CVE-2026-75029",
+        "CVE-2026-76163",
+        "CVE-2026-77119",
+        "CVE-2026-77692",
+        "CVE-2026-78301",
+        "CVE-2026-80274",
+        "CVE-2026-81563",
+        "CVE-2026-81736"
+      ]
+    },
+    {
+      "id": "362909",
+      "title": "MiracleLinux 9 : ruby:3.3 (AXSA:2026-1957:01)",
+      "severity": "High",
+      "date": "Sun, 04 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/362909",
+      "cves": [
+        "CVE-2026-80212"
+      ]
+    },
+    {
+      "id": "362908",
+      "title": "Debian dsa-6541 : libwireshark-data - security update",
+      "severity": "High",
+      "date": "Sun, 04 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/362908",
+      "cves": [
+        "CVE-2026-95387",
+        "CVE-2026-95388",
+        "CVE-2026-95389",
+        "CVE-2026-95392",
+        "CVE-2026-95393",
+        "CVE-2026-95394",
+        "CVE-2026-95395",
+        "CVE-2026-96415",
+        "CVE-2026-96416",
+        "CVE-2026-96417",
+        "CVE-2026-96418",
+        "CVE-2026-96419",
+        "CVE-2026-96420",
+        "CVE-2026-96421",
+        "CVE-2026-96422",
+        "CVE-2026-96423"
       ]
     },
     {
@@ -1878,96 +2030,6 @@
       "link": "https://www.tenable.com/plugins/container-security/472557",
       "cves": [
         "CVE-2026-64079"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: linux-qemu-melange: security update to 6.18.49-r2",
-      "severity": "Medium",
-      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/472556",
-      "cves": [
-        "CVE-2026-23374"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: linux-qemu-melange: security update to 6.18.49-r2",
-      "severity": "Medium",
-      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/472556",
-      "cves": [
-        "CVE-2026-23374"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: linux-qemu-melange: security update to 6.18.49-r2",
-      "severity": "Medium",
-      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/472555",
-      "cves": [
-        "CVE-2026-53106"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: linux-qemu-melange: security update to 6.18.49-r2",
-      "severity": "Medium",
-      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/472555",
-      "cves": [
-        "CVE-2026-53106"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: linux-qemu-melange: security update to 6.18.49-r2",
-      "severity": "Medium",
-      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/472554",
-      "cves": [
-        "CVE-2026-43299"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: linux-qemu-melange: security update to 6.18.49-r2",
-      "severity": "Medium",
-      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/472554",
-      "cves": [
-        "CVE-2026-43299"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: linux-qemu-melange: security update to 6.18.49-r2",
-      "severity": "Critical",
-      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/472553",
-      "cves": [
-        "CVE-2026-64068"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: linux-qemu-melange: security update to 6.18.49-r2",
-      "severity": "Critical",
-      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/472553",
-      "cves": [
-        "CVE-2026-64068"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: linux-qemu-melange: security update to 6.18.49-r2",
-      "severity": "High",
-      "date": "Sat, 03 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/472552",
-      "cves": [
-        "CVE-2026-64400"
       ]
     }
   ]
