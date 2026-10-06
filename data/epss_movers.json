@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-05",
+  "updated": "2026-10-06",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-05",
-  "previous_date": "2026-09-28",
+  "current_date": "2026-10-06",
+  "previous_date": "2026-09-29",
   "risers": [
     {
       "id": "CVE-2026-81578",
@@ -12,11 +12,11 @@
       "name": "PaperCut MF/NG: Authentication Bypass"
     },
     {
-      "id": "CVE-2026-42271",
-      "now": 0.9257,
-      "prev": 0.12754,
-      "delta": 0.79816,
-      "name": "LiteLLM: Authenticated command execution via MCP stdio test endpoints"
+      "id": "CVE-2026-73570",
+      "now": 0.71663,
+      "prev": 0.11736,
+      "delta": 0.59927,
+      "name": "Zimbra Collaboration"
     },
     {
       "id": "CVE-2026-82078",
@@ -31,13 +31,6 @@
       "prev": 0.17535,
       "delta": 0.52001,
       "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2008-4546",
-      "now": 0.65868,
-      "prev": 0.16769,
-      "delta": 0.49099,
-      "name": "Adobe Flash Player before 9.0.277.0 and 10.x before 10.1.53.64, and Adobe AIR before 2.0.2.12610, allows remot"
     },
     {
       "id": "CVE-2026-32201",
@@ -56,8 +49,8 @@
     {
       "id": "CVE-2026-87902",
       "now": 0.46117,
-      "prev": 0.22488,
-      "delta": 0.23629,
+      "prev": 0.19756,
+      "delta": 0.26361,
       "name": "WordPress WordPress"
     },
     {
@@ -89,13 +82,6 @@
       "name": "Oracle Corporation Java SE JDK and JRE"
     },
     {
-      "id": "CVE-2008-6221",
-      "now": 0.53983,
-      "prev": 0.37692,
-      "delta": 0.16291,
-      "name": "PHP remote file inclusion vulnerability in config.dadamail.php in the Dada Mail Manager (com_dadamail) compone"
-    },
-    {
       "id": "CVE-2026-19490",
       "now": 0.23158,
       "prev": 0.0701,
@@ -117,6 +103,13 @@
       "name": "Google Chrome"
     },
     {
+      "id": "CVE-2025-7441",
+      "now": 0.50059,
+      "prev": 0.39803,
+      "delta": 0.10256,
+      "name": "StoryChief <= 1.0.42 - Unauthenticated Arbitrary File Upload"
+    },
+    {
       "id": "CVE-2026-8510",
       "now": 0.10525,
       "prev": 0.00304,
@@ -129,6 +122,13 @@
       "prev": 0.04307,
       "delta": 0.09623,
       "name": "Samba: samba: remote code execution in printing subsystem via unescaped job description"
+    },
+    {
+      "id": "CVE-2009-1551",
+      "now": 0.36598,
+      "prev": 0.27008,
+      "delta": 0.0959,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in Qt quickteam 2 allow remote attackers to execute arbitra"
     },
     {
       "id": "CVE-2025-8943",
@@ -159,13 +159,6 @@
       "name": "Google Chrome"
     },
     {
-      "id": "CVE-2023-43654",
-      "now": 0.42495,
-      "prev": 0.355,
-      "delta": 0.06995,
-      "name": "TorchServe Server-Side Request Forgery"
-    },
-    {
       "id": "CVE-2002-0422",
       "now": 0.51038,
       "prev": 0.44065,
@@ -194,6 +187,20 @@
       "name": "Unauthenticated remote crash of named via a single DoH SIG(0) request"
     },
     {
+      "id": "CVE-2025-47228",
+      "now": 0.23081,
+      "prev": 0.17505,
+      "delta": 0.05576,
+      "name": "ScriptCase ScriptCase"
+    },
+    {
+      "id": "CVE-2026-29058",
+      "now": 0.06773,
+      "prev": 0.01571,
+      "delta": 0.05202,
+      "name": "AVideo: Unauthenticated OS Command Injection via base64Url in objects/getImage.php"
+    },
+    {
       "id": "CVE-2024-54146",
       "now": 0.46129,
       "prev": 0.40996,
@@ -206,13 +213,6 @@
       "prev": 0.53804,
       "delta": 0.04888,
       "name": "NodeBB Pre-Authentication Denial-of-Service"
-    },
-    {
-      "id": "CVE-2026-86060",
-      "now": 0.06392,
-      "prev": 0.01849,
-      "delta": 0.04543,
-      "name": "SSH session privilege manipulation via a crafted username in Mikrotik RouterOS"
     }
   ],
   "newly_high": [
@@ -224,11 +224,11 @@
       "name": "PaperCut MF/NG: Authentication Bypass"
     },
     {
-      "id": "CVE-2026-42271",
-      "now": 0.9257,
-      "prev": 0.12754,
-      "delta": 0.79816,
-      "name": "LiteLLM: Authenticated command execution via MCP stdio test endpoints"
+      "id": "CVE-2026-73570",
+      "now": 0.71663,
+      "prev": 0.11736,
+      "delta": 0.59927,
+      "name": "Zimbra Collaboration"
     },
     {
       "id": "CVE-2026-82078",
@@ -245,13 +245,6 @@
       "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
     },
     {
-      "id": "CVE-2008-4546",
-      "now": 0.65868,
-      "prev": 0.16769,
-      "delta": 0.49099,
-      "name": "Adobe Flash Player before 9.0.277.0 and 10.x before 10.1.53.64, and Adobe AIR before 2.0.2.12610, allows remot"
-    },
-    {
       "id": "CVE-2000-0979",
       "now": 0.75054,
       "prev": 0.44987,
@@ -266,11 +259,11 @@
       "name": "Google Chrome"
     },
     {
-      "id": "CVE-2008-6221",
-      "now": 0.53983,
-      "prev": 0.37692,
-      "delta": 0.16291,
-      "name": "PHP remote file inclusion vulnerability in config.dadamail.php in the Dada Mail Manager (com_dadamail) compone"
+      "id": "CVE-2025-7441",
+      "now": 0.50059,
+      "prev": 0.39803,
+      "delta": 0.10256,
+      "name": "StoryChief <= 1.0.42 - Unauthenticated Arbitrary File Upload"
     },
     {
       "id": "CVE-2002-0422",
@@ -285,6 +278,13 @@
       "prev": 0.47836,
       "delta": 0.03897,
       "name": "GLPI vulnerable to SQL injection through Computer Virtual Machine information"
+    },
+    {
+      "id": "CVE-2022-33318",
+      "now": 0.50054,
+      "prev": 0.48137,
+      "delta": 0.01917,
+      "name": "Mitsubishi Electric GENESIS64"
     }
   ]
 }
