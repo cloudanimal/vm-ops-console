@@ -1,492 +1,605 @@
 {
-  "updated": "2026-10-06",
+  "updated": "2026-10-07",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
     {
-      "id": "506211",
-      "title": "Cisco ASA Code Injection (CVE-2024-20485)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506211",
-      "cves": []
-    },
-    {
-      "id": "506210",
-      "title": "Cisco ASA Out-of-bounds Write (CVE-2026-20023)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506210",
-      "cves": []
-    },
-    {
-      "id": "506209",
-      "title": "Cisco ASA Missing Release of Resource after Effective Lifetime (CVE-2024-20481)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506209",
-      "cves": []
-    },
-    {
-      "id": "506208",
-      "title": "Cisco ASA Improper Input Validation (CVE-2022-20715)",
+      "id": null,
+      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506208",
-      "cves": []
-    },
-    {
-      "id": "506207",
-      "title": "Cisco ASA Authentication Bypass by Spoofing (CVE-2023-20256)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506207",
-      "cves": []
-    },
-    {
-      "id": "506206",
-      "title": "Cisco ASA Improper Access Control (CVE-2019-1695)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506206",
-      "cves": []
-    },
-    {
-      "id": "506205",
-      "title": "Cisco ASA Missing Authorization (CVE-2024-20355)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506205",
-      "cves": []
-    },
-    {
-      "id": "506204",
-      "title": "Cisco ASA Missing Required Cryptographic Step (CVE-2022-20742)",
-      "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506204",
-      "cves": []
-    },
-    {
-      "id": "506203",
-      "title": "Cisco ASA Incorrect Authorization (CVE-2022-20928)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506203",
-      "cves": []
-    },
-    {
-      "id": "506202",
-      "title": "Cisco ASA Uncontrolled Resource Consumption (CVE-2022-20760)",
-      "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506202",
-      "cves": []
-    },
-    {
-      "id": "506201",
-      "title": "Cisco ASA Uncontrolled Resource Consumption (CVE-2020-3528)",
-      "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506201",
-      "cves": []
-    },
-    {
-      "id": "506200",
-      "title": "Cisco ASA Improper Input Validation (CVE-2018-15454)",
-      "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506200",
-      "cves": []
-    },
-    {
-      "id": "506199",
-      "title": "Cisco ASA Protection Mechanism Failure (CVE-2020-3458)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506199",
-      "cves": []
-    },
-    {
-      "id": "506198",
-      "title": "Cisco ASA Improper Input Validation (CVE-2026-20020)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506198",
-      "cves": []
-    },
-    {
-      "id": "506197",
-      "title": "Cisco ASA Incorrect Privilege Assignment (CVE-2022-20759)",
-      "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506197",
-      "cves": []
-    },
-    {
-      "id": "506196",
-      "title": "Cisco ASA Missing Authorization (CVE-2025-20362)",
-      "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506196",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473627",
       "cves": [
-        "CVE-2025-20333",
-        "CVE-2025-20362"
+        "CVE-2026-18298"
       ]
     },
     {
-      "id": "506195",
-      "title": "Cisco ASA Improper Restriction of Operations within the Bounds of a Memory Buffer (CVE-2021-40117)",
+      "id": null,
+      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506195",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473627",
+      "cves": [
+        "CVE-2026-18298"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: openssh: security update to 1:10.6p1-1",
+      "severity": "Low",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473626",
+      "cves": [
+        "CVE-2026-106589"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: openssh: security update to 1:10.6p1-1",
+      "severity": "Low",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473626",
+      "cves": [
+        "CVE-2026-106589"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473625",
+      "cves": [
+        "CVE-2026-56153"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473625",
+      "cves": [
+        "CVE-2026-56153"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
+      "severity": "Low",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473624",
+      "cves": [
+        "CVE-2026-17072"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
+      "severity": "Low",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473624",
+      "cves": [
+        "CVE-2026-17072"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473623",
+      "cves": [
+        "CVE-2026-56449"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473623",
+      "cves": [
+        "CVE-2026-56449"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473622",
+      "cves": [
+        "CVE-2026-63045"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473622",
+      "cves": [
+        "CVE-2026-63045"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: libde265: security update to 1.0.15-1+e13",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473621",
       "cves": []
     },
     {
-      "id": "506194",
-      "title": "Cisco ASA Exposure of Sensitive Information to an Unauthorized Actor (CVE-2020-3259)",
+      "id": null,
+      "title": "Echo: libde265: security update to 1.0.15-1+e13",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506194",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473621",
       "cves": []
     },
     {
-      "id": "506193",
-      "title": "Cisco ASA Improper Restriction of Operations within the Bounds of a Memory Buffer (CVE-2019-12673)",
-      "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506193",
-      "cves": []
-    },
-    {
-      "id": "506192",
-      "title": "Cisco ASA Improper Restriction of Operations within the Bounds of a Memory Buffer (CVE-2021-34783)",
-      "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506192",
-      "cves": []
-    },
-    {
-      "id": "506191",
-      "title": "Cisco ASA Credentials Management Errors (CVE-2019-1714)",
-      "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506191",
-      "cves": []
-    },
-    {
-      "id": "506190",
-      "title": "Cisco ASA Improper Input Validation (CVE-2020-3166)",
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
       "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506190",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473620",
+      "cves": [
+        "CVE-2026-79768"
+      ]
     },
     {
-      "id": "506189",
-      "title": "Cisco ASA Uncontrolled Resource Consumption (CVE-2018-0240)",
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "severity": "Medium",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473620",
+      "cves": [
+        "CVE-2026-79768"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506189",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473619",
+      "cves": [
+        "CVE-2026-18296"
+      ]
     },
     {
-      "id": "506188",
-      "title": "Cisco ASA Stack-based Buffer Overflow (CVE-2021-1573)",
+      "id": null,
+      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506188",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473619",
+      "cves": [
+        "CVE-2026-18296"
+      ]
     },
     {
-      "id": "506187",
-      "title": "Cisco ASA Heap-based Buffer Overflow (CVE-2023-20081)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506187",
-      "cves": []
-    },
-    {
-      "id": "506186",
-      "title": "Cisco ASA Improper Neutralization of Special Elements in Output Used by a Downstream Component (CVE-2020-3561)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506186",
-      "cves": []
-    },
-    {
-      "id": "506185",
-      "title": "Cisco ASA Improper Input Validation (CVE-2019-12676)",
+      "id": null,
+      "title": "Echo: libheif: security update to 1.23.4-1~deb13u1+e2",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506185",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473618",
       "cves": []
     },
     {
-      "id": "506184",
-      "title": "Cisco ASA Stack-based Buffer Overflow (CVE-2021-34704)",
+      "id": null,
+      "title": "Echo: libheif: security update to 1.23.4-1~deb13u1+e2",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506184",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473618",
       "cves": []
     },
     {
-      "id": "506183",
-      "title": "Cisco ASA Basic XSS (CVE-2024-20382)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506183",
-      "cves": []
-    },
-    {
-      "id": "506182",
-      "title": "Cisco ASA Inconsistent Interpretation of HTTP Requests (CVE-2022-20713)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506182",
-      "cves": []
-    },
-    {
-      "id": "506181",
-      "title": "Cisco ASA Uncontrolled Resource Consumption (CVE-2021-34792)",
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506181",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473617",
+      "cves": [
+        "CVE-2026-93546"
+      ]
     },
     {
-      "id": "506180",
-      "title": "Cisco ASA Improper Resource Shutdown or Release (CVE-2020-3555)",
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506180",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473617",
+      "cves": [
+        "CVE-2026-93546"
+      ]
     },
     {
-      "id": "506179",
-      "title": "Cisco ASA Reachable Assertion (CVE-2021-1422)",
+      "id": null,
+      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506179",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473616",
+      "cves": [
+        "CVE-2026-18649"
+      ]
     },
     {
-      "id": "506178",
-      "title": "Cisco ASA Use of Out-of-range Pointer Offset (CVE-2026-20022)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506178",
-      "cves": []
-    },
-    {
-      "id": "506177",
-      "title": "Cisco ASA Missing Release of Resource after Effective Lifetime (CVE-2024-20493)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506177",
-      "cves": []
-    },
-    {
-      "id": "506176",
-      "title": "Cisco ASA/FTD Cross-site Scripting (CVE-2020-3583)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506176",
-      "cves": []
-    },
-    {
-      "id": "506175",
-      "title": "Cisco ASA Improper Input Validation (CVE-2022-20745)",
+      "id": null,
+      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506175",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473616",
+      "cves": [
+        "CVE-2026-18649"
+      ]
     },
     {
-      "id": "506174",
-      "title": "Cisco ASA Integer Underflow (CVE-2019-12678)",
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "severity": "Medium",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473615",
+      "cves": [
+        "CVE-2026-58415"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "severity": "Medium",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473615",
+      "cves": [
+        "CVE-2026-58415"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "severity": "Medium",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473614",
+      "cves": [
+        "CVE-2026-42528"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "severity": "Medium",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473614",
+      "cves": [
+        "CVE-2026-42528"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "severity": "Critical",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473613",
+      "cves": [
+        "CVE-2026-59797"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "severity": "Critical",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473613",
+      "cves": [
+        "CVE-2026-59797"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: libheif: security update to 1.23.4-1~deb13u1+e2",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506174",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473612",
       "cves": []
     },
     {
-      "id": "506173",
-      "title": "Cisco ASA/FTD Cross-site Scripting (CVE-2020-3581)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506173",
-      "cves": []
-    },
-    {
-      "id": "506172",
-      "title": "Cisco ASA Improper Input Validation (CVE-2020-3191)",
+      "id": null,
+      "title": "Echo: libheif: security update to 1.23.4-1~deb13u1+e2",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506172",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473612",
       "cves": []
     },
     {
-      "id": "506171",
-      "title": "Cisco ASA Improper Input Validation (CVE-2018-0228)",
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506171",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473611",
+      "cves": [
+        "CVE-2026-63686"
+      ]
     },
     {
-      "id": "506170",
-      "title": "Cisco ASA Buffer Copy without Checking Size of Input (CVE-2022-20927)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506170",
-      "cves": []
-    },
-    {
-      "id": "506169",
-      "title": "Cisco ASA Uncontrolled Resource Consumption (CVE-2020-3572)",
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506169",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473611",
+      "cves": [
+        "CVE-2026-63686"
+      ]
     },
     {
-      "id": "506168",
-      "title": "Cisco ASA Stack-based Buffer Overflow (CVE-2021-40118)",
+      "id": null,
+      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
+      "severity": "Medium",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473610",
+      "cves": [
+        "CVE-2026-73433"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
+      "severity": "Medium",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473610",
+      "cves": [
+        "CVE-2026-73433"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple wolfssh packages: security update to 1.6.0-r0",
+      "severity": "Critical",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473609",
+      "cves": [
+        "CVE-2026-16516",
+        "CVE-2026-81535",
+        "CVE-2026-83540",
+        "CVE-2026-83742",
+        "CVE-2026-84897"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple wolfssh packages: security update to 1.6.0-r0",
+      "severity": "Critical",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473609",
+      "cves": [
+        "CVE-2026-16516",
+        "CVE-2026-81535",
+        "CVE-2026-83540",
+        "CVE-2026-83742",
+        "CVE-2026-84897"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: airflow-core-2: security update to 2.11.2-r13",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506168",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473608",
+      "cves": [
+        "CVE-2026-104851"
+      ]
     },
     {
-      "id": "506167",
-      "title": "Cisco ASA Permissive List of Allowed Inputs (CVE-2021-34787)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506167",
-      "cves": []
-    },
-    {
-      "id": "506166",
-      "title": "Cisco ASA Uncontrolled Resource Consumption (CVE-2020-3195)",
+      "id": null,
+      "title": "Chainguard: airflow-core-2: security update to 2.11.2-r13",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506166",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473608",
+      "cves": [
+        "CVE-2026-104851"
+      ]
     },
     {
-      "id": "506165",
-      "title": "Cisco ASA Improper Input Validation (CVE-2022-20924)",
+      "id": null,
+      "title": "Chainguard: multiple automq packages: security update to 1.7.4-r1",
       "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506165",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473607",
+      "cves": [
+        "CVE-2018-11798"
+      ]
     },
     {
-      "id": "506164",
-      "title": "Cisco ASA Cross-site Scripting (CVE-2019-1701)",
+      "id": null,
+      "title": "Chainguard: multiple automq packages: security update to 1.7.4-r1",
       "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506164",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473607",
+      "cves": [
+        "CVE-2018-11798"
+      ]
     },
     {
-      "id": "506163",
-      "title": "Cisco ASA/FTD Incorrect Authorization (CVE-2020-3578)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506163",
-      "cves": []
-    },
-    {
-      "id": "506162",
-      "title": "Cisco ASA Out-of-bounds Write (CVE-2021-1445)",
+      "id": null,
+      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506162",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473606",
+      "cves": [
+        "CVE-2026-47494"
+      ]
     },
     {
-      "id": "506161",
-      "title": "Cisco ASA Out-of-bounds Write (CVE-2021-1504)",
+      "id": null,
+      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506161",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473606",
+      "cves": [
+        "CVE-2026-47494"
+      ]
     },
     {
-      "id": "506160",
-      "title": "Cisco ASA URL Redirection to Untrusted Site (CVE-2023-20264)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506160",
-      "cves": []
-    },
-    {
-      "id": "506159",
-      "title": "Cisco ASA Cross-site Scripting (CVE-2024-20341)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506159",
-      "cves": []
-    },
-    {
-      "id": "506158",
-      "title": "Cisco ASA Uncontrolled Resource Consumption (CVE-2019-1693)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506158",
-      "cves": []
-    },
-    {
-      "id": "506157",
-      "title": "Cisco ASA Uncontrolled Resource Consumption (CVE-2020-3196)",
+      "id": null,
+      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506157",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473605",
+      "cves": [
+        "CVE-2026-47589"
+      ]
     },
     {
-      "id": "506156",
-      "title": "Cisco ASA Origin Validation Error (CVE-2023-20275)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506156",
-      "cves": []
-    },
-    {
-      "id": "506155",
-      "title": "Cisco ASA OS Command Injection (CVE-2024-20358)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506155",
-      "cves": []
-    },
-    {
-      "id": "506154",
-      "title": "Cisco ASA Improper Input Validation (CVE-2018-0296)",
+      "id": null,
+      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
       "severity": "High",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506154",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473605",
+      "cves": [
+        "CVE-2026-47589"
+      ]
     },
     {
-      "id": "506153",
-      "title": "Cisco ASA Improper Input Validation (CVE-2021-34791)",
-      "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506153",
-      "cves": []
+      "id": null,
+      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473604",
+      "cves": [
+        "CVE-2026-47516"
+      ]
     },
     {
-      "id": "506152",
-      "title": "Cisco ASA Improper Restriction of Operations within the Bounds of a Memory Buffer (CVE-2026-20024)",
+      "id": null,
+      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473604",
+      "cves": [
+        "CVE-2026-47516"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473603",
+      "cves": [
+        "CVE-2026-47588"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473603",
+      "cves": [
+        "CVE-2026-47588"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473602",
+      "cves": [
+        "CVE-2026-47587"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473602",
+      "cves": [
+        "CVE-2026-47587"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473601",
+      "cves": [
+        "CVE-2026-47594"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473601",
+      "cves": [
+        "CVE-2026-47594"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473600",
+      "cves": [
+        "CVE-2026-47590"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
+      "severity": "High",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473600",
+      "cves": [
+        "CVE-2026-47590"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple chromium packages: security update to 154.0.8037.97-r0",
+      "severity": "Critical",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473599",
+      "cves": [
+        "CVE-2026-103628"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple chromium packages: security update to 154.0.8037.97-r0",
+      "severity": "Critical",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473599",
+      "cves": [
+        "CVE-2026-103628"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple glibc-2.44 packages, multiple ld-linux-2.44 packages, multiple nscd-2.44 packages, multiple pcprofiledump-2.44 packages, multiple sln-2.44 packages, tzutils-2.44: security update to 2.44-r8",
       "severity": "Medium",
-      "date": "Tue, 06 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506152",
-      "cves": []
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473598",
+      "cves": [
+        "CVE-2026-8674"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple glibc-2.44 packages, multiple ld-linux-2.44 packages, multiple nscd-2.44 packages, multiple pcprofiledump-2.44 packages, multiple sln-2.44 packages, tzutils-2.44: security update to 2.44-r8",
+      "severity": "Medium",
+      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473598",
+      "cves": [
+        "CVE-2026-8674"
+      ]
     }
   ]
 }

@@ -1,29 +1,15 @@
 {
-  "updated": "2026-10-06",
+  "updated": "2026-10-07",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-06",
-  "previous_date": "2026-09-29",
+  "current_date": "2026-10-07",
+  "previous_date": "2026-09-30",
   "risers": [
-    {
-      "id": "CVE-2026-81578",
-      "now": 0.84594,
-      "prev": 0.04481,
-      "delta": 0.80113,
-      "name": "PaperCut MF/NG: Authentication Bypass"
-    },
     {
       "id": "CVE-2026-73570",
       "now": 0.71663,
       "prev": 0.11736,
       "delta": 0.59927,
       "name": "Zimbra Collaboration"
-    },
-    {
-      "id": "CVE-2026-82078",
-      "now": 0.61394,
-      "prev": 0.03843,
-      "delta": 0.57551,
-      "name": "PaperCut MF/NG: Unsafe Dynamic Class Loading in Database Connector"
     },
     {
       "id": "CVE-2026-55040",
@@ -75,13 +61,6 @@
       "name": "Google Chrome"
     },
     {
-      "id": "CVE-2022-21449",
-      "now": 0.77151,
-      "prev": 0.60336,
-      "delta": 0.16815,
-      "name": "Oracle Corporation Java SE JDK and JRE"
-    },
-    {
       "id": "CVE-2026-19490",
       "now": 0.23158,
       "prev": 0.0701,
@@ -101,6 +80,13 @@
       "prev": 0.34414,
       "delta": 0.14067,
       "name": "Google Chrome"
+    },
+    {
+      "id": "CVE-2025-34035",
+      "now": 0.22811,
+      "prev": 0.12531,
+      "delta": 0.1028,
+      "name": "EnGenius EnShare IoT Gigabit Cloud Service Command Injection"
     },
     {
       "id": "CVE-2025-7441",
@@ -138,13 +124,6 @@
       "name": "Unsupervised OS command execution leads to remote code execution by unauthenticated networ"
     },
     {
-      "id": "CVE-2002-0409",
-      "now": 0.28085,
-      "prev": 0.19323,
-      "delta": 0.08762,
-      "name": "orderdetails.aspx, as made available to Microsoft .NET developers as example code and demonstrated on www.ibuy"
-    },
-    {
       "id": "CVE-2022-27924",
       "now": 0.93908,
       "prev": 0.85398,
@@ -152,18 +131,11 @@
       "name": "Zimbra Collaboration (aka ZCS) 8.8.15 and 9.0 allows an unauthenticated attacker to inject arbitrary memcache "
     },
     {
-      "id": "CVE-2022-4262",
-      "now": 0.2351,
-      "prev": 0.15983,
-      "delta": 0.07527,
-      "name": "Google Chrome"
-    },
-    {
-      "id": "CVE-2002-0422",
-      "now": 0.51038,
-      "prev": 0.44065,
-      "delta": 0.06973,
-      "name": "IIS 5 and 5.1 supporting WebDAV methods allows remote attackers to determine the internal IP address of the sy"
+      "id": "CVE-2025-15472",
+      "now": 0.29562,
+      "prev": 0.22632,
+      "delta": 0.0693,
+      "name": "TRENDnet TEW-811DRU httpd\u00a0 uapply.cgi setDeviceURL\u00a0 os command injection"
     },
     {
       "id": "CVE-2025-37098",
@@ -208,34 +180,48 @@
       "name": "Cacti has a SQL Injection vulnerability when view host template"
     },
     {
-      "id": "CVE-2023-30591",
-      "now": 0.58692,
-      "prev": 0.53804,
-      "delta": 0.04888,
-      "name": "NodeBB Pre-Authentication Denial-of-Service"
+      "id": "CVE-2025-7083",
+      "now": 0.4627,
+      "prev": 0.41193,
+      "delta": 0.05077,
+      "name": "Belkin F9K1122 webs mp os command injection"
+    },
+    {
+      "id": "CVE-2025-53693",
+      "now": 0.19435,
+      "prev": 0.14793,
+      "delta": 0.04642,
+      "name": "HTML Cache Poisoning through Unsafe Reflections"
+    },
+    {
+      "id": "CVE-2024-11972",
+      "now": 0.59055,
+      "prev": 0.54475,
+      "delta": 0.0458,
+      "name": "Hunk Companion < 1.9.0 - Unauthenticated Plugin Installation"
+    },
+    {
+      "id": "CVE-2026-86060",
+      "now": 0.06392,
+      "prev": 0.01849,
+      "delta": 0.04543,
+      "name": "SSH session privilege manipulation via a crafted username in Mikrotik RouterOS"
+    },
+    {
+      "id": "CVE-2023-42442",
+      "now": 0.63027,
+      "prev": 0.58538,
+      "delta": 0.04489,
+      "name": "JumpServer session replays download without authentication"
     }
   ],
   "newly_high": [
-    {
-      "id": "CVE-2026-81578",
-      "now": 0.84594,
-      "prev": 0.04481,
-      "delta": 0.80113,
-      "name": "PaperCut MF/NG: Authentication Bypass"
-    },
     {
       "id": "CVE-2026-73570",
       "now": 0.71663,
       "prev": 0.11736,
       "delta": 0.59927,
       "name": "Zimbra Collaboration"
-    },
-    {
-      "id": "CVE-2026-82078",
-      "now": 0.61394,
-      "prev": 0.03843,
-      "delta": 0.57551,
-      "name": "PaperCut MF/NG: Unsafe Dynamic Class Loading in Database Connector"
     },
     {
       "id": "CVE-2026-55040",
@@ -264,13 +250,6 @@
       "prev": 0.39803,
       "delta": 0.10256,
       "name": "StoryChief <= 1.0.42 - Unauthenticated Arbitrary File Upload"
-    },
-    {
-      "id": "CVE-2002-0422",
-      "now": 0.51038,
-      "prev": 0.44065,
-      "delta": 0.06973,
-      "name": "IIS 5 and 5.1 supporting WebDAV methods allows remote attackers to determine the internal IP address of the sy"
     },
     {
       "id": "CVE-2023-36808",
