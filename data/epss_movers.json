@@ -1,9 +1,16 @@
 {
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-07",
-  "previous_date": "2026-09-30",
+  "current_date": "2026-10-08",
+  "previous_date": "2026-10-01",
   "risers": [
+    {
+      "id": "CVE-2026-50751",
+      "now": 0.85338,
+      "prev": 0.06301,
+      "delta": 0.79037,
+      "name": "User Authentication Bypass in VPN Remote Access and Mobile Access"
+    },
     {
       "id": "CVE-2026-73570",
       "now": 0.71663,
@@ -33,11 +40,11 @@
       "name": "File and Print Sharing service in Windows 95, Windows 98, and Windows Me does not properly check the password "
     },
     {
-      "id": "CVE-2026-87902",
-      "now": 0.46117,
-      "prev": 0.19756,
-      "delta": 0.26361,
-      "name": "WordPress WordPress"
+      "id": "CVE-2026-66066",
+      "now": 0.27861,
+      "prev": 0.02099,
+      "delta": 0.25762,
+      "name": "Action Pack: Possible arbitrary file read and remote code execution in Active Storage vari"
     },
     {
       "id": "CVE-2026-27654",
@@ -54,6 +61,13 @@
       "name": "Sangfor Next-Gen Application Firewall Authenticated File Disclosure"
     },
     {
+      "id": "CVE-2026-87902",
+      "now": 0.39979,
+      "prev": 0.19756,
+      "delta": 0.20223,
+      "name": "WordPress WordPress"
+    },
+    {
       "id": "CVE-2020-15999",
       "now": 0.63894,
       "prev": 0.44303,
@@ -63,8 +77,8 @@
     {
       "id": "CVE-2026-19490",
       "now": 0.23158,
-      "prev": 0.0701,
-      "delta": 0.16148,
+      "prev": 0.0797,
+      "delta": 0.15188,
       "name": "NetScaler ADC and NetScaler Gateway Security Bulletin for CVE-2026-19490"
     },
     {
@@ -129,13 +143,6 @@
       "prev": 0.85398,
       "delta": 0.0851,
       "name": "Zimbra Collaboration (aka ZCS) 8.8.15 and 9.0 allows an unauthenticated attacker to inject arbitrary memcache "
-    },
-    {
-      "id": "CVE-2025-15472",
-      "now": 0.29562,
-      "prev": 0.22632,
-      "delta": 0.0693,
-      "name": "TRENDnet TEW-811DRU httpd\u00a0 uapply.cgi setDeviceURL\u00a0 os command injection"
     },
     {
       "id": "CVE-2025-37098",
@@ -206,16 +213,16 @@
       "prev": 0.01849,
       "delta": 0.04543,
       "name": "SSH session privilege manipulation via a crafted username in Mikrotik RouterOS"
-    },
-    {
-      "id": "CVE-2023-42442",
-      "now": 0.63027,
-      "prev": 0.58538,
-      "delta": 0.04489,
-      "name": "JumpServer session replays download without authentication"
     }
   ],
   "newly_high": [
+    {
+      "id": "CVE-2026-50751",
+      "now": 0.85338,
+      "prev": 0.06301,
+      "delta": 0.79037,
+      "name": "User Authentication Bypass in VPN Remote Access and Mobile Access"
+    },
     {
       "id": "CVE-2026-73570",
       "now": 0.71663,
@@ -257,6 +264,13 @@
       "prev": 0.47836,
       "delta": 0.03897,
       "name": "GLPI vulnerable to SQL injection through Computer Virtual Machine information"
+    },
+    {
+      "id": "CVE-2025-6023",
+      "now": 0.52586,
+      "prev": 0.49989,
+      "delta": 0.02597,
+      "name": "Grafana Grafana"
     },
     {
       "id": "CVE-2022-33318",

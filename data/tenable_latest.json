@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,598 +7,618 @@
   "items": [
     {
       "id": null,
-      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
+      "title": "Echo: groff: security update to 1.23.0-9+e1",
       "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473627",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473842",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "Echo: groff: security update to 1.23.0-9+e1",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473842",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "Echo: percona-toolkit: security update to 3.7.1+e2",
+      "severity": "Medium",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473841",
       "cves": [
-        "CVE-2026-18298"
+        "CVE-2024-7701"
       ]
     },
     {
       "id": null,
-      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473627",
+      "title": "Echo: percona-toolkit: security update to 3.7.1+e2",
+      "severity": "Medium",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473841",
       "cves": [
-        "CVE-2026-18298"
+        "CVE-2024-7701"
       ]
     },
     {
       "id": null,
-      "title": "Echo: openssh: security update to 1:10.6p1-1",
+      "title": "Alpine: libtiffxx, multiple tiff packages: security update to 4.7.2-r0",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473840",
+      "cves": [
+        "CVE-2026-4775"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: libtiffxx, multiple tiff packages: security update to 4.7.2-r0",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473840",
+      "cves": [
+        "CVE-2026-4775"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e4",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473839",
+      "cves": [
+        "CVE-2026-73637"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e4",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473839",
+      "cves": [
+        "CVE-2026-73637"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e4",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473838",
+      "cves": [
+        "CVE-2026-73636"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e4",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473838",
+      "cves": [
+        "CVE-2026-73636"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e4",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473837",
+      "cves": [
+        "CVE-2026-48005"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e4",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473837",
+      "cves": [
+        "CVE-2026-48005"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: tritonserver-backend-vllm-cuda-13.0: security update to 25.11-r14",
+      "severity": "Medium",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473836",
+      "cves": [
+        "CVE-2026-73558"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: tritonserver-backend-vllm-cuda-13.0: security update to 25.11-r14",
+      "severity": "Medium",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473836",
+      "cves": [
+        "CVE-2026-73558"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple xorg-server packages: security update to 21.1.25-r0",
+      "severity": "Critical",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473835",
+      "cves": [
+        "CVE-2026-88812",
+        "CVE-2026-93515",
+        "CVE-2026-93516",
+        "CVE-2026-93517",
+        "CVE-2026-93518",
+        "CVE-2026-93519",
+        "CVE-2026-93520",
+        "CVE-2026-93521",
+        "CVE-2026-93522",
+        "CVE-2026-93523",
+        "CVE-2026-93524",
+        "CVE-2026-93536"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple xorg-server packages: security update to 21.1.25-r0",
+      "severity": "Critical",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473835",
+      "cves": [
+        "CVE-2026-88812",
+        "CVE-2026-93515",
+        "CVE-2026-93516",
+        "CVE-2026-93517",
+        "CVE-2026-93518",
+        "CVE-2026-93519",
+        "CVE-2026-93520",
+        "CVE-2026-93521",
+        "CVE-2026-93522",
+        "CVE-2026-93523",
+        "CVE-2026-93524",
+        "CVE-2026-93536"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple libreswan packages: security update to 5.3.3-r0",
+      "severity": "Medium",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473834",
+      "cves": [
+        "CVE-2026-12413",
+        "CVE-2026-14957",
+        "CVE-2026-50721",
+        "CVE-2026-50722"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple libreswan packages: security update to 5.3.3-r0",
+      "severity": "Medium",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473834",
+      "cves": [
+        "CVE-2026-12413",
+        "CVE-2026-14957",
+        "CVE-2026-50721",
+        "CVE-2026-50722"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: io.netty:netty-transport-native-epoll: security update to 4.2.13.Final",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473833",
+      "cves": [
+        "CVE-2026-42577"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: io.netty:netty-transport-native-epoll: security update to 4.2.13.Final",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473833",
+      "cves": [
+        "CVE-2026-42577"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: opensearch-dashboards-2: security update to 2.19.6-r25",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473832",
+      "cves": [
+        "CVE-2026-104850"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: opensearch-dashboards-2: security update to 2.19.6-r25",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473832",
+      "cves": [
+        "CVE-2026-104850"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: org.springframework:spring-webflux: security update to 7.0.9",
+      "severity": "Critical",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473831",
+      "cves": [
+        "CVE-2026-47892"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: org.springframework:spring-webflux: security update to 7.0.9",
+      "severity": "Critical",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473831",
+      "cves": [
+        "CVE-2026-47892"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: commons-net:commons-net: security update to 3.9.0",
+      "severity": "Medium",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473830",
+      "cves": [
+        "CVE-2021-37533"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: commons-net:commons-net: security update to 3.9.0",
+      "severity": "Medium",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473830",
+      "cves": [
+        "CVE-2021-37533"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: source-map-js: security update to 1.2.2",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473829",
+      "cves": [
+        "CVE-2026-93749"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: source-map-js: security update to 1.2.2",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473829",
+      "cves": [
+        "CVE-2026-93749"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for praisonai (GHSA-5r2q-3wg3-57m2)",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473828",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for praisonai (GHSA-5r2q-3wg3-57m2)",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473828",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for praisonaiagents (GHSA-rc3q-9pxg-3jhr)",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473827",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for praisonaiagents (GHSA-rc3q-9pxg-3jhr)",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473827",
+      "cves": []
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/xuri/excelize/v2 (GHSA-5h23-36rv-pm65)",
+      "severity": "Medium",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473826",
+      "cves": [
+        "CVE-2026-107225"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/xuri/excelize/v2 (GHSA-5h23-36rv-pm65)",
+      "severity": "Medium",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473826",
+      "cves": [
+        "CVE-2026-107225"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @deepseek-ai/dsh-client-connection (GHSA-8m2g-8cgm-3vcp)",
+      "severity": "Critical",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473825",
+      "cves": [
+        "CVE-2026-82533"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @deepseek-ai/dsh-client-connection (GHSA-8m2g-8cgm-3vcp)",
+      "severity": "Critical",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473825",
+      "cves": [
+        "CVE-2026-82533"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/xuri/excelize/v2 (GHSA-fq3v-74gv-27gm)",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473824",
+      "cves": [
+        "CVE-2026-107223"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/xuri/excelize/v2 (GHSA-fq3v-74gv-27gm)",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473824",
+      "cves": [
+        "CVE-2026-107223"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for SixLabors.ImageSharp (GHSA-wmxv-xphr-5c9g)",
+      "severity": "Medium",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473823",
+      "cves": [
+        "CVE-2026-106116"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for SixLabors.ImageSharp (GHSA-wmxv-xphr-5c9g)",
+      "severity": "Medium",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473823",
+      "cves": [
+        "CVE-2026-106116"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for praisonaiagents (GHSA-6g59-gm2v-qhvq)",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473822",
+      "cves": [
+        "CVE-2026-61429"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for praisonaiagents (GHSA-6g59-gm2v-qhvq)",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473822",
+      "cves": [
+        "CVE-2026-61429"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for ghost (GHSA-53vv-xm9f-mm82)",
       "severity": "Low",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473626",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473821",
       "cves": [
-        "CVE-2026-106589"
+        "CVE-2026-105652"
       ]
     },
     {
       "id": null,
-      "title": "Echo: openssh: security update to 1:10.6p1-1",
+      "title": "SCA: security update for ghost (GHSA-53vv-xm9f-mm82)",
       "severity": "Low",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473626",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473821",
       "cves": [
-        "CVE-2026-106589"
+        "CVE-2026-105652"
       ]
     },
     {
       "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "title": "SCA: security update for hydra-core (GHSA-mwj6-rfh8-7qf4)",
       "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473625",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473820",
       "cves": [
-        "CVE-2026-56153"
+        "CVE-2026-106439"
       ]
     },
     {
       "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "title": "SCA: security update for hydra-core (GHSA-mwj6-rfh8-7qf4)",
       "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473625",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473820",
       "cves": [
-        "CVE-2026-56153"
+        "CVE-2026-106439"
       ]
     },
     {
       "id": null,
-      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
-      "severity": "Low",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473624",
-      "cves": [
-        "CVE-2026-17072"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
-      "severity": "Low",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473624",
-      "cves": [
-        "CVE-2026-17072"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473623",
-      "cves": [
-        "CVE-2026-56449"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473623",
-      "cves": [
-        "CVE-2026-56449"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473622",
-      "cves": [
-        "CVE-2026-63045"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473622",
-      "cves": [
-        "CVE-2026-63045"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: libde265: security update to 1.0.15-1+e13",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473621",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: libde265: security update to 1.0.15-1+e13",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473621",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "title": "SCA: security update for github.com/xuri/excelize/v2 (GHSA-8mcq-6wmr-jrjv)",
       "severity": "Medium",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473620",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473819",
       "cves": [
-        "CVE-2026-79768"
+        "CVE-2026-107221"
       ]
     },
     {
       "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "title": "SCA: security update for github.com/xuri/excelize/v2 (GHSA-8mcq-6wmr-jrjv)",
       "severity": "Medium",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473620",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473819",
       "cves": [
-        "CVE-2026-79768"
+        "CVE-2026-107221"
       ]
     },
     {
       "id": null,
-      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473619",
-      "cves": [
-        "CVE-2026-18296"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473619",
-      "cves": [
-        "CVE-2026-18296"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: libheif: security update to 1.23.4-1~deb13u1+e2",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473618",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: libheif: security update to 1.23.4-1~deb13u1+e2",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473618",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473617",
-      "cves": [
-        "CVE-2026-93546"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473617",
-      "cves": [
-        "CVE-2026-93546"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473616",
-      "cves": [
-        "CVE-2026-18649"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473616",
-      "cves": [
-        "CVE-2026-18649"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "title": "SCA: security update for github.com/xuri/excelize/v2 (GHSA-fw94-4wwp-w8pw)",
       "severity": "Medium",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473615",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473818",
       "cves": [
-        "CVE-2026-58415"
+        "CVE-2026-107224"
       ]
     },
     {
       "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "title": "SCA: security update for github.com/xuri/excelize/v2 (GHSA-fw94-4wwp-w8pw)",
       "severity": "Medium",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473615",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473818",
       "cves": [
-        "CVE-2026-58415"
+        "CVE-2026-107224"
       ]
     },
     {
       "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "title": "SCA: security update for payload (GHSA-2pwp-2369-8fg3)",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473817",
+      "cves": [
+        "CVE-2026-105862"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for payload (GHSA-2pwp-2369-8fg3)",
+      "severity": "High",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473817",
+      "cves": [
+        "CVE-2026-105862"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/xuri/excelize/v2 (GHSA-rxcj-4pj5-74gr)",
       "severity": "Medium",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473614",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473816",
       "cves": [
-        "CVE-2026-42528"
+        "CVE-2026-107222"
       ]
     },
     {
       "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
+      "title": "SCA: security update for github.com/xuri/excelize/v2 (GHSA-rxcj-4pj5-74gr)",
       "severity": "Medium",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473614",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473816",
       "cves": [
-        "CVE-2026-42528"
+        "CVE-2026-107222"
       ]
     },
     {
       "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
-      "severity": "Critical",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473613",
-      "cves": [
-        "CVE-2026-59797"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
-      "severity": "Critical",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473613",
-      "cves": [
-        "CVE-2026-59797"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: libheif: security update to 1.23.4-1~deb13u1+e2",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473612",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: libheif: security update to 1.23.4-1~deb13u1+e2",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473612",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473611",
-      "cves": [
-        "CVE-2026-63686"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: apache2: security update to 2.4.68-1~deb13u1+e2",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473611",
-      "cves": [
-        "CVE-2026-63686"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
+      "title": "SCA: security update for @backstage/plugin-auth-node (GHSA-xm5q-p7w3-x6cp)",
       "severity": "Medium",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473610",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473815",
       "cves": [
-        "CVE-2026-73433"
+        "CVE-2026-106460"
       ]
     },
     {
       "id": null,
-      "title": "Echo: gst-plugins-good1.0: security update to 1.26.2-1+e8",
+      "title": "SCA: security update for @backstage/plugin-auth-node (GHSA-xm5q-p7w3-x6cp)",
       "severity": "Medium",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473610",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473815",
       "cves": [
-        "CVE-2026-73433"
+        "CVE-2026-106460"
       ]
     },
     {
       "id": null,
-      "title": "Alpine: multiple wolfssh packages: security update to 1.6.0-r0",
-      "severity": "Critical",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473609",
-      "cves": [
-        "CVE-2026-16516",
-        "CVE-2026-81535",
-        "CVE-2026-83540",
-        "CVE-2026-83742",
-        "CVE-2026-84897"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple wolfssh packages: security update to 1.6.0-r0",
-      "severity": "Critical",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473609",
-      "cves": [
-        "CVE-2026-16516",
-        "CVE-2026-81535",
-        "CVE-2026-83540",
-        "CVE-2026-83742",
-        "CVE-2026-84897"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: airflow-core-2: security update to 2.11.2-r13",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473608",
-      "cves": [
-        "CVE-2026-104851"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: airflow-core-2: security update to 2.11.2-r13",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473608",
-      "cves": [
-        "CVE-2026-104851"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple automq packages: security update to 1.7.4-r1",
+      "title": "SCA: security update for github.com/xuri/excelize/v2 (GHSA-8jjq-8j9w-m2v6)",
       "severity": "Medium",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473607",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473814",
       "cves": [
-        "CVE-2018-11798"
+        "CVE-2026-107218"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple automq packages: security update to 1.7.4-r1",
+      "title": "SCA: security update for github.com/xuri/excelize/v2 (GHSA-8jjq-8j9w-m2v6)",
       "severity": "Medium",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473607",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473814",
       "cves": [
-        "CVE-2018-11798"
+        "CVE-2026-107218"
       ]
     },
     {
       "id": null,
-      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
+      "title": "SCA: security update for @payloadcms/plugin-multi-tenant (GHSA-p96c-xwx8-3cqj)",
       "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473606",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/473813",
       "cves": [
-        "CVE-2026-47494"
+        "CVE-2026-105860"
       ]
     },
     {
       "id": null,
-      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
+      "title": "SCA: security update for @payloadcms/plugin-multi-tenant (GHSA-p96c-xwx8-3cqj)",
       "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473606",
+      "date": "Thu, 08 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/473813",
       "cves": [
-        "CVE-2026-47494"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473605",
-      "cves": [
-        "CVE-2026-47589"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473605",
-      "cves": [
-        "CVE-2026-47589"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473604",
-      "cves": [
-        "CVE-2026-47516"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473604",
-      "cves": [
-        "CVE-2026-47516"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473603",
-      "cves": [
-        "CVE-2026-47588"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473603",
-      "cves": [
-        "CVE-2026-47588"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473602",
-      "cves": [
-        "CVE-2026-47587"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473602",
-      "cves": [
-        "CVE-2026-47587"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473601",
-      "cves": [
-        "CVE-2026-47594"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473601",
-      "cves": [
-        "CVE-2026-47594"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473600",
-      "cves": [
-        "CVE-2026-47590"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: nvidia-graphics-drivers: security update to 595.91.07",
-      "severity": "High",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473600",
-      "cves": [
-        "CVE-2026-47590"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 154.0.8037.97-r0",
-      "severity": "Critical",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473599",
-      "cves": [
-        "CVE-2026-103628"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 154.0.8037.97-r0",
-      "severity": "Critical",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473599",
-      "cves": [
-        "CVE-2026-103628"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple glibc-2.44 packages, multiple ld-linux-2.44 packages, multiple nscd-2.44 packages, multiple pcprofiledump-2.44 packages, multiple sln-2.44 packages, tzutils-2.44: security update to 2.44-r8",
-      "severity": "Medium",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/473598",
-      "cves": [
-        "CVE-2026-8674"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple glibc-2.44 packages, multiple ld-linux-2.44 packages, multiple nscd-2.44 packages, multiple pcprofiledump-2.44 packages, multiple sln-2.44 packages, tzutils-2.44: security update to 2.44-r8",
-      "severity": "Medium",
-      "date": "Wed, 07 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/473598",
-      "cves": [
-        "CVE-2026-8674"
+        "CVE-2026-105860"
       ]
     }
   ]
