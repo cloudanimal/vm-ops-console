@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-08",
-  "previous_date": "2026-10-01",
+  "current_date": "2026-10-09",
+  "previous_date": "2026-10-02",
   "risers": [
     {
       "id": "CVE-2026-50751",
@@ -26,46 +26,11 @@
       "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
     },
     {
-      "id": "CVE-2026-32201",
-      "now": 0.43378,
-      "prev": 0.00983,
-      "delta": 0.42395,
-      "name": "Microsoft SharePoint Server Spoofing Vulnerability"
-    },
-    {
-      "id": "CVE-2000-0979",
-      "now": 0.75054,
-      "prev": 0.44987,
-      "delta": 0.30067,
-      "name": "File and Print Sharing service in Windows 95, Windows 98, and Windows Me does not properly check the password "
-    },
-    {
       "id": "CVE-2026-66066",
       "now": 0.27861,
       "prev": 0.02099,
       "delta": 0.25762,
       "name": "Action Pack: Possible arbitrary file read and remote code execution in Active Storage vari"
-    },
-    {
-      "id": "CVE-2026-27654",
-      "now": 0.25066,
-      "prev": 0.01515,
-      "delta": 0.23551,
-      "name": "NGINX ngx_http_dav_module vulnerability"
-    },
-    {
-      "id": "CVE-2023-30804",
-      "now": 0.33962,
-      "prev": 0.12816,
-      "delta": 0.21146,
-      "name": "Sangfor Next-Gen Application Firewall Authenticated File Disclosure"
-    },
-    {
-      "id": "CVE-2026-87902",
-      "now": 0.39979,
-      "prev": 0.19756,
-      "delta": 0.20223,
-      "name": "WordPress WordPress"
     },
     {
       "id": "CVE-2020-15999",
@@ -75,18 +40,11 @@
       "name": "Google Chrome"
     },
     {
-      "id": "CVE-2026-19490",
-      "now": 0.23158,
-      "prev": 0.0797,
-      "delta": 0.15188,
-      "name": "NetScaler ADC and NetScaler Gateway Security Bulletin for CVE-2026-19490"
-    },
-    {
-      "id": "CVE-2021-20041",
-      "now": 0.21197,
-      "prev": 0.066,
-      "delta": 0.14597,
-      "name": "SonicWall SonicWall SMA100"
+      "id": "CVE-2026-0768",
+      "now": 0.23227,
+      "prev": 0.08451,
+      "delta": 0.14776,
+      "name": "Langflow code Code Injection Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2023-4427",
@@ -94,6 +52,13 @@
       "prev": 0.34414,
       "delta": 0.14067,
       "name": "Google Chrome"
+    },
+    {
+      "id": "CVE-2008-6347",
+      "now": 0.31129,
+      "prev": 0.19927,
+      "delta": 0.11202,
+      "name": "PHP remote file inclusion vulnerability in lib/onguma.class.php in the Onguma Time Sheet (com_ongumatimesheet2"
     },
     {
       "id": "CVE-2025-34035",
@@ -110,25 +75,18 @@
       "name": "StoryChief <= 1.0.42 - Unauthenticated Arbitrary File Upload"
     },
     {
-      "id": "CVE-2026-8510",
-      "now": 0.10525,
-      "prev": 0.00304,
-      "delta": 0.10221,
-      "name": "Google Chrome"
-    },
-    {
-      "id": "CVE-2026-4480",
-      "now": 0.1393,
-      "prev": 0.04307,
-      "delta": 0.09623,
-      "name": "Samba: samba: remote code execution in printing subsystem via unescaped job description"
-    },
-    {
       "id": "CVE-2009-1551",
       "now": 0.36598,
       "prev": 0.27008,
       "delta": 0.0959,
       "name": "Multiple PHP remote file inclusion vulnerabilities in Qt quickteam 2 allow remote attackers to execute arbitra"
+    },
+    {
+      "id": "CVE-2026-0769",
+      "now": 0.41695,
+      "prev": 0.32335,
+      "delta": 0.0936,
+      "name": "Langflow eval_custom_component_code Eval Injection Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2025-8943",
@@ -138,18 +96,25 @@
       "name": "Unsupervised OS command execution leads to remote code execution by unauthenticated networ"
     },
     {
-      "id": "CVE-2022-27924",
-      "now": 0.93908,
-      "prev": 0.85398,
-      "delta": 0.0851,
-      "name": "Zimbra Collaboration (aka ZCS) 8.8.15 and 9.0 allows an unauthenticated attacker to inject arbitrary memcache "
+      "id": "CVE-2025-47981",
+      "now": 0.4112,
+      "prev": 0.3268,
+      "delta": 0.0844,
+      "name": "SPNEGO Extended Negotiation (NEGOEX) Security Mechanism Remote Code Execution Vulnerabilit"
     },
     {
-      "id": "CVE-2025-37098",
-      "now": 0.46337,
-      "prev": 0.39966,
-      "delta": 0.06371,
-      "name": "Hewlett Packard Enterprise Insight Remote Support"
+      "id": "CVE-2025-47984",
+      "now": 0.23273,
+      "prev": 0.16895,
+      "delta": 0.06378,
+      "name": "Windows GDI Information Disclosure Vulnerability"
+    },
+    {
+      "id": "CVE-2021-3199",
+      "now": 0.14548,
+      "prev": 0.08215,
+      "delta": 0.06333,
+      "name": "Directory traversal with remote code execution can occur in /upload in ONLYOFFICE Document Server before 5.6.3"
     },
     {
       "id": "CVE-2006-5768",
@@ -164,6 +129,13 @@
       "prev": 0.00672,
       "delta": 0.05886,
       "name": "Unauthenticated remote crash of named via a single DoH SIG(0) request"
+    },
+    {
+      "id": "CVE-2023-3079",
+      "now": 0.37858,
+      "prev": 0.3211,
+      "delta": 0.05748,
+      "name": "Google Chrome"
     },
     {
       "id": "CVE-2025-47228",
@@ -194,6 +166,13 @@
       "name": "Belkin F9K1122 webs mp os command injection"
     },
     {
+      "id": "CVE-2026-61450",
+      "now": 0.05421,
+      "prev": 0.00409,
+      "delta": 0.05012,
+      "name": "Grav before 2.0.2 Config Exfiltration via offsetGet Filter"
+    },
+    {
       "id": "CVE-2025-53693",
       "now": 0.19435,
       "prev": 0.14793,
@@ -208,11 +187,32 @@
       "name": "Hunk Companion < 1.9.0 - Unauthenticated Plugin Installation"
     },
     {
-      "id": "CVE-2026-86060",
-      "now": 0.06392,
-      "prev": 0.01849,
-      "delta": 0.04543,
-      "name": "SSH session privilege manipulation via a crafted username in Mikrotik RouterOS"
+      "id": "CVE-2023-42442",
+      "now": 0.63027,
+      "prev": 0.58538,
+      "delta": 0.04489,
+      "name": "JumpServer session replays download without authentication"
+    },
+    {
+      "id": "CVE-2021-22884",
+      "now": 0.36842,
+      "prev": 0.32362,
+      "delta": 0.0448,
+      "name": "NodeJS Node"
+    },
+    {
+      "id": "CVE-2025-49719",
+      "now": 0.15498,
+      "prev": 0.11171,
+      "delta": 0.04327,
+      "name": "Microsoft SQL Server Information Disclosure Vulnerability"
+    },
+    {
+      "id": "CVE-2025-9491",
+      "now": 0.7303,
+      "prev": 0.68864,
+      "delta": 0.04166,
+      "name": "Microsoft Windows LNK File UI Misrepresentation Remote Code Execution Vulnerability"
     }
   ],
   "newly_high": [
@@ -236,13 +236,6 @@
       "prev": 0.17535,
       "delta": 0.52001,
       "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2000-0979",
-      "now": 0.75054,
-      "prev": 0.44987,
-      "delta": 0.30067,
-      "name": "File and Print Sharing service in Windows 95, Windows 98, and Windows Me does not properly check the password "
     },
     {
       "id": "CVE-2020-15999",
