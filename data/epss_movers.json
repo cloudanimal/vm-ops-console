@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-09",
+  "updated": "2026-10-10",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-09",
-  "previous_date": "2026-10-02",
+  "current_date": "2026-10-10",
+  "previous_date": "2026-10-03",
   "risers": [
     {
       "id": "CVE-2026-50751",
@@ -33,13 +33,6 @@
       "name": "Action Pack: Possible arbitrary file read and remote code execution in Active Storage vari"
     },
     {
-      "id": "CVE-2020-15999",
-      "now": 0.63894,
-      "prev": 0.44303,
-      "delta": 0.19591,
-      "name": "Google Chrome"
-    },
-    {
       "id": "CVE-2026-0768",
       "now": 0.23227,
       "prev": 0.08451,
@@ -47,11 +40,18 @@
       "name": "Langflow code Code Injection Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2023-4427",
-      "now": 0.48481,
-      "prev": 0.34414,
-      "delta": 0.14067,
-      "name": "Google Chrome"
+      "id": "CVE-2025-54988",
+      "now": 0.48518,
+      "prev": 0.3666,
+      "delta": 0.11858,
+      "name": "Apache Tika PDF parser module: XXE vulnerability in PDFParser's handling of XFA"
+    },
+    {
+      "id": "CVE-2024-32030",
+      "now": 0.51051,
+      "prev": 0.39428,
+      "delta": 0.11623,
+      "name": "Remote code execution via JNDI resolution in JMX metrics collection in Kafka UI"
     },
     {
       "id": "CVE-2008-6347",
@@ -59,6 +59,13 @@
       "prev": 0.19927,
       "delta": 0.11202,
       "name": "PHP remote file inclusion vulnerability in lib/onguma.class.php in the Onguma Time Sheet (com_ongumatimesheet2"
+    },
+    {
+      "id": "CVE-2021-3199",
+      "now": 0.19352,
+      "prev": 0.08215,
+      "delta": 0.11137,
+      "name": "Directory traversal with remote code execution can occur in /upload in ONLYOFFICE Document Server before 5.6.3"
     },
     {
       "id": "CVE-2025-34035",
@@ -89,11 +96,25 @@
       "name": "Langflow eval_custom_component_code Eval Injection Remote Code Execution Vulnerability"
     },
     {
+      "id": "CVE-2025-57791",
+      "now": 0.34366,
+      "prev": 0.25085,
+      "delta": 0.09281,
+      "name": "Argument Injection Vulnerability in CommServe"
+    },
+    {
       "id": "CVE-2025-8943",
       "now": 0.74787,
       "prev": 0.65771,
       "delta": 0.09016,
       "name": "Unsupervised OS command execution leads to remote code execution by unauthenticated networ"
+    },
+    {
+      "id": "CVE-2010-20103",
+      "now": 0.13661,
+      "prev": 0.0509,
+      "delta": 0.08571,
+      "name": "ProFTPD 1.3.3c Backdoor Command Execution"
     },
     {
       "id": "CVE-2025-47981",
@@ -103,6 +124,20 @@
       "name": "SPNEGO Extended Negotiation (NEGOEX) Security Mechanism Remote Code Execution Vulnerabilit"
     },
     {
+      "id": "CVE-2015-5477",
+      "now": 0.99409,
+      "prev": 0.91284,
+      "delta": 0.08125,
+      "name": "named in ISC BIND 9.x before 9.9.7-P2 and 9.10.x before 9.10.2-P3 allows remote attackers to cause a denial of"
+    },
+    {
+      "id": "CVE-2025-57790",
+      "now": 0.26997,
+      "prev": 0.1943,
+      "delta": 0.07567,
+      "name": "Path Traversal Vulnerability"
+    },
+    {
       "id": "CVE-2025-47984",
       "now": 0.23273,
       "prev": 0.16895,
@@ -110,11 +145,11 @@
       "name": "Windows GDI Information Disclosure Vulnerability"
     },
     {
-      "id": "CVE-2021-3199",
-      "now": 0.14548,
-      "prev": 0.08215,
-      "delta": 0.06333,
-      "name": "Directory traversal with remote code execution can occur in /upload in ONLYOFFICE Document Server before 5.6.3"
+      "id": "CVE-2019-1002100",
+      "now": 0.16934,
+      "prev": 0.10743,
+      "delta": 0.06191,
+      "name": "Kubernetes Kubernetes"
     },
     {
       "id": "CVE-2006-5768",
@@ -145,10 +180,17 @@
       "name": "ScriptCase ScriptCase"
     },
     {
+      "id": "CVE-2025-53693",
+      "now": 0.20081,
+      "prev": 0.14793,
+      "delta": 0.05288,
+      "name": "HTML Cache Poisoning through Unsafe Reflections"
+    },
+    {
       "id": "CVE-2026-29058",
       "now": 0.06773,
-      "prev": 0.01571,
-      "delta": 0.05202,
+      "prev": 0.01632,
+      "delta": 0.05141,
       "name": "AVideo: Unauthenticated OS Command Injection via base64Url in objects/getImage.php"
     },
     {
@@ -171,48 +213,6 @@
       "prev": 0.00409,
       "delta": 0.05012,
       "name": "Grav before 2.0.2 Config Exfiltration via offsetGet Filter"
-    },
-    {
-      "id": "CVE-2025-53693",
-      "now": 0.19435,
-      "prev": 0.14793,
-      "delta": 0.04642,
-      "name": "HTML Cache Poisoning through Unsafe Reflections"
-    },
-    {
-      "id": "CVE-2024-11972",
-      "now": 0.59055,
-      "prev": 0.54475,
-      "delta": 0.0458,
-      "name": "Hunk Companion < 1.9.0 - Unauthenticated Plugin Installation"
-    },
-    {
-      "id": "CVE-2023-42442",
-      "now": 0.63027,
-      "prev": 0.58538,
-      "delta": 0.04489,
-      "name": "JumpServer session replays download without authentication"
-    },
-    {
-      "id": "CVE-2021-22884",
-      "now": 0.36842,
-      "prev": 0.32362,
-      "delta": 0.0448,
-      "name": "NodeJS Node"
-    },
-    {
-      "id": "CVE-2025-49719",
-      "now": 0.15498,
-      "prev": 0.11171,
-      "delta": 0.04327,
-      "name": "Microsoft SQL Server Information Disclosure Vulnerability"
-    },
-    {
-      "id": "CVE-2025-9491",
-      "now": 0.7303,
-      "prev": 0.68864,
-      "delta": 0.04166,
-      "name": "Microsoft Windows LNK File UI Misrepresentation Remote Code Execution Vulnerability"
     }
   ],
   "newly_high": [
@@ -238,11 +238,11 @@
       "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
     },
     {
-      "id": "CVE-2020-15999",
-      "now": 0.63894,
-      "prev": 0.44303,
-      "delta": 0.19591,
-      "name": "Google Chrome"
+      "id": "CVE-2024-32030",
+      "now": 0.51051,
+      "prev": 0.39428,
+      "delta": 0.11623,
+      "name": "Remote code execution via JNDI resolution in JMX metrics collection in Kafka UI"
     },
     {
       "id": "CVE-2025-7441",
