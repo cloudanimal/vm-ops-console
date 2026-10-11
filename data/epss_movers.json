@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-10",
+  "updated": "2026-10-11",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-10",
-  "previous_date": "2026-10-03",
+  "current_date": "2026-10-11",
+  "previous_date": "2026-10-04",
   "risers": [
     {
       "id": "CVE-2026-50751",
@@ -40,6 +40,13 @@
       "name": "Langflow code Code Injection Remote Code Execution Vulnerability"
     },
     {
+      "id": "CVE-2021-26919",
+      "now": 0.35192,
+      "prev": 0.2276,
+      "delta": 0.12432,
+      "name": "Apache Druid Authenticated users can execute arbitrary code from malicious MySQL database "
+    },
+    {
       "id": "CVE-2025-54988",
       "now": 0.48518,
       "prev": 0.3666,
@@ -75,13 +82,6 @@
       "name": "EnGenius EnShare IoT Gigabit Cloud Service Command Injection"
     },
     {
-      "id": "CVE-2025-7441",
-      "now": 0.50059,
-      "prev": 0.39803,
-      "delta": 0.10256,
-      "name": "StoryChief <= 1.0.42 - Unauthenticated Arbitrary File Upload"
-    },
-    {
       "id": "CVE-2009-1551",
       "now": 0.36598,
       "prev": 0.27008,
@@ -103,11 +103,11 @@
       "name": "Argument Injection Vulnerability in CommServe"
     },
     {
-      "id": "CVE-2025-8943",
-      "now": 0.74787,
-      "prev": 0.65771,
-      "delta": 0.09016,
-      "name": "Unsupervised OS command execution leads to remote code execution by unauthenticated networ"
+      "id": "CVE-2025-7441",
+      "now": 0.50059,
+      "prev": 0.40919,
+      "delta": 0.0914,
+      "name": "StoryChief <= 1.0.42 - Unauthenticated Arbitrary File Upload"
     },
     {
       "id": "CVE-2010-20103",
@@ -131,11 +131,25 @@
       "name": "named in ISC BIND 9.x before 9.9.7-P2 and 9.10.x before 9.10.2-P3 allows remote attackers to cause a denial of"
     },
     {
+      "id": "CVE-2013-3179",
+      "now": 0.2226,
+      "prev": 0.14241,
+      "delta": 0.08019,
+      "name": "Cross-site scripting (XSS) vulnerability in Microsoft SharePoint Server 2007 SP3, 2010 SP1 and SP2, and 2013 a"
+    },
+    {
       "id": "CVE-2025-57790",
       "now": 0.26997,
       "prev": 0.1943,
       "delta": 0.07567,
       "name": "Path Traversal Vulnerability"
+    },
+    {
+      "id": "CVE-2011-1989",
+      "now": 0.27767,
+      "prev": 0.21135,
+      "delta": 0.06632,
+      "name": "Microsoft Excel 2003 SP3 and 2007 SP2; Excel in Office 2007 SP2; Excel 2010 Gold and SP1; Excel in Office 2010"
     },
     {
       "id": "CVE-2025-47984",
@@ -152,18 +166,18 @@
       "name": "Kubernetes Kubernetes"
     },
     {
-      "id": "CVE-2006-5768",
-      "now": 0.15829,
-      "prev": 0.09795,
-      "delta": 0.06034,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in Cyberfolio 2.0 RC1 and earlier, when register_globals is"
-    },
-    {
       "id": "CVE-2026-77692",
       "now": 0.06558,
       "prev": 0.00672,
       "delta": 0.05886,
       "name": "Unauthenticated remote crash of named via a single DoH SIG(0) request"
+    },
+    {
+      "id": "CVE-2012-2520",
+      "now": 0.34278,
+      "prev": 0.28477,
+      "delta": 0.05801,
+      "name": "Cross-site scripting (XSS) vulnerability in Microsoft InfoPath 2007 SP2 and SP3 and 2010 SP1, Communicator 200"
     },
     {
       "id": "CVE-2023-3079",
@@ -173,6 +187,13 @@
       "name": "Google Chrome"
     },
     {
+      "id": "CVE-2024-48307",
+      "now": 0.50017,
+      "prev": 0.44335,
+      "delta": 0.05682,
+      "name": "JeecgBoot v3.7.1 was discovered to contain a SQL injection vulnerability via the component /onlDragDatasetHead"
+    },
+    {
       "id": "CVE-2025-47228",
       "now": 0.23081,
       "prev": 0.17505,
@@ -180,39 +201,18 @@
       "name": "ScriptCase ScriptCase"
     },
     {
+      "id": "CVE-2021-21798",
+      "now": 0.21373,
+      "prev": 0.16033,
+      "delta": 0.0534,
+      "name": "Nitro Pro"
+    },
+    {
       "id": "CVE-2025-53693",
       "now": 0.20081,
       "prev": 0.14793,
       "delta": 0.05288,
       "name": "HTML Cache Poisoning through Unsafe Reflections"
-    },
-    {
-      "id": "CVE-2026-29058",
-      "now": 0.06773,
-      "prev": 0.01632,
-      "delta": 0.05141,
-      "name": "AVideo: Unauthenticated OS Command Injection via base64Url in objects/getImage.php"
-    },
-    {
-      "id": "CVE-2024-54146",
-      "now": 0.46129,
-      "prev": 0.40996,
-      "delta": 0.05133,
-      "name": "Cacti has a SQL Injection vulnerability when view host template"
-    },
-    {
-      "id": "CVE-2025-7083",
-      "now": 0.4627,
-      "prev": 0.41193,
-      "delta": 0.05077,
-      "name": "Belkin F9K1122 webs mp os command injection"
-    },
-    {
-      "id": "CVE-2026-61450",
-      "now": 0.05421,
-      "prev": 0.00409,
-      "delta": 0.05012,
-      "name": "Grav before 2.0.2 Config Exfiltration via offsetGet Filter"
     }
   ],
   "newly_high": [
@@ -247,9 +247,16 @@
     {
       "id": "CVE-2025-7441",
       "now": 0.50059,
-      "prev": 0.39803,
-      "delta": 0.10256,
+      "prev": 0.40919,
+      "delta": 0.0914,
       "name": "StoryChief <= 1.0.42 - Unauthenticated Arbitrary File Upload"
+    },
+    {
+      "id": "CVE-2024-48307",
+      "now": 0.50017,
+      "prev": 0.44335,
+      "delta": 0.05682,
+      "name": "JeecgBoot v3.7.1 was discovered to contain a SQL injection vulnerability via the component /onlDragDatasetHead"
     },
     {
       "id": "CVE-2023-36808",
@@ -264,6 +271,13 @@
       "prev": 0.49989,
       "delta": 0.02597,
       "name": "Grafana Grafana"
+    },
+    {
+      "id": "CVE-2022-35650",
+      "now": 0.50973,
+      "prev": 0.49054,
+      "delta": 0.01919,
+      "name": "Moodle"
     },
     {
       "id": "CVE-2022-33318",

@@ -1,10 +1,398 @@
 {
-  "updated": "2026-10-10",
+  "updated": "2026-10-11",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
+    {
+      "id": null,
+      "title": "Echo: libxfont: security update to 1:2.0.6-1+deb13u1",
+      "severity": "Critical",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474350",
+      "cves": [
+        "CVE-2026-44950"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: libxfont: security update to 1:2.0.6-1+deb13u1",
+      "severity": "Critical",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474350",
+      "cves": [
+        "CVE-2026-44950"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: openexr: security update to 3.1.13-2+e2",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474349",
+      "cves": [
+        "CVE-2026-59981"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: openexr: security update to 3.1.13-2+e2",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474349",
+      "cves": [
+        "CVE-2026-59981"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: krb5: security update to 1.21.3-5+e9",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474348",
+      "cves": [
+        "CVE-2026-107778"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: krb5: security update to 1.21.3-5+e9",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474348",
+      "cves": [
+        "CVE-2026-107778"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: krb5: security update to 1.21.3-5+e9",
+      "severity": "Medium",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474347",
+      "cves": [
+        "CVE-2026-107708"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: krb5: security update to 1.21.3-5+e9",
+      "severity": "Medium",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474347",
+      "cves": [
+        "CVE-2026-107708"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: libxfont: security update to 1:2.0.6-1+deb13u1",
+      "severity": "Critical",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474346",
+      "cves": [
+        "CVE-2026-59679"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: libxfont: security update to 1:2.0.6-1+deb13u1",
+      "severity": "Critical",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474346",
+      "cves": [
+        "CVE-2026-59679"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "severity": "Medium",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474345",
+      "cves": [
+        "CVE-2026-107816"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "severity": "Medium",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474345",
+      "cves": [
+        "CVE-2026-107816"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: ghostscript: security update to 10.05.1~dfsg-1+deb13u3",
+      "severity": "Medium",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474344",
+      "cves": [
+        "CVE-2026-103226"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: ghostscript: security update to 10.05.1~dfsg-1+deb13u3",
+      "severity": "Medium",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474344",
+      "cves": [
+        "CVE-2026-103226"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "severity": "Medium",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474343",
+      "cves": [
+        "CVE-2026-107817"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "severity": "Medium",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474343",
+      "cves": [
+        "CVE-2026-107817"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "severity": "Medium",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474342",
+      "cves": [
+        "CVE-2026-107822"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "severity": "Medium",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474342",
+      "cves": [
+        "CVE-2026-107822"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474341",
+      "cves": [
+        "CVE-2026-107815"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474341",
+      "cves": [
+        "CVE-2026-107815"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: ghostscript: security update to 10.05.1~dfsg-1+deb13u3",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474340",
+      "cves": [
+        "CVE-2026-101258"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: ghostscript: security update to 10.05.1~dfsg-1+deb13u3",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474340",
+      "cves": [
+        "CVE-2026-101258"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474339",
+      "cves": [
+        "CVE-2026-107823"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474339",
+      "cves": [
+        "CVE-2026-107823"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474338",
+      "cves": [
+        "CVE-2026-107818"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474338",
+      "cves": [
+        "CVE-2026-107818"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: pyjwt: security update to 2.13.0",
+      "severity": "Medium",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474337",
+      "cves": [
+        "CVE-2026-103001"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: pyjwt: security update to 2.13.0",
+      "severity": "Medium",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474337",
+      "cves": [
+        "CVE-2026-103001"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: uuid: security update to 11.1.1",
+      "severity": "Critical",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474336",
+      "cves": [
+        "CVE-2026-41907"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: uuid: security update to 11.1.1",
+      "severity": "Critical",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474336",
+      "cves": [
+        "CVE-2026-41907"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: github.com/argoproj/argo-cd/v3: security update to 3.3.15",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474335",
+      "cves": [
+        "CVE-2026-55797"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: github.com/argoproj/argo-cd/v3: security update to 3.3.15",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474335",
+      "cves": [
+        "CVE-2026-55797"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474334",
+      "cves": [
+        "CVE-2026-107821"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474334",
+      "cves": [
+        "CVE-2026-107821"
+      ]
+    },
+    {
+      "id": "364563",
+      "title": "MiracleLinux 8 : perl-DBI:1.641 perl-DBI-1.641-10.module+el8+2048+32bd5070 (AXSA:2026-2012:01)",
+      "severity": "Critical",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364563",
+      "cves": [
+        "CVE-2026-73194"
+      ]
+    },
+    {
+      "id": "364562",
+      "title": "MiracleLinux 8 : perl-DBI:1.641 perl-DBI-1.641-10.module+el8+2048+c13f8946 (AXSA:2026-2011:01)",
+      "severity": "Critical",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364562",
+      "cves": [
+        "CVE-2026-73194"
+      ]
+    },
+    {
+      "id": "364561",
+      "title": "MiracleLinux 8 : perl-DBI:1.641 perl-DBI-1.641-10.module+el8+2048+e84ee65f (AXSA:2026-2013:01)",
+      "severity": "Critical",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364561",
+      "cves": [
+        "CVE-2026-73194"
+      ]
+    },
+    {
+      "id": "364560",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108693",
+      "severity": "High",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364560",
+      "cves": [
+        "CVE-2026-108693"
+      ]
+    },
+    {
+      "id": "364559",
+      "title": "Fedora 46 : ImageMagick (2026-ab5f69c6fc)",
+      "severity": "Critical",
+      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364559",
+      "cves": []
+    },
     {
       "id": null,
       "title": "Chainguard: gitlab-rails-ce-assets-fips-19.4: security update to 19.4.0-r1",
@@ -213,396 +601,6 @@
       "link": "https://www.tenable.com/plugins/cloud-security/474323",
       "cves": [
         "CVE-2026-106416"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474323",
-      "cves": [
-        "CVE-2026-106416"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474322",
-      "cves": [
-        "CVE-2026-106276"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474322",
-      "cves": [
-        "CVE-2026-106276"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Critical",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474321",
-      "cves": [
-        "CVE-2026-106323"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Critical",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474321",
-      "cves": [
-        "CVE-2026-106323"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474320",
-      "cves": [
-        "CVE-2026-106232"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474320",
-      "cves": [
-        "CVE-2026-106232"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474319",
-      "cves": [
-        "CVE-2026-106181"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474319",
-      "cves": [
-        "CVE-2026-106181"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474318",
-      "cves": [
-        "CVE-2026-106244"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474318",
-      "cves": [
-        "CVE-2026-106244"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474317",
-      "cves": [
-        "CVE-2026-106213"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474317",
-      "cves": [
-        "CVE-2026-106213"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474316",
-      "cves": [
-        "CVE-2026-106283"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474316",
-      "cves": [
-        "CVE-2026-106283"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474315",
-      "cves": [
-        "CVE-2026-106406"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474315",
-      "cves": [
-        "CVE-2026-106406"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474314",
-      "cves": [
-        "CVE-2026-106247"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474314",
-      "cves": [
-        "CVE-2026-106247"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474313",
-      "cves": [
-        "CVE-2026-106330"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474313",
-      "cves": [
-        "CVE-2026-106330"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474312",
-      "cves": [
-        "CVE-2026-106316"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474312",
-      "cves": [
-        "CVE-2026-106316"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474311",
-      "cves": [
-        "CVE-2026-106268"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474311",
-      "cves": [
-        "CVE-2026-106268"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474310",
-      "cves": [
-        "CVE-2026-106328"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474310",
-      "cves": [
-        "CVE-2026-106328"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474309",
-      "cves": [
-        "CVE-2026-106300"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474309",
-      "cves": [
-        "CVE-2026-106300"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474308",
-      "cves": [
-        "CVE-2026-106238"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474308",
-      "cves": [
-        "CVE-2026-106238"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474307",
-      "cves": [
-        "CVE-2026-106228"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474307",
-      "cves": [
-        "CVE-2026-106228"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474306",
-      "cves": [
-        "CVE-2026-106270"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474306",
-      "cves": [
-        "CVE-2026-106270"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474305",
-      "cves": [
-        "CVE-2026-106421"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474305",
-      "cves": [
-        "CVE-2026-106421"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Low",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474304",
-      "cves": [
-        "CVE-2026-106210"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Low",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474304",
-      "cves": [
-        "CVE-2026-106210"
       ]
     }
   ]
