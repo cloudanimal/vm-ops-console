@@ -1,29 +1,29 @@
 {
-  "updated": "2026-10-11",
+  "updated": "2026-10-12",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-11",
-  "previous_date": "2026-10-04",
+  "current_date": "2026-10-12",
+  "previous_date": "2026-10-05",
   "risers": [
+    {
+      "id": "CVE-2026-35273",
+      "now": 0.96678,
+      "prev": 0.09444,
+      "delta": 0.87234,
+      "name": "Oracle Corporation PeopleSoft Enterprise PeopleTools"
+    },
     {
       "id": "CVE-2026-50751",
       "now": 0.85338,
-      "prev": 0.06301,
-      "delta": 0.79037,
+      "prev": 0.06416,
+      "delta": 0.78922,
       "name": "User Authentication Bypass in VPN Remote Access and Mobile Access"
     },
     {
       "id": "CVE-2026-73570",
       "now": 0.71663,
-      "prev": 0.11736,
-      "delta": 0.59927,
+      "prev": 0.11946,
+      "delta": 0.59717,
       "name": "Zimbra Collaboration"
-    },
-    {
-      "id": "CVE-2026-55040",
-      "now": 0.69536,
-      "prev": 0.17535,
-      "delta": 0.52001,
-      "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
     },
     {
       "id": "CVE-2026-66066",
@@ -38,6 +38,13 @@
       "prev": 0.08451,
       "delta": 0.14776,
       "name": "Langflow code Code Injection Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2015-2468",
+      "now": 0.43407,
+      "prev": 0.29519,
+      "delta": 0.13888,
+      "name": "Microsoft Word 2007 SP3, Office 2010 SP2, Word 2010 SP2, Word 2013 SP1, Word 2013 RT SP1, Office for Mac 2011,"
     },
     {
       "id": "CVE-2021-26919",
@@ -89,11 +96,32 @@
       "name": "Multiple PHP remote file inclusion vulnerabilities in Qt quickteam 2 allow remote attackers to execute arbitra"
     },
     {
+      "id": "CVE-2025-53690",
+      "now": 0.60601,
+      "prev": 0.51094,
+      "delta": 0.09507,
+      "name": "Sitecore Products ViewState Deserialization Vulnerability"
+    },
+    {
       "id": "CVE-2026-0769",
       "now": 0.41695,
       "prev": 0.32335,
       "delta": 0.0936,
       "name": "Langflow eval_custom_component_code Eval Injection Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2025-57833",
+      "now": 0.26106,
+      "prev": 0.16759,
+      "delta": 0.09347,
+      "name": "djangoproject Django"
+    },
+    {
+      "id": "CVE-2013-3307",
+      "now": 0.63108,
+      "prev": 0.53788,
+      "delta": 0.0932,
+      "name": "Linksys E1000"
     },
     {
       "id": "CVE-2025-57791",
@@ -145,6 +173,13 @@
       "name": "Path Traversal Vulnerability"
     },
     {
+      "id": "CVE-2023-39456",
+      "now": 0.60538,
+      "prev": 0.53757,
+      "delta": 0.06781,
+      "name": "Apache Traffic Server: Malformed http/2 frames can cause an abort"
+    },
+    {
       "id": "CVE-2011-1989",
       "now": 0.27767,
       "prev": 0.21135,
@@ -166,13 +201,6 @@
       "name": "Kubernetes Kubernetes"
     },
     {
-      "id": "CVE-2026-77692",
-      "now": 0.06558,
-      "prev": 0.00672,
-      "delta": 0.05886,
-      "name": "Unauthenticated remote crash of named via a single DoH SIG(0) request"
-    },
-    {
       "id": "CVE-2012-2520",
       "now": 0.34278,
       "prev": 0.28477,
@@ -185,57 +213,29 @@
       "prev": 0.3211,
       "delta": 0.05748,
       "name": "Google Chrome"
-    },
-    {
-      "id": "CVE-2024-48307",
-      "now": 0.50017,
-      "prev": 0.44335,
-      "delta": 0.05682,
-      "name": "JeecgBoot v3.7.1 was discovered to contain a SQL injection vulnerability via the component /onlDragDatasetHead"
-    },
-    {
-      "id": "CVE-2025-47228",
-      "now": 0.23081,
-      "prev": 0.17505,
-      "delta": 0.05576,
-      "name": "ScriptCase ScriptCase"
-    },
-    {
-      "id": "CVE-2021-21798",
-      "now": 0.21373,
-      "prev": 0.16033,
-      "delta": 0.0534,
-      "name": "Nitro Pro"
-    },
-    {
-      "id": "CVE-2025-53693",
-      "now": 0.20081,
-      "prev": 0.14793,
-      "delta": 0.05288,
-      "name": "HTML Cache Poisoning through Unsafe Reflections"
     }
   ],
   "newly_high": [
     {
+      "id": "CVE-2026-35273",
+      "now": 0.96678,
+      "prev": 0.09444,
+      "delta": 0.87234,
+      "name": "Oracle Corporation PeopleSoft Enterprise PeopleTools"
+    },
+    {
       "id": "CVE-2026-50751",
       "now": 0.85338,
-      "prev": 0.06301,
-      "delta": 0.79037,
+      "prev": 0.06416,
+      "delta": 0.78922,
       "name": "User Authentication Bypass in VPN Remote Access and Mobile Access"
     },
     {
       "id": "CVE-2026-73570",
       "now": 0.71663,
-      "prev": 0.11736,
-      "delta": 0.59927,
+      "prev": 0.11946,
+      "delta": 0.59717,
       "name": "Zimbra Collaboration"
-    },
-    {
-      "id": "CVE-2026-55040",
-      "now": 0.69536,
-      "prev": 0.17535,
-      "delta": 0.52001,
-      "name": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
     },
     {
       "id": "CVE-2024-32030",
@@ -259,11 +259,46 @@
       "name": "JeecgBoot v3.7.1 was discovered to contain a SQL injection vulnerability via the component /onlDragDatasetHead"
     },
     {
-      "id": "CVE-2023-36808",
-      "now": 0.51733,
-      "prev": 0.47836,
-      "delta": 0.03897,
-      "name": "GLPI vulnerable to SQL injection through Computer Virtual Machine information"
+      "id": "CVE-2022-35650",
+      "now": 0.53652,
+      "prev": 0.49054,
+      "delta": 0.04598,
+      "name": "Moodle"
+    },
+    {
+      "id": "CVE-2023-43661",
+      "now": 0.51481,
+      "prev": 0.46904,
+      "delta": 0.04577,
+      "name": "Cachet vulnerable to Authenticated Remote Code Execution"
+    },
+    {
+      "id": "CVE-2025-53778",
+      "now": 0.51467,
+      "prev": 0.4762,
+      "delta": 0.03847,
+      "name": "Windows NTLM Elevation of Privilege Vulnerability"
+    },
+    {
+      "id": "CVE-2021-33551",
+      "now": 0.51412,
+      "prev": 0.48811,
+      "delta": 0.02601,
+      "name": "UDP Technology/Geutebr\u00fcck camera devices: Command injection in environment.lang parameter "
+    },
+    {
+      "id": "CVE-2021-33552",
+      "now": 0.51412,
+      "prev": 0.48811,
+      "delta": 0.02601,
+      "name": "UDP Technology/Geutebr\u00fcck camera devices: Command injection in date parameter leading to R"
+    },
+    {
+      "id": "CVE-2021-33553",
+      "now": 0.51412,
+      "prev": 0.48811,
+      "delta": 0.02601,
+      "name": "UDP Technology/Geutebr\u00fcck camera devices: Command injection in command parameter leading t"
     },
     {
       "id": "CVE-2025-6023",
@@ -271,13 +306,6 @@
       "prev": 0.49989,
       "delta": 0.02597,
       "name": "Grafana Grafana"
-    },
-    {
-      "id": "CVE-2022-35650",
-      "now": 0.50973,
-      "prev": 0.49054,
-      "delta": 0.01919,
-      "name": "Moodle"
     },
     {
       "id": "CVE-2022-33318",

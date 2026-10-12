@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11",
+  "updated": "2026-10-12",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,601 +7,647 @@
   "items": [
     {
       "id": null,
-      "title": "Echo: libxfont: security update to 1:2.0.6-1+deb13u1",
+      "title": "SCA: security update for django (GHSA-q238-5cxm-5c9h)",
+      "severity": "Medium",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474365",
+      "cves": [
+        "CVE-2026-15830"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for django (GHSA-q238-5cxm-5c9h)",
+      "severity": "Medium",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474365",
+      "cves": [
+        "CVE-2026-15830"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple sqlpad packages: security update to 7.5.7-r49",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474364",
+      "cves": [
+        "CVE-2026-107384"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple sqlpad packages: security update to 7.5.7-r49",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474364",
+      "cves": [
+        "CVE-2026-107384"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple keycloak-26.8 packages: security update to 26.8.0-r1",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474363",
+      "cves": [
+        "CVE-2026-102826"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple keycloak-26.8 packages: security update to 26.8.0-r1",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474363",
+      "cves": [
+        "CVE-2026-102826"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple keycloak-26.8 packages: security update to 26.8.0-r1",
       "severity": "Critical",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474350",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474362",
       "cves": [
-        "CVE-2026-44950"
+        "CVE-2026-102827"
       ]
     },
     {
       "id": null,
-      "title": "Echo: libxfont: security update to 1:2.0.6-1+deb13u1",
+      "title": "Chainguard: multiple keycloak-26.8 packages: security update to 26.8.0-r1",
       "severity": "Critical",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474350",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474362",
       "cves": [
-        "CVE-2026-44950"
+        "CVE-2026-102827"
       ]
     },
     {
       "id": null,
-      "title": "Echo: openexr: security update to 3.1.13-2+e2",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474349",
-      "cves": [
-        "CVE-2026-59981"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: openexr: security update to 3.1.13-2+e2",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474349",
-      "cves": [
-        "CVE-2026-59981"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: krb5: security update to 1.21.3-5+e9",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474348",
-      "cves": [
-        "CVE-2026-107778"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: krb5: security update to 1.21.3-5+e9",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474348",
-      "cves": [
-        "CVE-2026-107778"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: krb5: security update to 1.21.3-5+e9",
+      "title": "Chainguard: multiple sqlpad packages: security update to 7.5.7-r49",
       "severity": "Medium",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474347",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474361",
       "cves": [
-        "CVE-2026-107708"
+        "CVE-2026-107382"
       ]
     },
     {
       "id": null,
-      "title": "Echo: krb5: security update to 1.21.3-5+e9",
+      "title": "Chainguard: multiple sqlpad packages: security update to 7.5.7-r49",
       "severity": "Medium",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474347",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474361",
       "cves": [
-        "CVE-2026-107708"
+        "CVE-2026-107382"
       ]
     },
     {
       "id": null,
-      "title": "Echo: libxfont: security update to 1:2.0.6-1+deb13u1",
-      "severity": "Critical",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474346",
+      "title": "Chainguard: multiple sqlpad packages: security update to 7.5.7-r49",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474358",
       "cves": [
-        "CVE-2026-59679"
+        "CVE-2026-107385"
       ]
     },
     {
       "id": null,
-      "title": "Echo: libxfont: security update to 1:2.0.6-1+deb13u1",
-      "severity": "Critical",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474346",
+      "title": "Chainguard: multiple sqlpad packages: security update to 7.5.7-r49",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474358",
       "cves": [
-        "CVE-2026-59679"
+        "CVE-2026-107385"
       ]
     },
     {
       "id": null,
-      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "title": "Chainguard: multiple sqlpad packages: security update to 7.5.7-r49",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474357",
+      "cves": [
+        "CVE-2026-107383"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple sqlpad packages: security update to 7.5.7-r49",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474357",
+      "cves": [
+        "CVE-2026-107383"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for vllm (GHSA-pr7f-p5mw-fc87)",
       "severity": "Medium",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474345",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474356",
       "cves": [
-        "CVE-2026-107816"
+        "CVE-2025-62164",
+        "CVE-2026-73557"
       ]
     },
     {
       "id": null,
-      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "title": "SCA: security update for vllm (GHSA-pr7f-p5mw-fc87)",
       "severity": "Medium",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474345",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474356",
       "cves": [
-        "CVE-2026-107816"
+        "CVE-2025-62164",
+        "CVE-2026-73557"
       ]
     },
     {
       "id": null,
-      "title": "Echo: ghostscript: security update to 10.05.1~dfsg-1+deb13u3",
+      "title": "Echo: org.apache.httpcomponents:httpclient: security update to 4.5.13",
       "severity": "Medium",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474344",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474355",
       "cves": [
-        "CVE-2026-103226"
+        "CVE-2020-13956"
       ]
     },
     {
       "id": null,
-      "title": "Echo: ghostscript: security update to 10.05.1~dfsg-1+deb13u3",
+      "title": "Echo: org.apache.httpcomponents:httpclient: security update to 4.5.13",
       "severity": "Medium",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474344",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474355",
       "cves": [
-        "CVE-2026-103226"
+        "CVE-2020-13956"
       ]
     },
     {
       "id": null,
-      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "title": "Alpine: multiple py3-django packages: security update to 5.2.18-r0",
       "severity": "Medium",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474343",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/474354",
       "cves": [
-        "CVE-2026-107817"
+        "CVE-2026-15307",
+        "CVE-2026-77050",
+        "CVE-2026-84429",
+        "CVE-2026-87890",
+        "CVE-2026-87975"
       ]
     },
     {
       "id": null,
-      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
+      "title": "Alpine: multiple py3-django packages: security update to 5.2.18-r0",
       "severity": "Medium",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474343",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/474354",
       "cves": [
-        "CVE-2026-107817"
+        "CVE-2026-15307",
+        "CVE-2026-77050",
+        "CVE-2026-84429",
+        "CVE-2026-87890",
+        "CVE-2026-87975"
       ]
     },
     {
-      "id": null,
-      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
-      "severity": "Medium",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474342",
-      "cves": [
-        "CVE-2026-107822"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
-      "severity": "Medium",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474342",
-      "cves": [
-        "CVE-2026-107822"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474341",
-      "cves": [
-        "CVE-2026-107815"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474341",
-      "cves": [
-        "CVE-2026-107815"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ghostscript: security update to 10.05.1~dfsg-1+deb13u3",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474340",
-      "cves": [
-        "CVE-2026-101258"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ghostscript: security update to 10.05.1~dfsg-1+deb13u3",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474340",
-      "cves": [
-        "CVE-2026-101258"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474339",
-      "cves": [
-        "CVE-2026-107823"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474339",
-      "cves": [
-        "CVE-2026-107823"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474338",
-      "cves": [
-        "CVE-2026-107818"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474338",
-      "cves": [
-        "CVE-2026-107818"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: pyjwt: security update to 2.13.0",
-      "severity": "Medium",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474337",
-      "cves": [
-        "CVE-2026-103001"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: pyjwt: security update to 2.13.0",
-      "severity": "Medium",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474337",
-      "cves": [
-        "CVE-2026-103001"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: uuid: security update to 11.1.1",
-      "severity": "Critical",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474336",
-      "cves": [
-        "CVE-2026-41907"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: uuid: security update to 11.1.1",
-      "severity": "Critical",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474336",
-      "cves": [
-        "CVE-2026-41907"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: github.com/argoproj/argo-cd/v3: security update to 3.3.15",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474335",
-      "cves": [
-        "CVE-2026-55797"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: github.com/argoproj/argo-cd/v3: security update to 3.3.15",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474335",
-      "cves": [
-        "CVE-2026-55797"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474334",
-      "cves": [
-        "CVE-2026-107821"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: mariadb: security update to 1:11.8.9+ds-1",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474334",
-      "cves": [
-        "CVE-2026-107821"
-      ]
-    },
-    {
-      "id": "364563",
-      "title": "MiracleLinux 8 : perl-DBI:1.641 perl-DBI-1.641-10.module+el8+2048+32bd5070 (AXSA:2026-2012:01)",
-      "severity": "Critical",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/364563",
-      "cves": [
-        "CVE-2026-73194"
-      ]
-    },
-    {
-      "id": "364562",
-      "title": "MiracleLinux 8 : perl-DBI:1.641 perl-DBI-1.641-10.module+el8+2048+c13f8946 (AXSA:2026-2011:01)",
-      "severity": "Critical",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/364562",
-      "cves": [
-        "CVE-2026-73194"
-      ]
-    },
-    {
-      "id": "364561",
-      "title": "MiracleLinux 8 : perl-DBI:1.641 perl-DBI-1.641-10.module+el8+2048+e84ee65f (AXSA:2026-2013:01)",
-      "severity": "Critical",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/364561",
-      "cves": [
-        "CVE-2026-73194"
-      ]
-    },
-    {
-      "id": "364560",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108693",
-      "severity": "High",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/364560",
-      "cves": [
-        "CVE-2026-108693"
-      ]
-    },
-    {
-      "id": "364559",
-      "title": "Fedora 46 : ImageMagick (2026-ab5f69c6fc)",
-      "severity": "Critical",
-      "date": "Sun, 11 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/364559",
+      "id": "364697",
+      "title": "ModelScope MS-Agent Installed (Linux / Unix)",
+      "severity": "Info",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364697",
       "cves": []
     },
     {
-      "id": null,
-      "title": "Chainguard: gitlab-rails-ce-assets-fips-19.4: security update to 19.4.0-r1",
-      "severity": "Critical",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474333",
-      "cves": [
-        "CVE-2021-23383"
-      ]
+      "id": "364696",
+      "title": "ModelScope MS-Agent Installed (Windows)",
+      "severity": "Info",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364696",
+      "cves": []
     },
     {
-      "id": null,
-      "title": "Chainguard: gitlab-rails-ce-assets-fips-19.4: security update to 19.4.0-r1",
-      "severity": "Critical",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474333",
-      "cves": [
-        "CVE-2021-23383"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: gitlab-rails-ce-assets-18.9: security update to 18.9.6-r2",
+      "id": "364695",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108985",
       "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474332",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364695",
       "cves": [
-        "CVE-2026-41636"
+        "CVE-2026-108985"
       ]
     },
     {
-      "id": null,
-      "title": "Chainguard: gitlab-rails-ce-assets-18.9: security update to 18.9.6-r2",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474332",
+      "id": "364694",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108981",
+      "severity": "Low",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364694",
       "cves": [
-        "CVE-2026-41636"
+        "CVE-2026-108981"
       ]
     },
     {
-      "id": null,
-      "title": "Chainguard: gitlab-rails-ce-assets-fips-19.4: security update to 19.4.0-r1",
-      "severity": "Critical",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474331",
-      "cves": [
-        "CVE-2019-19919"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: gitlab-rails-ce-assets-fips-19.4: security update to 19.4.0-r1",
-      "severity": "Critical",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474331",
-      "cves": [
-        "CVE-2019-19919"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: gitlab-rails-ce-assets-fips-19.4: security update to 19.4.0-r1",
-      "severity": "Critical",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474330",
-      "cves": [
-        "CVE-2021-23369"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: gitlab-rails-ce-assets-fips-19.4: security update to 19.4.0-r1",
-      "severity": "Critical",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474330",
-      "cves": [
-        "CVE-2021-23369"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: gitlab-rails-ce-assets-fips-19.4: security update to 19.4.0-r1",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474329",
-      "cves": [
-        "CVE-2019-20920"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: gitlab-rails-ce-assets-fips-19.4: security update to 19.4.0-r1",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474329",
-      "cves": [
-        "CVE-2019-20920"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: gitlab-rails-ce-assets-fips-19.4: security update to 19.4.0-r1",
+      "id": "364693",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108577",
       "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474328",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364693",
       "cves": [
-        "CVE-2015-8861"
+        "CVE-2026-108577"
       ]
     },
     {
-      "id": null,
-      "title": "Chainguard: gitlab-rails-ce-assets-fips-19.4: security update to 19.4.0-r1",
+      "id": "364692",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108735",
       "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474328",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364692",
       "cves": [
-        "CVE-2015-8861"
+        "CVE-2026-108735"
       ]
     },
     {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
+      "id": "364691",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108573",
+      "severity": "Medium",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364691",
+      "cves": [
+        "CVE-2026-108573"
+      ]
+    },
+    {
+      "id": "364690",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108978",
+      "severity": "Medium",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364690",
+      "cves": [
+        "CVE-2026-108978"
+      ]
+    },
+    {
+      "id": "364689",
+      "title": "AlmaLinux 9.6 [TuxCare] Security Update: kernel / kernel-64k / kernel-64k-core / kernel-64k-debug / etc Multiple Vulnerabilities (ALMALINUX9.6:CLSA-2026:1791800936)",
       "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474327",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364689",
       "cves": [
-        "CVE-2026-106240"
+        "CVE-2024-56773",
+        "CVE-2024-57878",
+        "CVE-2025-21938",
+        "CVE-2025-22017",
+        "CVE-2025-37869"
       ]
     },
     {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474327",
-      "cves": [
-        "CVE-2026-106240"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474326",
-      "cves": [
-        "CVE-2026-106371"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "High",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474326",
-      "cves": [
-        "CVE-2026-106371"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
+      "id": "364688",
+      "title": "AlmaLinux 9.2 [TuxCare] Security Update: bpftool / kernel / kernel-64k / kernel-64k-core / kernel-64k-debug / etc Multiple Vulnerabilities (ALMALINUX9.2:CLSA-2026:1791741836)",
       "severity": "Critical",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474325",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364688",
       "cves": [
-        "CVE-2026-106298"
+        "CVE-2022-48862",
+        "CVE-2022-49182",
+        "CVE-2022-49781",
+        "CVE-2022-50550",
+        "CVE-2024-26747"
       ]
     },
     {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
+      "id": "364687",
+      "title": "AlmaLinux 9.2 [TuxCare] Security Update: go-toolset / golang / golang-bin / golang-docs / golang-misc / etc (ALMALINUX9.2:CLSA-2026:1791804836)",
+      "severity": "Medium",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364687",
+      "cves": [
+        "CVE-2026-32289"
+      ]
+    },
+    {
+      "id": "364686",
+      "title": "AlmaLinux 9.6 [TuxCare] Security Update: mariadb-connector-c / mariadb-connector-c-config / etc (ALMALINUX9.6:CLSA-2026:1791796759)",
+      "severity": "Medium",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364686",
+      "cves": [
+        "CVE-2026-44172"
+      ]
+    },
+    {
+      "id": "364685",
+      "title": "Rocky Linux 9.6 [TuxCare] Security Update: mariadb-connector-c / mariadb-connector-c-config / etc (ALMALINUX9.6:CLSA-2026:1791796759)",
+      "severity": "Medium",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364685",
+      "cves": [
+        "CVE-2026-44172"
+      ]
+    },
+    {
+      "id": "364684",
+      "title": "AlmaLinux 9.6 [TuxCare] Security Update: perl-DBI (ALMALINUX9.6:CLSA-2026:1791807966)",
+      "severity": "Medium",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364684",
+      "cves": [
+        "CVE-2026-88815"
+      ]
+    },
+    {
+      "id": "364683",
+      "title": "AlmaLinux 9.2 [TuxCare] Security Update: openssl / openssl-devel / openssl-libs / openssl-perl Multiple Vulnerabilities (ALMALINUX9.2:CLSA-2026:1791803986)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364683",
+      "cves": [
+        "CVE-2026-35189",
+        "CVE-2026-84782"
+      ]
+    },
+    {
+      "id": "364682",
+      "title": "Rocky Linux 9.6 [TuxCare] Security Update: kernel / kernel-64k / kernel-64k-core / kernel-64k-debug / etc Multiple Vulnerabilities (ALMALINUX9.6:CLSA-2026:1791800936)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364682",
+      "cves": [
+        "CVE-2024-56773",
+        "CVE-2024-57878",
+        "CVE-2025-21938",
+        "CVE-2025-22017",
+        "CVE-2025-37869"
+      ]
+    },
+    {
+      "id": "364681",
+      "title": "AlmaLinux 9.2 [TuxCare] Security Update: mariadb-connector-c / mariadb-connector-c-config / etc (ALMALINUX9.2:CLSA-2026:1791795699)",
+      "severity": "Medium",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364681",
+      "cves": [
+        "CVE-2026-44172"
+      ]
+    },
+    {
+      "id": "364680",
+      "title": "Rocky Linux 9.6 [TuxCare] Security Update: perl-DBI (ALMALINUX9.6:CLSA-2026:1791807966)",
+      "severity": "Medium",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364680",
+      "cves": [
+        "CVE-2026-88815"
+      ]
+    },
+    {
+      "id": "364679",
+      "title": "CentOS Linux 8.5 [TuxCare] Security Update: sudo / sudo-devel (CENTOS8.5:CLSA-2026:1791794851)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364679",
+      "cves": [
+        "CVE-2026-96512"
+      ]
+    },
+    {
+      "id": "364678",
+      "title": "AlmaLinux 9.6 [TuxCare] Security Update: libvirt / libvirt-client / libvirt-client-qemu / libvirt-daemon / etc Multiple Vulnerabilities (ALMALINUX9.6:CLSA-2026:1791806541)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364678",
+      "cves": [
+        "CVE-2026-18917",
+        "CVE-2026-63622"
+      ]
+    },
+    {
+      "id": "364677",
+      "title": "Rocky Linux 9.6 [TuxCare] Security Update: libvirt / libvirt-client / libvirt-client-qemu / libvirt-daemon / etc Multiple Vulnerabilities (ALMALINUX9.6:CLSA-2026:1791806541)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364677",
+      "cves": [
+        "CVE-2026-18917",
+        "CVE-2026-63622"
+      ]
+    },
+    {
+      "id": "364676",
+      "title": "Rocky Linux 9.6 [TuxCare] Security Update: expat / expat-devel / expat-static (ALMALINUX9.6:CLSA-2026:1791791753)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364676",
+      "cves": [
+        "CVE-2026-102633"
+      ]
+    },
+    {
+      "id": "364675",
+      "title": "CentOS Linux 8 [TuxCare] Security Update: bpftool / kernel / kernel-core / kernel-cross-headers / etc Multiple Vulnerabilities (CENTOS-STREAM8:CLSA-2026:1791780738)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364675",
+      "cves": [
+        "CVE-2022-48991",
+        "CVE-2022-49687",
+        "CVE-2022-50536",
+        "CVE-2023-52612",
+        "CVE-2023-52664"
+      ]
+    },
+    {
+      "id": "364674",
+      "title": "AlmaLinux 9.6 [TuxCare] Security Update: expat / expat-devel / expat-static (ALMALINUX9.6:CLSA-2026:1791791753)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364674",
+      "cves": [
+        "CVE-2026-102633"
+      ]
+    },
+    {
+      "id": "364673",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-108752",
+      "severity": "Low",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364673",
+      "cves": [
+        "CVE-2026-108752"
+      ]
+    },
+    {
+      "id": "364672",
+      "title": "RHEL 10 : gd (RHSA-2026:80500)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364672",
+      "cves": [
+        "CVE-2026-9672"
+      ]
+    },
+    {
+      "id": "364671",
+      "title": "RHEL 9 : resteasy (RHSA-2026:80505)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364671",
+      "cves": [
+        "CVE-2026-17615"
+      ]
+    },
+    {
+      "id": "364670",
+      "title": "RHEL 8 : compat-openssl10 (RHSA-2026:80510)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364670",
+      "cves": [
+        "CVE-2026-84782"
+      ]
+    },
+    {
+      "id": "364669",
+      "title": "RHEL 9 : compat-openssl11 (RHSA-2026:80514)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364669",
+      "cves": [
+        "CVE-2026-63072",
+        "CVE-2026-84782"
+      ]
+    },
+    {
+      "id": "364668",
+      "title": "RHEL 9 : thunderbird (RHSA-2026:80503)",
       "severity": "Critical",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474325",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364668",
       "cves": [
-        "CVE-2026-106298"
+        "CVE-2026-16365",
+        "CVE-2026-75874",
+        "CVE-2026-84119",
+        "CVE-2026-84120",
+        "CVE-2026-84121",
+        "CVE-2026-84122",
+        "CVE-2026-84124",
+        "CVE-2026-84131",
+        "CVE-2026-84143",
+        "CVE-2026-84145",
+        "CVE-2026-84639",
+        "CVE-2026-84640",
+        "CVE-2026-84641"
       ]
     },
     {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474324",
+      "id": "364667",
+      "title": "RHEL 10 : flatpak (RHSA-2026:80498)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364667",
       "cves": [
-        "CVE-2026-106217"
+        "CVE-2026-90616",
+        "CVE-2026-96275",
+        "CVE-2026-96280",
+        "CVE-2026-96808"
       ]
     },
     {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/474324",
+      "id": "364666",
+      "title": "RHEL 9 : gimp (RHSA-2026:80509)",
+      "severity": "Critical",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364666",
       "cves": [
-        "CVE-2026-106217"
+        "CVE-2026-18301",
+        "CVE-2026-18302",
+        "CVE-2026-18303",
+        "CVE-2026-18304",
+        "CVE-2026-18305",
+        "CVE-2026-18306",
+        "CVE-2026-18307",
+        "CVE-2026-42169",
+        "CVE-2026-58379",
+        "CVE-2026-58380",
+        "CVE-2026-58384",
+        "CVE-2026-59090",
+        "CVE-2026-66758"
       ]
     },
     {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 155.0.8059.39-r0",
-      "severity": "Medium",
-      "date": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/474323",
+      "id": "364665",
+      "title": "RHEL 9 : flatpak-builder (RHSA-2026:80496)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364665",
       "cves": [
-        "CVE-2026-106416"
+        "CVE-2026-86320"
       ]
+    },
+    {
+      "id": "364664",
+      "title": "RHEL 9 : emacs (RHSA-2026:80507)",
+      "severity": "Medium",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364664",
+      "cves": [
+        "CVE-2026-77219",
+        "CVE-2026-79992"
+      ]
+    },
+    {
+      "id": "364663",
+      "title": "RHEL 10 : flatpak-builder (RHSA-2026:80495)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364663",
+      "cves": [
+        "CVE-2026-86320"
+      ]
+    },
+    {
+      "id": "364662",
+      "title": "Fedora 43 : python3.10 (2026-ab6004ec50)",
+      "severity": "Critical",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364662",
+      "cves": []
+    },
+    {
+      "id": "364661",
+      "title": "Fedora 44 : markdownlint-cli2 (2026-2c004657ff)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364661",
+      "cves": []
+    },
+    {
+      "id": "364660",
+      "title": "Fedora 43 : python3.13 (2026-1928c5d40b)",
+      "severity": "Critical",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364660",
+      "cves": []
+    },
+    {
+      "id": "364659",
+      "title": "Fedora 43 : python3.11 (2026-37c784fc16)",
+      "severity": "Critical",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364659",
+      "cves": []
+    },
+    {
+      "id": "364658",
+      "title": "Fedora 44 : kernel (2026-c2d6603acd)",
+      "severity": "High",
+      "date": "Mon, 12 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/364658",
+      "cves": []
     }
   ]
 }
