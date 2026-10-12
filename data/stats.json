@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05",
+  "updated": "2026-10-12",
   "source": "fkie-cad NVD mirror (counted locally)",
   "note": "NVD data via the fkie-cad GitHub mirror; no NVD API key. CVEs are bucketed by publication year. Severity buckets use the primary CVSS v3 base severity (CVEs without a v3 score are absent from the split). KEV counts use the CISA KEV enrichment (cisaExploitAdd) carried in the NVD record.",
   "dimensions": [
@@ -10,7 +10,7 @@
     "LOW",
     "kev"
   ],
-  "grand_total": 400407,
+  "grand_total": 403655,
   "by_year": {
     "1999": {
       "total": 923,
@@ -129,7 +129,7 @@
       "kev": 35,
       "CRITICAL": 17,
       "HIGH": 27,
-      "MEDIUM": 11,
+      "MEDIUM": 12,
       "LOW": 0
     },
     "2014": {
@@ -142,7 +142,7 @@
     },
     "2015": {
       "total": 6595,
-      "kev": 45,
+      "kev": 47,
       "CRITICAL": 45,
       "HIGH": 100,
       "MEDIUM": 55,
@@ -150,7 +150,7 @@
     },
     "2016": {
       "total": 6517,
-      "kev": 53,
+      "kev": 54,
       "CRITICAL": 887,
       "HIGH": 2874,
       "MEDIUM": 2284,
@@ -190,7 +190,7 @@
     },
     "2021": {
       "total": 21950,
-      "kev": 214,
+      "kev": 215,
       "CRITICAL": 2545,
       "HIGH": 7454,
       "MEDIUM": 7822,
@@ -206,9 +206,9 @@
     },
     "2023": {
       "total": 30949,
-      "kev": 165,
+      "kev": 166,
       "CRITICAL": 4396,
-      "HIGH": 9897,
+      "HIGH": 9898,
       "MEDIUM": 11861,
       "LOW": 370
     },
@@ -225,27 +225,27 @@
       "kev": 197,
       "CRITICAL": 3365,
       "HIGH": 4992,
-      "MEDIUM": 8082,
+      "MEDIUM": 8081,
       "LOW": 227
     },
     "2026": {
-      "total": 75814,
+      "total": 79062,
       "kev": 178,
-      "CRITICAL": 2103,
-      "HIGH": 5070,
-      "MEDIUM": 6284,
-      "LOW": 241
+      "CRITICAL": 2133,
+      "HIGH": 5155,
+      "MEDIUM": 6557,
+      "LOW": 249
     }
   },
   "severity_totals": {
-    "CRITICAL": 30706,
-    "HIGH": 76789,
-    "MEDIUM": 83638,
-    "LOW": 3295
+    "CRITICAL": 30736,
+    "HIGH": 76875,
+    "MEDIUM": 83911,
+    "LOW": 3303
   },
   "profile": {
-    "network": 139326,
-    "wormable": 57606,
-    "kev_total": 1734
+    "network": 139640,
+    "wormable": 57682,
+    "kev_total": 1739
   }
 }
