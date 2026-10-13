@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-12",
-  "total": 1739,
+  "updated": "2026-10-13",
+  "total": 1741,
   "ransomware_count": 361,
   "by_year": {
     "2021": 311,
@@ -8,12 +8,12 @@
     "2023": 187,
     "2024": 186,
     "2025": 245,
-    "2026": 255
+    "2026": 257
   },
   "top_vendors": [
     [
       "Microsoft",
-      389
+      390
     ],
     [
       "Cisco",
@@ -41,7 +41,7 @@
     ],
     [
       "Ivanti",
-      35
+      36
     ],
     [
       "Fortinet",
@@ -95,7 +95,7 @@
   "top_products": [
     [
       "Microsoft Windows",
-      174
+      175
     ],
     [
       "Apple Multiple Products",

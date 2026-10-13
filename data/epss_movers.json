@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-12",
+  "updated": "2026-10-13",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-12",
-  "previous_date": "2026-10-05",
+  "current_date": "2026-10-13",
+  "previous_date": "2026-10-06",
   "risers": [
     {
       "id": "CVE-2026-35273",
@@ -17,13 +17,6 @@
       "prev": 0.06416,
       "delta": 0.78922,
       "name": "User Authentication Bypass in VPN Remote Access and Mobile Access"
-    },
-    {
-      "id": "CVE-2026-73570",
-      "now": 0.71663,
-      "prev": 0.11946,
-      "delta": 0.59717,
-      "name": "Zimbra Collaboration"
     },
     {
       "id": "CVE-2026-66066",
@@ -45,6 +38,13 @@
       "prev": 0.29519,
       "delta": 0.13888,
       "name": "Microsoft Word 2007 SP3, Office 2010 SP2, Word 2010 SP2, Word 2013 SP1, Word 2013 RT SP1, Office for Mac 2011,"
+    },
+    {
+      "id": "CVE-2024-11182",
+      "now": 0.31355,
+      "prev": 0.17591,
+      "delta": 0.13764,
+      "name": "Stored XSS vulnerability in MDaemon Email Server"
     },
     {
       "id": "CVE-2021-26919",
@@ -82,18 +82,18 @@
       "name": "Directory traversal with remote code execution can occur in /upload in ONLYOFFICE Document Server before 5.6.3"
     },
     {
+      "id": "CVE-2024-57004",
+      "now": 0.39663,
+      "prev": 0.2882,
+      "delta": 0.10843,
+      "name": "Cross-Site Scripting (XSS) vulnerability in Roundcube Webmail 1.6.9 allows remote authenticated users to uploa"
+    },
+    {
       "id": "CVE-2025-34035",
       "now": 0.22811,
       "prev": 0.12531,
       "delta": 0.1028,
       "name": "EnGenius EnShare IoT Gigabit Cloud Service Command Injection"
-    },
-    {
-      "id": "CVE-2009-1551",
-      "now": 0.36598,
-      "prev": 0.27008,
-      "delta": 0.0959,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in Qt quickteam 2 allow remote attackers to execute arbitra"
     },
     {
       "id": "CVE-2025-53690",
@@ -131,13 +131,6 @@
       "name": "Argument Injection Vulnerability in CommServe"
     },
     {
-      "id": "CVE-2025-7441",
-      "now": 0.50059,
-      "prev": 0.40919,
-      "delta": 0.0914,
-      "name": "StoryChief <= 1.0.42 - Unauthenticated Arbitrary File Upload"
-    },
-    {
       "id": "CVE-2010-20103",
       "now": 0.13661,
       "prev": 0.0509,
@@ -171,6 +164,13 @@
       "prev": 0.1943,
       "delta": 0.07567,
       "name": "Path Traversal Vulnerability"
+    },
+    {
+      "id": "CVE-2014-8602",
+      "now": 0.32163,
+      "prev": 0.25205,
+      "delta": 0.06958,
+      "name": "iterator.c in NLnet Labs Unbound before 1.5.1 does not limit delegation chaining, which allows remote attacker"
     },
     {
       "id": "CVE-2023-39456",
@@ -231,25 +231,11 @@
       "name": "User Authentication Bypass in VPN Remote Access and Mobile Access"
     },
     {
-      "id": "CVE-2026-73570",
-      "now": 0.71663,
-      "prev": 0.11946,
-      "delta": 0.59717,
-      "name": "Zimbra Collaboration"
-    },
-    {
       "id": "CVE-2024-32030",
       "now": 0.51051,
       "prev": 0.39428,
       "delta": 0.11623,
       "name": "Remote code execution via JNDI resolution in JMX metrics collection in Kafka UI"
-    },
-    {
-      "id": "CVE-2025-7441",
-      "now": 0.50059,
-      "prev": 0.40919,
-      "delta": 0.0914,
-      "name": "StoryChief <= 1.0.42 - Unauthenticated Arbitrary File Upload"
     },
     {
       "id": "CVE-2024-48307",
@@ -280,27 +266,6 @@
       "name": "Windows NTLM Elevation of Privilege Vulnerability"
     },
     {
-      "id": "CVE-2021-33551",
-      "now": 0.51412,
-      "prev": 0.48811,
-      "delta": 0.02601,
-      "name": "UDP Technology/Geutebr\u00fcck camera devices: Command injection in environment.lang parameter "
-    },
-    {
-      "id": "CVE-2021-33552",
-      "now": 0.51412,
-      "prev": 0.48811,
-      "delta": 0.02601,
-      "name": "UDP Technology/Geutebr\u00fcck camera devices: Command injection in date parameter leading to R"
-    },
-    {
-      "id": "CVE-2021-33553",
-      "now": 0.51412,
-      "prev": 0.48811,
-      "delta": 0.02601,
-      "name": "UDP Technology/Geutebr\u00fcck camera devices: Command injection in command parameter leading t"
-    },
-    {
       "id": "CVE-2025-6023",
       "now": 0.52586,
       "prev": 0.49989,
@@ -308,11 +273,25 @@
       "name": "Grafana Grafana"
     },
     {
-      "id": "CVE-2022-33318",
-      "now": 0.50054,
-      "prev": 0.48137,
-      "delta": 0.01917,
-      "name": "Mitsubishi Electric GENESIS64"
+      "id": "CVE-2021-33551",
+      "now": 0.51009,
+      "prev": 0.48811,
+      "delta": 0.02198,
+      "name": "UDP Technology/Geutebr\u00fcck camera devices: Command injection in environment.lang parameter "
+    },
+    {
+      "id": "CVE-2021-33552",
+      "now": 0.51009,
+      "prev": 0.48811,
+      "delta": 0.02198,
+      "name": "UDP Technology/Geutebr\u00fcck camera devices: Command injection in date parameter leading to R"
+    },
+    {
+      "id": "CVE-2021-33553",
+      "now": 0.51009,
+      "prev": 0.48811,
+      "delta": 0.02198,
+      "name": "UDP Technology/Geutebr\u00fcck camera devices: Command injection in command parameter leading t"
     }
   ]
 }
