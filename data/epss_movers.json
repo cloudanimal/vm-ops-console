@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-14",
+  "updated": "2026-10-15",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-14",
-  "previous_date": "2026-10-07",
+  "current_date": "2026-10-15",
+  "previous_date": "2026-10-08",
   "risers": [
     {
       "id": "CVE-2026-35273",
@@ -12,18 +12,25 @@
       "name": "Oracle Corporation PeopleSoft Enterprise PeopleTools"
     },
     {
-      "id": "CVE-2026-50751",
-      "now": 0.85338,
-      "prev": 0.06416,
-      "delta": 0.78922,
-      "name": "User Authentication Bypass in VPN Remote Access and Mobile Access"
+      "id": "CVE-2026-72898",
+      "now": 0.97335,
+      "prev": 0.19048,
+      "delta": 0.78287,
+      "name": "Metabase SQL injection via password reset endpoint"
     },
     {
-      "id": "CVE-2026-66066",
-      "now": 0.27861,
-      "prev": 0.02099,
-      "delta": 0.25762,
-      "name": "Action Pack: Possible arbitrary file read and remote code execution in Active Storage vari"
+      "id": "CVE-2026-93616",
+      "now": 0.75872,
+      "prev": 0.19654,
+      "delta": 0.56218,
+      "name": "Directory Traversal and File upload allows execution of arbitrary script on the Management"
+    },
+    {
+      "id": "CVE-2026-85102",
+      "now": 0.504,
+      "prev": 0.07546,
+      "delta": 0.42854,
+      "name": "Improper Certificate Validation in Quantum Security Gateway"
     },
     {
       "id": "CVE-2001-1342",
@@ -66,6 +73,13 @@
       "prev": 0.3666,
       "delta": 0.11858,
       "name": "Apache Tika PDF parser module: XXE vulnerability in PDFParser's handling of XFA"
+    },
+    {
+      "id": "CVE-2023-0286",
+      "now": 0.71239,
+      "prev": 0.59501,
+      "delta": 0.11738,
+      "name": "X.400 address type confusion in X.509 GeneralName"
     },
     {
       "id": "CVE-2024-32030",
@@ -152,6 +166,13 @@
       "name": "SPNEGO Extended Negotiation (NEGOEX) Security Mechanism Remote Code Execution Vulnerabilit"
     },
     {
+      "id": "CVE-2022-4450",
+      "now": 0.2859,
+      "prev": 0.20287,
+      "delta": 0.08303,
+      "name": "Double free after calling PEM_read_bio_ex"
+    },
+    {
       "id": "CVE-2015-5477",
       "now": 0.99409,
       "prev": 0.91284,
@@ -173,11 +194,11 @@
       "name": "Path Traversal Vulnerability"
     },
     {
-      "id": "CVE-2025-15029",
-      "now": 0.12961,
-      "prev": 0.05809,
-      "delta": 0.07152,
-      "name": "An unauthenticated user is able to introduce SQL Injection using the Awie export module"
+      "id": "CVE-2022-4304",
+      "now": 0.23509,
+      "prev": 0.16195,
+      "delta": 0.07314,
+      "name": "Timing Oracle in RSA Decryption"
     },
     {
       "id": "CVE-2014-8602",
@@ -192,27 +213,6 @@
       "prev": 0.53757,
       "delta": 0.06781,
       "name": "Apache Traffic Server: Malformed http/2 frames can cause an abort"
-    },
-    {
-      "id": "CVE-2011-1989",
-      "now": 0.27767,
-      "prev": 0.21135,
-      "delta": 0.06632,
-      "name": "Microsoft Excel 2003 SP3 and 2007 SP2; Excel in Office 2007 SP2; Excel 2010 Gold and SP1; Excel in Office 2010"
-    },
-    {
-      "id": "CVE-2025-47984",
-      "now": 0.23273,
-      "prev": 0.16895,
-      "delta": 0.06378,
-      "name": "Windows GDI Information Disclosure Vulnerability"
-    },
-    {
-      "id": "CVE-2019-1002100",
-      "now": 0.16934,
-      "prev": 0.10743,
-      "delta": 0.06191,
-      "name": "Kubernetes Kubernetes"
     }
   ],
   "newly_high": [
@@ -224,11 +224,25 @@
       "name": "Oracle Corporation PeopleSoft Enterprise PeopleTools"
     },
     {
-      "id": "CVE-2026-50751",
-      "now": 0.85338,
-      "prev": 0.06416,
-      "delta": 0.78922,
-      "name": "User Authentication Bypass in VPN Remote Access and Mobile Access"
+      "id": "CVE-2026-72898",
+      "now": 0.97335,
+      "prev": 0.19048,
+      "delta": 0.78287,
+      "name": "Metabase SQL injection via password reset endpoint"
+    },
+    {
+      "id": "CVE-2026-93616",
+      "now": 0.75872,
+      "prev": 0.19654,
+      "delta": 0.56218,
+      "name": "Directory Traversal and File upload allows execution of arbitrary script on the Management"
+    },
+    {
+      "id": "CVE-2026-85102",
+      "now": 0.504,
+      "prev": 0.07546,
+      "delta": 0.42854,
+      "name": "Improper Certificate Validation in Quantum Security Gateway"
     },
     {
       "id": "CVE-2024-32030",
@@ -264,13 +278,6 @@
       "prev": 0.4762,
       "delta": 0.03847,
       "name": "Windows NTLM Elevation of Privilege Vulnerability"
-    },
-    {
-      "id": "CVE-2025-6023",
-      "now": 0.52586,
-      "prev": 0.49989,
-      "delta": 0.02597,
-      "name": "Grafana Grafana"
     },
     {
       "id": "CVE-2021-33551",

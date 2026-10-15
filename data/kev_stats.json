@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-14",
-  "total": 1741,
+  "updated": "2026-10-15",
+  "total": 1746,
   "ransomware_count": 361,
   "by_year": {
     "2021": 311,
@@ -8,7 +8,7 @@
     "2023": 187,
     "2024": 186,
     "2025": 245,
-    "2026": 257
+    "2026": 262
   },
   "top_vendors": [
     [
@@ -17,7 +17,7 @@
     ],
     [
       "Cisco",
-      100
+      101
     ],
     [
       "Apple",
@@ -77,19 +77,19 @@
     ],
     [
       "Palo Alto Networks",
-      15
+      16
     ],
     [
       "Samsung",
       15
     ],
     [
-      "SAP",
+      "Atlassian",
       14
     ],
     [
-      "Zyxel",
-      13
+      "SAP",
+      14
     ]
   ],
   "top_products": [
@@ -142,6 +142,10 @@
       14
     ],
     [
+      "Palo Alto Networks PAN-OS",
+      13
+    ],
+    [
       "Adobe Acrobat and Reader",
       13
     ],
@@ -151,10 +155,6 @@
     ],
     [
       "Oracle WebLogic Server",
-      12
-    ],
-    [
-      "Palo Alto Networks PAN-OS",
       12
     ],
     [
