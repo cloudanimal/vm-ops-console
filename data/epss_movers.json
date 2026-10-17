@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-16",
+  "updated": "2026-10-17",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-16",
-  "previous_date": "2026-10-09",
+  "current_date": "2026-10-17",
+  "previous_date": "2026-10-10",
   "risers": [
     {
       "id": "CVE-2026-43284",
@@ -61,32 +61,11 @@
       "name": "Apache Druid Authenticated users can execute arbitrary code from malicious MySQL database "
     },
     {
-      "id": "CVE-2025-54988",
-      "now": 0.48518,
-      "prev": 0.3666,
-      "delta": 0.11858,
-      "name": "Apache Tika PDF parser module: XXE vulnerability in PDFParser's handling of XFA"
-    },
-    {
       "id": "CVE-2023-0286",
       "now": 0.71239,
       "prev": 0.59501,
       "delta": 0.11738,
       "name": "X.400 address type confusion in X.509 GeneralName"
-    },
-    {
-      "id": "CVE-2024-32030",
-      "now": 0.51051,
-      "prev": 0.39428,
-      "delta": 0.11623,
-      "name": "Remote code execution via JNDI resolution in JMX metrics collection in Kafka UI"
-    },
-    {
-      "id": "CVE-2026-21589",
-      "now": 0.12711,
-      "prev": 0.01773,
-      "delta": 0.10938,
-      "name": "Atlassian Bamboo Data Center"
     },
     {
       "id": "CVE-2024-57004",
@@ -103,20 +82,6 @@
       "name": "Selenium Server (Grid) before 4 allows CSRF because it permits non-JSON content types such as application/x-ww"
     },
     {
-      "id": "CVE-2025-53690",
-      "now": 0.60601,
-      "prev": 0.51094,
-      "delta": 0.09507,
-      "name": "Sitecore Products ViewState Deserialization Vulnerability"
-    },
-    {
-      "id": "CVE-2025-57833",
-      "now": 0.26106,
-      "prev": 0.16759,
-      "delta": 0.09347,
-      "name": "djangoproject Django"
-    },
-    {
       "id": "CVE-2013-3307",
       "now": 0.63108,
       "prev": 0.53788,
@@ -124,18 +89,11 @@
       "name": "Linksys E1000"
     },
     {
-      "id": "CVE-2025-57791",
-      "now": 0.34366,
-      "prev": 0.25085,
-      "delta": 0.09281,
-      "name": "Argument Injection Vulnerability in CommServe"
-    },
-    {
-      "id": "CVE-2010-20103",
-      "now": 0.13661,
-      "prev": 0.0509,
-      "delta": 0.08571,
-      "name": "ProFTPD 1.3.3c Backdoor Command Execution"
+      "id": "CVE-2025-57833",
+      "now": 0.26106,
+      "prev": 0.17432,
+      "delta": 0.08674,
+      "name": "djangoproject Django"
     },
     {
       "id": "CVE-2022-4450",
@@ -145,6 +103,13 @@
       "name": "Double free after calling PEM_read_bio_ex"
     },
     {
+      "id": "CVE-2025-53690",
+      "now": 0.60601,
+      "prev": 0.52508,
+      "delta": 0.08093,
+      "name": "Sitecore Products ViewState Deserialization Vulnerability"
+    },
+    {
       "id": "CVE-2013-3179",
       "now": 0.2226,
       "prev": 0.14241,
@@ -152,18 +117,11 @@
       "name": "Cross-site scripting (XSS) vulnerability in Microsoft SharePoint Server 2007 SP3, 2010 SP1 and SP2, and 2013 a"
     },
     {
-      "id": "CVE-2015-5477",
-      "now": 0.99409,
-      "prev": 0.91807,
-      "delta": 0.07602,
-      "name": "named in ISC BIND 9.x before 9.9.7-P2 and 9.10.x before 9.10.2-P3 allows remote attackers to cause a denial of"
-    },
-    {
-      "id": "CVE-2025-57790",
-      "now": 0.26997,
-      "prev": 0.1943,
-      "delta": 0.07567,
-      "name": "Path Traversal Vulnerability"
+      "id": "CVE-2025-52688",
+      "now": 0.3627,
+      "prev": 0.28836,
+      "delta": 0.07434,
+      "name": "Command Injection Vulnerability in the OmniAccess Stellar Web Management Interface"
     },
     {
       "id": "CVE-2022-4304",
@@ -187,6 +145,13 @@
       "name": "Apache Traffic Server: Malformed http/2 frames can cause an abort"
     },
     {
+      "id": "CVE-2020-5192",
+      "now": 0.2353,
+      "prev": 0.1681,
+      "delta": 0.0672,
+      "name": "PHPGurukul Hospital Management System in PHP v4.0 suffers from multiple SQL injection vulnerabilities: multipl"
+    },
+    {
       "id": "CVE-2011-1989",
       "now": 0.27767,
       "prev": 0.21135,
@@ -194,18 +159,18 @@
       "name": "Microsoft Excel 2003 SP3 and 2007 SP2; Excel in Office 2007 SP2; Excel 2010 Gold and SP1; Excel in Office 2010"
     },
     {
-      "id": "CVE-2021-32761",
-      "now": 0.37772,
-      "prev": 0.31172,
-      "delta": 0.066,
-      "name": "Integer overflow issues with *BIT commands on 32-bit systems"
+      "id": "CVE-2025-20337",
+      "now": 0.74499,
+      "prev": 0.67995,
+      "delta": 0.06504,
+      "name": "Cisco ISE API Unauthenticated Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2019-1002100",
-      "now": 0.16934,
-      "prev": 0.10743,
-      "delta": 0.06191,
-      "name": "Kubernetes Kubernetes"
+      "id": "CVE-2025-20284",
+      "now": 0.2512,
+      "prev": 0.19131,
+      "delta": 0.05989,
+      "name": "Cisco Identity Services Engine Authenticated Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2024-48307",
@@ -213,6 +178,41 @@
       "prev": 0.44061,
       "delta": 0.05956,
       "name": "JeecgBoot v3.7.1 was discovered to contain a SQL injection vulnerability via the component /onlDragDatasetHead"
+    },
+    {
+      "id": "CVE-2020-5802",
+      "now": 0.447,
+      "prev": 0.38828,
+      "delta": 0.05872,
+      "name": "Rockwell FactoryTalk Linx"
+    },
+    {
+      "id": "CVE-2024-56511",
+      "now": 0.50296,
+      "prev": 0.44458,
+      "delta": 0.05838,
+      "name": "DataEase has an unauthorized vulnerability"
+    },
+    {
+      "id": "CVE-2012-2520",
+      "now": 0.34278,
+      "prev": 0.28477,
+      "delta": 0.05801,
+      "name": "Cross-site scripting (XSS) vulnerability in Microsoft InfoPath 2007 SP2 and SP3 and 2010 SP1, Communicator 200"
+    },
+    {
+      "id": "CVE-2026-22778",
+      "now": 0.16697,
+      "prev": 0.1116,
+      "delta": 0.05537,
+      "name": "vLLM leaks a heap address when PIL throws an error"
+    },
+    {
+      "id": "CVE-2020-5807",
+      "now": 0.39304,
+      "prev": 0.33836,
+      "delta": 0.05468,
+      "name": "Rockwell FactoryTalk Diagnostics"
     }
   ],
   "newly_high": [
@@ -252,18 +252,18 @@
       "name": "Improper Certificate Validation in Quantum Security Gateway"
     },
     {
-      "id": "CVE-2024-32030",
-      "now": 0.51051,
-      "prev": 0.39428,
-      "delta": 0.11623,
-      "name": "Remote code execution via JNDI resolution in JMX metrics collection in Kafka UI"
-    },
-    {
       "id": "CVE-2024-48307",
       "now": 0.50017,
       "prev": 0.44061,
       "delta": 0.05956,
       "name": "JeecgBoot v3.7.1 was discovered to contain a SQL injection vulnerability via the component /onlDragDatasetHead"
+    },
+    {
+      "id": "CVE-2024-56511",
+      "now": 0.50296,
+      "prev": 0.44458,
+      "delta": 0.05838,
+      "name": "DataEase has an unauthorized vulnerability"
     },
     {
       "id": "CVE-2022-35650",
