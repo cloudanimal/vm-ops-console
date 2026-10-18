@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-17",
+  "updated": "2026-10-18",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-17",
-  "previous_date": "2026-10-10",
+  "current_date": "2026-10-18",
+  "previous_date": "2026-10-11",
   "risers": [
     {
       "id": "CVE-2026-43284",
@@ -54,11 +54,11 @@
       "name": "Stored XSS vulnerability in MDaemon Email Server"
     },
     {
-      "id": "CVE-2021-26919",
-      "now": 0.35192,
-      "prev": 0.2276,
-      "delta": 0.12432,
-      "name": "Apache Druid Authenticated users can execute arbitrary code from malicious MySQL database "
+      "id": "CVE-2025-1128",
+      "now": 0.42446,
+      "prev": 0.28766,
+      "delta": 0.1368,
+      "name": "Everest Forms <= 3.0.9.4 - Unauthenticated Arbitrary File Upload, Read, and Deletion"
     },
     {
       "id": "CVE-2023-0286",
@@ -89,6 +89,13 @@
       "name": "Linksys E1000"
     },
     {
+      "id": "CVE-2025-57819",
+      "now": 0.95024,
+      "prev": 0.86347,
+      "delta": 0.08677,
+      "name": "FreePBX Affected by Authentication Bypass Leading to SQL Injection and RCE"
+    },
+    {
       "id": "CVE-2025-57833",
       "now": 0.26106,
       "prev": 0.17432,
@@ -110,13 +117,6 @@
       "name": "Sitecore Products ViewState Deserialization Vulnerability"
     },
     {
-      "id": "CVE-2013-3179",
-      "now": 0.2226,
-      "prev": 0.14241,
-      "delta": 0.08019,
-      "name": "Cross-site scripting (XSS) vulnerability in Microsoft SharePoint Server 2007 SP3, 2010 SP1 and SP2, and 2013 a"
-    },
-    {
       "id": "CVE-2025-52688",
       "now": 0.3627,
       "prev": 0.28836,
@@ -131,18 +131,18 @@
       "name": "Timing Oracle in RSA Decryption"
     },
     {
+      "id": "CVE-2021-22123",
+      "now": 0.84396,
+      "prev": 0.7727,
+      "delta": 0.07126,
+      "name": "Fortinet Fortinet FortiWeb"
+    },
+    {
       "id": "CVE-2014-8602",
       "now": 0.32163,
       "prev": 0.25205,
       "delta": 0.06958,
       "name": "iterator.c in NLnet Labs Unbound before 1.5.1 does not limit delegation chaining, which allows remote attacker"
-    },
-    {
-      "id": "CVE-2023-39456",
-      "now": 0.60538,
-      "prev": 0.53757,
-      "delta": 0.06781,
-      "name": "Apache Traffic Server: Malformed http/2 frames can cause an abort"
     },
     {
       "id": "CVE-2020-5192",
@@ -152,11 +152,11 @@
       "name": "PHPGurukul Hospital Management System in PHP v4.0 suffers from multiple SQL injection vulnerabilities: multipl"
     },
     {
-      "id": "CVE-2011-1989",
-      "now": 0.27767,
-      "prev": 0.21135,
-      "delta": 0.06632,
-      "name": "Microsoft Excel 2003 SP3 and 2007 SP2; Excel in Office 2007 SP2; Excel 2010 Gold and SP1; Excel in Office 2010"
+      "id": "CVE-2016-7103",
+      "now": 0.29186,
+      "prev": 0.2258,
+      "delta": 0.06606,
+      "name": "Cross-site scripting (XSS) vulnerability in jQuery UI before 1.12.0 might allow remote attackers to inject arb"
     },
     {
       "id": "CVE-2025-20337",
@@ -166,18 +166,18 @@
       "name": "Cisco ISE API Unauthenticated Remote Code Execution Vulnerability"
     },
     {
+      "id": "CVE-2009-1667",
+      "now": 0.27816,
+      "prev": 0.214,
+      "delta": 0.06416,
+      "name": "Stack-based buffer overflow in Mini-stream CastRipper 2.50.70 allows remote attackers to execute arbitrary cod"
+    },
+    {
       "id": "CVE-2025-20284",
       "now": 0.2512,
       "prev": 0.19131,
       "delta": 0.05989,
       "name": "Cisco Identity Services Engine Authenticated Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2024-48307",
-      "now": 0.50017,
-      "prev": 0.44061,
-      "delta": 0.05956,
-      "name": "JeecgBoot v3.7.1 was discovered to contain a SQL injection vulnerability via the component /onlDragDatasetHead"
     },
     {
       "id": "CVE-2020-5802",
@@ -194,18 +194,18 @@
       "name": "DataEase has an unauthorized vulnerability"
     },
     {
-      "id": "CVE-2012-2520",
-      "now": 0.34278,
-      "prev": 0.28477,
-      "delta": 0.05801,
-      "name": "Cross-site scripting (XSS) vulnerability in Microsoft InfoPath 2007 SP2 and SP3 and 2010 SP1, Communicator 200"
-    },
-    {
       "id": "CVE-2026-22778",
       "now": 0.16697,
       "prev": 0.1116,
       "delta": 0.05537,
       "name": "vLLM leaks a heap address when PIL throws an error"
+    },
+    {
+      "id": "CVE-2025-54918",
+      "now": 0.25278,
+      "prev": 0.19771,
+      "delta": 0.05507,
+      "name": "Windows NTLM Elevation of Privilege Vulnerability"
     },
     {
       "id": "CVE-2020-5807",
@@ -252,25 +252,11 @@
       "name": "Improper Certificate Validation in Quantum Security Gateway"
     },
     {
-      "id": "CVE-2024-48307",
-      "now": 0.50017,
-      "prev": 0.44061,
-      "delta": 0.05956,
-      "name": "JeecgBoot v3.7.1 was discovered to contain a SQL injection vulnerability via the component /onlDragDatasetHead"
-    },
-    {
       "id": "CVE-2024-56511",
       "now": 0.50296,
       "prev": 0.44458,
       "delta": 0.05838,
       "name": "DataEase has an unauthorized vulnerability"
-    },
-    {
-      "id": "CVE-2022-35650",
-      "now": 0.53652,
-      "prev": 0.49054,
-      "delta": 0.04598,
-      "name": "Moodle"
     },
     {
       "id": "CVE-2023-43661",
