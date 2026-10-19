@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-18",
+  "updated": "2026-10-19",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-18",
-  "previous_date": "2026-10-11",
+  "current_date": "2026-10-19",
+  "previous_date": "2026-10-12",
   "risers": [
     {
       "id": "CVE-2026-43284",
@@ -10,13 +10,6 @@
       "prev": 0.0247,
       "delta": 0.91724,
       "name": "xfrm: esp: avoid in-place decrypt on shared skb frags"
-    },
-    {
-      "id": "CVE-2026-35273",
-      "now": 0.96678,
-      "prev": 0.09444,
-      "delta": 0.87234,
-      "name": "Oracle Corporation PeopleSoft Enterprise PeopleTools"
     },
     {
       "id": "CVE-2026-72898",
@@ -45,6 +38,13 @@
       "prev": 0.12006,
       "delta": 0.18732,
       "name": "Apache before 1.3.20 on Windows and OS/2 systems allows remote attackers to cause a denial of service (GPF) vi"
+    },
+    {
+      "id": "CVE-2017-9765",
+      "now": 0.42081,
+      "prev": 0.24625,
+      "delta": 0.17456,
+      "name": "Integer overflow in the soap_get function in Genivia gSOAP 2.7.x and 2.8.x before 2.8.48, as used on Axis came"
     },
     {
       "id": "CVE-2024-11182",
@@ -82,11 +82,11 @@
       "name": "Selenium Server (Grid) before 4 allows CSRF because it permits non-JSON content types such as application/x-ww"
     },
     {
-      "id": "CVE-2013-3307",
-      "now": 0.63108,
-      "prev": 0.53788,
-      "delta": 0.0932,
-      "name": "Linksys E1000"
+      "id": "CVE-2014-9222",
+      "now": 0.7401,
+      "prev": 0.63748,
+      "delta": 0.10262,
+      "name": "AllegroSoft RomPager 4.34 and earlier, as used in Huawei Home Gateway products and other vendors and products,"
     },
     {
       "id": "CVE-2025-57819",
@@ -96,13 +96,6 @@
       "name": "FreePBX Affected by Authentication Bypass Leading to SQL Injection and RCE"
     },
     {
-      "id": "CVE-2025-57833",
-      "now": 0.26106,
-      "prev": 0.17432,
-      "delta": 0.08674,
-      "name": "djangoproject Django"
-    },
-    {
       "id": "CVE-2022-4450",
       "now": 0.2859,
       "prev": 0.20287,
@@ -110,11 +103,11 @@
       "name": "Double free after calling PEM_read_bio_ex"
     },
     {
-      "id": "CVE-2025-53690",
-      "now": 0.60601,
-      "prev": 0.52508,
-      "delta": 0.08093,
-      "name": "Sitecore Products ViewState Deserialization Vulnerability"
+      "id": "CVE-2021-40449",
+      "now": 0.81936,
+      "prev": 0.74129,
+      "delta": 0.07807,
+      "name": "Win32k Elevation of Privilege Vulnerability"
     },
     {
       "id": "CVE-2025-52688",
@@ -194,13 +187,6 @@
       "name": "DataEase has an unauthorized vulnerability"
     },
     {
-      "id": "CVE-2026-22778",
-      "now": 0.16697,
-      "prev": 0.1116,
-      "delta": 0.05537,
-      "name": "vLLM leaks a heap address when PIL throws an error"
-    },
-    {
       "id": "CVE-2025-54918",
       "now": 0.25278,
       "prev": 0.19771,
@@ -213,6 +199,20 @@
       "prev": 0.33836,
       "delta": 0.05468,
       "name": "Rockwell FactoryTalk Diagnostics"
+    },
+    {
+      "id": "CVE-2001-0508",
+      "now": 0.32435,
+      "prev": 0.2705,
+      "delta": 0.05385,
+      "name": "Vulnerability in IIS 5.0 allows remote attackers to cause a denial of service (restart) via a long, invalid We"
+    },
+    {
+      "id": "CVE-2023-29464",
+      "now": 0.14972,
+      "prev": 0.09603,
+      "delta": 0.05369,
+      "name": "Rockwell Automation FactoryTalk Linx Vulnerable to Denial-of-Service and Information Discl"
     }
   ],
   "newly_high": [
@@ -222,13 +222,6 @@
       "prev": 0.0247,
       "delta": 0.91724,
       "name": "xfrm: esp: avoid in-place decrypt on shared skb frags"
-    },
-    {
-      "id": "CVE-2026-35273",
-      "now": 0.96678,
-      "prev": 0.09444,
-      "delta": 0.87234,
-      "name": "Oracle Corporation PeopleSoft Enterprise PeopleTools"
     },
     {
       "id": "CVE-2026-72898",
@@ -257,41 +250,6 @@
       "prev": 0.44458,
       "delta": 0.05838,
       "name": "DataEase has an unauthorized vulnerability"
-    },
-    {
-      "id": "CVE-2023-43661",
-      "now": 0.51481,
-      "prev": 0.46904,
-      "delta": 0.04577,
-      "name": "Cachet vulnerable to Authenticated Remote Code Execution"
-    },
-    {
-      "id": "CVE-2025-53778",
-      "now": 0.51467,
-      "prev": 0.4762,
-      "delta": 0.03847,
-      "name": "Windows NTLM Elevation of Privilege Vulnerability"
-    },
-    {
-      "id": "CVE-2021-33551",
-      "now": 0.51009,
-      "prev": 0.48811,
-      "delta": 0.02198,
-      "name": "UDP Technology/Geutebr\u00fcck camera devices: Command injection in environment.lang parameter "
-    },
-    {
-      "id": "CVE-2021-33552",
-      "now": 0.51009,
-      "prev": 0.48811,
-      "delta": 0.02198,
-      "name": "UDP Technology/Geutebr\u00fcck camera devices: Command injection in date parameter leading to R"
-    },
-    {
-      "id": "CVE-2021-33553",
-      "now": 0.51009,
-      "prev": 0.48811,
-      "delta": 0.02198,
-      "name": "UDP Technology/Geutebr\u00fcck camera devices: Command injection in command parameter leading t"
     }
   ]
 }
