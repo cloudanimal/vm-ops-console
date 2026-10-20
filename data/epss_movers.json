@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-19",
+  "updated": "2026-10-20",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-19",
-  "previous_date": "2026-10-12",
+  "current_date": "2026-10-20",
+  "previous_date": "2026-10-13",
   "risers": [
     {
       "id": "CVE-2026-43284",
@@ -47,11 +47,11 @@
       "name": "Integer overflow in the soap_get function in Genivia gSOAP 2.7.x and 2.8.x before 2.8.48, as used on Axis came"
     },
     {
-      "id": "CVE-2024-11182",
-      "now": 0.31355,
-      "prev": 0.17591,
-      "delta": 0.13764,
-      "name": "Stored XSS vulnerability in MDaemon Email Server"
+      "id": "CVE-2022-47071",
+      "now": 0.43135,
+      "prev": 0.25905,
+      "delta": 0.1723,
+      "name": "In NVS365 V01, the background network test function can trigger command execution."
     },
     {
       "id": "CVE-2025-1128",
@@ -68,13 +68,6 @@
       "name": "X.400 address type confusion in X.509 GeneralName"
     },
     {
-      "id": "CVE-2024-57004",
-      "now": 0.39663,
-      "prev": 0.2882,
-      "delta": 0.10843,
-      "name": "Cross-Site Scripting (XSS) vulnerability in Roundcube Webmail 1.6.9 allows remote authenticated users to uploa"
-    },
-    {
       "id": "CVE-2022-28108",
       "now": 0.22193,
       "prev": 0.11727,
@@ -89,11 +82,25 @@
       "name": "AllegroSoft RomPager 4.34 and earlier, as used in Huawei Home Gateway products and other vendors and products,"
     },
     {
+      "id": "CVE-2026-21589",
+      "now": 0.12711,
+      "prev": 0.02777,
+      "delta": 0.09934,
+      "name": "Atlassian Bamboo Data Center"
+    },
+    {
       "id": "CVE-2025-57819",
       "now": 0.95024,
       "prev": 0.86347,
       "delta": 0.08677,
       "name": "FreePBX Affected by Authentication Bypass Leading to SQL Injection and RCE"
+    },
+    {
+      "id": "CVE-2021-30119",
+      "now": 0.58759,
+      "prev": 0.50323,
+      "delta": 0.08436,
+      "name": "Authenticated Authenticated reflective XSS in Kaseya VSA <= v9.5.6"
     },
     {
       "id": "CVE-2022-4450",
@@ -103,18 +110,18 @@
       "name": "Double free after calling PEM_read_bio_ex"
     },
     {
+      "id": "CVE-2025-52688",
+      "now": 0.37118,
+      "prev": 0.28836,
+      "delta": 0.08282,
+      "name": "Command Injection Vulnerability in the OmniAccess Stellar Web Management Interface"
+    },
+    {
       "id": "CVE-2021-40449",
       "now": 0.81936,
       "prev": 0.74129,
       "delta": 0.07807,
       "name": "Win32k Elevation of Privilege Vulnerability"
-    },
-    {
-      "id": "CVE-2025-52688",
-      "now": 0.3627,
-      "prev": 0.28836,
-      "delta": 0.07434,
-      "name": "Command Injection Vulnerability in the OmniAccess Stellar Web Management Interface"
     },
     {
       "id": "CVE-2022-4304",
@@ -129,13 +136,6 @@
       "prev": 0.7727,
       "delta": 0.07126,
       "name": "Fortinet Fortinet FortiWeb"
-    },
-    {
-      "id": "CVE-2014-8602",
-      "now": 0.32163,
-      "prev": 0.25205,
-      "delta": 0.06958,
-      "name": "iterator.c in NLnet Labs Unbound before 1.5.1 does not limit delegation chaining, which allows remote attacker"
     },
     {
       "id": "CVE-2020-5192",
@@ -187,6 +187,13 @@
       "name": "DataEase has an unauthorized vulnerability"
     },
     {
+      "id": "CVE-2025-34175",
+      "now": 0.21292,
+      "prev": 0.1554,
+      "delta": 0.05752,
+      "name": "Netgate pfSense CE Suricata package v7.0.8_2 Reflected Cross-Site Scripting"
+    },
+    {
       "id": "CVE-2025-54918",
       "now": 0.25278,
       "prev": 0.19771,
@@ -206,13 +213,6 @@
       "prev": 0.2705,
       "delta": 0.05385,
       "name": "Vulnerability in IIS 5.0 allows remote attackers to cause a denial of service (restart) via a long, invalid We"
-    },
-    {
-      "id": "CVE-2023-29464",
-      "now": 0.14972,
-      "prev": 0.09603,
-      "delta": 0.05369,
-      "name": "Rockwell Automation FactoryTalk Linx Vulnerable to Denial-of-Service and Information Discl"
     }
   ],
   "newly_high": [
@@ -250,6 +250,13 @@
       "prev": 0.44458,
       "delta": 0.05838,
       "name": "DataEase has an unauthorized vulnerability"
+    },
+    {
+      "id": "CVE-2025-43562",
+      "now": 0.51028,
+      "prev": 0.49295,
+      "delta": 0.01733,
+      "name": "ColdFusion | Improper Neutralization of Special Elements used in an OS Command ('OS Comman"
     }
   ]
 }

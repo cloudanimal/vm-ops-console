@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19",
+  "updated": "2026-10-20",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,843 +7,614 @@
   "items": [
     {
       "id": null,
-      "title": "Echo: boost-1.69.0: security update to 1.69.0+e1boost-1.75.0: security update to 1.75.0+e1boost-1.84.0: security update to 1.84.0+e1zlib-1.2.11: security update to 1.2.11+e1",
-      "severity": "Critical",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/476166",
-      "cves": [
-        "CVE-2022-37434"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: boost-1.69.0: security update to 1.69.0+e1boost-1.75.0: security update to 1.75.0+e1boost-1.84.0: security update to 1.84.0+e1zlib-1.2.11: security update to 1.2.11+e1",
-      "severity": "Critical",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/476166",
-      "cves": [
-        "CVE-2022-37434"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: game-music-emu: security update to 0.6.3-7+e1",
-      "severity": "Medium",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/476165",
-      "cves": [
-        "CVE-2026-111152"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: game-music-emu: security update to 0.6.3-7+e1",
-      "severity": "Medium",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/476165",
-      "cves": [
-        "CVE-2026-111152"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: boost-1.69.0: security update to 1.69.0+e1boost-1.75.0: security update to 1.75.0+e1boost-1.84.0: security update to 1.84.0+e1zlib-1.2.11: security update to 1.2.11+e1",
+      "title": "SCA: security update for github.com/klauspost/compress (GHSA-259r-337f-4rfw)",
       "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/476164",
-      "cves": [
-        "CVE-2018-25032"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: boost-1.69.0: security update to 1.69.0+e1boost-1.75.0: security update to 1.75.0+e1boost-1.84.0: security update to 1.84.0+e1zlib-1.2.11: security update to 1.2.11+e1",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/476164",
-      "cves": [
-        "CVE-2018-25032"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple aspnetcore10-runtime packages, multiple dotnet-host packages: security update to 10.0.13-r0",
-      "severity": "Critical",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/476163",
-      "cves": [
-        "CVE-2026-58280",
-        "CVE-2026-66822",
-        "CVE-2026-69651",
-        "CVE-2026-70007",
-        "CVE-2026-96957"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple aspnetcore10-runtime packages, multiple dotnet-host packages: security update to 10.0.13-r0",
-      "severity": "Critical",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/476163",
-      "cves": [
-        "CVE-2026-58280",
-        "CVE-2026-66822",
-        "CVE-2026-69651",
-        "CVE-2026-70007",
-        "CVE-2026-96957"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: crossplane-provider-aws-autoscaling-fips: security update to 2.9.0-r4",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/476162",
-      "cves": [
-        "CVE-2026-100349"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: crossplane-provider-aws-autoscaling-fips: security update to 2.9.0-r4",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/476162",
-      "cves": [
-        "CVE-2026-100349"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple sudo packages: security update to 1.9.17_p2-r2",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/476161",
-      "cves": [
-        "CVE-2026-96512"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple sudo packages: security update to 1.9.17_p2-r2",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/476161",
-      "cves": [
-        "CVE-2026-96512"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple borgbackup packages: security update to 1.4.5-r0",
-      "severity": "Medium",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/476160",
-      "cves": [
-        "CVE-2026-62268"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple borgbackup packages: security update to 1.4.5-r0",
-      "severity": "Medium",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/476160",
-      "cves": [
-        "CVE-2026-62268"
-      ]
-    },
-    {
-      "id": "367268",
-      "title": "MiracleLinux 8 : [security - high] nodejs:22 (AXSA:2026-2091:01)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367268",
-      "cves": [
-        "CVE-2026-19534",
-        "CVE-2026-9496"
-      ]
-    },
-    {
-      "id": "367267",
-      "title": "MiracleLinux 9 : libreoffice-7.1.8.1-15.el9_8.3.ML.1 (AXSA:2026-2082:05)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367267",
-      "cves": [
-        "CVE-2026-63274",
-        "CVE-2026-63275",
-        "CVE-2026-63276",
-        "CVE-2026-63277"
-      ]
-    },
-    {
-      "id": "367266",
-      "title": "MiracleLinux 8 : pcre2-10.32-4.el8_10 (AXSA:2026-2088:03)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367266",
-      "cves": [
-        "CVE-2026-103111",
-        "CVE-2026-86145",
-        "CVE-2026-89157",
-        "CVE-2026-89158"
-      ]
-    },
-    {
-      "id": "367265",
-      "title": "MiracleLinux 9 : [security - high] nodejs:22 (AXSA:2026-2084:01)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367265",
-      "cves": [
-        "CVE-2026-19534",
-        "CVE-2026-9496"
-      ]
-    },
-    {
-      "id": "367264",
-      "title": "MiracleLinux 9 : hplip-3.26.6-1.el9_8.3 (AXSA:2026-2085:06)",
-      "severity": "Critical",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367264",
-      "cves": [
-        "CVE-2025-43023",
-        "CVE-2026-91097",
-        "CVE-2026-91098",
-        "CVE-2026-91099",
-        "CVE-2026-91100",
-        "CVE-2026-91101",
-        "CVE-2026-91102",
-        "CVE-2026-91103",
-        "CVE-2026-91104",
-        "CVE-2026-91105",
-        "CVE-2026-91106"
-      ]
-    },
-    {
-      "id": "367263",
-      "title": "MiracleLinux 8 : rpcbind-1.2.5-11.el8_10 (AXSA:2026-2087:01)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367263",
-      "cves": [
-        "CVE-2026-94640"
-      ]
-    },
-    {
-      "id": "367262",
-      "title": "MiracleLinux 8 : compat-openssl10-1.0.2o-4.el8_10.4 (AXSA:2026-2060:03)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367262",
-      "cves": [
-        "CVE-2026-84782"
-      ]
-    },
-    {
-      "id": "367261",
-      "title": "MiracleLinux 9 : ghostscript-9.54.0-19.el9_8.3 (AXSA:2026-2092:04)",
-      "severity": "Medium",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367261",
-      "cves": [
-        "CVE-2026-101258",
-        "CVE-2026-103226"
-      ]
-    },
-    {
-      "id": "367260",
-      "title": "MiracleLinux 8 : wireshark-2.6.2-21.el8_10 (AXSA:2026-2083:01)",
-      "severity": "Critical",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367260",
-      "cves": [
-        "CVE-2026-76880",
-        "CVE-2026-76886",
-        "CVE-2026-76919",
-        "CVE-2026-76927"
-      ]
-    },
-    {
-      "id": "367259",
-      "title": "MiracleLinux 8 : python36:3.6 (AXSA:2026-2086:01)",
-      "severity": "Medium",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367259",
-      "cves": [
-        "CVE-2026-88029"
-      ]
-    },
-    {
-      "id": "367258",
-      "title": "MiracleLinux 9 : wireshark-3.4.10-9.el9_8.5 (AXSA:2026-2089:02)",
-      "severity": "Critical",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367258",
-      "cves": [
-        "CVE-2026-76880",
-        "CVE-2026-76886",
-        "CVE-2026-76919",
-        "CVE-2026-76927",
-        "CVE-2026-95387"
-      ]
-    },
-    {
-      "id": "367257",
-      "title": "MiracleLinux 9 : rpcbind-1.2.6-7.el9_8.1 (AXSA:2026-2090:02)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367257",
-      "cves": [
-        "CVE-2026-94640"
-      ]
-    },
-    {
-      "id": "367256",
-      "title": "AlmaLinux 9.2 [TuxCare] Security Update: webkit2gtk3 / webkit2gtk3-devel / webkit2gtk3-jsc / etc Multiple Vulnerabilities (ALMALINUX9.2:CLSA-2026:1792402249)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367256",
-      "cves": [
-        "CVE-2026-17771",
-        "CVE-2026-91733",
-        "CVE-2026-91740",
-        "CVE-2026-91747"
-      ]
-    },
-    {
-      "id": "367255",
-      "title": "AlmaLinux 9.2 [TuxCare] Security Update: libipa_hbac / libipa_hbac-devel / libsss_autofs / libsss_certmap / etc Multiple Vulnerabilities (ALMALINUX9.2:CLSA-2026:1792405584)",
-      "severity": "Medium",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367255",
-      "cves": [
-        "CVE-2026-104045",
-        "CVE-2026-90462",
-        "CVE-2026-90996"
-      ]
-    },
-    {
-      "id": "367254",
-      "title": "Zammad Installed (Linux)",
-      "severity": "Info",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367254",
-      "cves": []
-    },
-    {
-      "id": "367253",
-      "title": "Fedora 43 : webkitgtk (2026-9669c4bb36)",
-      "severity": "Critical",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367253",
-      "cves": [
-        "CVE-2026-43804",
-        "CVE-2026-64713",
-        "CVE-2026-64715",
-        "CVE-2026-64728",
-        "CVE-2026-64730",
-        "CVE-2026-64753",
-        "CVE-2026-64757",
-        "CVE-2026-64778",
-        "CVE-2026-64779",
-        "CVE-2026-64780",
-        "CVE-2026-64782",
-        "CVE-2026-64783",
-        "CVE-2026-64784",
-        "CVE-2026-65331",
-        "CVE-2026-65332",
-        "CVE-2026-65333",
-        "CVE-2026-65334",
-        "CVE-2026-65335",
-        "CVE-2026-65336",
-        "CVE-2026-65337",
-        "CVE-2026-65338",
-        "CVE-2026-65340",
-        "CVE-2026-65341",
-        "CVE-2026-65351",
-        "CVE-2026-78376",
-        "CVE-2026-83596",
-        "CVE-2026-84635"
-      ]
-    },
-    {
-      "id": "367252",
-      "title": "Fedora 44 : aom (2026-61e3db09f9)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367252",
-      "cves": []
-    },
-    {
-      "id": "367251",
-      "title": "Fedora 44 : rust-faster-hex (2026-d61f581c33)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367251",
-      "cves": []
-    },
-    {
-      "id": "367250",
-      "title": "Fedora 43 : rust-faster-hex (2026-120aeecae1)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367250",
-      "cves": []
-    },
-    {
-      "id": "367249",
-      "title": "Fedora 44 : GitPython (2026-6576997f43)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367249",
-      "cves": []
-    },
-    {
-      "id": "367248",
-      "title": "Fedora 44 : thunderbird (2026-fe87bcd73d)",
-      "severity": "Critical",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367248",
-      "cves": []
-    },
-    {
-      "id": "367247",
-      "title": "Fedora 44 : chromium (2026-aab47c4e08)",
-      "severity": "Critical",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367247",
-      "cves": [
-        "CVE-2026-110913",
-        "CVE-2026-110914",
-        "CVE-2026-110915",
-        "CVE-2026-110916",
-        "CVE-2026-110917",
-        "CVE-2026-110918",
-        "CVE-2026-110919",
-        "CVE-2026-110920",
-        "CVE-2026-110921",
-        "CVE-2026-110922"
-      ]
-    },
-    {
-      "id": "367246",
-      "title": "Fedora 44 : freerdp (2026-87944ba9bf)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367246",
-      "cves": []
-    },
-    {
-      "id": "367245",
-      "title": "openSUSE 16 Security Update : psqlODBC (openSUSE-SU-2026:22122-1)",
-      "severity": "Medium",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367245",
-      "cves": [
-        "CVE-2026-109448"
-      ]
-    },
-    {
-      "id": "367244",
-      "title": "openSUSE 16: libopenssl-3-devel / libopenssl-3-fips-provider / etc (openSUSE-SU-2026:22102-1)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367244",
-      "cves": [
-        "CVE-2026-35189",
-        "CVE-2026-35191",
-        "CVE-2026-54872",
-        "CVE-2026-54875",
-        "CVE-2026-72897",
-        "CVE-2026-75804",
-        "CVE-2026-75805",
-        "CVE-2026-75806",
-        "CVE-2026-77696",
-        "CVE-2026-84782",
-        "CVE-2026-84784"
-      ]
-    },
-    {
-      "id": "367243",
-      "title": "openSUSE 16 Security Update : cadvisor (openSUSE-SU-2026:22117-1)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367243",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476354",
       "cves": [
         "CVE-2026-63209"
       ]
     },
     {
-      "id": "367242",
-      "title": "openSUSE 16 Security Update : chromium (openSUSE-SU-2026:22118-1)",
+      "id": null,
+      "title": "SCA: security update for github.com/klauspost/compress (GHSA-259r-337f-4rfw)",
       "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367242",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476354",
       "cves": [
-        "CVE-2026-110136",
-        "CVE-2026-110137",
-        "CVE-2026-110138",
-        "CVE-2026-110139",
-        "CVE-2026-110140",
-        "CVE-2026-110141",
-        "CVE-2026-110142",
-        "CVE-2026-110143",
-        "CVE-2026-110144",
-        "CVE-2026-110145",
-        "CVE-2026-110146",
-        "CVE-2026-110147",
-        "CVE-2026-110148",
-        "CVE-2026-110149",
-        "CVE-2026-110150",
-        "CVE-2026-110151",
-        "CVE-2026-110152",
-        "CVE-2026-110153",
-        "CVE-2026-110154",
-        "CVE-2026-110155",
-        "CVE-2026-110156",
-        "CVE-2026-110157",
-        "CVE-2026-110158",
-        "CVE-2026-110159",
-        "CVE-2026-110160",
-        "CVE-2026-110161",
-        "CVE-2026-110162",
-        "CVE-2026-110163",
-        "CVE-2026-110164",
-        "CVE-2026-110165",
-        "CVE-2026-110166",
-        "CVE-2026-110167",
-        "CVE-2026-110168",
-        "CVE-2026-110169",
-        "CVE-2026-110170",
-        "CVE-2026-110171",
-        "CVE-2026-110172"
+        "CVE-2026-63209"
       ]
     },
     {
-      "id": "367241",
-      "title": "openSUSE 16 Security Update : go1.27 (openSUSE-SU-2026:22093-1)",
+      "id": null,
+      "title": "SCA: security update for markdown-it (GHSA-r7fv-28h4-cvq7)",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476353",
+      "cves": [
+        "CVE-2026-111759"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for markdown-it (GHSA-r7fv-28h4-cvq7)",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476353",
+      "cves": [
+        "CVE-2026-111759"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for crass (GHSA-6wmf-3r64-vcwv)",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476352",
+      "cves": [
+        "CVE-2026-61845"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for crass (GHSA-6wmf-3r64-vcwv)",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476352",
+      "cves": [
+        "CVE-2026-61845"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @angular/platform-server (GHSA-w739-gvwx-grc3)",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476351",
+      "cves": [
+        "CVE-2026-111754"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @angular/platform-server (GHSA-w739-gvwx-grc3)",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476351",
+      "cves": [
+        "CVE-2026-111754"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for hono (GHSA-5r4p-p66f-jhc7)",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476350",
+      "cves": [
+        "CVE-2026-111757"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for hono (GHSA-5r4p-p66f-jhc7)",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476350",
+      "cves": [
+        "CVE-2026-111757"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @angular/router (GHSA-62vg-58rm-qff7)",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476349",
+      "cves": [
+        "CVE-2026-111752"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @angular/router (GHSA-62vg-58rm-qff7)",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476349",
+      "cves": [
+        "CVE-2026-111752"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: libpcre2-16, multiple pcre2 packages: security update to 10.43-r1",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476348",
+      "cves": [
+        "CVE-2026-103111",
+        "CVE-2026-86145",
+        "CVE-2026-89156",
+        "CVE-2026-89157"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: libpcre2-16, multiple pcre2 packages: security update to 10.43-r1",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476348",
+      "cves": [
+        "CVE-2026-103111",
+        "CVE-2026-86145",
+        "CVE-2026-89156",
+        "CVE-2026-89157"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple libssh2 packages: security update to 1.11.1-r4",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476347",
+      "cves": [
+        "CVE-2025-15661",
+        "CVE-2026-58050",
+        "CVE-2026-58051",
+        "CVE-2026-66032"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple libssh2 packages: security update to 1.11.1-r4",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476347",
+      "cves": [
+        "CVE-2025-15661",
+        "CVE-2026-58050",
+        "CVE-2026-58051",
+        "CVE-2026-66032"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476345",
+      "cves": [
+        "CVE-2026-109722"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476345",
+      "cves": [
+        "CVE-2026-109722"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476344",
+      "cves": [
+        "CVE-2026-109777"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476344",
+      "cves": [
+        "CVE-2026-109777"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476343",
+      "cves": [
+        "CVE-2026-109718"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476343",
+      "cves": [
+        "CVE-2026-109718"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476342",
+      "cves": [
+        "CVE-2026-109717"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476342",
+      "cves": [
+        "CVE-2026-109717"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476339",
+      "cves": [
+        "CVE-2026-109731"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476339",
+      "cves": [
+        "CVE-2026-109731"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple firefox packages: security update to 154.0-r0",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476338",
+      "cves": [
+        "CVE-2026-74947"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple firefox packages: security update to 154.0-r0",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476338",
+      "cves": [
+        "CVE-2026-74947"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476337",
+      "cves": [
+        "CVE-2026-109764"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476337",
+      "cves": [
+        "CVE-2026-109764"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476336",
+      "cves": [
+        "CVE-2026-109704"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476336",
+      "cves": [
+        "CVE-2026-109704"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476335",
+      "cves": [
+        "CVE-2026-109727"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476335",
+      "cves": [
+        "CVE-2026-109727"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476334",
+      "cves": [
+        "CVE-2026-109743"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476334",
+      "cves": [
+        "CVE-2026-109743"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476332",
+      "cves": [
+        "CVE-2026-109713"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476332",
+      "cves": [
+        "CVE-2026-109713"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476331",
+      "cves": [
+        "CVE-2026-109723"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476331",
+      "cves": [
+        "CVE-2026-109723"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476330",
+      "cves": [
+        "CVE-2026-109728"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476330",
+      "cves": [
+        "CVE-2026-109728"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476328",
+      "cves": [
+        "CVE-2026-109738"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "Medium",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476328",
+      "cves": [
+        "CVE-2026-109738"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476327",
+      "cves": [
+        "CVE-2026-109759"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476327",
+      "cves": [
+        "CVE-2026-109759"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476326",
+      "cves": [
+        "CVE-2026-109736"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476326",
+      "cves": [
+        "CVE-2026-109736"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
       "severity": "Critical",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367241",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476323",
       "cves": [
-        "CVE-2026-56857",
-        "CVE-2026-56866",
-        "CVE-2026-78659",
-        "CVE-2026-78660",
-        "CVE-2026-78663",
-        "CVE-2026-78667",
-        "CVE-2026-78669",
-        "CVE-2026-94439",
-        "CVE-2026-94440",
-        "CVE-2026-94444",
-        "CVE-2026-94447",
-        "CVE-2026-94448",
-        "CVE-2026-97030",
-        "CVE-2026-97031",
-        "CVE-2026-97032"
+        "CVE-2026-109745"
       ]
     },
     {
-      "id": "367240",
-      "title": "openSUSE 16 Security Update : python-oauthlib (openSUSE-SU-2026:22103-1)",
-      "severity": "Medium",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367240",
-      "cves": [
-        "CVE-2026-49264",
-        "CVE-2026-49265"
-      ]
-    },
-    {
-      "id": "367239",
-      "title": "openSUSE 16 Security Update : python-virtualenv (openSUSE-SU-2026:22100-1)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367239",
-      "cves": [
-        "CVE-2026-102930",
-        "CVE-2026-102938"
-      ]
-    },
-    {
-      "id": "367238",
-      "title": "openSUSE 16 Security Update : go1.26 (openSUSE-SU-2026:22095-1)",
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
       "severity": "Critical",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367238",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476323",
       "cves": [
-        "CVE-2026-56857",
-        "CVE-2026-56866",
-        "CVE-2026-78659",
-        "CVE-2026-78660",
-        "CVE-2026-78667",
-        "CVE-2026-94439",
-        "CVE-2026-94440",
-        "CVE-2026-94444",
-        "CVE-2026-94447",
-        "CVE-2026-94448",
-        "CVE-2026-97030",
-        "CVE-2026-97031",
-        "CVE-2026-97032"
+        "CVE-2026-109745"
       ]
     },
     {
-      "id": "367237",
-      "title": "openSUSE 16 Security Update : hauler (openSUSE-SU-2026:22116-1)",
+      "id": null,
+      "title": "Chainguard: multiple firefox packages: security update to 154.0-r0",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476322",
+      "cves": [
+        "CVE-2026-74937"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple firefox packages: security update to 154.0-r0",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476322",
+      "cves": [
+        "CVE-2026-74937"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple firefox packages: security update to 154.0-r0",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476320",
+      "cves": [
+        "CVE-2026-74950"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple firefox packages: security update to 154.0-r0",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476320",
+      "cves": [
+        "CVE-2026-74950"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476318",
+      "cves": [
+        "CVE-2026-109760"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476318",
+      "cves": [
+        "CVE-2026-109760"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476316",
+      "cves": [
+        "CVE-2026-109762"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
+      "severity": "High",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476316",
+      "cves": [
+        "CVE-2026-109762"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
       "severity": "Medium",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367237",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/476315",
       "cves": [
-        "CVE-2026-53495"
+        "CVE-2026-109770"
       ]
     },
     {
-      "id": "367236",
-      "title": "openSUSE 16 Security Update : chromium (openSUSE-SU-2026:22124-1)",
-      "severity": "Critical",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367236",
-      "cves": [
-        "CVE-2026-110913",
-        "CVE-2026-110914",
-        "CVE-2026-110915",
-        "CVE-2026-110916",
-        "CVE-2026-110917",
-        "CVE-2026-110918",
-        "CVE-2026-110919",
-        "CVE-2026-110920",
-        "CVE-2026-110921",
-        "CVE-2026-110922"
-      ]
-    },
-    {
-      "id": "367235",
-      "title": "openSUSE 16: gimp / gimp-devel / gimp-extension-goat-excercises / gimp-lang / etc (openSUSE-SU-2026:22123-1)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367235",
-      "cves": [
-        "CVE-2026-106061",
-        "CVE-2026-106062",
-        "CVE-2026-106063",
-        "CVE-2026-82324",
-        "CVE-2026-82328",
-        "CVE-2026-82343"
-      ]
-    },
-    {
-      "id": "367234",
-      "title": "openSUSE 16: libp11-kit0 / p11-kit / p11-kit-devel / p11-kit-nss-trust / etc (openSUSE-SU-2026:22105-1)",
+      "id": null,
+      "title": "Chainguard: firefox-esr-140: security update to 140.17.0-r2",
       "severity": "Medium",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367234",
+      "date": "Tue, 20 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/476315",
       "cves": [
-        "CVE-2026-13757",
-        "CVE-2026-18938"
-      ]
-    },
-    {
-      "id": "367233",
-      "title": "openSUSE 16 Security Update : mutt (openSUSE-SU-2026:22099-1)",
-      "severity": "Low",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367233",
-      "cves": [
-        "CVE-2026-107570"
-      ]
-    },
-    {
-      "id": "367232",
-      "title": "openSUSE 16 Security Update : bcel (openSUSE-SU-2026:22109-1)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367232",
-      "cves": [
-        "CVE-2026-105111",
-        "CVE-2026-94114"
-      ]
-    },
-    {
-      "id": "367231",
-      "title": "openSUSE 16 Security Update : perl-XS-Parse-Keyword (openSUSE-SU-2026:22101-1)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367231",
-      "cves": [
-        "CVE-2026-85644"
-      ]
-    },
-    {
-      "id": "367230",
-      "title": "openSUSE 16: nv-prefer-signed-open-driver-G07 / etc (openSUSE-SU-2026:22106-1)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367230",
-      "cves": [
-        "CVE-2026-47489",
-        "CVE-2026-47491",
-        "CVE-2026-47492",
-        "CVE-2026-47494",
-        "CVE-2026-47500",
-        "CVE-2026-47501",
-        "CVE-2026-47502",
-        "CVE-2026-47504",
-        "CVE-2026-47507",
-        "CVE-2026-47508",
-        "CVE-2026-47509",
-        "CVE-2026-47510",
-        "CVE-2026-47511",
-        "CVE-2026-47512",
-        "CVE-2026-47513",
-        "CVE-2026-47514",
-        "CVE-2026-47515",
-        "CVE-2026-47516",
-        "CVE-2026-47517",
-        "CVE-2026-47518",
-        "CVE-2026-47522",
-        "CVE-2026-47523",
-        "CVE-2026-47524",
-        "CVE-2026-47525",
-        "CVE-2026-47526",
-        "CVE-2026-47527",
-        "CVE-2026-47528",
-        "CVE-2026-47529",
-        "CVE-2026-47530",
-        "CVE-2026-47531",
-        "CVE-2026-47532",
-        "CVE-2026-47533",
-        "CVE-2026-47534",
-        "CVE-2026-47537",
-        "CVE-2026-47538",
-        "CVE-2026-47540",
-        "CVE-2026-47542",
-        "CVE-2026-47543",
-        "CVE-2026-47545",
-        "CVE-2026-47546",
-        "CVE-2026-47547",
-        "CVE-2026-47548",
-        "CVE-2026-47549",
-        "CVE-2026-47551",
-        "CVE-2026-47552",
-        "CVE-2026-47553",
-        "CVE-2026-47554",
-        "CVE-2026-47555",
-        "CVE-2026-47556",
-        "CVE-2026-47557",
-        "CVE-2026-47558",
-        "CVE-2026-47559",
-        "CVE-2026-47560",
-        "CVE-2026-47561",
-        "CVE-2026-47562",
-        "CVE-2026-47563",
-        "CVE-2026-47564",
-        "CVE-2026-47565",
-        "CVE-2026-47566",
-        "CVE-2026-47567",
-        "CVE-2026-47568",
-        "CVE-2026-47569",
-        "CVE-2026-47572",
-        "CVE-2026-47586",
-        "CVE-2026-47587",
-        "CVE-2026-47588",
-        "CVE-2026-47589",
-        "CVE-2026-47590",
-        "CVE-2026-47591",
-        "CVE-2026-47592",
-        "CVE-2026-47594",
-        "CVE-2026-47595",
-        "CVE-2026-47596",
-        "CVE-2026-47597",
-        "CVE-2026-47598",
-        "CVE-2026-47599",
-        "CVE-2026-47600",
-        "CVE-2026-47601",
-        "CVE-2026-47602",
-        "CVE-2026-47603",
-        "CVE-2026-47604"
-      ]
-    },
-    {
-      "id": "367229",
-      "title": "RHEL 9 : rsyslog (RHSA-2026:84576)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367229",
-      "cves": [
-        "CVE-2026-19654",
-        "CVE-2026-78002"
-      ]
-    },
-    {
-      "id": "367228",
-      "title": "RHEL 9 : perl-URI (RHSA-2026:84588)",
-      "severity": "Medium",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367228",
-      "cves": [
-        "CVE-2026-19953"
-      ]
-    },
-    {
-      "id": "367227",
-      "title": "RHEL 8 : kernel (RHSA-2026:84677)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367227",
-      "cves": [
-        "CVE-2026-43450",
-        "CVE-2026-46149",
-        "CVE-2026-63920",
-        "CVE-2026-63922",
-        "CVE-2026-63924"
-      ]
-    },
-    {
-      "id": "367226",
-      "title": "RHEL 9 : openssl (RHSA-2026:84572)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367226",
-      "cves": [
-        "CVE-2025-69418",
-        "CVE-2026-28390",
-        "CVE-2026-31790",
-        "CVE-2026-34182",
-        "CVE-2026-45445",
-        "CVE-2026-45447"
-      ]
-    },
-    {
-      "id": "367225",
-      "title": "RHEL 10 : nodejs22 (RHSA-2026:84703)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367225",
-      "cves": [
-        "CVE-2026-19534",
-        "CVE-2026-9496"
-      ]
-    },
-    {
-      "id": "367224",
-      "title": "RHEL 9 : gd (RHSA-2026:84580)",
-      "severity": "High",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367224",
-      "cves": [
-        "CVE-2026-9672"
-      ]
-    },
-    {
-      "id": "367223",
-      "title": "RHEL 10 : perl-URI (RHSA-2026:84587)",
-      "severity": "Medium",
-      "date": "Mon, 19 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/367223",
-      "cves": [
-        "CVE-2026-19953"
+        "CVE-2026-109770"
       ]
     }
   ]
