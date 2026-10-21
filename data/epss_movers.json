@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-20",
-  "previous_date": "2026-10-13",
+  "current_date": "2026-10-21",
+  "previous_date": "2026-10-14",
   "risers": [
     {
       "id": "CVE-2026-43284",
@@ -10,6 +10,13 @@
       "prev": 0.0247,
       "delta": 0.91724,
       "name": "xfrm: esp: avoid in-place decrypt on shared skb frags"
+    },
+    {
+      "id": "CVE-2026-35616",
+      "now": 0.93983,
+      "prev": 0.09098,
+      "delta": 0.84885,
+      "name": "Fortinet FortiClientEMS"
     },
     {
       "id": "CVE-2026-72898",
@@ -33,11 +40,11 @@
       "name": "Improper Certificate Validation in Quantum Security Gateway"
     },
     {
-      "id": "CVE-2001-1342",
-      "now": 0.30738,
-      "prev": 0.12006,
-      "delta": 0.18732,
-      "name": "Apache before 1.3.20 on Windows and OS/2 systems allows remote attackers to cause a denial of service (GPF) vi"
+      "id": "CVE-2008-4815",
+      "now": 0.29149,
+      "prev": 0.07816,
+      "delta": 0.21333,
+      "name": "Untrusted search path vulnerability in Adobe Reader and Acrobat 8.1.2 and earlier on Unix and Linux allows att"
     },
     {
       "id": "CVE-2017-9765",
@@ -61,20 +68,6 @@
       "name": "Everest Forms <= 3.0.9.4 - Unauthenticated Arbitrary File Upload, Read, and Deletion"
     },
     {
-      "id": "CVE-2023-0286",
-      "now": 0.71239,
-      "prev": 0.59501,
-      "delta": 0.11738,
-      "name": "X.400 address type confusion in X.509 GeneralName"
-    },
-    {
-      "id": "CVE-2022-28108",
-      "now": 0.22193,
-      "prev": 0.11727,
-      "delta": 0.10466,
-      "name": "Selenium Server (Grid) before 4 allows CSRF because it permits non-JSON content types such as application/x-ww"
-    },
-    {
       "id": "CVE-2014-9222",
       "now": 0.7401,
       "prev": 0.63748,
@@ -89,18 +82,18 @@
       "name": "Atlassian Bamboo Data Center"
     },
     {
+      "id": "CVE-2023-0286",
+      "now": 0.71239,
+      "prev": 0.61979,
+      "delta": 0.0926,
+      "name": "X.400 address type confusion in X.509 GeneralName"
+    },
+    {
       "id": "CVE-2025-57819",
       "now": 0.95024,
       "prev": 0.86347,
       "delta": 0.08677,
       "name": "FreePBX Affected by Authentication Bypass Leading to SQL Injection and RCE"
-    },
-    {
-      "id": "CVE-2021-30119",
-      "now": 0.58759,
-      "prev": 0.50323,
-      "delta": 0.08436,
-      "name": "Authenticated Authenticated reflective XSS in Kaseya VSA <= v9.5.6"
     },
     {
       "id": "CVE-2022-4450",
@@ -124,6 +117,13 @@
       "name": "Win32k Elevation of Privilege Vulnerability"
     },
     {
+      "id": "CVE-2008-4813",
+      "now": 0.17262,
+      "prev": 0.09497,
+      "delta": 0.07765,
+      "name": "Adobe Reader and Acrobat 8.1.2 and earlier, and before 7.1.1, allow remote attackers to execute arbitrary code"
+    },
+    {
       "id": "CVE-2022-4304",
       "now": 0.23509,
       "prev": 0.16195,
@@ -136,6 +136,13 @@
       "prev": 0.7727,
       "delta": 0.07126,
       "name": "Fortinet Fortinet FortiWeb"
+    },
+    {
+      "id": "CVE-2008-4814",
+      "now": 0.18975,
+      "prev": 0.11867,
+      "delta": 0.07108,
+      "name": "Unspecified vulnerability in a JavaScript method in Adobe Reader and Acrobat 8.1.2 and earlier, and before 7.1"
     },
     {
       "id": "CVE-2020-5192",
@@ -206,13 +213,6 @@
       "prev": 0.33836,
       "delta": 0.05468,
       "name": "Rockwell FactoryTalk Diagnostics"
-    },
-    {
-      "id": "CVE-2001-0508",
-      "now": 0.32435,
-      "prev": 0.2705,
-      "delta": 0.05385,
-      "name": "Vulnerability in IIS 5.0 allows remote attackers to cause a denial of service (restart) via a long, invalid We"
     }
   ],
   "newly_high": [
@@ -222,6 +222,13 @@
       "prev": 0.0247,
       "delta": 0.91724,
       "name": "xfrm: esp: avoid in-place decrypt on shared skb frags"
+    },
+    {
+      "id": "CVE-2026-35616",
+      "now": 0.93983,
+      "prev": 0.09098,
+      "delta": 0.84885,
+      "name": "Fortinet FortiClientEMS"
     },
     {
       "id": "CVE-2026-72898",
@@ -250,6 +257,13 @@
       "prev": 0.44458,
       "delta": 0.05838,
       "name": "DataEase has an unauthorized vulnerability"
+    },
+    {
+      "id": "CVE-2025-3833",
+      "now": 0.50525,
+      "prev": 0.46569,
+      "delta": 0.03956,
+      "name": "SQL Injection"
     },
     {
       "id": "CVE-2025-43562",
