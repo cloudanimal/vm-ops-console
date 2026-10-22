@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-21",
-  "previous_date": "2026-10-14",
+  "current_date": "2026-10-22",
+  "previous_date": "2026-10-15",
   "risers": [
     {
       "id": "CVE-2026-43284",
@@ -19,25 +19,18 @@
       "name": "Fortinet FortiClientEMS"
     },
     {
-      "id": "CVE-2026-72898",
-      "now": 0.97335,
-      "prev": 0.19048,
-      "delta": 0.78287,
-      "name": "Metabase SQL injection via password reset endpoint"
+      "id": "CVE-2026-28318",
+      "now": 0.43651,
+      "prev": 0.01942,
+      "delta": 0.41709,
+      "name": "SolarWinds Serv-U Unauthenticated Denial of Service Vulnerability"
     },
     {
-      "id": "CVE-2026-93616",
-      "now": 0.75872,
-      "prev": 0.19654,
-      "delta": 0.56218,
-      "name": "Directory Traversal and File upload allows execution of arbitrary script on the Management"
-    },
-    {
-      "id": "CVE-2026-85102",
-      "now": 0.504,
-      "prev": 0.07546,
-      "delta": 0.42854,
-      "name": "Improper Certificate Validation in Quantum Security Gateway"
+      "id": "CVE-2026-105134",
+      "now": 0.3831,
+      "prev": 0.03237,
+      "delta": 0.35073,
+      "name": "Ahsay AhsayCBS Replication Receiver UpdateReceivers.do os command injection"
     },
     {
       "id": "CVE-2008-4815",
@@ -82,25 +75,11 @@
       "name": "Atlassian Bamboo Data Center"
     },
     {
-      "id": "CVE-2023-0286",
-      "now": 0.71239,
-      "prev": 0.61979,
-      "delta": 0.0926,
-      "name": "X.400 address type confusion in X.509 GeneralName"
-    },
-    {
       "id": "CVE-2025-57819",
       "now": 0.95024,
       "prev": 0.86347,
       "delta": 0.08677,
       "name": "FreePBX Affected by Authentication Bypass Leading to SQL Injection and RCE"
-    },
-    {
-      "id": "CVE-2022-4450",
-      "now": 0.2859,
-      "prev": 0.20287,
-      "delta": 0.08303,
-      "name": "Double free after calling PEM_read_bio_ex"
     },
     {
       "id": "CVE-2025-52688",
@@ -124,13 +103,6 @@
       "name": "Adobe Reader and Acrobat 8.1.2 and earlier, and before 7.1.1, allow remote attackers to execute arbitrary code"
     },
     {
-      "id": "CVE-2022-4304",
-      "now": 0.23509,
-      "prev": 0.16195,
-      "delta": 0.07314,
-      "name": "Timing Oracle in RSA Decryption"
-    },
-    {
       "id": "CVE-2021-22123",
       "now": 0.84396,
       "prev": 0.7727,
@@ -143,6 +115,13 @@
       "prev": 0.11867,
       "delta": 0.07108,
       "name": "Unspecified vulnerability in a JavaScript method in Adobe Reader and Acrobat 8.1.2 and earlier, and before 7.1"
+    },
+    {
+      "id": "CVE-2002-0072",
+      "now": 0.63478,
+      "prev": 0.56627,
+      "delta": 0.06851,
+      "name": "The w3svc.dll ISAPI filter in Front Page Server Extensions and ASP.NET for Internet Information Server (IIS) 4"
     },
     {
       "id": "CVE-2020-5192",
@@ -173,18 +152,25 @@
       "name": "Stack-based buffer overflow in Mini-stream CastRipper 2.50.70 allows remote attackers to execute arbitrary cod"
     },
     {
+      "id": "CVE-2002-0147",
+      "now": 0.68024,
+      "prev": 0.61761,
+      "delta": 0.06263,
+      "name": "Buffer overflow in the ASP data transfer mechanism in Internet Information Server (IIS) 4.0, 5.0, and 5.1 allo"
+    },
+    {
+      "id": "CVE-2002-0149",
+      "now": 0.68834,
+      "prev": 0.62704,
+      "delta": 0.0613,
+      "name": "Buffer overflow in ASP Server-Side Include Function in IIS 4.0, 5.0 and 5.1 allows remote attackers to cause a"
+    },
+    {
       "id": "CVE-2025-20284",
       "now": 0.2512,
       "prev": 0.19131,
       "delta": 0.05989,
       "name": "Cisco Identity Services Engine Authenticated Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2020-5802",
-      "now": 0.447,
-      "prev": 0.38828,
-      "delta": 0.05872,
-      "name": "Rockwell FactoryTalk Linx"
     },
     {
       "id": "CVE-2024-56511",
@@ -208,11 +194,25 @@
       "name": "Windows NTLM Elevation of Privilege Vulnerability"
     },
     {
-      "id": "CVE-2020-5807",
-      "now": 0.39304,
-      "prev": 0.33836,
-      "delta": 0.05468,
-      "name": "Rockwell FactoryTalk Diagnostics"
+      "id": "CVE-2009-1774",
+      "now": 0.23403,
+      "prev": 0.17898,
+      "delta": 0.05505,
+      "name": "Directory traversal vulnerability in plugins/ddb/foot.php in Strawberry 1.1.1 allows remote attackers to inclu"
+    },
+    {
+      "id": "CVE-2021-30119",
+      "now": 0.58759,
+      "prev": 0.53365,
+      "delta": 0.05394,
+      "name": "Authenticated Authenticated reflective XSS in Kaseya VSA <= v9.5.6"
+    },
+    {
+      "id": "CVE-2025-6023",
+      "now": 0.57743,
+      "prev": 0.52586,
+      "delta": 0.05157,
+      "name": "Grafana Grafana"
     }
   ],
   "newly_high": [
@@ -231,27 +231,6 @@
       "name": "Fortinet FortiClientEMS"
     },
     {
-      "id": "CVE-2026-72898",
-      "now": 0.97335,
-      "prev": 0.19048,
-      "delta": 0.78287,
-      "name": "Metabase SQL injection via password reset endpoint"
-    },
-    {
-      "id": "CVE-2026-93616",
-      "now": 0.75872,
-      "prev": 0.19654,
-      "delta": 0.56218,
-      "name": "Directory Traversal and File upload allows execution of arbitrary script on the Management"
-    },
-    {
-      "id": "CVE-2026-85102",
-      "now": 0.504,
-      "prev": 0.07546,
-      "delta": 0.42854,
-      "name": "Improper Certificate Validation in Quantum Security Gateway"
-    },
-    {
       "id": "CVE-2024-56511",
       "now": 0.50296,
       "prev": 0.44458,
@@ -266,11 +245,25 @@
       "name": "SQL Injection"
     },
     {
+      "id": "CVE-2002-0150",
+      "now": 0.52918,
+      "prev": 0.49477,
+      "delta": 0.03441,
+      "name": "Buffer overflow in Internet Information Server (IIS) 4.0, 5.0, and 5.1 allows remote attackers to spoof the sa"
+    },
+    {
       "id": "CVE-2025-43562",
       "now": 0.51028,
       "prev": 0.49295,
       "delta": 0.01733,
       "name": "ColdFusion | Improper Neutralization of Special Elements used in an OS Command ('OS Comman"
+    },
+    {
+      "id": "CVE-2025-58434",
+      "now": 0.50541,
+      "prev": 0.49894,
+      "delta": 0.00647,
+      "name": "Flowise Cloud and Local Deployments have Unauthenticated Password Reset Token Disclosure t"
     }
   ]
 }
