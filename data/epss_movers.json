@@ -1,16 +1,9 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-22",
-  "previous_date": "2026-10-15",
+  "current_date": "2026-10-23",
+  "previous_date": "2026-10-16",
   "risers": [
-    {
-      "id": "CVE-2026-43284",
-      "now": 0.94194,
-      "prev": 0.0247,
-      "delta": 0.91724,
-      "name": "xfrm: esp: avoid in-place decrypt on shared skb frags"
-    },
     {
       "id": "CVE-2026-35616",
       "now": 0.93983,
@@ -28,8 +21,8 @@
     {
       "id": "CVE-2026-105134",
       "now": 0.3831,
-      "prev": 0.03237,
-      "delta": 0.35073,
+      "prev": 0.04782,
+      "delta": 0.33528,
       "name": "Ahsay AhsayCBS Replication Receiver UpdateReceivers.do os command injection"
     },
     {
@@ -68,13 +61,6 @@
       "name": "AllegroSoft RomPager 4.34 and earlier, as used in Huawei Home Gateway products and other vendors and products,"
     },
     {
-      "id": "CVE-2026-21589",
-      "now": 0.12711,
-      "prev": 0.02777,
-      "delta": 0.09934,
-      "name": "Atlassian Bamboo Data Center"
-    },
-    {
       "id": "CVE-2025-57819",
       "now": 0.95024,
       "prev": 0.86347,
@@ -101,6 +87,13 @@
       "prev": 0.09497,
       "delta": 0.07765,
       "name": "Adobe Reader and Acrobat 8.1.2 and earlier, and before 7.1.1, allow remote attackers to execute arbitrary code"
+    },
+    {
+      "id": "CVE-2019-5645",
+      "now": 0.49181,
+      "prev": 0.41688,
+      "delta": 0.07493,
+      "name": "Rapid7 Metasploit HTTP Handler Denial of Service"
     },
     {
       "id": "CVE-2021-22123",
@@ -157,6 +150,13 @@
       "prev": 0.61761,
       "delta": 0.06263,
       "name": "Buffer overflow in the ASP data transfer mechanism in Internet Information Server (IIS) 4.0, 5.0, and 5.1 allo"
+    },
+    {
+      "id": "CVE-2026-42508",
+      "now": 0.0691,
+      "prev": 0.00654,
+      "delta": 0.06256,
+      "name": "Invoking  auth bypass via unenforced @revoked status in golang.org/x/crypto/ssh/knownhosts"
     },
     {
       "id": "CVE-2002-0149",
@@ -216,13 +216,6 @@
     }
   ],
   "newly_high": [
-    {
-      "id": "CVE-2026-43284",
-      "now": 0.94194,
-      "prev": 0.0247,
-      "delta": 0.91724,
-      "name": "xfrm: esp: avoid in-place decrypt on shared skb frags"
-    },
     {
       "id": "CVE-2026-35616",
       "now": 0.93983,
