@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23",
+  "updated": "2026-10-24",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,632 +7,602 @@
   "items": [
     {
       "id": null,
-      "title": "Chainguard: py3.10-opentelemetry-semantic-conventions-ai: security update to 0.5.1-r2",
-      "severity": "Medium",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477150",
-      "cves": [
-        "CVE-2026-114603"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: py3.10-opentelemetry-semantic-conventions-ai: security update to 0.5.1-r2",
-      "severity": "Medium",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477150",
-      "cves": [
-        "CVE-2026-114603"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple nodejs packages: security update to 22.23.4-r0",
-      "severity": "Critical",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477149",
-      "cves": [
-        "CVE-2026-105481",
-        "CVE-2026-105482",
-        "CVE-2026-106069",
-        "CVE-2026-106072",
-        "CVE-2026-106073",
-        "CVE-2026-106074"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple nodejs packages: security update to 22.23.4-r0",
-      "severity": "Critical",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477149",
-      "cves": [
-        "CVE-2026-105481",
-        "CVE-2026-105482",
-        "CVE-2026-106069",
-        "CVE-2026-106072",
-        "CVE-2026-106073",
-        "CVE-2026-106074"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: elastic-connectors-8.19: security update to 8.19.23-r2",
+      "title": "Chainguard: multiple request-10630-openssl-4.0 packages: security update to 4.10630.0-r0",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477148",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477408",
       "cves": [
-        "CVE-2026-75508"
+        "CVE-2016-2183"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: elastic-connectors-8.19: security update to 8.19.23-r2",
+      "title": "Chainguard: multiple request-10630-openssl-4.0 packages: security update to 4.10630.0-r0",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477148",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477408",
       "cves": [
-        "CVE-2026-75508"
+        "CVE-2016-2183"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: elastic-connectors-8.19: security update to 8.19.23-r2",
+      "title": "Chainguard: multiple chromium packages: security update to 156.0.8078.47-r0",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477147",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477407",
       "cves": [
-        "CVE-2026-75507"
+        "CVE-2026-113344"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: elastic-connectors-8.19: security update to 8.19.23-r2",
+      "title": "Chainguard: multiple chromium packages: security update to 156.0.8078.47-r0",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477147",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477407",
       "cves": [
-        "CVE-2026-75507"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple tomcat-native packages: security update to 2.0.16-r0",
-      "severity": "Critical",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477146",
-      "cves": [
-        "CVE-2026-86243",
-        "CVE-2026-86246",
-        "CVE-2026-86247"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple tomcat-native packages: security update to 2.0.16-r0",
-      "severity": "Critical",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477146",
-      "cves": [
-        "CVE-2026-86243",
-        "CVE-2026-86246",
-        "CVE-2026-86247"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple nodejs packages: security update to 24.22.1-r0",
-      "severity": "Critical",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477145",
-      "cves": [
-        "CVE-2026-105481",
-        "CVE-2026-105482",
-        "CVE-2026-105483",
-        "CVE-2026-106069",
-        "CVE-2026-106070",
-        "CVE-2026-106071",
-        "CVE-2026-106072",
-        "CVE-2026-106073",
-        "CVE-2026-106074"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple nodejs packages: security update to 24.22.1-r0",
-      "severity": "Critical",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477145",
-      "cves": [
-        "CVE-2026-105481",
-        "CVE-2026-105482",
-        "CVE-2026-105483",
-        "CVE-2026-106069",
-        "CVE-2026-106070",
-        "CVE-2026-106071",
-        "CVE-2026-106072",
-        "CVE-2026-106073",
-        "CVE-2026-106074"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple brotli packages, multiple py3-brotli packages: security update to 1.2.1-r0",
-      "severity": "Critical",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477144",
-      "cves": [
-        "CVE-2026-111497"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple brotli packages, multiple py3-brotli packages: security update to 1.2.1-r0",
-      "severity": "Critical",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477144",
-      "cves": [
-        "CVE-2026-111497"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: expat: security update to 2.9.0-1+e2",
-      "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477143",
-      "cves": [
-        "CVE-2026-115506"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: expat: security update to 2.9.0-1+e2",
-      "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477143",
-      "cves": [
-        "CVE-2026-115506"
+        "CVE-2026-113344"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477142",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477406",
       "cves": [
-        "CVE-2026-113255"
+        "CVE-2026-113175"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477142",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477406",
       "cves": [
-        "CVE-2026-113255"
+        "CVE-2026-113175"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477141",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477405",
       "cves": [
-        "CVE-2026-113215"
+        "CVE-2026-113192"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477141",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477405",
       "cves": [
-        "CVE-2026-113215"
+        "CVE-2026-113192"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477404",
+      "cves": [
+        "CVE-2026-113083"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477404",
+      "cves": [
+        "CVE-2026-113083"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477140",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477403",
       "cves": [
-        "CVE-2026-113240"
+        "CVE-2026-113181"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477140",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477403",
       "cves": [
-        "CVE-2026-113240"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 156.0.8078.47",
-      "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477139",
-      "cves": [
-        "CVE-2026-113059"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 156.0.8078.47",
-      "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477139",
-      "cves": [
-        "CVE-2026-113059"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 156.0.8078.47",
-      "severity": "Medium",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477138",
-      "cves": [
-        "CVE-2026-113237"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 156.0.8078.47",
-      "severity": "Medium",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477138",
-      "cves": [
-        "CVE-2026-113237"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 156.0.8078.47",
-      "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477137",
-      "cves": [
-        "CVE-2026-113012"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 156.0.8078.47",
-      "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477137",
-      "cves": [
-        "CVE-2026-113012"
+        "CVE-2026-113181"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "Critical",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477136",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477402",
       "cves": [
-        "CVE-2026-113342"
+        "CVE-2026-113186"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "Critical",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477136",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477402",
       "cves": [
-        "CVE-2026-113342"
+        "CVE-2026-113186"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477135",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477401",
       "cves": [
-        "CVE-2026-113305"
+        "CVE-2026-113194"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477135",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477401",
       "cves": [
-        "CVE-2026-113305"
+        "CVE-2026-113194"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477400",
+      "cves": [
+        "CVE-2026-113117"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477400",
+      "cves": [
+        "CVE-2026-113117"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477134",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477399",
       "cves": [
-        "CVE-2026-113278"
+        "CVE-2026-113105"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477134",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477399",
       "cves": [
-        "CVE-2026-113278"
+        "CVE-2026-113105"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477398",
+      "cves": [
+        "CVE-2026-113217"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477398",
+      "cves": [
+        "CVE-2026-113217"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477397",
+      "cves": [
+        "CVE-2026-113156"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477397",
+      "cves": [
+        "CVE-2026-113156"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477396",
+      "cves": [
+        "CVE-2026-113107"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477396",
+      "cves": [
+        "CVE-2026-113107"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477133",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477395",
       "cves": [
-        "CVE-2026-113025"
+        "CVE-2026-113197"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477133",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477395",
       "cves": [
-        "CVE-2026-113025"
+        "CVE-2026-113197"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477132",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477394",
       "cves": [
-        "CVE-2026-113256"
+        "CVE-2026-113191"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477132",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477394",
       "cves": [
-        "CVE-2026-113256"
+        "CVE-2026-113191"
       ]
     },
     {
       "id": null,
-      "title": "Echo: chromium: security update to 156.0.8078.47",
-      "severity": "Medium",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477131",
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477393",
       "cves": [
-        "CVE-2026-113310"
+        "CVE-2026-110913"
       ]
     },
     {
       "id": null,
-      "title": "Echo: chromium: security update to 156.0.8078.47",
-      "severity": "Medium",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477131",
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477393",
       "cves": [
-        "CVE-2026-113310"
+        "CVE-2026-110913"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477392",
+      "cves": [
+        "CVE-2026-110921"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477392",
+      "cves": [
+        "CVE-2026-110921"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477391",
+      "cves": [
+        "CVE-2026-113164"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477391",
+      "cves": [
+        "CVE-2026-113164"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477130",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477390",
       "cves": [
-        "CVE-2026-113301"
+        "CVE-2026-113040"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477130",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477390",
       "cves": [
-        "CVE-2026-113301"
+        "CVE-2026-113040"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477129",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477389",
       "cves": [
-        "CVE-2026-112999"
+        "CVE-2026-113160"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477129",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477389",
       "cves": [
-        "CVE-2026-112999"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 156.0.8078.47",
-      "severity": "Medium",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477128",
-      "cves": [
-        "CVE-2026-113325"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 156.0.8078.47",
-      "severity": "Medium",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477128",
-      "cves": [
-        "CVE-2026-113325"
+        "CVE-2026-113160"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477127",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477388",
       "cves": [
-        "CVE-2026-113114"
+        "CVE-2026-113057"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477127",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477388",
       "cves": [
-        "CVE-2026-113114"
+        "CVE-2026-113057"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477126",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477387",
       "cves": [
-        "CVE-2026-113318"
+        "CVE-2026-113176"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477126",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477387",
       "cves": [
-        "CVE-2026-113318"
+        "CVE-2026-113176"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477386",
+      "cves": [
+        "CVE-2026-110914"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47-1~deb12u1",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477386",
+      "cves": [
+        "CVE-2026-110914"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477125",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477385",
       "cves": [
-        "CVE-2026-113065"
+        "CVE-2026-113110"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477125",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477385",
       "cves": [
-        "CVE-2026-113065"
+        "CVE-2026-113110"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477384",
+      "cves": [
+        "CVE-2026-113101"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477384",
+      "cves": [
+        "CVE-2026-113101"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477383",
+      "cves": [
+        "CVE-2026-113162"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477383",
+      "cves": [
+        "CVE-2026-113162"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "Medium",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477124",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477382",
       "cves": [
-        "CVE-2026-113098"
+        "CVE-2026-113102"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "Medium",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477124",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477382",
       "cves": [
-        "CVE-2026-113098"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 156.0.8078.47",
-      "severity": "Critical",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477123",
-      "cves": [
-        "CVE-2026-113072"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: chromium: security update to 156.0.8078.47",
-      "severity": "Critical",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477123",
-      "cves": [
-        "CVE-2026-113072"
+        "CVE-2026-113102"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477122",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477381",
       "cves": [
-        "CVE-2026-113302"
+        "CVE-2026-113149"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477122",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477381",
       "cves": [
-        "CVE-2026-113302"
+        "CVE-2026-113149"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477121",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477380",
       "cves": [
-        "CVE-2026-113234"
+        "CVE-2026-113112"
       ]
     },
     {
       "id": null,
       "title": "Echo: chromium: security update to 156.0.8078.47",
       "severity": "High",
-      "date": "Fri, 23 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477121",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477380",
       "cves": [
-        "CVE-2026-113234"
+        "CVE-2026-113112"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477379",
+      "cves": [
+        "CVE-2026-113100"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: chromium: security update to 156.0.8078.47",
+      "severity": "High",
+      "date": "Sat, 24 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477379",
+      "cves": [
+        "CVE-2026-113100"
       ]
     }
   ]

@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-23",
+  "updated": "2026-10-24",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-23",
-  "previous_date": "2026-10-16",
+  "current_date": "2026-10-24",
+  "previous_date": "2026-10-17",
   "risers": [
     {
       "id": "CVE-2026-35616",
@@ -10,6 +10,13 @@
       "prev": 0.09098,
       "delta": 0.84885,
       "name": "Fortinet FortiClientEMS"
+    },
+    {
+      "id": "CVE-2026-76460",
+      "now": 0.66643,
+      "prev": 0.14026,
+      "delta": 0.52617,
+      "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
     },
     {
       "id": "CVE-2026-28318",
@@ -24,6 +31,13 @@
       "prev": 0.04782,
       "delta": 0.33528,
       "name": "Ahsay AhsayCBS Replication Receiver UpdateReceivers.do os command injection"
+    },
+    {
+      "id": "CVE-2017-16227",
+      "now": 0.4596,
+      "prev": 0.1879,
+      "delta": 0.2717,
+      "name": "The aspath_put function in bgpd/bgp_aspath.c in Quagga before 1.2.2 allows remote attackers to cause a denial "
     },
     {
       "id": "CVE-2008-4815",
@@ -61,18 +75,18 @@
       "name": "AllegroSoft RomPager 4.34 and earlier, as used in Huawei Home Gateway products and other vendors and products,"
     },
     {
+      "id": "CVE-2010-2965",
+      "now": 0.57544,
+      "prev": 0.47371,
+      "delta": 0.10173,
+      "name": "The WDB target agent debug service in Wind River VxWorks 6.x, 5.x, and earlier, as used on the Rockwell Automa"
+    },
+    {
       "id": "CVE-2025-57819",
       "now": 0.95024,
       "prev": 0.86347,
       "delta": 0.08677,
       "name": "FreePBX Affected by Authentication Bypass Leading to SQL Injection and RCE"
-    },
-    {
-      "id": "CVE-2025-52688",
-      "now": 0.37118,
-      "prev": 0.28836,
-      "delta": 0.08282,
-      "name": "Command Injection Vulnerability in the OmniAccess Stellar Web Management Interface"
     },
     {
       "id": "CVE-2021-40449",
@@ -110,6 +124,13 @@
       "name": "Unspecified vulnerability in a JavaScript method in Adobe Reader and Acrobat 8.1.2 and earlier, and before 7.1"
     },
     {
+      "id": "CVE-2025-54453",
+      "now": 0.34269,
+      "prev": 0.27277,
+      "delta": 0.06992,
+      "name": "Samsung Electronics MagicINFO 9 Server"
+    },
+    {
       "id": "CVE-2002-0072",
       "now": 0.63478,
       "prev": 0.56627,
@@ -117,25 +138,11 @@
       "name": "The w3svc.dll ISAPI filter in Front Page Server Extensions and ASP.NET for Internet Information Server (IIS) 4"
     },
     {
-      "id": "CVE-2020-5192",
-      "now": 0.2353,
-      "prev": 0.1681,
-      "delta": 0.0672,
-      "name": "PHPGurukul Hospital Management System in PHP v4.0 suffers from multiple SQL injection vulnerabilities: multipl"
-    },
-    {
       "id": "CVE-2016-7103",
       "now": 0.29186,
       "prev": 0.2258,
       "delta": 0.06606,
       "name": "Cross-site scripting (XSS) vulnerability in jQuery UI before 1.12.0 might allow remote attackers to inject arb"
-    },
-    {
-      "id": "CVE-2025-20337",
-      "now": 0.74499,
-      "prev": 0.67995,
-      "delta": 0.06504,
-      "name": "Cisco ISE API Unauthenticated Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2009-1667",
@@ -166,20 +173,6 @@
       "name": "Buffer overflow in ASP Server-Side Include Function in IIS 4.0, 5.0 and 5.1 allows remote attackers to cause a"
     },
     {
-      "id": "CVE-2025-20284",
-      "now": 0.2512,
-      "prev": 0.19131,
-      "delta": 0.05989,
-      "name": "Cisco Identity Services Engine Authenticated Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2024-56511",
-      "now": 0.50296,
-      "prev": 0.44458,
-      "delta": 0.05838,
-      "name": "DataEase has an unauthorized vulnerability"
-    },
-    {
       "id": "CVE-2025-34175",
       "now": 0.21292,
       "prev": 0.1554,
@@ -208,11 +201,18 @@
       "name": "Authenticated Authenticated reflective XSS in Kaseya VSA <= v9.5.6"
     },
     {
-      "id": "CVE-2025-6023",
-      "now": 0.57743,
-      "prev": 0.52586,
-      "delta": 0.05157,
-      "name": "Grafana Grafana"
+      "id": "CVE-2013-5704",
+      "now": 0.57992,
+      "prev": 0.5264,
+      "delta": 0.05352,
+      "name": "The mod_headers module in the Apache HTTP Server 2.2.22 allows remote attackers to bypass \"RequestHeader unset"
+    },
+    {
+      "id": "CVE-2007-1280",
+      "now": 0.10139,
+      "prev": 0.0489,
+      "delta": 0.05249,
+      "name": "Cross-site scripting (XSS) vulnerability in Adobe RoboHelp X5, 6, and Server 6 allows remote attackers to inje"
     }
   ],
   "newly_high": [
@@ -224,11 +224,18 @@
       "name": "Fortinet FortiClientEMS"
     },
     {
-      "id": "CVE-2024-56511",
-      "now": 0.50296,
-      "prev": 0.44458,
-      "delta": 0.05838,
-      "name": "DataEase has an unauthorized vulnerability"
+      "id": "CVE-2026-76460",
+      "now": 0.66643,
+      "prev": 0.14026,
+      "delta": 0.52617,
+      "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
+    },
+    {
+      "id": "CVE-2010-2965",
+      "now": 0.57544,
+      "prev": 0.47371,
+      "delta": 0.10173,
+      "name": "The WDB target agent debug service in Wind River VxWorks 6.x, 5.x, and earlier, as used on the Rockwell Automa"
     },
     {
       "id": "CVE-2025-3833",
