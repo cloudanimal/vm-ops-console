@@ -1,9 +1,37 @@
 {
-  "updated": "2026-10-24",
+  "updated": "2026-10-25",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-24",
-  "previous_date": "2026-10-17",
+  "current_date": "2026-10-25",
+  "previous_date": "2026-10-18",
   "risers": [
+    {
+      "id": "CVE-2026-31431",
+      "now": 0.98114,
+      "prev": 0.03437,
+      "delta": 0.94677,
+      "name": "crypto: algif_aead - Revert to operating out-of-place"
+    },
+    {
+      "id": "CVE-2026-34486",
+      "now": 0.98503,
+      "prev": 0.06561,
+      "delta": 0.91942,
+      "name": "Apache Tomcat: Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor"
+    },
+    {
+      "id": "CVE-2026-43500",
+      "now": 0.94118,
+      "prev": 0.02617,
+      "delta": 0.91501,
+      "name": "rxrpc: Also unshare DATA/RESPONSE packets when paged frags are present"
+    },
+    {
+      "id": "CVE-2026-3055",
+      "now": 0.91491,
+      "prev": 0.04042,
+      "delta": 0.87449,
+      "name": "Insufficient input validation leading to memory overread"
+    },
     {
       "id": "CVE-2026-35616",
       "now": 0.93983,
@@ -12,211 +40,211 @@
       "name": "Fortinet FortiClientEMS"
     },
     {
-      "id": "CVE-2026-76460",
-      "now": 0.66643,
-      "prev": 0.14026,
-      "delta": 0.52617,
-      "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
+      "id": "CVE-2026-42208",
+      "now": 0.8942,
+      "prev": 0.05772,
+      "delta": 0.83648,
+      "name": "LiteLLM: SQL injection in Proxy API key verification"
     },
     {
-      "id": "CVE-2026-28318",
-      "now": 0.43651,
-      "prev": 0.01942,
-      "delta": 0.41709,
-      "name": "SolarWinds Serv-U Unauthenticated Denial of Service Vulnerability"
+      "id": "CVE-2026-34197",
+      "now": 0.98256,
+      "prev": 0.15492,
+      "delta": 0.82764,
+      "name": "Apache ActiveMQ Broker, Apache ActiveMQ All, Apache ActiveMQ: Authenticated users could pe"
     },
     {
       "id": "CVE-2026-105134",
-      "now": 0.3831,
+      "now": 0.86266,
       "prev": 0.04782,
-      "delta": 0.33528,
+      "delta": 0.81484,
       "name": "Ahsay AhsayCBS Replication Receiver UpdateReceivers.do os command injection"
     },
     {
-      "id": "CVE-2017-16227",
-      "now": 0.4596,
-      "prev": 0.1879,
-      "delta": 0.2717,
-      "name": "The aspath_put function in bgpd/bgp_aspath.c in Quagga before 1.2.2 allows remote attackers to cause a denial "
+      "id": "CVE-2026-88771",
+      "now": 0.8216,
+      "prev": 0.01083,
+      "delta": 0.81077,
+      "name": "A remote code execution vulnerability exists due to improper input validation, which can a"
     },
     {
-      "id": "CVE-2008-4815",
-      "now": 0.29149,
-      "prev": 0.07816,
-      "delta": 0.21333,
-      "name": "Untrusted search path vulnerability in Adobe Reader and Acrobat 8.1.2 and earlier on Unix and Linux allows att"
+      "id": "CVE-2026-41089",
+      "now": 0.79622,
+      "prev": 0.00974,
+      "delta": 0.78648,
+      "name": "Windows Netlogon Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2017-9765",
-      "now": 0.42081,
-      "prev": 0.24625,
-      "delta": 0.17456,
-      "name": "Integer overflow in the soap_get function in Genivia gSOAP 2.7.x and 2.8.x before 2.8.48, as used on Axis came"
+      "id": "CVE-2026-105133",
+      "now": 0.79236,
+      "prev": 0.00854,
+      "delta": 0.78382,
+      "name": "Ahsay AhsayCBS API ApiStructsAction.java checkSysPwd improper authentication"
     },
     {
-      "id": "CVE-2022-47071",
-      "now": 0.43135,
-      "prev": 0.25905,
-      "delta": 0.1723,
-      "name": "In NVS365 V01, the background network test function can trigger command execution."
+      "id": "CVE-2026-45659",
+      "now": 0.80242,
+      "prev": 0.02704,
+      "delta": 0.77538,
+      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2025-1128",
-      "now": 0.42446,
-      "prev": 0.28766,
-      "delta": 0.1368,
-      "name": "Everest Forms <= 3.0.9.4 - Unauthenticated Arbitrary File Upload, Read, and Deletion"
+      "id": "CVE-2026-88772",
+      "now": 0.78162,
+      "prev": 0.01301,
+      "delta": 0.76861,
+      "name": "Memory overflow vulnerability leading to Remote Code Execution or Denial of Service"
     },
     {
-      "id": "CVE-2014-9222",
-      "now": 0.7401,
-      "prev": 0.63748,
-      "delta": 0.10262,
-      "name": "AllegroSoft RomPager 4.34 and earlier, as used in Huawei Home Gateway products and other vendors and products,"
+      "id": "CVE-2026-33824",
+      "now": 0.77054,
+      "prev": 0.01619,
+      "delta": 0.75435,
+      "name": "Windows Internet Key Exchange (IKE) Service Extensions Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2010-2965",
-      "now": 0.57544,
-      "prev": 0.47371,
-      "delta": 0.10173,
-      "name": "The WDB target agent debug service in Wind River VxWorks 6.x, 5.x, and earlier, as used on the Rockwell Automa"
+      "id": "CVE-2026-9082",
+      "now": 0.89381,
+      "prev": 0.15701,
+      "delta": 0.7368,
+      "name": "Drupal core - Highly critical - SQL injection - SA-CORE-2026-004"
     },
     {
-      "id": "CVE-2025-57819",
-      "now": 0.95024,
-      "prev": 0.86347,
-      "delta": 0.08677,
-      "name": "FreePBX Affected by Authentication Bypass Leading to SQL Injection and RCE"
+      "id": "CVE-2026-34908",
+      "now": 0.88293,
+      "prev": 0.15207,
+      "delta": 0.73086,
+      "name": "Ubiquiti Inc UniFi OS Server"
     },
     {
-      "id": "CVE-2021-40449",
-      "now": 0.81936,
-      "prev": 0.74129,
-      "delta": 0.07807,
-      "name": "Win32k Elevation of Privilege Vulnerability"
+      "id": "CVE-2026-48558",
+      "now": 0.77659,
+      "prev": 0.05719,
+      "delta": 0.7194,
+      "name": "SimpleHelp Authentication Bypass via Missing OIDC JWT Signature Verification"
     },
     {
-      "id": "CVE-2008-4813",
-      "now": 0.17262,
-      "prev": 0.09497,
-      "delta": 0.07765,
-      "name": "Adobe Reader and Acrobat 8.1.2 and earlier, and before 7.1.1, allow remote attackers to execute arbitrary code"
+      "id": "CVE-2026-4020",
+      "now": 0.73799,
+      "prev": 0.02236,
+      "delta": 0.71563,
+      "name": "Gravity SMTP <= 2.1.4 - Unauthenticated Sensitive Information Exposure via REST API"
     },
     {
-      "id": "CVE-2019-5645",
-      "now": 0.49181,
-      "prev": 0.41688,
-      "delta": 0.07493,
-      "name": "Rapid7 Metasploit HTTP Handler Denial of Service"
+      "id": "CVE-2026-33017",
+      "now": 0.96177,
+      "prev": 0.24755,
+      "delta": 0.71422,
+      "name": "Langflow has Unauthenticated Remote Code Execution via Public Flow Build Endpoint"
     },
     {
-      "id": "CVE-2021-22123",
-      "now": 0.84396,
-      "prev": 0.7727,
-      "delta": 0.07126,
-      "name": "Fortinet Fortinet FortiWeb"
+      "id": "CVE-2026-42897",
+      "now": 0.70662,
+      "prev": 0.00519,
+      "delta": 0.70143,
+      "name": "Microsoft Exchange Server Spoofing Vulnerability"
     },
     {
-      "id": "CVE-2008-4814",
-      "now": 0.18975,
-      "prev": 0.11867,
-      "delta": 0.07108,
-      "name": "Unspecified vulnerability in a JavaScript method in Adobe Reader and Acrobat 8.1.2 and earlier, and before 7.1"
+      "id": "CVE-2026-48907",
+      "now": 0.85439,
+      "prev": 0.1619,
+      "delta": 0.69249,
+      "name": "Joomla Extension - joomlacontenteditor.net - Remote Code Execution in JCE extension for Jo"
     },
     {
-      "id": "CVE-2025-54453",
-      "now": 0.34269,
-      "prev": 0.27277,
-      "delta": 0.06992,
-      "name": "Samsung Electronics MagicINFO 9 Server"
+      "id": "CVE-2026-34909",
+      "now": 0.68033,
+      "prev": 0.01793,
+      "delta": 0.6624,
+      "name": "Ubiquiti Inc UniFi OS Server"
     },
     {
-      "id": "CVE-2002-0072",
-      "now": 0.63478,
-      "prev": 0.56627,
-      "delta": 0.06851,
-      "name": "The w3svc.dll ISAPI filter in Front Page Server Extensions and ASP.NET for Internet Information Server (IIS) 4"
+      "id": "CVE-2026-32202",
+      "now": 0.70902,
+      "prev": 0.04902,
+      "delta": 0.66,
+      "name": "Windows Shell Spoofing Vulnerability"
     },
     {
-      "id": "CVE-2016-7103",
-      "now": 0.29186,
-      "prev": 0.2258,
-      "delta": 0.06606,
-      "name": "Cross-site scripting (XSS) vulnerability in jQuery UI before 1.12.0 might allow remote attackers to inject arb"
+      "id": "CVE-2026-26980",
+      "now": 0.71095,
+      "prev": 0.05573,
+      "delta": 0.65522,
+      "name": "Ghost has a SQL Injection in its Content API"
     },
     {
-      "id": "CVE-2009-1667",
-      "now": 0.27816,
-      "prev": 0.214,
-      "delta": 0.06416,
-      "name": "Stack-based buffer overflow in Mini-stream CastRipper 2.50.70 allows remote attackers to execute arbitrary cod"
+      "id": "CVE-2026-42945",
+      "now": 0.68047,
+      "prev": 0.03396,
+      "delta": 0.64651,
+      "name": "NGINX ngx_http_rewrite_module vulnerability"
     },
     {
-      "id": "CVE-2002-0147",
-      "now": 0.68024,
-      "prev": 0.61761,
-      "delta": 0.06263,
-      "name": "Buffer overflow in the ASP data transfer mechanism in Internet Information Server (IIS) 4.0, 5.0, and 5.1 allo"
+      "id": "CVE-2026-48710",
+      "now": 0.70288,
+      "prev": 0.07056,
+      "delta": 0.63232,
+      "name": "Starlette has missing Host header validation that poisons request.url.path, bypassing path"
     },
     {
-      "id": "CVE-2026-42508",
-      "now": 0.0691,
-      "prev": 0.00654,
-      "delta": 0.06256,
-      "name": "Invoking  auth bypass via unenforced @revoked status in golang.org/x/crypto/ssh/knownhosts"
+      "id": "CVE-2026-45498",
+      "now": 0.63076,
+      "prev": 0.01267,
+      "delta": 0.61809,
+      "name": "Microsoft Defender Denial of Service Vulnerability"
     },
     {
-      "id": "CVE-2002-0149",
-      "now": 0.68834,
-      "prev": 0.62704,
-      "delta": 0.0613,
-      "name": "Buffer overflow in ASP Server-Side Include Function in IIS 4.0, 5.0 and 5.1 allows remote attackers to cause a"
+      "id": "CVE-2026-39987",
+      "now": 0.99564,
+      "prev": 0.37865,
+      "delta": 0.61699,
+      "name": "marimo Affected by Pre-Auth Remote Code Execution via Terminal WebSocket Authentication By"
     },
     {
-      "id": "CVE-2025-34175",
-      "now": 0.21292,
-      "prev": 0.1554,
-      "delta": 0.05752,
-      "name": "Netgate pfSense CE Suricata package v7.0.8_2 Reflected Cross-Site Scripting"
+      "id": "CVE-2026-76460",
+      "now": 0.75599,
+      "prev": 0.14026,
+      "delta": 0.61573,
+      "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
     },
     {
-      "id": "CVE-2025-54918",
-      "now": 0.25278,
-      "prev": 0.19771,
-      "delta": 0.05507,
-      "name": "Windows NTLM Elevation of Privilege Vulnerability"
-    },
-    {
-      "id": "CVE-2009-1774",
-      "now": 0.23403,
-      "prev": 0.17898,
-      "delta": 0.05505,
-      "name": "Directory traversal vulnerability in plugins/ddb/foot.php in Strawberry 1.1.1 allows remote attackers to inclu"
-    },
-    {
-      "id": "CVE-2021-30119",
-      "now": 0.58759,
-      "prev": 0.53365,
-      "delta": 0.05394,
-      "name": "Authenticated Authenticated reflective XSS in Kaseya VSA <= v9.5.6"
-    },
-    {
-      "id": "CVE-2013-5704",
-      "now": 0.57992,
-      "prev": 0.5264,
-      "delta": 0.05352,
-      "name": "The mod_headers module in the Apache HTTP Server 2.2.22 allows remote attackers to bypass \"RequestHeader unset"
-    },
-    {
-      "id": "CVE-2007-1280",
-      "now": 0.10139,
-      "prev": 0.0489,
-      "delta": 0.05249,
-      "name": "Cross-site scripting (XSS) vulnerability in Adobe RoboHelp X5, 6, and Server 6 allows remote attackers to inje"
+      "id": "CVE-2026-104935",
+      "now": 0.86766,
+      "prev": 0.25982,
+      "delta": 0.60784,
+      "name": "Ivanti Connect Secure"
     }
   ],
   "newly_high": [
     {
+      "id": "CVE-2026-31431",
+      "now": 0.98114,
+      "prev": 0.03437,
+      "delta": 0.94677,
+      "name": "crypto: algif_aead - Revert to operating out-of-place"
+    },
+    {
+      "id": "CVE-2026-34486",
+      "now": 0.98503,
+      "prev": 0.06561,
+      "delta": 0.91942,
+      "name": "Apache Tomcat: Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor"
+    },
+    {
+      "id": "CVE-2026-43500",
+      "now": 0.94118,
+      "prev": 0.02617,
+      "delta": 0.91501,
+      "name": "rxrpc: Also unshare DATA/RESPONSE packets when paged frags are present"
+    },
+    {
+      "id": "CVE-2026-3055",
+      "now": 0.91491,
+      "prev": 0.04042,
+      "delta": 0.87449,
+      "name": "Insufficient input validation leading to memory overread"
+    },
+    {
       "id": "CVE-2026-35616",
       "now": 0.93983,
       "prev": 0.09098,
@@ -224,46 +252,179 @@
       "name": "Fortinet FortiClientEMS"
     },
     {
+      "id": "CVE-2026-42208",
+      "now": 0.8942,
+      "prev": 0.05772,
+      "delta": 0.83648,
+      "name": "LiteLLM: SQL injection in Proxy API key verification"
+    },
+    {
+      "id": "CVE-2026-34197",
+      "now": 0.98256,
+      "prev": 0.15492,
+      "delta": 0.82764,
+      "name": "Apache ActiveMQ Broker, Apache ActiveMQ All, Apache ActiveMQ: Authenticated users could pe"
+    },
+    {
+      "id": "CVE-2026-105134",
+      "now": 0.86266,
+      "prev": 0.04782,
+      "delta": 0.81484,
+      "name": "Ahsay AhsayCBS Replication Receiver UpdateReceivers.do os command injection"
+    },
+    {
+      "id": "CVE-2026-88771",
+      "now": 0.8216,
+      "prev": 0.01083,
+      "delta": 0.81077,
+      "name": "A remote code execution vulnerability exists due to improper input validation, which can a"
+    },
+    {
+      "id": "CVE-2026-41089",
+      "now": 0.79622,
+      "prev": 0.00974,
+      "delta": 0.78648,
+      "name": "Windows Netlogon Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2026-105133",
+      "now": 0.79236,
+      "prev": 0.00854,
+      "delta": 0.78382,
+      "name": "Ahsay AhsayCBS API ApiStructsAction.java checkSysPwd improper authentication"
+    },
+    {
+      "id": "CVE-2026-45659",
+      "now": 0.80242,
+      "prev": 0.02704,
+      "delta": 0.77538,
+      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2026-88772",
+      "now": 0.78162,
+      "prev": 0.01301,
+      "delta": 0.76861,
+      "name": "Memory overflow vulnerability leading to Remote Code Execution or Denial of Service"
+    },
+    {
+      "id": "CVE-2026-33824",
+      "now": 0.77054,
+      "prev": 0.01619,
+      "delta": 0.75435,
+      "name": "Windows Internet Key Exchange (IKE) Service Extensions Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2026-9082",
+      "now": 0.89381,
+      "prev": 0.15701,
+      "delta": 0.7368,
+      "name": "Drupal core - Highly critical - SQL injection - SA-CORE-2026-004"
+    },
+    {
+      "id": "CVE-2026-34908",
+      "now": 0.88293,
+      "prev": 0.15207,
+      "delta": 0.73086,
+      "name": "Ubiquiti Inc UniFi OS Server"
+    },
+    {
+      "id": "CVE-2026-48558",
+      "now": 0.77659,
+      "prev": 0.05719,
+      "delta": 0.7194,
+      "name": "SimpleHelp Authentication Bypass via Missing OIDC JWT Signature Verification"
+    },
+    {
+      "id": "CVE-2026-4020",
+      "now": 0.73799,
+      "prev": 0.02236,
+      "delta": 0.71563,
+      "name": "Gravity SMTP <= 2.1.4 - Unauthenticated Sensitive Information Exposure via REST API"
+    },
+    {
+      "id": "CVE-2026-33017",
+      "now": 0.96177,
+      "prev": 0.24755,
+      "delta": 0.71422,
+      "name": "Langflow has Unauthenticated Remote Code Execution via Public Flow Build Endpoint"
+    },
+    {
+      "id": "CVE-2026-42897",
+      "now": 0.70662,
+      "prev": 0.00519,
+      "delta": 0.70143,
+      "name": "Microsoft Exchange Server Spoofing Vulnerability"
+    },
+    {
+      "id": "CVE-2026-48907",
+      "now": 0.85439,
+      "prev": 0.1619,
+      "delta": 0.69249,
+      "name": "Joomla Extension - joomlacontenteditor.net - Remote Code Execution in JCE extension for Jo"
+    },
+    {
+      "id": "CVE-2026-34909",
+      "now": 0.68033,
+      "prev": 0.01793,
+      "delta": 0.6624,
+      "name": "Ubiquiti Inc UniFi OS Server"
+    },
+    {
+      "id": "CVE-2026-32202",
+      "now": 0.70902,
+      "prev": 0.04902,
+      "delta": 0.66,
+      "name": "Windows Shell Spoofing Vulnerability"
+    },
+    {
+      "id": "CVE-2026-26980",
+      "now": 0.71095,
+      "prev": 0.05573,
+      "delta": 0.65522,
+      "name": "Ghost has a SQL Injection in its Content API"
+    },
+    {
+      "id": "CVE-2026-42945",
+      "now": 0.68047,
+      "prev": 0.03396,
+      "delta": 0.64651,
+      "name": "NGINX ngx_http_rewrite_module vulnerability"
+    },
+    {
+      "id": "CVE-2026-48710",
+      "now": 0.70288,
+      "prev": 0.07056,
+      "delta": 0.63232,
+      "name": "Starlette has missing Host header validation that poisons request.url.path, bypassing path"
+    },
+    {
+      "id": "CVE-2026-45498",
+      "now": 0.63076,
+      "prev": 0.01267,
+      "delta": 0.61809,
+      "name": "Microsoft Defender Denial of Service Vulnerability"
+    },
+    {
+      "id": "CVE-2026-39987",
+      "now": 0.99564,
+      "prev": 0.37865,
+      "delta": 0.61699,
+      "name": "marimo Affected by Pre-Auth Remote Code Execution via Terminal WebSocket Authentication By"
+    },
+    {
       "id": "CVE-2026-76460",
-      "now": 0.66643,
+      "now": 0.75599,
       "prev": 0.14026,
-      "delta": 0.52617,
+      "delta": 0.61573,
       "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
     },
     {
-      "id": "CVE-2010-2965",
-      "now": 0.57544,
-      "prev": 0.47371,
-      "delta": 0.10173,
-      "name": "The WDB target agent debug service in Wind River VxWorks 6.x, 5.x, and earlier, as used on the Rockwell Automa"
-    },
-    {
-      "id": "CVE-2025-3833",
-      "now": 0.50525,
-      "prev": 0.46569,
-      "delta": 0.03956,
-      "name": "SQL Injection"
-    },
-    {
-      "id": "CVE-2002-0150",
-      "now": 0.52918,
-      "prev": 0.49477,
-      "delta": 0.03441,
-      "name": "Buffer overflow in Internet Information Server (IIS) 4.0, 5.0, and 5.1 allows remote attackers to spoof the sa"
-    },
-    {
-      "id": "CVE-2025-43562",
-      "now": 0.51028,
-      "prev": 0.49295,
-      "delta": 0.01733,
-      "name": "ColdFusion | Improper Neutralization of Special Elements used in an OS Command ('OS Comman"
-    },
-    {
-      "id": "CVE-2025-58434",
-      "now": 0.50541,
-      "prev": 0.49894,
-      "delta": 0.00647,
-      "name": "Flowise Cloud and Local Deployments have Unauthenticated Password Reset Token Disclosure t"
+      "id": "CVE-2026-104935",
+      "now": 0.86766,
+      "prev": 0.25982,
+      "delta": 0.60784,
+      "name": "Ivanti Connect Secure"
     }
   ]
 }
