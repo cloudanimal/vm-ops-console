@@ -1,676 +1,601 @@
 {
-  "updated": "2026-10-25",
+  "updated": "2026-10-26",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
     {
-      "id": "371925",
-      "title": "AlmaLinux 9.6 [TuxCare] Security Update: ImageMagick / ImageMagick-c++ / ImageMagick-c++-devel / etc Multiple Vulnerabilities (ALMALINUX9.6:CLSA-2026:1792140497)",
+      "id": null,
+      "title": "Chainguard: multiple open-webui packages: security update to 0.12.3-r8",
       "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371925",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477487",
       "cves": [
-        "CVE-2026-106571",
-        "CVE-2026-106572",
-        "CVE-2026-106573",
-        "CVE-2026-106577",
-        "CVE-2026-106578"
+        "CVE-2026-115580"
       ]
     },
     {
-      "id": "371924",
-      "title": "Fedora 43 : dotnet8.0 (2026-aca7a82c77)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371924",
-      "cves": [
-        "CVE-2026-105016",
-        "CVE-2026-58280",
-        "CVE-2026-66822",
-        "CVE-2026-69651",
-        "CVE-2026-70007",
-        "CVE-2026-70035",
-        "CVE-2026-70162",
-        "CVE-2026-70174",
-        "CVE-2026-70175",
-        "CVE-2026-70179",
-        "CVE-2026-70181",
-        "CVE-2026-70183",
-        "CVE-2026-70188",
-        "CVE-2026-70196",
-        "CVE-2026-70197",
-        "CVE-2026-83520",
-        "CVE-2026-84008",
-        "CVE-2026-85363",
-        "CVE-2026-87697",
-        "CVE-2026-88092",
-        "CVE-2026-92707",
-        "CVE-2026-96222",
-        "CVE-2026-96224",
-        "CVE-2026-96225",
-        "CVE-2026-96230",
-        "CVE-2026-96231",
-        "CVE-2026-96232",
-        "CVE-2026-96233",
-        "CVE-2026-96234",
-        "CVE-2026-96235",
-        "CVE-2026-96237",
-        "CVE-2026-96238",
-        "CVE-2026-96958",
-        "CVE-2026-96959",
-        "CVE-2026-96960"
-      ]
-    },
-    {
-      "id": "371923",
-      "title": "Fedora 44 : dotnet8.0 (2026-6cdafc7e45)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371923",
-      "cves": [
-        "CVE-2026-105016",
-        "CVE-2026-58280",
-        "CVE-2026-66822",
-        "CVE-2026-69651",
-        "CVE-2026-70007",
-        "CVE-2026-70035",
-        "CVE-2026-70162",
-        "CVE-2026-70174",
-        "CVE-2026-70175",
-        "CVE-2026-70179",
-        "CVE-2026-70181",
-        "CVE-2026-70183",
-        "CVE-2026-70188",
-        "CVE-2026-70196",
-        "CVE-2026-70197",
-        "CVE-2026-83520",
-        "CVE-2026-84008",
-        "CVE-2026-85363",
-        "CVE-2026-87697",
-        "CVE-2026-88092",
-        "CVE-2026-92707",
-        "CVE-2026-96222",
-        "CVE-2026-96224",
-        "CVE-2026-96225",
-        "CVE-2026-96230",
-        "CVE-2026-96231",
-        "CVE-2026-96232",
-        "CVE-2026-96233",
-        "CVE-2026-96234",
-        "CVE-2026-96235",
-        "CVE-2026-96237",
-        "CVE-2026-96238",
-        "CVE-2026-96958",
-        "CVE-2026-96959",
-        "CVE-2026-96960"
-      ]
-    },
-    {
-      "id": "371922",
-      "title": "Fedora 43 : perl-Badger / perl-CLI-Simple / perl-CSS-Inliner / etc (2026-04f78841ec)",
-      "severity": "Medium",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371922",
-      "cves": [
-        "CVE-2025-61873",
-        "CVE-2026-41075",
-        "CVE-2026-41076",
-        "CVE-2026-44229",
-        "CVE-2026-44230",
-        "CVE-2026-44231",
-        "CVE-2026-6841"
-      ]
-    },
-    {
-      "id": "371921",
-      "title": "Fedora 44 : jfrog-cli (2026-22413fc041)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371921",
-      "cves": []
-    },
-    {
-      "id": "371920",
-      "title": "Fedora 44 : perl-Badger / perl-CLI-Simple / perl-CSS-Inliner / etc (2026-0b9eb888a8)",
-      "severity": "Medium",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371920",
-      "cves": [
-        "CVE-2025-61873",
-        "CVE-2026-41075",
-        "CVE-2026-41076",
-        "CVE-2026-44229",
-        "CVE-2026-44230",
-        "CVE-2026-44231",
-        "CVE-2026-6841"
-      ]
-    },
-    {
-      "id": "371919",
-      "title": "Rocky Linux 9 [CIQ] Security Update: kernel / kernel-64k / kernel-64k-core / kernel-64k-debug / etc Multiple Vulnerabilities (crlsa-2026_87805)",
-      "severity": "Medium",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371919",
-      "cves": [
-        "CVE-2025-22063",
-        "CVE-2025-38147",
-        "CVE-2026-64481",
-        "CVE-2026-68202",
-        "CVE-2026-68299",
-        "CVE-2026-68448",
-        "CVE-2026-80530",
-        "CVE-2026-80536"
-      ]
-    },
-    {
-      "id": "371918",
-      "title": "Rocky Linux 9.2 [CIQ] Security Update: php / php-bcmath / php-cli / php-common / php-dba / php-dbg / etc Multiple Vulnerabilities (ciqsa-2026_1719)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371918",
-      "cves": [
-        "CVE-2026-109618",
-        "CVE-2026-109619"
-      ]
-    },
-    {
-      "id": "371917",
-      "title": "Rocky Linux 10.2 [CIQ] Security Update: kernel / kernel-64k / kernel-64k-core / kernel-64k-debug / etc Multiple Vulnerabilities (crlsa-2026_88477)",
-      "severity": "Medium",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371917",
-      "cves": [
-        "CVE-2025-38147",
-        "CVE-2026-64048",
-        "CVE-2026-64114",
-        "CVE-2026-64266",
-        "CVE-2026-64481",
-        "CVE-2026-64572",
-        "CVE-2026-68202",
-        "CVE-2026-68236",
-        "CVE-2026-68245",
-        "CVE-2026-68278",
-        "CVE-2026-68448",
-        "CVE-2026-80536",
-        "CVE-2026-80590",
-        "CVE-2026-80887",
-        "CVE-2026-89791",
-        "CVE-2026-89811",
-        "CVE-2026-93817",
-        "CVE-2026-97493"
-      ]
-    },
-    {
-      "id": "371916",
-      "title": "Rocky Linux 9.2 [CIQ] Security Update: php / php-bcmath / php-cli / php-common / php-dba / php-dbg / etc Multiple Vulnerabilities (ciqsa-2026_1718)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371916",
-      "cves": [
-        "CVE-2026-109618",
-        "CVE-2026-109619"
-      ]
-    },
-    {
-      "id": "371915",
-      "title": "Amazon Linux 2023 : buildah (ALAS2023-2026-3256)",
+      "id": null,
+      "title": "Chainguard: multiple open-webui packages: security update to 0.12.3-r8",
       "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371915",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477487",
       "cves": [
-        "CVE-2026-78659",
-        "CVE-2026-78667",
-        "CVE-2026-94440"
+        "CVE-2026-115580"
       ]
     },
     {
-      "id": "371914",
-      "title": "Amazon Linux 2023 : xorg-x11-server-Xwayland, xorg-x11-server-Xwayland-devel (ALAS2023-2026-3261)",
-      "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371914",
-      "cves": [
-        "CVE-2026-88812",
-        "CVE-2026-93515",
-        "CVE-2026-93516",
-        "CVE-2026-93517",
-        "CVE-2026-93518",
-        "CVE-2026-93519",
-        "CVE-2026-93521",
-        "CVE-2026-93522",
-        "CVE-2026-93523",
-        "CVE-2026-93524",
-        "CVE-2026-93536"
-      ]
-    },
-    {
-      "id": "371913",
-      "title": "Amazon Linux 2023 : skopeo, skopeo-tests (ALAS2023-2026-3254)",
-      "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371913",
-      "cves": [
-        "CVE-2026-78659",
-        "CVE-2026-78667",
-        "CVE-2026-94440"
-      ]
-    },
-    {
-      "id": "371912",
-      "title": "Amazon Linux 2023 : skopeo, skopeo-tests (ALAS2023-2026-3325)",
-      "severity": "Medium",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371912",
-      "cves": [
-        "CVE-2026-111943"
-      ]
-    },
-    {
-      "id": "371911",
-      "title": "Amazon Linux 2023 : containerd, containerd-stress (ALAS2023-2026-3273)",
-      "severity": "Medium",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371911",
-      "cves": [
-        "CVE-2026-53493",
-        "CVE-2026-56855",
-        "CVE-2026-61801",
-        "CVE-2026-78659",
-        "CVE-2026-78662",
-        "CVE-2026-78663",
-        "CVE-2026-81870",
-        "CVE-2026-95837"
-      ]
-    },
-    {
-      "id": "371910",
-      "title": "Amazon Linux 2023 : pcre2, pcre2-devel, pcre2-static (ALAS2023-2026-3269)",
-      "severity": "Medium",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371910",
-      "cves": [
-        "CVE-2026-103111",
-        "CVE-2026-86145",
-        "CVE-2026-89156",
-        "CVE-2026-89160"
-      ]
-    },
-    {
-      "id": "371909",
-      "title": "Amazon Linux 2023 : mariadb1011, mariadb1011-backup, mariadb1011-client-utils (ALAS2023-2026-3289)",
-      "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371909",
-      "cves": [
-        "CVE-2026-107814"
-      ]
-    },
-    {
-      "id": "371908",
-      "title": "Amazon Linux 2023 : ecs-init (ALAS2023-2026-3321)",
-      "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371908",
-      "cves": [
-        "CVE-2026-78659"
-      ]
-    },
-    {
-      "id": "371907",
-      "title": "Amazon Linux 2023 : iperf3, iperf3-devel (ALAS2023-2026-3299)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371907",
-      "cves": [
-        "CVE-2026-101283"
-      ]
-    },
-    {
-      "id": "371906",
-      "title": "Amazon Linux 2023 : buildah (ALAS2023-2026-3326)",
-      "severity": "Medium",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371906",
-      "cves": [
-        "CVE-2026-111943"
-      ]
-    },
-    {
-      "id": "371905",
-      "title": "Amazon Linux 2023 : tigervnc, tigervnc-icons, tigervnc-license (ALAS2023-2026-3262)",
-      "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371905",
-      "cves": [
-        "CVE-2026-88812",
-        "CVE-2026-93515",
-        "CVE-2026-93516",
-        "CVE-2026-93517",
-        "CVE-2026-93518",
-        "CVE-2026-93519",
-        "CVE-2026-93521",
-        "CVE-2026-93523",
-        "CVE-2026-93524"
-      ]
-    },
-    {
-      "id": "371904",
-      "title": "Amazon Linux 2023 : mariadb114, mariadb114-backup, mariadb114-client-utils (ALAS2023-2026-3288)",
-      "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371904",
-      "cves": [
-        "CVE-2026-107814"
-      ]
-    },
-    {
-      "id": "371903",
-      "title": "Amazon Linux 2023 : aspell, aspell-devel (ALAS2023-2026-3275)",
+      "id": null,
+      "title": "Chainguard: libnode147, multiple nodejs-26 packages: security update to 26.12.1-r0",
       "severity": "Low",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371903",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477486",
       "cves": [
-        "CVE-2026-103658",
-        "CVE-2026-75818",
-        "CVE-2026-75819",
-        "CVE-2026-75820"
+        "CVE-2026-106070"
       ]
     },
     {
-      "id": "371902",
-      "title": "Amazon Linux 2023 : nodejs22, nodejs22-devel, nodejs22-full-i18n (ALAS2023-2026-3328)",
+      "id": null,
+      "title": "Chainguard: libnode147, multiple nodejs-26 packages: security update to 26.12.1-r0",
+      "severity": "Low",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477486",
+      "cves": [
+        "CVE-2026-106070"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple open-webui packages: security update to 0.12.3-r8",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477485",
+      "cves": [
+        "CVE-2026-115572"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple open-webui packages: security update to 0.12.3-r8",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477485",
+      "cves": [
+        "CVE-2026-115572"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple open-webui packages: security update to 0.12.3-r8",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477484",
+      "cves": [
+        "CVE-2026-115585"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple open-webui packages: security update to 0.12.3-r8",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477484",
+      "cves": [
+        "CVE-2026-115585"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: libnode147, multiple nodejs-26 packages: security update to 26.12.1-r0",
+      "severity": "Low",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477483",
+      "cves": [
+        "CVE-2026-106071",
+        "CVE-2026-58043"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: libnode147, multiple nodejs-26 packages: security update to 26.12.1-r0",
+      "severity": "Low",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477483",
+      "cves": [
+        "CVE-2026-106071",
+        "CVE-2026-58043"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: nemo-skills: security update to 0.7.0_git20260911-r5",
+      "severity": "Medium",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477482",
+      "cves": [
+        "CVE-2026-114501"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: nemo-skills: security update to 0.7.0_git20260911-r5",
+      "severity": "Medium",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477482",
+      "cves": [
+        "CVE-2026-114501"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: nemo-skills: security update to 0.7.0_git20260911-r5",
       "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371902",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477481",
       "cves": [
-        "CVE-2026-105481",
-        "CVE-2026-105482",
-        "CVE-2026-106069",
-        "CVE-2026-106072",
-        "CVE-2026-106073",
-        "CVE-2026-106074",
-        "CVE-2026-109383",
-        "CVE-2026-109869",
-        "CVE-2026-109924",
-        "CVE-2026-109932",
-        "CVE-2026-87018"
+        "CVE-2026-112398"
       ]
     },
     {
-      "id": "371901",
-      "title": "Amazon Linux 2023 : runfinch-finch (ALAS2023-2026-3264)",
-      "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371901",
-      "cves": [
-        "CVE-2026-78659",
-        "CVE-2026-93316",
-        "CVE-2026-93317",
-        "CVE-2026-93318",
-        "CVE-2026-93319",
-        "CVE-2026-93320",
-        "CVE-2026-93321",
-        "CVE-2026-93322"
-      ]
-    },
-    {
-      "id": "371900",
-      "title": "Amazon Linux 2023 : golang, golang-bin, golang-misc (ALAS2023-2026-3225)",
+      "id": null,
+      "title": "Chainguard: nemo-skills: security update to 0.7.0_git20260911-r5",
       "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371900",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477481",
       "cves": [
-        "CVE-2026-56866",
-        "CVE-2026-78659",
-        "CVE-2026-78660",
-        "CVE-2026-78663",
-        "CVE-2026-78667",
-        "CVE-2026-78669",
-        "CVE-2026-94439",
-        "CVE-2026-94440",
-        "CVE-2026-94444",
-        "CVE-2026-94447",
-        "CVE-2026-94448",
-        "CVE-2026-97030",
-        "CVE-2026-97031",
-        "CVE-2026-97032"
+        "CVE-2026-112398"
       ]
     },
     {
-      "id": "371899",
-      "title": "Amazon Linux 2023 : curl, curl-minimal, libcurl (ALAS2023-2026-3267)",
+      "id": null,
+      "title": "Echo: expat: security update to 2.9.0-1+e3",
       "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371899",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477480",
       "cves": [
-        "CVE-2026-92392"
+        "CVE-2026-113351"
       ]
     },
     {
-      "id": "371898",
-      "title": "Amazon Linux 2023 : cifs-utils, cifs-utils-devel, cifs-utils-info (ALAS2023-2026-3291)",
+      "id": null,
+      "title": "Echo: expat: security update to 2.9.0-1+e3",
       "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371898",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477480",
       "cves": [
-        "CVE-2026-104715"
+        "CVE-2026-113351"
       ]
     },
     {
-      "id": "371897",
-      "title": "Amazon Linux 2023 : brotli, brotli-devel, libbrotli (ALAS2023-2026-3334)",
+      "id": null,
+      "title": "Echo: python-git: security update to 3.2.0",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477479",
+      "cves": [
+        "CVE-2026-110855"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-git: security update to 3.2.0",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477479",
+      "cves": [
+        "CVE-2026-110855"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-git: security update to 3.2.0",
       "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371897",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477478",
       "cves": [
-        "CVE-2026-111497"
+        "CVE-2026-110858"
       ]
     },
     {
-      "id": "371896",
-      "title": "Amazon Linux 2023 : python3.13-virtualenv (ALAS2023-2026-3296)",
-      "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371896",
-      "cves": [
-        "CVE-2026-102930",
-        "CVE-2026-102938"
-      ]
-    },
-    {
-      "id": "371895",
-      "title": "Amazon Linux 2023 : nodejs24, nodejs24-devel, nodejs24-full-i18n (ALAS2023-2026-3297)",
-      "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371895",
-      "cves": [
-        "CVE-2026-102276",
-        "CVE-2026-14257",
-        "CVE-2026-69152",
-        "CVE-2026-69192",
-        "CVE-2026-73566"
-      ]
-    },
-    {
-      "id": "371894",
-      "title": "Amazon Linux 2023 : java-25-amazon-corretto, java-25-amazon-corretto-devel, java-25-amazon-corretto-headless (ALAS2023-2026-3320)",
+      "id": null,
+      "title": "Echo: python-git: security update to 3.2.0",
       "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371894",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477478",
       "cves": [
-        "CVE-2026-113470",
+        "CVE-2026-110858"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: openstack-rally-2025.2: security update to 4.1.0-r7",
+      "severity": "Low",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477477",
+      "cves": [
+        "CVE-2026-112907"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: openstack-rally-2025.2: security update to 4.1.0-r7",
+      "severity": "Low",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477477",
+      "cves": [
+        "CVE-2026-112907"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: openstack-rally-2025.2: security update to 4.1.0-r7",
+      "severity": "Low",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477476",
+      "cves": [
+        "CVE-2026-112913"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: openstack-rally-2025.2: security update to 4.1.0-r7",
+      "severity": "Low",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477476",
+      "cves": [
+        "CVE-2026-112913"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: openstack-rally-2025.2: security update to 4.1.0-r7",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477475",
+      "cves": [
+        "CVE-2026-112940"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: openstack-rally-2025.2: security update to 4.1.0-r7",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477475",
+      "cves": [
+        "CVE-2026-112940"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: hadoop-fips-3.5: security update to 3.5.0-r24",
+      "severity": "Critical",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477474",
+      "cves": [
+        "CVE-2026-53434"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: hadoop-fips-3.5: security update to 3.5.0-r24",
+      "severity": "Critical",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477474",
+      "cves": [
+        "CVE-2026-53434"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-git: security update to 3.2.0",
+      "severity": "Medium",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477473",
+      "cves": [
+        "CVE-2026-110860"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-git: security update to 3.2.0",
+      "severity": "Medium",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477473",
+      "cves": [
+        "CVE-2026-110860"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-git: security update to 3.2.0",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477472",
+      "cves": [
+        "CVE-2026-110857"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-git: security update to 3.2.0",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477472",
+      "cves": [
+        "CVE-2026-110857"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-git: security update to 3.2.0",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477471",
+      "cves": [
+        "CVE-2026-110856"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-git: security update to 3.2.0",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477471",
+      "cves": [
+        "CVE-2026-110856"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: libdbi-perl: security update to 1.656-1",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477470",
+      "cves": [
+        "CVE-2026-108518"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: libdbi-perl: security update to 1.656-1",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477470",
+      "cves": [
+        "CVE-2026-108518"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: libdbi-perl: security update to 1.656-1",
+      "severity": "Medium",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477469",
+      "cves": [
+        "CVE-2026-111879"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: libdbi-perl: security update to 1.656-1",
+      "severity": "Medium",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477469",
+      "cves": [
+        "CVE-2026-111879"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-git: security update to 3.2.1",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477468",
+      "cves": [
+        "CVE-2026-114145"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-git: security update to 3.2.1",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477468",
+      "cves": [
+        "CVE-2026-114145"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: openstack-rally-2025.2: security update to 4.1.0-r6",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477467",
+      "cves": [
+        "CVE-2026-115586"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: openstack-rally-2025.2: security update to 4.1.0-r6",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477467",
+      "cves": [
+        "CVE-2026-115586"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: zed: security update to 1.24.4-r1",
+      "severity": "Medium",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477466",
+      "cves": [
+        "CVE-2026-115892"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: zed: security update to 1.24.4-r1",
+      "severity": "Medium",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477466",
+      "cves": [
+        "CVE-2026-115892"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: pelias-api: security update to 7.11.0-r3",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477465",
+      "cves": [
+        "CVE-2026-109841"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: pelias-api: security update to 7.11.0-r3",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477465",
+      "cves": [
+        "CVE-2026-109841"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: openstack-rally-2025.2: security update to 4.1.0-r6",
+      "severity": "Medium",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477464",
+      "cves": [
+        "CVE-2026-113713"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: openstack-rally-2025.2: security update to 4.1.0-r6",
+      "severity": "Medium",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477464",
+      "cves": [
+        "CVE-2026-113713"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: pelias-api: security update to 7.11.0-r3",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477463",
+      "cves": [
+        "CVE-2026-109924"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: pelias-api: security update to 7.11.0-r3",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477463",
+      "cves": [
+        "CVE-2026-109924"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: pelias-api: security update to 7.11.0-r3",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477462",
+      "cves": [
+        "CVE-2026-109869"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: pelias-api: security update to 7.11.0-r3",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477462",
+      "cves": [
+        "CVE-2026-109869"
+      ]
+    },
+    {
+      "id": "372041",
+      "title": "AlmaLinux 8 : firefox (ALSA-2026:76850)",
+      "severity": "Critical",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/372041",
+      "cves": [
+        "CVE-2026-100756",
+        "CVE-2026-100757",
+        "CVE-2026-100758",
+        "CVE-2026-100759",
+        "CVE-2026-100762",
+        "CVE-2026-100766",
+        "CVE-2026-100767",
+        "CVE-2026-100769",
+        "CVE-2026-100770",
+        "CVE-2026-100771",
+        "CVE-2026-100772",
+        "CVE-2026-100773",
+        "CVE-2026-100774",
+        "CVE-2026-100775",
+        "CVE-2026-100776",
+        "CVE-2026-100777",
+        "CVE-2026-100778",
+        "CVE-2026-100779",
+        "CVE-2026-100780",
+        "CVE-2026-100781",
+        "CVE-2026-100782",
+        "CVE-2026-100783",
+        "CVE-2026-100784",
+        "CVE-2026-100785",
+        "CVE-2026-100786",
+        "CVE-2026-100788",
+        "CVE-2026-100789",
+        "CVE-2026-100790",
+        "CVE-2026-100791",
+        "CVE-2026-100792",
+        "CVE-2026-100794",
+        "CVE-2026-100797",
+        "CVE-2026-100801",
+        "CVE-2026-100803",
+        "CVE-2026-100807",
+        "CVE-2026-100811",
+        "CVE-2026-100818",
+        "CVE-2026-100819",
+        "CVE-2026-100820",
+        "CVE-2026-100821",
+        "CVE-2026-100832",
+        "CVE-2026-92035",
+        "CVE-2026-96869"
+      ]
+    },
+    {
+      "id": "372040",
+      "title": "Debian dla-4861 : openjdk-17-dbg - security update",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/372040",
+      "cves": [
         "CVE-2026-83374",
         "CVE-2026-83376",
-        "CVE-2026-83378",
         "CVE-2026-83380",
         "CVE-2026-83381",
         "CVE-2026-83387",
+        "CVE-2026-83395",
         "CVE-2026-83400",
-        "CVE-2026-87255",
         "CVE-2026-87290",
-        "CVE-2026-87291",
         "CVE-2026-87292",
-        "CVE-2026-87293",
         "CVE-2026-87294",
-        "CVE-2026-87367",
-        "CVE-2026-91332",
-        "CVE-2026-91334",
-        "CVE-2026-91335",
-        "CVE-2026-91373",
-        "CVE-2026-91374",
-        "CVE-2026-91375",
-        "CVE-2026-91379"
-      ]
-    },
-    {
-      "id": "371893",
-      "title": "Amazon Linux 2023 : amazon-ecr-credential-helper (ALAS2023-2026-3271)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371893",
-      "cves": [
-        "CVE-2026-78659",
-        "CVE-2026-78663",
-        "CVE-2026-78667",
-        "CVE-2026-94439",
-        "CVE-2026-94440",
-        "CVE-2026-94448",
-        "CVE-2026-97030"
-      ]
-    },
-    {
-      "id": "371892",
-      "title": "Amazon Linux 2023 : firefox (ALAS2023-2026-3329)",
-      "severity": "Medium",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371892",
-      "cves": [
-        "CVE-2026-113470"
-      ]
-    },
-    {
-      "id": "371891",
-      "title": "Amazon Linux 2 : runc (ALASECS-2026-151)",
-      "severity": "Medium",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371891",
-      "cves": [
-        "CVE-2026-111943",
-        "CVE-2026-61801"
-      ]
-    },
-    {
-      "id": "371890",
-      "title": "Amazon Linux 2023 : mariadb1011, mariadb1011-backup, mariadb1011-client-utils (ALAS2023-2026-3308)",
-      "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371890",
-      "cves": [
-        "CVE-2026-107815",
-        "CVE-2026-107816",
-        "CVE-2026-107817",
-        "CVE-2026-107821",
-        "CVE-2026-107822",
-        "CVE-2026-107823",
-        "CVE-2026-47023",
-        "CVE-2026-47064",
-        "CVE-2026-60184",
-        "CVE-2026-60331",
-        "CVE-2026-60585",
-        "CVE-2026-60747",
-        "CVE-2026-61081"
-      ]
-    },
-    {
-      "id": "371889",
-      "title": "Amazon Linux 2023 : golang, golang-bin, golang-misc (ALAS2023-2026-3327)",
-      "severity": "Medium",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371889",
-      "cves": [
-        "CVE-2026-111943"
-      ]
-    },
-    {
-      "id": "371888",
-      "title": "Amazon Linux 2023 : java-17-amazon-corretto, java-17-amazon-corretto-devel, java-17-amazon-corretto-headless (ALAS2023-2026-3318)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371888",
-      "cves": [
-        "CVE-2026-113470",
-        "CVE-2026-83374",
-        "CVE-2026-83376",
-        "CVE-2026-83378",
-        "CVE-2026-83380",
-        "CVE-2026-83381",
-        "CVE-2026-83387",
-        "CVE-2026-83400",
-        "CVE-2026-87255",
-        "CVE-2026-87290",
-        "CVE-2026-87291",
-        "CVE-2026-87292",
-        "CVE-2026-87293",
-        "CVE-2026-87294",
-        "CVE-2026-87367",
-        "CVE-2026-91332",
-        "CVE-2026-91334",
-        "CVE-2026-91335",
-        "CVE-2026-91373",
-        "CVE-2026-91374",
-        "CVE-2026-91375",
-        "CVE-2026-91379"
-      ]
-    },
-    {
-      "id": "371887",
-      "title": "Amazon Linux 2023 : cni-plugins (ALAS2023-2026-3258)",
-      "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371887",
-      "cves": [
-        "CVE-2026-78659",
-        "CVE-2026-78667",
-        "CVE-2026-94440"
-      ]
-    },
-    {
-      "id": "371886",
-      "title": "Amazon Linux 2023 : docker (ALAS2023-2026-3266)",
-      "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371886",
-      "cves": [
-        "CVE-2026-17106",
-        "CVE-2026-78659",
-        "CVE-2026-78667",
-        "CVE-2026-92542",
-        "CVE-2026-92543",
-        "CVE-2026-93320",
-        "CVE-2026-94440"
-      ]
-    },
-    {
-      "id": "371885",
-      "title": "Amazon Linux 2023 : java-27-amazon-corretto, java-27-amazon-corretto-devel, java-27-amazon-corretto-headless (ALAS2023-2026-3316)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371885",
-      "cves": [
-        "CVE-2026-113470",
-        "CVE-2026-83374",
-        "CVE-2026-83376",
-        "CVE-2026-83378",
-        "CVE-2026-83380",
-        "CVE-2026-83381",
-        "CVE-2026-83387",
-        "CVE-2026-87255",
-        "CVE-2026-87290",
-        "CVE-2026-87291",
-        "CVE-2026-87292",
-        "CVE-2026-87293",
         "CVE-2026-87367",
         "CVE-2026-91332",
         "CVE-2026-91334",
@@ -680,305 +605,87 @@
         "CVE-2026-91375",
         "CVE-2026-91379",
         "CVE-2026-91380",
-        "CVE-2026-91381"
+        "CVE-2026-91382",
+        "CVE-2026-91394",
+        "CVE-2026-91397",
+        "CVE-2026-91398",
+        "CVE-2026-91400",
+        "CVE-2026-91410",
+        "CVE-2026-91411",
+        "CVE-2026-91415",
+        "CVE-2026-91418",
+        "CVE-2026-91451",
+        "CVE-2026-91452",
+        "CVE-2026-91453",
+        "CVE-2026-91461",
+        "CVE-2026-91462",
+        "CVE-2026-91463",
+        "CVE-2026-91464",
+        "CVE-2026-91487"
       ]
     },
     {
-      "id": "371884",
-      "title": "Amazon Linux 2023 : python3.12, python3.12-devel, python3.12-idle (ALAS2023-2026-3230)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371884",
-      "cves": [
-        "CVE-2026-15310",
-        "CVE-2026-15806",
-        "CVE-2026-17084",
-        "CVE-2026-19445",
-        "CVE-2026-19553",
-        "CVE-2026-19672",
-        "CVE-2026-82049",
-        "CVE-2026-87910"
-      ]
-    },
-    {
-      "id": "371883",
-      "title": "Amazon Linux 2023 : soci-snapshotter (ALAS2023-2026-3270)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371883",
-      "cves": [
-        "CVE-2026-78659",
-        "CVE-2026-78663",
-        "CVE-2026-78667",
-        "CVE-2026-94439",
-        "CVE-2026-94440",
-        "CVE-2026-94448",
-        "CVE-2026-97030"
-      ]
-    },
-    {
-      "id": "371882",
-      "title": "Amazon Linux 2023 : python3-jwt, python3-jwt+crypto (ALAS2023-2026-3298)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371882",
-      "cves": [
-        "CVE-2026-101917",
-        "CVE-2026-101918",
-        "CVE-2026-102266",
-        "CVE-2026-102267",
-        "CVE-2026-102268",
-        "CVE-2026-102271",
-        "CVE-2026-102272",
-        "CVE-2026-102273",
-        "CVE-2026-102275"
-      ]
-    },
-    {
-      "id": "371881",
-      "title": "Amazon Linux 2023 : gstreamer1-plugins-good, gstreamer1-plugins-good-gtk (ALAS2023-2026-3276)",
-      "severity": "Medium",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371881",
-      "cves": [
-        "CVE-2026-17072",
-        "CVE-2026-73433",
-        "CVE-2026-73434"
-      ]
-    },
-    {
-      "id": "371880",
-      "title": "Amazon Linux 2023 : mod_security, mod_security-mlogc (ALAS2023-2026-3247)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371880",
-      "cves": [
-        "CVE-2026-104269"
-      ]
-    },
-    {
-      "id": "371879",
-      "title": "Amazon Linux 2 : containerd (ALASECS-2026-145)",
-      "severity": "Medium",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371879",
-      "cves": [
-        "CVE-2026-53493",
-        "CVE-2026-56855",
-        "CVE-2026-61801",
-        "CVE-2026-78662",
-        "CVE-2026-78663",
-        "CVE-2026-81870",
-        "CVE-2026-95837"
-      ]
-    },
-    {
-      "id": "371878",
-      "title": "Amazon Linux 2023 : python3-tornado (ALAS2023-2026-3292)",
+      "id": "372039",
+      "title": "Debian dla-4860 : libdatetime-timezone-perl - security update",
       "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371878",
-      "cves": [
-        "CVE-2026-103262"
-      ]
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/372039",
+      "cves": []
     },
     {
-      "id": "371877",
-      "title": "Amazon Linux 2023 : libXtst, libXtst-devel (ALAS2023-2026-3259)",
-      "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371877",
-      "cves": [
-        "CVE-2026-94286"
-      ]
-    },
-    {
-      "id": "371876",
-      "title": "Amazon Linux 2023 : amazon-efs-utils (ALAS2023-2026-3333)",
-      "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371876",
-      "cves": [
-        "CVE-2026-15957"
-      ]
-    },
-    {
-      "id": "371875",
-      "title": "Amazon Linux 2023 : perl, perl-Attribute-Handlers, perl-AutoLoader (ALAS2023-2026-3279)",
+      "id": "372038",
+      "title": "Fedora 46 : libsidplayfp (2026-6ebd8db1af)",
       "severity": "Medium",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371875",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/372038",
       "cves": [
-        "CVE-2026-15534",
-        "CVE-2026-19487"
+        "CVE-2026-111148"
       ]
     },
     {
-      "id": "371874",
-      "title": "Amazon Linux 2023 : runc (ALAS2023-2026-3323)",
-      "severity": "Medium",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371874",
+      "id": "372037",
+      "title": "Fedora 46 : rubygem-gist (2026-203a947c26)",
+      "severity": "Critical",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/372037",
+      "cves": []
+    },
+    {
+      "id": "372036",
+      "title": "Fedora 46 : python3.9 (2026-2d80410324)",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/372036",
+      "cves": [
+        "CVE-2026-11940",
+        "CVE-2026-15308"
+      ]
+    },
+    {
+      "id": "372035",
+      "title": "RHEL 10 : delve (RHSA-2026:89884)",
+      "severity": "High",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/372035",
       "cves": [
         "CVE-2026-111943",
-        "CVE-2026-61801"
-      ]
-    },
-    {
-      "id": "371873",
-      "title": "Amazon Linux 2 : ecs-init (ALASECS-2026-149)",
-      "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371873",
-      "cves": [
-        "CVE-2026-78659"
-      ]
-    },
-    {
-      "id": "371872",
-      "title": "Amazon Linux 2023 : ghostscript, ghostscript-gtk, ghostscript-tools-dvipdf (ALAS2023-2026-3294)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371872",
-      "cves": [
-        "CVE-2026-101258",
-        "CVE-2026-103226",
-        "CVE-2026-39919"
-      ]
-    },
-    {
-      "id": "371871",
-      "title": "Amazon Linux 2023 : java-1.8.0-amazon-corretto, java-1.8.0-amazon-corretto-devel (ALAS2023-2026-3315)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371871",
-      "cves": [
-        "CVE-2026-113470",
-        "CVE-2026-83374",
-        "CVE-2026-83376",
-        "CVE-2026-83378",
-        "CVE-2026-83380",
-        "CVE-2026-83381",
-        "CVE-2026-83387",
-        "CVE-2026-83400",
-        "CVE-2026-87255",
-        "CVE-2026-87290",
-        "CVE-2026-87291",
-        "CVE-2026-87292",
-        "CVE-2026-87293",
-        "CVE-2026-87294",
-        "CVE-2026-87367",
-        "CVE-2026-91332",
-        "CVE-2026-91334",
-        "CVE-2026-91335",
-        "CVE-2026-91373",
-        "CVE-2026-91374",
-        "CVE-2026-91375",
-        "CVE-2026-91379"
-      ]
-    },
-    {
-      "id": "371870",
-      "title": "Amazon Linux 2 : oci-add-hooks (ALASECS-2026-147)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371870",
-      "cves": [
-        "CVE-2026-78663",
         "CVE-2026-78667",
-        "CVE-2026-94439",
-        "CVE-2026-94448"
+        "CVE-2026-78669",
+        "CVE-2026-94440",
+        "CVE-2026-97031"
       ]
     },
     {
-      "id": "371869",
-      "title": "Amazon Linux 2023 : python3.11, python3.11-devel, python3.11-idle (ALAS2023-2026-3231)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371869",
-      "cves": [
-        "CVE-2026-15310",
-        "CVE-2026-15806",
-        "CVE-2026-17084",
-        "CVE-2026-19445",
-        "CVE-2026-19553",
-        "CVE-2026-19672",
-        "CVE-2026-82049",
-        "CVE-2026-87910"
-      ]
-    },
-    {
-      "id": "371868",
-      "title": "Amazon Linux 2023 : java-11-amazon-corretto, java-11-amazon-corretto-devel, java-11-amazon-corretto-headless (ALAS2023-2026-3317)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371868",
-      "cves": [
-        "CVE-2026-113470",
-        "CVE-2026-83374",
-        "CVE-2026-83376",
-        "CVE-2026-83378",
-        "CVE-2026-83380",
-        "CVE-2026-83381",
-        "CVE-2026-83387",
-        "CVE-2026-83400",
-        "CVE-2026-87255",
-        "CVE-2026-87290",
-        "CVE-2026-87291",
-        "CVE-2026-87292",
-        "CVE-2026-87293",
-        "CVE-2026-87294",
-        "CVE-2026-87367",
-        "CVE-2026-91332",
-        "CVE-2026-91334",
-        "CVE-2026-91335",
-        "CVE-2026-91373",
-        "CVE-2026-91374",
-        "CVE-2026-91375",
-        "CVE-2026-91379"
-      ]
-    },
-    {
-      "id": "371867",
-      "title": "Amazon Linux 2023 : xorg-x11-server-common, xorg-x11-server-devel, xorg-x11-server-source (ALAS2023-2026-3260)",
+      "id": "372034",
+      "title": "RHEL 10 : rhc (RHSA-2026:89892)",
       "severity": "High",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371867",
+      "date": "Mon, 26 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/372034",
       "cves": [
-        "CVE-2026-88812",
-        "CVE-2026-93515",
-        "CVE-2026-93516",
-        "CVE-2026-93517",
-        "CVE-2026-93518",
-        "CVE-2026-93519",
-        "CVE-2026-93521",
-        "CVE-2026-93523",
-        "CVE-2026-93524",
-        "CVE-2026-93536"
-      ]
-    },
-    {
-      "id": "371866",
-      "title": "Amazon Linux 2023 : nodejs24, nodejs24-devel, nodejs24-full-i18n (ALAS2023-2026-3330)",
-      "severity": "Critical",
-      "date": "Sun, 25 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/371866",
-      "cves": [
-        "CVE-2026-105481",
-        "CVE-2026-105482",
-        "CVE-2026-106069",
-        "CVE-2026-106072",
-        "CVE-2026-106073",
-        "CVE-2026-106074",
-        "CVE-2026-109383",
-        "CVE-2026-109829",
-        "CVE-2026-109841",
-        "CVE-2026-109869",
-        "CVE-2026-109924",
-        "CVE-2026-109932",
-        "CVE-2026-111497",
-        "CVE-2026-87018",
-        "CVE-2026-87029"
+        "CVE-2026-111943",
+        "CVE-2026-78667",
+        "CVE-2026-78669",
+        "CVE-2026-97031"
       ]
     }
   ]

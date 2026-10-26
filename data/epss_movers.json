@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-25",
+  "updated": "2026-10-26",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-25",
-  "previous_date": "2026-10-18",
+  "current_date": "2026-10-26",
+  "previous_date": "2026-10-19",
   "risers": [
     {
       "id": "CVE-2026-31431",
