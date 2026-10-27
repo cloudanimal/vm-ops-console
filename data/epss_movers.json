@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-26",
+  "updated": "2026-10-27",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-26",
-  "previous_date": "2026-10-19",
+  "current_date": "2026-10-27",
+  "previous_date": "2026-10-20",
   "risers": [
     {
       "id": "CVE-2026-31431",
@@ -33,6 +33,13 @@
       "name": "Insufficient input validation leading to memory overread"
     },
     {
+      "id": "CVE-2026-21589",
+      "now": 0.99477,
+      "prev": 0.12711,
+      "delta": 0.86766,
+      "name": "Atlassian Bamboo Data Center"
+    },
+    {
       "id": "CVE-2026-35616",
       "now": 0.93983,
       "prev": 0.09098,
@@ -54,13 +61,6 @@
       "name": "Apache ActiveMQ Broker, Apache ActiveMQ All, Apache ActiveMQ: Authenticated users could pe"
     },
     {
-      "id": "CVE-2026-105134",
-      "now": 0.86266,
-      "prev": 0.04782,
-      "delta": 0.81484,
-      "name": "Ahsay AhsayCBS Replication Receiver UpdateReceivers.do os command injection"
-    },
-    {
       "id": "CVE-2026-88771",
       "now": 0.8216,
       "prev": 0.01083,
@@ -76,9 +76,9 @@
     },
     {
       "id": "CVE-2026-105133",
-      "now": 0.79236,
+      "now": 0.7947,
       "prev": 0.00854,
-      "delta": 0.78382,
+      "delta": 0.78616,
       "name": "Ahsay AhsayCBS API ApiStructsAction.java checkSysPwd improper authentication"
     },
     {
@@ -87,6 +87,13 @@
       "prev": 0.02704,
       "delta": 0.77538,
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2026-105134",
+      "now": 0.81763,
+      "prev": 0.04782,
+      "delta": 0.76981,
+      "name": "Ahsay AhsayCBS Replication Receiver UpdateReceivers.do os command injection"
     },
     {
       "id": "CVE-2026-88772",
@@ -206,13 +213,6 @@
       "prev": 0.14026,
       "delta": 0.61573,
       "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2026-104935",
-      "now": 0.86766,
-      "prev": 0.25982,
-      "delta": 0.60784,
-      "name": "Ivanti Connect Secure"
     }
   ],
   "newly_high": [
@@ -245,6 +245,13 @@
       "name": "Insufficient input validation leading to memory overread"
     },
     {
+      "id": "CVE-2026-21589",
+      "now": 0.99477,
+      "prev": 0.12711,
+      "delta": 0.86766,
+      "name": "Atlassian Bamboo Data Center"
+    },
+    {
       "id": "CVE-2026-35616",
       "now": 0.93983,
       "prev": 0.09098,
@@ -266,13 +273,6 @@
       "name": "Apache ActiveMQ Broker, Apache ActiveMQ All, Apache ActiveMQ: Authenticated users could pe"
     },
     {
-      "id": "CVE-2026-105134",
-      "now": 0.86266,
-      "prev": 0.04782,
-      "delta": 0.81484,
-      "name": "Ahsay AhsayCBS Replication Receiver UpdateReceivers.do os command injection"
-    },
-    {
       "id": "CVE-2026-88771",
       "now": 0.8216,
       "prev": 0.01083,
@@ -288,9 +288,9 @@
     },
     {
       "id": "CVE-2026-105133",
-      "now": 0.79236,
+      "now": 0.7947,
       "prev": 0.00854,
-      "delta": 0.78382,
+      "delta": 0.78616,
       "name": "Ahsay AhsayCBS API ApiStructsAction.java checkSysPwd improper authentication"
     },
     {
@@ -299,6 +299,13 @@
       "prev": 0.02704,
       "delta": 0.77538,
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2026-105134",
+      "now": 0.81763,
+      "prev": 0.04782,
+      "delta": 0.76981,
+      "name": "Ahsay AhsayCBS Replication Receiver UpdateReceivers.do os command injection"
     },
     {
       "id": "CVE-2026-88772",
@@ -418,13 +425,6 @@
       "prev": 0.14026,
       "delta": 0.61573,
       "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2026-104935",
-      "now": 0.86766,
-      "prev": 0.25982,
-      "delta": 0.60784,
-      "name": "Ivanti Connect Secure"
     }
   ]
 }
