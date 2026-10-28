@@ -1,610 +1,620 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
     {
-      "id": "506486",
-      "title": "PLANET WGS-804HPT and WGS-4215 Missing Authentication for Critical Function (CVE-2025-46275)",
+      "id": null,
+      "title": "Chainguard: ecpg-17, multiple libecpg-17 packages, multiple postgresql-17 packages: security update to 17.11-r0",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477720",
+      "cves": [
+        "CVE-2026-14679"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: ecpg-17, multiple libecpg-17 packages, multiple postgresql-17 packages: security update to 17.11-r0",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477720",
+      "cves": [
+        "CVE-2026-14679"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: ecpg-17, multiple libecpg-17 packages, multiple postgresql-17 packages: security update to 17.11-r0",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477719",
+      "cves": [
+        "CVE-2026-14668"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: ecpg-17, multiple libecpg-17 packages, multiple postgresql-17 packages: security update to 17.11-r0",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477719",
+      "cves": [
+        "CVE-2026-14668"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: libecpg-14, multiple postgresql-14 packages: security update to 14.24-r0",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477718",
+      "cves": [
+        "CVE-2026-14669"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: libecpg-14, multiple postgresql-14 packages: security update to 14.24-r0",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477718",
+      "cves": [
+        "CVE-2026-14669"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: ecpg-16, multiple libecpg-16 packages, multiple postgresql-16 packages: security update to 16.15-r0",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477717",
+      "cves": [
+        "CVE-2026-14664",
+        "CVE-2026-2006"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: ecpg-16, multiple libecpg-16 packages, multiple postgresql-16 packages: security update to 16.15-r0",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477717",
+      "cves": [
+        "CVE-2026-14664",
+        "CVE-2026-2006"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: ecpg-17, multiple libecpg-17 packages, multiple postgresql-17 packages: security update to 17.11-r0",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477716",
+      "cves": [
+        "CVE-2026-6464"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: ecpg-17, multiple libecpg-17 packages, multiple postgresql-17 packages: security update to 17.11-r0",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477716",
+      "cves": [
+        "CVE-2026-6464"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: ecpg-18, multiple libecpg-18 packages, multiple postgresql-18 packages: security update to 18.6-r0",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477715",
+      "cves": [
+        "CVE-2026-18024",
+        "CVE-2026-2006"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: ecpg-18, multiple libecpg-18 packages, multiple postgresql-18 packages: security update to 18.6-r0",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477715",
+      "cves": [
+        "CVE-2026-18024",
+        "CVE-2026-2006"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: ecpg-17, multiple libecpg-17 packages, multiple postgresql-17 packages: security update to 17.11-r0",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477714",
+      "cves": [
+        "CVE-2026-6470"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: ecpg-17, multiple libecpg-17 packages, multiple postgresql-17 packages: security update to 17.11-r0",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477714",
+      "cves": [
+        "CVE-2026-6470"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: libecpg-15, multiple postgresql-15 packages: security update to 15.19-r0",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477713",
+      "cves": [
+        "CVE-2026-6471"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: libecpg-15, multiple postgresql-15 packages: security update to 15.19-r0",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477713",
+      "cves": [
+        "CVE-2026-6471"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple langfuse-4 packages: security update to 4.71.0-r1",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477712",
+      "cves": [
+        "CVE-2026-116693"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple langfuse-4 packages: security update to 4.71.0-r1",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477712",
+      "cves": [
+        "CVE-2026-116693"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple pyc packages: security update to 3.12.16-r0",
       "severity": "Critical",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506486",
-      "cves": []
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477711",
+      "cves": [
+        "CVE-2024-3220",
+        "CVE-2026-114583",
+        "CVE-2026-115557",
+        "CVE-2026-7774"
+      ]
     },
     {
-      "id": "506485",
-      "title": "PLANET WGS-804HPT Stack-based Buffer Overflow (CVE-2024-48871)",
+      "id": null,
+      "title": "Alpine: multiple pyc packages: security update to 3.12.16-r0",
       "severity": "Critical",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506485",
-      "cves": []
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477711",
+      "cves": [
+        "CVE-2024-3220",
+        "CVE-2026-114583",
+        "CVE-2026-115557",
+        "CVE-2026-7774"
+      ]
     },
     {
-      "id": "506484",
-      "title": "PLANET WGS-804HPT and WGS-4215 OS Command Injection (CVE-2025-46272)",
+      "id": null,
+      "title": "Echo: python3.13: security update to 3.13.5-2+e42",
       "severity": "Critical",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506484",
-      "cves": []
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477710",
+      "cves": [
+        "CVE-2026-115557"
+      ]
     },
     {
-      "id": "506483",
-      "title": "PLANET IGS-5225-8P2T4S OS Command Injection (CVE-2026-81942)",
-      "severity": "High",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506483",
-      "cves": []
-    },
-    {
-      "id": "506482",
-      "title": "PLANET WGS-804HPT Integer Underflow (CVE-2024-52558)",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506482",
-      "cves": []
-    },
-    {
-      "id": "506481",
-      "title": "PLANET IGS-6325-16P4S Improper Validation of Integrity Check Value (CVE-2023-48795)",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506481",
-      "cves": []
-    },
-    {
-      "id": "506480",
-      "title": "PLANET IGS-5225-8P2T4S Stack-based Buffer Overflow (CVE-2026-81944)",
-      "severity": "High",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506480",
-      "cves": []
-    },
-    {
-      "id": "506479",
-      "title": "PLANET IGS-5225-8P2T4S Stack-based Buffer Overflow (CVE-2026-81945)",
-      "severity": "High",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506479",
-      "cves": []
-    },
-    {
-      "id": "506478",
-      "title": "PLANET IGS-5225-8P2T4S Active Debug Code (CVE-2026-81943)",
-      "severity": "High",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506478",
-      "cves": []
-    },
-    {
-      "id": "506477",
-      "title": "PLANET IGS-5225-8P2T4S Use of Weak Hash (CVE-2026-81946)",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506477",
-      "cves": []
-    },
-    {
-      "id": "506476",
-      "title": "PLANET WGS-804HPT OS Command Injection (CVE-2024-52320)",
+      "id": null,
+      "title": "Echo: python3.13: security update to 3.13.5-2+e42",
       "severity": "Critical",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506476",
-      "cves": []
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477710",
+      "cves": [
+        "CVE-2026-115557"
+      ]
     },
     {
       "id": null,
-      "title": "Alpine: multiple ruby packages: security update to 3.3.13-r0",
+      "title": "Echo: python-aiohttp: security update to 3.14.3-1+e2",
       "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477565",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477709",
       "cves": [
-        "CVE-2026-27820",
-        "CVE-2026-41316",
-        "CVE-2026-80212",
-        "CVE-2026-80213"
+        "CVE-2026-111065"
       ]
     },
     {
       "id": null,
-      "title": "Alpine: multiple ruby packages: security update to 3.3.13-r0",
+      "title": "Echo: python-aiohttp: security update to 3.14.3-1+e2",
       "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477565",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477709",
       "cves": [
-        "CVE-2026-27820",
-        "CVE-2026-41316",
-        "CVE-2026-80212",
-        "CVE-2026-80213"
+        "CVE-2026-111065"
       ]
     },
     {
       "id": null,
-      "title": "Alpine: multiple ruby packages: security update to 3.4.7-r0",
+      "title": "Echo: python-aiohttp: security update to 3.14.3-1+e2",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477708",
+      "cves": [
+        "CVE-2026-111748"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-aiohttp: security update to 3.14.3-1+e2",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477708",
+      "cves": [
+        "CVE-2026-111748"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-aiohttp: security update to 3.14.3-1+e2",
       "severity": "Low",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477564",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477707",
       "cves": [
-        "CVE-2025-27221",
-        "CVE-2025-61594"
+        "CVE-2026-111749"
       ]
     },
     {
       "id": null,
-      "title": "Alpine: multiple ruby packages: security update to 3.4.7-r0",
+      "title": "Echo: python-aiohttp: security update to 3.14.3-1+e2",
       "severity": "Low",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477564",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477707",
       "cves": [
-        "CVE-2025-27221",
-        "CVE-2025-61594"
+        "CVE-2026-111749"
       ]
     },
     {
       "id": null,
-      "title": "Alpine: multiple ruby-net-imap packages: security update to 0.4.25-r0",
+      "title": "Echo: python3.13: security update to 3.13.5-2+e41",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477706",
+      "cves": [
+        "CVE-2026-114583",
+        "CVE-2026-7774"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python3.13: security update to 3.13.5-2+e41",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477706",
+      "cves": [
+        "CVE-2026-114583",
+        "CVE-2026-7774"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-aiohttp: security update to 3.14.3-1+e2",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477705",
+      "cves": [
+        "CVE-2026-111750"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-aiohttp: security update to 3.14.3-1+e2",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477705",
+      "cves": [
+        "CVE-2026-111750"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-aiohttp: security update to 3.14.3-1+e2",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477704",
+      "cves": [
+        "CVE-2026-111063"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-aiohttp: security update to 3.14.3-1+e2",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477704",
+      "cves": [
+        "CVE-2026-111063"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-aiohttp: security update to 3.14.3-1+e2",
       "severity": "High",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477563",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477703",
       "cves": [
-        "CVE-2026-42245",
-        "CVE-2026-42246",
-        "CVE-2026-42256",
-        "CVE-2026-42257"
+        "CVE-2026-111064"
       ]
     },
     {
       "id": null,
-      "title": "Alpine: multiple ruby-net-imap packages: security update to 0.4.25-r0",
+      "title": "Echo: python-aiohttp: security update to 3.14.3-1+e2",
       "severity": "High",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477563",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477703",
       "cves": [
-        "CVE-2026-42245",
-        "CVE-2026-42246",
-        "CVE-2026-42256",
-        "CVE-2026-42257"
+        "CVE-2026-111064"
       ]
     },
     {
       "id": null,
-      "title": "Alpine: mongo-c-driver: security update to 1.30.14-r0",
+      "title": "Echo: python-aiohttp: security update to 3.14.3-1+e2",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477702",
+      "cves": [
+        "CVE-2026-111066"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: python-aiohttp: security update to 3.14.3-1+e2",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477702",
+      "cves": [
+        "CVE-2026-111066"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for deepmerge (GHSA-gcqx-w48m-w2h4)",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477701",
+      "cves": [
+        "CVE-2026-93753"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for deepmerge (GHSA-gcqx-w48m-w2h4)",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477701",
+      "cves": [
+        "CVE-2026-93753"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/runatlantis/atlantis (GHSA-rjh2-4xgw-p2hj)",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477700",
+      "cves": [
+        "CVE-2026-116676"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/runatlantis/atlantis (GHSA-rjh2-4xgw-p2hj)",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477700",
+      "cves": [
+        "CVE-2026-116676"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @ckeditor/ckeditor5-engine, ckeditor5 (GHSA-v6mg-96c6-gmpq)",
+      "severity": "Low",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477699",
+      "cves": [
+        "CVE-2026-116687"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @ckeditor/ckeditor5-engine, ckeditor5 (GHSA-v6mg-96c6-gmpq)",
+      "severity": "Low",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477699",
+      "cves": [
+        "CVE-2026-116687"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for mcp (GHSA-5h93-6whr-6q8j)",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477698",
+      "cves": [
+        "CVE-2026-116685"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for mcp (GHSA-5h93-6whr-6q8j)",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477698",
+      "cves": [
+        "CVE-2026-116685"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for mlflow (GHSA-m65p-9j7q-6w33)",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477697",
+      "cves": [
+        "CVE-2026-116690"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for mlflow (GHSA-m65p-9j7q-6w33)",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477697",
+      "cves": [
+        "CVE-2026-116690"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @ckeditor/ckeditor5-engine, ckeditor5 (GHSA-rh54-vffm-5fvp)",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477696",
+      "cves": [
+        "CVE-2026-116688"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @ckeditor/ckeditor5-engine, ckeditor5 (GHSA-rh54-vffm-5fvp)",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477696",
+      "cves": [
+        "CVE-2026-116688"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for mcp (GHSA-rwrf-2pqf-9j8j)",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477695",
+      "cves": [
+        "CVE-2026-116686"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for mcp (GHSA-rwrf-2pqf-9j8j)",
+      "severity": "Medium",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477695",
+      "cves": [
+        "CVE-2026-116686"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for TinyMCE, tinymce, tinymce/tinymce (GHSA-mf2p-h6hf-fcwm)",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477694",
+      "cves": [
+        "CVE-2026-116675"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for TinyMCE, tinymce, tinymce/tinymce (GHSA-mf2p-h6hf-fcwm)",
+      "severity": "High",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477694",
+      "cves": [
+        "CVE-2026-116675"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for mlflow (GHSA-26p8-2jq9-3vq9)",
       "severity": "Critical",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477562",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477693",
       "cves": [
-        "CVE-2026-4359",
-        "CVE-2026-81524",
-        "CVE-2026-84963",
-        "CVE-2026-9100"
+        "CVE-2026-116692"
       ]
     },
     {
       "id": null,
-      "title": "Alpine: mongo-c-driver: security update to 1.30.14-r0",
+      "title": "SCA: security update for mlflow (GHSA-26p8-2jq9-3vq9)",
       "severity": "Critical",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477562",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477693",
       "cves": [
-        "CVE-2026-4359",
-        "CVE-2026-81524",
-        "CVE-2026-84963",
-        "CVE-2026-9100"
+        "CVE-2026-116692"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
+      "title": "SCA: security update for opentelemetry-propagator-jaeger (GHSA-f5m9-jfrj-jjj7)",
       "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477561",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477692",
       "cves": [
-        "CVE-2026-85529"
+        "CVE-2026-116694"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
+      "title": "SCA: security update for opentelemetry-propagator-jaeger (GHSA-f5m9-jfrj-jjj7)",
       "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477561",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477692",
       "cves": [
-        "CVE-2026-85529"
+        "CVE-2026-116694"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
+      "title": "SCA: security update for mcp (GHSA-w4fh-qvv9-3v23)",
       "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477560",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477691",
       "cves": [
-        "CVE-2026-6567"
+        "CVE-2026-116684"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
+      "title": "SCA: security update for mcp (GHSA-w4fh-qvv9-3v23)",
       "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477560",
+      "date": "Wed, 28 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477691",
       "cves": [
-        "CVE-2026-6567"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477559",
-      "cves": [
-        "CVE-2026-14552"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477559",
-      "cves": [
-        "CVE-2026-14552"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Low",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477558",
-      "cves": [
-        "CVE-2026-100104"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Low",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477558",
-      "cves": [
-        "CVE-2026-100104"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477557",
-      "cves": [
-        "CVE-2026-100755"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477557",
-      "cves": [
-        "CVE-2026-100755"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477556",
-      "cves": [
-        "CVE-2026-78335"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477556",
-      "cves": [
-        "CVE-2026-78335"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Low",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477555",
-      "cves": [
-        "CVE-2026-82632"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Low",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477555",
-      "cves": [
-        "CVE-2026-82632"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "High",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477554",
-      "cves": [
-        "CVE-2026-14814"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "High",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477554",
-      "cves": [
-        "CVE-2026-14814"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "High",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477553",
-      "cves": [
-        "CVE-2026-16301"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "High",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477553",
-      "cves": [
-        "CVE-2026-16301"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: saf: security update to 1.7.0-r5",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477552",
-      "cves": [
-        "CVE-2026-109461"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: saf: security update to 1.7.0-r5",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477552",
-      "cves": [
-        "CVE-2026-109461"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477551",
-      "cves": [
-        "CVE-2026-84284"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477551",
-      "cves": [
-        "CVE-2026-84284"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477550",
-      "cves": [
-        "CVE-2026-14210"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477550",
-      "cves": [
-        "CVE-2026-14210"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477549",
-      "cves": [
-        "CVE-2026-5954"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477549",
-      "cves": [
-        "CVE-2026-5954"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477548",
-      "cves": [
-        "CVE-2026-7767"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477548",
-      "cves": [
-        "CVE-2026-7767"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Low",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477547",
-      "cves": [
-        "CVE-2026-103549"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Low",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477547",
-      "cves": [
-        "CVE-2026-103549"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477546",
-      "cves": [
-        "CVE-2026-101168"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477546",
-      "cves": [
-        "CVE-2026-101168"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "High",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477545",
-      "cves": [
-        "CVE-2026-92883"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "High",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477545",
-      "cves": [
-        "CVE-2026-92883"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477544",
-      "cves": [
-        "CVE-2026-16275"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple gitlab-docker-machine-19.4 packages: security update to 19.4.2-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477544",
-      "cves": [
-        "CVE-2026-16275"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple ruby-net-imap packages: security update to 0.5.15-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477543",
-      "cves": [
-        "CVE-2026-47240",
-        "CVE-2026-47241",
-        "CVE-2026-47242"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple ruby-net-imap packages: security update to 0.5.15-r0",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477543",
-      "cves": [
-        "CVE-2026-47240",
-        "CVE-2026-47241",
-        "CVE-2026-47242"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: imagemagick: security update to 8:7.1.2.33+dfsg1-1",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477542",
-      "cves": [
-        "CVE-2026-116151"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: imagemagick: security update to 8:7.1.2.33+dfsg1-1",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477542",
-      "cves": [
-        "CVE-2026-116151"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: imagemagick: security update to 8:7.1.2.33+dfsg1-1",
-      "severity": "Medium",
-      "date": "Tue, 27 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477541",
-      "cves": [
-        "CVE-2026-116159"
+        "CVE-2026-116684"
       ]
     }
   ]

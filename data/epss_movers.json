@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-27",
-  "previous_date": "2026-10-20",
+  "current_date": "2026-10-28",
+  "previous_date": "2026-10-21",
   "risers": [
     {
       "id": "CVE-2026-31431",
@@ -38,13 +38,6 @@
       "prev": 0.12711,
       "delta": 0.86766,
       "name": "Atlassian Bamboo Data Center"
-    },
-    {
-      "id": "CVE-2026-35616",
-      "now": 0.93983,
-      "prev": 0.09098,
-      "delta": 0.84885,
-      "name": "Fortinet FortiClientEMS"
     },
     {
       "id": "CVE-2026-42208",
@@ -213,6 +206,13 @@
       "prev": 0.14026,
       "delta": 0.61573,
       "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
+    },
+    {
+      "id": "CVE-2026-104935",
+      "now": 0.86766,
+      "prev": 0.25982,
+      "delta": 0.60784,
+      "name": "Ivanti Connect Secure"
     }
   ],
   "newly_high": [
@@ -252,13 +252,6 @@
       "name": "Atlassian Bamboo Data Center"
     },
     {
-      "id": "CVE-2026-35616",
-      "now": 0.93983,
-      "prev": 0.09098,
-      "delta": 0.84885,
-      "name": "Fortinet FortiClientEMS"
-    },
-    {
       "id": "CVE-2026-42208",
       "now": 0.8942,
       "prev": 0.05772,
@@ -425,6 +418,13 @@
       "prev": 0.14026,
       "delta": 0.61573,
       "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
+    },
+    {
+      "id": "CVE-2026-104935",
+      "now": 0.86766,
+      "prev": 0.25982,
+      "delta": 0.60784,
+      "name": "Ivanti Connect Secure"
     }
   ]
 }
