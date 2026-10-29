@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-28",
-  "total": 1760,
+  "updated": "2026-10-29",
+  "total": 1762,
   "ransomware_count": 361,
   "by_year": {
     "2021": 311,
@@ -8,7 +8,7 @@
     "2023": 187,
     "2024": 186,
     "2025": 245,
-    "2026": 276
+    "2026": 278
   },
   "top_vendors": [
     [
@@ -44,12 +44,12 @@
       36
     ],
     [
-      "Fortinet",
+      "Linux",
       32
     ],
     [
-      "Linux",
-      31
+      "Fortinet",
+      32
     ],
     [
       "Citrix",
@@ -115,7 +115,7 @@
     ],
     [
       "Linux Kernel",
-      31
+      32
     ],
     [
       "Microsoft Office",

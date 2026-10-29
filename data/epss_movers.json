@@ -1,15 +1,29 @@
 {
-  "updated": "2026-10-28",
+  "updated": "2026-10-29",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-28",
-  "previous_date": "2026-10-21",
+  "current_date": "2026-10-29",
+  "previous_date": "2026-10-22",
   "risers": [
+    {
+      "id": "CVE-2026-109618",
+      "now": 0.99999,
+      "prev": 0.05307,
+      "delta": 0.94692,
+      "name": "RCE via OOM corruption"
+    },
     {
       "id": "CVE-2026-31431",
       "now": 0.98114,
       "prev": 0.03437,
       "delta": 0.94677,
       "name": "crypto: algif_aead - Revert to operating out-of-place"
+    },
+    {
+      "id": "CVE-2026-109619",
+      "now": 0.99999,
+      "prev": 0.05757,
+      "delta": 0.94242,
+      "name": "RCE via stale global state"
     },
     {
       "id": "CVE-2026-34486",
@@ -68,25 +82,11 @@
       "name": "Windows Netlogon Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2026-105133",
-      "now": 0.7947,
-      "prev": 0.00854,
-      "delta": 0.78616,
-      "name": "Ahsay AhsayCBS API ApiStructsAction.java checkSysPwd improper authentication"
-    },
-    {
       "id": "CVE-2026-45659",
       "now": 0.80242,
       "prev": 0.02704,
       "delta": 0.77538,
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2026-105134",
-      "now": 0.81763,
-      "prev": 0.04782,
-      "delta": 0.76981,
-      "name": "Ahsay AhsayCBS Replication Receiver UpdateReceivers.do os command injection"
     },
     {
       "id": "CVE-2026-88772",
@@ -110,11 +110,25 @@
       "name": "Drupal core - Highly critical - SQL injection - SA-CORE-2026-004"
     },
     {
+      "id": "CVE-2026-105133",
+      "now": 0.7947,
+      "prev": 0.05794,
+      "delta": 0.73676,
+      "name": "Ahsay AhsayCBS API ApiStructsAction.java checkSysPwd improper authentication"
+    },
+    {
       "id": "CVE-2026-34908",
       "now": 0.88293,
       "prev": 0.15207,
       "delta": 0.73086,
       "name": "Ubiquiti Inc UniFi OS Server"
+    },
+    {
+      "id": "CVE-2026-110447",
+      "now": 0.73307,
+      "prev": 0.01225,
+      "delta": 0.72082,
+      "name": "Collabora Collabora Online - Built-in CODE Server"
     },
     {
       "id": "CVE-2026-48558",
@@ -199,29 +213,29 @@
       "prev": 0.37865,
       "delta": 0.61699,
       "name": "marimo Affected by Pre-Auth Remote Code Execution via Terminal WebSocket Authentication By"
-    },
-    {
-      "id": "CVE-2026-76460",
-      "now": 0.75599,
-      "prev": 0.14026,
-      "delta": 0.61573,
-      "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2026-104935",
-      "now": 0.86766,
-      "prev": 0.25982,
-      "delta": 0.60784,
-      "name": "Ivanti Connect Secure"
     }
   ],
   "newly_high": [
     {
+      "id": "CVE-2026-109618",
+      "now": 0.99999,
+      "prev": 0.05307,
+      "delta": 0.94692,
+      "name": "RCE via OOM corruption"
+    },
+    {
       "id": "CVE-2026-31431",
       "now": 0.98114,
       "prev": 0.03437,
       "delta": 0.94677,
       "name": "crypto: algif_aead - Revert to operating out-of-place"
+    },
+    {
+      "id": "CVE-2026-109619",
+      "now": 0.99999,
+      "prev": 0.05757,
+      "delta": 0.94242,
+      "name": "RCE via stale global state"
     },
     {
       "id": "CVE-2026-34486",
@@ -280,25 +294,11 @@
       "name": "Windows Netlogon Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2026-105133",
-      "now": 0.7947,
-      "prev": 0.00854,
-      "delta": 0.78616,
-      "name": "Ahsay AhsayCBS API ApiStructsAction.java checkSysPwd improper authentication"
-    },
-    {
       "id": "CVE-2026-45659",
       "now": 0.80242,
       "prev": 0.02704,
       "delta": 0.77538,
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2026-105134",
-      "now": 0.81763,
-      "prev": 0.04782,
-      "delta": 0.76981,
-      "name": "Ahsay AhsayCBS Replication Receiver UpdateReceivers.do os command injection"
     },
     {
       "id": "CVE-2026-88772",
@@ -322,11 +322,25 @@
       "name": "Drupal core - Highly critical - SQL injection - SA-CORE-2026-004"
     },
     {
+      "id": "CVE-2026-105133",
+      "now": 0.7947,
+      "prev": 0.05794,
+      "delta": 0.73676,
+      "name": "Ahsay AhsayCBS API ApiStructsAction.java checkSysPwd improper authentication"
+    },
+    {
       "id": "CVE-2026-34908",
       "now": 0.88293,
       "prev": 0.15207,
       "delta": 0.73086,
       "name": "Ubiquiti Inc UniFi OS Server"
+    },
+    {
+      "id": "CVE-2026-110447",
+      "now": 0.73307,
+      "prev": 0.01225,
+      "delta": 0.72082,
+      "name": "Collabora Collabora Online - Built-in CODE Server"
     },
     {
       "id": "CVE-2026-48558",
@@ -411,20 +425,6 @@
       "prev": 0.37865,
       "delta": 0.61699,
       "name": "marimo Affected by Pre-Auth Remote Code Execution via Terminal WebSocket Authentication By"
-    },
-    {
-      "id": "CVE-2026-76460",
-      "now": 0.75599,
-      "prev": 0.14026,
-      "delta": 0.61573,
-      "name": "Cisco Identity Services Engine Authentication Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2026-104935",
-      "now": 0.86766,
-      "prev": 0.25982,
-      "delta": 0.60784,
-      "name": "Ivanti Connect Secure"
     }
   ]
 }
