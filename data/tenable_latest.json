@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,566 +7,626 @@
   "items": [
     {
       "id": null,
-      "title": "Chainguard: nuxeo-2023: security update to 2023.45-r28",
-      "severity": "Critical",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477890",
-      "cves": [
-        "CVE-2026-32990",
-        "CVE-2026-65637"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: nuxeo-2023: security update to 2023.45-r28",
-      "severity": "Critical",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477890",
-      "cves": [
-        "CVE-2026-32990",
-        "CVE-2026-65637"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.22.3-r0",
-      "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477889",
-      "cves": [
-        "CVE-2026-21717"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.22.3-r0",
-      "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477889",
-      "cves": [
-        "CVE-2026-21717"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.23.2-r0",
-      "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477888",
-      "cves": [
-        "CVE-2026-56847"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.23.2-r0",
-      "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477888",
-      "cves": [
-        "CVE-2026-56847"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple open-webui packages: security update to 0.12.3-r12",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477887",
-      "cves": [
-        "CVE-2026-114616"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple open-webui packages: security update to 0.12.3-r12",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477887",
-      "cves": [
-        "CVE-2026-114616"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.22.3-r0",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477886",
-      "cves": [
-        "CVE-2026-21710"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.22.3-r0",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477886",
-      "cves": [
-        "CVE-2026-21710"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple nodejs-16 packages: security update to 16.20.2-r11",
-      "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477885",
-      "cves": [
-        "CVE-2024-21890"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple nodejs-16 packages: security update to 16.20.2-r11",
-      "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477885",
-      "cves": [
-        "CVE-2024-21890"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.22.3-r0",
+      "title": "Chainguard: jupyterhub-k8s-singleuser-sample: security update to 4.4.4-r3",
       "severity": "Low",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477884",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477966",
       "cves": [
-        "CVE-2024-36137",
-        "CVE-2026-21716"
+        "CVE-2026-116578"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.22.3-r0",
+      "title": "Chainguard: jupyterhub-k8s-singleuser-sample: security update to 4.4.4-r3",
       "severity": "Low",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477884",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477966",
       "cves": [
-        "CVE-2024-36137",
-        "CVE-2026-21716"
+        "CVE-2026-116578"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.22.3-r0",
+      "title": "Chainguard: multiple automq packages: security update to 1.7.4-r4",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477965",
+      "cves": [
+        "CVE-2020-13949"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple automq packages: security update to 1.7.4-r4",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477965",
+      "cves": [
+        "CVE-2020-13949"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: jupyterhub-k8s-singleuser-sample: security update to 4.4.4-r3",
       "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477883",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477964",
       "cves": [
-        "CVE-2026-21713"
+        "CVE-2026-116577"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.22.3-r0",
+      "title": "Chainguard: jupyterhub-k8s-singleuser-sample: security update to 4.4.4-r3",
       "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477883",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477964",
       "cves": [
-        "CVE-2026-21713"
+        "CVE-2026-116577"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple nodejs-16 packages: security update to 16.20.2-r15",
+      "title": "Chainguard: jupyterhub-k8s-singleuser-sample: security update to 4.4.4-r3",
       "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477882",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477963",
       "cves": [
-        "CVE-2025-23167"
+        "CVE-2026-115927"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple nodejs-16 packages: security update to 16.20.2-r15",
+      "title": "Chainguard: jupyterhub-k8s-singleuser-sample: security update to 4.4.4-r3",
       "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477882",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477963",
       "cves": [
-        "CVE-2025-23167"
+        "CVE-2026-115927"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.23.2-r0",
+      "title": "Chainguard: multiple automq packages: security update to 1.7.4-r4",
       "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477881",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477962",
       "cves": [
-        "CVE-2026-58043"
+        "CVE-2019-0205"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.23.2-r0",
+      "title": "Chainguard: multiple automq packages: security update to 1.7.4-r4",
       "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477881",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477962",
       "cves": [
-        "CVE-2026-58043"
+        "CVE-2019-0205"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.22.3-r0",
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
       "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477880",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477961",
       "cves": [
-        "CVE-2026-21714"
+        "CVE-2026-115918"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.22.3-r0",
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
       "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477880",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477961",
       "cves": [
-        "CVE-2026-21714"
+        "CVE-2026-115918"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.22.3-r0",
-      "severity": "Low",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477879",
+      "title": "Chainguard: multiple automq packages: security update to 1.7.4-r4",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477960",
       "cves": [
-        "CVE-2026-21715"
+        "CVE-2026-41603"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple nodejs-22 packages: security update to 22.22.3-r0",
-      "severity": "Low",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477879",
+      "title": "Chainguard: multiple automq packages: security update to 1.7.4-r4",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477960",
       "cves": [
-        "CVE-2026-21715"
+        "CVE-2026-41603"
       ]
     },
     {
       "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477878",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477878",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477877",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477877",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477876",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477876",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477875",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477875",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477874",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477874",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477873",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477873",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477872",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477872",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477871",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477871",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477870",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477870",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477869",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477869",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477868",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "Echo: c-ares: security update to 1.34.5-1+deb13u1+e3",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477868",
-      "cves": []
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/esm-dev/esm.sh (GHSA-49pv-gwxp-532r)",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477867",
-      "cves": [
-        "CVE-2025-59341"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/esm-dev/esm.sh (GHSA-49pv-gwxp-532r)",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477867",
-      "cves": [
-        "CVE-2025-59341"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: libcrypto3, multiple openssl packages: security update to 3.1.4-r1",
-      "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477866",
-      "cves": [
-        "CVE-2023-3817",
-        "CVE-2023-5678"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: libcrypto3, multiple openssl packages: security update to 3.1.4-r1",
-      "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477866",
-      "cves": [
-        "CVE-2023-3817",
-        "CVE-2023-5678"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: libcrypto3, multiple openssl packages: security update to 3.1.1-r3",
-      "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477865",
-      "cves": [
-        "CVE-2023-3446"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: libcrypto3, multiple openssl packages: security update to 3.1.1-r3",
-      "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477865",
-      "cves": [
-        "CVE-2023-3446"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple mysql-8.0 packages: security update to 8.0.38-r0",
-      "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477864",
-      "cves": [
-        "CVE-2020-1971"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple mysql-8.0 packages: security update to 8.0.38-r0",
-      "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477864",
-      "cves": [
-        "CVE-2020-1971"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple openjdk-17-openj9 packages: security update to 0.63.0-r0",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477863",
-      "cves": [
-        "CVE-2026-111075"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple openjdk-17-openj9 packages: security update to 0.63.0-r0",
-      "severity": "High",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477863",
-      "cves": [
-        "CVE-2026-111075"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: libcrypto3, multiple openssl packages: security update to 3.3.1-r3",
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
       "severity": "Critical",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477862",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477959",
       "cves": [
-        "CVE-2024-5535"
+        "CVE-2024-29510",
+        "CVE-2026-115915",
+        "CVE-2026-59203"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: libcrypto3, multiple openssl packages: security update to 3.3.1-r3",
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
       "severity": "Critical",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477862",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477959",
       "cves": [
-        "CVE-2024-5535"
+        "CVE-2024-29510",
+        "CVE-2026-115915",
+        "CVE-2026-59203"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: libcrypto3, multiple openssl packages: security update to 3.1.1-r4",
-      "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/477861",
+      "title": "Chainguard: homepage: security update to 2.7.0-r1",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477958",
       "cves": [
-        "CVE-2023-3446",
-        "CVE-2023-3817"
+        "CVE-2026-116576"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: libcrypto3, multiple openssl packages: security update to 3.1.1-r4",
-      "severity": "Medium",
-      "date": "Thu, 29 Oct 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/477861",
+      "title": "Chainguard: homepage: security update to 2.7.0-r1",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477958",
       "cves": [
-        "CVE-2023-3446",
-        "CVE-2023-3817"
+        "CVE-2026-116576"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "Medium",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477957",
+      "cves": [
+        "CVE-2026-115914"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "Medium",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477957",
+      "cves": [
+        "CVE-2026-115914"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477956",
+      "cves": [
+        "CVE-2026-114055"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477956",
+      "cves": [
+        "CVE-2026-114055"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "Medium",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477955",
+      "cves": [
+        "CVE-2026-115916"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "Medium",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477955",
+      "cves": [
+        "CVE-2026-115916"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "Critical",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477954",
+      "cves": [
+        "CVE-2026-114053"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "Critical",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477954",
+      "cves": [
+        "CVE-2026-114053"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "Medium",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477953",
+      "cves": [
+        "CVE-2026-115917"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "Medium",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477953",
+      "cves": [
+        "CVE-2026-115917"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "Medium",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477952",
+      "cves": [
+        "CVE-2026-115913"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "Medium",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477952",
+      "cves": [
+        "CVE-2026-115913"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477951",
+      "cves": [
+        "CVE-2026-94624"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477951",
+      "cves": [
+        "CVE-2026-94624"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "Medium",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477950",
+      "cves": [
+        "CVE-2026-115911"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "Medium",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477950",
+      "cves": [
+        "CVE-2026-115911"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: homepage: security update to 2.7.0-r1",
+      "severity": "Low",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477949",
+      "cves": [
+        "CVE-2026-116673"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: homepage: security update to 2.7.0-r1",
+      "severity": "Low",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477949",
+      "cves": [
+        "CVE-2026-116673"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477948",
+      "cves": [
+        "CVE-2026-115912"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477948",
+      "cves": [
+        "CVE-2026-115912"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477947",
+      "cves": [
+        "CVE-2026-114050"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: vllm-omni-cuda-13.0: security update to 0.32.0-r0",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477947",
+      "cves": [
+        "CVE-2026-114050"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple unrtf packages: security update to 0.21.13-r0",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477946",
+      "cves": [
+        "CVE-2025-65410",
+        "CVE-2025-65411"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple unrtf packages: security update to 0.21.13-r0",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477946",
+      "cves": [
+        "CVE-2025-65410",
+        "CVE-2025-65411"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @rog0x/mcp-git-tools (GHSA-jwc4-922r-f2rw)",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477945",
+      "cves": [
+        "CVE-2026-106764"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @rog0x/mcp-git-tools (GHSA-jwc4-922r-f2rw)",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477945",
+      "cves": [
+        "CVE-2026-106764"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @justice8096/sagemath-mcp-server (GHSA-2vq3-mpmf-9xgr)",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/477944",
+      "cves": [
+        "CVE-2026-106763"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for @justice8096/sagemath-mcp-server (GHSA-2vq3-mpmf-9xgr)",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/477944",
+      "cves": [
+        "CVE-2026-106763"
+      ]
+    },
+    {
+      "id": "374145",
+      "title": "IBM MQ 9.4.0.0 < 9.4.0.30 LTS / 9.4.1.0 < 9.4.5.4 CD / 10.0.0.0 < 10.0.0.6 (7284695)",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/374145",
+      "cves": [
+        "CVE-2026-10572"
+      ]
+    },
+    {
+      "id": "374144",
+      "title": "Oracle Linux 8 : mod_auth_openidc:2.3 (ELSA-2026-92157)",
+      "severity": "Critical",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/374144",
+      "cves": [
+        "CVE-2026-53939"
+      ]
+    },
+    {
+      "id": "374143",
+      "title": "Oracle Linux 8 : tomcat (ELSA-2026-92869)",
+      "severity": "Critical",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/374143",
+      "cves": [
+        "CVE-2026-65182",
+        "CVE-2026-65183",
+        "CVE-2026-65637",
+        "CVE-2026-65905",
+        "CVE-2026-65927",
+        "CVE-2026-66299",
+        "CVE-2026-66422",
+        "CVE-2026-68525",
+        "CVE-2026-68569",
+        "CVE-2026-68763"
+      ]
+    },
+    {
+      "id": "374142",
+      "title": "Oracle Linux 8 : kernel (ELSA-2026-92209)",
+      "severity": "Critical",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/374142",
+      "cves": [
+        "CVE-2026-72288",
+        "CVE-2026-72289",
+        "CVE-2026-90011",
+        "CVE-2026-98222"
+      ]
+    },
+    {
+      "id": "374141",
+      "title": "Oracle Linux 9 : curl (ELSA-2026-92907)",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/374141",
+      "cves": [
+        "CVE-2026-8932"
+      ]
+    },
+    {
+      "id": "374140",
+      "title": "Tenable Plugin Feed < #202610282338 Arbitrary File Read (TNS-2026-33)",
+      "severity": "Medium",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/374140",
+      "cves": []
+    },
+    {
+      "id": "374139",
+      "title": "Symless Synergy 3.x < 3.9.1 RSA Signature Forgery (node-forge)",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/374139",
+      "cves": [
+        "CVE-2026-33894",
+        "CVE-2026-85393"
+      ]
+    },
+    {
+      "id": "374138",
+      "title": "CentOS Linux 7 [TuxCare] Security Update: python / python-debug / python-devel / python-libs / python-test / etc (CENTOS7:CLSA-2026:1793104227)",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/374138",
+      "cves": [
+        "CVE-2026-9669"
+      ]
+    },
+    {
+      "id": "374137",
+      "title": "CentOS Linux 6 [TuxCare] Security Update: patch (CENTOS6:CLSA-2026:1793083677)",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/374137",
+      "cves": [
+        "CVE-2018-6952"
+      ]
+    },
+    {
+      "id": "374136",
+      "title": "CentOS Linux 7 [TuxCare] Security Update: dracut / dracut-caps / dracut-config-generic / dracut-config-rescue / etc (CENTOS7:CLSA-2026:1793090225)",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/374136",
+      "cves": [
+        "CVE-2026-15816"
+      ]
+    },
+    {
+      "id": "374135",
+      "title": "AlmaLinux 9.2 [TuxCare] Security Update: bpftool / kernel / kernel-64k / kernel-64k-core / kernel-64k-debug / etc Multiple Vulnerabilities (ALMALINUX9.2:CLSA-2026:1793333110)",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/374135",
+      "cves": [
+        "CVE-2023-52516",
+        "CVE-2023-54213",
+        "CVE-2024-26740",
+        "CVE-2024-26783",
+        "CVE-2024-45003"
+      ]
+    },
+    {
+      "id": "374134",
+      "title": "CentOS Linux 7 [TuxCare] Security Update: corosync / corosync-qdevice / corosync-qnetd / corosynclib / etc Multiple Vulnerabilities (CENTOS7:CLSA-2026:1793105177)",
+      "severity": "Critical",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/374134",
+      "cves": [
+        "CVE-2025-30472",
+        "CVE-2026-35091"
+      ]
+    },
+    {
+      "id": "374133",
+      "title": "CentOS Linux 7 [TuxCare] Security Update: cpp / gcc / gcc-c++ / gcc-gfortran / gcc-gnat / gcc-go / gcc-objc / etc (CENTOS7:CLSA-2026:1793100162)",
+      "severity": "High",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/374133",
+      "cves": [
+        "CVE-2026-102010"
+      ]
+    },
+    {
+      "id": "374132",
+      "title": "CentOS Linux 6 [TuxCare] Security Update: c-ares / c-ares-devel Multiple Vulnerabilities (CENTOS6:CLSA-2026:1793082403)",
+      "severity": "Critical",
+      "date": "Fri, 30 Oct 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/374132",
+      "cves": [
+        "CVE-2016-5180",
+        "CVE-2022-4904",
+        "CVE-2023-32067"
       ]
     }
   ]

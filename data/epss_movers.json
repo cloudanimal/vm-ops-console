@@ -1,16 +1,9 @@
 {
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-29",
-  "previous_date": "2026-10-22",
+  "current_date": "2026-10-30",
+  "previous_date": "2026-10-23",
   "risers": [
-    {
-      "id": "CVE-2026-109618",
-      "now": 0.99999,
-      "prev": 0.05307,
-      "delta": 0.94692,
-      "name": "RCE via OOM corruption"
-    },
     {
       "id": "CVE-2026-31431",
       "now": 0.98114,
@@ -21,8 +14,8 @@
     {
       "id": "CVE-2026-109619",
       "now": 0.99999,
-      "prev": 0.05757,
-      "delta": 0.94242,
+      "prev": 0.05991,
+      "delta": 0.94008,
       "name": "RCE via stale global state"
     },
     {
@@ -38,6 +31,13 @@
       "prev": 0.02617,
       "delta": 0.91501,
       "name": "rxrpc: Also unshare DATA/RESPONSE packets when paged frags are present"
+    },
+    {
+      "id": "CVE-2026-109618",
+      "now": 0.99999,
+      "prev": 0.1162,
+      "delta": 0.88379,
+      "name": "RCE via OOM corruption"
     },
     {
       "id": "CVE-2026-3055",
@@ -68,11 +68,11 @@
       "name": "Apache ActiveMQ Broker, Apache ActiveMQ All, Apache ActiveMQ: Authenticated users could pe"
     },
     {
-      "id": "CVE-2026-88771",
-      "now": 0.8216,
-      "prev": 0.01083,
-      "delta": 0.81077,
-      "name": "A remote code execution vulnerability exists due to improper input validation, which can a"
+      "id": "CVE-2026-111497",
+      "now": 0.82641,
+      "prev": 0.0048,
+      "delta": 0.82161,
+      "name": "Out-of-Bounds Write in Google Brotli Decoder"
     },
     {
       "id": "CVE-2026-41089",
@@ -89,11 +89,11 @@
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2026-88772",
-      "now": 0.78162,
-      "prev": 0.01301,
-      "delta": 0.76861,
-      "name": "Memory overflow vulnerability leading to Remote Code Execution or Denial of Service"
+      "id": "CVE-2026-88771",
+      "now": 0.8216,
+      "prev": 0.04722,
+      "delta": 0.77438,
+      "name": "A remote code execution vulnerability exists due to improper input validation, which can a"
     },
     {
       "id": "CVE-2026-33824",
@@ -122,6 +122,13 @@
       "prev": 0.15207,
       "delta": 0.73086,
       "name": "Ubiquiti Inc UniFi OS Server"
+    },
+    {
+      "id": "CVE-2026-88772",
+      "now": 0.78162,
+      "prev": 0.05305,
+      "delta": 0.72857,
+      "name": "Memory overflow vulnerability leading to Remote Code Execution or Denial of Service"
     },
     {
       "id": "CVE-2026-110447",
@@ -206,24 +213,10 @@
       "prev": 0.01267,
       "delta": 0.61809,
       "name": "Microsoft Defender Denial of Service Vulnerability"
-    },
-    {
-      "id": "CVE-2026-39987",
-      "now": 0.99564,
-      "prev": 0.37865,
-      "delta": 0.61699,
-      "name": "marimo Affected by Pre-Auth Remote Code Execution via Terminal WebSocket Authentication By"
     }
   ],
   "newly_high": [
     {
-      "id": "CVE-2026-109618",
-      "now": 0.99999,
-      "prev": 0.05307,
-      "delta": 0.94692,
-      "name": "RCE via OOM corruption"
-    },
-    {
       "id": "CVE-2026-31431",
       "now": 0.98114,
       "prev": 0.03437,
@@ -233,8 +226,8 @@
     {
       "id": "CVE-2026-109619",
       "now": 0.99999,
-      "prev": 0.05757,
-      "delta": 0.94242,
+      "prev": 0.05991,
+      "delta": 0.94008,
       "name": "RCE via stale global state"
     },
     {
@@ -250,6 +243,13 @@
       "prev": 0.02617,
       "delta": 0.91501,
       "name": "rxrpc: Also unshare DATA/RESPONSE packets when paged frags are present"
+    },
+    {
+      "id": "CVE-2026-109618",
+      "now": 0.99999,
+      "prev": 0.1162,
+      "delta": 0.88379,
+      "name": "RCE via OOM corruption"
     },
     {
       "id": "CVE-2026-3055",
@@ -280,11 +280,11 @@
       "name": "Apache ActiveMQ Broker, Apache ActiveMQ All, Apache ActiveMQ: Authenticated users could pe"
     },
     {
-      "id": "CVE-2026-88771",
-      "now": 0.8216,
-      "prev": 0.01083,
-      "delta": 0.81077,
-      "name": "A remote code execution vulnerability exists due to improper input validation, which can a"
+      "id": "CVE-2026-111497",
+      "now": 0.82641,
+      "prev": 0.0048,
+      "delta": 0.82161,
+      "name": "Out-of-Bounds Write in Google Brotli Decoder"
     },
     {
       "id": "CVE-2026-41089",
@@ -301,11 +301,11 @@
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2026-88772",
-      "now": 0.78162,
-      "prev": 0.01301,
-      "delta": 0.76861,
-      "name": "Memory overflow vulnerability leading to Remote Code Execution or Denial of Service"
+      "id": "CVE-2026-88771",
+      "now": 0.8216,
+      "prev": 0.04722,
+      "delta": 0.77438,
+      "name": "A remote code execution vulnerability exists due to improper input validation, which can a"
     },
     {
       "id": "CVE-2026-33824",
@@ -334,6 +334,13 @@
       "prev": 0.15207,
       "delta": 0.73086,
       "name": "Ubiquiti Inc UniFi OS Server"
+    },
+    {
+      "id": "CVE-2026-88772",
+      "now": 0.78162,
+      "prev": 0.05305,
+      "delta": 0.72857,
+      "name": "Memory overflow vulnerability leading to Remote Code Execution or Denial of Service"
     },
     {
       "id": "CVE-2026-110447",
@@ -418,13 +425,6 @@
       "prev": 0.01267,
       "delta": 0.61809,
       "name": "Microsoft Defender Denial of Service Vulnerability"
-    },
-    {
-      "id": "CVE-2026-39987",
-      "now": 0.99564,
-      "prev": 0.37865,
-      "delta": 0.61699,
-      "name": "marimo Affected by Pre-Auth Remote Code Execution via Terminal WebSocket Authentication By"
     }
   ]
 }
