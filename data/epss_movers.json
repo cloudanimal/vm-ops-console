@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-10-31",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-30",
-  "previous_date": "2026-10-23",
+  "current_date": "2026-10-31",
+  "previous_date": "2026-10-24",
   "risers": [
     {
       "id": "CVE-2026-31431",
@@ -14,8 +14,8 @@
     {
       "id": "CVE-2026-109619",
       "now": 0.99999,
-      "prev": 0.05991,
-      "delta": 0.94008,
+      "prev": 0.06217,
+      "delta": 0.93782,
       "name": "RCE via stale global state"
     },
     {
@@ -35,8 +35,8 @@
     {
       "id": "CVE-2026-109618",
       "now": 0.99999,
-      "prev": 0.1162,
-      "delta": 0.88379,
+      "prev": 0.11841,
+      "delta": 0.88158,
       "name": "RCE via OOM corruption"
     },
     {
@@ -70,8 +70,8 @@
     {
       "id": "CVE-2026-111497",
       "now": 0.82641,
-      "prev": 0.0048,
-      "delta": 0.82161,
+      "prev": 0.0071,
+      "delta": 0.81931,
       "name": "Out-of-Bounds Write in Google Brotli Decoder"
     },
     {
@@ -91,8 +91,8 @@
     {
       "id": "CVE-2026-88771",
       "now": 0.8216,
-      "prev": 0.04722,
-      "delta": 0.77438,
+      "prev": 0.05108,
+      "delta": 0.77052,
       "name": "A remote code execution vulnerability exists due to improper input validation, which can a"
     },
     {
@@ -131,13 +131,6 @@
       "name": "Memory overflow vulnerability leading to Remote Code Execution or Denial of Service"
     },
     {
-      "id": "CVE-2026-110447",
-      "now": 0.73307,
-      "prev": 0.01225,
-      "delta": 0.72082,
-      "name": "Collabora Collabora Online - Built-in CODE Server"
-    },
-    {
       "id": "CVE-2026-48558",
       "now": 0.77659,
       "prev": 0.05719,
@@ -157,6 +150,13 @@
       "prev": 0.24755,
       "delta": 0.71422,
       "name": "Langflow has Unauthenticated Remote Code Execution via Public Flow Build Endpoint"
+    },
+    {
+      "id": "CVE-2026-110447",
+      "now": 0.73307,
+      "prev": 0.02285,
+      "delta": 0.71022,
+      "name": "Collabora Collabora Online - Built-in CODE Server"
     },
     {
       "id": "CVE-2026-42897",
@@ -226,8 +226,8 @@
     {
       "id": "CVE-2026-109619",
       "now": 0.99999,
-      "prev": 0.05991,
-      "delta": 0.94008,
+      "prev": 0.06217,
+      "delta": 0.93782,
       "name": "RCE via stale global state"
     },
     {
@@ -247,8 +247,8 @@
     {
       "id": "CVE-2026-109618",
       "now": 0.99999,
-      "prev": 0.1162,
-      "delta": 0.88379,
+      "prev": 0.11841,
+      "delta": 0.88158,
       "name": "RCE via OOM corruption"
     },
     {
@@ -282,8 +282,8 @@
     {
       "id": "CVE-2026-111497",
       "now": 0.82641,
-      "prev": 0.0048,
-      "delta": 0.82161,
+      "prev": 0.0071,
+      "delta": 0.81931,
       "name": "Out-of-Bounds Write in Google Brotli Decoder"
     },
     {
@@ -303,8 +303,8 @@
     {
       "id": "CVE-2026-88771",
       "now": 0.8216,
-      "prev": 0.04722,
-      "delta": 0.77438,
+      "prev": 0.05108,
+      "delta": 0.77052,
       "name": "A remote code execution vulnerability exists due to improper input validation, which can a"
     },
     {
@@ -343,13 +343,6 @@
       "name": "Memory overflow vulnerability leading to Remote Code Execution or Denial of Service"
     },
     {
-      "id": "CVE-2026-110447",
-      "now": 0.73307,
-      "prev": 0.01225,
-      "delta": 0.72082,
-      "name": "Collabora Collabora Online - Built-in CODE Server"
-    },
-    {
       "id": "CVE-2026-48558",
       "now": 0.77659,
       "prev": 0.05719,
@@ -369,6 +362,13 @@
       "prev": 0.24755,
       "delta": 0.71422,
       "name": "Langflow has Unauthenticated Remote Code Execution via Public Flow Build Endpoint"
+    },
+    {
+      "id": "CVE-2026-110447",
+      "now": 0.73307,
+      "prev": 0.02285,
+      "delta": 0.71022,
+      "name": "Collabora Collabora Online - Built-in CODE Server"
     },
     {
       "id": "CVE-2026-42897",
