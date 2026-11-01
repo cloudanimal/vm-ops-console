@@ -1,430 +1,269 @@
 {
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "source": "FIRST EPSS",
-  "current_date": "2026-10-31",
-  "previous_date": "2026-10-24",
+  "current_date": "2026-11-01",
+  "previous_date": "2026-10-25",
   "risers": [
     {
-      "id": "CVE-2026-31431",
-      "now": 0.98114,
-      "prev": 0.03437,
-      "delta": 0.94677,
-      "name": "crypto: algif_aead - Revert to operating out-of-place"
-    },
-    {
-      "id": "CVE-2026-109619",
-      "now": 0.99999,
-      "prev": 0.06217,
-      "delta": 0.93782,
-      "name": "RCE via stale global state"
-    },
-    {
-      "id": "CVE-2026-34486",
-      "now": 0.98503,
-      "prev": 0.06561,
-      "delta": 0.91942,
-      "name": "Apache Tomcat: Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor"
-    },
-    {
-      "id": "CVE-2026-43500",
-      "now": 0.94118,
-      "prev": 0.02617,
-      "delta": 0.91501,
-      "name": "rxrpc: Also unshare DATA/RESPONSE packets when paged frags are present"
-    },
-    {
-      "id": "CVE-2026-109618",
-      "now": 0.99999,
-      "prev": 0.11841,
-      "delta": 0.88158,
-      "name": "RCE via OOM corruption"
-    },
-    {
-      "id": "CVE-2026-3055",
-      "now": 0.91491,
-      "prev": 0.04042,
-      "delta": 0.87449,
-      "name": "Insufficient input validation leading to memory overread"
-    },
-    {
-      "id": "CVE-2026-21589",
-      "now": 0.99477,
-      "prev": 0.12711,
-      "delta": 0.86766,
-      "name": "Atlassian Bamboo Data Center"
-    },
-    {
-      "id": "CVE-2026-42208",
-      "now": 0.8942,
-      "prev": 0.05772,
-      "delta": 0.83648,
-      "name": "LiteLLM: SQL injection in Proxy API key verification"
-    },
-    {
-      "id": "CVE-2026-34197",
-      "now": 0.98256,
-      "prev": 0.15492,
-      "delta": 0.82764,
-      "name": "Apache ActiveMQ Broker, Apache ActiveMQ All, Apache ActiveMQ: Authenticated users could pe"
+      "id": "CVE-2026-110447",
+      "now": 0.73307,
+      "prev": 0.12328,
+      "delta": 0.60979,
+      "name": "Collabora Collabora Online - Built-in CODE Server"
     },
     {
       "id": "CVE-2026-111497",
       "now": 0.82641,
-      "prev": 0.0071,
-      "delta": 0.81931,
+      "prev": 0.32782,
+      "delta": 0.49859,
       "name": "Out-of-Bounds Write in Google Brotli Decoder"
     },
     {
-      "id": "CVE-2026-41089",
-      "now": 0.79622,
-      "prev": 0.00974,
-      "delta": 0.78648,
-      "name": "Windows Netlogon Remote Code Execution Vulnerability"
+      "id": "CVE-2026-48356",
+      "now": 0.44579,
+      "prev": 0.01001,
+      "delta": 0.43578,
+      "name": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)"
     },
     {
-      "id": "CVE-2026-45659",
-      "now": 0.80242,
-      "prev": 0.02704,
-      "delta": 0.77538,
-      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+      "id": "CVE-2025-58434",
+      "now": 0.76449,
+      "prev": 0.50541,
+      "delta": 0.25908,
+      "name": "Flowise Cloud and Local Deployments have Unauthenticated Password Reset Token Disclosure t"
     },
     {
-      "id": "CVE-2026-88771",
-      "now": 0.8216,
-      "prev": 0.05108,
-      "delta": 0.77052,
-      "name": "A remote code execution vulnerability exists due to improper input validation, which can a"
+      "id": "CVE-2026-102489",
+      "now": 0.22478,
+      "prev": 0.01955,
+      "delta": 0.20523,
+      "name": "Undisclosed RCE in Zammad v6.3 and higher"
     },
     {
-      "id": "CVE-2026-33824",
-      "now": 0.77054,
-      "prev": 0.01619,
-      "delta": 0.75435,
-      "name": "Windows Internet Key Exchange (IKE) Service Extensions Remote Code Execution Vulnerability"
+      "id": "CVE-2023-31719",
+      "now": 0.44088,
+      "prev": 0.26032,
+      "delta": 0.18056,
+      "name": "FUXA <= 1.1.12 is vulnerable to SQL Injection via /api/signin."
     },
     {
-      "id": "CVE-2026-9082",
-      "now": 0.89381,
-      "prev": 0.15701,
-      "delta": 0.7368,
-      "name": "Drupal core - Highly critical - SQL injection - SA-CORE-2026-004"
+      "id": "CVE-2020-10884",
+      "now": 0.38843,
+      "prev": 0.21911,
+      "delta": 0.16932,
+      "name": "TP-Link Archer A7"
     },
     {
-      "id": "CVE-2026-105133",
-      "now": 0.7947,
-      "prev": 0.05794,
-      "delta": 0.73676,
-      "name": "Ahsay AhsayCBS API ApiStructsAction.java checkSysPwd improper authentication"
+      "id": "CVE-2009-1025",
+      "now": 0.56544,
+      "prev": 0.40077,
+      "delta": 0.16467,
+      "name": "PHP remote file inclusion vulnerability in linkadmin.php in Beerwin PHPLinkAdmin 1.0 allows remote attackers t"
     },
     {
-      "id": "CVE-2026-34908",
-      "now": 0.88293,
-      "prev": 0.15207,
-      "delta": 0.73086,
-      "name": "Ubiquiti Inc UniFi OS Server"
+      "id": "CVE-2021-3128",
+      "now": 0.16191,
+      "prev": 0.02184,
+      "delta": 0.14007,
+      "name": "In ASUS RT-AX3000, ZenWiFi AX (XT8), RT-AX88U, and other ASUS routers with firmware < 3.0.0.4.386.42095 or < 9"
     },
     {
-      "id": "CVE-2026-88772",
-      "now": 0.78162,
-      "prev": 0.05305,
-      "delta": 0.72857,
-      "name": "Memory overflow vulnerability leading to Remote Code Execution or Denial of Service"
+      "id": "CVE-2026-61447",
+      "now": 0.1524,
+      "prev": 0.0249,
+      "delta": 0.1275,
+      "name": "PraisonAI before 1.6.78 Remote Code Execution via CodeAgent"
     },
     {
-      "id": "CVE-2026-48558",
-      "now": 0.77659,
-      "prev": 0.05719,
-      "delta": 0.7194,
-      "name": "SimpleHelp Authentication Bypass via Missing OIDC JWT Signature Verification"
+      "id": "CVE-2025-47269",
+      "now": 0.56284,
+      "prev": 0.4454,
+      "delta": 0.11744,
+      "name": "code-server session cookie can be extracted by having user visit specially crafted proxy U"
     },
     {
-      "id": "CVE-2026-4020",
-      "now": 0.73799,
-      "prev": 0.02236,
-      "delta": 0.71563,
-      "name": "Gravity SMTP <= 2.1.4 - Unauthenticated Sensitive Information Exposure via REST API"
+      "id": "CVE-2026-102490",
+      "now": 0.10936,
+      "prev": 0.00857,
+      "delta": 0.10079,
+      "name": "Local privilege escalation in Zammad v1.5.0 to v7.2.2 installed via DEB or RPM package"
     },
     {
-      "id": "CVE-2026-33017",
-      "now": 0.96177,
-      "prev": 0.24755,
-      "delta": 0.71422,
-      "name": "Langflow has Unauthenticated Remote Code Execution via Public Flow Build Endpoint"
+      "id": "CVE-2012-6435",
+      "now": 0.42769,
+      "prev": 0.33499,
+      "delta": 0.0927,
+      "name": "Rockwell Automation ControlLogix PLC Improper Access Control"
     },
     {
-      "id": "CVE-2026-110447",
-      "now": 0.73307,
-      "prev": 0.02285,
-      "delta": 0.71022,
-      "name": "Collabora Collabora Online - Built-in CODE Server"
+      "id": "CVE-2025-31125",
+      "now": 0.74939,
+      "prev": 0.65756,
+      "delta": 0.09183,
+      "name": "Vite has a `server.fs.deny` bypassed for `inline` and `raw` with `?import` query"
     },
     {
-      "id": "CVE-2026-42897",
-      "now": 0.70662,
-      "prev": 0.00519,
-      "delta": 0.70143,
-      "name": "Microsoft Exchange Server Spoofing Vulnerability"
+      "id": "CVE-2026-97229",
+      "now": 0.273,
+      "prev": 0.18427,
+      "delta": 0.08873,
+      "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
-      "id": "CVE-2026-48907",
-      "now": 0.85439,
-      "prev": 0.1619,
-      "delta": 0.69249,
-      "name": "Joomla Extension - joomlacontenteditor.net - Remote Code Execution in JCE extension for Jo"
+      "id": "CVE-2016-5645",
+      "now": 0.3848,
+      "prev": 0.29613,
+      "delta": 0.08867,
+      "name": "Rockwell Automation MicroLogix 1400 PLC 1766-L32BWA, 1766-L32AWA, 1766-L32BXB, 1766-L32BWAA, 1766-L32AWAA, and"
     },
     {
-      "id": "CVE-2026-34909",
-      "now": 0.68033,
-      "prev": 0.01793,
-      "delta": 0.6624,
-      "name": "Ubiquiti Inc UniFi OS Server"
+      "id": "CVE-2026-68820",
+      "now": 0.08567,
+      "prev": 0.00332,
+      "delta": 0.08235,
+      "name": "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability"
     },
     {
-      "id": "CVE-2026-32202",
-      "now": 0.70902,
-      "prev": 0.04902,
-      "delta": 0.66,
-      "name": "Windows Shell Spoofing Vulnerability"
+      "id": "CVE-2012-6438",
+      "now": 0.35534,
+      "prev": 0.27374,
+      "delta": 0.0816,
+      "name": "Rockwell Automation ControlLogix PLC Improper Input Validation"
     },
     {
-      "id": "CVE-2026-26980",
-      "now": 0.71095,
-      "prev": 0.05573,
-      "delta": 0.65522,
-      "name": "Ghost has a SQL Injection in its Content API"
+      "id": "CVE-2012-6436",
+      "now": 0.35221,
+      "prev": 0.27116,
+      "delta": 0.08105,
+      "name": "Rockwell Automation ControlLogix PLC Improper Input Validation"
     },
     {
-      "id": "CVE-2026-42945",
-      "now": 0.68047,
-      "prev": 0.03396,
-      "delta": 0.64651,
-      "name": "NGINX ngx_http_rewrite_module vulnerability"
+      "id": "CVE-2023-54335",
+      "now": 0.13662,
+      "prev": 0.0568,
+      "delta": 0.07982,
+      "name": "eXtplorer<= 2.1.14 - Authentication Bypass & Remote Code Execution (RCE)"
     },
     {
-      "id": "CVE-2026-48710",
-      "now": 0.70288,
-      "prev": 0.07056,
-      "delta": 0.63232,
-      "name": "Starlette has missing Host header validation that poisons request.url.path, bypassing path"
+      "id": "CVE-2026-54069",
+      "now": 0.07475,
+      "prev": 0.00579,
+      "delta": 0.06896,
+      "name": "SiYuan: Unauthenticated Admin API Access via Blanket chrome-extension:// Origin Allowlist"
     },
     {
-      "id": "CVE-2026-45498",
-      "now": 0.63076,
-      "prev": 0.01267,
-      "delta": 0.61809,
-      "name": "Microsoft Defender Denial of Service Vulnerability"
+      "id": "CVE-2021-32761",
+      "now": 0.36553,
+      "prev": 0.30103,
+      "delta": 0.0645,
+      "name": "Integer overflow issues with *BIT commands on 32-bit systems"
+    },
+    {
+      "id": "CVE-2026-55638",
+      "now": 0.06581,
+      "prev": 0.00611,
+      "delta": 0.0597,
+      "name": "9router: Unauthenticated LLM proxy access via /codex rewrite authorization bypass"
+    },
+    {
+      "id": "CVE-2026-46300",
+      "now": 0.1613,
+      "prev": 0.10192,
+      "delta": 0.05938,
+      "name": "net: skbuff: preserve shared-frag marker during coalescing"
+    },
+    {
+      "id": "CVE-2022-40471",
+      "now": 0.28011,
+      "prev": 0.22597,
+      "delta": 0.05414,
+      "name": "Remote Code Execution in Clinic's Patient Management System v 1.0 allows Attacker to Upload arbitrary php webs"
+    },
+    {
+      "id": "CVE-2026-42533",
+      "now": 0.06296,
+      "prev": 0.00894,
+      "delta": 0.05402,
+      "name": "NGINX Map directive and Regex matching vulnerability"
+    },
+    {
+      "id": "CVE-2013-1362",
+      "now": 0.71013,
+      "prev": 0.65724,
+      "delta": 0.05289,
+      "name": "Incomplete blacklist vulnerability in nrpc.c in Nagios Remote Plug-In Executor (NRPE) before 2.14 might allow "
+    },
+    {
+      "id": "CVE-2025-5120",
+      "now": 0.31237,
+      "prev": 0.26303,
+      "delta": 0.04934,
+      "name": "Sandbox Escape Vulnerability in huggingface/smolagents"
+    },
+    {
+      "id": "CVE-2022-43571",
+      "now": 0.18604,
+      "prev": 0.14062,
+      "delta": 0.04542,
+      "name": "Remote Code Execution through dashboard PDF generation component in Splunk Enterprise"
+    },
+    {
+      "id": "CVE-2018-1000006",
+      "now": 0.88842,
+      "prev": 0.84381,
+      "delta": 0.04461,
+      "name": "GitHub Electron versions 1.8.2-beta.3 and earlier, 1.7.10 and earlier, 1.6.15 and earlier has a vulnerability "
     }
   ],
   "newly_high": [
     {
-      "id": "CVE-2026-31431",
-      "now": 0.98114,
-      "prev": 0.03437,
-      "delta": 0.94677,
-      "name": "crypto: algif_aead - Revert to operating out-of-place"
-    },
-    {
-      "id": "CVE-2026-109619",
-      "now": 0.99999,
-      "prev": 0.06217,
-      "delta": 0.93782,
-      "name": "RCE via stale global state"
-    },
-    {
-      "id": "CVE-2026-34486",
-      "now": 0.98503,
-      "prev": 0.06561,
-      "delta": 0.91942,
-      "name": "Apache Tomcat: Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor"
-    },
-    {
-      "id": "CVE-2026-43500",
-      "now": 0.94118,
-      "prev": 0.02617,
-      "delta": 0.91501,
-      "name": "rxrpc: Also unshare DATA/RESPONSE packets when paged frags are present"
-    },
-    {
-      "id": "CVE-2026-109618",
-      "now": 0.99999,
-      "prev": 0.11841,
-      "delta": 0.88158,
-      "name": "RCE via OOM corruption"
-    },
-    {
-      "id": "CVE-2026-3055",
-      "now": 0.91491,
-      "prev": 0.04042,
-      "delta": 0.87449,
-      "name": "Insufficient input validation leading to memory overread"
-    },
-    {
-      "id": "CVE-2026-21589",
-      "now": 0.99477,
-      "prev": 0.12711,
-      "delta": 0.86766,
-      "name": "Atlassian Bamboo Data Center"
-    },
-    {
-      "id": "CVE-2026-42208",
-      "now": 0.8942,
-      "prev": 0.05772,
-      "delta": 0.83648,
-      "name": "LiteLLM: SQL injection in Proxy API key verification"
-    },
-    {
-      "id": "CVE-2026-34197",
-      "now": 0.98256,
-      "prev": 0.15492,
-      "delta": 0.82764,
-      "name": "Apache ActiveMQ Broker, Apache ActiveMQ All, Apache ActiveMQ: Authenticated users could pe"
+      "id": "CVE-2026-110447",
+      "now": 0.73307,
+      "prev": 0.12328,
+      "delta": 0.60979,
+      "name": "Collabora Collabora Online - Built-in CODE Server"
     },
     {
       "id": "CVE-2026-111497",
       "now": 0.82641,
-      "prev": 0.0071,
-      "delta": 0.81931,
+      "prev": 0.32782,
+      "delta": 0.49859,
       "name": "Out-of-Bounds Write in Google Brotli Decoder"
     },
     {
-      "id": "CVE-2026-41089",
-      "now": 0.79622,
-      "prev": 0.00974,
-      "delta": 0.78648,
-      "name": "Windows Netlogon Remote Code Execution Vulnerability"
+      "id": "CVE-2009-1025",
+      "now": 0.56544,
+      "prev": 0.40077,
+      "delta": 0.16467,
+      "name": "PHP remote file inclusion vulnerability in linkadmin.php in Beerwin PHPLinkAdmin 1.0 allows remote attackers t"
     },
     {
-      "id": "CVE-2026-45659",
-      "now": 0.80242,
-      "prev": 0.02704,
-      "delta": 0.77538,
-      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+      "id": "CVE-2025-47269",
+      "now": 0.56284,
+      "prev": 0.4454,
+      "delta": 0.11744,
+      "name": "code-server session cookie can be extracted by having user visit specially crafted proxy U"
     },
     {
-      "id": "CVE-2026-88771",
-      "now": 0.8216,
-      "prev": 0.05108,
-      "delta": 0.77052,
-      "name": "A remote code execution vulnerability exists due to improper input validation, which can a"
+      "id": "CVE-2023-46347",
+      "now": 0.50296,
+      "prev": 0.49604,
+      "delta": 0.00692,
+      "name": "In the module \"Step by Step products Pack\" (ndk_steppingpack) version 1.5.6 and before from NDK Design for Pre"
     },
     {
-      "id": "CVE-2026-33824",
-      "now": 0.77054,
-      "prev": 0.01619,
-      "delta": 0.75435,
-      "name": "Windows Internet Key Exchange (IKE) Service Extensions Remote Code Execution Vulnerability"
+      "id": "CVE-2025-49002",
+      "now": 0.50405,
+      "prev": 0.49985,
+      "delta": 0.0042,
+      "name": "Dataease H2 Database Remote Code Execution (RCE) Bypass Vulnerability"
     },
     {
-      "id": "CVE-2026-9082",
-      "now": 0.89381,
-      "prev": 0.15701,
-      "delta": 0.7368,
-      "name": "Drupal core - Highly critical - SQL injection - SA-CORE-2026-004"
-    },
-    {
-      "id": "CVE-2026-105133",
-      "now": 0.7947,
-      "prev": 0.05794,
-      "delta": 0.73676,
-      "name": "Ahsay AhsayCBS API ApiStructsAction.java checkSysPwd improper authentication"
-    },
-    {
-      "id": "CVE-2026-34908",
-      "now": 0.88293,
-      "prev": 0.15207,
-      "delta": 0.73086,
-      "name": "Ubiquiti Inc UniFi OS Server"
-    },
-    {
-      "id": "CVE-2026-88772",
-      "now": 0.78162,
-      "prev": 0.05305,
-      "delta": 0.72857,
-      "name": "Memory overflow vulnerability leading to Remote Code Execution or Denial of Service"
-    },
-    {
-      "id": "CVE-2026-48558",
-      "now": 0.77659,
-      "prev": 0.05719,
-      "delta": 0.7194,
-      "name": "SimpleHelp Authentication Bypass via Missing OIDC JWT Signature Verification"
-    },
-    {
-      "id": "CVE-2026-4020",
-      "now": 0.73799,
-      "prev": 0.02236,
-      "delta": 0.71563,
-      "name": "Gravity SMTP <= 2.1.4 - Unauthenticated Sensitive Information Exposure via REST API"
-    },
-    {
-      "id": "CVE-2026-33017",
-      "now": 0.96177,
-      "prev": 0.24755,
-      "delta": 0.71422,
-      "name": "Langflow has Unauthenticated Remote Code Execution via Public Flow Build Endpoint"
-    },
-    {
-      "id": "CVE-2026-110447",
-      "now": 0.73307,
-      "prev": 0.02285,
-      "delta": 0.71022,
-      "name": "Collabora Collabora Online - Built-in CODE Server"
-    },
-    {
-      "id": "CVE-2026-42897",
-      "now": 0.70662,
-      "prev": 0.00519,
-      "delta": 0.70143,
-      "name": "Microsoft Exchange Server Spoofing Vulnerability"
-    },
-    {
-      "id": "CVE-2026-48907",
-      "now": 0.85439,
-      "prev": 0.1619,
-      "delta": 0.69249,
-      "name": "Joomla Extension - joomlacontenteditor.net - Remote Code Execution in JCE extension for Jo"
-    },
-    {
-      "id": "CVE-2026-34909",
-      "now": 0.68033,
-      "prev": 0.01793,
-      "delta": 0.6624,
-      "name": "Ubiquiti Inc UniFi OS Server"
-    },
-    {
-      "id": "CVE-2026-32202",
-      "now": 0.70902,
-      "prev": 0.04902,
-      "delta": 0.66,
-      "name": "Windows Shell Spoofing Vulnerability"
-    },
-    {
-      "id": "CVE-2026-26980",
-      "now": 0.71095,
-      "prev": 0.05573,
-      "delta": 0.65522,
-      "name": "Ghost has a SQL Injection in its Content API"
-    },
-    {
-      "id": "CVE-2026-42945",
-      "now": 0.68047,
-      "prev": 0.03396,
-      "delta": 0.64651,
-      "name": "NGINX ngx_http_rewrite_module vulnerability"
-    },
-    {
-      "id": "CVE-2026-48710",
-      "now": 0.70288,
-      "prev": 0.07056,
-      "delta": 0.63232,
-      "name": "Starlette has missing Host header validation that poisons request.url.path, bypassing path"
-    },
-    {
-      "id": "CVE-2026-45498",
-      "now": 0.63076,
-      "prev": 0.01267,
-      "delta": 0.61809,
-      "name": "Microsoft Defender Denial of Service Vulnerability"
+      "id": "CVE-2025-7441",
+      "now": 0.50176,
+      "prev": 0.49894,
+      "delta": 0.00282,
+      "name": "StoryChief <= 1.0.42 - Unauthenticated Arbitrary File Upload"
     }
   ]
 }
