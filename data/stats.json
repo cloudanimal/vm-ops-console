@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26",
+  "updated": "2026-11-02",
   "source": "fkie-cad NVD mirror (counted locally)",
   "note": "NVD data via the fkie-cad GitHub mirror; no NVD API key. CVEs are bucketed by publication year. Severity buckets use the primary CVSS v3 base severity (CVEs without a v3 score are absent from the split). KEV counts use the CISA KEV enrichment (cisaExploitAdd) carried in the NVD record.",
   "dimensions": [
@@ -10,7 +10,7 @@
     "LOW",
     "kev"
   ],
-  "grand_total": 413368,
+  "grand_total": 417013,
   "by_year": {
     "1999": {
       "total": 923,
@@ -71,7 +71,7 @@
     "2006": {
       "total": 6659,
       "kev": 2,
-      "CRITICAL": 0,
+      "CRITICAL": 1,
       "HIGH": 13,
       "MEDIUM": 5,
       "LOW": 0
@@ -113,7 +113,7 @@
       "kev": 9,
       "CRITICAL": 3,
       "HIGH": 23,
-      "MEDIUM": 8,
+      "MEDIUM": 9,
       "LOW": 0
     },
     "2012": {
@@ -121,23 +121,23 @@
       "kev": 22,
       "CRITICAL": 15,
       "HIGH": 31,
-      "MEDIUM": 34,
+      "MEDIUM": 35,
       "LOW": 0
     },
     "2013": {
       "total": 5324,
       "kev": 35,
       "CRITICAL": 17,
-      "HIGH": 27,
-      "MEDIUM": 12,
-      "LOW": 0
+      "HIGH": 28,
+      "MEDIUM": 14,
+      "LOW": 1
     },
     "2014": {
       "total": 8008,
       "kev": 34,
       "CRITICAL": 18,
       "HIGH": 38,
-      "MEDIUM": 23,
+      "MEDIUM": 24,
       "LOW": 3
     },
     "2015": {
@@ -229,23 +229,23 @@
       "LOW": 227
     },
     "2026": {
-      "total": 88775,
-      "kev": 195,
-      "CRITICAL": 2236,
-      "HIGH": 5666,
-      "MEDIUM": 7080,
-      "LOW": 358
+      "total": 92420,
+      "kev": 204,
+      "CRITICAL": 2255,
+      "HIGH": 5603,
+      "MEDIUM": 6990,
+      "LOW": 300
     }
   },
   "severity_totals": {
-    "CRITICAL": 30839,
-    "HIGH": 77386,
-    "MEDIUM": 84433,
-    "LOW": 3412
+    "CRITICAL": 30859,
+    "HIGH": 77324,
+    "MEDIUM": 84348,
+    "LOW": 3355
   },
   "profile": {
-    "network": 140546,
-    "wormable": 57940,
-    "kev_total": 1756
+    "network": 140363,
+    "wormable": 57972,
+    "kev_total": 1765
   }
 }
