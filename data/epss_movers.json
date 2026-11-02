@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-01",
+  "updated": "2026-11-02",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-01",
-  "previous_date": "2026-10-25",
+  "current_date": "2026-11-02",
+  "previous_date": "2026-10-26",
   "risers": [
     {
       "id": "CVE-2026-110447",
@@ -14,8 +14,8 @@
     {
       "id": "CVE-2026-111497",
       "now": 0.82641,
-      "prev": 0.32782,
-      "delta": 0.49859,
+      "prev": 0.36027,
+      "delta": 0.46614,
       "name": "Out-of-Bounds Write in Google Brotli Decoder"
     },
     {
@@ -27,9 +27,9 @@
     },
     {
       "id": "CVE-2025-58434",
-      "now": 0.76449,
+      "now": 0.82585,
       "prev": 0.50541,
-      "delta": 0.25908,
+      "delta": 0.32044,
       "name": "Flowise Cloud and Local Deployments have Unauthenticated Password Reset Token Disclosure t"
     },
     {
@@ -68,13 +68,6 @@
       "name": "In ASUS RT-AX3000, ZenWiFi AX (XT8), RT-AX88U, and other ASUS routers with firmware < 3.0.0.4.386.42095 or < 9"
     },
     {
-      "id": "CVE-2026-61447",
-      "now": 0.1524,
-      "prev": 0.0249,
-      "delta": 0.1275,
-      "name": "PraisonAI before 1.6.78 Remote Code Execution via CodeAgent"
-    },
-    {
       "id": "CVE-2025-47269",
       "now": 0.56284,
       "prev": 0.4454,
@@ -87,6 +80,13 @@
       "prev": 0.00857,
       "delta": 0.10079,
       "name": "Local privilege escalation in Zammad v1.5.0 to v7.2.2 installed via DEB or RPM package"
+    },
+    {
+      "id": "CVE-2019-6446",
+      "now": 0.27266,
+      "prev": 0.17528,
+      "delta": 0.09738,
+      "name": "An issue was discovered in NumPy before 1.16.3. It uses the pickle Python module unsafely, which allows remote"
     },
     {
       "id": "CVE-2012-6435",
@@ -145,25 +145,11 @@
       "name": "eXtplorer<= 2.1.14 - Authentication Bypass & Remote Code Execution (RCE)"
     },
     {
-      "id": "CVE-2026-54069",
-      "now": 0.07475,
-      "prev": 0.00579,
-      "delta": 0.06896,
-      "name": "SiYuan: Unauthenticated Admin API Access via Blanket chrome-extension:// Origin Allowlist"
-    },
-    {
-      "id": "CVE-2021-32761",
-      "now": 0.36553,
-      "prev": 0.30103,
-      "delta": 0.0645,
-      "name": "Integer overflow issues with *BIT commands on 32-bit systems"
-    },
-    {
-      "id": "CVE-2026-55638",
-      "now": 0.06581,
-      "prev": 0.00611,
-      "delta": 0.0597,
-      "name": "9router: Unauthenticated LLM proxy access via /codex rewrite authorization bypass"
+      "id": "CVE-2008-4824",
+      "now": 0.21115,
+      "prev": 0.13254,
+      "delta": 0.07861,
+      "name": "Multiple unspecified vulnerabilities in Adobe Flash Player 10.x before 10.0.12.36 and 9.x before 9.0.151.0 all"
     },
     {
       "id": "CVE-2026-46300",
@@ -201,6 +187,20 @@
       "name": "Sandbox Escape Vulnerability in huggingface/smolagents"
     },
     {
+      "id": "CVE-2020-5260",
+      "now": 0.14887,
+      "prev": 0.09966,
+      "delta": 0.04921,
+      "name": "malicious URLs may cause Git to present stored credentials to the wrong server"
+    },
+    {
+      "id": "CVE-2023-1718",
+      "now": 0.28693,
+      "prev": 0.24078,
+      "delta": 0.04615,
+      "name": "Bitrix24 Denial-of-Service (DoS) via Improper File Stream Access"
+    },
+    {
       "id": "CVE-2022-43571",
       "now": 0.18604,
       "prev": 0.14062,
@@ -226,8 +226,8 @@
     {
       "id": "CVE-2026-111497",
       "now": 0.82641,
-      "prev": 0.32782,
-      "delta": 0.49859,
+      "prev": 0.36027,
+      "delta": 0.46614,
       "name": "Out-of-Bounds Write in Google Brotli Decoder"
     },
     {
@@ -245,11 +245,11 @@
       "name": "code-server session cookie can be extracted by having user visit specially crafted proxy U"
     },
     {
-      "id": "CVE-2023-46347",
-      "now": 0.50296,
-      "prev": 0.49604,
-      "delta": 0.00692,
-      "name": "In the module \"Step by Step products Pack\" (ndk_steppingpack) version 1.5.6 and before from NDK Design for Pre"
+      "id": "CVE-2023-46695",
+      "now": 0.53447,
+      "prev": 0.49774,
+      "delta": 0.03673,
+      "name": "An issue was discovered in Django 3.2 before 3.2.23, 4.1 before 4.1.13, and 4.2 before 4.2.7. The NFKC normali"
     },
     {
       "id": "CVE-2025-49002",
