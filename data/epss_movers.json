@@ -1,29 +1,15 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-02",
-  "previous_date": "2026-10-26",
+  "current_date": "2026-11-03",
+  "previous_date": "2026-10-27",
   "risers": [
     {
       "id": "CVE-2026-110447",
       "now": 0.73307,
-      "prev": 0.12328,
-      "delta": 0.60979,
+      "prev": 0.11634,
+      "delta": 0.61673,
       "name": "Collabora Collabora Online - Built-in CODE Server"
-    },
-    {
-      "id": "CVE-2026-111497",
-      "now": 0.82641,
-      "prev": 0.36027,
-      "delta": 0.46614,
-      "name": "Out-of-Bounds Write in Google Brotli Decoder"
-    },
-    {
-      "id": "CVE-2026-48356",
-      "now": 0.44579,
-      "prev": 0.01001,
-      "delta": 0.43578,
-      "name": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)"
     },
     {
       "id": "CVE-2025-58434",
@@ -31,6 +17,13 @@
       "prev": 0.50541,
       "delta": 0.32044,
       "name": "Flowise Cloud and Local Deployments have Unauthenticated Password Reset Token Disclosure t"
+    },
+    {
+      "id": "CVE-2026-111497",
+      "now": 0.82641,
+      "prev": 0.55483,
+      "delta": 0.27158,
+      "name": "Out-of-Bounds Write in Google Brotli Decoder"
     },
     {
       "id": "CVE-2026-102489",
@@ -47,25 +40,18 @@
       "name": "FUXA <= 1.1.12 is vulnerable to SQL Injection via /api/signin."
     },
     {
-      "id": "CVE-2020-10884",
-      "now": 0.38843,
-      "prev": 0.21911,
-      "delta": 0.16932,
-      "name": "TP-Link Archer A7"
-    },
-    {
-      "id": "CVE-2009-1025",
-      "now": 0.56544,
-      "prev": 0.40077,
-      "delta": 0.16467,
-      "name": "PHP remote file inclusion vulnerability in linkadmin.php in Beerwin PHPLinkAdmin 1.0 allows remote attackers t"
-    },
-    {
       "id": "CVE-2021-3128",
       "now": 0.16191,
       "prev": 0.02184,
       "delta": 0.14007,
       "name": "In ASUS RT-AX3000, ZenWiFi AX (XT8), RT-AX88U, and other ASUS routers with firmware < 3.0.0.4.386.42095 or < 9"
+    },
+    {
+      "id": "CVE-2026-48356",
+      "now": 0.44579,
+      "prev": 0.30582,
+      "delta": 0.13997,
+      "name": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)"
     },
     {
       "id": "CVE-2025-47269",
@@ -82,6 +68,13 @@
       "name": "Local privilege escalation in Zammad v1.5.0 to v7.2.2 installed via DEB or RPM package"
     },
     {
+      "id": "CVE-2026-96652",
+      "now": 0.11886,
+      "prev": 0.01821,
+      "delta": 0.10065,
+      "name": "Plex Media Server SSRF"
+    },
+    {
       "id": "CVE-2019-6446",
       "now": 0.27266,
       "prev": 0.17528,
@@ -96,18 +89,18 @@
       "name": "Rockwell Automation ControlLogix PLC Improper Access Control"
     },
     {
+      "id": "CVE-2026-97229",
+      "now": 0.27692,
+      "prev": 0.18427,
+      "delta": 0.09265,
+      "name": "Integer Overflow or Wraparound in GitLab"
+    },
+    {
       "id": "CVE-2025-31125",
       "now": 0.74939,
       "prev": 0.65756,
       "delta": 0.09183,
       "name": "Vite has a `server.fs.deny` bypassed for `inline` and `raw` with `?import` query"
-    },
-    {
-      "id": "CVE-2026-97229",
-      "now": 0.273,
-      "prev": 0.18427,
-      "delta": 0.08873,
-      "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
       "id": "CVE-2016-5645",
@@ -152,6 +145,13 @@
       "name": "Multiple unspecified vulnerabilities in Adobe Flash Player 10.x before 10.0.12.36 and 9.x before 9.0.151.0 all"
     },
     {
+      "id": "CVE-2024-52012",
+      "now": 0.47121,
+      "prev": 0.40919,
+      "delta": 0.06202,
+      "name": "Apache Solr: Configset upload on Windows allows arbitrary path write-access"
+    },
+    {
       "id": "CVE-2026-46300",
       "now": 0.1613,
       "prev": 0.10192,
@@ -194,6 +194,13 @@
       "name": "malicious URLs may cause Git to present stored credentials to the wrong server"
     },
     {
+      "id": "CVE-2026-7873",
+      "now": 0.06211,
+      "prev": 0.0155,
+      "delta": 0.04661,
+      "name": "Code Injection Vulnerability in Code Validation Endpoint"
+    },
+    {
       "id": "CVE-2023-1718",
       "now": 0.28693,
       "prev": 0.24078,
@@ -201,41 +208,20 @@
       "name": "Bitrix24 Denial-of-Service (DoS) via Improper File Stream Access"
     },
     {
-      "id": "CVE-2022-43571",
-      "now": 0.18604,
-      "prev": 0.14062,
-      "delta": 0.04542,
-      "name": "Remote Code Execution through dashboard PDF generation component in Splunk Enterprise"
-    },
-    {
-      "id": "CVE-2018-1000006",
-      "now": 0.88842,
-      "prev": 0.84381,
-      "delta": 0.04461,
-      "name": "GitHub Electron versions 1.8.2-beta.3 and earlier, 1.7.10 and earlier, 1.6.15 and earlier has a vulnerability "
+      "id": "CVE-2025-24367",
+      "now": 0.58848,
+      "prev": 0.54259,
+      "delta": 0.04589,
+      "name": "Cacti allows Arbitrary File Creation leading to RCE"
     }
   ],
   "newly_high": [
     {
       "id": "CVE-2026-110447",
       "now": 0.73307,
-      "prev": 0.12328,
-      "delta": 0.60979,
+      "prev": 0.11634,
+      "delta": 0.61673,
       "name": "Collabora Collabora Online - Built-in CODE Server"
-    },
-    {
-      "id": "CVE-2026-111497",
-      "now": 0.82641,
-      "prev": 0.36027,
-      "delta": 0.46614,
-      "name": "Out-of-Bounds Write in Google Brotli Decoder"
-    },
-    {
-      "id": "CVE-2009-1025",
-      "now": 0.56544,
-      "prev": 0.40077,
-      "delta": 0.16467,
-      "name": "PHP remote file inclusion vulnerability in linkadmin.php in Beerwin PHPLinkAdmin 1.0 allows remote attackers t"
     },
     {
       "id": "CVE-2025-47269",
