@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-03",
+  "updated": "2026-11-04",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-03",
-  "previous_date": "2026-10-27",
+  "current_date": "2026-11-04",
+  "previous_date": "2026-10-28",
   "risers": [
     {
       "id": "CVE-2026-110447",
@@ -12,18 +12,25 @@
       "name": "Collabora Collabora Online - Built-in CODE Server"
     },
     {
+      "id": "CVE-2026-102764",
+      "now": 0.77994,
+      "prev": 0.1895,
+      "delta": 0.59044,
+      "name": "Improper Origin Validation in Internal Messaging Components of BeyondTrust Remote Support"
+    },
+    {
+      "id": "CVE-2026-97229",
+      "now": 0.6522,
+      "prev": 0.18427,
+      "delta": 0.46793,
+      "name": "Integer Overflow or Wraparound in GitLab"
+    },
+    {
       "id": "CVE-2025-58434",
       "now": 0.82585,
       "prev": 0.50541,
       "delta": 0.32044,
       "name": "Flowise Cloud and Local Deployments have Unauthenticated Password Reset Token Disclosure t"
-    },
-    {
-      "id": "CVE-2026-111497",
-      "now": 0.82641,
-      "prev": 0.55483,
-      "delta": 0.27158,
-      "name": "Out-of-Bounds Write in Google Brotli Decoder"
     },
     {
       "id": "CVE-2026-102489",
@@ -40,18 +47,18 @@
       "name": "FUXA <= 1.1.12 is vulnerable to SQL Injection via /api/signin."
     },
     {
+      "id": "CVE-2025-23200",
+      "now": 0.49322,
+      "prev": 0.31574,
+      "delta": 0.17748,
+      "name": "Stored XSS-LibreNMS-Misc Section in librenms"
+    },
+    {
       "id": "CVE-2021-3128",
       "now": 0.16191,
       "prev": 0.02184,
       "delta": 0.14007,
       "name": "In ASUS RT-AX3000, ZenWiFi AX (XT8), RT-AX88U, and other ASUS routers with firmware < 3.0.0.4.386.42095 or < 9"
-    },
-    {
-      "id": "CVE-2026-48356",
-      "now": 0.44579,
-      "prev": 0.30582,
-      "delta": 0.13997,
-      "name": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)"
     },
     {
       "id": "CVE-2025-47269",
@@ -87,13 +94,6 @@
       "prev": 0.33499,
       "delta": 0.0927,
       "name": "Rockwell Automation ControlLogix PLC Improper Access Control"
-    },
-    {
-      "id": "CVE-2026-97229",
-      "now": 0.27692,
-      "prev": 0.18427,
-      "delta": 0.09265,
-      "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
       "id": "CVE-2025-31125",
@@ -145,11 +145,25 @@
       "name": "Multiple unspecified vulnerabilities in Adobe Flash Player 10.x before 10.0.12.36 and 9.x before 9.0.151.0 all"
     },
     {
+      "id": "CVE-2012-1461",
+      "now": 0.9815,
+      "prev": 0.91709,
+      "delta": 0.06441,
+      "name": "The Gzip file parser in AVG Anti-Virus 10.0.0.1190, Bitdefender 7.2, Command Antivirus 5.2.11.5, Emsisoft Anti"
+    },
+    {
       "id": "CVE-2024-52012",
       "now": 0.47121,
       "prev": 0.40919,
       "delta": 0.06202,
       "name": "Apache Solr: Configset upload on Windows allows arbitrary path write-access"
+    },
+    {
+      "id": "CVE-2009-4623",
+      "now": 0.15827,
+      "prev": 0.09847,
+      "delta": 0.0598,
+      "name": "Multiple PHP remote file inclusion vulnerabilities in Advanced Comment System 1.0 allow remote attackers to ex"
     },
     {
       "id": "CVE-2026-46300",
@@ -159,13 +173,6 @@
       "name": "net: skbuff: preserve shared-frag marker during coalescing"
     },
     {
-      "id": "CVE-2022-40471",
-      "now": 0.28011,
-      "prev": 0.22597,
-      "delta": 0.05414,
-      "name": "Remote Code Execution in Clinic's Patient Management System v 1.0 allows Attacker to Upload arbitrary php webs"
-    },
-    {
       "id": "CVE-2026-42533",
       "now": 0.06296,
       "prev": 0.00894,
@@ -173,18 +180,11 @@
       "name": "NGINX Map directive and Regex matching vulnerability"
     },
     {
-      "id": "CVE-2013-1362",
-      "now": 0.71013,
-      "prev": 0.65724,
-      "delta": 0.05289,
-      "name": "Incomplete blacklist vulnerability in nrpc.c in Nagios Remote Plug-In Executor (NRPE) before 2.14 might allow "
-    },
-    {
-      "id": "CVE-2025-5120",
-      "now": 0.31237,
-      "prev": 0.26303,
-      "delta": 0.04934,
-      "name": "Sandbox Escape Vulnerability in huggingface/smolagents"
+      "id": "CVE-2023-20048",
+      "now": 0.20854,
+      "prev": 0.15821,
+      "delta": 0.05033,
+      "name": "Cisco Cisco Firepower Management Center"
     },
     {
       "id": "CVE-2020-5260",
@@ -222,6 +222,20 @@
       "prev": 0.11634,
       "delta": 0.61673,
       "name": "Collabora Collabora Online - Built-in CODE Server"
+    },
+    {
+      "id": "CVE-2026-102764",
+      "now": 0.77994,
+      "prev": 0.1895,
+      "delta": 0.59044,
+      "name": "Improper Origin Validation in Internal Messaging Components of BeyondTrust Remote Support"
+    },
+    {
+      "id": "CVE-2026-97229",
+      "now": 0.6522,
+      "prev": 0.18427,
+      "delta": 0.46793,
+      "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
       "id": "CVE-2025-47269",

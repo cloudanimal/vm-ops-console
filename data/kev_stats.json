@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-03",
-  "total": 1766,
+  "updated": "2026-11-04",
+  "total": 1768,
   "ransomware_count": 361,
   "by_year": {
     "2021": 311,
@@ -8,7 +8,7 @@
     "2023": 187,
     "2024": 186,
     "2025": 245,
-    "2026": 282
+    "2026": 284
   },
   "top_vendors": [
     [
@@ -21,7 +21,7 @@
     ],
     [
       "Apple",
-      95
+      96
     ],
     [
       "Adobe",
@@ -99,7 +99,7 @@
     ],
     [
       "Apple Multiple Products",
-      54
+      55
     ],
     [
       "Google Chromium V8",
