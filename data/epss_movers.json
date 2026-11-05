@@ -1,16 +1,9 @@
 {
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-04",
-  "previous_date": "2026-10-28",
+  "current_date": "2026-11-05",
+  "previous_date": "2026-10-29",
   "risers": [
-    {
-      "id": "CVE-2026-110447",
-      "now": 0.73307,
-      "prev": 0.11634,
-      "delta": 0.61673,
-      "name": "Collabora Collabora Online - Built-in CODE Server"
-    },
     {
       "id": "CVE-2026-102764",
       "now": 0.77994,
@@ -26,18 +19,11 @@
       "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
-      "id": "CVE-2025-58434",
-      "now": 0.82585,
-      "prev": 0.50541,
-      "delta": 0.32044,
-      "name": "Flowise Cloud and Local Deployments have Unauthenticated Password Reset Token Disclosure t"
-    },
-    {
-      "id": "CVE-2026-102489",
-      "now": 0.22478,
-      "prev": 0.01955,
-      "delta": 0.20523,
-      "name": "Undisclosed RCE in Zammad v6.3 and higher"
+      "id": "CVE-2026-75650",
+      "now": 0.34741,
+      "prev": 0.03949,
+      "delta": 0.30792,
+      "name": "Adobe Commerce | Improper Neutralization of Special Elements Used in a Template Engine (CW"
     },
     {
       "id": "CVE-2023-31719",
@@ -68,13 +54,6 @@
       "name": "code-server session cookie can be extracted by having user visit specially crafted proxy U"
     },
     {
-      "id": "CVE-2026-102490",
-      "now": 0.10936,
-      "prev": 0.00857,
-      "delta": 0.10079,
-      "name": "Local privilege escalation in Zammad v1.5.0 to v7.2.2 installed via DEB or RPM package"
-    },
-    {
       "id": "CVE-2026-96652",
       "now": 0.11886,
       "prev": 0.01821,
@@ -89,6 +68,13 @@
       "name": "An issue was discovered in NumPy before 1.16.3. It uses the pickle Python module unsafely, which allows remote"
     },
     {
+      "id": "CVE-2009-1936",
+      "now": 0.51897,
+      "prev": 0.42223,
+      "delta": 0.09674,
+      "name": "_functions.php in cpCommerce 1.2.x, possibly including 1.2.9, sends a redirect but does not exit when it is ca"
+    },
+    {
       "id": "CVE-2012-6435",
       "now": 0.42769,
       "prev": 0.33499,
@@ -96,11 +82,11 @@
       "name": "Rockwell Automation ControlLogix PLC Improper Access Control"
     },
     {
-      "id": "CVE-2025-31125",
-      "now": 0.74939,
-      "prev": 0.65756,
-      "delta": 0.09183,
-      "name": "Vite has a `server.fs.deny` bypassed for `inline` and `raw` with `?import` query"
+      "id": "CVE-2026-96655",
+      "now": 0.10724,
+      "prev": 0.01637,
+      "delta": 0.09087,
+      "name": "Plex Media Server arbitrary-host SSRF"
     },
     {
       "id": "CVE-2016-5645",
@@ -159,18 +145,18 @@
       "name": "Apache Solr: Configset upload on Windows allows arbitrary path write-access"
     },
     {
+      "id": "CVE-2025-58434",
+      "now": 0.82585,
+      "prev": 0.76449,
+      "delta": 0.06136,
+      "name": "Flowise Cloud and Local Deployments have Unauthenticated Password Reset Token Disclosure t"
+    },
+    {
       "id": "CVE-2009-4623",
       "now": 0.15827,
       "prev": 0.09847,
       "delta": 0.0598,
       "name": "Multiple PHP remote file inclusion vulnerabilities in Advanced Comment System 1.0 allow remote attackers to ex"
-    },
-    {
-      "id": "CVE-2026-46300",
-      "now": 0.1613,
-      "prev": 0.10192,
-      "delta": 0.05938,
-      "name": "net: skbuff: preserve shared-frag marker during coalescing"
     },
     {
       "id": "CVE-2026-42533",
@@ -213,16 +199,23 @@
       "prev": 0.54259,
       "delta": 0.04589,
       "name": "Cacti allows Arbitrary File Creation leading to RCE"
+    },
+    {
+      "id": "CVE-2022-43571",
+      "now": 0.18604,
+      "prev": 0.14062,
+      "delta": 0.04542,
+      "name": "Remote Code Execution through dashboard PDF generation component in Splunk Enterprise"
+    },
+    {
+      "id": "CVE-2018-1000006",
+      "now": 0.88842,
+      "prev": 0.84381,
+      "delta": 0.04461,
+      "name": "GitHub Electron versions 1.8.2-beta.3 and earlier, 1.7.10 and earlier, 1.6.15 and earlier has a vulnerability "
     }
   ],
   "newly_high": [
-    {
-      "id": "CVE-2026-110447",
-      "now": 0.73307,
-      "prev": 0.11634,
-      "delta": 0.61673,
-      "name": "Collabora Collabora Online - Built-in CODE Server"
-    },
     {
       "id": "CVE-2026-102764",
       "now": 0.77994,
@@ -245,11 +238,25 @@
       "name": "code-server session cookie can be extracted by having user visit specially crafted proxy U"
     },
     {
+      "id": "CVE-2009-1936",
+      "now": 0.51897,
+      "prev": 0.42223,
+      "delta": 0.09674,
+      "name": "_functions.php in cpCommerce 1.2.x, possibly including 1.2.9, sends a redirect but does not exit when it is ca"
+    },
+    {
       "id": "CVE-2023-46695",
       "now": 0.53447,
       "prev": 0.49774,
       "delta": 0.03673,
       "name": "An issue was discovered in Django 3.2 before 3.2.23, 4.1 before 4.1.13, and 4.2 before 4.2.7. The NFKC normali"
+    },
+    {
+      "id": "CVE-2020-13950",
+      "now": 0.50023,
+      "prev": 0.4937,
+      "delta": 0.00653,
+      "name": "mod_proxy_http NULL pointer dereference"
     },
     {
       "id": "CVE-2025-49002",
