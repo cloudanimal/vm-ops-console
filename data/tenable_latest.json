@@ -1,610 +1,655 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
     {
-      "id": "506492",
-      "title": "Qnap QTS / QuTS hero NULL Pointer Dereference (CVE-2025-47213)",
+      "id": null,
+      "title": "Chainguard: gradle-8: security update to 8.14.6-r5",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478611",
+      "cves": [
+        "CVE-2026-71886"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: gradle-8: security update to 8.14.6-r5",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478611",
+      "cves": [
+        "CVE-2026-71886"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 10.0_p1-r11",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478610",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 10.0_p1-r11",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478610",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 9.9_p2-r1",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478609",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 9.9_p2-r1",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478609",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 9.6_p1-r3",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478608",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 9.6_p1-r3",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478608",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 9.3_p2-r4",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478607",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 9.3_p2-r4",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478607",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: rsync: security update to 3.5.2-r0",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478606",
+      "cves": [
+        "CVE-2026-119741"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: rsync: security update to 3.5.2-r0",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478606",
+      "cves": [
+        "CVE-2026-119741"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 9.7_p1-r6",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478605",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 9.7_p1-r6",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478605",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 9.1_p1-r7",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478604",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 9.1_p1-r7",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478604",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 10.2_p1-r1",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478603",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 10.2_p1-r1",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478603",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 9.0_p1-r6",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478602",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 9.0_p1-r6",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478602",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 10.3_p1-r2",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478601",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: openssh: security update to 10.3_p1-r2",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478601",
+      "cves": [
+        "CVE-2026-123158"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: hadoop-fips-3.5: security update to 3.5.0-r28",
+      "severity": "Critical",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478600",
+      "cves": [
+        "CVE-2026-55276"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: hadoop-fips-3.5: security update to 3.5.0-r28",
+      "severity": "Critical",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478600",
+      "cves": [
+        "CVE-2026-55276"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple wireshark packages, tshark: security update to 4.6.9-r0",
+      "severity": "Low",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478599",
+      "cves": [
+        "CVE-2026-15163",
+        "CVE-2026-15164",
+        "CVE-2026-15165",
+        "CVE-2026-15166",
+        "CVE-2026-15168"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple wireshark packages, tshark: security update to 4.6.9-r0",
+      "severity": "Low",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478599",
+      "cves": [
+        "CVE-2026-15163",
+        "CVE-2026-15164",
+        "CVE-2026-15165",
+        "CVE-2026-15166",
+        "CVE-2026-15168"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple rsyslog packages: security update to 8.2608.0-r0",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478598",
+      "cves": [
+        "CVE-2026-19654",
+        "CVE-2026-55556",
+        "CVE-2026-61548",
+        "CVE-2026-78002"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple rsyslog packages: security update to 8.2608.0-r0",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478598",
+      "cves": [
+        "CVE-2026-19654",
+        "CVE-2026-55556",
+        "CVE-2026-61548",
+        "CVE-2026-78002"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for budibase (GHSA-xh5j-727m-w6gg)",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478597",
+      "cves": [
+        "CVE-2026-45061"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for budibase (GHSA-xh5j-727m-w6gg)",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478597",
+      "cves": [
+        "CVE-2026-45061"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: postgis: security update to 3.7.0+dfsg-1",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478596",
+      "cves": [
+        "CVE-2026-73515"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: postgis: security update to 3.7.0+dfsg-1",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478596",
+      "cves": [
+        "CVE-2026-73515"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for wger (GHSA-9qpr-vc49-hqg2)",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478595",
+      "cves": [
+        "CVE-2026-43978"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for wger (GHSA-9qpr-vc49-hqg2)",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478595",
+      "cves": [
+        "CVE-2026-43978"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for djust (GHSA-7prp-2623-8g45)",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478594",
+      "cves": [
+        "CVE-2026-61599"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for djust (GHSA-7prp-2623-8g45)",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478594",
+      "cves": [
+        "CVE-2026-61599"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple dagster packages: security update to 1.13.28-r1",
       "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/ot/506492",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478593",
+      "cves": [
+        "CVE-2026-112934"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple dagster packages: security update to 1.13.28-r1",
+      "severity": "Medium",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478593",
+      "cves": [
+        "CVE-2026-112934"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: geoserver-2.28-community: security update to 2.28.6-r3",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478592",
+      "cves": [
+        "CVE-2026-49270",
+        "CVE-2026-50750"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: geoserver-2.28-community: security update to 2.28.6-r3",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478592",
+      "cves": [
+        "CVE-2026-49270",
+        "CVE-2026-50750"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple dagster packages: security update to 1.13.28-r1",
+      "severity": "Low",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478591",
+      "cves": [
+        "CVE-2026-112941"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: multiple dagster packages: security update to 1.13.28-r1",
+      "severity": "Low",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478591",
+      "cves": [
+        "CVE-2026-112941"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: geoserver-2.28-community: security update to 2.28.6-r3",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478590",
+      "cves": [
+        "CVE-2026-49434"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Chainguard: geoserver-2.28-community: security update to 2.28.6-r3",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478590",
+      "cves": [
+        "CVE-2026-49434"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple apache2 packages: security update to 2.4.68-r0",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478589",
+      "cves": [
+        "CVE-2026-29167",
+        "CVE-2026-29170",
+        "CVE-2026-34355",
+        "CVE-2026-34356",
+        "CVE-2026-49975"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple apache2 packages: security update to 2.4.68-r0",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478589",
+      "cves": [
+        "CVE-2026-29167",
+        "CVE-2026-29170",
+        "CVE-2026-34355",
+        "CVE-2026-34356",
+        "CVE-2026-49975"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple linux-lts packages: security update to 6.6.13-r1",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478588",
+      "cves": [
+        "CVE-2023-46838"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple linux-lts packages: security update to 6.6.13-r1",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478588",
+      "cves": [
+        "CVE-2023-46838"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple py3-pillow packages: security update to 11.3.0-r0",
+      "severity": "Medium",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478587",
+      "cves": [
+        "CVE-2025-48379"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple py3-pillow packages: security update to 11.3.0-r0",
+      "severity": "Medium",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478587",
+      "cves": [
+        "CVE-2025-48379"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple docker packages: security update to 29.9.3-r0",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478586",
+      "cves": [
+        "CVE-2026-116587",
+        "CVE-2026-116591"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: multiple docker packages: security update to 29.9.3-r0",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478586",
+      "cves": [
+        "CVE-2026-116587",
+        "CVE-2026-116591"
+      ]
+    },
+    {
+      "id": "376991",
+      "title": "MiracleLinux 8 : kernel-4.18.0-553.181.1.el8_10 (AXSA:2026-2276:118)",
+      "severity": "Critical",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/376991",
+      "cves": [
+        "CVE-2026-63922",
+        "CVE-2026-63924",
+        "CVE-2026-64109",
+        "CVE-2026-72083",
+        "CVE-2026-74283",
+        "CVE-2026-93787"
+      ]
+    },
+    {
+      "id": "376990",
+      "title": "MiracleLinux 9 : webkit2gtk3-2.54.2-0.el9_8.2 (AXSA:2026-2275:14)",
+      "severity": "Critical",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/376990",
+      "cves": [
+        "CVE-2026-102325",
+        "CVE-2026-103629",
+        "CVE-2026-106379",
+        "CVE-2026-106399",
+        "CVE-2026-113106",
+        "CVE-2026-118319",
+        "CVE-2026-118340",
+        "CVE-2026-118348",
+        "CVE-2026-118351",
+        "CVE-2026-118354",
+        "CVE-2026-119261",
+        "CVE-2026-119271",
+        "CVE-2026-85049",
+        "CVE-2026-91733",
+        "CVE-2026-91740",
+        "CVE-2026-91747",
+        "CVE-2026-93387"
+      ]
+    },
+    {
+      "id": "376989",
+      "title": "MiracleLinux 8 : cockpit-310.10-1.el8_10.ML.1 (AXSA:2026-2273:17)",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/376989",
+      "cves": [
+        "CVE-2026-76235",
+        "CVE-2026-91147"
+      ]
+    },
+    {
+      "id": "376988",
+      "title": "MiracleLinux 8 : [security - high] gimp:2.8 (AXSA:2026-2277:01)",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/376988",
+      "cves": [
+        "CVE-2026-112257",
+        "CVE-2026-4154"
+      ]
+    },
+    {
+      "id": "376987",
+      "title": "JetBrains PyCharm < 2025.3.6.2 / 2026.1.x < 2026.1.5.1 / 2026.2.x < 2026.2.4 Revoked Certificate Trust",
+      "severity": "High",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/376987",
       "cves": []
     },
     {
-      "id": null,
-      "title": "Echo: hdf5: security update to 1.14.5+repack-3+e19",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478409",
-      "cves": [
-        "CVE-2026-120755"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: hdf5: security update to 1.14.5+repack-3+e19",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478409",
-      "cves": [
-        "CVE-2026-120755"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: hdf5: security update to 1.14.5+repack-3+e19",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478408",
-      "cves": [
-        "CVE-2026-120757"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: hdf5: security update to 1.14.5+repack-3+e19",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478408",
-      "cves": [
-        "CVE-2026-120757"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: hdf5: security update to 1.14.5+repack-3+e18",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478407",
-      "cves": [
-        "CVE-2026-120756"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: hdf5: security update to 1.14.5+repack-3+e18",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478407",
-      "cves": [
-        "CVE-2026-120756"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: hdf5: security update to 1.14.5+repack-3+e19",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478406",
-      "cves": [
-        "CVE-2026-120754",
-        "CVE-2026-19029"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: hdf5: security update to 1.14.5+repack-3+e19",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478406",
-      "cves": [
-        "CVE-2026-120754",
-        "CVE-2026-19029"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: hdf5: security update to 1.14.5+repack-3+e19",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478405",
-      "cves": [
-        "CVE-2026-120758"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: hdf5: security update to 1.14.5+repack-3+e19",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478405",
-      "cves": [
-        "CVE-2026-120758"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: gzip: security update to 1.15-r0",
-      "severity": "Low",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478404",
-      "cves": [
-        "CVE-2026-41991"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: gzip: security update to 1.15-r0",
-      "severity": "Low",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478404",
-      "cves": [
-        "CVE-2026-41991"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: patch: security update to 2.8.1-r0",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478403",
-      "cves": [
-        "CVE-2026-56288",
-        "CVE-2026-56289"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: patch: security update to 2.8.1-r0",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478403",
-      "cves": [
-        "CVE-2026-56288",
-        "CVE-2026-56289"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple apt packages: security update to 3.2.1-r0",
+      "id": "376986",
+      "title": "JetBrains GoLand < 2025.3.5.2 / 2026.1.x < 2026.1.5.1 / 2026.2.x < 2026.2.4 Certificate Validation",
       "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478402",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/376986",
       "cves": [
-        "CVE-2026-109518"
+        "CVE-2026-118696"
       ]
     },
     {
-      "id": null,
-      "title": "Alpine: multiple apt packages: security update to 3.2.1-r0",
+      "id": "376985",
+      "title": "JetBrains WebStorm < 2025.3.6.2 / 2026.1.x < 2026.1.5.1 / 2026.2.x < 2026.2.4 Certificate Validation (CVE-2026-118696)",
       "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478402",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/376985",
       "cves": [
-        "CVE-2026-109518"
+        "CVE-2026-118696"
       ]
     },
     {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.0",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478401",
-      "cves": [
-        "CVE-2026-79780"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.0",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478401",
-      "cves": [
-        "CVE-2026-79780"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2",
+      "id": "376984",
+      "title": "JetBrains Rider < 2025.3.5.3 / 2026.1.x < 2026.1.5.3 / 2026.2.x < 2026.2.4 Certificate Validation",
       "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478400",
+      "date": "Fri, 06 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/376984",
       "cves": [
-        "CVE-2026-116189"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478400",
-      "cves": [
-        "CVE-2026-116189"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478399",
-      "cves": [
-        "CVE-2026-71312"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478399",
-      "cves": [
-        "CVE-2026-71312"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.0",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478398",
-      "cves": [
-        "CVE-2026-79777"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.0",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478398",
-      "cves": [
-        "CVE-2026-79777"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478397",
-      "cves": [
-        "CVE-2026-49980"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478397",
-      "cves": [
-        "CVE-2026-49980"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478396",
-      "cves": [
-        "CVE-2026-71313"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478396",
-      "cves": [
-        "CVE-2026-71313"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478395",
-      "cves": [
-        "CVE-2026-79781"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478395",
-      "cves": [
-        "CVE-2026-79781"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478394",
-      "cves": [
-        "CVE-2026-116191"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478394",
-      "cves": [
-        "CVE-2026-116191"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.0",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478393",
-      "cves": [
-        "CVE-2026-79776"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.0",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478393",
-      "cves": [
-        "CVE-2026-79776"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478392",
-      "cves": [
-        "CVE-2026-59733"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478392",
-      "cves": [
-        "CVE-2026-59733"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478391",
-      "cves": [
-        "CVE-2026-54572"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478391",
-      "cves": [
-        "CVE-2026-54572"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "Critical",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478390",
-      "cves": [
-        "CVE-2026-41179"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "Critical",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478390",
-      "cves": [
-        "CVE-2026-41179"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478389",
-      "cves": [
-        "CVE-2026-116192"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478389",
-      "cves": [
-        "CVE-2026-116192"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478388",
-      "cves": [
-        "CVE-2026-71311"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478388",
-      "cves": [
-        "CVE-2026-71311"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "Critical",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478387",
-      "cves": [
-        "CVE-2026-41176"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "Critical",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478387",
-      "cves": [
-        "CVE-2026-41176"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478386",
-      "cves": [
-        "CVE-2026-79775"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478386",
-      "cves": [
-        "CVE-2026-79775"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478385",
-      "cves": [
-        "CVE-2026-59732"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2-1",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478385",
-      "cves": [
-        "CVE-2026-59732"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.0",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478384",
-      "cves": [
-        "CVE-2026-79779"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.0",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478384",
-      "cves": [
-        "CVE-2026-79779"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.1",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478383",
-      "cves": [
-        "CVE-2026-93987"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.1",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478383",
-      "cves": [
-        "CVE-2026-93987"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478382",
-      "cves": [
-        "CVE-2026-116194"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.2",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478382",
-      "cves": [
-        "CVE-2026-116194"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.0",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478381",
-      "cves": [
-        "CVE-2026-79778"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.0",
-      "severity": "Medium",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478381",
-      "cves": [
-        "CVE-2026-79778"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: rclone: security update to 1.75.1",
-      "severity": "High",
-      "date": "Thu, 05 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478380",
-      "cves": [
-        "CVE-2026-88016"
+        "CVE-2026-118696"
       ]
     }
   ]

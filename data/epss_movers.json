@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-05",
-  "previous_date": "2026-10-29",
+  "current_date": "2026-11-06",
+  "previous_date": "2026-10-30",
   "risers": [
     {
       "id": "CVE-2026-102764",
@@ -14,8 +14,8 @@
     {
       "id": "CVE-2026-97229",
       "now": 0.6522,
-      "prev": 0.18427,
-      "delta": 0.46793,
+      "prev": 0.26569,
+      "delta": 0.38651,
       "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
@@ -24,13 +24,6 @@
       "prev": 0.03949,
       "delta": 0.30792,
       "name": "Adobe Commerce | Improper Neutralization of Special Elements Used in a Template Engine (CW"
-    },
-    {
-      "id": "CVE-2023-31719",
-      "now": 0.44088,
-      "prev": 0.26032,
-      "delta": 0.18056,
-      "name": "FUXA <= 1.1.12 is vulnerable to SQL Injection via /api/signin."
     },
     {
       "id": "CVE-2025-23200",
@@ -54,6 +47,13 @@
       "name": "code-server session cookie can be extracted by having user visit specially crafted proxy U"
     },
     {
+      "id": "CVE-2026-76461",
+      "now": 0.4016,
+      "prev": 0.29543,
+      "delta": 0.10617,
+      "name": "Cisco Secure Email Gateway SQL Injection Vulnerability"
+    },
+    {
       "id": "CVE-2026-96652",
       "now": 0.11886,
       "prev": 0.01821,
@@ -75,13 +75,6 @@
       "name": "_functions.php in cpCommerce 1.2.x, possibly including 1.2.9, sends a redirect but does not exit when it is ca"
     },
     {
-      "id": "CVE-2012-6435",
-      "now": 0.42769,
-      "prev": 0.33499,
-      "delta": 0.0927,
-      "name": "Rockwell Automation ControlLogix PLC Improper Access Control"
-    },
-    {
       "id": "CVE-2026-96655",
       "now": 0.10724,
       "prev": 0.01637,
@@ -89,39 +82,18 @@
       "name": "Plex Media Server arbitrary-host SSRF"
     },
     {
-      "id": "CVE-2016-5645",
-      "now": 0.3848,
-      "prev": 0.29613,
-      "delta": 0.08867,
-      "name": "Rockwell Automation MicroLogix 1400 PLC 1766-L32BWA, 1766-L32AWA, 1766-L32BXB, 1766-L32BWAA, 1766-L32AWAA, and"
+      "id": "CVE-2015-6420",
+      "now": 0.24233,
+      "prev": 0.15204,
+      "delta": 0.09029,
+      "name": "Serialized-object interfaces in certain Cisco Collaboration and Social Media; Endpoint Clients and Client Soft"
     },
     {
-      "id": "CVE-2026-68820",
-      "now": 0.08567,
-      "prev": 0.00332,
-      "delta": 0.08235,
-      "name": "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability"
-    },
-    {
-      "id": "CVE-2012-6438",
-      "now": 0.35534,
-      "prev": 0.27374,
-      "delta": 0.0816,
-      "name": "Rockwell Automation ControlLogix PLC Improper Input Validation"
-    },
-    {
-      "id": "CVE-2012-6436",
-      "now": 0.35221,
-      "prev": 0.27116,
-      "delta": 0.08105,
-      "name": "Rockwell Automation ControlLogix PLC Improper Input Validation"
-    },
-    {
-      "id": "CVE-2023-54335",
-      "now": 0.13662,
-      "prev": 0.0568,
-      "delta": 0.07982,
-      "name": "eXtplorer<= 2.1.14 - Authentication Bypass & Remote Code Execution (RCE)"
+      "id": "CVE-2009-1960",
+      "now": 0.31711,
+      "prev": 0.23157,
+      "delta": 0.08554,
+      "name": "inc/init.php in DokuWiki 2009-02-14, rc2009-02-06, and rc2009-01-30, when register_globals is enabled, allows "
     },
     {
       "id": "CVE-2008-4824",
@@ -129,6 +101,13 @@
       "prev": 0.13254,
       "delta": 0.07861,
       "name": "Multiple unspecified vulnerabilities in Adobe Flash Player 10.x before 10.0.12.36 and 9.x before 9.0.151.0 all"
+    },
+    {
+      "id": "CVE-2025-54948",
+      "now": 0.32872,
+      "prev": 0.25402,
+      "delta": 0.0747,
+      "name": "Trend Micro, Inc. Trend Micro Apex One"
     },
     {
       "id": "CVE-2012-1461",
@@ -152,11 +131,25 @@
       "name": "Flowise Cloud and Local Deployments have Unauthenticated Password Reset Token Disclosure t"
     },
     {
+      "id": "CVE-2017-7309",
+      "now": 0.63335,
+      "prev": 0.57319,
+      "delta": 0.06016,
+      "name": "A cross-site scripting (XSS) vulnerability in the MantisBT Configuration Report page (adm_config_report.php) a"
+    },
+    {
       "id": "CVE-2009-4623",
       "now": 0.15827,
       "prev": 0.09847,
       "delta": 0.0598,
       "name": "Multiple PHP remote file inclusion vulnerabilities in Advanced Comment System 1.0 allow remote attackers to ex"
+    },
+    {
+      "id": "CVE-2025-54987",
+      "now": 0.27302,
+      "prev": 0.21503,
+      "delta": 0.05799,
+      "name": "Trend Micro, Inc. Trend Micro Apex One"
     },
     {
       "id": "CVE-2026-42533",
@@ -171,6 +164,13 @@
       "prev": 0.15821,
       "delta": 0.05033,
       "name": "Cisco Cisco Firepower Management Center"
+    },
+    {
+      "id": "CVE-2025-53417",
+      "now": 0.20304,
+      "prev": 0.1537,
+      "delta": 0.04934,
+      "name": "File Parsing Deserialization of Untrusted Data in DTM Soft"
     },
     {
       "id": "CVE-2020-5260",
@@ -226,8 +226,8 @@
     {
       "id": "CVE-2026-97229",
       "now": 0.6522,
-      "prev": 0.18427,
-      "delta": 0.46793,
+      "prev": 0.26569,
+      "delta": 0.38651,
       "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
@@ -252,25 +252,18 @@
       "name": "An issue was discovered in Django 3.2 before 3.2.23, 4.1 before 4.1.13, and 4.2 before 4.2.7. The NFKC normali"
     },
     {
+      "id": "CVE-2025-7441",
+      "now": 0.50881,
+      "prev": 0.49894,
+      "delta": 0.00987,
+      "name": "StoryChief <= 1.0.42 - Unauthenticated Arbitrary File Upload"
+    },
+    {
       "id": "CVE-2020-13950",
       "now": 0.50023,
       "prev": 0.4937,
       "delta": 0.00653,
       "name": "mod_proxy_http NULL pointer dereference"
-    },
-    {
-      "id": "CVE-2025-49002",
-      "now": 0.50405,
-      "prev": 0.49985,
-      "delta": 0.0042,
-      "name": "Dataease H2 Database Remote Code Execution (RCE) Bypass Vulnerability"
-    },
-    {
-      "id": "CVE-2025-7441",
-      "now": 0.50176,
-      "prev": 0.49894,
-      "delta": 0.00282,
-      "name": "StoryChief <= 1.0.42 - Unauthenticated Arbitrary File Upload"
     }
   ]
 }
