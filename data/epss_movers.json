@@ -1,9 +1,23 @@
 {
-  "updated": "2026-11-06",
+  "updated": "2026-11-07",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-06",
-  "previous_date": "2026-10-30",
+  "current_date": "2026-11-07",
+  "previous_date": "2026-10-31",
   "risers": [
+    {
+      "id": "CVE-2026-75650",
+      "now": 0.99376,
+      "prev": 0.03949,
+      "delta": 0.95427,
+      "name": "Adobe Commerce | Improper Neutralization of Special Elements Used in a Template Engine (CW"
+    },
+    {
+      "id": "CVE-2026-59310",
+      "now": 0.61668,
+      "prev": 0.02565,
+      "delta": 0.59103,
+      "name": "vCenter directory-traversal vulnerability"
+    },
     {
       "id": "CVE-2026-102764",
       "now": 0.77994,
@@ -14,16 +28,16 @@
     {
       "id": "CVE-2026-97229",
       "now": 0.6522,
-      "prev": 0.26569,
-      "delta": 0.38651,
+      "prev": 0.273,
+      "delta": 0.3792,
       "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
-      "id": "CVE-2026-75650",
-      "now": 0.34741,
-      "prev": 0.03949,
-      "delta": 0.30792,
-      "name": "Adobe Commerce | Improper Neutralization of Special Elements Used in a Template Engine (CW"
+      "id": "CVE-2026-102489",
+      "now": 0.49915,
+      "prev": 0.22478,
+      "delta": 0.27437,
+      "name": "Undisclosed RCE in Zammad v6.3 and higher"
     },
     {
       "id": "CVE-2025-23200",
@@ -33,11 +47,25 @@
       "name": "Stored XSS-LibreNMS-Misc Section in librenms"
     },
     {
+      "id": "CVE-2026-57827",
+      "now": 0.16871,
+      "prev": 0.02328,
+      "delta": 0.14543,
+      "name": "Joomla Extension - rsjoomla.com - Unauthenticated file upload in RSFiles component < 1.17."
+    },
+    {
       "id": "CVE-2021-3128",
       "now": 0.16191,
       "prev": 0.02184,
       "delta": 0.14007,
       "name": "In ASUS RT-AX3000, ZenWiFi AX (XT8), RT-AX88U, and other ASUS routers with firmware < 3.0.0.4.386.42095 or < 9"
+    },
+    {
+      "id": "CVE-2026-8451",
+      "now": 0.1424,
+      "prev": 0.00502,
+      "delta": 0.13738,
+      "name": "Insufficient input validation leading to memory overread"
     },
     {
       "id": "CVE-2025-47269",
@@ -89,6 +117,13 @@
       "name": "Serialized-object interfaces in certain Cisco Collaboration and Social Media; Endpoint Clients and Client Soft"
     },
     {
+      "id": "CVE-2024-47949",
+      "now": 0.32121,
+      "prev": 0.23456,
+      "delta": 0.08665,
+      "name": "JetBrains TeamCity"
+    },
+    {
       "id": "CVE-2009-1960",
       "now": 0.31711,
       "prev": 0.23157,
@@ -103,11 +138,32 @@
       "name": "Multiple unspecified vulnerabilities in Adobe Flash Player 10.x before 10.0.12.36 and 9.x before 9.0.151.0 all"
     },
     {
+      "id": "CVE-2026-49373",
+      "now": 0.32685,
+      "prev": 0.2492,
+      "delta": 0.07765,
+      "name": "JetBrains TeamCity"
+    },
+    {
       "id": "CVE-2025-54948",
       "now": 0.32872,
       "prev": 0.25402,
       "delta": 0.0747,
       "name": "Trend Micro, Inc. Trend Micro Apex One"
+    },
+    {
+      "id": "CVE-2025-41244",
+      "now": 0.15841,
+      "prev": 0.08629,
+      "delta": 0.07212,
+      "name": "VMSA-2025-0015: VMware Aria Operations and VMware Tools updates address multiple vulnerabi"
+    },
+    {
+      "id": "CVE-2024-2511",
+      "now": 0.59302,
+      "prev": 0.52421,
+      "delta": 0.06881,
+      "name": "Unbounded memory growth with session handling in TLSv1.3"
     },
     {
       "id": "CVE-2012-1461",
@@ -157,65 +213,23 @@
       "prev": 0.00894,
       "delta": 0.05402,
       "name": "NGINX Map directive and Regex matching vulnerability"
-    },
-    {
-      "id": "CVE-2023-20048",
-      "now": 0.20854,
-      "prev": 0.15821,
-      "delta": 0.05033,
-      "name": "Cisco Cisco Firepower Management Center"
-    },
-    {
-      "id": "CVE-2025-53417",
-      "now": 0.20304,
-      "prev": 0.1537,
-      "delta": 0.04934,
-      "name": "File Parsing Deserialization of Untrusted Data in DTM Soft"
-    },
-    {
-      "id": "CVE-2020-5260",
-      "now": 0.14887,
-      "prev": 0.09966,
-      "delta": 0.04921,
-      "name": "malicious URLs may cause Git to present stored credentials to the wrong server"
-    },
-    {
-      "id": "CVE-2026-7873",
-      "now": 0.06211,
-      "prev": 0.0155,
-      "delta": 0.04661,
-      "name": "Code Injection Vulnerability in Code Validation Endpoint"
-    },
-    {
-      "id": "CVE-2023-1718",
-      "now": 0.28693,
-      "prev": 0.24078,
-      "delta": 0.04615,
-      "name": "Bitrix24 Denial-of-Service (DoS) via Improper File Stream Access"
-    },
-    {
-      "id": "CVE-2025-24367",
-      "now": 0.58848,
-      "prev": 0.54259,
-      "delta": 0.04589,
-      "name": "Cacti allows Arbitrary File Creation leading to RCE"
-    },
-    {
-      "id": "CVE-2022-43571",
-      "now": 0.18604,
-      "prev": 0.14062,
-      "delta": 0.04542,
-      "name": "Remote Code Execution through dashboard PDF generation component in Splunk Enterprise"
-    },
-    {
-      "id": "CVE-2018-1000006",
-      "now": 0.88842,
-      "prev": 0.84381,
-      "delta": 0.04461,
-      "name": "GitHub Electron versions 1.8.2-beta.3 and earlier, 1.7.10 and earlier, 1.6.15 and earlier has a vulnerability "
     }
   ],
   "newly_high": [
+    {
+      "id": "CVE-2026-75650",
+      "now": 0.99376,
+      "prev": 0.03949,
+      "delta": 0.95427,
+      "name": "Adobe Commerce | Improper Neutralization of Special Elements Used in a Template Engine (CW"
+    },
+    {
+      "id": "CVE-2026-59310",
+      "now": 0.61668,
+      "prev": 0.02565,
+      "delta": 0.59103,
+      "name": "vCenter directory-traversal vulnerability"
+    },
     {
       "id": "CVE-2026-102764",
       "now": 0.77994,
@@ -226,8 +240,8 @@
     {
       "id": "CVE-2026-97229",
       "now": 0.6522,
-      "prev": 0.26569,
-      "delta": 0.38651,
+      "prev": 0.273,
+      "delta": 0.3792,
       "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
