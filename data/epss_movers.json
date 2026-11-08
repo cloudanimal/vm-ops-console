@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-07",
-  "previous_date": "2026-10-31",
+  "current_date": "2026-11-08",
+  "previous_date": "2026-11-01",
   "risers": [
     {
       "id": "CVE-2026-75650",
@@ -47,18 +47,18 @@
       "name": "Stored XSS-LibreNMS-Misc Section in librenms"
     },
     {
+      "id": "CVE-2026-4480",
+      "now": 0.28691,
+      "prev": 0.1393,
+      "delta": 0.14761,
+      "name": "Samba: samba: remote code execution in printing subsystem via unescaped job description"
+    },
+    {
       "id": "CVE-2026-57827",
       "now": 0.16871,
       "prev": 0.02328,
       "delta": 0.14543,
       "name": "Joomla Extension - rsjoomla.com - Unauthenticated file upload in RSFiles component < 1.17."
-    },
-    {
-      "id": "CVE-2021-3128",
-      "now": 0.16191,
-      "prev": 0.02184,
-      "delta": 0.14007,
-      "name": "In ASUS RT-AX3000, ZenWiFi AX (XT8), RT-AX88U, and other ASUS routers with firmware < 3.0.0.4.386.42095 or < 9"
     },
     {
       "id": "CVE-2026-8451",
@@ -68,11 +68,11 @@
       "name": "Insufficient input validation leading to memory overread"
     },
     {
-      "id": "CVE-2025-47269",
-      "now": 0.56284,
-      "prev": 0.4454,
-      "delta": 0.11744,
-      "name": "code-server session cookie can be extracted by having user visit specially crafted proxy U"
+      "id": "CVE-2023-41425",
+      "now": 0.66007,
+      "prev": 0.54305,
+      "delta": 0.11702,
+      "name": "Cross Site Scripting vulnerability in Wonder CMS v.3.2.0 thru v.3.4.2 allows a remote attacker to execute arbi"
     },
     {
       "id": "CVE-2026-76461",
@@ -145,18 +145,18 @@
       "name": "JetBrains TeamCity"
     },
     {
+      "id": "CVE-2025-41244",
+      "now": 0.16377,
+      "prev": 0.08629,
+      "delta": 0.07748,
+      "name": "VMSA-2025-0015: VMware Aria Operations and VMware Tools updates address multiple vulnerabi"
+    },
+    {
       "id": "CVE-2025-54948",
       "now": 0.32872,
       "prev": 0.25402,
       "delta": 0.0747,
       "name": "Trend Micro, Inc. Trend Micro Apex One"
-    },
-    {
-      "id": "CVE-2025-41244",
-      "now": 0.15841,
-      "prev": 0.08629,
-      "delta": 0.07212,
-      "name": "VMSA-2025-0015: VMware Aria Operations and VMware Tools updates address multiple vulnerabi"
     },
     {
       "id": "CVE-2024-2511",
@@ -208,11 +208,11 @@
       "name": "Trend Micro, Inc. Trend Micro Apex One"
     },
     {
-      "id": "CVE-2026-42533",
-      "now": 0.06296,
-      "prev": 0.00894,
-      "delta": 0.05402,
-      "name": "NGINX Map directive and Regex matching vulnerability"
+      "id": "CVE-2026-105133",
+      "now": 0.84478,
+      "prev": 0.7947,
+      "delta": 0.05008,
+      "name": "Ahsay AhsayCBS API ApiStructsAction.java checkSysPwd improper authentication"
     }
   ],
   "newly_high": [
@@ -245,13 +245,6 @@
       "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
-      "id": "CVE-2025-47269",
-      "now": 0.56284,
-      "prev": 0.4454,
-      "delta": 0.11744,
-      "name": "code-server session cookie can be extracted by having user visit specially crafted proxy U"
-    },
-    {
       "id": "CVE-2009-1936",
       "now": 0.51897,
       "prev": 0.42223,
@@ -266,11 +259,18 @@
       "name": "An issue was discovered in Django 3.2 before 3.2.23, 4.1 before 4.1.13, and 4.2 before 4.2.7. The NFKC normali"
     },
     {
-      "id": "CVE-2025-7441",
-      "now": 0.50881,
-      "prev": 0.49894,
-      "delta": 0.00987,
-      "name": "StoryChief <= 1.0.42 - Unauthenticated Arbitrary File Upload"
+      "id": "CVE-2025-68645",
+      "now": 0.50572,
+      "prev": 0.48873,
+      "delta": 0.01699,
+      "name": "A Local File Inclusion (LFI) vulnerability exists in the Webmail Classic UI of Zimbra Collaboration (ZCS) 10.0"
+    },
+    {
+      "id": "CVE-2019-12527",
+      "now": 0.50299,
+      "prev": 0.49037,
+      "delta": 0.01262,
+      "name": "An issue was discovered in Squid 4.0.23 through 4.7. When checking Basic Authentication with HttpHeader::getAu"
     },
     {
       "id": "CVE-2020-13950",
