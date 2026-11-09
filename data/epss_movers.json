@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-08",
+  "updated": "2026-11-09",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-08",
-  "previous_date": "2026-11-01",
+  "current_date": "2026-11-09",
+  "previous_date": "2026-11-02",
   "risers": [
     {
       "id": "CVE-2026-75650",
@@ -75,6 +75,13 @@
       "name": "Cross Site Scripting vulnerability in Wonder CMS v.3.2.0 thru v.3.4.2 allows a remote attacker to execute arbi"
     },
     {
+      "id": "CVE-2006-6423",
+      "now": 0.8157,
+      "prev": 0.70706,
+      "delta": 0.10864,
+      "name": "Stack-based buffer overflow in the IMAP service for MailEnable Professional and Enterprise Edition 2.0 through"
+    },
+    {
       "id": "CVE-2026-76461",
       "now": 0.4016,
       "prev": 0.29543,
@@ -87,13 +94,6 @@
       "prev": 0.01821,
       "delta": 0.10065,
       "name": "Plex Media Server SSRF"
-    },
-    {
-      "id": "CVE-2019-6446",
-      "now": 0.27266,
-      "prev": 0.17528,
-      "delta": 0.09738,
-      "name": "An issue was discovered in NumPy before 1.16.3. It uses the pickle Python module unsafely, which allows remote"
     },
     {
       "id": "CVE-2009-1936",
@@ -131,11 +131,11 @@
       "name": "inc/init.php in DokuWiki 2009-02-14, rc2009-02-06, and rc2009-01-30, when register_globals is enabled, allows "
     },
     {
-      "id": "CVE-2008-4824",
-      "now": 0.21115,
-      "prev": 0.13254,
-      "delta": 0.07861,
-      "name": "Multiple unspecified vulnerabilities in Adobe Flash Player 10.x before 10.0.12.36 and 9.x before 9.0.151.0 all"
+      "id": "CVE-2024-48990",
+      "now": 0.29202,
+      "prev": 0.21269,
+      "delta": 0.07933,
+      "name": "needrestart needrestart"
     },
     {
       "id": "CVE-2026-49373",
@@ -160,10 +160,17 @@
     },
     {
       "id": "CVE-2024-2511",
-      "now": 0.59302,
+      "now": 0.59304,
       "prev": 0.52421,
-      "delta": 0.06881,
+      "delta": 0.06883,
       "name": "Unbounded memory growth with session handling in TLSv1.3"
+    },
+    {
+      "id": "CVE-2023-32434",
+      "now": 0.58157,
+      "prev": 0.51517,
+      "delta": 0.0664,
+      "name": "Apple macOS"
     },
     {
       "id": "CVE-2012-1461",
@@ -173,18 +180,11 @@
       "name": "The Gzip file parser in AVG Anti-Virus 10.0.0.1190, Bitdefender 7.2, Command Antivirus 5.2.11.5, Emsisoft Anti"
     },
     {
-      "id": "CVE-2024-52012",
-      "now": 0.47121,
-      "prev": 0.40919,
-      "delta": 0.06202,
-      "name": "Apache Solr: Configset upload on Windows allows arbitrary path write-access"
-    },
-    {
-      "id": "CVE-2025-58434",
-      "now": 0.82585,
-      "prev": 0.76449,
-      "delta": 0.06136,
-      "name": "Flowise Cloud and Local Deployments have Unauthenticated Password Reset Token Disclosure t"
+      "id": "CVE-2020-17103",
+      "now": 0.29874,
+      "prev": 0.23836,
+      "delta": 0.06038,
+      "name": "Windows Cloud Files Mini Filter Driver Elevation of Privilege Vulnerability"
     },
     {
       "id": "CVE-2017-7309",
@@ -201,18 +201,18 @@
       "name": "Multiple PHP remote file inclusion vulnerabilities in Advanced Comment System 1.0 allow remote attackers to ex"
     },
     {
+      "id": "CVE-2024-52012",
+      "now": 0.47121,
+      "prev": 0.41184,
+      "delta": 0.05937,
+      "name": "Apache Solr: Configset upload on Windows allows arbitrary path write-access"
+    },
+    {
       "id": "CVE-2025-54987",
       "now": 0.27302,
       "prev": 0.21503,
       "delta": 0.05799,
       "name": "Trend Micro, Inc. Trend Micro Apex One"
-    },
-    {
-      "id": "CVE-2026-105133",
-      "now": 0.84478,
-      "prev": 0.7947,
-      "delta": 0.05008,
-      "name": "Ahsay AhsayCBS API ApiStructsAction.java checkSysPwd improper authentication"
     }
   ],
   "newly_high": [
@@ -250,13 +250,6 @@
       "prev": 0.42223,
       "delta": 0.09674,
       "name": "_functions.php in cpCommerce 1.2.x, possibly including 1.2.9, sends a redirect but does not exit when it is ca"
-    },
-    {
-      "id": "CVE-2023-46695",
-      "now": 0.53447,
-      "prev": 0.49774,
-      "delta": 0.03673,
-      "name": "An issue was discovered in Django 3.2 before 3.2.23, 4.1 before 4.1.13, and 4.2 before 4.2.7. The NFKC normali"
     },
     {
       "id": "CVE-2025-68645",
