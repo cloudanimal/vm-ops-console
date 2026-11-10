@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09",
+  "updated": "2026-11-10",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,602 +7,1075 @@
   "items": [
     {
       "id": null,
-      "title": "SCA: security update for org.zeroturnaround:zt-zip (GHSA-52c6-99qm-3hqr)",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478834",
+      "title": "Alpine: krb5: security update to 1.22.3-r0",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/478901",
       "cves": [
-        "CVE-2026-63436"
+        "CVE-2026-107708",
+        "CVE-2026-112317",
+        "CVE-2026-112318",
+        "CVE-2026-119079",
+        "CVE-2026-40356"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for org.zeroturnaround:zt-zip (GHSA-52c6-99qm-3hqr)",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478834",
+      "title": "Alpine: krb5: security update to 1.22.3-r0",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/478901",
       "cves": [
-        "CVE-2026-63436"
+        "CVE-2026-107708",
+        "CVE-2026-112317",
+        "CVE-2026-112318",
+        "CVE-2026-119079",
+        "CVE-2026-40356"
+      ]
+    },
+    {
+      "id": "378064",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123607",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378064",
+      "cves": [
+        "CVE-2026-123607"
+      ]
+    },
+    {
+      "id": "378063",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123584",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378063",
+      "cves": [
+        "CVE-2026-123584"
+      ]
+    },
+    {
+      "id": "378062",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-115701",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378062",
+      "cves": [
+        "CVE-2026-115701"
+      ]
+    },
+    {
+      "id": "378061",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123592",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378061",
+      "cves": [
+        "CVE-2026-123592"
+      ]
+    },
+    {
+      "id": "378060",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-113431",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378060",
+      "cves": [
+        "CVE-2026-113431"
+      ]
+    },
+    {
+      "id": "378059",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123587",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378059",
+      "cves": [
+        "CVE-2026-123587"
+      ]
+    },
+    {
+      "id": "378058",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-124584",
+      "severity": "Medium",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378058",
+      "cves": [
+        "CVE-2026-124584"
+      ]
+    },
+    {
+      "id": "378057",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-124030",
+      "severity": "Medium",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378057",
+      "cves": [
+        "CVE-2026-124030"
+      ]
+    },
+    {
+      "id": "378056",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123532",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378056",
+      "cves": [
+        "CVE-2026-123532"
+      ]
+    },
+    {
+      "id": "378055",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123655",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378055",
+      "cves": [
+        "CVE-2026-123655"
+      ]
+    },
+    {
+      "id": "378054",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-124031",
+      "severity": "Medium",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378054",
+      "cves": [
+        "CVE-2026-124031"
+      ]
+    },
+    {
+      "id": "378053",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-124586",
+      "severity": "Medium",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378053",
+      "cves": [
+        "CVE-2026-124586"
+      ]
+    },
+    {
+      "id": "378052",
+      "title": "SUSE SLED15: PackageKit / PackageKit-backend-zypp / PackageKit-devel / etc (SUSE-SU-2026:5143-1)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378052",
+      "cves": [
+        "CVE-2026-104619",
+        "CVE-2026-104620"
+      ]
+    },
+    {
+      "id": "378051",
+      "title": "SUSE SLES15: PackageKit / PackageKit-backend-zypp / PackageKit-devel / etc (SUSE-SU-2026:5142-1)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378051",
+      "cves": [
+        "CVE-2026-104620"
+      ]
+    },
+    {
+      "id": "378050",
+      "title": "SUSE SLES15: dpdk22 / dpdk22-devel / dpdk22-kmp-default / dpdk22-thunderx / etc (SUSE-SU-2026:5135-1)",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378050",
+      "cves": [
+        "CVE-2026-100236",
+        "CVE-2026-86561",
+        "CVE-2026-86563",
+        "CVE-2026-86565",
+        "CVE-2026-86566",
+        "CVE-2026-86845",
+        "CVE-2026-86846",
+        "CVE-2026-86847",
+        "CVE-2026-86848",
+        "CVE-2026-86849",
+        "CVE-2026-86856",
+        "CVE-2026-93683"
+      ]
+    },
+    {
+      "id": "378049",
+      "title": "SUSE SLED15 / SLES15 Security Update : zchunk (SUSE-SU-2026:5138-1)",
+      "severity": "Medium",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378049",
+      "cves": [
+        "CVE-2026-117556"
+      ]
+    },
+    {
+      "id": "378048",
+      "title": "SUSE SLES15: PackageKit / PackageKit-backend-zypp / PackageKit-devel / etc (SUSE-SU-2026:5144-1)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378048",
+      "cves": [
+        "CVE-2026-104620",
+        "CVE-2026-41651"
+      ]
+    },
+    {
+      "id": "378047",
+      "title": "SUSE SLES15: xen / xen-devel / xen-libs / xen-tools / xen-tools-domU / etc (SUSE-SU-2026:5140-1)",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378047",
+      "cves": [
+        "CVE-2026-102700",
+        "CVE-2026-102703",
+        "CVE-2026-102704",
+        "CVE-2026-62437",
+        "CVE-2026-79602",
+        "CVE-2026-79603",
+        "CVE-2026-79609",
+        "CVE-2026-79610",
+        "CVE-2026-79611"
+      ]
+    },
+    {
+      "id": "378046",
+      "title": "SUSE SLES15 Security Update : libjxl (SUSE-SU-2026:5131-1)",
+      "severity": "Medium",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378046",
+      "cves": [
+        "CVE-2026-82522"
+      ]
+    },
+    {
+      "id": "378045",
+      "title": "SUSE SLED15 / SLES15 Security Update : aspell (SUSE-SU-2026:5134-1)",
+      "severity": "Low",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378045",
+      "cves": [
+        "CVE-2026-103658",
+        "CVE-2026-75818",
+        "CVE-2026-75819",
+        "CVE-2026-75820"
+      ]
+    },
+    {
+      "id": "378044",
+      "title": "SUSE SLED15: libpoppler-cpp0 / libpoppler-devel / libpoppler-glib-devel / etc (SUSE-SU-2026:5133-1)",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378044",
+      "cves": [
+        "CVE-2026-102620",
+        "CVE-2026-102621",
+        "CVE-2026-107705",
+        "CVE-2026-93313",
+        "CVE-2026-93314"
+      ]
+    },
+    {
+      "id": "378043",
+      "title": "SUSE SLED15: MozillaFirefox / MozillaFirefox-devel / etc (SUSE-SU-2026:5145-1)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378043",
+      "cves": [
+        "CVE-2026-100801",
+        "CVE-2026-113470",
+        "CVE-2026-117860",
+        "CVE-2026-117861",
+        "CVE-2026-117862",
+        "CVE-2026-117863",
+        "CVE-2026-117864",
+        "CVE-2026-117865",
+        "CVE-2026-117866",
+        "CVE-2026-117867",
+        "CVE-2026-117868",
+        "CVE-2026-117869",
+        "CVE-2026-117870",
+        "CVE-2026-117871",
+        "CVE-2026-117872",
+        "CVE-2026-117873",
+        "CVE-2026-117874",
+        "CVE-2026-117875",
+        "CVE-2026-117876",
+        "CVE-2026-117877",
+        "CVE-2026-117878",
+        "CVE-2026-117879",
+        "CVE-2026-117880",
+        "CVE-2026-117881",
+        "CVE-2026-117882",
+        "CVE-2026-117883",
+        "CVE-2026-117884",
+        "CVE-2026-117885",
+        "CVE-2026-117886",
+        "CVE-2026-117887",
+        "CVE-2026-117888",
+        "CVE-2026-117889",
+        "CVE-2026-117890",
+        "CVE-2026-117891",
+        "CVE-2026-117892",
+        "CVE-2026-117893",
+        "CVE-2026-117894",
+        "CVE-2026-117895",
+        "CVE-2026-117896",
+        "CVE-2026-117897",
+        "CVE-2026-117898",
+        "CVE-2026-117899",
+        "CVE-2026-117900",
+        "CVE-2026-117901",
+        "CVE-2026-117902",
+        "CVE-2026-117903",
+        "CVE-2026-117904",
+        "CVE-2026-117905",
+        "CVE-2026-117906",
+        "CVE-2026-117907",
+        "CVE-2026-117908",
+        "CVE-2026-117909",
+        "CVE-2026-117910",
+        "CVE-2026-117911",
+        "CVE-2026-117912",
+        "CVE-2026-117913",
+        "CVE-2026-117914",
+        "CVE-2026-117915",
+        "CVE-2026-117916",
+        "CVE-2026-117917",
+        "CVE-2026-117918",
+        "CVE-2026-117919",
+        "CVE-2026-117920",
+        "CVE-2026-117921",
+        "CVE-2026-117922",
+        "CVE-2026-117923",
+        "CVE-2026-117924",
+        "CVE-2026-117925",
+        "CVE-2026-117926",
+        "CVE-2026-117927",
+        "CVE-2026-117928",
+        "CVE-2026-117929",
+        "CVE-2026-117930",
+        "CVE-2026-117931",
+        "CVE-2026-117932",
+        "CVE-2026-117933",
+        "CVE-2026-117934",
+        "CVE-2026-117935",
+        "CVE-2026-117936",
+        "CVE-2026-117937",
+        "CVE-2026-117938",
+        "CVE-2026-117939",
+        "CVE-2026-117940",
+        "CVE-2026-117941",
+        "CVE-2026-117942",
+        "CVE-2026-117943",
+        "CVE-2026-117944",
+        "CVE-2026-117945",
+        "CVE-2026-117946",
+        "CVE-2026-117947",
+        "CVE-2026-117948",
+        "CVE-2026-117949",
+        "CVE-2026-117950",
+        "CVE-2026-117951",
+        "CVE-2026-117952",
+        "CVE-2026-117953",
+        "CVE-2026-117954",
+        "CVE-2026-117955",
+        "CVE-2026-117956",
+        "CVE-2026-117957",
+        "CVE-2026-117958",
+        "CVE-2026-117959",
+        "CVE-2026-117960",
+        "CVE-2026-117961",
+        "CVE-2026-117962",
+        "CVE-2026-117963",
+        "CVE-2026-117964",
+        "CVE-2026-117965",
+        "CVE-2026-117966",
+        "CVE-2026-117967",
+        "CVE-2026-117968",
+        "CVE-2026-117969",
+        "CVE-2026-117970",
+        "CVE-2026-117971",
+        "CVE-2026-117972",
+        "CVE-2026-117973",
+        "CVE-2026-117974",
+        "CVE-2026-117975",
+        "CVE-2026-117976",
+        "CVE-2026-117977",
+        "CVE-2026-117978",
+        "CVE-2026-117979",
+        "CVE-2026-117980",
+        "CVE-2026-117981",
+        "CVE-2026-117982",
+        "CVE-2026-117983",
+        "CVE-2026-117984",
+        "CVE-2026-117985",
+        "CVE-2026-117986",
+        "CVE-2026-117987",
+        "CVE-2026-117988",
+        "CVE-2026-117989",
+        "CVE-2026-117990",
+        "CVE-2026-117991",
+        "CVE-2026-117992",
+        "CVE-2026-117993",
+        "CVE-2026-117994",
+        "CVE-2026-117995",
+        "CVE-2026-117996",
+        "CVE-2026-117997",
+        "CVE-2026-117998",
+        "CVE-2026-117999",
+        "CVE-2026-118000",
+        "CVE-2026-118002",
+        "CVE-2026-118003",
+        "CVE-2026-118004"
+      ]
+    },
+    {
+      "id": "378042",
+      "title": "Atlassian Confluence < 9.2.28 (CONFSERVER-104610)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378042",
+      "cves": [
+        "CVE-2026-90436"
+      ]
+    },
+    {
+      "id": "378041",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2025-55002",
+      "severity": "Medium",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378041",
+      "cves": [
+        "CVE-2025-55002"
+      ]
+    },
+    {
+      "id": "378040",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2025-54991",
+      "severity": "Medium",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378040",
+      "cves": [
+        "CVE-2025-54991"
+      ]
+    },
+    {
+      "id": "378039",
+      "title": "Fedora 43 : perl-Net-IDN-Encode (2026-3cb8ce0117)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378039",
+      "cves": [
+        "CVE-2026-74765",
+        "CVE-2026-74766",
+        "CVE-2026-87078",
+        "CVE-2026-87079",
+        "CVE-2026-87080",
+        "CVE-2026-87081",
+        "CVE-2026-87082"
+      ]
+    },
+    {
+      "id": "378038",
+      "title": "Fedora 43 : perl-Starlet (2026-092670ec3e)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378038",
+      "cves": []
+    },
+    {
+      "id": "378037",
+      "title": "Fedora 43 : perl-CGI (2026-a3a026d9ff)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378037",
+      "cves": [
+        "CVE-2026-120631",
+        "CVE-2026-120632",
+        "CVE-2026-120633",
+        "CVE-2026-120634",
+        "CVE-2026-120635",
+        "CVE-2026-120636",
+        "CVE-2026-120637",
+        "CVE-2026-120638",
+        "CVE-2026-120639",
+        "CVE-2026-120640",
+        "CVE-2026-120641",
+        "CVE-2026-120642",
+        "CVE-2026-120643",
+        "CVE-2026-120644",
+        "CVE-2026-120645",
+        "CVE-2026-120646",
+        "CVE-2026-120647",
+        "CVE-2026-120648",
+        "CVE-2026-120650",
+        "CVE-2026-120651"
+      ]
+    },
+    {
+      "id": "378036",
+      "title": "Fedora 44 : libmodulemd (2026-d657495ea3)",
+      "severity": "Medium",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378036",
+      "cves": [
+        "CVE-2026-92822",
+        "CVE-2026-92823",
+        "CVE-2026-92824"
+      ]
+    },
+    {
+      "id": "378035",
+      "title": "Fedora 44 : perl-Net-IDN-Encode (2026-effb380a7c)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378035",
+      "cves": [
+        "CVE-2026-74765",
+        "CVE-2026-74766",
+        "CVE-2026-87078",
+        "CVE-2026-87079",
+        "CVE-2026-87080",
+        "CVE-2026-87081",
+        "CVE-2026-87082"
+      ]
+    },
+    {
+      "id": "378034",
+      "title": "Fedora 45 : maturin / python-jiter / python-pydantic-core / python-pysequoia / etc (2026-2b0f14aa7b)",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378034",
+      "cves": []
+    },
+    {
+      "id": "378033",
+      "title": "Fedora 45 : libmodulemd (2026-946f33e2c8)",
+      "severity": "Medium",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378033",
+      "cves": [
+        "CVE-2026-92822",
+        "CVE-2026-92823",
+        "CVE-2026-92824"
+      ]
+    },
+    {
+      "id": "378032",
+      "title": "Fedora 44 : kernel / kernel-headers (2026-0e28591060)",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378032",
+      "cves": []
+    },
+    {
+      "id": "378031",
+      "title": "Fedora 43 : python3-docs / python3.14 (2026-1520dedf55)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378031",
+      "cves": []
+    },
+    {
+      "id": "378030",
+      "title": "Fedora 44 : bind (2026-cf9d4ec5e6)",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378030",
+      "cves": [
+        "CVE-2026-19630",
+        "CVE-2026-94300",
+        "CVE-2026-96888",
+        "CVE-2026-97313"
+      ]
+    },
+    {
+      "id": "378029",
+      "title": "Fedora 44 : perl-CGI (2026-516e427bac)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378029",
+      "cves": [
+        "CVE-2026-120631",
+        "CVE-2026-120632",
+        "CVE-2026-120633",
+        "CVE-2026-120634",
+        "CVE-2026-120635",
+        "CVE-2026-120636",
+        "CVE-2026-120637",
+        "CVE-2026-120638",
+        "CVE-2026-120639",
+        "CVE-2026-120640",
+        "CVE-2026-120641",
+        "CVE-2026-120642",
+        "CVE-2026-120643",
+        "CVE-2026-120644",
+        "CVE-2026-120645",
+        "CVE-2026-120646",
+        "CVE-2026-120647",
+        "CVE-2026-120648",
+        "CVE-2026-120650",
+        "CVE-2026-120651"
+      ]
+    },
+    {
+      "id": "378028",
+      "title": "Fedora 45 : perl-CGI (2026-a04615c725)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378028",
+      "cves": [
+        "CVE-2026-120631",
+        "CVE-2026-120632",
+        "CVE-2026-120633",
+        "CVE-2026-120634",
+        "CVE-2026-120635",
+        "CVE-2026-120636",
+        "CVE-2026-120637",
+        "CVE-2026-120638",
+        "CVE-2026-120639",
+        "CVE-2026-120640",
+        "CVE-2026-120641",
+        "CVE-2026-120642",
+        "CVE-2026-120643",
+        "CVE-2026-120644",
+        "CVE-2026-120645",
+        "CVE-2026-120646",
+        "CVE-2026-120647",
+        "CVE-2026-120648",
+        "CVE-2026-120650",
+        "CVE-2026-120651"
+      ]
+    },
+    {
+      "id": "378027",
+      "title": "Fedora 43 : dnf5 (2026-5879bc27e1)",
+      "severity": "Medium",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378027",
+      "cves": [
+        "CVE-2026-111253"
+      ]
+    },
+    {
+      "id": "378026",
+      "title": "Fedora 45 : kernel / kernel-headers (2026-655049a906)",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378026",
+      "cves": []
+    },
+    {
+      "id": "378025",
+      "title": "Fedora 45 : perl-Starlet (2026-7d9cd72397)",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378025",
+      "cves": []
+    },
+    {
+      "id": "378024",
+      "title": "Fedora 46 : ffmpeg / openapv (2026-a971aa459f)",
+      "severity": "Medium",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378024",
+      "cves": [
+        "CVE-2026-79113"
+      ]
+    },
+    {
+      "id": "378023",
+      "title": "Fedora 45 : perl-Net-IDN-Encode (2026-f6acaf8756)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378023",
+      "cves": [
+        "CVE-2026-74765",
+        "CVE-2026-74766",
+        "CVE-2026-87078",
+        "CVE-2026-87079",
+        "CVE-2026-87080",
+        "CVE-2026-87081",
+        "CVE-2026-87082"
+      ]
+    },
+    {
+      "id": "378022",
+      "title": "Fedora 43 : kernel / kernel-headers (2026-1028a81d8a)",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378022",
+      "cves": []
+    },
+    {
+      "id": "378021",
+      "title": "Fedora 45 : python3-docs / python3.15 (2026-f3fe9323aa)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378021",
+      "cves": []
+    },
+    {
+      "id": "378020",
+      "title": "Fedora 44 : perl-Starlet (2026-bd36d053a1)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378020",
+      "cves": []
+    },
+    {
+      "id": "378019",
+      "title": "Ubuntu 20.04 LTS / 22.04 LTS : OpenJDK 11 vulnerabilities (USN-9010-1)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378019",
+      "cves": [
+        "CVE-2026-114820",
+        "CVE-2026-83374",
+        "CVE-2026-83376",
+        "CVE-2026-83380",
+        "CVE-2026-83381",
+        "CVE-2026-83387",
+        "CVE-2026-83395",
+        "CVE-2026-83400",
+        "CVE-2026-87290",
+        "CVE-2026-87292",
+        "CVE-2026-87294",
+        "CVE-2026-87367",
+        "CVE-2026-91332",
+        "CVE-2026-91334",
+        "CVE-2026-91335",
+        "CVE-2026-91373",
+        "CVE-2026-91374",
+        "CVE-2026-91375",
+        "CVE-2026-91379",
+        "CVE-2026-91380",
+        "CVE-2026-91382",
+        "CVE-2026-91394",
+        "CVE-2026-91395",
+        "CVE-2026-91396",
+        "CVE-2026-91397",
+        "CVE-2026-91398",
+        "CVE-2026-91400",
+        "CVE-2026-91403",
+        "CVE-2026-91410",
+        "CVE-2026-91411",
+        "CVE-2026-91415",
+        "CVE-2026-91418",
+        "CVE-2026-91451",
+        "CVE-2026-91452",
+        "CVE-2026-91453",
+        "CVE-2026-91461",
+        "CVE-2026-91462",
+        "CVE-2026-91463",
+        "CVE-2026-91464",
+        "CVE-2026-91487"
+      ]
+    },
+    {
+      "id": "378018",
+      "title": "Ubuntu 20.04 LTS / 22.04 LTS : Fetchmail vulnerabilities (USN-9013-1)",
+      "severity": "Medium",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378018",
+      "cves": [
+        "CVE-2021-36386",
+        "CVE-2025-61962",
+        "CVE-2026-94184"
+      ]
+    },
+    {
+      "id": "378017",
+      "title": "Ubuntu 22.04 LTS : libnfs vulnerability (USN-9008-1)",
+      "severity": "High",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378017",
+      "cves": []
+    },
+    {
+      "id": "378016",
+      "title": "Ubuntu 20.04 LTS / 22.04 LTS : pyasn1 vulnerabilities (USN-9011-1)",
+      "severity": "Medium",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378016",
+      "cves": [
+        "CVE-2026-119194",
+        "CVE-2026-119195",
+        "CVE-2026-119196",
+        "CVE-2026-119197",
+        "CVE-2026-59884",
+        "CVE-2026-59885",
+        "CVE-2026-59886"
+      ]
+    },
+    {
+      "id": "378015",
+      "title": "Ubuntu 20.04 LTS / 22.04 LTS : OpenJDK 8 vulnerabilities (USN-9009-1)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378015",
+      "cves": [
+        "CVE-2026-114820",
+        "CVE-2026-83374",
+        "CVE-2026-83376",
+        "CVE-2026-83380",
+        "CVE-2026-83381",
+        "CVE-2026-83387",
+        "CVE-2026-83395",
+        "CVE-2026-83400",
+        "CVE-2026-87290",
+        "CVE-2026-87292",
+        "CVE-2026-87293",
+        "CVE-2026-87294",
+        "CVE-2026-87367",
+        "CVE-2026-91334",
+        "CVE-2026-91335",
+        "CVE-2026-91373",
+        "CVE-2026-91374",
+        "CVE-2026-91380",
+        "CVE-2026-91381",
+        "CVE-2026-91382",
+        "CVE-2026-91395",
+        "CVE-2026-91396",
+        "CVE-2026-91397",
+        "CVE-2026-91398",
+        "CVE-2026-91400",
+        "CVE-2026-91403",
+        "CVE-2026-91410",
+        "CVE-2026-91411",
+        "CVE-2026-91415",
+        "CVE-2026-91417",
+        "CVE-2026-91418",
+        "CVE-2026-91451",
+        "CVE-2026-91452",
+        "CVE-2026-91453",
+        "CVE-2026-91461",
+        "CVE-2026-91462",
+        "CVE-2026-91463",
+        "CVE-2026-91464"
+      ]
+    },
+    {
+      "id": "378014",
+      "title": "MiracleLinux 8 : util-linux-2.32.1-50.el8_10 (AXSA:2026-2293:04)",
+      "severity": "Medium",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378014",
+      "cves": [
+        "CVE-2026-13595",
+        "CVE-2026-53613",
+        "CVE-2026-53615"
+      ]
+    },
+    {
+      "id": "378013",
+      "title": "MiracleLinux 8 : firefox-153.6.0-1.el8_10.ML.1 (AXSA:2026-2292:32)",
+      "severity": "Critical",
+      "date": "Tue, 10 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/378013",
+      "cves": [
+        "CVE-2026-100801",
+        "CVE-2026-117860",
+        "CVE-2026-117861",
+        "CVE-2026-117862",
+        "CVE-2026-117863",
+        "CVE-2026-117864",
+        "CVE-2026-117865",
+        "CVE-2026-117866",
+        "CVE-2026-117867",
+        "CVE-2026-117868",
+        "CVE-2026-117869",
+        "CVE-2026-117870",
+        "CVE-2026-117871",
+        "CVE-2026-117872",
+        "CVE-2026-117873",
+        "CVE-2026-117874",
+        "CVE-2026-117875",
+        "CVE-2026-117876",
+        "CVE-2026-117877",
+        "CVE-2026-117878",
+        "CVE-2026-117879",
+        "CVE-2026-117880",
+        "CVE-2026-117881",
+        "CVE-2026-117882",
+        "CVE-2026-117883",
+        "CVE-2026-117884",
+        "CVE-2026-117885",
+        "CVE-2026-117886",
+        "CVE-2026-117887",
+        "CVE-2026-117888",
+        "CVE-2026-117889",
+        "CVE-2026-117890",
+        "CVE-2026-117891",
+        "CVE-2026-117892",
+        "CVE-2026-117893",
+        "CVE-2026-117894",
+        "CVE-2026-117895",
+        "CVE-2026-117896",
+        "CVE-2026-117897",
+        "CVE-2026-117898",
+        "CVE-2026-117899",
+        "CVE-2026-117900",
+        "CVE-2026-117901",
+        "CVE-2026-117902",
+        "CVE-2026-117903",
+        "CVE-2026-117904",
+        "CVE-2026-117905",
+        "CVE-2026-117906",
+        "CVE-2026-117907",
+        "CVE-2026-117908",
+        "CVE-2026-117909",
+        "CVE-2026-117910",
+        "CVE-2026-117911",
+        "CVE-2026-117912",
+        "CVE-2026-117913",
+        "CVE-2026-117914",
+        "CVE-2026-117915",
+        "CVE-2026-117916",
+        "CVE-2026-117917",
+        "CVE-2026-117918",
+        "CVE-2026-117919",
+        "CVE-2026-117920",
+        "CVE-2026-117921",
+        "CVE-2026-117922",
+        "CVE-2026-117923",
+        "CVE-2026-117924",
+        "CVE-2026-117925",
+        "CVE-2026-117926",
+        "CVE-2026-117927",
+        "CVE-2026-117928",
+        "CVE-2026-117929",
+        "CVE-2026-117930",
+        "CVE-2026-117931",
+        "CVE-2026-117932",
+        "CVE-2026-117933",
+        "CVE-2026-117934",
+        "CVE-2026-117935",
+        "CVE-2026-117936",
+        "CVE-2026-117937",
+        "CVE-2026-117938",
+        "CVE-2026-117939",
+        "CVE-2026-117940",
+        "CVE-2026-117941",
+        "CVE-2026-117942",
+        "CVE-2026-117943",
+        "CVE-2026-117944",
+        "CVE-2026-117945",
+        "CVE-2026-117946",
+        "CVE-2026-117947",
+        "CVE-2026-117948",
+        "CVE-2026-117949",
+        "CVE-2026-117950",
+        "CVE-2026-117951",
+        "CVE-2026-117952",
+        "CVE-2026-117953",
+        "CVE-2026-117954",
+        "CVE-2026-117955",
+        "CVE-2026-117956",
+        "CVE-2026-117957",
+        "CVE-2026-117958",
+        "CVE-2026-117959",
+        "CVE-2026-117960",
+        "CVE-2026-117961",
+        "CVE-2026-117962",
+        "CVE-2026-117963",
+        "CVE-2026-117964",
+        "CVE-2026-117965",
+        "CVE-2026-117966",
+        "CVE-2026-117967",
+        "CVE-2026-117968",
+        "CVE-2026-117969",
+        "CVE-2026-117970",
+        "CVE-2026-117971",
+        "CVE-2026-117972",
+        "CVE-2026-117973",
+        "CVE-2026-117974",
+        "CVE-2026-117975",
+        "CVE-2026-117976",
+        "CVE-2026-117977",
+        "CVE-2026-117978",
+        "CVE-2026-117979",
+        "CVE-2026-117980",
+        "CVE-2026-117981",
+        "CVE-2026-117982",
+        "CVE-2026-117983",
+        "CVE-2026-117984",
+        "CVE-2026-117985",
+        "CVE-2026-117986",
+        "CVE-2026-117987",
+        "CVE-2026-117988",
+        "CVE-2026-117989",
+        "CVE-2026-117990",
+        "CVE-2026-117991",
+        "CVE-2026-117992",
+        "CVE-2026-117993",
+        "CVE-2026-117994",
+        "CVE-2026-117995",
+        "CVE-2026-117996",
+        "CVE-2026-117997",
+        "CVE-2026-117998",
+        "CVE-2026-117999",
+        "CVE-2026-118000",
+        "CVE-2026-118002",
+        "CVE-2026-118003",
+        "CVE-2026-118004"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for fastapi-code-generator (GHSA-h667-4jj2-cgv4)",
+      "title": "SCA: security update for fastapi-code-generator (GHSA-6xmv-cjr5-w3q8)",
       "severity": "Critical",
       "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478833",
+      "link": "https://www.tenable.com/plugins/cloud-security/478838",
       "cves": [
-        "CVE-2026-63470"
+        "CVE-2026-63469"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for fastapi-code-generator (GHSA-h667-4jj2-cgv4)",
+      "title": "SCA: security update for fastapi-code-generator (GHSA-6xmv-cjr5-w3q8)",
       "severity": "Critical",
       "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478833",
+      "link": "https://www.tenable.com/plugins/container-security/478838",
       "cves": [
-        "CVE-2026-63470"
+        "CVE-2026-63469"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for isomorphic-git (GHSA-9qw7-j9xw-fv9c)",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478832",
-      "cves": [
-        "CVE-2026-63395"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for isomorphic-git (GHSA-9qw7-j9xw-fv9c)",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478832",
-      "cves": [
-        "CVE-2026-63395"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for isomorphic-git (GHSA-cw2g-2vwq-88w6)",
+      "title": "SCA: security update for isomorphic-git (GHSA-96wc-2m84-2cj7)",
       "severity": "Medium",
       "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478831",
+      "link": "https://www.tenable.com/plugins/cloud-security/478837",
       "cves": [
-        "CVE-2026-63478"
+        "CVE-2026-63475"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for isomorphic-git (GHSA-cw2g-2vwq-88w6)",
+      "title": "SCA: security update for isomorphic-git (GHSA-96wc-2m84-2cj7)",
       "severity": "Medium",
       "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478831",
+      "link": "https://www.tenable.com/plugins/container-security/478837",
       "cves": [
-        "CVE-2026-63478"
+        "CVE-2026-63475"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478830",
-      "cves": [
-        "CVE-2026-121121"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478830",
-      "cves": [
-        "CVE-2026-121121"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
+      "title": "SCA: security update for loggingredactor (GHSA-w7qv-268h-9h3f)",
       "severity": "High",
       "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478829",
+      "link": "https://www.tenable.com/plugins/cloud-security/478836",
       "cves": [
-        "CVE-2026-121163"
+        "CVE-2026-63417"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
+      "title": "SCA: security update for loggingredactor (GHSA-w7qv-268h-9h3f)",
       "severity": "High",
       "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478829",
+      "link": "https://www.tenable.com/plugins/container-security/478836",
       "cves": [
-        "CVE-2026-121163"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478828",
-      "cves": [
-        "CVE-2026-121236"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478828",
-      "cves": [
-        "CVE-2026-121236"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Critical",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478827",
-      "cves": [
-        "CVE-2026-121250"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Critical",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478827",
-      "cves": [
-        "CVE-2026-121250"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478826",
-      "cves": [
-        "CVE-2026-121203"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478826",
-      "cves": [
-        "CVE-2026-121203"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478825",
-      "cves": [
-        "CVE-2026-121178"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478825",
-      "cves": [
-        "CVE-2026-121178"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478824",
-      "cves": [
-        "CVE-2026-121108"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478824",
-      "cves": [
-        "CVE-2026-121108"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Critical",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478823",
-      "cves": [
-        "CVE-2026-121076"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Critical",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478823",
-      "cves": [
-        "CVE-2026-121076"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478822",
-      "cves": [
-        "CVE-2026-121090"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478822",
-      "cves": [
-        "CVE-2026-121090"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478821",
-      "cves": [
-        "CVE-2026-121158"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478821",
-      "cves": [
-        "CVE-2026-121158"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478820",
-      "cves": [
-        "CVE-2026-121099"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478820",
-      "cves": [
-        "CVE-2026-121099"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478819",
-      "cves": [
-        "CVE-2026-121252"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478819",
-      "cves": [
-        "CVE-2026-121252"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478818",
-      "cves": [
-        "CVE-2026-121130"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478818",
-      "cves": [
-        "CVE-2026-121130"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478817",
-      "cves": [
-        "CVE-2026-121036"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478817",
-      "cves": [
-        "CVE-2026-121036"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478816",
-      "cves": [
-        "CVE-2026-121081"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478816",
-      "cves": [
-        "CVE-2026-121081"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Critical",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478815",
-      "cves": [
-        "CVE-2026-121200"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Critical",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478815",
-      "cves": [
-        "CVE-2026-121200"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478814",
-      "cves": [
-        "CVE-2026-121221"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478814",
-      "cves": [
-        "CVE-2026-121221"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478813",
-      "cves": [
-        "CVE-2026-121088"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478813",
-      "cves": [
-        "CVE-2026-121088"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478812",
-      "cves": [
-        "CVE-2026-121228"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478812",
-      "cves": [
-        "CVE-2026-121228"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478811",
-      "cves": [
-        "CVE-2026-121141"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478811",
-      "cves": [
-        "CVE-2026-121141"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478810",
-      "cves": [
-        "CVE-2026-121138"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Medium",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478810",
-      "cves": [
-        "CVE-2026-121138"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Critical",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478809",
-      "cves": [
-        "CVE-2026-121030"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Critical",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478809",
-      "cves": [
-        "CVE-2026-121030"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478808",
-      "cves": [
-        "CVE-2026-121170"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478808",
-      "cves": [
-        "CVE-2026-121170"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478807",
-      "cves": [
-        "CVE-2026-121251"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478807",
-      "cves": [
-        "CVE-2026-121251"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Critical",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478806",
-      "cves": [
-        "CVE-2026-121073"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "Critical",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478806",
-      "cves": [
-        "CVE-2026-121073"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478805",
-      "cves": [
-        "CVE-2026-121098"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple chromium packages: security update to 157.0.8103.38-r0",
-      "severity": "High",
-      "date": "Mon, 09 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478805",
-      "cves": [
-        "CVE-2026-121098"
+        "CVE-2026-63417"
       ]
     }
   ]
