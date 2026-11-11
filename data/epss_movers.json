@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-10",
-  "previous_date": "2026-11-03",
+  "current_date": "2026-11-11",
+  "previous_date": "2026-11-04",
   "risers": [
     {
       "id": "CVE-2026-75650",
@@ -19,13 +19,6 @@
       "name": "vCenter directory-traversal vulnerability"
     },
     {
-      "id": "CVE-2026-102764",
-      "now": 0.77994,
-      "prev": 0.1895,
-      "delta": 0.59044,
-      "name": "Improper Origin Validation in Internal Messaging Components of BeyondTrust Remote Support"
-    },
-    {
       "id": "CVE-2026-4408",
       "now": 0.46926,
       "prev": 0.02501,
@@ -33,11 +26,11 @@
       "name": "Samba: remote code execution in samr"
     },
     {
-      "id": "CVE-2026-97229",
-      "now": 0.6522,
-      "prev": 0.27692,
-      "delta": 0.37528,
-      "name": "Integer Overflow or Wraparound in GitLab"
+      "id": "CVE-2026-18556",
+      "now": 0.43884,
+      "prev": 0.07882,
+      "delta": 0.36002,
+      "name": "Unauthenticated administrative account takeover"
     },
     {
       "id": "CVE-2026-102489",
@@ -45,13 +38,6 @@
       "prev": 0.22478,
       "delta": 0.27437,
       "name": "Undisclosed RCE in Zammad v6.3 and higher"
-    },
-    {
-      "id": "CVE-2025-23200",
-      "now": 0.49322,
-      "prev": 0.31574,
-      "delta": 0.17748,
-      "name": "Stored XSS-LibreNMS-Misc Section in librenms"
     },
     {
       "id": "CVE-2026-65400",
@@ -138,6 +124,13 @@
       "name": "inc/init.php in DokuWiki 2009-02-14, rc2009-02-06, and rc2009-01-30, when register_globals is enabled, allows "
     },
     {
+      "id": "CVE-2026-116606",
+      "now": 0.08934,
+      "prev": 0.00728,
+      "delta": 0.08206,
+      "name": "Authentication Bypass Allows Global Configuration Restore in Barracuda Email Security Gate"
+    },
+    {
       "id": "CVE-2024-48990",
       "now": 0.29202,
       "prev": 0.21269,
@@ -173,10 +166,17 @@
       "name": "Unbounded memory growth with session handling in TLSv1.3"
     },
     {
+      "id": "CVE-2026-81963",
+      "now": 0.07115,
+      "prev": 0.00393,
+      "delta": 0.06722,
+      "name": "Windows Update Stack Elevation of Privilege Vulnerability"
+    },
+    {
       "id": "CVE-2024-9143",
-      "now": 0.12483,
+      "now": 0.12484,
       "prev": 0.05842,
-      "delta": 0.06641,
+      "delta": 0.06642,
       "name": "Low-level invalid GF(2^m) parameters lead to OOB memory access"
     },
     {
@@ -187,11 +187,11 @@
       "name": "Apple macOS"
     },
     {
-      "id": "CVE-2012-1461",
-      "now": 0.9815,
-      "prev": 0.91664,
-      "delta": 0.06486,
-      "name": "The Gzip file parser in AVG Anti-Virus 10.0.0.1190, Bitdefender 7.2, Command Antivirus 5.2.11.5, Emsisoft Anti"
+      "id": "CVE-2024-4901",
+      "now": 0.3347,
+      "prev": 0.27305,
+      "delta": 0.06165,
+      "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') in Gi"
     },
     {
       "id": "CVE-2020-17103",
@@ -208,11 +208,11 @@
       "name": "A cross-site scripting (XSS) vulnerability in the MantisBT Configuration Report page (adm_config_report.php) a"
     },
     {
-      "id": "CVE-2009-4623",
-      "now": 0.15827,
-      "prev": 0.09847,
-      "delta": 0.0598,
-      "name": "Multiple PHP remote file inclusion vulnerabilities in Advanced Comment System 1.0 allow remote attackers to ex"
+      "id": "CVE-2025-54987",
+      "now": 0.27302,
+      "prev": 0.21503,
+      "delta": 0.05799,
+      "name": "Trend Micro, Inc. Trend Micro Apex One"
     }
   ],
   "newly_high": [
@@ -229,20 +229,6 @@
       "prev": 0.02565,
       "delta": 0.59103,
       "name": "vCenter directory-traversal vulnerability"
-    },
-    {
-      "id": "CVE-2026-102764",
-      "now": 0.77994,
-      "prev": 0.1895,
-      "delta": 0.59044,
-      "name": "Improper Origin Validation in Internal Messaging Components of BeyondTrust Remote Support"
-    },
-    {
-      "id": "CVE-2026-97229",
-      "now": 0.6522,
-      "prev": 0.27692,
-      "delta": 0.37528,
-      "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
       "id": "CVE-2009-1936",
