@@ -1,14 +1,21 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-11",
-  "previous_date": "2026-11-04",
+  "current_date": "2026-11-12",
+  "previous_date": "2026-11-05",
   "risers": [
+    {
+      "id": "CVE-2026-61511",
+      "now": 0.74266,
+      "prev": 0.05607,
+      "delta": 0.68659,
+      "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
+    },
     {
       "id": "CVE-2026-75650",
       "now": 0.99376,
-      "prev": 0.03949,
-      "delta": 0.95427,
+      "prev": 0.34741,
+      "delta": 0.64635,
       "name": "Adobe Commerce | Improper Neutralization of Special Elements Used in a Template Engine (CW"
     },
     {
@@ -40,11 +47,25 @@
       "name": "Undisclosed RCE in Zammad v6.3 and higher"
     },
     {
+      "id": "CVE-2026-56164",
+      "now": 0.2733,
+      "prev": 0.01011,
+      "delta": 0.26319,
+      "name": "Microsoft SharePoint Server Elevation of Privilege Vulnerability"
+    },
+    {
       "id": "CVE-2026-65400",
       "now": 0.18057,
       "prev": 0.01723,
       "delta": 0.16334,
       "name": "Apple macOS"
+    },
+    {
+      "id": "CVE-2020-36847",
+      "now": 0.59049,
+      "prev": 0.43519,
+      "delta": 0.1553,
+      "name": "Simple File List < 4.2.3 - Remote Code Execution"
     },
     {
       "id": "CVE-2026-4480",
@@ -68,6 +89,20 @@
       "name": "Insufficient input validation leading to memory overread"
     },
     {
+      "id": "CVE-2015-5468",
+      "now": 0.37774,
+      "prev": 0.24093,
+      "delta": 0.13681,
+      "name": "Directory traversal vulnerability in the WP e-Commerce Shop Styling plugin before 2.6 for WordPress allows rem"
+    },
+    {
+      "id": "CVE-2026-25939",
+      "now": 0.24256,
+      "prev": 0.12536,
+      "delta": 0.1172,
+      "name": "FUXA Unauthenticated Remote Arbitrary Scheduler Write"
+    },
+    {
       "id": "CVE-2023-41425",
       "now": 0.65456,
       "prev": 0.54305,
@@ -87,20 +122,6 @@
       "prev": 0.29543,
       "delta": 0.10617,
       "name": "Cisco Secure Email Gateway SQL Injection Vulnerability"
-    },
-    {
-      "id": "CVE-2009-1936",
-      "now": 0.51897,
-      "prev": 0.42223,
-      "delta": 0.09674,
-      "name": "_functions.php in cpCommerce 1.2.x, possibly including 1.2.9, sends a redirect but does not exit when it is ca"
-    },
-    {
-      "id": "CVE-2026-96655",
-      "now": 0.10724,
-      "prev": 0.01637,
-      "delta": 0.09087,
-      "name": "Plex Media Server arbitrary-host SSRF"
     },
     {
       "id": "CVE-2015-6420",
@@ -187,40 +208,26 @@
       "name": "Apple macOS"
     },
     {
-      "id": "CVE-2024-4901",
-      "now": 0.3347,
-      "prev": 0.27305,
-      "delta": 0.06165,
-      "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') in Gi"
-    },
-    {
       "id": "CVE-2020-17103",
       "now": 0.29874,
       "prev": 0.23836,
       "delta": 0.06038,
       "name": "Windows Cloud Files Mini Filter Driver Elevation of Privilege Vulnerability"
-    },
-    {
-      "id": "CVE-2017-7309",
-      "now": 0.63335,
-      "prev": 0.57319,
-      "delta": 0.06016,
-      "name": "A cross-site scripting (XSS) vulnerability in the MantisBT Configuration Report page (adm_config_report.php) a"
-    },
-    {
-      "id": "CVE-2025-54987",
-      "now": 0.27302,
-      "prev": 0.21503,
-      "delta": 0.05799,
-      "name": "Trend Micro, Inc. Trend Micro Apex One"
     }
   ],
   "newly_high": [
     {
+      "id": "CVE-2026-61511",
+      "now": 0.74266,
+      "prev": 0.05607,
+      "delta": 0.68659,
+      "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
+    },
+    {
       "id": "CVE-2026-75650",
       "now": 0.99376,
-      "prev": 0.03949,
-      "delta": 0.95427,
+      "prev": 0.34741,
+      "delta": 0.64635,
       "name": "Adobe Commerce | Improper Neutralization of Special Elements Used in a Template Engine (CW"
     },
     {
@@ -231,11 +238,11 @@
       "name": "vCenter directory-traversal vulnerability"
     },
     {
-      "id": "CVE-2009-1936",
-      "now": 0.51897,
-      "prev": 0.42223,
-      "delta": 0.09674,
-      "name": "_functions.php in cpCommerce 1.2.x, possibly including 1.2.9, sends a redirect but does not exit when it is ca"
+      "id": "CVE-2020-36847",
+      "now": 0.59049,
+      "prev": 0.43519,
+      "delta": 0.1553,
+      "name": "Simple File List < 4.2.3 - Remote Code Execution"
     },
     {
       "id": "CVE-2025-68645",
@@ -250,13 +257,6 @@
       "prev": 0.49037,
       "delta": 0.01262,
       "name": "An issue was discovered in Squid 4.0.23 through 4.7. When checking Basic Authentication with HttpHeader::getAu"
-    },
-    {
-      "id": "CVE-2020-13950",
-      "now": 0.50023,
-      "prev": 0.4937,
-      "delta": 0.00653,
-      "name": "mod_proxy_http NULL pointer dereference"
     }
   ]
 }

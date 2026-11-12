@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
@@ -7,604 +7,1212 @@
   "items": [
     {
       "id": null,
-      "title": "SCA: security update for Aspire.Cli (GHSA-hfpm-4fc4-g2wc)",
+      "title": "Alpine: nodejs: security update to 22.23.5-r0",
       "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478957",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/479025",
       "cves": [
-        "CVE-2026-120778"
+        "CVE-2024-27983",
+        "CVE-2026-123828",
+        "CVE-2026-123829",
+        "CVE-2026-123862",
+        "CVE-2026-123863",
+        "CVE-2026-123872"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for Aspire.Cli (GHSA-hfpm-4fc4-g2wc)",
+      "title": "Alpine: nodejs: security update to 22.23.5-r0",
       "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478957",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/479025",
       "cves": [
-        "CVE-2026-120778"
+        "CVE-2024-27983",
+        "CVE-2026-123828",
+        "CVE-2026-123829",
+        "CVE-2026-123862",
+        "CVE-2026-123863",
+        "CVE-2026-123872"
       ]
     },
     {
       "id": null,
-      "title": "SCA: security update for compose-lint (GHSA-hr4h-4c45-v4q4)",
+      "title": "Alpine: nodejs: security update to 24.22.3-r0",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/479024",
+      "cves": [
+        "CVE-2024-27983",
+        "CVE-2026-123828",
+        "CVE-2026-123829",
+        "CVE-2026-123862",
+        "CVE-2026-123863",
+        "CVE-2026-123872"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Alpine: nodejs: security update to 24.22.3-r0",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/479024",
+      "cves": [
+        "CVE-2024-27983",
+        "CVE-2026-123828",
+        "CVE-2026-123829",
+        "CVE-2026-123862",
+        "CVE-2026-123863",
+        "CVE-2026-123872"
+      ]
+    },
+    {
+      "id": "379542",
+      "title": "JetBrains YouTrack < 2025.3.169041 / 2026.1.x < 2026.1.14137 / 2026.2.x < 2026.2.19562 Missing Authorization (CVE-2026-123335)",
       "severity": "Low",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478956",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379542",
       "cves": [
-        "CVE-2026-125122"
+        "CVE-2026-123335"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for compose-lint (GHSA-hr4h-4c45-v4q4)",
+      "id": "379541",
+      "title": "JetBrains YouTrack < 2026.2.19728 Attachment Size Limit Bypass (CVE-2026-123336)",
       "severity": "Low",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478956",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379541",
       "cves": [
-        "CVE-2026-125122"
+        "CVE-2026-123336"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for compose-lint (GHSA-8v59-qmwv-4p6q)",
-      "severity": "Low",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478955",
+      "id": "379540",
+      "title": "JetBrains YouTrack < 2025.3.170763 / 2026.1.x < 2026.1.14150 / 2026.2.x < 2026.2.19656 Multiple Vulnerabilities",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379540",
       "cves": [
-        "CVE-2026-125123"
+        "CVE-2026-123323",
+        "CVE-2026-123325"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for compose-lint (GHSA-8v59-qmwv-4p6q)",
-      "severity": "Low",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478955",
+      "id": "379539",
+      "title": "JetBrains YouTrack < 2026.2.19562 Multiple Vulnerabilities",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379539",
       "cves": [
-        "CVE-2026-125123"
+        "CVE-2026-123324",
+        "CVE-2026-123327",
+        "CVE-2026-123332"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86 (GHSA-xhj5-c3g8-pfj8)",
+      "id": "379538",
+      "title": "JetBrains YouTrack < 2026.2.19422 Multiple Vulnerabilities",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379538",
+      "cves": [
+        "CVE-2026-103488",
+        "CVE-2026-103490",
+        "CVE-2026-103493"
+      ]
+    },
+    {
+      "id": "379537",
+      "title": "JetBrains YouTrack < 2026.2.19656 Multiple Vulnerabilities",
       "severity": "Medium",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478954",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379537",
       "cves": [
-        "CVE-2026-109476"
+        "CVE-2026-123328",
+        "CVE-2026-123337"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86 (GHSA-xhj5-c3g8-pfj8)",
+      "id": "379536",
+      "title": "openSUSE 16 Security Update : zchunk (openSUSE-SU-2026:22250-1)",
       "severity": "Medium",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478954",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379536",
       "cves": [
-        "CVE-2026-109476"
+        "CVE-2026-117556"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86, Microsoft.AspNetCore.WebUtilities (GHSA-x33c-w48q-qrgc)",
+      "id": "379535",
+      "title": "openSUSE 16 Security Update : python-urllib3_1 (openSUSE-SU-2026:22252-1)",
       "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478953",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379535",
       "cves": [
+        "CVE-2026-97687",
+        "CVE-2026-97688",
+        "CVE-2026-97689"
+      ]
+    },
+    {
+      "id": "379534",
+      "title": "openSUSE 16 Security Update : python-graphql-core (openSUSE-SU-2026:22258-1)",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379534",
+      "cves": [
+        "CVE-2026-75507",
+        "CVE-2026-75508"
+      ]
+    },
+    {
+      "id": "379533",
+      "title": "openSUSE 16 Security Update : rust-keylime (openSUSE-SU-2026:22249-1)",
+      "severity": "Critical",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379533",
+      "cves": [
+        "CVE-2026-115905",
+        "CVE-2026-115906",
+        "CVE-2026-115907",
+        "CVE-2026-115908",
+        "CVE-2026-115909"
+      ]
+    },
+    {
+      "id": "379532",
+      "title": "openSUSE 16: evolution / evolution-devel / evolution-lang / etc (openSUSE-SU-2026:22263-1)",
+      "severity": "Medium",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379532",
+      "cves": [
+        "CVE-2026-88859"
+      ]
+    },
+    {
+      "id": "379531",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123866",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379531",
+      "cves": [
+        "CVE-2026-123866"
+      ]
+    },
+    {
+      "id": "379530",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-126051",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379530",
+      "cves": [
+        "CVE-2026-126051"
+      ]
+    },
+    {
+      "id": "379529",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123864",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379529",
+      "cves": [
+        "CVE-2026-123864"
+      ]
+    },
+    {
+      "id": "379528",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123868",
+      "severity": "Medium",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379528",
+      "cves": [
+        "CVE-2026-123868"
+      ]
+    },
+    {
+      "id": "379527",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123829",
+      "severity": "Low",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379527",
+      "cves": [
+        "CVE-2026-123829"
+      ]
+    },
+    {
+      "id": "379526",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123863",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379526",
+      "cves": [
+        "CVE-2024-27983",
+        "CVE-2026-123863"
+      ]
+    },
+    {
+      "id": "379525",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123865",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379525",
+      "cves": [
+        "CVE-2026-123865",
+        "CVE-2026-48937"
+      ]
+    },
+    {
+      "id": "379524",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123872",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379524",
+      "cves": [
+        "CVE-2026-123872"
+      ]
+    },
+    {
+      "id": "379523",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123877",
+      "severity": "Medium",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379523",
+      "cves": [
+        "CVE-2026-123877"
+      ]
+    },
+    {
+      "id": "379522",
+      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123828",
+      "severity": "Medium",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379522",
+      "cves": [
+        "CVE-2026-123828"
+      ]
+    },
+    {
+      "id": "379521",
+      "title": "RHEL 9 : grafana-pcp (RHSA-2026:99172)",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379521",
+      "cves": [
+        "CVE-2026-116591"
+      ]
+    },
+    {
+      "id": "379520",
+      "title": "RHEL 9 : .NET 11.0 (RHSA-2026:99170)",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379520",
+      "cves": [
+        "CVE-2026-114148"
+      ]
+    },
+    {
+      "id": "379519",
+      "title": "RHEL 8 : mingw-libpng (RHSA-2026:99225)",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379519",
+      "cves": [
+        "CVE-2026-33416"
+      ]
+    },
+    {
+      "id": "379518",
+      "title": "RHEL 9 : webkit2gtk3 (RHSA-2026:99131)",
+      "severity": "Critical",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379518",
+      "cves": [
+        "CVE-2026-121032",
+        "CVE-2026-121072",
+        "CVE-2026-121084",
+        "CVE-2026-121086",
+        "CVE-2026-121148",
+        "CVE-2026-121160",
+        "CVE-2026-121197",
+        "CVE-2026-121227",
+        "CVE-2026-121230",
+        "CVE-2026-121249"
+      ]
+    },
+    {
+      "id": "379517",
+      "title": "RHEL 9 : firefox (RHSA-2026:99111)",
+      "severity": "Critical",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379517",
+      "cves": [
+        "CVE-2026-118007",
+        "CVE-2026-118019",
+        "CVE-2026-118021",
+        "CVE-2026-118024",
+        "CVE-2026-124853",
+        "CVE-2026-124854",
+        "CVE-2026-124855",
+        "CVE-2026-124856",
+        "CVE-2026-124857",
+        "CVE-2026-124858",
+        "CVE-2026-124859",
+        "CVE-2026-124860",
+        "CVE-2026-124861",
+        "CVE-2026-124862",
+        "CVE-2026-124863",
+        "CVE-2026-124864",
+        "CVE-2026-124865",
+        "CVE-2026-124866",
+        "CVE-2026-124868",
+        "CVE-2026-124869",
+        "CVE-2026-124870",
+        "CVE-2026-124872",
+        "CVE-2026-124873",
+        "CVE-2026-124874",
+        "CVE-2026-124875",
+        "CVE-2026-124876",
+        "CVE-2026-124877",
+        "CVE-2026-124879",
+        "CVE-2026-124880",
+        "CVE-2026-124881",
+        "CVE-2026-124882",
+        "CVE-2026-124883",
+        "CVE-2026-124884",
+        "CVE-2026-124885",
+        "CVE-2026-124886",
+        "CVE-2026-124887",
+        "CVE-2026-124888",
+        "CVE-2026-124889",
+        "CVE-2026-124890",
+        "CVE-2026-124891",
+        "CVE-2026-124892",
+        "CVE-2026-124893",
+        "CVE-2026-124894",
+        "CVE-2026-124895",
+        "CVE-2026-124896",
+        "CVE-2026-124897",
+        "CVE-2026-124898",
+        "CVE-2026-124899",
+        "CVE-2026-124901",
+        "CVE-2026-124902",
+        "CVE-2026-124903",
+        "CVE-2026-124905",
+        "CVE-2026-124906",
+        "CVE-2026-124907",
+        "CVE-2026-124909",
+        "CVE-2026-124910",
+        "CVE-2026-124912",
+        "CVE-2026-124913",
+        "CVE-2026-124914",
+        "CVE-2026-124915",
+        "CVE-2026-124917",
+        "CVE-2026-124918",
+        "CVE-2026-124919",
+        "CVE-2026-124922",
+        "CVE-2026-124924",
+        "CVE-2026-124926",
+        "CVE-2026-124927",
+        "CVE-2026-124929",
+        "CVE-2026-124930",
+        "CVE-2026-124931",
+        "CVE-2026-124932",
+        "CVE-2026-124933",
+        "CVE-2026-124934",
+        "CVE-2026-124935",
+        "CVE-2026-124938",
+        "CVE-2026-124939",
+        "CVE-2026-124940",
+        "CVE-2026-124941",
+        "CVE-2026-124942",
+        "CVE-2026-124948",
+        "CVE-2026-124951"
+      ]
+    },
+    {
+      "id": "379516",
+      "title": "RHEL 8 : httpd:2.4 (RHSA-2026:99514)",
+      "severity": "Critical",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379516",
+      "cves": [
+        "CVE-2023-38709",
+        "CVE-2024-42516",
+        "CVE-2026-29169",
+        "CVE-2026-34355",
+        "CVE-2026-34356",
+        "CVE-2026-42536",
+        "CVE-2026-43951",
+        "CVE-2026-44185",
+        "CVE-2026-44186",
+        "CVE-2026-44631"
+      ]
+    },
+    {
+      "id": "379515",
+      "title": "RHEL 10 : freerdp (RHSA-2026:99516)",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379515",
+      "cves": [
+        "CVE-2026-85089",
+        "CVE-2026-91946",
+        "CVE-2026-91947",
+        "CVE-2026-91950",
+        "CVE-2026-91953",
+        "CVE-2026-91954",
+        "CVE-2026-91956",
+        "CVE-2026-91959",
+        "CVE-2026-91960",
+        "CVE-2026-91963",
+        "CVE-2026-91964"
+      ]
+    },
+    {
+      "id": "379514",
+      "title": "RHEL 9 : gimp (RHSA-2026:99154)",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379514",
+      "cves": [
+        "CVE-2026-119528"
+      ]
+    },
+    {
+      "id": "379513",
+      "title": "RHEL 9 : firefox (RHSA-2026:99110)",
+      "severity": "Critical",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379513",
+      "cves": [
+        "CVE-2026-118007",
+        "CVE-2026-118019",
+        "CVE-2026-118021",
+        "CVE-2026-118024",
+        "CVE-2026-124853",
+        "CVE-2026-124854",
+        "CVE-2026-124855",
+        "CVE-2026-124856",
+        "CVE-2026-124857",
+        "CVE-2026-124858",
+        "CVE-2026-124859",
+        "CVE-2026-124860",
+        "CVE-2026-124861",
+        "CVE-2026-124862",
+        "CVE-2026-124863",
+        "CVE-2026-124864",
+        "CVE-2026-124865",
+        "CVE-2026-124866",
+        "CVE-2026-124868",
+        "CVE-2026-124869",
+        "CVE-2026-124870",
+        "CVE-2026-124872",
+        "CVE-2026-124873",
+        "CVE-2026-124874",
+        "CVE-2026-124875",
+        "CVE-2026-124876",
+        "CVE-2026-124877",
+        "CVE-2026-124879",
+        "CVE-2026-124880",
+        "CVE-2026-124881",
+        "CVE-2026-124882",
+        "CVE-2026-124883",
+        "CVE-2026-124884",
+        "CVE-2026-124885",
+        "CVE-2026-124886",
+        "CVE-2026-124887",
+        "CVE-2026-124888",
+        "CVE-2026-124889",
+        "CVE-2026-124890",
+        "CVE-2026-124891",
+        "CVE-2026-124892",
+        "CVE-2026-124893",
+        "CVE-2026-124894",
+        "CVE-2026-124895",
+        "CVE-2026-124896",
+        "CVE-2026-124897",
+        "CVE-2026-124898",
+        "CVE-2026-124899",
+        "CVE-2026-124901",
+        "CVE-2026-124902",
+        "CVE-2026-124903",
+        "CVE-2026-124905",
+        "CVE-2026-124906",
+        "CVE-2026-124907",
+        "CVE-2026-124909",
+        "CVE-2026-124910",
+        "CVE-2026-124912",
+        "CVE-2026-124913",
+        "CVE-2026-124914",
+        "CVE-2026-124915",
+        "CVE-2026-124917",
+        "CVE-2026-124918",
+        "CVE-2026-124919",
+        "CVE-2026-124922",
+        "CVE-2026-124924",
+        "CVE-2026-124926",
+        "CVE-2026-124927",
+        "CVE-2026-124929",
+        "CVE-2026-124930",
+        "CVE-2026-124931",
+        "CVE-2026-124932",
+        "CVE-2026-124933",
+        "CVE-2026-124934",
+        "CVE-2026-124935",
+        "CVE-2026-124938",
+        "CVE-2026-124939",
+        "CVE-2026-124940",
+        "CVE-2026-124941",
+        "CVE-2026-124942",
+        "CVE-2026-124948",
+        "CVE-2026-124951"
+      ]
+    },
+    {
+      "id": "379512",
+      "title": "RHEL 9 : gnome-remote-desktop (RHSA-2026:99136)",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379512",
+      "cves": [
+        "CVE-2026-109832",
+        "CVE-2026-96541"
+      ]
+    },
+    {
+      "id": "379511",
+      "title": "RHEL 9 : raptor2 (RHSA-2026:99116)",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379511",
+      "cves": [
+        "CVE-2025-71436"
+      ]
+    },
+    {
+      "id": "379510",
+      "title": "RHEL 8 : httpd:2.4 (RHSA-2026:99513)",
+      "severity": "Critical",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379510",
+      "cves": [
+        "CVE-2023-38709",
+        "CVE-2024-42516",
+        "CVE-2026-29169",
+        "CVE-2026-34355",
+        "CVE-2026-34356",
+        "CVE-2026-42536",
+        "CVE-2026-43951",
+        "CVE-2026-44185",
+        "CVE-2026-44186",
+        "CVE-2026-44631"
+      ]
+    },
+    {
+      "id": "379509",
+      "title": "RHEL 9 : libpcap (RHSA-2026:99164)",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379509",
+      "cves": [
+        "CVE-2026-6554"
+      ]
+    },
+    {
+      "id": "379508",
+      "title": "RHEL 9 : guava (RHSA-2026:99092)",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379508",
+      "cves": [
+        "CVE-2026-102554"
+      ]
+    },
+    {
+      "id": "379507",
+      "title": "RHEL 9 : .NET 9.0 (RHSA-2026:99144)",
+      "severity": "Critical",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379507",
+      "cves": [
+        "CVE-2026-105544",
+        "CVE-2026-109475",
+        "CVE-2026-109476",
+        "CVE-2026-114146",
+        "CVE-2026-114147",
         "CVE-2026-114149"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86, Microsoft.AspNetCore.WebUtilities (GHSA-x33c-w48q-qrgc)",
+      "id": "379506",
+      "title": "RHEL 9 : squid (RHSA-2026:99124)",
       "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478953",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379506",
       "cves": [
+        "CVE-2026-61642"
+      ]
+    },
+    {
+      "id": "379505",
+      "title": "RHEL 10 : gnome-remote-desktop (RHSA-2026:99125)",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379505",
+      "cves": [
+        "CVE-2026-96541"
+      ]
+    },
+    {
+      "id": "379504",
+      "title": "RHEL 10 : .NET 8.0 (RHSA-2026:99147)",
+      "severity": "Critical",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379504",
+      "cves": [
+        "CVE-2026-105544",
+        "CVE-2026-109475",
+        "CVE-2026-109476",
+        "CVE-2026-109478",
+        "CVE-2026-114146",
+        "CVE-2026-114147",
         "CVE-2026-114149"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for activestorage (GHSA-hfr4-8rjc-97m2)",
+      "id": "379503",
+      "title": "RHEL 9 : patch (RHSA-2026:99161)",
       "severity": "Medium",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478952",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379503",
       "cves": [
-        "CVE-2020-8162",
-        "CVE-2026-126085"
+        "CVE-2026-115207"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for activestorage (GHSA-hfr4-8rjc-97m2)",
+      "id": "379502",
+      "title": "SUSE SLES16 Security Update : zchunk (SUSE-SU-2026:24657-1)",
       "severity": "Medium",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478952",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379502",
       "cves": [
-        "CVE-2020-8162",
-        "CVE-2026-126085"
+        "CVE-2026-117556"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for Microsoft.NETCore.App.Runtime.linux-arm, Microsoft.NETCore.App.Runtime.linux-arm64, Microsoft.NETCore.App.Runtime.linux-musl-arm, Microsoft.NETCore.App.Runtime.linux-musl-arm64, Microsoft.NETCore.App.Runtime.linux-musl-x64, Microsoft.NETCore.App.Runtime.linux-x64, Microsoft.NETCore.App.Runtime.osx-arm64, Microsoft.NETCore.App.Runtime.osx-x64 (GHSA-3g4v-f5gv-c7xf)",
+      "id": "379501",
+      "title": "SUSE SLES15 Security Update : terraform-provider-susepubliccloud (SUSE-SU-2026:5169-1)",
       "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478951",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379501",
       "cves": [
-        "CVE-2026-109475"
+        "CVE-2026-78669"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for Microsoft.NETCore.App.Runtime.linux-arm, Microsoft.NETCore.App.Runtime.linux-arm64, Microsoft.NETCore.App.Runtime.linux-musl-arm, Microsoft.NETCore.App.Runtime.linux-musl-arm64, Microsoft.NETCore.App.Runtime.linux-musl-x64, Microsoft.NETCore.App.Runtime.linux-x64, Microsoft.NETCore.App.Runtime.osx-arm64, Microsoft.NETCore.App.Runtime.osx-x64 (GHSA-3g4v-f5gv-c7xf)",
+      "id": "379500",
+      "title": "SUSE SLES15 Security Update : ansible-core (SUSE-SU-2026:5185-1)",
       "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478951",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379500",
       "cves": [
-        "CVE-2026-109475"
+        "CVE-2026-89091"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for Microsoft.DotNet.HotReload.Watch.Aspire (GHSA-q7j6-px74-p2vw)",
+      "id": "379499",
+      "title": "SUSE SLES15 Security Update : kubevirt (SUSE-SU-2026:5167-1)",
       "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478950",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379499",
       "cves": [
-        "CVE-2026-114155"
+        "CVE-2026-56854",
+        "CVE-2026-56855",
+        "CVE-2026-78659",
+        "CVE-2026-78660",
+        "CVE-2026-78662",
+        "CVE-2026-78663",
+        "CVE-2026-78669",
+        "CVE-2026-84303",
+        "CVE-2026-84304",
+        "CVE-2026-84445",
+        "CVE-2026-97032"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for Microsoft.DotNet.HotReload.Watch.Aspire (GHSA-q7j6-px74-p2vw)",
+      "id": "379498",
+      "title": "SUSE SLES15 Security Update : xorg-x11-server (SUSE-SU-2026:5180-1)",
       "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478950",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379498",
       "cves": [
-        "CVE-2026-114155"
+        "CVE-2026-109091",
+        "CVE-2026-109092",
+        "CVE-2026-109093",
+        "CVE-2026-109094",
+        "CVE-2026-109095",
+        "CVE-2026-109096",
+        "CVE-2026-109903",
+        "CVE-2026-109904"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for Aspire.Hosting, Aspire.Hosting.AppHost (GHSA-f7vh-h5g3-7jrh)",
+      "id": "379497",
+      "title": "SUSE SLES16 Security Update : kernel (SUSE-SU-2026:24651-1)",
       "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478949",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379497",
       "cves": [
-        "CVE-2026-120006"
+        "CVE-2026-100071",
+        "CVE-2026-31708",
+        "CVE-2026-31709",
+        "CVE-2026-43350",
+        "CVE-2026-46155",
+        "CVE-2026-53288",
+        "CVE-2026-64370",
+        "CVE-2026-64413",
+        "CVE-2026-64430",
+        "CVE-2026-68140",
+        "CVE-2026-68186",
+        "CVE-2026-68337",
+        "CVE-2026-68383",
+        "CVE-2026-68436",
+        "CVE-2026-68447",
+        "CVE-2026-68449",
+        "CVE-2026-72010",
+        "CVE-2026-72073",
+        "CVE-2026-72111",
+        "CVE-2026-72318",
+        "CVE-2026-72400",
+        "CVE-2026-72416",
+        "CVE-2026-72428",
+        "CVE-2026-74399",
+        "CVE-2026-74466",
+        "CVE-2026-74565",
+        "CVE-2026-74613",
+        "CVE-2026-74620",
+        "CVE-2026-74653",
+        "CVE-2026-74690",
+        "CVE-2026-74720",
+        "CVE-2026-74746",
+        "CVE-2026-74748",
+        "CVE-2026-80584",
+        "CVE-2026-80602",
+        "CVE-2026-80637",
+        "CVE-2026-80684",
+        "CVE-2026-80709",
+        "CVE-2026-80710",
+        "CVE-2026-80717",
+        "CVE-2026-80757",
+        "CVE-2026-80808",
+        "CVE-2026-80809",
+        "CVE-2026-80855",
+        "CVE-2026-80879",
+        "CVE-2026-80881",
+        "CVE-2026-80978",
+        "CVE-2026-80988",
+        "CVE-2026-89456",
+        "CVE-2026-89487",
+        "CVE-2026-89491",
+        "CVE-2026-89494",
+        "CVE-2026-89495",
+        "CVE-2026-89537",
+        "CVE-2026-89554",
+        "CVE-2026-89559",
+        "CVE-2026-89560",
+        "CVE-2026-89595",
+        "CVE-2026-89602",
+        "CVE-2026-89608",
+        "CVE-2026-89633",
+        "CVE-2026-89637",
+        "CVE-2026-89648",
+        "CVE-2026-89656",
+        "CVE-2026-89657",
+        "CVE-2026-89751",
+        "CVE-2026-89757",
+        "CVE-2026-89761",
+        "CVE-2026-89762",
+        "CVE-2026-89786",
+        "CVE-2026-89787",
+        "CVE-2026-89812",
+        "CVE-2026-89813",
+        "CVE-2026-89924",
+        "CVE-2026-90042",
+        "CVE-2026-90057",
+        "CVE-2026-90081",
+        "CVE-2026-90092",
+        "CVE-2026-90103",
+        "CVE-2026-90107",
+        "CVE-2026-90111",
+        "CVE-2026-90114",
+        "CVE-2026-90128",
+        "CVE-2026-90138",
+        "CVE-2026-90148",
+        "CVE-2026-90227",
+        "CVE-2026-90230",
+        "CVE-2026-90315",
+        "CVE-2026-90393",
+        "CVE-2026-90434",
+        "CVE-2026-93181",
+        "CVE-2026-93211",
+        "CVE-2026-93228",
+        "CVE-2026-93231",
+        "CVE-2026-93250",
+        "CVE-2026-93262",
+        "CVE-2026-93269",
+        "CVE-2026-93795",
+        "CVE-2026-93817",
+        "CVE-2026-93828",
+        "CVE-2026-93830",
+        "CVE-2026-97410",
+        "CVE-2026-97596",
+        "CVE-2026-97603",
+        "CVE-2026-97612",
+        "CVE-2026-97954",
+        "CVE-2026-97963",
+        "CVE-2026-97964",
+        "CVE-2026-97965",
+        "CVE-2026-97988",
+        "CVE-2026-97991",
+        "CVE-2026-97993",
+        "CVE-2026-98014",
+        "CVE-2026-98022",
+        "CVE-2026-98023",
+        "CVE-2026-98027",
+        "CVE-2026-98031",
+        "CVE-2026-98039",
+        "CVE-2026-98047",
+        "CVE-2026-98058",
+        "CVE-2026-98068",
+        "CVE-2026-98069",
+        "CVE-2026-98070",
+        "CVE-2026-98071",
+        "CVE-2026-98074",
+        "CVE-2026-98078",
+        "CVE-2026-98086",
+        "CVE-2026-98095",
+        "CVE-2026-98122",
+        "CVE-2026-98154",
+        "CVE-2026-98158",
+        "CVE-2026-98257",
+        "CVE-2026-98258",
+        "CVE-2026-98282",
+        "CVE-2026-98283",
+        "CVE-2026-98306",
+        "CVE-2026-98368",
+        "CVE-2026-98373",
+        "CVE-2026-98374",
+        "CVE-2026-98375",
+        "CVE-2026-98376",
+        "CVE-2026-98466",
+        "CVE-2026-98471",
+        "CVE-2026-98503",
+        "CVE-2026-98507",
+        "CVE-2026-98555",
+        "CVE-2026-98631",
+        "CVE-2026-98713",
+        "CVE-2026-98720",
+        "CVE-2026-98895",
+        "CVE-2026-99131",
+        "CVE-2026-99176",
+        "CVE-2026-99178"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for Aspire.Hosting, Aspire.Hosting.AppHost (GHSA-f7vh-h5g3-7jrh)",
+      "id": "379496",
+      "title": "SUSE SLES15: libopenssl-1_1-devel / libopenssl1_1 / libopenssl1_1-32bit / etc (SUSE-SU-2026:5197-1)",
       "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478949",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379496",
       "cves": [
-        "CVE-2026-120006"
+        "CVE-2026-35189",
+        "CVE-2026-54872",
+        "CVE-2026-75806",
+        "CVE-2026-77696",
+        "CVE-2026-84782"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86 (GHSA-xw2x-23jm-j582)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478948",
-      "cves": [
-        "CVE-2026-109481"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86 (GHSA-xw2x-23jm-j582)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478948",
-      "cves": [
-        "CVE-2026-109481"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86, Microsoft.AspNetCore.SignalR.StackExchangeRedis (GHSA-wr8v-9x5q-ggcm)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478947",
-      "cves": [
-        "CVE-2026-114147"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86, Microsoft.AspNetCore.SignalR.StackExchangeRedis (GHSA-wr8v-9x5q-ggcm)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478947",
-      "cves": [
-        "CVE-2026-114147"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86 (GHSA-8w29-6cjc-h6w4)",
-      "severity": "Medium",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478946",
-      "cves": [
-        "CVE-2026-114156"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86 (GHSA-8w29-6cjc-h6w4)",
-      "severity": "Medium",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478946",
-      "cves": [
-        "CVE-2026-114156"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86 (GHSA-7phj-vgxq-r67h)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478945",
-      "cves": [
-        "CVE-2026-114157"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86 (GHSA-7phj-vgxq-r67h)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478945",
-      "cves": [
-        "CVE-2026-114157"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for @microsoft/aspire-cli, @microsoft/aspire-cli-linux-arm64, @microsoft/aspire-cli-linux-musl-x64, @microsoft/aspire-cli-linux-x64, @microsoft/aspire-cli-osx-arm64, @microsoft/aspire-cli-osx-x64, Aspire.Cli, Aspire.Cli.linux-arm64, Aspire.Cli.linux-musl-x64, Aspire.Cli.linux-x64, Aspire.Cli.osx-arm64, Aspire.Cli.osx-x64 (GHSA-q6jf-24jf-m3cg)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478944",
-      "cves": [
-        "CVE-2026-120792"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for @microsoft/aspire-cli, @microsoft/aspire-cli-linux-arm64, @microsoft/aspire-cli-linux-musl-x64, @microsoft/aspire-cli-linux-x64, @microsoft/aspire-cli-osx-arm64, @microsoft/aspire-cli-osx-x64, Aspire.Cli, Aspire.Cli.linux-arm64, Aspire.Cli.linux-musl-x64, Aspire.Cli.linux-x64, Aspire.Cli.osx-arm64, Aspire.Cli.osx-x64 (GHSA-q6jf-24jf-m3cg)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478944",
-      "cves": [
-        "CVE-2026-120792"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.NETCore.App.Runtime.win-arm64, Microsoft.NETCore.App.Runtime.win-x64, Microsoft.NETCore.App.Runtime.win-x86 (GHSA-fpxj-5c99-g7vj)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478943",
-      "cves": [
-        "CVE-2026-114151"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.NETCore.App.Runtime.win-arm64, Microsoft.NETCore.App.Runtime.win-x64, Microsoft.NETCore.App.Runtime.win-x86 (GHSA-fpxj-5c99-g7vj)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478943",
-      "cves": [
-        "CVE-2026-114151"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.NETCore.App.Runtime.win-arm64, Microsoft.NETCore.App.Runtime.win-x64, Microsoft.NETCore.App.Runtime.win-x86 (GHSA-r8h3-p8p6-ggp7)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478942",
-      "cves": [
-        "CVE-2026-114158"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.NETCore.App.Runtime.win-arm64, Microsoft.NETCore.App.Runtime.win-x64, Microsoft.NETCore.App.Runtime.win-x86 (GHSA-r8h3-p8p6-ggp7)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478942",
-      "cves": [
-        "CVE-2026-114158"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for activestorage (GHSA-v924-7rp8-4mxh)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478941",
-      "cves": [
-        "CVE-2026-126186"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for activestorage (GHSA-v924-7rp8-4mxh)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478941",
-      "cves": [
-        "CVE-2026-126186"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.NETCore.App.Runtime.linux-arm, Microsoft.NETCore.App.Runtime.linux-arm64, Microsoft.NETCore.App.Runtime.linux-musl-arm, Microsoft.NETCore.App.Runtime.linux-musl-arm64, Microsoft.NETCore.App.Runtime.linux-musl-x64, Microsoft.NETCore.App.Runtime.linux-x64, Microsoft.NETCore.App.Runtime.osx-arm64, Microsoft.NETCore.App.Runtime.osx-x64, Microsoft.NETCore.App.Runtime.win-arm64, Microsoft.NETCore.App.Runtime.win-x64, Microsoft.NETCore.App.Runtime.win-x86, System.Text.Json (GHSA-cpw3-h88j-9f6x)",
-      "severity": "Medium",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478940",
-      "cves": [
-        "CVE-2026-120796"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.NETCore.App.Runtime.linux-arm, Microsoft.NETCore.App.Runtime.linux-arm64, Microsoft.NETCore.App.Runtime.linux-musl-arm, Microsoft.NETCore.App.Runtime.linux-musl-arm64, Microsoft.NETCore.App.Runtime.linux-musl-x64, Microsoft.NETCore.App.Runtime.linux-x64, Microsoft.NETCore.App.Runtime.osx-arm64, Microsoft.NETCore.App.Runtime.osx-x64, Microsoft.NETCore.App.Runtime.win-arm64, Microsoft.NETCore.App.Runtime.win-x64, Microsoft.NETCore.App.Runtime.win-x86, System.Text.Json (GHSA-cpw3-h88j-9f6x)",
-      "severity": "Medium",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478940",
-      "cves": [
-        "CVE-2026-120796"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.WebUtilities (GHSA-6527-9fp8-r4x6)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478939",
-      "cves": [
-        "CVE-2026-118750"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.WebUtilities (GHSA-6527-9fp8-r4x6)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478939",
-      "cves": [
-        "CVE-2026-118750"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86, Microsoft.AspNetCore.Http.Connections (GHSA-67wp-ghc2-fw2g)",
+      "id": "379495",
+      "title": "SUSE SLES16: MozillaFirefox / MozillaFirefox-devel / etc (SUSE-SU-2026:24661-1)",
       "severity": "Critical",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478938",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379495",
       "cves": [
-        "CVE-2026-114146"
+        "CVE-2026-100801",
+        "CVE-2026-111497",
+        "CVE-2026-117860",
+        "CVE-2026-117861",
+        "CVE-2026-117862",
+        "CVE-2026-117863",
+        "CVE-2026-117864",
+        "CVE-2026-117865",
+        "CVE-2026-117866",
+        "CVE-2026-117867",
+        "CVE-2026-117868",
+        "CVE-2026-117869",
+        "CVE-2026-117870",
+        "CVE-2026-117871",
+        "CVE-2026-117872",
+        "CVE-2026-117873",
+        "CVE-2026-117874",
+        "CVE-2026-117875",
+        "CVE-2026-117876",
+        "CVE-2026-117877",
+        "CVE-2026-117878",
+        "CVE-2026-117879",
+        "CVE-2026-117880",
+        "CVE-2026-117881",
+        "CVE-2026-117882",
+        "CVE-2026-117883",
+        "CVE-2026-117884",
+        "CVE-2026-117885",
+        "CVE-2026-117886",
+        "CVE-2026-117887",
+        "CVE-2026-117888",
+        "CVE-2026-117889",
+        "CVE-2026-117890",
+        "CVE-2026-117891",
+        "CVE-2026-117892",
+        "CVE-2026-117893",
+        "CVE-2026-117894",
+        "CVE-2026-117895",
+        "CVE-2026-117896",
+        "CVE-2026-117897",
+        "CVE-2026-117898",
+        "CVE-2026-117899",
+        "CVE-2026-117900",
+        "CVE-2026-117901",
+        "CVE-2026-117902",
+        "CVE-2026-117903",
+        "CVE-2026-117904",
+        "CVE-2026-117905",
+        "CVE-2026-117906",
+        "CVE-2026-117907",
+        "CVE-2026-117908",
+        "CVE-2026-117909",
+        "CVE-2026-117910",
+        "CVE-2026-117911",
+        "CVE-2026-117912",
+        "CVE-2026-117913",
+        "CVE-2026-117914",
+        "CVE-2026-117915",
+        "CVE-2026-117916",
+        "CVE-2026-117917",
+        "CVE-2026-117918",
+        "CVE-2026-117919",
+        "CVE-2026-117920",
+        "CVE-2026-117921",
+        "CVE-2026-117922",
+        "CVE-2026-117923",
+        "CVE-2026-117924",
+        "CVE-2026-117925",
+        "CVE-2026-117926",
+        "CVE-2026-117927",
+        "CVE-2026-117928",
+        "CVE-2026-117929",
+        "CVE-2026-117930",
+        "CVE-2026-117931",
+        "CVE-2026-117932",
+        "CVE-2026-117933",
+        "CVE-2026-117934",
+        "CVE-2026-117935",
+        "CVE-2026-117936",
+        "CVE-2026-117937",
+        "CVE-2026-117938",
+        "CVE-2026-117939",
+        "CVE-2026-117940",
+        "CVE-2026-117941",
+        "CVE-2026-117942",
+        "CVE-2026-117943",
+        "CVE-2026-117944",
+        "CVE-2026-117945",
+        "CVE-2026-117946",
+        "CVE-2026-117947",
+        "CVE-2026-117948",
+        "CVE-2026-117949",
+        "CVE-2026-117950",
+        "CVE-2026-117951",
+        "CVE-2026-117952",
+        "CVE-2026-117953",
+        "CVE-2026-117954",
+        "CVE-2026-117955",
+        "CVE-2026-117956",
+        "CVE-2026-117957",
+        "CVE-2026-117958",
+        "CVE-2026-117959",
+        "CVE-2026-117960",
+        "CVE-2026-117961",
+        "CVE-2026-117962",
+        "CVE-2026-117963",
+        "CVE-2026-117964",
+        "CVE-2026-117965",
+        "CVE-2026-117966",
+        "CVE-2026-117967",
+        "CVE-2026-117968",
+        "CVE-2026-117969",
+        "CVE-2026-117970",
+        "CVE-2026-117971",
+        "CVE-2026-117972",
+        "CVE-2026-117973",
+        "CVE-2026-117974",
+        "CVE-2026-117975",
+        "CVE-2026-117976",
+        "CVE-2026-117977",
+        "CVE-2026-117978",
+        "CVE-2026-117979",
+        "CVE-2026-117980",
+        "CVE-2026-117981",
+        "CVE-2026-117982",
+        "CVE-2026-117983",
+        "CVE-2026-117984",
+        "CVE-2026-117985",
+        "CVE-2026-117986",
+        "CVE-2026-117987",
+        "CVE-2026-117988",
+        "CVE-2026-117989",
+        "CVE-2026-117990",
+        "CVE-2026-117991",
+        "CVE-2026-117992",
+        "CVE-2026-117993",
+        "CVE-2026-117994",
+        "CVE-2026-117995",
+        "CVE-2026-117996",
+        "CVE-2026-117997",
+        "CVE-2026-117998",
+        "CVE-2026-117999",
+        "CVE-2026-118000",
+        "CVE-2026-118002",
+        "CVE-2026-118003",
+        "CVE-2026-118004"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86, Microsoft.AspNetCore.Http.Connections (GHSA-67wp-ghc2-fw2g)",
+      "id": "379494",
+      "title": "SUSE SLES15: libopenssl-1_1-devel / libopenssl1_1 / libopenssl1_1-32bit / etc (SUSE-SU-2026:5206-1)",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379494",
+      "cves": [
+        "CVE-2026-35189",
+        "CVE-2026-54872",
+        "CVE-2026-75806",
+        "CVE-2026-77696",
+        "CVE-2026-84782"
+      ]
+    },
+    {
+      "id": "379493",
+      "title": "SUSE SLED15 / SLES15 Security Update : python-Pillow (SUSE-SU-2026:5194-1)",
       "severity": "Critical",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478938",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379493",
       "cves": [
-        "CVE-2026-114146"
+        "CVE-2026-112390",
+        "CVE-2026-112391",
+        "CVE-2026-112392",
+        "CVE-2026-112393",
+        "CVE-2026-112394",
+        "CVE-2026-112395",
+        "CVE-2026-112397",
+        "CVE-2026-112398",
+        "CVE-2026-112399",
+        "CVE-2026-112400",
+        "CVE-2026-112401",
+        "CVE-2026-112402",
+        "CVE-2026-112403",
+        "CVE-2026-112404",
+        "CVE-2026-112405",
+        "CVE-2026-112406",
+        "CVE-2026-112891",
+        "CVE-2026-112892",
+        "CVE-2026-112894",
+        "CVE-2026-112895",
+        "CVE-2026-112896",
+        "CVE-2026-112897",
+        "CVE-2026-112898",
+        "CVE-2026-112899",
+        "CVE-2026-112900",
+        "CVE-2026-112901",
+        "CVE-2026-112902",
+        "CVE-2026-96636",
+        "CVE-2026-96637",
+        "CVE-2026-96638",
+        "CVE-2026-96640",
+        "CVE-2026-96641",
+        "CVE-2026-96642",
+        "CVE-2026-96778"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86, Microsoft.AspNetCore.Server.HttpSys (GHSA-3893-7fxc-qvff)",
+      "id": "379492",
+      "title": "SUSE SLES15 Security Update : aliyun-cli (SUSE-SU-2026:5195-1)",
       "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478937",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379492",
       "cves": [
-        "CVE-2026-114154"
+        "CVE-2026-116591",
+        "CVE-2026-63209"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86, Microsoft.AspNetCore.Server.HttpSys (GHSA-3893-7fxc-qvff)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478937",
-      "cves": [
-        "CVE-2026-114154"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for react-server-dom-parcel, react-server-dom-turbopack, react-server-dom-webpack (GHSA-xqc2-xf4c-x3h3)",
-      "severity": "Critical",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478936",
-      "cves": [
-        "CVE-2026-126187"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for react-server-dom-parcel, react-server-dom-turbopack, react-server-dom-webpack (GHSA-xqc2-xf4c-x3h3)",
-      "severity": "Critical",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478936",
-      "cves": [
-        "CVE-2026-126187"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.TestPlatform.CLI (GHSA-6856-87hx-p5x7)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478935",
-      "cves": [
-        "CVE-2026-105544"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.TestPlatform.CLI (GHSA-6856-87hx-p5x7)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478935",
-      "cves": [
-        "CVE-2026-105544"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86, Microsoft.Extensions.Validation (GHSA-m28h-pj36-4364)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478934",
-      "cves": [
-        "CVE-2026-118749"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86, Microsoft.Extensions.Validation (GHSA-m28h-pj36-4364)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478934",
-      "cves": [
-        "CVE-2026-118749"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for System.Formats.Cbor (GHSA-vmv3-wvjp-wqpj)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478933",
-      "cves": [
-        "CVE-2026-118747"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for System.Formats.Cbor (GHSA-vmv3-wvjp-wqpj)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478933",
-      "cves": [
-        "CVE-2026-118747"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.NETCore.App.Runtime.linux-arm, Microsoft.NETCore.App.Runtime.linux-arm64, Microsoft.NETCore.App.Runtime.linux-musl-arm, Microsoft.NETCore.App.Runtime.linux-musl-arm64, Microsoft.NETCore.App.Runtime.linux-musl-x64, Microsoft.NETCore.App.Runtime.linux-x64, Microsoft.NETCore.App.Runtime.osx-arm64, Microsoft.NETCore.App.Runtime.osx-x64 (GHSA-ff4h-7rhj-jrjf)",
+      "id": "379491",
+      "title": "SUSE SLED15 / SLES15 Security Update : containerd (SUSE-SU-2026:5201-1)",
       "severity": "Medium",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478932",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379491",
       "cves": [
-        "CVE-2026-118746"
+        "CVE-2026-39882",
+        "CVE-2026-47262",
+        "CVE-2026-53493",
+        "CVE-2026-53495",
+        "CVE-2026-95838"
       ]
     },
     {
-      "id": null,
-      "title": "SCA: security update for Microsoft.NETCore.App.Runtime.linux-arm, Microsoft.NETCore.App.Runtime.linux-arm64, Microsoft.NETCore.App.Runtime.linux-musl-arm, Microsoft.NETCore.App.Runtime.linux-musl-arm64, Microsoft.NETCore.App.Runtime.linux-musl-x64, Microsoft.NETCore.App.Runtime.linux-x64, Microsoft.NETCore.App.Runtime.osx-arm64, Microsoft.NETCore.App.Runtime.osx-x64 (GHSA-ff4h-7rhj-jrjf)",
+      "id": "379490",
+      "title": "SUSE SLES15: libopenssl-1_1-devel / libopenssl-1_1-devel-32bit / libopenssl1_1 / etc (SUSE-SU-2026:5205-1)",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379490",
+      "cves": [
+        "CVE-2026-35189",
+        "CVE-2026-54872",
+        "CVE-2026-75806",
+        "CVE-2026-77696",
+        "CVE-2026-84782"
+      ]
+    },
+    {
+      "id": "379489",
+      "title": "SUSE SLED15: libopenssl-1_1-devel / libopenssl1_1 / libopenssl1_1-32bit / etc (SUSE-SU-2026:5172-1)",
+      "severity": "High",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379489",
+      "cves": [
+        "CVE-2026-35189",
+        "CVE-2026-54872",
+        "CVE-2026-75806",
+        "CVE-2026-77696",
+        "CVE-2026-84782"
+      ]
+    },
+    {
+      "id": "379488",
+      "title": "SUSE SLES15 Security Update : haproxy (SUSE-SU-2026:5171-1)",
       "severity": "Medium",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478932",
-      "cves": [
-        "CVE-2026-118746"
-      ]
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379488",
+      "cves": []
     },
     {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86 (GHSA-5h82-77p6-2wp3)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478931",
-      "cves": [
-        "CVE-2026-118748"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86 (GHSA-5h82-77p6-2wp3)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478931",
-      "cves": [
-        "CVE-2026-118748"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86 (GHSA-6vjv-7wm8-p67r)",
+      "id": "379487",
+      "title": "SUSE SLES15 Security Update : SDL2_image (SUSE-SU-2026:5158-1)",
       "severity": "Medium",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478930",
+      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/379487",
       "cves": [
-        "CVE-2026-114150"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86 (GHSA-6vjv-7wm8-p67r)",
-      "severity": "Medium",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478930",
-      "cves": [
-        "CVE-2026-114150"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86 (GHSA-r3qf-p3jm-8h4p)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478929",
-      "cves": [
-        "CVE-2026-109478"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for Microsoft.AspNetCore.App.Runtime.linux-arm, Microsoft.AspNetCore.App.Runtime.linux-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-arm, Microsoft.AspNetCore.App.Runtime.linux-musl-arm64, Microsoft.AspNetCore.App.Runtime.linux-musl-x64, Microsoft.AspNetCore.App.Runtime.linux-x64, Microsoft.AspNetCore.App.Runtime.osx-arm64, Microsoft.AspNetCore.App.Runtime.osx-x64, Microsoft.AspNetCore.App.Runtime.win-arm64, Microsoft.AspNetCore.App.Runtime.win-x64, Microsoft.AspNetCore.App.Runtime.win-x86 (GHSA-r3qf-p3jm-8h4p)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478929",
-      "cves": [
-        "CVE-2026-109478"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for @microsoft/aspire-cli, @microsoft/aspire-cli-linux-arm64, @microsoft/aspire-cli-linux-musl-x64, @microsoft/aspire-cli-linux-x64, @microsoft/aspire-cli-osx-arm64, @microsoft/aspire-cli-osx-x64, Aspire.Cli, Aspire.Cli.linux-arm64, Aspire.Cli.linux-musl-x64, Aspire.Cli.linux-x64, Aspire.Cli.osx-arm64, Aspire.Cli.osx-x64 (GHSA-m63f-xhvm-6mv5)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/478928",
-      "cves": [
-        "CVE-2026-120778"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for @microsoft/aspire-cli, @microsoft/aspire-cli-linux-arm64, @microsoft/aspire-cli-linux-musl-x64, @microsoft/aspire-cli-linux-x64, @microsoft/aspire-cli-osx-arm64, @microsoft/aspire-cli-osx-x64, Aspire.Cli, Aspire.Cli.linux-arm64, Aspire.Cli.linux-musl-x64, Aspire.Cli.linux-x64, Aspire.Cli.osx-arm64, Aspire.Cli.osx-x64 (GHSA-m63f-xhvm-6mv5)",
-      "severity": "High",
-      "date": "Wed, 11 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/478928",
-      "cves": [
-        "CVE-2026-120778"
+        "CVE-2026-117557"
       ]
     }
   ]
