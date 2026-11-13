@@ -1,750 +1,654 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
     {
-      "id": null,
-      "title": "Alpine: nodejs: security update to 22.23.5-r0",
+      "id": "380223",
+      "title": "AlmaLinux 8 : java-1.8.0-openjdk security update for AlmaLinux 8 (High) (ALSA-2026:95609)",
       "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/479025",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380223",
       "cves": [
-        "CVE-2024-27983",
-        "CVE-2026-123828",
-        "CVE-2026-123829",
-        "CVE-2026-123862",
-        "CVE-2026-123863",
-        "CVE-2026-123872"
+        "CVE-2026-101516",
+        "CVE-2026-83374",
+        "CVE-2026-83376",
+        "CVE-2026-83380",
+        "CVE-2026-83381",
+        "CVE-2026-83387",
+        "CVE-2026-83395",
+        "CVE-2026-83400",
+        "CVE-2026-87290",
+        "CVE-2026-87292",
+        "CVE-2026-87293",
+        "CVE-2026-87294",
+        "CVE-2026-87367",
+        "CVE-2026-91334",
+        "CVE-2026-91335",
+        "CVE-2026-91373",
+        "CVE-2026-91374",
+        "CVE-2026-91380",
+        "CVE-2026-91381",
+        "CVE-2026-91382",
+        "CVE-2026-91395",
+        "CVE-2026-91396",
+        "CVE-2026-91397",
+        "CVE-2026-91398",
+        "CVE-2026-91400",
+        "CVE-2026-91410",
+        "CVE-2026-91411",
+        "CVE-2026-91415",
+        "CVE-2026-91417",
+        "CVE-2026-91418",
+        "CVE-2026-91451",
+        "CVE-2026-91452",
+        "CVE-2026-91453",
+        "CVE-2026-91461",
+        "CVE-2026-91462",
+        "CVE-2026-91463",
+        "CVE-2026-91464"
       ]
     },
     {
-      "id": null,
-      "title": "Alpine: nodejs: security update to 22.23.5-r0",
+      "id": "380222",
+      "title": "AlmaLinux 8 : gstreamer1-plugins-base (ALSA-2026:99012)",
       "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/479025",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380222",
       "cves": [
-        "CVE-2024-27983",
-        "CVE-2026-123828",
-        "CVE-2026-123829",
-        "CVE-2026-123862",
-        "CVE-2026-123863",
-        "CVE-2026-123872"
+        "CVE-2026-125712"
       ]
     },
     {
-      "id": null,
-      "title": "Alpine: nodejs: security update to 24.22.3-r0",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/479024",
-      "cves": [
-        "CVE-2024-27983",
-        "CVE-2026-123828",
-        "CVE-2026-123829",
-        "CVE-2026-123862",
-        "CVE-2026-123863",
-        "CVE-2026-123872"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: nodejs: security update to 24.22.3-r0",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/479024",
-      "cves": [
-        "CVE-2024-27983",
-        "CVE-2026-123828",
-        "CVE-2026-123829",
-        "CVE-2026-123862",
-        "CVE-2026-123863",
-        "CVE-2026-123872"
-      ]
-    },
-    {
-      "id": "379542",
-      "title": "JetBrains YouTrack < 2025.3.169041 / 2026.1.x < 2026.1.14137 / 2026.2.x < 2026.2.19562 Missing Authorization (CVE-2026-123335)",
-      "severity": "Low",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379542",
-      "cves": [
-        "CVE-2026-123335"
-      ]
-    },
-    {
-      "id": "379541",
-      "title": "JetBrains YouTrack < 2026.2.19728 Attachment Size Limit Bypass (CVE-2026-123336)",
-      "severity": "Low",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379541",
-      "cves": [
-        "CVE-2026-123336"
-      ]
-    },
-    {
-      "id": "379540",
-      "title": "JetBrains YouTrack < 2025.3.170763 / 2026.1.x < 2026.1.14150 / 2026.2.x < 2026.2.19656 Multiple Vulnerabilities",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379540",
-      "cves": [
-        "CVE-2026-123323",
-        "CVE-2026-123325"
-      ]
-    },
-    {
-      "id": "379539",
-      "title": "JetBrains YouTrack < 2026.2.19562 Multiple Vulnerabilities",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379539",
-      "cves": [
-        "CVE-2026-123324",
-        "CVE-2026-123327",
-        "CVE-2026-123332"
-      ]
-    },
-    {
-      "id": "379538",
-      "title": "JetBrains YouTrack < 2026.2.19422 Multiple Vulnerabilities",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379538",
-      "cves": [
-        "CVE-2026-103488",
-        "CVE-2026-103490",
-        "CVE-2026-103493"
-      ]
-    },
-    {
-      "id": "379537",
-      "title": "JetBrains YouTrack < 2026.2.19656 Multiple Vulnerabilities",
-      "severity": "Medium",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379537",
-      "cves": [
-        "CVE-2026-123328",
-        "CVE-2026-123337"
-      ]
-    },
-    {
-      "id": "379536",
-      "title": "openSUSE 16 Security Update : zchunk (openSUSE-SU-2026:22250-1)",
-      "severity": "Medium",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379536",
-      "cves": [
-        "CVE-2026-117556"
-      ]
-    },
-    {
-      "id": "379535",
-      "title": "openSUSE 16 Security Update : python-urllib3_1 (openSUSE-SU-2026:22252-1)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379535",
-      "cves": [
-        "CVE-2026-97687",
-        "CVE-2026-97688",
-        "CVE-2026-97689"
-      ]
-    },
-    {
-      "id": "379534",
-      "title": "openSUSE 16 Security Update : python-graphql-core (openSUSE-SU-2026:22258-1)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379534",
-      "cves": [
-        "CVE-2026-75507",
-        "CVE-2026-75508"
-      ]
-    },
-    {
-      "id": "379533",
-      "title": "openSUSE 16 Security Update : rust-keylime (openSUSE-SU-2026:22249-1)",
+      "id": "380221",
+      "title": "AlmaLinux 8 : perl-CGI (ALSA-2026:99849)",
       "severity": "Critical",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379533",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380221",
       "cves": [
-        "CVE-2026-115905",
-        "CVE-2026-115906",
-        "CVE-2026-115907",
-        "CVE-2026-115908",
-        "CVE-2026-115909"
+        "CVE-2026-120641",
+        "CVE-2026-120642",
+        "CVE-2026-120650"
       ]
     },
     {
-      "id": "379532",
-      "title": "openSUSE 16: evolution / evolution-devel / evolution-lang / etc (openSUSE-SU-2026:22263-1)",
-      "severity": "Medium",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379532",
-      "cves": [
-        "CVE-2026-88859"
-      ]
-    },
-    {
-      "id": "379531",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123866",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379531",
-      "cves": [
-        "CVE-2026-123866"
-      ]
-    },
-    {
-      "id": "379530",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-126051",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379530",
-      "cves": [
-        "CVE-2026-126051"
-      ]
-    },
-    {
-      "id": "379529",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123864",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379529",
-      "cves": [
-        "CVE-2026-123864"
-      ]
-    },
-    {
-      "id": "379528",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123868",
-      "severity": "Medium",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379528",
-      "cves": [
-        "CVE-2026-123868"
-      ]
-    },
-    {
-      "id": "379527",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123829",
-      "severity": "Low",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379527",
-      "cves": [
-        "CVE-2026-123829"
-      ]
-    },
-    {
-      "id": "379526",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123863",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379526",
-      "cves": [
-        "CVE-2024-27983",
-        "CVE-2026-123863"
-      ]
-    },
-    {
-      "id": "379525",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123865",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379525",
-      "cves": [
-        "CVE-2026-123865",
-        "CVE-2026-48937"
-      ]
-    },
-    {
-      "id": "379524",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123872",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379524",
-      "cves": [
-        "CVE-2026-123872"
-      ]
-    },
-    {
-      "id": "379523",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123877",
-      "severity": "Medium",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379523",
-      "cves": [
-        "CVE-2026-123877"
-      ]
-    },
-    {
-      "id": "379522",
-      "title": "Linux Distros Unpatched Vulnerability : CVE-2026-123828",
-      "severity": "Medium",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379522",
-      "cves": [
-        "CVE-2026-123828"
-      ]
-    },
-    {
-      "id": "379521",
-      "title": "RHEL 9 : grafana-pcp (RHSA-2026:99172)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379521",
-      "cves": [
-        "CVE-2026-116591"
-      ]
-    },
-    {
-      "id": "379520",
-      "title": "RHEL 9 : .NET 11.0 (RHSA-2026:99170)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379520",
-      "cves": [
-        "CVE-2026-114148"
-      ]
-    },
-    {
-      "id": "379519",
-      "title": "RHEL 8 : mingw-libpng (RHSA-2026:99225)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379519",
-      "cves": [
-        "CVE-2026-33416"
-      ]
-    },
-    {
-      "id": "379518",
-      "title": "RHEL 9 : webkit2gtk3 (RHSA-2026:99131)",
+      "id": "380220",
+      "title": "AlmaLinux 8 : .NET 9.0 (ALSA-2026:99051)",
       "severity": "Critical",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379518",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380220",
       "cves": [
-        "CVE-2026-121032",
-        "CVE-2026-121072",
-        "CVE-2026-121084",
-        "CVE-2026-121086",
-        "CVE-2026-121148",
-        "CVE-2026-121160",
-        "CVE-2026-121197",
-        "CVE-2026-121227",
-        "CVE-2026-121230",
-        "CVE-2026-121249"
+        "CVE-2026-105544",
+        "CVE-2026-109475",
+        "CVE-2026-109476",
+        "CVE-2026-114146",
+        "CVE-2026-114147",
+        "CVE-2026-114149"
       ]
     },
     {
-      "id": "379517",
-      "title": "RHEL 9 : firefox (RHSA-2026:99111)",
-      "severity": "Critical",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379517",
-      "cves": [
-        "CVE-2026-118007",
-        "CVE-2026-118019",
-        "CVE-2026-118021",
-        "CVE-2026-118024",
-        "CVE-2026-124853",
-        "CVE-2026-124854",
-        "CVE-2026-124855",
-        "CVE-2026-124856",
-        "CVE-2026-124857",
-        "CVE-2026-124858",
-        "CVE-2026-124859",
-        "CVE-2026-124860",
-        "CVE-2026-124861",
-        "CVE-2026-124862",
-        "CVE-2026-124863",
-        "CVE-2026-124864",
-        "CVE-2026-124865",
-        "CVE-2026-124866",
-        "CVE-2026-124868",
-        "CVE-2026-124869",
-        "CVE-2026-124870",
-        "CVE-2026-124872",
-        "CVE-2026-124873",
-        "CVE-2026-124874",
-        "CVE-2026-124875",
-        "CVE-2026-124876",
-        "CVE-2026-124877",
-        "CVE-2026-124879",
-        "CVE-2026-124880",
-        "CVE-2026-124881",
-        "CVE-2026-124882",
-        "CVE-2026-124883",
-        "CVE-2026-124884",
-        "CVE-2026-124885",
-        "CVE-2026-124886",
-        "CVE-2026-124887",
-        "CVE-2026-124888",
-        "CVE-2026-124889",
-        "CVE-2026-124890",
-        "CVE-2026-124891",
-        "CVE-2026-124892",
-        "CVE-2026-124893",
-        "CVE-2026-124894",
-        "CVE-2026-124895",
-        "CVE-2026-124896",
-        "CVE-2026-124897",
-        "CVE-2026-124898",
-        "CVE-2026-124899",
-        "CVE-2026-124901",
-        "CVE-2026-124902",
-        "CVE-2026-124903",
-        "CVE-2026-124905",
-        "CVE-2026-124906",
-        "CVE-2026-124907",
-        "CVE-2026-124909",
-        "CVE-2026-124910",
-        "CVE-2026-124912",
-        "CVE-2026-124913",
-        "CVE-2026-124914",
-        "CVE-2026-124915",
-        "CVE-2026-124917",
-        "CVE-2026-124918",
-        "CVE-2026-124919",
-        "CVE-2026-124922",
-        "CVE-2026-124924",
-        "CVE-2026-124926",
-        "CVE-2026-124927",
-        "CVE-2026-124929",
-        "CVE-2026-124930",
-        "CVE-2026-124931",
-        "CVE-2026-124932",
-        "CVE-2026-124933",
-        "CVE-2026-124934",
-        "CVE-2026-124935",
-        "CVE-2026-124938",
-        "CVE-2026-124939",
-        "CVE-2026-124940",
-        "CVE-2026-124941",
-        "CVE-2026-124942",
-        "CVE-2026-124948",
-        "CVE-2026-124951"
-      ]
-    },
-    {
-      "id": "379516",
-      "title": "RHEL 8 : httpd:2.4 (RHSA-2026:99514)",
-      "severity": "Critical",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379516",
-      "cves": [
-        "CVE-2023-38709",
-        "CVE-2024-42516",
-        "CVE-2026-29169",
-        "CVE-2026-34355",
-        "CVE-2026-34356",
-        "CVE-2026-42536",
-        "CVE-2026-43951",
-        "CVE-2026-44185",
-        "CVE-2026-44186",
-        "CVE-2026-44631"
-      ]
-    },
-    {
-      "id": "379515",
-      "title": "RHEL 10 : freerdp (RHSA-2026:99516)",
+      "id": "380219",
+      "title": "AlmaLinux 8 : tigervnc (ALSA-2026:99623)",
       "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379515",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380219",
       "cves": [
-        "CVE-2026-85089",
-        "CVE-2026-91946",
-        "CVE-2026-91947",
-        "CVE-2026-91950",
-        "CVE-2026-91953",
-        "CVE-2026-91954",
-        "CVE-2026-91956",
-        "CVE-2026-91959",
-        "CVE-2026-91960",
-        "CVE-2026-91963",
-        "CVE-2026-91964"
+        "CVE-2026-88812",
+        "CVE-2026-93516",
+        "CVE-2026-93517",
+        "CVE-2026-93518",
+        "CVE-2026-93519",
+        "CVE-2026-93520",
+        "CVE-2026-93521",
+        "CVE-2026-93523"
       ]
     },
     {
-      "id": "379514",
-      "title": "RHEL 9 : gimp (RHSA-2026:99154)",
+      "id": "380218",
+      "title": "AlmaLinux 8 : vim (ALSA-2026:98119)",
       "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379514",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380218",
+      "cves": [
+        "CVE-2026-43961"
+      ]
+    },
+    {
+      "id": "380217",
+      "title": "FreeBSD : mod_http2 -- heap corruption and RCE in assign_headers (52ed373b-df37-11f1-8135-8447094a420f)",
+      "severity": "Critical",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380217",
+      "cves": [
+        "CVE-2026-119618"
+      ]
+    },
+    {
+      "id": "380216",
+      "title": "Rocky Linux 9.6 [CIQ] Security Update: libsolv / libsolv-devel / libsolv-tools / python3-solv (ciqsa-2026_1788)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380216",
+      "cves": [
+        "CVE-2026-48864"
+      ]
+    },
+    {
+      "id": "380215",
+      "title": "Rocky Linux 9.6 [CIQ] Security Update: nginx / nginx-all-modules / nginx-core / nginx-filesystem / etc Multiple Vulnerabilities (ciqsa-2026_1787)",
+      "severity": "Critical",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380215",
+      "cves": [
+        "CVE-2026-15176",
+        "CVE-2026-42533",
+        "CVE-2026-97205"
+      ]
+    },
+    {
+      "id": "380214",
+      "title": "RockyLinux 10 : dovecot (RLSA-2026:98587)",
+      "severity": "Critical",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380214",
+      "cves": [
+        "CVE-2026-27852",
+        "CVE-2026-33263",
+        "CVE-2026-33605",
+        "CVE-2026-40018",
+        "CVE-2026-40019",
+        "CVE-2026-42007",
+        "CVE-2026-42391",
+        "CVE-2026-73208"
+      ]
+    },
+    {
+      "id": "380213",
+      "title": "RockyLinux 10 : iperf3 (RLSA-2026:98085)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380213",
+      "cves": [
+        "CVE-2026-102253"
+      ]
+    },
+    {
+      "id": "380212",
+      "title": "RockyLinux 9 : gimp (RLSA-2026:98532)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380212",
       "cves": [
         "CVE-2026-119528"
       ]
     },
     {
-      "id": "379513",
-      "title": "RHEL 9 : firefox (RHSA-2026:99110)",
+      "id": "380211",
+      "title": "RockyLinux 9 : webkit2gtk3 (RLSA-2026:98455)",
       "severity": "Critical",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379513",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380211",
       "cves": [
-        "CVE-2026-118007",
-        "CVE-2026-118019",
-        "CVE-2026-118021",
-        "CVE-2026-118024",
-        "CVE-2026-124853",
-        "CVE-2026-124854",
-        "CVE-2026-124855",
-        "CVE-2026-124856",
-        "CVE-2026-124857",
-        "CVE-2026-124858",
-        "CVE-2026-124859",
-        "CVE-2026-124860",
-        "CVE-2026-124861",
-        "CVE-2026-124862",
-        "CVE-2026-124863",
-        "CVE-2026-124864",
-        "CVE-2026-124865",
-        "CVE-2026-124866",
-        "CVE-2026-124868",
-        "CVE-2026-124869",
-        "CVE-2026-124870",
-        "CVE-2026-124872",
-        "CVE-2026-124873",
-        "CVE-2026-124874",
-        "CVE-2026-124875",
-        "CVE-2026-124876",
-        "CVE-2026-124877",
-        "CVE-2026-124879",
-        "CVE-2026-124880",
-        "CVE-2026-124881",
-        "CVE-2026-124882",
-        "CVE-2026-124883",
-        "CVE-2026-124884",
-        "CVE-2026-124885",
-        "CVE-2026-124886",
-        "CVE-2026-124887",
-        "CVE-2026-124888",
-        "CVE-2026-124889",
-        "CVE-2026-124890",
-        "CVE-2026-124891",
-        "CVE-2026-124892",
-        "CVE-2026-124893",
-        "CVE-2026-124894",
-        "CVE-2026-124895",
-        "CVE-2026-124896",
-        "CVE-2026-124897",
-        "CVE-2026-124898",
-        "CVE-2026-124899",
-        "CVE-2026-124901",
-        "CVE-2026-124902",
-        "CVE-2026-124903",
-        "CVE-2026-124905",
-        "CVE-2026-124906",
-        "CVE-2026-124907",
-        "CVE-2026-124909",
-        "CVE-2026-124910",
-        "CVE-2026-124912",
-        "CVE-2026-124913",
-        "CVE-2026-124914",
-        "CVE-2026-124915",
-        "CVE-2026-124917",
-        "CVE-2026-124918",
-        "CVE-2026-124919",
-        "CVE-2026-124922",
-        "CVE-2026-124924",
-        "CVE-2026-124926",
-        "CVE-2026-124927",
-        "CVE-2026-124929",
-        "CVE-2026-124930",
-        "CVE-2026-124931",
-        "CVE-2026-124932",
-        "CVE-2026-124933",
-        "CVE-2026-124934",
-        "CVE-2026-124935",
-        "CVE-2026-124938",
-        "CVE-2026-124939",
-        "CVE-2026-124940",
-        "CVE-2026-124941",
-        "CVE-2026-124942",
-        "CVE-2026-124948",
-        "CVE-2026-124951"
+        "CVE-2023-4860",
+        "CVE-2024-7966",
+        "CVE-2024-8193",
+        "CVE-2024-8198",
+        "CVE-2024-8636",
+        "CVE-2024-9123",
+        "CVE-2025-0436",
+        "CVE-2025-0444",
+        "CVE-2026-10009",
+        "CVE-2026-10011",
+        "CVE-2026-10012",
+        "CVE-2026-10020",
+        "CVE-2026-102325",
+        "CVE-2026-103629",
+        "CVE-2026-106379",
+        "CVE-2026-106399",
+        "CVE-2026-10925",
+        "CVE-2026-10941",
+        "CVE-2026-10977",
+        "CVE-2026-10985",
+        "CVE-2026-10993",
+        "CVE-2026-11024",
+        "CVE-2026-11039",
+        "CVE-2026-11057",
+        "CVE-2026-11099",
+        "CVE-2026-11121",
+        "CVE-2026-11124",
+        "CVE-2026-11159",
+        "CVE-2026-113106",
+        "CVE-2026-11663",
+        "CVE-2026-11675",
+        "CVE-2026-118319",
+        "CVE-2026-118340",
+        "CVE-2026-118348",
+        "CVE-2026-118351",
+        "CVE-2026-118354",
+        "CVE-2026-119261",
+        "CVE-2026-119271",
+        "CVE-2026-13781",
+        "CVE-2026-13820",
+        "CVE-2026-13841",
+        "CVE-2026-13885",
+        "CVE-2026-13971",
+        "CVE-2026-14387",
+        "CVE-2026-14389",
+        "CVE-2026-14410",
+        "CVE-2026-14414",
+        "CVE-2026-14419",
+        "CVE-2026-14427",
+        "CVE-2026-14429",
+        "CVE-2026-15766",
+        "CVE-2026-15774",
+        "CVE-2026-16417",
+        "CVE-2026-17653",
+        "CVE-2026-17702",
+        "CVE-2026-17712",
+        "CVE-2026-17745",
+        "CVE-2026-17757",
+        "CVE-2026-17771",
+        "CVE-2026-17914",
+        "CVE-2026-17992",
+        "CVE-2026-19160",
+        "CVE-2026-3538",
+        "CVE-2026-3931",
+        "CVE-2026-4460",
+        "CVE-2026-5870",
+        "CVE-2026-6298",
+        "CVE-2026-6364",
+        "CVE-2026-65333",
+        "CVE-2026-7353",
+        "CVE-2026-78914",
+        "CVE-2026-78958",
+        "CVE-2026-79112",
+        "CVE-2026-79144",
+        "CVE-2026-79147",
+        "CVE-2026-7920",
+        "CVE-2026-7923",
+        "CVE-2026-7949",
+        "CVE-2026-84359",
+        "CVE-2026-8510",
+        "CVE-2026-8579",
+        "CVE-2026-91733",
+        "CVE-2026-91740",
+        "CVE-2026-9892",
+        "CVE-2026-9893",
+        "CVE-2026-9909",
+        "CVE-2026-9923",
+        "CVE-2026-9981",
+        "CVE-2026-9983",
+        "CVE-2026-9998"
       ]
     },
     {
-      "id": "379512",
-      "title": "RHEL 9 : gnome-remote-desktop (RHSA-2026:99136)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379512",
-      "cves": [
-        "CVE-2026-109832",
-        "CVE-2026-96541"
-      ]
-    },
-    {
-      "id": "379511",
-      "title": "RHEL 9 : raptor2 (RHSA-2026:99116)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379511",
-      "cves": [
-        "CVE-2025-71436"
-      ]
-    },
-    {
-      "id": "379510",
-      "title": "RHEL 8 : httpd:2.4 (RHSA-2026:99513)",
-      "severity": "Critical",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379510",
-      "cves": [
-        "CVE-2023-38709",
-        "CVE-2024-42516",
-        "CVE-2026-29169",
-        "CVE-2026-34355",
-        "CVE-2026-34356",
-        "CVE-2026-42536",
-        "CVE-2026-43951",
-        "CVE-2026-44185",
-        "CVE-2026-44186",
-        "CVE-2026-44631"
-      ]
-    },
-    {
-      "id": "379509",
-      "title": "RHEL 9 : libpcap (RHSA-2026:99164)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379509",
-      "cves": [
-        "CVE-2026-6554"
-      ]
-    },
-    {
-      "id": "379508",
-      "title": "RHEL 9 : guava (RHSA-2026:99092)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379508",
-      "cves": [
-        "CVE-2026-102554"
-      ]
-    },
-    {
-      "id": "379507",
-      "title": "RHEL 9 : .NET 9.0 (RHSA-2026:99144)",
-      "severity": "Critical",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379507",
-      "cves": [
-        "CVE-2026-105544",
-        "CVE-2026-109475",
-        "CVE-2026-109476",
-        "CVE-2026-114146",
-        "CVE-2026-114147",
-        "CVE-2026-114149"
-      ]
-    },
-    {
-      "id": "379506",
-      "title": "RHEL 9 : squid (RHSA-2026:99124)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379506",
-      "cves": [
-        "CVE-2026-61642"
-      ]
-    },
-    {
-      "id": "379505",
-      "title": "RHEL 10 : gnome-remote-desktop (RHSA-2026:99125)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379505",
-      "cves": [
-        "CVE-2026-96541"
-      ]
-    },
-    {
-      "id": "379504",
-      "title": "RHEL 10 : .NET 8.0 (RHSA-2026:99147)",
-      "severity": "Critical",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379504",
-      "cves": [
-        "CVE-2026-105544",
-        "CVE-2026-109475",
-        "CVE-2026-109476",
-        "CVE-2026-109478",
-        "CVE-2026-114146",
-        "CVE-2026-114147",
-        "CVE-2026-114149"
-      ]
-    },
-    {
-      "id": "379503",
-      "title": "RHEL 9 : patch (RHSA-2026:99161)",
+      "id": "380210",
+      "title": "RockyLinux 10 : jq (RLSA-2026:98603)",
       "severity": "Medium",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379503",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380210",
       "cves": [
-        "CVE-2026-115207"
+        "CVE-2026-39979",
+        "CVE-2026-40164"
       ]
     },
     {
-      "id": "379502",
-      "title": "SUSE SLES16 Security Update : zchunk (SUSE-SU-2026:24657-1)",
+      "id": "380209",
+      "title": "RockyLinux 10 : gstreamer1-plugins-base (RLSA-2026:98600)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380209",
+      "cves": [
+        "CVE-2026-86476"
+      ]
+    },
+    {
+      "id": "380208",
+      "title": "RockyLinux 10 : mutter (RLSA-2026:99130)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380208",
+      "cves": [
+        "CVE-2026-108094"
+      ]
+    },
+    {
+      "id": "380207",
+      "title": "RockyLinux 10 : libxml2 (RLSA-2026:98572)",
+      "severity": "Low",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380207",
+      "cves": [
+        "CVE-2026-11979",
+        "CVE-2026-74860",
+        "CVE-2026-86140",
+        "CVE-2026-86142",
+        "CVE-2026-86143",
+        "CVE-2026-86144"
+      ]
+    },
+    {
+      "id": "380206",
+      "title": "RockyLinux 10 : libXi (RLSA-2026:98611)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380206",
+      "cves": [
+        "CVE-2026-109089",
+        "CVE-2026-109090",
+        "CVE-2026-93543"
+      ]
+    },
+    {
+      "id": "380205",
+      "title": "RockyLinux 9 : environment-modules (RLSA-2026:98460)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380205",
+      "cves": [
+        "CVE-2026-85013"
+      ]
+    },
+    {
+      "id": "380204",
+      "title": "RockyLinux 10 : gstreamer1-plugins-bad-free (RLSA-2026:98621)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380204",
+      "cves": [
+        "CVE-2026-119777"
+      ]
+    },
+    {
+      "id": "380203",
+      "title": "AlmaLinux 8 : qt5-qtbase (ALSA-2026:98103)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380203",
+      "cves": [
+        "CVE-2026-16762"
+      ]
+    },
+    {
+      "id": "380202",
+      "title": "AlmaLinux 8 : libimobiledevice (ALSA-2026:98105)",
       "severity": "Medium",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379502",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380202",
       "cves": [
-        "CVE-2026-117556"
+        "CVE-2026-116260"
       ]
     },
     {
-      "id": "379501",
-      "title": "SUSE SLES15 Security Update : terraform-provider-susepubliccloud (SUSE-SU-2026:5169-1)",
+      "id": "380201",
+      "title": "AlmaLinux 8 : kernel-rt (ALSA-2026:99031)",
       "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379501",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380201",
       "cves": [
-        "CVE-2026-78669"
+        "CVE-2026-74446",
+        "CVE-2026-97422",
+        "CVE-2026-97425",
+        "CVE-2026-97427",
+        "CVE-2026-97493",
+        "CVE-2026-97494",
+        "CVE-2026-97495",
+        "CVE-2026-97497",
+        "CVE-2026-99032",
+        "CVE-2026-99156"
       ]
     },
     {
-      "id": "379500",
-      "title": "SUSE SLES15 Security Update : ansible-core (SUSE-SU-2026:5185-1)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379500",
+      "id": "380200",
+      "title": "Rocky Linux 8 [CIQ] Security Update: kernel-rt / kernel-rt-core / kernel-rt-debug / kernel-rt-debug-core / etc Multiple Vulnerabilities (crlsa-2026_98100)",
+      "severity": "Critical",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380200",
       "cves": [
-        "CVE-2026-89091"
+        "CVE-2026-46330",
+        "CVE-2026-68123",
+        "CVE-2026-68398",
+        "CVE-2026-74510",
+        "CVE-2026-80842",
+        "CVE-2026-90207",
+        "CVE-2026-98116",
+        "CVE-2026-98403",
+        "CVE-2026-99152",
+        "CVE-2026-99153"
       ]
     },
     {
-      "id": "379499",
-      "title": "SUSE SLES15 Security Update : kubevirt (SUSE-SU-2026:5167-1)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379499",
+      "id": "380199",
+      "title": "RockyLinux 9 : tomcat (RLSA-2026:98523)",
+      "severity": "Critical",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380199",
       "cves": [
-        "CVE-2026-56854",
-        "CVE-2026-56855",
-        "CVE-2026-78659",
-        "CVE-2026-78660",
-        "CVE-2026-78662",
-        "CVE-2026-78663",
-        "CVE-2026-78669",
-        "CVE-2026-84303",
-        "CVE-2026-84304",
-        "CVE-2026-84445",
-        "CVE-2026-97032"
+        "CVE-2026-65182",
+        "CVE-2026-65637",
+        "CVE-2026-65905",
+        "CVE-2026-65927",
+        "CVE-2026-68525",
+        "CVE-2026-68569",
+        "CVE-2026-68763"
       ]
     },
     {
-      "id": "379498",
-      "title": "SUSE SLES15 Security Update : xorg-x11-server (SUSE-SU-2026:5180-1)",
+      "id": "380198",
+      "title": "RockyLinux 9 : nginx (RLSA-2026:98529)",
+      "severity": "Critical",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380198",
+      "cves": [
+        "CVE-2026-15176",
+        "CVE-2026-27651",
+        "CVE-2026-27654",
+        "CVE-2026-27784",
+        "CVE-2026-97205"
+      ]
+    },
+    {
+      "id": "380197",
+      "title": "RockyLinux 9 : mod_auth_openidc (RLSA-2026:97861)",
       "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379498",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380197",
+      "cves": [
+        "CVE-2026-54789"
+      ]
+    },
+    {
+      "id": "380196",
+      "title": "RockyLinux 10 : cockpit (RLSA-2026:98567)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380196",
+      "cves": [
+        "CVE-2026-76235",
+        "CVE-2026-91147",
+        "CVE-2026-91149"
+      ]
+    },
+    {
+      "id": "380195",
+      "title": "RockyLinux 9 : xorg-x11-server (RLSA-2026:98487)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380195",
+      "cves": [
+        "CVE-2026-88812",
+        "CVE-2026-93516",
+        "CVE-2026-93517",
+        "CVE-2026-93518",
+        "CVE-2026-93519",
+        "CVE-2026-93520",
+        "CVE-2026-93521",
+        "CVE-2026-93523"
+      ]
+    },
+    {
+      "id": "380194",
+      "title": "RockyLinux 10 : kernel (RLSA-2026:99133)",
+      "severity": "Critical",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380194",
+      "cves": [
+        "CVE-2026-68162",
+        "CVE-2026-74586",
+        "CVE-2026-74588",
+        "CVE-2026-74752",
+        "CVE-2026-80553",
+        "CVE-2026-80571",
+        "CVE-2026-80584",
+        "CVE-2026-80586",
+        "CVE-2026-80951",
+        "CVE-2026-80981",
+        "CVE-2026-89479",
+        "CVE-2026-89633",
+        "CVE-2026-89956",
+        "CVE-2026-90207",
+        "CVE-2026-98318",
+        "CVE-2026-99152",
+        "CVE-2026-99153"
+      ]
+    },
+    {
+      "id": "380193",
+      "title": "RockyLinux 9 : cockpit (RLSA-2026:99602)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380193",
+      "cves": [
+        "CVE-2026-91150",
+        "CVE-2026-91151"
+      ]
+    },
+    {
+      "id": "380192",
+      "title": "RockyLinux 10 : sssd (RLSA-2026:98559)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380192",
+      "cves": [
+        "CVE-2026-87853"
+      ]
+    },
+    {
+      "id": "380191",
+      "title": "RockyLinux 10 : yggdrasil (RLSA-2026:97288)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380191",
+      "cves": [
+        "CVE-2026-27137"
+      ]
+    },
+    {
+      "id": "380190",
+      "title": "RockyLinux 9 : sssd (RLSA-2026:97438)",
+      "severity": "Medium",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380190",
+      "cves": [
+        "CVE-2026-6245"
+      ]
+    },
+    {
+      "id": "380189",
+      "title": "RockyLinux 10 : openssl (RLSA-2026:98588)",
+      "severity": "Low",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380189",
+      "cves": [
+        "CVE-2026-35189",
+        "CVE-2026-35191",
+        "CVE-2026-42772",
+        "CVE-2026-54872",
+        "CVE-2026-54873",
+        "CVE-2026-54875",
+        "CVE-2026-72897",
+        "CVE-2026-75804",
+        "CVE-2026-75805",
+        "CVE-2026-75806",
+        "CVE-2026-77696",
+        "CVE-2026-84784"
+      ]
+    },
+    {
+      "id": "380188",
+      "title": "RockyLinux 10 : python-oauthlib (RLSA-2026:98641)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380188",
+      "cves": [
+        "CVE-2026-118669"
+      ]
+    },
+    {
+      "id": "380187",
+      "title": "RockyLinux 8 : perl-DBI:1.641 (RLSA-2026:99210)",
+      "severity": "Critical",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380187",
+      "cves": [
+        "CVE-2026-78030"
+      ]
+    },
+    {
+      "id": "380186",
+      "title": "RockyLinux 9 : glib2 (RLSA-2026:98452)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380186",
+      "cves": [
+        "CVE-2026-16118"
+      ]
+    },
+    {
+      "id": "380185",
+      "title": "RockyLinux 10 : expat (RLSA-2026:98582)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380185",
+      "cves": [
+        "CVE-2026-102633",
+        "CVE-2026-66046",
+        "CVE-2026-77214",
+        "CVE-2026-93990"
+      ]
+    },
+    {
+      "id": "380184",
+      "title": "RockyLinux 9 : jackson-core (RLSA-2026:98493)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380184",
+      "cves": [
+        "CVE-2026-89407",
+        "CVE-2026-89425"
+      ]
+    },
+    {
+      "id": "380183",
+      "title": "RockyLinux 10 : emacs (RLSA-2026:98574)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380183",
+      "cves": [
+        "CVE-2026-77219",
+        "CVE-2026-79992",
+        "CVE-2026-96269",
+        "CVE-2026-96442"
+      ]
+    },
+    {
+      "id": "380182",
+      "title": "FreeBSD : X.Org X server and Xwayland -- Multiple vulnerabilities (f8802557-dea7-11f1-bf46-901b0e13f1a0)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380182",
       "cves": [
         "CVE-2026-109091",
         "CVE-2026-109092",
@@ -757,462 +661,283 @@
       ]
     },
     {
-      "id": "379497",
-      "title": "SUSE SLES16 Security Update : kernel (SUSE-SU-2026:24651-1)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379497",
-      "cves": [
-        "CVE-2026-100071",
-        "CVE-2026-31708",
-        "CVE-2026-31709",
-        "CVE-2026-43350",
-        "CVE-2026-46155",
-        "CVE-2026-53288",
-        "CVE-2026-64370",
-        "CVE-2026-64413",
-        "CVE-2026-64430",
-        "CVE-2026-68140",
-        "CVE-2026-68186",
-        "CVE-2026-68337",
-        "CVE-2026-68383",
-        "CVE-2026-68436",
-        "CVE-2026-68447",
-        "CVE-2026-68449",
-        "CVE-2026-72010",
-        "CVE-2026-72073",
-        "CVE-2026-72111",
-        "CVE-2026-72318",
-        "CVE-2026-72400",
-        "CVE-2026-72416",
-        "CVE-2026-72428",
-        "CVE-2026-74399",
-        "CVE-2026-74466",
-        "CVE-2026-74565",
-        "CVE-2026-74613",
-        "CVE-2026-74620",
-        "CVE-2026-74653",
-        "CVE-2026-74690",
-        "CVE-2026-74720",
-        "CVE-2026-74746",
-        "CVE-2026-74748",
-        "CVE-2026-80584",
-        "CVE-2026-80602",
-        "CVE-2026-80637",
-        "CVE-2026-80684",
-        "CVE-2026-80709",
-        "CVE-2026-80710",
-        "CVE-2026-80717",
-        "CVE-2026-80757",
-        "CVE-2026-80808",
-        "CVE-2026-80809",
-        "CVE-2026-80855",
-        "CVE-2026-80879",
-        "CVE-2026-80881",
-        "CVE-2026-80978",
-        "CVE-2026-80988",
-        "CVE-2026-89456",
-        "CVE-2026-89487",
-        "CVE-2026-89491",
-        "CVE-2026-89494",
-        "CVE-2026-89495",
-        "CVE-2026-89537",
-        "CVE-2026-89554",
-        "CVE-2026-89559",
-        "CVE-2026-89560",
-        "CVE-2026-89595",
-        "CVE-2026-89602",
-        "CVE-2026-89608",
-        "CVE-2026-89633",
-        "CVE-2026-89637",
-        "CVE-2026-89648",
-        "CVE-2026-89656",
-        "CVE-2026-89657",
-        "CVE-2026-89751",
-        "CVE-2026-89757",
-        "CVE-2026-89761",
-        "CVE-2026-89762",
-        "CVE-2026-89786",
-        "CVE-2026-89787",
-        "CVE-2026-89812",
-        "CVE-2026-89813",
-        "CVE-2026-89924",
-        "CVE-2026-90042",
-        "CVE-2026-90057",
-        "CVE-2026-90081",
-        "CVE-2026-90092",
-        "CVE-2026-90103",
-        "CVE-2026-90107",
-        "CVE-2026-90111",
-        "CVE-2026-90114",
-        "CVE-2026-90128",
-        "CVE-2026-90138",
-        "CVE-2026-90148",
-        "CVE-2026-90227",
-        "CVE-2026-90230",
-        "CVE-2026-90315",
-        "CVE-2026-90393",
-        "CVE-2026-90434",
-        "CVE-2026-93181",
-        "CVE-2026-93211",
-        "CVE-2026-93228",
-        "CVE-2026-93231",
-        "CVE-2026-93250",
-        "CVE-2026-93262",
-        "CVE-2026-93269",
-        "CVE-2026-93795",
-        "CVE-2026-93817",
-        "CVE-2026-93828",
-        "CVE-2026-93830",
-        "CVE-2026-97410",
-        "CVE-2026-97596",
-        "CVE-2026-97603",
-        "CVE-2026-97612",
-        "CVE-2026-97954",
-        "CVE-2026-97963",
-        "CVE-2026-97964",
-        "CVE-2026-97965",
-        "CVE-2026-97988",
-        "CVE-2026-97991",
-        "CVE-2026-97993",
-        "CVE-2026-98014",
-        "CVE-2026-98022",
-        "CVE-2026-98023",
-        "CVE-2026-98027",
-        "CVE-2026-98031",
-        "CVE-2026-98039",
-        "CVE-2026-98047",
-        "CVE-2026-98058",
-        "CVE-2026-98068",
-        "CVE-2026-98069",
-        "CVE-2026-98070",
-        "CVE-2026-98071",
-        "CVE-2026-98074",
-        "CVE-2026-98078",
-        "CVE-2026-98086",
-        "CVE-2026-98095",
-        "CVE-2026-98122",
-        "CVE-2026-98154",
-        "CVE-2026-98158",
-        "CVE-2026-98257",
-        "CVE-2026-98258",
-        "CVE-2026-98282",
-        "CVE-2026-98283",
-        "CVE-2026-98306",
-        "CVE-2026-98368",
-        "CVE-2026-98373",
-        "CVE-2026-98374",
-        "CVE-2026-98375",
-        "CVE-2026-98376",
-        "CVE-2026-98466",
-        "CVE-2026-98471",
-        "CVE-2026-98503",
-        "CVE-2026-98507",
-        "CVE-2026-98555",
-        "CVE-2026-98631",
-        "CVE-2026-98713",
-        "CVE-2026-98720",
-        "CVE-2026-98895",
-        "CVE-2026-99131",
-        "CVE-2026-99176",
-        "CVE-2026-99178"
-      ]
-    },
-    {
-      "id": "379496",
-      "title": "SUSE SLES15: libopenssl-1_1-devel / libopenssl1_1 / libopenssl1_1-32bit / etc (SUSE-SU-2026:5197-1)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379496",
-      "cves": [
-        "CVE-2026-35189",
-        "CVE-2026-54872",
-        "CVE-2026-75806",
-        "CVE-2026-77696",
-        "CVE-2026-84782"
-      ]
-    },
-    {
-      "id": "379495",
-      "title": "SUSE SLES16: MozillaFirefox / MozillaFirefox-devel / etc (SUSE-SU-2026:24661-1)",
+      "id": "380181",
+      "title": "AlmaLinux 8 : kernel-rt (ALSA-2026:98100)",
       "severity": "Critical",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379495",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380181",
       "cves": [
-        "CVE-2026-100801",
-        "CVE-2026-111497",
-        "CVE-2026-117860",
-        "CVE-2026-117861",
-        "CVE-2026-117862",
-        "CVE-2026-117863",
-        "CVE-2026-117864",
-        "CVE-2026-117865",
-        "CVE-2026-117866",
-        "CVE-2026-117867",
-        "CVE-2026-117868",
-        "CVE-2026-117869",
-        "CVE-2026-117870",
-        "CVE-2026-117871",
-        "CVE-2026-117872",
-        "CVE-2026-117873",
-        "CVE-2026-117874",
-        "CVE-2026-117875",
-        "CVE-2026-117876",
-        "CVE-2026-117877",
-        "CVE-2026-117878",
-        "CVE-2026-117879",
-        "CVE-2026-117880",
-        "CVE-2026-117881",
-        "CVE-2026-117882",
-        "CVE-2026-117883",
-        "CVE-2026-117884",
-        "CVE-2026-117885",
-        "CVE-2026-117886",
-        "CVE-2026-117887",
-        "CVE-2026-117888",
-        "CVE-2026-117889",
-        "CVE-2026-117890",
-        "CVE-2026-117891",
-        "CVE-2026-117892",
-        "CVE-2026-117893",
-        "CVE-2026-117894",
-        "CVE-2026-117895",
-        "CVE-2026-117896",
-        "CVE-2026-117897",
-        "CVE-2026-117898",
-        "CVE-2026-117899",
-        "CVE-2026-117900",
-        "CVE-2026-117901",
-        "CVE-2026-117902",
-        "CVE-2026-117903",
-        "CVE-2026-117904",
-        "CVE-2026-117905",
-        "CVE-2026-117906",
-        "CVE-2026-117907",
-        "CVE-2026-117908",
-        "CVE-2026-117909",
-        "CVE-2026-117910",
-        "CVE-2026-117911",
-        "CVE-2026-117912",
-        "CVE-2026-117913",
-        "CVE-2026-117914",
-        "CVE-2026-117915",
-        "CVE-2026-117916",
-        "CVE-2026-117917",
-        "CVE-2026-117918",
-        "CVE-2026-117919",
-        "CVE-2026-117920",
-        "CVE-2026-117921",
-        "CVE-2026-117922",
-        "CVE-2026-117923",
-        "CVE-2026-117924",
-        "CVE-2026-117925",
-        "CVE-2026-117926",
-        "CVE-2026-117927",
-        "CVE-2026-117928",
-        "CVE-2026-117929",
-        "CVE-2026-117930",
-        "CVE-2026-117931",
-        "CVE-2026-117932",
-        "CVE-2026-117933",
-        "CVE-2026-117934",
-        "CVE-2026-117935",
-        "CVE-2026-117936",
-        "CVE-2026-117937",
-        "CVE-2026-117938",
-        "CVE-2026-117939",
-        "CVE-2026-117940",
-        "CVE-2026-117941",
-        "CVE-2026-117942",
-        "CVE-2026-117943",
-        "CVE-2026-117944",
-        "CVE-2026-117945",
-        "CVE-2026-117946",
-        "CVE-2026-117947",
-        "CVE-2026-117948",
-        "CVE-2026-117949",
-        "CVE-2026-117950",
-        "CVE-2026-117951",
-        "CVE-2026-117952",
-        "CVE-2026-117953",
-        "CVE-2026-117954",
-        "CVE-2026-117955",
-        "CVE-2026-117956",
-        "CVE-2026-117957",
-        "CVE-2026-117958",
-        "CVE-2026-117959",
-        "CVE-2026-117960",
-        "CVE-2026-117961",
-        "CVE-2026-117962",
-        "CVE-2026-117963",
-        "CVE-2026-117964",
-        "CVE-2026-117965",
-        "CVE-2026-117966",
-        "CVE-2026-117967",
-        "CVE-2026-117968",
-        "CVE-2026-117969",
-        "CVE-2026-117970",
-        "CVE-2026-117971",
-        "CVE-2026-117972",
-        "CVE-2026-117973",
-        "CVE-2026-117974",
-        "CVE-2026-117975",
-        "CVE-2026-117976",
-        "CVE-2026-117977",
-        "CVE-2026-117978",
-        "CVE-2026-117979",
-        "CVE-2026-117980",
-        "CVE-2026-117981",
-        "CVE-2026-117982",
-        "CVE-2026-117983",
-        "CVE-2026-117984",
-        "CVE-2026-117985",
-        "CVE-2026-117986",
-        "CVE-2026-117987",
-        "CVE-2026-117988",
-        "CVE-2026-117989",
-        "CVE-2026-117990",
-        "CVE-2026-117991",
-        "CVE-2026-117992",
-        "CVE-2026-117993",
-        "CVE-2026-117994",
-        "CVE-2026-117995",
-        "CVE-2026-117996",
-        "CVE-2026-117997",
-        "CVE-2026-117998",
-        "CVE-2026-117999",
-        "CVE-2026-118000",
-        "CVE-2026-118002",
-        "CVE-2026-118003",
-        "CVE-2026-118004"
+        "CVE-2026-46330",
+        "CVE-2026-68123",
+        "CVE-2026-68398",
+        "CVE-2026-74510",
+        "CVE-2026-80842",
+        "CVE-2026-90207",
+        "CVE-2026-98116",
+        "CVE-2026-98403",
+        "CVE-2026-99152",
+        "CVE-2026-99153"
       ]
     },
     {
-      "id": "379494",
-      "title": "SUSE SLES15: libopenssl-1_1-devel / libopenssl1_1 / libopenssl1_1-32bit / etc (SUSE-SU-2026:5206-1)",
+      "id": "380180",
+      "title": "AlmaLinux 8 : kernel (ALSA-2026:99015)",
       "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379494",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380180",
       "cves": [
-        "CVE-2026-35189",
-        "CVE-2026-54872",
-        "CVE-2026-75806",
-        "CVE-2026-77696",
-        "CVE-2026-84782"
+        "CVE-2026-74446",
+        "CVE-2026-97422",
+        "CVE-2026-97425",
+        "CVE-2026-97427",
+        "CVE-2026-97493",
+        "CVE-2026-97494",
+        "CVE-2026-97495",
+        "CVE-2026-97497",
+        "CVE-2026-99032",
+        "CVE-2026-99156"
       ]
     },
     {
-      "id": "379493",
-      "title": "SUSE SLED15 / SLES15 Security Update : python-Pillow (SUSE-SU-2026:5194-1)",
-      "severity": "Critical",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379493",
-      "cves": [
-        "CVE-2026-112390",
-        "CVE-2026-112391",
-        "CVE-2026-112392",
-        "CVE-2026-112393",
-        "CVE-2026-112394",
-        "CVE-2026-112395",
-        "CVE-2026-112397",
-        "CVE-2026-112398",
-        "CVE-2026-112399",
-        "CVE-2026-112400",
-        "CVE-2026-112401",
-        "CVE-2026-112402",
-        "CVE-2026-112403",
-        "CVE-2026-112404",
-        "CVE-2026-112405",
-        "CVE-2026-112406",
-        "CVE-2026-112891",
-        "CVE-2026-112892",
-        "CVE-2026-112894",
-        "CVE-2026-112895",
-        "CVE-2026-112896",
-        "CVE-2026-112897",
-        "CVE-2026-112898",
-        "CVE-2026-112899",
-        "CVE-2026-112900",
-        "CVE-2026-112901",
-        "CVE-2026-112902",
-        "CVE-2026-96636",
-        "CVE-2026-96637",
-        "CVE-2026-96638",
-        "CVE-2026-96640",
-        "CVE-2026-96641",
-        "CVE-2026-96642",
-        "CVE-2026-96778"
-      ]
-    },
-    {
-      "id": "379492",
-      "title": "SUSE SLES15 Security Update : aliyun-cli (SUSE-SU-2026:5195-1)",
+      "id": "380179",
+      "title": "JetBrains CLion < 2026.2.4.1 Multiple Vulnerabilities",
       "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379492",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380179",
       "cves": [
-        "CVE-2026-116591",
-        "CVE-2026-63209"
+        "CVE-2026-123276",
+        "CVE-2026-123277"
       ]
     },
     {
-      "id": "379491",
-      "title": "SUSE SLED15 / SLES15 Security Update : containerd (SUSE-SU-2026:5201-1)",
-      "severity": "Medium",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379491",
-      "cves": [
-        "CVE-2026-39882",
-        "CVE-2026-47262",
-        "CVE-2026-53493",
-        "CVE-2026-53495",
-        "CVE-2026-95838"
-      ]
-    },
-    {
-      "id": "379490",
-      "title": "SUSE SLES15: libopenssl-1_1-devel / libopenssl-1_1-devel-32bit / libopenssl1_1 / etc (SUSE-SU-2026:5205-1)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379490",
-      "cves": [
-        "CVE-2026-35189",
-        "CVE-2026-54872",
-        "CVE-2026-75806",
-        "CVE-2026-77696",
-        "CVE-2026-84782"
-      ]
-    },
-    {
-      "id": "379489",
-      "title": "SUSE SLED15: libopenssl-1_1-devel / libopenssl1_1 / libopenssl1_1-32bit / etc (SUSE-SU-2026:5172-1)",
-      "severity": "High",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379489",
-      "cves": [
-        "CVE-2026-35189",
-        "CVE-2026-54872",
-        "CVE-2026-75806",
-        "CVE-2026-77696",
-        "CVE-2026-84782"
-      ]
-    },
-    {
-      "id": "379488",
-      "title": "SUSE SLES15 Security Update : haproxy (SUSE-SU-2026:5171-1)",
-      "severity": "Medium",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379488",
+      "id": "380178",
+      "title": "JetBrains CLion Installed (Linux)",
+      "severity": "Info",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380178",
       "cves": []
     },
     {
-      "id": "379487",
-      "title": "SUSE SLES15 Security Update : SDL2_image (SUSE-SU-2026:5158-1)",
-      "severity": "Medium",
-      "date": "Thu, 12 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/379487",
+      "id": "380177",
+      "title": "JetBrains CLion < 2026.1.4 Code Execution (CVE-2026-123831)",
+      "severity": "Critical",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380177",
       "cves": [
-        "CVE-2026-117557"
+        "CVE-2026-123831"
+      ]
+    },
+    {
+      "id": "380176",
+      "title": "JetBrains CLion < 2026.2 Code Execution (CVE-2026-123832)",
+      "severity": "Critical",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380176",
+      "cves": [
+        "CVE-2026-123832"
+      ]
+    },
+    {
+      "id": "380175",
+      "title": "RockyLinux 9 : microcode_ctl (RLSA-2026:97521)",
+      "severity": "Medium",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380175",
+      "cves": [
+        "CVE-2025-35973"
+      ]
+    },
+    {
+      "id": "380174",
+      "title": "RockyLinux 8 : perl-DBI (RLSA-2026:99162)",
+      "severity": "Critical",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380174",
+      "cves": [
+        "CVE-2026-78030"
+      ]
+    },
+    {
+      "id": "380173",
+      "title": "RockyLinux 9 : sos (RLSA-2026:97867)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380173",
+      "cves": [
+        "CVE-2026-79655"
+      ]
+    },
+    {
+      "id": "380172",
+      "title": "RockyLinux 9 : unbound (RLSA-2026:97497)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380172",
+      "cves": [
+        "CVE-2026-42923",
+        "CVE-2026-42960",
+        "CVE-2026-44608"
+      ]
+    },
+    {
+      "id": "380171",
+      "title": "RockyLinux 9 : util-linux (RLSA-2026:97522)",
+      "severity": "Medium",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380171",
+      "cves": [
+        "CVE-2026-13595",
+        "CVE-2026-53613"
+      ]
+    },
+    {
+      "id": "380170",
+      "title": "RockyLinux 10 : grafana-pcp (RLSA-2026:97213)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380170",
+      "cves": [
+        "CVE-2026-32280",
+        "CVE-2026-33810"
+      ]
+    },
+    {
+      "id": "380169",
+      "title": "RockyLinux 8 : kernel-rt (RLSA-2026:99031)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380169",
+      "cves": [
+        "CVE-2026-74446",
+        "CVE-2026-97422",
+        "CVE-2026-97425",
+        "CVE-2026-97427",
+        "CVE-2026-97493",
+        "CVE-2026-97494",
+        "CVE-2026-97495",
+        "CVE-2026-97497",
+        "CVE-2026-99032",
+        "CVE-2026-99156"
+      ]
+    },
+    {
+      "id": "380168",
+      "title": "RockyLinux 9 : mysql:8.4 (RLSA-2026:99741)",
+      "severity": "Medium",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380168",
+      "cves": [
+        "CVE-2026-101607",
+        "CVE-2026-101608",
+        "CVE-2026-101609",
+        "CVE-2026-101610",
+        "CVE-2026-101611",
+        "CVE-2026-101612",
+        "CVE-2026-101613",
+        "CVE-2026-101614",
+        "CVE-2026-101615",
+        "CVE-2026-101616",
+        "CVE-2026-101617",
+        "CVE-2026-101618",
+        "CVE-2026-101619",
+        "CVE-2026-101621",
+        "CVE-2026-101622",
+        "CVE-2026-101623",
+        "CVE-2026-101624",
+        "CVE-2026-101627",
+        "CVE-2026-101679",
+        "CVE-2026-101721",
+        "CVE-2026-101724",
+        "CVE-2026-101725",
+        "CVE-2026-101726",
+        "CVE-2026-101727",
+        "CVE-2026-101728",
+        "CVE-2026-101729",
+        "CVE-2026-101730",
+        "CVE-2026-101731",
+        "CVE-2026-101732",
+        "CVE-2026-101733",
+        "CVE-2026-101747",
+        "CVE-2026-101748",
+        "CVE-2026-101750",
+        "CVE-2026-101751",
+        "CVE-2026-101754",
+        "CVE-2026-101760",
+        "CVE-2026-101761",
+        "CVE-2026-101762",
+        "CVE-2026-101766",
+        "CVE-2026-101770",
+        "CVE-2026-101771",
+        "CVE-2026-101772",
+        "CVE-2026-101773",
+        "CVE-2026-101774",
+        "CVE-2026-101775",
+        "CVE-2026-101776",
+        "CVE-2026-101778",
+        "CVE-2026-101779",
+        "CVE-2026-101780",
+        "CVE-2026-101781",
+        "CVE-2026-101784",
+        "CVE-2026-101785",
+        "CVE-2026-101787",
+        "CVE-2026-101788",
+        "CVE-2026-101789",
+        "CVE-2026-101794",
+        "CVE-2026-101795",
+        "CVE-2026-101796",
+        "CVE-2026-101797",
+        "CVE-2026-101798",
+        "CVE-2026-101799",
+        "CVE-2026-101800",
+        "CVE-2026-101801",
+        "CVE-2026-101802",
+        "CVE-2026-101803",
+        "CVE-2026-116620"
+      ]
+    },
+    {
+      "id": "380167",
+      "title": "RockyLinux 10 : librsvg2 (RLSA-2026:98591)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380167",
+      "cves": [
+        "CVE-2026-96889"
+      ]
+    },
+    {
+      "id": "380166",
+      "title": "RockyLinux 8 : .NET 9.0 (RLSA-2026:99051)",
+      "severity": "Critical",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380166",
+      "cves": [
+        "CVE-2026-105544",
+        "CVE-2026-109475",
+        "CVE-2026-109476",
+        "CVE-2026-114146",
+        "CVE-2026-114147",
+        "CVE-2026-114149"
+      ]
+    },
+    {
+      "id": "380165",
+      "title": "RockyLinux 8 : gstreamer1-plugins-base (RLSA-2026:99012)",
+      "severity": "High",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380165",
+      "cves": [
+        "CVE-2026-125712"
+      ]
+    },
+    {
+      "id": "380164",
+      "title": "RockyLinux 9 : polkit (RLSA-2026:97463)",
+      "severity": "Medium",
+      "date": "Fri, 13 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/380164",
+      "cves": [
+        "CVE-2026-4897"
       ]
     }
   ]

@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-12",
-  "previous_date": "2026-11-05",
+  "current_date": "2026-11-13",
+  "previous_date": "2026-11-06",
   "risers": [
     {
       "id": "CVE-2026-61511",
@@ -40,6 +40,20 @@
       "name": "Unauthenticated administrative account takeover"
     },
     {
+      "id": "CVE-2025-11201",
+      "now": 0.60292,
+      "prev": 0.26282,
+      "delta": 0.3401,
+      "name": "MLflow Tracking Server Model Creation Directory Traversal Remote Code Execution Vulnerabil"
+    },
+    {
+      "id": "CVE-2025-60021",
+      "now": 0.55167,
+      "prev": 0.25711,
+      "delta": 0.29456,
+      "name": "Apache bRPC: Remote command injection vulnerability in heap builtin service"
+    },
+    {
       "id": "CVE-2026-102489",
       "now": 0.49915,
       "prev": 0.22478,
@@ -52,6 +66,34 @@
       "prev": 0.01011,
       "delta": 0.26319,
       "name": "Microsoft SharePoint Server Elevation of Privilege Vulnerability"
+    },
+    {
+      "id": "CVE-2026-39813",
+      "now": 0.44014,
+      "prev": 0.22224,
+      "delta": 0.2179,
+      "name": "Fortinet FortiSandbox"
+    },
+    {
+      "id": "CVE-2026-123158",
+      "now": 0.189,
+      "prev": 0.00976,
+      "delta": 0.17924,
+      "name": "OpenBSD OpenSSH"
+    },
+    {
+      "id": "CVE-2023-49606",
+      "now": 0.80903,
+      "prev": 0.63076,
+      "delta": 0.17827,
+      "name": "Tinyproxy Tinyproxy"
+    },
+    {
+      "id": "CVE-2026-27175",
+      "now": 0.23985,
+      "prev": 0.06904,
+      "delta": 0.17081,
+      "name": "MajorDoMo Command Injection in rc/index.php via Race Condition"
     },
     {
       "id": "CVE-2026-65400",
@@ -103,13 +145,6 @@
       "name": "FUXA Unauthenticated Remote Arbitrary Scheduler Write"
     },
     {
-      "id": "CVE-2023-41425",
-      "now": 0.65456,
-      "prev": 0.54305,
-      "delta": 0.11151,
-      "name": "Cross Site Scripting vulnerability in Wonder CMS v.3.2.0 thru v.3.4.2 allows a remote attacker to execute arbi"
-    },
-    {
       "id": "CVE-2006-6423",
       "now": 0.8157,
       "prev": 0.70706,
@@ -117,18 +152,18 @@
       "name": "Stack-based buffer overflow in the IMAP service for MailEnable Professional and Enterprise Edition 2.0 through"
     },
     {
-      "id": "CVE-2026-76461",
-      "now": 0.4016,
-      "prev": 0.29543,
-      "delta": 0.10617,
-      "name": "Cisco Secure Email Gateway SQL Injection Vulnerability"
+      "id": "CVE-2026-116606",
+      "now": 0.10947,
+      "prev": 0.00728,
+      "delta": 0.10219,
+      "name": "Authentication Bypass Allows Global Configuration Restore in Barracuda Email Security Gate"
     },
     {
-      "id": "CVE-2015-6420",
-      "now": 0.24233,
-      "prev": 0.15204,
-      "delta": 0.09029,
-      "name": "Serialized-object interfaces in certain Cisco Collaboration and Social Media; Endpoint Clients and Client Soft"
+      "id": "CVE-2023-41425",
+      "now": 0.63759,
+      "prev": 0.54305,
+      "delta": 0.09454,
+      "name": "Cross Site Scripting vulnerability in Wonder CMS v.3.2.0 thru v.3.4.2 allows a remote attacker to execute arbi"
     },
     {
       "id": "CVE-2024-47949",
@@ -138,18 +173,25 @@
       "name": "JetBrains TeamCity"
     },
     {
-      "id": "CVE-2009-1960",
-      "now": 0.31711,
-      "prev": 0.23157,
-      "delta": 0.08554,
-      "name": "inc/init.php in DokuWiki 2009-02-14, rc2009-02-06, and rc2009-01-30, when register_globals is enabled, allows "
+      "id": "CVE-2026-111560",
+      "now": 0.09082,
+      "prev": 0.00471,
+      "delta": 0.08611,
+      "name": "OS Command Injection in Barracuda Appliances"
     },
     {
-      "id": "CVE-2026-116606",
-      "now": 0.08934,
-      "prev": 0.00728,
-      "delta": 0.08206,
-      "name": "Authentication Bypass Allows Global Configuration Restore in Barracuda Email Security Gate"
+      "id": "CVE-2025-53722",
+      "now": 0.31811,
+      "prev": 0.23424,
+      "delta": 0.08387,
+      "name": "Windows Remote Desktop Services\u00a0Denial of Service Vulnerability"
+    },
+    {
+      "id": "CVE-2025-69985",
+      "now": 0.14342,
+      "prev": 0.06021,
+      "delta": 0.08321,
+      "name": "FUXA 1.2.8 and prior contains an Authentication Bypass vulnerability leading to Remote Code Execution (RCE). T"
     },
     {
       "id": "CVE-2024-48990",
@@ -171,48 +213,6 @@
       "prev": 0.08629,
       "delta": 0.07748,
       "name": "VMSA-2025-0015: VMware Aria Operations and VMware Tools updates address multiple vulnerabi"
-    },
-    {
-      "id": "CVE-2025-54948",
-      "now": 0.32872,
-      "prev": 0.25402,
-      "delta": 0.0747,
-      "name": "Trend Micro, Inc. Trend Micro Apex One"
-    },
-    {
-      "id": "CVE-2024-2511",
-      "now": 0.59304,
-      "prev": 0.52421,
-      "delta": 0.06883,
-      "name": "Unbounded memory growth with session handling in TLSv1.3"
-    },
-    {
-      "id": "CVE-2026-81963",
-      "now": 0.07115,
-      "prev": 0.00393,
-      "delta": 0.06722,
-      "name": "Windows Update Stack Elevation of Privilege Vulnerability"
-    },
-    {
-      "id": "CVE-2024-9143",
-      "now": 0.12484,
-      "prev": 0.05842,
-      "delta": 0.06642,
-      "name": "Low-level invalid GF(2^m) parameters lead to OOB memory access"
-    },
-    {
-      "id": "CVE-2023-32434",
-      "now": 0.58157,
-      "prev": 0.51517,
-      "delta": 0.0664,
-      "name": "Apple macOS"
-    },
-    {
-      "id": "CVE-2020-17103",
-      "now": 0.29874,
-      "prev": 0.23836,
-      "delta": 0.06038,
-      "name": "Windows Cloud Files Mini Filter Driver Elevation of Privilege Vulnerability"
     }
   ],
   "newly_high": [
@@ -236,6 +236,20 @@
       "prev": 0.02565,
       "delta": 0.59103,
       "name": "vCenter directory-traversal vulnerability"
+    },
+    {
+      "id": "CVE-2025-11201",
+      "now": 0.60292,
+      "prev": 0.26282,
+      "delta": 0.3401,
+      "name": "MLflow Tracking Server Model Creation Directory Traversal Remote Code Execution Vulnerabil"
+    },
+    {
+      "id": "CVE-2025-60021",
+      "now": 0.55167,
+      "prev": 0.25711,
+      "delta": 0.29456,
+      "name": "Apache bRPC: Remote command injection vulnerability in heap builtin service"
     },
     {
       "id": "CVE-2020-36847",
