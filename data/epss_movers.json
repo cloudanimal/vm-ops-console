@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-13",
-  "previous_date": "2026-11-06",
+  "current_date": "2026-11-14",
+  "previous_date": "2026-11-07",
   "risers": [
     {
       "id": "CVE-2026-61511",
@@ -12,20 +12,6 @@
       "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
     },
     {
-      "id": "CVE-2026-75650",
-      "now": 0.99376,
-      "prev": 0.34741,
-      "delta": 0.64635,
-      "name": "Adobe Commerce | Improper Neutralization of Special Elements Used in a Template Engine (CW"
-    },
-    {
-      "id": "CVE-2026-59310",
-      "now": 0.61668,
-      "prev": 0.02565,
-      "delta": 0.59103,
-      "name": "vCenter directory-traversal vulnerability"
-    },
-    {
       "id": "CVE-2026-4408",
       "now": 0.46926,
       "prev": 0.02501,
@@ -33,11 +19,25 @@
       "name": "Samba: remote code execution in samr"
     },
     {
+      "id": "CVE-2026-28318",
+      "now": 0.87267,
+      "prev": 0.48001,
+      "delta": 0.39266,
+      "name": "SolarWinds Serv-U Unauthenticated Denial of Service Vulnerability"
+    },
+    {
       "id": "CVE-2026-18556",
       "now": 0.43884,
       "prev": 0.07882,
       "delta": 0.36002,
       "name": "Unauthenticated administrative account takeover"
+    },
+    {
+      "id": "CVE-2019-19492",
+      "now": 0.64894,
+      "prev": 0.29448,
+      "delta": 0.35446,
+      "name": "FreeSWITCH 1.6.10 through 1.10.1 has a default password in event_socket.conf.xml."
     },
     {
       "id": "CVE-2025-11201",
@@ -54,13 +54,6 @@
       "name": "Apache bRPC: Remote command injection vulnerability in heap builtin service"
     },
     {
-      "id": "CVE-2026-102489",
-      "now": 0.49915,
-      "prev": 0.22478,
-      "delta": 0.27437,
-      "name": "Undisclosed RCE in Zammad v6.3 and higher"
-    },
-    {
       "id": "CVE-2026-56164",
       "now": 0.2733,
       "prev": 0.01011,
@@ -73,6 +66,13 @@
       "prev": 0.22224,
       "delta": 0.2179,
       "name": "Fortinet FortiSandbox"
+    },
+    {
+      "id": "CVE-2026-96656",
+      "now": 0.19767,
+      "prev": 0.01785,
+      "delta": 0.17982,
+      "name": "Plex Media Server arbitrary file write"
     },
     {
       "id": "CVE-2026-123158",
@@ -90,9 +90,9 @@
     },
     {
       "id": "CVE-2026-27175",
-      "now": 0.23985,
+      "now": 0.23663,
       "prev": 0.06904,
-      "delta": 0.17081,
+      "delta": 0.16759,
       "name": "MajorDoMo Command Injection in rc/index.php via Race Condition"
     },
     {
@@ -117,20 +117,6 @@
       "name": "Samba: samba: remote code execution in printing subsystem via unescaped job description"
     },
     {
-      "id": "CVE-2026-57827",
-      "now": 0.16871,
-      "prev": 0.02328,
-      "delta": 0.14543,
-      "name": "Joomla Extension - rsjoomla.com - Unauthenticated file upload in RSFiles component < 1.17."
-    },
-    {
-      "id": "CVE-2026-8451",
-      "now": 0.1424,
-      "prev": 0.00502,
-      "delta": 0.13738,
-      "name": "Insufficient input validation leading to memory overread"
-    },
-    {
       "id": "CVE-2015-5468",
       "now": 0.37774,
       "prev": 0.24093,
@@ -152,6 +138,13 @@
       "name": "Stack-based buffer overflow in the IMAP service for MailEnable Professional and Enterprise Edition 2.0 through"
     },
     {
+      "id": "CVE-2026-96654",
+      "now": 0.12689,
+      "prev": 0.01949,
+      "delta": 0.1074,
+      "name": "Plex Media Server URL injection"
+    },
+    {
       "id": "CVE-2026-116606",
       "now": 0.10947,
       "prev": 0.00728,
@@ -164,13 +157,6 @@
       "prev": 0.54305,
       "delta": 0.09454,
       "name": "Cross Site Scripting vulnerability in Wonder CMS v.3.2.0 thru v.3.4.2 allows a remote attacker to execute arbi"
-    },
-    {
-      "id": "CVE-2024-47949",
-      "now": 0.32121,
-      "prev": 0.23456,
-      "delta": 0.08665,
-      "name": "JetBrains TeamCity"
     },
     {
       "id": "CVE-2026-111560",
@@ -201,18 +187,32 @@
       "name": "needrestart needrestart"
     },
     {
-      "id": "CVE-2026-49373",
-      "now": 0.32685,
-      "prev": 0.2492,
-      "delta": 0.07765,
-      "name": "JetBrains TeamCity"
+      "id": "CVE-2025-49712",
+      "now": 0.28509,
+      "prev": 0.2133,
+      "delta": 0.07179,
+      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2025-41244",
-      "now": 0.16377,
-      "prev": 0.08629,
-      "delta": 0.07748,
-      "name": "VMSA-2025-0015: VMware Aria Operations and VMware Tools updates address multiple vulnerabi"
+      "id": "CVE-2025-53760",
+      "now": 0.27586,
+      "prev": 0.20609,
+      "delta": 0.06977,
+      "name": "Microsoft SharePoint Elevation of Privilege Vulnerability"
+    },
+    {
+      "id": "CVE-2026-81963",
+      "now": 0.07115,
+      "prev": 0.00393,
+      "delta": 0.06722,
+      "name": "Windows Update Stack Elevation of Privilege Vulnerability"
+    },
+    {
+      "id": "CVE-2023-32434",
+      "now": 0.58157,
+      "prev": 0.51517,
+      "delta": 0.0664,
+      "name": "Apple macOS"
     }
   ],
   "newly_high": [
@@ -224,18 +224,18 @@
       "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
     },
     {
-      "id": "CVE-2026-75650",
-      "now": 0.99376,
-      "prev": 0.34741,
-      "delta": 0.64635,
-      "name": "Adobe Commerce | Improper Neutralization of Special Elements Used in a Template Engine (CW"
+      "id": "CVE-2026-28318",
+      "now": 0.87267,
+      "prev": 0.48001,
+      "delta": 0.39266,
+      "name": "SolarWinds Serv-U Unauthenticated Denial of Service Vulnerability"
     },
     {
-      "id": "CVE-2026-59310",
-      "now": 0.61668,
-      "prev": 0.02565,
-      "delta": 0.59103,
-      "name": "vCenter directory-traversal vulnerability"
+      "id": "CVE-2019-19492",
+      "now": 0.64894,
+      "prev": 0.29448,
+      "delta": 0.35446,
+      "name": "FreeSWITCH 1.6.10 through 1.10.1 has a default password in event_socket.conf.xml."
     },
     {
       "id": "CVE-2025-11201",
@@ -257,6 +257,13 @@
       "prev": 0.43519,
       "delta": 0.1553,
       "name": "Simple File List < 4.2.3 - Remote Code Execution"
+    },
+    {
+      "id": "CVE-2023-4169",
+      "now": 0.54048,
+      "prev": 0.4923,
+      "delta": 0.04818,
+      "name": "Ruijie RG-EW1200G Administrator Password set_passwd access control"
     },
     {
       "id": "CVE-2025-68645",
