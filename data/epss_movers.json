@@ -1,9 +1,16 @@
 {
-  "updated": "2026-11-14",
+  "updated": "2026-11-15",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-14",
-  "previous_date": "2026-11-07",
+  "current_date": "2026-11-15",
+  "previous_date": "2026-11-08",
   "risers": [
+    {
+      "id": "CVE-2026-6875",
+      "now": 0.78461,
+      "prev": 0.01426,
+      "delta": 0.77035,
+      "name": "Sandbox Escape in ServiceNow AI Platform"
+    },
     {
       "id": "CVE-2026-61511",
       "now": 0.74266,
@@ -77,8 +84,8 @@
     {
       "id": "CVE-2026-123158",
       "now": 0.189,
-      "prev": 0.00976,
-      "delta": 0.17924,
+      "prev": 0.01014,
+      "delta": 0.17886,
       "name": "OpenBSD OpenSSH"
     },
     {
@@ -108,13 +115,6 @@
       "prev": 0.43519,
       "delta": 0.1553,
       "name": "Simple File List < 4.2.3 - Remote Code Execution"
-    },
-    {
-      "id": "CVE-2026-4480",
-      "now": 0.28691,
-      "prev": 0.1393,
-      "delta": 0.14761,
-      "name": "Samba: samba: remote code execution in printing subsystem via unescaped job description"
     },
     {
       "id": "CVE-2015-5468",
@@ -150,13 +150,6 @@
       "prev": 0.00728,
       "delta": 0.10219,
       "name": "Authentication Bypass Allows Global Configuration Restore in Barracuda Email Security Gate"
-    },
-    {
-      "id": "CVE-2023-41425",
-      "now": 0.63759,
-      "prev": 0.54305,
-      "delta": 0.09454,
-      "name": "Cross Site Scripting vulnerability in Wonder CMS v.3.2.0 thru v.3.4.2 allows a remote attacker to execute arbi"
     },
     {
       "id": "CVE-2026-111560",
@@ -213,9 +206,23 @@
       "prev": 0.51517,
       "delta": 0.0664,
       "name": "Apple macOS"
+    },
+    {
+      "id": "CVE-2012-6636",
+      "now": 0.44784,
+      "prev": 0.38719,
+      "delta": 0.06065,
+      "name": "The Android API before 17 does not properly restrict the WebView.addJavascriptInterface method, which allows r"
     }
   ],
   "newly_high": [
+    {
+      "id": "CVE-2026-6875",
+      "now": 0.78461,
+      "prev": 0.01426,
+      "delta": 0.77035,
+      "name": "Sandbox Escape in ServiceNow AI Platform"
+    },
     {
       "id": "CVE-2026-61511",
       "now": 0.74266,
@@ -266,18 +273,11 @@
       "name": "Ruijie RG-EW1200G Administrator Password set_passwd access control"
     },
     {
-      "id": "CVE-2025-68645",
-      "now": 0.50572,
-      "prev": 0.48873,
-      "delta": 0.01699,
-      "name": "A Local File Inclusion (LFI) vulnerability exists in the Webmail Classic UI of Zimbra Collaboration (ZCS) 10.0"
-    },
-    {
-      "id": "CVE-2019-12527",
-      "now": 0.50299,
-      "prev": 0.49037,
-      "delta": 0.01262,
-      "name": "An issue was discovered in Squid 4.0.23 through 4.7. When checking Basic Authentication with HttpHeader::getAu"
+      "id": "CVE-2023-44355",
+      "now": 0.50113,
+      "prev": 0.47169,
+      "delta": 0.02944,
+      "name": "ColdFusion | Improper Input Validation (CWE-20)"
     }
   ]
 }
