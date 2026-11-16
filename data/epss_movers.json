@@ -1,9 +1,16 @@
 {
-  "updated": "2026-11-15",
+  "updated": "2026-11-16",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-15",
-  "previous_date": "2026-11-08",
+  "current_date": "2026-11-16",
+  "previous_date": "2026-11-09",
   "risers": [
+    {
+      "id": "CVE-2026-50522",
+      "now": 0.8187,
+      "prev": 0.03042,
+      "delta": 0.78828,
+      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+    },
     {
       "id": "CVE-2026-6875",
       "now": 0.78461,
@@ -110,11 +117,25 @@
       "name": "Apple macOS"
     },
     {
+      "id": "CVE-2015-7853",
+      "now": 0.27603,
+      "prev": 0.11781,
+      "delta": 0.15822,
+      "name": "The datalen parameter in the refclock driver in NTP 4.2.x before 4.2.8p4, and 4.3.x before 4.3.77 allows remot"
+    },
+    {
       "id": "CVE-2020-36847",
       "now": 0.59049,
       "prev": 0.43519,
       "delta": 0.1553,
       "name": "Simple File List < 4.2.3 - Remote Code Execution"
+    },
+    {
+      "id": "CVE-2024-50379",
+      "now": 0.46611,
+      "prev": 0.31824,
+      "delta": 0.14787,
+      "name": "Apache Tomcat: RCE due to TOCTOU issue in JSP compilation"
     },
     {
       "id": "CVE-2015-5468",
@@ -124,6 +145,13 @@
       "name": "Directory traversal vulnerability in the WP e-Commerce Shop Styling plugin before 2.6 for WordPress allows rem"
     },
     {
+      "id": "CVE-2017-11467",
+      "now": 0.85882,
+      "prev": 0.73071,
+      "delta": 0.12811,
+      "name": "OrientDB through 2.2.22 does not enforce privilege requirements during \"where\" or \"fetchplan\" or \"order by\" us"
+    },
+    {
       "id": "CVE-2026-25939",
       "now": 0.24256,
       "prev": 0.12536,
@@ -131,11 +159,11 @@
       "name": "FUXA Unauthenticated Remote Arbitrary Scheduler Write"
     },
     {
-      "id": "CVE-2006-6423",
-      "now": 0.8157,
-      "prev": 0.70706,
-      "delta": 0.10864,
-      "name": "Stack-based buffer overflow in the IMAP service for MailEnable Professional and Enterprise Edition 2.0 through"
+      "id": "CVE-2016-5734",
+      "now": 0.91745,
+      "prev": 0.8094,
+      "delta": 0.10805,
+      "name": "phpMyAdmin 4.0.x before 4.0.10.16, 4.4.x before 4.4.15.7, and 4.6.x before 4.6.3 does not properly choose deli"
     },
     {
       "id": "CVE-2026-96654",
@@ -145,18 +173,18 @@
       "name": "Plex Media Server URL injection"
     },
     {
-      "id": "CVE-2026-116606",
-      "now": 0.10947,
-      "prev": 0.00728,
-      "delta": 0.10219,
-      "name": "Authentication Bypass Allows Global Configuration Restore in Barracuda Email Security Gate"
+      "id": "CVE-2024-56337",
+      "now": 0.19029,
+      "prev": 0.08969,
+      "delta": 0.1006,
+      "name": "Apache Tomcat: RCE due to TOCTOU issue in JSP compilation - CVE-2024-50379 mitigation was "
     },
     {
-      "id": "CVE-2026-111560",
-      "now": 0.09082,
-      "prev": 0.00471,
-      "delta": 0.08611,
-      "name": "OS Command Injection in Barracuda Appliances"
+      "id": "CVE-2026-116606",
+      "now": 0.10947,
+      "prev": 0.01602,
+      "delta": 0.09345,
+      "name": "Authentication Bypass Allows Global Configuration Restore in Barracuda Email Security Gate"
     },
     {
       "id": "CVE-2025-53722",
@@ -173,11 +201,11 @@
       "name": "FUXA 1.2.8 and prior contains an Authentication Bypass vulnerability leading to Remote Code Execution (RCE). T"
     },
     {
-      "id": "CVE-2024-48990",
-      "now": 0.29202,
-      "prev": 0.21269,
-      "delta": 0.07933,
-      "name": "needrestart needrestart"
+      "id": "CVE-2026-111560",
+      "now": 0.09082,
+      "prev": 0.0106,
+      "delta": 0.08022,
+      "name": "OS Command Injection in Barracuda Appliances"
     },
     {
       "id": "CVE-2025-49712",
@@ -185,37 +213,16 @@
       "prev": 0.2133,
       "delta": 0.07179,
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
-    },
-    {
-      "id": "CVE-2025-53760",
-      "now": 0.27586,
-      "prev": 0.20609,
-      "delta": 0.06977,
-      "name": "Microsoft SharePoint Elevation of Privilege Vulnerability"
-    },
-    {
-      "id": "CVE-2026-81963",
-      "now": 0.07115,
-      "prev": 0.00393,
-      "delta": 0.06722,
-      "name": "Windows Update Stack Elevation of Privilege Vulnerability"
-    },
-    {
-      "id": "CVE-2023-32434",
-      "now": 0.58157,
-      "prev": 0.51517,
-      "delta": 0.0664,
-      "name": "Apple macOS"
-    },
-    {
-      "id": "CVE-2012-6636",
-      "now": 0.44784,
-      "prev": 0.38719,
-      "delta": 0.06065,
-      "name": "The Android API before 17 does not properly restrict the WebView.addJavascriptInterface method, which allows r"
     }
   ],
   "newly_high": [
+    {
+      "id": "CVE-2026-50522",
+      "now": 0.8187,
+      "prev": 0.03042,
+      "delta": 0.78828,
+      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+    },
     {
       "id": "CVE-2026-6875",
       "now": 0.78461,
