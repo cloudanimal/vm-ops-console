@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-16",
+  "updated": "2026-11-17",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-16",
-  "previous_date": "2026-11-09",
+  "current_date": "2026-11-17",
+  "previous_date": "2026-11-10",
   "risers": [
     {
       "id": "CVE-2026-50522",
@@ -26,11 +26,18 @@
       "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
     },
     {
-      "id": "CVE-2026-4408",
-      "now": 0.46926,
-      "prev": 0.02501,
-      "delta": 0.44425,
-      "name": "Samba: remote code execution in samr"
+      "id": "CVE-2026-5430",
+      "now": 0.7884,
+      "prev": 0.2239,
+      "delta": 0.5645,
+      "name": "Authentication Bypass via JWT Algorithm Mismatch in Multiple WSO2 Products Allows Account "
+    },
+    {
+      "id": "CVE-2026-45247",
+      "now": 0.8234,
+      "prev": 0.26157,
+      "delta": 0.56183,
+      "name": "Mirasvit Cache Warmer for Magento < 1.11.12 PHP Object Injection"
     },
     {
       "id": "CVE-2026-28318",
@@ -75,6 +82,13 @@
       "name": "Microsoft SharePoint Server Elevation of Privilege Vulnerability"
     },
     {
+      "id": "CVE-2026-59309",
+      "now": 0.2286,
+      "prev": 0.00611,
+      "delta": 0.22249,
+      "name": "vCenter authentication-bypass vulnerability"
+    },
+    {
       "id": "CVE-2026-39813",
       "now": 0.44014,
       "prev": 0.22224,
@@ -82,18 +96,32 @@
       "name": "Fortinet FortiSandbox"
     },
     {
+      "id": "CVE-2017-16562",
+      "now": 0.4787,
+      "prev": 0.27369,
+      "delta": 0.20501,
+      "name": "The UserPro plugin before 4.9.17.1 for WordPress, when used on a site with the \"admin\" username, allows remote"
+    },
+    {
+      "id": "CVE-2026-22679",
+      "now": 0.40501,
+      "prev": 0.20692,
+      "delta": 0.19809,
+      "name": "Weaver E-cology 10.0 Unauthenticated RCE via dubboApi Debug Endpoint"
+    },
+    {
+      "id": "CVE-2024-8275",
+      "now": 0.69053,
+      "prev": 0.49914,
+      "delta": 0.19139,
+      "name": "The Events Calendar <= 6.6.4 - Unauthenticated SQL Injection"
+    },
+    {
       "id": "CVE-2026-96656",
       "now": 0.19767,
       "prev": 0.01785,
       "delta": 0.17982,
       "name": "Plex Media Server arbitrary file write"
-    },
-    {
-      "id": "CVE-2026-123158",
-      "now": 0.189,
-      "prev": 0.01014,
-      "delta": 0.17886,
-      "name": "OpenBSD OpenSSH"
     },
     {
       "id": "CVE-2023-49606",
@@ -110,13 +138,6 @@
       "name": "MajorDoMo Command Injection in rc/index.php via Race Condition"
     },
     {
-      "id": "CVE-2026-65400",
-      "now": 0.18057,
-      "prev": 0.01723,
-      "delta": 0.16334,
-      "name": "Apple macOS"
-    },
-    {
       "id": "CVE-2015-7853",
       "now": 0.27603,
       "prev": 0.11781,
@@ -129,13 +150,6 @@
       "prev": 0.43519,
       "delta": 0.1553,
       "name": "Simple File List < 4.2.3 - Remote Code Execution"
-    },
-    {
-      "id": "CVE-2024-50379",
-      "now": 0.46611,
-      "prev": 0.31824,
-      "delta": 0.14787,
-      "name": "Apache Tomcat: RCE due to TOCTOU issue in JSP compilation"
     },
     {
       "id": "CVE-2015-5468",
@@ -159,6 +173,13 @@
       "name": "FUXA Unauthenticated Remote Arbitrary Scheduler Write"
     },
     {
+      "id": "CVE-2024-50379",
+      "now": 0.42749,
+      "prev": 0.31824,
+      "delta": 0.10925,
+      "name": "Apache Tomcat: RCE due to TOCTOU issue in JSP compilation"
+    },
+    {
       "id": "CVE-2016-5734",
       "now": 0.91745,
       "prev": 0.8094,
@@ -180,39 +201,18 @@
       "name": "Apache Tomcat: RCE due to TOCTOU issue in JSP compilation - CVE-2024-50379 mitigation was "
     },
     {
+      "id": "CVE-2016-8870",
+      "now": 0.90955,
+      "prev": 0.81136,
+      "delta": 0.09819,
+      "name": "The register method in the UsersModelRegistration class in controllers/user.php in the Users component in Joom"
+    },
+    {
       "id": "CVE-2026-116606",
       "now": 0.10947,
       "prev": 0.01602,
       "delta": 0.09345,
       "name": "Authentication Bypass Allows Global Configuration Restore in Barracuda Email Security Gate"
-    },
-    {
-      "id": "CVE-2025-53722",
-      "now": 0.31811,
-      "prev": 0.23424,
-      "delta": 0.08387,
-      "name": "Windows Remote Desktop Services\u00a0Denial of Service Vulnerability"
-    },
-    {
-      "id": "CVE-2025-69985",
-      "now": 0.14342,
-      "prev": 0.06021,
-      "delta": 0.08321,
-      "name": "FUXA 1.2.8 and prior contains an Authentication Bypass vulnerability leading to Remote Code Execution (RCE). T"
-    },
-    {
-      "id": "CVE-2026-111560",
-      "now": 0.09082,
-      "prev": 0.0106,
-      "delta": 0.08022,
-      "name": "OS Command Injection in Barracuda Appliances"
-    },
-    {
-      "id": "CVE-2025-49712",
-      "now": 0.28509,
-      "prev": 0.2133,
-      "delta": 0.07179,
-      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     }
   ],
   "newly_high": [
@@ -236,6 +236,20 @@
       "prev": 0.05607,
       "delta": 0.68659,
       "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
+    },
+    {
+      "id": "CVE-2026-5430",
+      "now": 0.7884,
+      "prev": 0.2239,
+      "delta": 0.5645,
+      "name": "Authentication Bypass via JWT Algorithm Mismatch in Multiple WSO2 Products Allows Account "
+    },
+    {
+      "id": "CVE-2026-45247",
+      "now": 0.8234,
+      "prev": 0.26157,
+      "delta": 0.56183,
+      "name": "Mirasvit Cache Warmer for Magento < 1.11.12 PHP Object Injection"
     },
     {
       "id": "CVE-2026-28318",
@@ -264,6 +278,13 @@
       "prev": 0.25711,
       "delta": 0.29456,
       "name": "Apache bRPC: Remote command injection vulnerability in heap builtin service"
+    },
+    {
+      "id": "CVE-2024-8275",
+      "now": 0.69053,
+      "prev": 0.49914,
+      "delta": 0.19139,
+      "name": "The Events Calendar <= 6.6.4 - Unauthenticated SQL Injection"
     },
     {
       "id": "CVE-2020-36847",
