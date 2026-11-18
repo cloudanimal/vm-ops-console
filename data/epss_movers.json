@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-17",
+  "updated": "2026-11-18",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-17",
-  "previous_date": "2026-11-10",
+  "current_date": "2026-11-18",
+  "previous_date": "2026-11-11",
   "risers": [
     {
       "id": "CVE-2026-50522",
@@ -26,6 +26,13 @@
       "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
     },
     {
+      "id": "CVE-2021-3199",
+      "now": 0.88139,
+      "prev": 0.30244,
+      "delta": 0.57895,
+      "name": "Directory traversal with remote code execution can occur in /upload in ONLYOFFICE Document Server before 5.6.3"
+    },
+    {
       "id": "CVE-2026-5430",
       "now": 0.7884,
       "prev": 0.2239,
@@ -47,13 +54,6 @@
       "name": "SolarWinds Serv-U Unauthenticated Denial of Service Vulnerability"
     },
     {
-      "id": "CVE-2026-18556",
-      "now": 0.43884,
-      "prev": 0.07882,
-      "delta": 0.36002,
-      "name": "Unauthenticated administrative account takeover"
-    },
-    {
       "id": "CVE-2019-19492",
       "now": 0.64894,
       "prev": 0.29448,
@@ -62,9 +62,9 @@
     },
     {
       "id": "CVE-2025-11201",
-      "now": 0.60292,
-      "prev": 0.26282,
-      "delta": 0.3401,
+      "now": 0.61832,
+      "prev": 0.28203,
+      "delta": 0.33629,
       "name": "MLflow Tracking Server Model Creation Directory Traversal Remote Code Execution Vulnerabil"
     },
     {
@@ -91,8 +91,8 @@
     {
       "id": "CVE-2026-39813",
       "now": 0.44014,
-      "prev": 0.22224,
-      "delta": 0.2179,
+      "prev": 0.22584,
+      "delta": 0.2143,
       "name": "Fortinet FortiSandbox"
     },
     {
@@ -110,11 +110,25 @@
       "name": "Weaver E-cology 10.0 Unauthenticated RCE via dubboApi Debug Endpoint"
     },
     {
+      "id": "CVE-2026-116779",
+      "now": 0.22081,
+      "prev": 0.02473,
+      "delta": 0.19608,
+      "name": "FreeSWITCH: Inbound SIP MESSAGE can select the api chat proto and run FreeSWITCH API comma"
+    },
+    {
       "id": "CVE-2024-8275",
       "now": 0.69053,
       "prev": 0.49914,
       "delta": 0.19139,
       "name": "The Events Calendar <= 6.6.4 - Unauthenticated SQL Injection"
+    },
+    {
+      "id": "CVE-2026-48356",
+      "now": 0.6639,
+      "prev": 0.47472,
+      "delta": 0.18918,
+      "name": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)"
     },
     {
       "id": "CVE-2026-96656",
@@ -166,11 +180,25 @@
       "name": "OrientDB through 2.2.22 does not enforce privilege requirements during \"where\" or \"fetchplan\" or \"order by\" us"
     },
     {
+      "id": "CVE-2015-8351",
+      "now": 0.49619,
+      "prev": 0.37032,
+      "delta": 0.12587,
+      "name": "PHP remote file inclusion vulnerability in the Gwolle Guestbook plugin before 1.5.4 for WordPress, when allow_"
+    },
+    {
       "id": "CVE-2026-25939",
       "now": 0.24256,
       "prev": 0.12536,
       "delta": 0.1172,
       "name": "FUXA Unauthenticated Remote Arbitrary Scheduler Write"
+    },
+    {
+      "id": "CVE-2021-4473",
+      "now": 0.17927,
+      "prev": 0.06272,
+      "delta": 0.11655,
+      "name": "Tianxin Internet Behavior Management System Command Injection via toQuery.php"
     },
     {
       "id": "CVE-2024-50379",
@@ -185,34 +213,6 @@
       "prev": 0.8094,
       "delta": 0.10805,
       "name": "phpMyAdmin 4.0.x before 4.0.10.16, 4.4.x before 4.4.15.7, and 4.6.x before 4.6.3 does not properly choose deli"
-    },
-    {
-      "id": "CVE-2026-96654",
-      "now": 0.12689,
-      "prev": 0.01949,
-      "delta": 0.1074,
-      "name": "Plex Media Server URL injection"
-    },
-    {
-      "id": "CVE-2024-56337",
-      "now": 0.19029,
-      "prev": 0.08969,
-      "delta": 0.1006,
-      "name": "Apache Tomcat: RCE due to TOCTOU issue in JSP compilation - CVE-2024-50379 mitigation was "
-    },
-    {
-      "id": "CVE-2016-8870",
-      "now": 0.90955,
-      "prev": 0.81136,
-      "delta": 0.09819,
-      "name": "The register method in the UsersModelRegistration class in controllers/user.php in the Users component in Joom"
-    },
-    {
-      "id": "CVE-2026-116606",
-      "now": 0.10947,
-      "prev": 0.01602,
-      "delta": 0.09345,
-      "name": "Authentication Bypass Allows Global Configuration Restore in Barracuda Email Security Gate"
     }
   ],
   "newly_high": [
@@ -236,6 +236,13 @@
       "prev": 0.05607,
       "delta": 0.68659,
       "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
+    },
+    {
+      "id": "CVE-2021-3199",
+      "now": 0.88139,
+      "prev": 0.30244,
+      "delta": 0.57895,
+      "name": "Directory traversal with remote code execution can occur in /upload in ONLYOFFICE Document Server before 5.6.3"
     },
     {
       "id": "CVE-2026-5430",
@@ -267,9 +274,9 @@
     },
     {
       "id": "CVE-2025-11201",
-      "now": 0.60292,
-      "prev": 0.26282,
-      "delta": 0.3401,
+      "now": 0.61832,
+      "prev": 0.28203,
+      "delta": 0.33629,
       "name": "MLflow Tracking Server Model Creation Directory Traversal Remote Code Execution Vulnerabil"
     },
     {
@@ -287,6 +294,13 @@
       "name": "The Events Calendar <= 6.6.4 - Unauthenticated SQL Injection"
     },
     {
+      "id": "CVE-2026-48356",
+      "now": 0.6639,
+      "prev": 0.47472,
+      "delta": 0.18918,
+      "name": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)"
+    },
+    {
       "id": "CVE-2020-36847",
       "now": 0.59049,
       "prev": 0.43519,
@@ -296,8 +310,8 @@
     {
       "id": "CVE-2023-4169",
       "now": 0.54048,
-      "prev": 0.4923,
-      "delta": 0.04818,
+      "prev": 0.47601,
+      "delta": 0.06447,
       "name": "Ruijie RG-EW1200G Administrator Password set_passwd access control"
     },
     {
@@ -306,6 +320,13 @@
       "prev": 0.47169,
       "delta": 0.02944,
       "name": "ColdFusion | Improper Input Validation (CWE-20)"
+    },
+    {
+      "id": "CVE-2018-8420",
+      "now": 0.5113,
+      "prev": 0.48901,
+      "delta": 0.02229,
+      "name": "Microsoft Windows 7"
     }
   ]
 }
