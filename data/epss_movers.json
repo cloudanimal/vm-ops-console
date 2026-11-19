@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-18",
+  "updated": "2026-11-19",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-18",
-  "previous_date": "2026-11-11",
+  "current_date": "2026-11-19",
+  "previous_date": "2026-11-12",
   "risers": [
     {
       "id": "CVE-2026-50522",
@@ -17,13 +17,6 @@
       "prev": 0.01426,
       "delta": 0.77035,
       "name": "Sandbox Escape in ServiceNow AI Platform"
-    },
-    {
-      "id": "CVE-2026-61511",
-      "now": 0.74266,
-      "prev": 0.05607,
-      "delta": 0.68659,
-      "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
     },
     {
       "id": "CVE-2021-3199",
@@ -47,6 +40,20 @@
       "name": "Mirasvit Cache Warmer for Magento < 1.11.12 PHP Object Injection"
     },
     {
+      "id": "CVE-2026-40217",
+      "now": 0.61911,
+      "prev": 0.1702,
+      "delta": 0.44891,
+      "name": "BerriAI LiteLLM"
+    },
+    {
+      "id": "CVE-2019-19006",
+      "now": 0.94476,
+      "prev": 0.54941,
+      "delta": 0.39535,
+      "name": "Sangoma FreePBX 115.0.16.26 and below, 14.0.13.11 and below, 13.0.197.13 and below have Incorrect Access Contr"
+    },
+    {
       "id": "CVE-2026-28318",
       "now": 0.87267,
       "prev": 0.48001,
@@ -59,6 +66,13 @@
       "prev": 0.29448,
       "delta": 0.35446,
       "name": "FreeSWITCH 1.6.10 through 1.10.1 has a default password in event_socket.conf.xml."
+    },
+    {
+      "id": "CVE-2016-2388",
+      "now": 0.86274,
+      "prev": 0.52206,
+      "delta": 0.34068,
+      "name": "The Universal Worklist Configuration in SAP NetWeaver AS JAVA 7.4 allows remote attackers to obtain sensitive "
     },
     {
       "id": "CVE-2025-11201",
@@ -75,11 +89,11 @@
       "name": "Apache bRPC: Remote command injection vulnerability in heap builtin service"
     },
     {
-      "id": "CVE-2026-56164",
-      "now": 0.2733,
-      "prev": 0.01011,
-      "delta": 0.26319,
-      "name": "Microsoft SharePoint Server Elevation of Privilege Vulnerability"
+      "id": "CVE-2017-17733",
+      "now": 0.69457,
+      "prev": 0.44095,
+      "delta": 0.25362,
+      "name": "Maccms 8.x allows remote command execution via the wd parameter in an index.php?m=vod-search request."
     },
     {
       "id": "CVE-2026-59309",
@@ -87,6 +101,13 @@
       "prev": 0.00611,
       "delta": 0.22249,
       "name": "vCenter authentication-bypass vulnerability"
+    },
+    {
+      "id": "CVE-2026-90817",
+      "now": 0.25187,
+      "prev": 0.03749,
+      "delta": 0.21438,
+      "name": "Vanderbilt University REDCap"
     },
     {
       "id": "CVE-2026-39813",
@@ -131,6 +152,13 @@
       "name": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)"
     },
     {
+      "id": "CVE-2025-11001",
+      "now": 0.46124,
+      "prev": 0.27387,
+      "delta": 0.18737,
+      "name": "7-Zip ZIP File Parsing Directory Traversal Remote Code Execution Vulnerability"
+    },
+    {
       "id": "CVE-2026-96656",
       "now": 0.19767,
       "prev": 0.01785,
@@ -159,20 +187,6 @@
       "name": "The datalen parameter in the refclock driver in NTP 4.2.x before 4.2.8p4, and 4.3.x before 4.3.77 allows remot"
     },
     {
-      "id": "CVE-2020-36847",
-      "now": 0.59049,
-      "prev": 0.43519,
-      "delta": 0.1553,
-      "name": "Simple File List < 4.2.3 - Remote Code Execution"
-    },
-    {
-      "id": "CVE-2015-5468",
-      "now": 0.37774,
-      "prev": 0.24093,
-      "delta": 0.13681,
-      "name": "Directory traversal vulnerability in the WP e-Commerce Shop Styling plugin before 2.6 for WordPress allows rem"
-    },
-    {
       "id": "CVE-2017-11467",
       "now": 0.85882,
       "prev": 0.73071,
@@ -187,13 +201,6 @@
       "name": "PHP remote file inclusion vulnerability in the Gwolle Guestbook plugin before 1.5.4 for WordPress, when allow_"
     },
     {
-      "id": "CVE-2026-25939",
-      "now": 0.24256,
-      "prev": 0.12536,
-      "delta": 0.1172,
-      "name": "FUXA Unauthenticated Remote Arbitrary Scheduler Write"
-    },
-    {
       "id": "CVE-2021-4473",
       "now": 0.17927,
       "prev": 0.06272,
@@ -206,13 +213,6 @@
       "prev": 0.31824,
       "delta": 0.10925,
       "name": "Apache Tomcat: RCE due to TOCTOU issue in JSP compilation"
-    },
-    {
-      "id": "CVE-2016-5734",
-      "now": 0.91745,
-      "prev": 0.8094,
-      "delta": 0.10805,
-      "name": "phpMyAdmin 4.0.x before 4.0.10.16, 4.4.x before 4.4.15.7, and 4.6.x before 4.6.3 does not properly choose deli"
     }
   ],
   "newly_high": [
@@ -229,13 +229,6 @@
       "prev": 0.01426,
       "delta": 0.77035,
       "name": "Sandbox Escape in ServiceNow AI Platform"
-    },
-    {
-      "id": "CVE-2026-61511",
-      "now": 0.74266,
-      "prev": 0.05607,
-      "delta": 0.68659,
-      "name": "vBulletin < 6.2.2 Eval Injection RCE via vb5/template/runtime.php"
     },
     {
       "id": "CVE-2021-3199",
@@ -257,6 +250,13 @@
       "prev": 0.26157,
       "delta": 0.56183,
       "name": "Mirasvit Cache Warmer for Magento < 1.11.12 PHP Object Injection"
+    },
+    {
+      "id": "CVE-2026-40217",
+      "now": 0.61911,
+      "prev": 0.1702,
+      "delta": 0.44891,
+      "name": "BerriAI LiteLLM"
     },
     {
       "id": "CVE-2026-28318",
@@ -287,6 +287,13 @@
       "name": "Apache bRPC: Remote command injection vulnerability in heap builtin service"
     },
     {
+      "id": "CVE-2017-17733",
+      "now": 0.69457,
+      "prev": 0.44095,
+      "delta": 0.25362,
+      "name": "Maccms 8.x allows remote command execution via the wd parameter in an index.php?m=vod-search request."
+    },
+    {
       "id": "CVE-2024-8275",
       "now": 0.69053,
       "prev": 0.49914,
@@ -299,13 +306,6 @@
       "prev": 0.47472,
       "delta": 0.18918,
       "name": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)"
-    },
-    {
-      "id": "CVE-2020-36847",
-      "now": 0.59049,
-      "prev": 0.43519,
-      "delta": 0.1553,
-      "name": "Simple File List < 4.2.3 - Remote Code Execution"
     },
     {
       "id": "CVE-2023-4169",
