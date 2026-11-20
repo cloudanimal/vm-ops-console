@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-19",
-  "total": 1786,
+  "updated": "2026-11-20",
+  "total": 1790,
   "ransomware_count": 361,
   "by_year": {
     "2021": 311,
@@ -8,7 +8,7 @@
     "2023": 187,
     "2024": 186,
     "2025": 245,
-    "2026": 302
+    "2026": 306
   },
   "top_vendors": [
     [
@@ -17,7 +17,7 @@
     ],
     [
       "Cisco",
-      103
+      104
     ],
     [
       "Apple",
@@ -37,7 +37,7 @@
     ],
     [
       "Apache",
-      42
+      43
     ],
     [
       "Ivanti",
@@ -80,15 +80,15 @@
       16
     ],
     [
+      "SAP",
+      15
+    ],
+    [
       "Samsung",
       15
     ],
     [
       "Atlassian",
-      14
-    ],
-    [
-      "SAP",
       14
     ]
   ],
@@ -158,6 +158,10 @@
       12
     ],
     [
+      "SAP NetWeaver",
+      11
+    ],
+    [
       "Qualcomm Multiple Chipsets",
       11
     ],
@@ -167,10 +171,6 @@
     ],
     [
       "Microsoft SharePoint",
-      10
-    ],
-    [
-      "SAP NetWeaver",
       10
     ]
   ]

@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-19",
-  "previous_date": "2026-11-12",
+  "current_date": "2026-11-20",
+  "previous_date": "2026-11-13",
   "risers": [
     {
       "id": "CVE-2026-50522",
@@ -41,9 +41,9 @@
     },
     {
       "id": "CVE-2026-40217",
-      "now": 0.61911,
+      "now": 0.68902,
       "prev": 0.1702,
-      "delta": 0.44891,
+      "delta": 0.51882,
       "name": "BerriAI LiteLLM"
     },
     {
@@ -75,18 +75,11 @@
       "name": "The Universal Worklist Configuration in SAP NetWeaver AS JAVA 7.4 allows remote attackers to obtain sensitive "
     },
     {
-      "id": "CVE-2025-11201",
-      "now": 0.61832,
-      "prev": 0.28203,
-      "delta": 0.33629,
-      "name": "MLflow Tracking Server Model Creation Directory Traversal Remote Code Execution Vulnerabil"
-    },
-    {
-      "id": "CVE-2025-60021",
-      "now": 0.55167,
-      "prev": 0.25711,
-      "delta": 0.29456,
-      "name": "Apache bRPC: Remote command injection vulnerability in heap builtin service"
+      "id": "CVE-2017-7577",
+      "now": 0.53703,
+      "prev": 0.2827,
+      "delta": 0.25433,
+      "name": "XiongMai uc-httpd has directory traversal allowing the reading of arbitrary files via a \"GET ../\" HTTP request"
     },
     {
       "id": "CVE-2017-17733",
@@ -94,6 +87,13 @@
       "prev": 0.44095,
       "delta": 0.25362,
       "name": "Maccms 8.x allows remote command execution via the wd parameter in an index.php?m=vod-search request."
+    },
+    {
+      "id": "CVE-2014-0780",
+      "now": 0.97027,
+      "prev": 0.74679,
+      "delta": 0.22348,
+      "name": "InduSoft Web Studio Path Traversal"
     },
     {
       "id": "CVE-2026-59309",
@@ -104,17 +104,10 @@
     },
     {
       "id": "CVE-2026-90817",
-      "now": 0.25187,
+      "now": 0.25657,
       "prev": 0.03749,
-      "delta": 0.21438,
+      "delta": 0.21908,
       "name": "Vanderbilt University REDCap"
-    },
-    {
-      "id": "CVE-2026-39813",
-      "now": 0.44014,
-      "prev": 0.22584,
-      "delta": 0.2143,
-      "name": "Fortinet FortiSandbox"
     },
     {
       "id": "CVE-2017-16562",
@@ -166,20 +159,6 @@
       "name": "Plex Media Server arbitrary file write"
     },
     {
-      "id": "CVE-2023-49606",
-      "now": 0.80903,
-      "prev": 0.63076,
-      "delta": 0.17827,
-      "name": "Tinyproxy Tinyproxy"
-    },
-    {
-      "id": "CVE-2026-27175",
-      "now": 0.23663,
-      "prev": 0.06904,
-      "delta": 0.16759,
-      "name": "MajorDoMo Command Injection in rc/index.php via Race Condition"
-    },
-    {
       "id": "CVE-2015-7853",
       "now": 0.27603,
       "prev": 0.11781,
@@ -192,6 +171,13 @@
       "prev": 0.73071,
       "delta": 0.12811,
       "name": "OrientDB through 2.2.22 does not enforce privilege requirements during \"where\" or \"fetchplan\" or \"order by\" us"
+    },
+    {
+      "id": "CVE-2025-25291",
+      "now": 0.3359,
+      "prev": 0.20965,
+      "delta": 0.12625,
+      "name": "ruby-saml vulnerable to SAML authentication bypass due to DOCTYPE handling (parser differe"
     },
     {
       "id": "CVE-2015-8351",
@@ -213,6 +199,20 @@
       "prev": 0.31824,
       "delta": 0.10925,
       "name": "Apache Tomcat: RCE due to TOCTOU issue in JSP compilation"
+    },
+    {
+      "id": "CVE-2016-5734",
+      "now": 0.91745,
+      "prev": 0.8094,
+      "delta": 0.10805,
+      "name": "phpMyAdmin 4.0.x before 4.0.10.16, 4.4.x before 4.4.15.7, and 4.6.x before 4.6.3 does not properly choose deli"
+    },
+    {
+      "id": "CVE-2026-96654",
+      "now": 0.12689,
+      "prev": 0.01949,
+      "delta": 0.1074,
+      "name": "Plex Media Server URL injection"
     }
   ],
   "newly_high": [
@@ -253,9 +253,9 @@
     },
     {
       "id": "CVE-2026-40217",
-      "now": 0.61911,
+      "now": 0.68902,
       "prev": 0.1702,
-      "delta": 0.44891,
+      "delta": 0.51882,
       "name": "BerriAI LiteLLM"
     },
     {
@@ -273,18 +273,11 @@
       "name": "FreeSWITCH 1.6.10 through 1.10.1 has a default password in event_socket.conf.xml."
     },
     {
-      "id": "CVE-2025-11201",
-      "now": 0.61832,
-      "prev": 0.28203,
-      "delta": 0.33629,
-      "name": "MLflow Tracking Server Model Creation Directory Traversal Remote Code Execution Vulnerabil"
-    },
-    {
-      "id": "CVE-2025-60021",
-      "now": 0.55167,
-      "prev": 0.25711,
-      "delta": 0.29456,
-      "name": "Apache bRPC: Remote command injection vulnerability in heap builtin service"
+      "id": "CVE-2017-7577",
+      "now": 0.53703,
+      "prev": 0.2827,
+      "delta": 0.25433,
+      "name": "XiongMai uc-httpd has directory traversal allowing the reading of arbitrary files via a \"GET ../\" HTTP request"
     },
     {
       "id": "CVE-2017-17733",
