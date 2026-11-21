@@ -1,9 +1,16 @@
 {
-  "updated": "2026-11-20",
+  "updated": "2026-11-21",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-20",
-  "previous_date": "2026-11-13",
+  "current_date": "2026-11-21",
+  "previous_date": "2026-11-14",
   "risers": [
+    {
+      "id": "CVE-2026-98432",
+      "now": 0.8213,
+      "prev": 0.00777,
+      "delta": 0.81353,
+      "name": "ipv4: free inet_opt and ireq_opt after an RCU grace period"
+    },
     {
       "id": "CVE-2026-50522",
       "now": 0.8187,
@@ -17,6 +24,27 @@
       "prev": 0.01426,
       "delta": 0.77035,
       "name": "Sandbox Escape in ServiceNow AI Platform"
+    },
+    {
+      "id": "CVE-2026-123158",
+      "now": 0.8768,
+      "prev": 0.189,
+      "delta": 0.6878,
+      "name": "OpenBSD OpenSSH"
+    },
+    {
+      "id": "CVE-2026-116606",
+      "now": 0.7452,
+      "prev": 0.10947,
+      "delta": 0.63573,
+      "name": "Authentication Bypass Allows Global Configuration Restore in Barracuda Email Security Gate"
+    },
+    {
+      "id": "CVE-2026-40217",
+      "now": 0.78004,
+      "prev": 0.1702,
+      "delta": 0.60984,
+      "name": "BerriAI LiteLLM"
     },
     {
       "id": "CVE-2021-3199",
@@ -40,11 +68,39 @@
       "name": "Mirasvit Cache Warmer for Magento < 1.11.12 PHP Object Injection"
     },
     {
-      "id": "CVE-2026-40217",
-      "now": 0.68902,
-      "prev": 0.1702,
-      "delta": 0.51882,
-      "name": "BerriAI LiteLLM"
+      "id": "CVE-2026-111560",
+      "now": 0.63769,
+      "prev": 0.09082,
+      "delta": 0.54687,
+      "name": "OS Command Injection in Barracuda Appliances"
+    },
+    {
+      "id": "CVE-2026-110264",
+      "now": 0.54049,
+      "prev": 0.01349,
+      "delta": 0.527,
+      "name": "Integer Overflow or Wraparound in GitLab"
+    },
+    {
+      "id": "CVE-2024-21410",
+      "now": 0.60833,
+      "prev": 0.12661,
+      "delta": 0.48172,
+      "name": "Microsoft Exchange Server Elevation of Privilege Vulnerability"
+    },
+    {
+      "id": "CVE-2026-116779",
+      "now": 0.44112,
+      "prev": 0.02473,
+      "delta": 0.41639,
+      "name": "FreeSWITCH: Inbound SIP MESSAGE can select the api chat proto and run FreeSWITCH API comma"
+    },
+    {
+      "id": "CVE-2016-3976",
+      "now": 0.8746,
+      "prev": 0.47252,
+      "delta": 0.40208,
+      "name": "Directory traversal vulnerability in SAP NetWeaver AS Java 7.1 through 7.5 allows remote attackers to read arb"
     },
     {
       "id": "CVE-2019-19006",
@@ -54,18 +110,11 @@
       "name": "Sangoma FreePBX 115.0.16.26 and below, 14.0.13.11 and below, 13.0.197.13 and below have Incorrect Access Contr"
     },
     {
-      "id": "CVE-2026-28318",
-      "now": 0.87267,
-      "prev": 0.48001,
-      "delta": 0.39266,
-      "name": "SolarWinds Serv-U Unauthenticated Denial of Service Vulnerability"
-    },
-    {
-      "id": "CVE-2019-19492",
-      "now": 0.64894,
-      "prev": 0.29448,
-      "delta": 0.35446,
-      "name": "FreeSWITCH 1.6.10 through 1.10.1 has a default password in event_socket.conf.xml."
+      "id": "CVE-2026-48356",
+      "now": 0.81624,
+      "prev": 0.47472,
+      "delta": 0.34152,
+      "name": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)"
     },
     {
       "id": "CVE-2016-2388",
@@ -73,6 +122,20 @@
       "prev": 0.52206,
       "delta": 0.34068,
       "name": "The Universal Worklist Configuration in SAP NetWeaver AS JAVA 7.4 allows remote attackers to obtain sensitive "
+    },
+    {
+      "id": "CVE-2026-59309",
+      "now": 0.30867,
+      "prev": 0.00611,
+      "delta": 0.30256,
+      "name": "vCenter authentication-bypass vulnerability"
+    },
+    {
+      "id": "CVE-2026-90817",
+      "now": 0.33395,
+      "prev": 0.03749,
+      "delta": 0.29646,
+      "name": "Vanderbilt University REDCap"
     },
     {
       "id": "CVE-2017-7577",
@@ -96,20 +159,6 @@
       "name": "InduSoft Web Studio Path Traversal"
     },
     {
-      "id": "CVE-2026-59309",
-      "now": 0.2286,
-      "prev": 0.00611,
-      "delta": 0.22249,
-      "name": "vCenter authentication-bypass vulnerability"
-    },
-    {
-      "id": "CVE-2026-90817",
-      "now": 0.25657,
-      "prev": 0.03749,
-      "delta": 0.21908,
-      "name": "Vanderbilt University REDCap"
-    },
-    {
       "id": "CVE-2017-16562",
       "now": 0.4787,
       "prev": 0.27369,
@@ -124,25 +173,11 @@
       "name": "Weaver E-cology 10.0 Unauthenticated RCE via dubboApi Debug Endpoint"
     },
     {
-      "id": "CVE-2026-116779",
-      "now": 0.22081,
-      "prev": 0.02473,
-      "delta": 0.19608,
-      "name": "FreeSWITCH: Inbound SIP MESSAGE can select the api chat proto and run FreeSWITCH API comma"
-    },
-    {
       "id": "CVE-2024-8275",
       "now": 0.69053,
       "prev": 0.49914,
       "delta": 0.19139,
       "name": "The Events Calendar <= 6.6.4 - Unauthenticated SQL Injection"
-    },
-    {
-      "id": "CVE-2026-48356",
-      "now": 0.6639,
-      "prev": 0.47472,
-      "delta": 0.18918,
-      "name": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)"
     },
     {
       "id": "CVE-2025-11001",
@@ -152,11 +187,25 @@
       "name": "7-Zip ZIP File Parsing Directory Traversal Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2026-96656",
-      "now": 0.19767,
-      "prev": 0.01785,
-      "delta": 0.17982,
-      "name": "Plex Media Server arbitrary file write"
+      "id": "CVE-2026-49869",
+      "now": 0.20409,
+      "prev": 0.02095,
+      "delta": 0.18314,
+      "name": "Kestra: Unauthenticated Remote Code Execution via Authentication Bypass in `Authentication"
+    },
+    {
+      "id": "CVE-2026-102895",
+      "now": 0.18787,
+      "prev": 0.00517,
+      "delta": 0.1827,
+      "name": "GPUStack: Authentication bypass via trusted loopback source (reverse-proxy TCP peer or X-G"
+    },
+    {
+      "id": "CVE-2026-111497",
+      "now": 0.99931,
+      "prev": 0.82641,
+      "delta": 0.1729,
+      "name": "Out-of-Bounds Write in Google Brotli Decoder"
     },
     {
       "id": "CVE-2015-7853",
@@ -164,58 +213,16 @@
       "prev": 0.11781,
       "delta": 0.15822,
       "name": "The datalen parameter in the refclock driver in NTP 4.2.x before 4.2.8p4, and 4.3.x before 4.3.77 allows remot"
-    },
-    {
-      "id": "CVE-2017-11467",
-      "now": 0.85882,
-      "prev": 0.73071,
-      "delta": 0.12811,
-      "name": "OrientDB through 2.2.22 does not enforce privilege requirements during \"where\" or \"fetchplan\" or \"order by\" us"
-    },
-    {
-      "id": "CVE-2025-25291",
-      "now": 0.3359,
-      "prev": 0.20965,
-      "delta": 0.12625,
-      "name": "ruby-saml vulnerable to SAML authentication bypass due to DOCTYPE handling (parser differe"
-    },
-    {
-      "id": "CVE-2015-8351",
-      "now": 0.49619,
-      "prev": 0.37032,
-      "delta": 0.12587,
-      "name": "PHP remote file inclusion vulnerability in the Gwolle Guestbook plugin before 1.5.4 for WordPress, when allow_"
-    },
-    {
-      "id": "CVE-2021-4473",
-      "now": 0.17927,
-      "prev": 0.06272,
-      "delta": 0.11655,
-      "name": "Tianxin Internet Behavior Management System Command Injection via toQuery.php"
-    },
-    {
-      "id": "CVE-2024-50379",
-      "now": 0.42749,
-      "prev": 0.31824,
-      "delta": 0.10925,
-      "name": "Apache Tomcat: RCE due to TOCTOU issue in JSP compilation"
-    },
-    {
-      "id": "CVE-2016-5734",
-      "now": 0.91745,
-      "prev": 0.8094,
-      "delta": 0.10805,
-      "name": "phpMyAdmin 4.0.x before 4.0.10.16, 4.4.x before 4.4.15.7, and 4.6.x before 4.6.3 does not properly choose deli"
-    },
-    {
-      "id": "CVE-2026-96654",
-      "now": 0.12689,
-      "prev": 0.01949,
-      "delta": 0.1074,
-      "name": "Plex Media Server URL injection"
     }
   ],
   "newly_high": [
+    {
+      "id": "CVE-2026-98432",
+      "now": 0.8213,
+      "prev": 0.00777,
+      "delta": 0.81353,
+      "name": "ipv4: free inet_opt and ireq_opt after an RCU grace period"
+    },
     {
       "id": "CVE-2026-50522",
       "now": 0.8187,
@@ -229,6 +236,27 @@
       "prev": 0.01426,
       "delta": 0.77035,
       "name": "Sandbox Escape in ServiceNow AI Platform"
+    },
+    {
+      "id": "CVE-2026-123158",
+      "now": 0.8768,
+      "prev": 0.189,
+      "delta": 0.6878,
+      "name": "OpenBSD OpenSSH"
+    },
+    {
+      "id": "CVE-2026-116606",
+      "now": 0.7452,
+      "prev": 0.10947,
+      "delta": 0.63573,
+      "name": "Authentication Bypass Allows Global Configuration Restore in Barracuda Email Security Gate"
+    },
+    {
+      "id": "CVE-2026-40217",
+      "now": 0.78004,
+      "prev": 0.1702,
+      "delta": 0.60984,
+      "name": "BerriAI LiteLLM"
     },
     {
       "id": "CVE-2021-3199",
@@ -252,25 +280,39 @@
       "name": "Mirasvit Cache Warmer for Magento < 1.11.12 PHP Object Injection"
     },
     {
-      "id": "CVE-2026-40217",
-      "now": 0.68902,
-      "prev": 0.1702,
-      "delta": 0.51882,
-      "name": "BerriAI LiteLLM"
+      "id": "CVE-2026-111560",
+      "now": 0.63769,
+      "prev": 0.09082,
+      "delta": 0.54687,
+      "name": "OS Command Injection in Barracuda Appliances"
     },
     {
-      "id": "CVE-2026-28318",
-      "now": 0.87267,
-      "prev": 0.48001,
-      "delta": 0.39266,
-      "name": "SolarWinds Serv-U Unauthenticated Denial of Service Vulnerability"
+      "id": "CVE-2026-110264",
+      "now": 0.54049,
+      "prev": 0.01349,
+      "delta": 0.527,
+      "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
-      "id": "CVE-2019-19492",
-      "now": 0.64894,
-      "prev": 0.29448,
-      "delta": 0.35446,
-      "name": "FreeSWITCH 1.6.10 through 1.10.1 has a default password in event_socket.conf.xml."
+      "id": "CVE-2024-21410",
+      "now": 0.60833,
+      "prev": 0.12661,
+      "delta": 0.48172,
+      "name": "Microsoft Exchange Server Elevation of Privilege Vulnerability"
+    },
+    {
+      "id": "CVE-2016-3976",
+      "now": 0.8746,
+      "prev": 0.47252,
+      "delta": 0.40208,
+      "name": "Directory traversal vulnerability in SAP NetWeaver AS Java 7.1 through 7.5 allows remote attackers to read arb"
+    },
+    {
+      "id": "CVE-2026-48356",
+      "now": 0.81624,
+      "prev": 0.47472,
+      "delta": 0.34152,
+      "name": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)"
     },
     {
       "id": "CVE-2017-7577",
@@ -292,20 +334,6 @@
       "prev": 0.49914,
       "delta": 0.19139,
       "name": "The Events Calendar <= 6.6.4 - Unauthenticated SQL Injection"
-    },
-    {
-      "id": "CVE-2026-48356",
-      "now": 0.6639,
-      "prev": 0.47472,
-      "delta": 0.18918,
-      "name": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)"
-    },
-    {
-      "id": "CVE-2023-4169",
-      "now": 0.54048,
-      "prev": 0.47601,
-      "delta": 0.06447,
-      "name": "Ruijie RG-EW1200G Administrator Password set_passwd access control"
     },
     {
       "id": "CVE-2023-44355",
