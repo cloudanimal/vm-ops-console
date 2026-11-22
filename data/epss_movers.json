@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-21",
-  "previous_date": "2026-11-14",
+  "current_date": "2026-11-22",
+  "previous_date": "2026-11-15",
   "risers": [
     {
       "id": "CVE-2026-98432",
@@ -19,17 +19,10 @@
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2026-6875",
-      "now": 0.78461,
-      "prev": 0.01426,
-      "delta": 0.77035,
-      "name": "Sandbox Escape in ServiceNow AI Platform"
-    },
-    {
       "id": "CVE-2026-123158",
-      "now": 0.8768,
+      "now": 0.95538,
       "prev": 0.189,
-      "delta": 0.6878,
+      "delta": 0.76638,
       "name": "OpenBSD OpenSSH"
     },
     {
@@ -98,8 +91,8 @@
     {
       "id": "CVE-2016-3976",
       "now": 0.8746,
-      "prev": 0.47252,
-      "delta": 0.40208,
+      "prev": 0.47532,
+      "delta": 0.39928,
       "name": "Directory traversal vulnerability in SAP NetWeaver AS Java 7.1 through 7.5 allows remote attackers to read arb"
     },
     {
@@ -124,18 +117,25 @@
       "name": "The Universal Worklist Configuration in SAP NetWeaver AS JAVA 7.4 allows remote attackers to obtain sensitive "
     },
     {
+      "id": "CVE-2025-11001",
+      "now": 0.62465,
+      "prev": 0.2842,
+      "delta": 0.34045,
+      "name": "7-Zip ZIP File Parsing Directory Traversal Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2026-90817",
+      "now": 0.34335,
+      "prev": 0.03749,
+      "delta": 0.30586,
+      "name": "Vanderbilt University REDCap"
+    },
+    {
       "id": "CVE-2026-59309",
       "now": 0.30867,
       "prev": 0.00611,
       "delta": 0.30256,
       "name": "vCenter authentication-bypass vulnerability"
-    },
-    {
-      "id": "CVE-2026-90817",
-      "now": 0.33395,
-      "prev": 0.03749,
-      "delta": 0.29646,
-      "name": "Vanderbilt University REDCap"
     },
     {
       "id": "CVE-2017-7577",
@@ -180,13 +180,6 @@
       "name": "The Events Calendar <= 6.6.4 - Unauthenticated SQL Injection"
     },
     {
-      "id": "CVE-2025-11001",
-      "now": 0.46124,
-      "prev": 0.27387,
-      "delta": 0.18737,
-      "name": "7-Zip ZIP File Parsing Directory Traversal Remote Code Execution Vulnerability"
-    },
-    {
       "id": "CVE-2026-49869",
       "now": 0.20409,
       "prev": 0.02095,
@@ -213,6 +206,13 @@
       "prev": 0.11781,
       "delta": 0.15822,
       "name": "The datalen parameter in the refclock driver in NTP 4.2.x before 4.2.8p4, and 4.3.x before 4.3.77 allows remot"
+    },
+    {
+      "id": "CVE-2026-119618",
+      "now": 0.15822,
+      "prev": 0.01527,
+      "delta": 0.14295,
+      "name": "Apache HTTP Server: mod_http2: heap corruption and RCE in assign_headers"
     }
   ],
   "newly_high": [
@@ -231,17 +231,10 @@
       "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2026-6875",
-      "now": 0.78461,
-      "prev": 0.01426,
-      "delta": 0.77035,
-      "name": "Sandbox Escape in ServiceNow AI Platform"
-    },
-    {
       "id": "CVE-2026-123158",
-      "now": 0.8768,
+      "now": 0.95538,
       "prev": 0.189,
-      "delta": 0.6878,
+      "delta": 0.76638,
       "name": "OpenBSD OpenSSH"
     },
     {
@@ -303,8 +296,8 @@
     {
       "id": "CVE-2016-3976",
       "now": 0.8746,
-      "prev": 0.47252,
-      "delta": 0.40208,
+      "prev": 0.47532,
+      "delta": 0.39928,
       "name": "Directory traversal vulnerability in SAP NetWeaver AS Java 7.1 through 7.5 allows remote attackers to read arb"
     },
     {
@@ -313,6 +306,13 @@
       "prev": 0.47472,
       "delta": 0.34152,
       "name": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)"
+    },
+    {
+      "id": "CVE-2025-11001",
+      "now": 0.62465,
+      "prev": 0.2842,
+      "delta": 0.34045,
+      "name": "7-Zip ZIP File Parsing Directory Traversal Remote Code Execution Vulnerability"
     },
     {
       "id": "CVE-2017-7577",
@@ -336,11 +336,11 @@
       "name": "The Events Calendar <= 6.6.4 - Unauthenticated SQL Injection"
     },
     {
-      "id": "CVE-2023-44355",
-      "now": 0.50113,
-      "prev": 0.47169,
-      "delta": 0.02944,
-      "name": "ColdFusion | Improper Input Validation (CWE-20)"
+      "id": "CVE-2022-22956",
+      "now": 0.52845,
+      "prev": 0.49533,
+      "delta": 0.03312,
+      "name": "VMware Workspace ONE Access"
     },
     {
       "id": "CVE-2018-8420",
