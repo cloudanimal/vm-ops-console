@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-24",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-23",
+  "current_date": "2026-11-24",
   "previous_date": "2026-11-17",
   "risers": [
     {
@@ -33,6 +33,13 @@
       "name": "Authentication Bypass Allows Global Configuration Restore in Barracuda Email Security Gate"
     },
     {
+      "id": "CVE-2013-10050",
+      "now": 0.75193,
+      "prev": 0.13255,
+      "delta": 0.61938,
+      "name": "D-Link Devices tools_vct.xgi Authenticated RCE"
+    },
+    {
       "id": "CVE-2021-3199",
       "now": 0.88139,
       "prev": 0.30244,
@@ -54,6 +61,34 @@
       "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
+      "id": "CVE-2025-68461",
+      "now": 0.76957,
+      "prev": 0.27407,
+      "delta": 0.4955,
+      "name": "Roundcube Webmail"
+    },
+    {
+      "id": "CVE-2026-20963",
+      "now": 0.78414,
+      "prev": 0.29201,
+      "delta": 0.49213,
+      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2026-20045",
+      "now": 0.53647,
+      "prev": 0.04541,
+      "delta": 0.49106,
+      "name": "Cisco Unified Communications Products Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2010-20121",
+      "now": 0.53997,
+      "prev": 0.05058,
+      "delta": 0.48939,
+      "name": "EasyFTP Server <= 1.7.0.11 CWD Command Stack Buffer Overflow"
+    },
+    {
       "id": "CVE-2024-21410",
       "now": 0.60833,
       "prev": 0.12661,
@@ -61,11 +96,53 @@
       "name": "Microsoft Exchange Server Elevation of Privilege Vulnerability"
     },
     {
+      "id": "CVE-2026-20131",
+      "now": 0.90968,
+      "prev": 0.44431,
+      "delta": 0.46537,
+      "name": "Cisco Secure Firewall Management Center Software Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2018-8581",
+      "now": 0.72708,
+      "prev": 0.27558,
+      "delta": 0.4515,
+      "name": "Microsoft Microsoft Exchange Server"
+    },
+    {
+      "id": "CVE-2025-34117",
+      "now": 0.63604,
+      "prev": 0.2077,
+      "delta": 0.42834,
+      "name": "Netcore / Netis Routers RCE via UDP Port 53413 Backdoor"
+    },
+    {
+      "id": "CVE-2020-25042",
+      "now": 0.61023,
+      "prev": 0.18581,
+      "delta": 0.42442,
+      "name": "An arbitrary file upload issue exists in Mara CMS 7.5. In order to exploit this, an attacker must have a valid"
+    },
+    {
       "id": "CVE-2026-116779",
       "now": 0.44112,
       "prev": 0.02473,
       "delta": 0.41639,
       "name": "FreeSWITCH: Inbound SIP MESSAGE can select the api chat proto and run FreeSWITCH API comma"
+    },
+    {
+      "id": "CVE-2021-22893",
+      "now": 0.88819,
+      "prev": 0.47508,
+      "delta": 0.41311,
+      "name": "Pulse Connect Secure"
+    },
+    {
+      "id": "CVE-2017-18047",
+      "now": 0.60629,
+      "prev": 0.19727,
+      "delta": 0.40902,
+      "name": "Buffer Overflow in the FTP client in LabF nfsAxe 3.7 allows remote FTP servers to execute arbitrary code via a"
     },
     {
       "id": "CVE-2016-3976",
@@ -82,137 +159,60 @@
       "name": "Sangoma FreePBX 115.0.16.26 and below, 14.0.13.11 and below, 13.0.197.13 and below have Incorrect Access Contr"
     },
     {
-      "id": "CVE-2026-0769",
-      "now": 0.75837,
-      "prev": 0.41152,
-      "delta": 0.34685,
-      "name": "Langflow eval_custom_component_code Eval Injection Remote Code Execution Vulnerability"
+      "id": "CVE-2020-23575",
+      "now": 0.73955,
+      "prev": 0.34999,
+      "delta": 0.38956,
+      "name": "A directory traversal vulnerability exists in Kyocera Printer d-COPIA253MF plus. Successful exploitation of th"
     },
     {
-      "id": "CVE-2026-48356",
-      "now": 0.81624,
-      "prev": 0.47472,
-      "delta": 0.34152,
-      "name": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)"
+      "id": "CVE-2016-5018",
+      "now": 0.48975,
+      "prev": 0.10303,
+      "delta": 0.38672,
+      "name": "Apache Software Foundation Apache Tomcat"
     },
     {
-      "id": "CVE-2016-2388",
-      "now": 0.86274,
-      "prev": 0.52206,
-      "delta": 0.34068,
-      "name": "The Universal Worklist Configuration in SAP NetWeaver AS JAVA 7.4 allows remote attackers to obtain sensitive "
+      "id": "CVE-2020-10181",
+      "now": 0.53322,
+      "prev": 0.14938,
+      "delta": 0.38384,
+      "name": "goform/formEMR30 in Sumavision Enhanced Multimedia Router (EMR) 3.0.4.27 allows creation of arbitrary users wi"
     },
     {
-      "id": "CVE-2025-11001",
-      "now": 0.62465,
-      "prev": 0.2842,
-      "delta": 0.34045,
-      "name": "7-Zip ZIP File Parsing Directory Traversal Remote Code Execution Vulnerability"
+      "id": "CVE-2026-32201",
+      "now": 0.81249,
+      "prev": 0.43954,
+      "delta": 0.37295,
+      "name": "Microsoft SharePoint Server Spoofing Vulnerability"
     },
     {
-      "id": "CVE-2026-90817",
-      "now": 0.34335,
-      "prev": 0.03749,
-      "delta": 0.30586,
-      "name": "Vanderbilt University REDCap"
+      "id": "CVE-2020-29134",
+      "now": 0.64635,
+      "prev": 0.27844,
+      "delta": 0.36791,
+      "name": "The TOTVS Fluig platform allows path traversal through the parameter \"file = .. /\" encoded in base64. This aff"
     },
     {
-      "id": "CVE-2017-7577",
-      "now": 0.53703,
-      "prev": 0.2827,
-      "delta": 0.25433,
-      "name": "XiongMai uc-httpd has directory traversal allowing the reading of arbitrary files via a \"GET ../\" HTTP request"
+      "id": "CVE-2020-15803",
+      "now": 0.68835,
+      "prev": 0.32304,
+      "delta": 0.36531,
+      "name": "Zabbix before 3.0.32rc1, 4.x before 4.0.22rc1, 4.1.x through 4.4.x before 4.4.10rc1, and 5.x before 5.0.2rc1 a"
     },
     {
-      "id": "CVE-2017-17733",
-      "now": 0.69457,
-      "prev": 0.44095,
-      "delta": 0.25362,
-      "name": "Maccms 8.x allows remote command execution via the wd parameter in an index.php?m=vod-search request."
+      "id": "CVE-2018-8372",
+      "now": 0.62512,
+      "prev": 0.26279,
+      "delta": 0.36233,
+      "name": "Microsoft ChakraCore"
     },
     {
-      "id": "CVE-2026-124194",
-      "now": 0.24894,
-      "prev": 0.0162,
-      "delta": 0.23274,
-      "name": "Microsoft Outlook Spoofing Vulnerability"
-    },
-    {
-      "id": "CVE-2014-0780",
-      "now": 0.97027,
-      "prev": 0.74679,
-      "delta": 0.22348,
-      "name": "InduSoft Web Studio Path Traversal"
-    },
-    {
-      "id": "CVE-2026-49869",
-      "now": 0.20409,
-      "prev": 0.02095,
-      "delta": 0.18314,
-      "name": "Kestra: Unauthenticated Remote Code Execution via Authentication Bypass in `Authentication"
-    },
-    {
-      "id": "CVE-2026-102895",
-      "now": 0.18787,
-      "prev": 0.00517,
-      "delta": 0.1827,
-      "name": "GPUStack: Authentication bypass via trusted loopback source (reverse-proxy TCP peer or X-G"
-    },
-    {
-      "id": "CVE-2026-111497",
-      "now": 0.99931,
-      "prev": 0.82641,
-      "delta": 0.1729,
-      "name": "Out-of-Bounds Write in Google Brotli Decoder"
-    },
-    {
-      "id": "CVE-2026-119618",
-      "now": 0.15822,
-      "prev": 0.01583,
-      "delta": 0.14239,
-      "name": "Apache HTTP Server: mod_http2: heap corruption and RCE in assign_headers"
-    },
-    {
-      "id": "CVE-2025-25291",
-      "now": 0.3359,
-      "prev": 0.20965,
-      "delta": 0.12625,
-      "name": "ruby-saml vulnerable to SAML authentication bypass due to DOCTYPE handling (parser differe"
-    },
-    {
-      "id": "CVE-2015-8351",
-      "now": 0.49619,
-      "prev": 0.37032,
-      "delta": 0.12587,
-      "name": "PHP remote file inclusion vulnerability in the Gwolle Guestbook plugin before 1.5.4 for WordPress, when allow_"
-    },
-    {
-      "id": "CVE-2026-115731",
-      "now": 0.12839,
-      "prev": 0.00366,
-      "delta": 0.12473,
-      "name": "Report Deserialization Code Execution"
-    },
-    {
-      "id": "CVE-2021-4473",
-      "now": 0.17927,
-      "prev": 0.06272,
-      "delta": 0.11655,
-      "name": "Tianxin Internet Behavior Management System Command Injection via toQuery.php"
-    },
-    {
-      "id": "CVE-2023-48292",
-      "now": 0.33907,
-      "prev": 0.22938,
-      "delta": 0.10969,
-      "name": "XWiki Admin Tools Application Run Shell Command allows CSRF RCE attacks"
-    },
-    {
-      "id": "CVE-2026-118539",
-      "now": 0.11185,
-      "prev": 0.00671,
-      "delta": 0.10514,
-      "name": "Commerce Core - Highly critical - Access bypass - SA-CONTRIB-2026-254"
+      "id": "CVE-2016-5649",
+      "now": 0.59673,
+      "prev": 0.23582,
+      "delta": 0.36091,
+      "name": "Netgear DGN2200 and DGND3700 disclose the administrator password"
     }
   ],
   "newly_high": [
@@ -245,6 +245,13 @@
       "name": "Authentication Bypass Allows Global Configuration Restore in Barracuda Email Security Gate"
     },
     {
+      "id": "CVE-2013-10050",
+      "now": 0.75193,
+      "prev": 0.13255,
+      "delta": 0.61938,
+      "name": "D-Link Devices tools_vct.xgi Authenticated RCE"
+    },
+    {
       "id": "CVE-2021-3199",
       "now": 0.88139,
       "prev": 0.30244,
@@ -266,11 +273,81 @@
       "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
+      "id": "CVE-2025-68461",
+      "now": 0.76957,
+      "prev": 0.27407,
+      "delta": 0.4955,
+      "name": "Roundcube Webmail"
+    },
+    {
+      "id": "CVE-2026-20963",
+      "now": 0.78414,
+      "prev": 0.29201,
+      "delta": 0.49213,
+      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2026-20045",
+      "now": 0.53647,
+      "prev": 0.04541,
+      "delta": 0.49106,
+      "name": "Cisco Unified Communications Products Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2010-20121",
+      "now": 0.53997,
+      "prev": 0.05058,
+      "delta": 0.48939,
+      "name": "EasyFTP Server <= 1.7.0.11 CWD Command Stack Buffer Overflow"
+    },
+    {
       "id": "CVE-2024-21410",
       "now": 0.60833,
       "prev": 0.12661,
       "delta": 0.48172,
       "name": "Microsoft Exchange Server Elevation of Privilege Vulnerability"
+    },
+    {
+      "id": "CVE-2026-20131",
+      "now": 0.90968,
+      "prev": 0.44431,
+      "delta": 0.46537,
+      "name": "Cisco Secure Firewall Management Center Software Remote Code Execution Vulnerability"
+    },
+    {
+      "id": "CVE-2018-8581",
+      "now": 0.72708,
+      "prev": 0.27558,
+      "delta": 0.4515,
+      "name": "Microsoft Microsoft Exchange Server"
+    },
+    {
+      "id": "CVE-2025-34117",
+      "now": 0.63604,
+      "prev": 0.2077,
+      "delta": 0.42834,
+      "name": "Netcore / Netis Routers RCE via UDP Port 53413 Backdoor"
+    },
+    {
+      "id": "CVE-2020-25042",
+      "now": 0.61023,
+      "prev": 0.18581,
+      "delta": 0.42442,
+      "name": "An arbitrary file upload issue exists in Mara CMS 7.5. In order to exploit this, an attacker must have a valid"
+    },
+    {
+      "id": "CVE-2021-22893",
+      "now": 0.88819,
+      "prev": 0.47508,
+      "delta": 0.41311,
+      "name": "Pulse Connect Secure"
+    },
+    {
+      "id": "CVE-2017-18047",
+      "now": 0.60629,
+      "prev": 0.19727,
+      "delta": 0.40902,
+      "name": "Buffer Overflow in the FTP client in LabF nfsAxe 3.7 allows remote FTP servers to execute arbitrary code via a"
     },
     {
       "id": "CVE-2016-3976",
@@ -280,67 +357,74 @@
       "name": "Directory traversal vulnerability in SAP NetWeaver AS Java 7.1 through 7.5 allows remote attackers to read arb"
     },
     {
-      "id": "CVE-2026-0769",
-      "now": 0.75837,
-      "prev": 0.41152,
-      "delta": 0.34685,
-      "name": "Langflow eval_custom_component_code Eval Injection Remote Code Execution Vulnerability"
+      "id": "CVE-2020-23575",
+      "now": 0.73955,
+      "prev": 0.34999,
+      "delta": 0.38956,
+      "name": "A directory traversal vulnerability exists in Kyocera Printer d-COPIA253MF plus. Successful exploitation of th"
     },
     {
-      "id": "CVE-2026-48356",
-      "now": 0.81624,
-      "prev": 0.47472,
-      "delta": 0.34152,
-      "name": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)"
+      "id": "CVE-2020-10181",
+      "now": 0.53322,
+      "prev": 0.14938,
+      "delta": 0.38384,
+      "name": "goform/formEMR30 in Sumavision Enhanced Multimedia Router (EMR) 3.0.4.27 allows creation of arbitrary users wi"
+    },
+    {
+      "id": "CVE-2026-32201",
+      "now": 0.81249,
+      "prev": 0.43954,
+      "delta": 0.37295,
+      "name": "Microsoft SharePoint Server Spoofing Vulnerability"
+    },
+    {
+      "id": "CVE-2020-29134",
+      "now": 0.64635,
+      "prev": 0.27844,
+      "delta": 0.36791,
+      "name": "The TOTVS Fluig platform allows path traversal through the parameter \"file = .. /\" encoded in base64. This aff"
+    },
+    {
+      "id": "CVE-2020-15803",
+      "now": 0.68835,
+      "prev": 0.32304,
+      "delta": 0.36531,
+      "name": "Zabbix before 3.0.32rc1, 4.x before 4.0.22rc1, 4.1.x through 4.4.x before 4.4.10rc1, and 5.x before 5.0.2rc1 a"
+    },
+    {
+      "id": "CVE-2018-8372",
+      "now": 0.62512,
+      "prev": 0.26279,
+      "delta": 0.36233,
+      "name": "Microsoft ChakraCore"
+    },
+    {
+      "id": "CVE-2016-5649",
+      "now": 0.59673,
+      "prev": 0.23582,
+      "delta": 0.36091,
+      "name": "Netgear DGN2200 and DGND3700 disclose the administrator password"
+    },
+    {
+      "id": "CVE-2022-29009",
+      "now": 0.58986,
+      "prev": 0.22909,
+      "delta": 0.36077,
+      "name": "Multiple SQL injection vulnerabilities via the username and password parameters in the Admin panel of Cyber Ca"
     },
     {
       "id": "CVE-2025-11001",
-      "now": 0.62465,
+      "now": 0.63846,
       "prev": 0.2842,
-      "delta": 0.34045,
+      "delta": 0.35426,
       "name": "7-Zip ZIP File Parsing Directory Traversal Remote Code Execution Vulnerability"
     },
     {
-      "id": "CVE-2017-7577",
-      "now": 0.53703,
-      "prev": 0.2827,
-      "delta": 0.25433,
-      "name": "XiongMai uc-httpd has directory traversal allowing the reading of arbitrary files via a \"GET ../\" HTTP request"
-    },
-    {
-      "id": "CVE-2017-17733",
-      "now": 0.69457,
-      "prev": 0.44095,
-      "delta": 0.25362,
-      "name": "Maccms 8.x allows remote command execution via the wd parameter in an index.php?m=vod-search request."
-    },
-    {
-      "id": "CVE-2020-13756",
-      "now": 0.55084,
-      "prev": 0.49797,
-      "delta": 0.05287,
-      "name": "Sabberworm PHP CSS Parser before 8.3.1 calls eval on uncontrolled data, possibly leading to remote code execut"
-    },
-    {
-      "id": "CVE-2003-0816",
-      "now": 0.52318,
-      "prev": 0.48374,
-      "delta": 0.03944,
-      "name": "Internet Explorer 6 SP1 and earlier allows remote attackers to bypass zone restrictions by (1) using the Navig"
-    },
-    {
-      "id": "CVE-2022-22956",
-      "now": 0.52845,
-      "prev": 0.49533,
-      "delta": 0.03312,
-      "name": "VMware Workspace ONE Access"
-    },
-    {
-      "id": "CVE-2018-8420",
-      "now": 0.5113,
-      "prev": 0.48901,
-      "delta": 0.02229,
-      "name": "Microsoft Windows 7"
+      "id": "CVE-2013-10048",
+      "now": 0.51327,
+      "prev": 0.16581,
+      "delta": 0.34746,
+      "name": "D-Link Devices command.php Unauthenticated RCE"
     }
   ]
 }
