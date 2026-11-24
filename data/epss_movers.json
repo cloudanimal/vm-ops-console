@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-22",
+  "updated": "2026-11-24",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-22",
-  "previous_date": "2026-11-15",
+  "current_date": "2026-11-23",
+  "previous_date": "2026-11-17",
   "risers": [
     {
       "id": "CVE-2026-98432",
@@ -12,18 +12,18 @@
       "name": "ipv4: free inet_opt and ireq_opt after an RCU grace period"
     },
     {
-      "id": "CVE-2026-50522",
-      "now": 0.8187,
-      "prev": 0.03042,
-      "delta": 0.78828,
-      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
-    },
-    {
       "id": "CVE-2026-123158",
       "now": 0.95538,
       "prev": 0.189,
       "delta": 0.76638,
       "name": "OpenBSD OpenSSH"
+    },
+    {
+      "id": "CVE-2026-40217",
+      "now": 0.82799,
+      "prev": 0.1702,
+      "delta": 0.65779,
+      "name": "BerriAI LiteLLM"
     },
     {
       "id": "CVE-2026-116606",
@@ -33,32 +33,11 @@
       "name": "Authentication Bypass Allows Global Configuration Restore in Barracuda Email Security Gate"
     },
     {
-      "id": "CVE-2026-40217",
-      "now": 0.78004,
-      "prev": 0.1702,
-      "delta": 0.60984,
-      "name": "BerriAI LiteLLM"
-    },
-    {
       "id": "CVE-2021-3199",
       "now": 0.88139,
       "prev": 0.30244,
       "delta": 0.57895,
       "name": "Directory traversal with remote code execution can occur in /upload in ONLYOFFICE Document Server before 5.6.3"
-    },
-    {
-      "id": "CVE-2026-5430",
-      "now": 0.7884,
-      "prev": 0.2239,
-      "delta": 0.5645,
-      "name": "Authentication Bypass via JWT Algorithm Mismatch in Multiple WSO2 Products Allows Account "
-    },
-    {
-      "id": "CVE-2026-45247",
-      "now": 0.8234,
-      "prev": 0.26157,
-      "delta": 0.56183,
-      "name": "Mirasvit Cache Warmer for Magento < 1.11.12 PHP Object Injection"
     },
     {
       "id": "CVE-2026-111560",
@@ -103,6 +82,13 @@
       "name": "Sangoma FreePBX 115.0.16.26 and below, 14.0.13.11 and below, 13.0.197.13 and below have Incorrect Access Contr"
     },
     {
+      "id": "CVE-2026-0769",
+      "now": 0.75837,
+      "prev": 0.41152,
+      "delta": 0.34685,
+      "name": "Langflow eval_custom_component_code Eval Injection Remote Code Execution Vulnerability"
+    },
+    {
       "id": "CVE-2026-48356",
       "now": 0.81624,
       "prev": 0.47472,
@@ -131,13 +117,6 @@
       "name": "Vanderbilt University REDCap"
     },
     {
-      "id": "CVE-2026-59309",
-      "now": 0.30867,
-      "prev": 0.00611,
-      "delta": 0.30256,
-      "name": "vCenter authentication-bypass vulnerability"
-    },
-    {
       "id": "CVE-2017-7577",
       "now": 0.53703,
       "prev": 0.2827,
@@ -152,32 +131,18 @@
       "name": "Maccms 8.x allows remote command execution via the wd parameter in an index.php?m=vod-search request."
     },
     {
+      "id": "CVE-2026-124194",
+      "now": 0.24894,
+      "prev": 0.0162,
+      "delta": 0.23274,
+      "name": "Microsoft Outlook Spoofing Vulnerability"
+    },
+    {
       "id": "CVE-2014-0780",
       "now": 0.97027,
       "prev": 0.74679,
       "delta": 0.22348,
       "name": "InduSoft Web Studio Path Traversal"
-    },
-    {
-      "id": "CVE-2017-16562",
-      "now": 0.4787,
-      "prev": 0.27369,
-      "delta": 0.20501,
-      "name": "The UserPro plugin before 4.9.17.1 for WordPress, when used on a site with the \"admin\" username, allows remote"
-    },
-    {
-      "id": "CVE-2026-22679",
-      "now": 0.40501,
-      "prev": 0.20692,
-      "delta": 0.19809,
-      "name": "Weaver E-cology 10.0 Unauthenticated RCE via dubboApi Debug Endpoint"
-    },
-    {
-      "id": "CVE-2024-8275",
-      "now": 0.69053,
-      "prev": 0.49914,
-      "delta": 0.19139,
-      "name": "The Events Calendar <= 6.6.4 - Unauthenticated SQL Injection"
     },
     {
       "id": "CVE-2026-49869",
@@ -201,18 +166,53 @@
       "name": "Out-of-Bounds Write in Google Brotli Decoder"
     },
     {
-      "id": "CVE-2015-7853",
-      "now": 0.27603,
-      "prev": 0.11781,
-      "delta": 0.15822,
-      "name": "The datalen parameter in the refclock driver in NTP 4.2.x before 4.2.8p4, and 4.3.x before 4.3.77 allows remot"
-    },
-    {
       "id": "CVE-2026-119618",
       "now": 0.15822,
-      "prev": 0.01527,
-      "delta": 0.14295,
+      "prev": 0.01583,
+      "delta": 0.14239,
       "name": "Apache HTTP Server: mod_http2: heap corruption and RCE in assign_headers"
+    },
+    {
+      "id": "CVE-2025-25291",
+      "now": 0.3359,
+      "prev": 0.20965,
+      "delta": 0.12625,
+      "name": "ruby-saml vulnerable to SAML authentication bypass due to DOCTYPE handling (parser differe"
+    },
+    {
+      "id": "CVE-2015-8351",
+      "now": 0.49619,
+      "prev": 0.37032,
+      "delta": 0.12587,
+      "name": "PHP remote file inclusion vulnerability in the Gwolle Guestbook plugin before 1.5.4 for WordPress, when allow_"
+    },
+    {
+      "id": "CVE-2026-115731",
+      "now": 0.12839,
+      "prev": 0.00366,
+      "delta": 0.12473,
+      "name": "Report Deserialization Code Execution"
+    },
+    {
+      "id": "CVE-2021-4473",
+      "now": 0.17927,
+      "prev": 0.06272,
+      "delta": 0.11655,
+      "name": "Tianxin Internet Behavior Management System Command Injection via toQuery.php"
+    },
+    {
+      "id": "CVE-2023-48292",
+      "now": 0.33907,
+      "prev": 0.22938,
+      "delta": 0.10969,
+      "name": "XWiki Admin Tools Application Run Shell Command allows CSRF RCE attacks"
+    },
+    {
+      "id": "CVE-2026-118539",
+      "now": 0.11185,
+      "prev": 0.00671,
+      "delta": 0.10514,
+      "name": "Commerce Core - Highly critical - Access bypass - SA-CONTRIB-2026-254"
     }
   ],
   "newly_high": [
@@ -224,18 +224,18 @@
       "name": "ipv4: free inet_opt and ireq_opt after an RCU grace period"
     },
     {
-      "id": "CVE-2026-50522",
-      "now": 0.8187,
-      "prev": 0.03042,
-      "delta": 0.78828,
-      "name": "Microsoft SharePoint Remote Code Execution Vulnerability"
-    },
-    {
       "id": "CVE-2026-123158",
       "now": 0.95538,
       "prev": 0.189,
       "delta": 0.76638,
       "name": "OpenBSD OpenSSH"
+    },
+    {
+      "id": "CVE-2026-40217",
+      "now": 0.82799,
+      "prev": 0.1702,
+      "delta": 0.65779,
+      "name": "BerriAI LiteLLM"
     },
     {
       "id": "CVE-2026-116606",
@@ -245,32 +245,11 @@
       "name": "Authentication Bypass Allows Global Configuration Restore in Barracuda Email Security Gate"
     },
     {
-      "id": "CVE-2026-40217",
-      "now": 0.78004,
-      "prev": 0.1702,
-      "delta": 0.60984,
-      "name": "BerriAI LiteLLM"
-    },
-    {
       "id": "CVE-2021-3199",
       "now": 0.88139,
       "prev": 0.30244,
       "delta": 0.57895,
       "name": "Directory traversal with remote code execution can occur in /upload in ONLYOFFICE Document Server before 5.6.3"
-    },
-    {
-      "id": "CVE-2026-5430",
-      "now": 0.7884,
-      "prev": 0.2239,
-      "delta": 0.5645,
-      "name": "Authentication Bypass via JWT Algorithm Mismatch in Multiple WSO2 Products Allows Account "
-    },
-    {
-      "id": "CVE-2026-45247",
-      "now": 0.8234,
-      "prev": 0.26157,
-      "delta": 0.56183,
-      "name": "Mirasvit Cache Warmer for Magento < 1.11.12 PHP Object Injection"
     },
     {
       "id": "CVE-2026-111560",
@@ -301,6 +280,13 @@
       "name": "Directory traversal vulnerability in SAP NetWeaver AS Java 7.1 through 7.5 allows remote attackers to read arb"
     },
     {
+      "id": "CVE-2026-0769",
+      "now": 0.75837,
+      "prev": 0.41152,
+      "delta": 0.34685,
+      "name": "Langflow eval_custom_component_code Eval Injection Remote Code Execution Vulnerability"
+    },
+    {
       "id": "CVE-2026-48356",
       "now": 0.81624,
       "prev": 0.47472,
@@ -329,11 +315,18 @@
       "name": "Maccms 8.x allows remote command execution via the wd parameter in an index.php?m=vod-search request."
     },
     {
-      "id": "CVE-2024-8275",
-      "now": 0.69053,
-      "prev": 0.49914,
-      "delta": 0.19139,
-      "name": "The Events Calendar <= 6.6.4 - Unauthenticated SQL Injection"
+      "id": "CVE-2020-13756",
+      "now": 0.55084,
+      "prev": 0.49797,
+      "delta": 0.05287,
+      "name": "Sabberworm PHP CSS Parser before 8.3.1 calls eval on uncontrolled data, possibly leading to remote code execut"
+    },
+    {
+      "id": "CVE-2003-0816",
+      "now": 0.52318,
+      "prev": 0.48374,
+      "delta": 0.03944,
+      "name": "Internet Explorer 6 SP1 and earlier allows remote attackers to bypass zone restrictions by (1) using the Navig"
     },
     {
       "id": "CVE-2022-22956",
