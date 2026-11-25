@@ -1,10 +1,487 @@
 {
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
+    {
+      "id": null,
+      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e36",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/482668",
+      "cves": [
+        "CVE-2026-135740"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e36",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/482668",
+      "cves": [
+        "CVE-2026-135740"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for cakephp/twig-view (GHSA-hq9r-72jq-2pxp)",
+      "severity": "Medium",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/482663",
+      "cves": [
+        "CVE-2026-59191"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for cakephp/twig-view (GHSA-hq9r-72jq-2pxp)",
+      "severity": "Medium",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/482663",
+      "cves": [
+        "CVE-2026-59191"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for filament/filament (GHSA-xwpv-pqxp-5v36)",
+      "severity": "Low",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/482662",
+      "cves": [
+        "CVE-2026-84307"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for filament/filament (GHSA-xwpv-pqxp-5v36)",
+      "severity": "Low",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/482662",
+      "cves": [
+        "CVE-2026-84307"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for ruflo (GHSA-c4hm-4h84-2cf3)",
+      "severity": "Critical",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/482660",
+      "cves": [
+        "CVE-2026-59726"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for ruflo (GHSA-c4hm-4h84-2cf3)",
+      "severity": "Critical",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/482660",
+      "cves": [
+        "CVE-2026-59726"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for go.etcd.io/etcd/v3 (GHSA-3wh4-j44w-pg92)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/482659",
+      "cves": [
+        "CVE-2026-59818"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for go.etcd.io/etcd/v3 (GHSA-3wh4-j44w-pg92)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/482659",
+      "cves": [
+        "CVE-2026-59818"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/cli/cli/v2 (GHSA-8cg3-r6g9-fpg2)",
+      "severity": "Medium",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/482658",
+      "cves": [
+        "CVE-2026-59831"
+      ]
+    },
+    {
+      "id": null,
+      "title": "SCA: security update for github.com/cli/cli/v2 (GHSA-8cg3-r6g9-fpg2)",
+      "severity": "Medium",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/482658",
+      "cves": [
+        "CVE-2026-59831"
+      ]
+    },
+    {
+      "id": "385901",
+      "title": "CentOS Linux 8.5 [TuxCare] Security Update: mariadb / mariadb-backup / mariadb-common / mariadb-devel / etc (CENTOS8.5:CLSA-2026:1795549586)",
+      "severity": "Medium",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385901",
+      "cves": [
+        "CVE-2026-44173"
+      ]
+    },
+    {
+      "id": "385900",
+      "title": "Unity Linux 20.1050a / 20.1060a / 20.1070a Security Update: openssh (UTSA-2026-168182)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385900",
+      "cves": []
+    },
+    {
+      "id": "385899",
+      "title": "Unity Linux 20.1060a / 20.1070a Security Update: procps-ng (UTSA-2026-168174)",
+      "severity": "Medium",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385899",
+      "cves": []
+    },
+    {
+      "id": "385898",
+      "title": "Fedora 45 : age (2026-2819ff30a6)",
+      "severity": "Critical",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385898",
+      "cves": []
+    },
+    {
+      "id": "385897",
+      "title": "Fedora 45 : cri-o1.37 (2026-5a04f9092d)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385897",
+      "cves": [
+        "CVE-2026-56855",
+        "CVE-2026-78662",
+        "CVE-2026-78667",
+        "CVE-2026-78669",
+        "CVE-2026-97031"
+      ]
+    },
+    {
+      "id": "385896",
+      "title": "Fedora 44 : php-smarty4 (2026-f214efbf8f)",
+      "severity": "Medium",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385896",
+      "cves": [
+        "CVE-2026-62992",
+        "CVE-2026-62993"
+      ]
+    },
+    {
+      "id": "385895",
+      "title": "Fedora 43 : fluxbox (2026-3a6f0a9978)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385895",
+      "cves": [
+        "CVE-2026-123784",
+        "CVE-2026-123785"
+      ]
+    },
+    {
+      "id": "385894",
+      "title": "Fedora 44 : cri-o1.36 (2026-7973b4e2f1)",
+      "severity": "Medium",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385894",
+      "cves": [
+        "CVE-2026-106096"
+      ]
+    },
+    {
+      "id": "385893",
+      "title": "Fedora 45 : fluxbox (2026-74391c2e03)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385893",
+      "cves": [
+        "CVE-2026-123784",
+        "CVE-2026-123785"
+      ]
+    },
+    {
+      "id": "385892",
+      "title": "Fedora 44 : sqlite (2026-95f1a4f58d)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385892",
+      "cves": [
+        "CVE-2026-119371",
+        "CVE-2026-119372",
+        "CVE-2026-119373",
+        "CVE-2026-119374",
+        "CVE-2026-119375",
+        "CVE-2026-119376",
+        "CVE-2026-119377",
+        "CVE-2026-119378",
+        "CVE-2026-119379",
+        "CVE-2026-119586",
+        "CVE-2026-119591"
+      ]
+    },
+    {
+      "id": "385891",
+      "title": "Fedora 45 : coturn (2026-3030fab390)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385891",
+      "cves": []
+    },
+    {
+      "id": "385890",
+      "title": "MiracleLinux 8 : flatpak-1.12.9-10.el8_10 (AXSA:2026-2358:10)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385890",
+      "cves": [
+        "CVE-2026-92162"
+      ]
+    },
+    {
+      "id": "385889",
+      "title": "MiracleLinux 8 : java-17-openjdk-17.0.21.1.2-2.1.el8 (AXSA:2026-2348:23)",
+      "severity": "Critical",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385889",
+      "cves": [
+        "CVE-2026-114938",
+        "CVE-2026-114939",
+        "CVE-2026-114940",
+        "CVE-2026-114942",
+        "CVE-2026-114943",
+        "CVE-2026-114944",
+        "CVE-2026-114945",
+        "CVE-2026-114946"
+      ]
+    },
+    {
+      "id": "385888",
+      "title": "CentOS Linux 8.5 [TuxCare] Security Update: python3-unbound / unbound / unbound-devel / unbound-libs Multiple Vulnerabilities (CENTOS8.5:CLSA-2026:1795563955)",
+      "severity": "Critical",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385888",
+      "cves": [
+        "CVE-2019-16866",
+        "CVE-2023-50387",
+        "CVE-2026-33278",
+        "CVE-2026-40622",
+        "CVE-2026-85501"
+      ]
+    },
+    {
+      "id": "385887",
+      "title": "Oracle Linux 10 : skopeo (ELSA-2026-100639)",
+      "severity": "Medium",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385887",
+      "cves": []
+    },
+    {
+      "id": "385886",
+      "title": "Oracle Linux 10 : krb5 (ELSA-2026-99624)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385886",
+      "cves": [
+        "CVE-2026-107364",
+        "CVE-2026-107708",
+        "CVE-2026-107778",
+        "CVE-2026-107884",
+        "CVE-2026-111423",
+        "CVE-2026-112314",
+        "CVE-2026-112315",
+        "CVE-2026-112316",
+        "CVE-2026-112317",
+        "CVE-2026-112318",
+        "CVE-2026-112319",
+        "CVE-2026-112320",
+        "CVE-2026-112321",
+        "CVE-2026-112322",
+        "CVE-2026-112323",
+        "CVE-2026-118380",
+        "CVE-2026-119079",
+        "CVE-2026-71199",
+        "CVE-2026-71200"
+      ]
+    },
+    {
+      "id": "385885",
+      "title": "Oracle Linux 10 : php8.4 (ELSA-2026-98609)",
+      "severity": "Critical",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385885",
+      "cves": []
+    },
+    {
+      "id": "385884",
+      "title": "Oracle Linux 10 : rsync (ELSA-2026-102293)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385884",
+      "cves": []
+    },
+    {
+      "id": "385883",
+      "title": "Oracle Linux 10 : libxml2 (ELSA-2026-98572)",
+      "severity": "Low",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385883",
+      "cves": [
+        "CVE-2026-11979",
+        "CVE-2026-86140",
+        "CVE-2026-86142",
+        "CVE-2026-86143",
+        "CVE-2026-86144"
+      ]
+    },
+    {
+      "id": "385882",
+      "title": "Oracle Linux 10 : dogtag-pki (ELSA-2026-98606)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385882",
+      "cves": [
+        "CVE-2026-89058",
+        "CVE-2026-89059",
+        "CVE-2026-89407",
+        "CVE-2026-89425",
+        "CVE-2026-91777"
+      ]
+    },
+    {
+      "id": "385881",
+      "title": "Oracle Linux 10 : git-lfs (ELSA-2026-102184)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385881",
+      "cves": []
+    },
+    {
+      "id": "385880",
+      "title": "Oracle Linux 10 : glib-networking (ELSA-2026-99696)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385880",
+      "cves": [
+        "CVE-2026-103963"
+      ]
+    },
+    {
+      "id": "385879",
+      "title": "Oracle Linux 10 : cockpit-machines (ELSA-2026-102943)",
+      "severity": "Medium",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385879",
+      "cves": [
+        "CVE-2026-113495",
+        "CVE-2026-113496",
+        "CVE-2026-92747",
+        "CVE-2026-92768"
+      ]
+    },
+    {
+      "id": "385878",
+      "title": "Oracle Linux 10 : nginx (ELSA-2026-98634)",
+      "severity": "Critical",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385878",
+      "cves": [
+        "CVE-2026-15176",
+        "CVE-2026-42055",
+        "CVE-2026-42533",
+        "CVE-2026-56434",
+        "CVE-2026-60005",
+        "CVE-2026-9256",
+        "CVE-2026-97205"
+      ]
+    },
+    {
+      "id": "385877",
+      "title": "Oracle Linux 10 : sssd (ELSA-2026-98559)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385877",
+      "cves": [
+        "CVE-2026-87853"
+      ]
+    },
+    {
+      "id": "385876",
+      "title": "Oracle Linux 10 : glib2 (ELSA-2026-98557)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385876",
+      "cves": [
+        "CVE-2026-16118"
+      ]
+    },
+    {
+      "id": "385875",
+      "title": "Oracle Linux 10 : patch (ELSA-2026-102274)",
+      "severity": "Medium",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385875",
+      "cves": [
+        "CVE-2026-115207"
+      ]
+    },
+    {
+      "id": "385874",
+      "title": "Unity Linux 20.1050a / 20.1060a / 20.1070a Security Update: gstreamer1-plugins-base (UTSA-2026-168176)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385874",
+      "cves": []
+    },
+    {
+      "id": "385873",
+      "title": "Unity Linux 20.1050a / 20.1060a / 20.1070a Security Update: fetchmail (UTSA-2026-168185)",
+      "severity": "Medium",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385873",
+      "cves": []
+    },
+    {
+      "id": "385872",
+      "title": "Unity Linux 20.1050a / 20.1060a / 20.1070a Security Update: gstreamer1 (UTSA-2026-168177)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385872",
+      "cves": []
+    },
+    {
+      "id": "385871",
+      "title": "Unity Linux 20.1050a / 20.1060a / 20.1070a Security Update: openssh (UTSA-2026-168184)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385871",
+      "cves": []
+    },
+    {
+      "id": "385870",
+      "title": "Unity Linux 20.1050a / 20.1060a / 20.1070a Security Update: criu (UTSA-2026-168179)",
+      "severity": "High",
+      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/nessus/385870",
+      "cves": []
+    },
     {
       "id": null,
       "title": "Google: app-admin/extensions-manager: security update to 18867.652.79dev-lang/go: security update to 18867.381.144",
@@ -169,454 +646,6 @@
         "CVE-2020-26262",
         "CVE-2025-69217",
         "CVE-2026-27624"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple openvpn packages: security update to 2.7.9-r0",
-      "severity": "High",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482649",
-      "cves": [
-        "CVE-2026-84790",
-        "CVE-2026-88964"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple openvpn packages: security update to 2.7.9-r0",
-      "severity": "High",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482649",
-      "cves": [
-        "CVE-2026-84790",
-        "CVE-2026-88964"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple coturn packages: security update to 4.19.2-r0",
-      "severity": "High",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482648",
-      "cves": [
-        "CVE-2026-43915",
-        "CVE-2026-53448",
-        "CVE-2026-53449",
-        "CVE-2026-53450"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple coturn packages: security update to 4.19.2-r0",
-      "severity": "High",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482648",
-      "cves": [
-        "CVE-2026-43915",
-        "CVE-2026-53448",
-        "CVE-2026-53449",
-        "CVE-2026-53450"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: ory-polis: security update to 26.2.0-r3",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482647",
-      "cves": [
-        "CVE-2026-119350"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: ory-polis: security update to 26.2.0-r3",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482647",
-      "cves": [
-        "CVE-2026-119350"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "High",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482646",
-      "cves": [
-        "CVE-2026-125181"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "High",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482646",
-      "cves": [
-        "CVE-2026-125181"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482645",
-      "cves": [
-        "CVE-2026-125182"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482645",
-      "cves": [
-        "CVE-2026-125182"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e33",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482644",
-      "cves": [
-        "CVE-2026-125095"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e33",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482644",
-      "cves": [
-        "CVE-2026-125095"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482643",
-      "cves": [
-        "CVE-2026-125191"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482643",
-      "cves": [
-        "CVE-2026-125191"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482642",
-      "cves": [
-        "CVE-2026-125186"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482642",
-      "cves": [
-        "CVE-2026-125186"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e33",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482641",
-      "cves": [
-        "CVE-2026-125098"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e33",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482641",
-      "cves": [
-        "CVE-2026-125098"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482640",
-      "cves": [
-        "CVE-2026-125192"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482640",
-      "cves": [
-        "CVE-2026-125192"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482639",
-      "cves": [
-        "CVE-2026-125197"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482639",
-      "cves": [
-        "CVE-2026-125197"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e33",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482638",
-      "cves": [
-        "CVE-2026-125066"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e33",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482638",
-      "cves": [
-        "CVE-2026-125066"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e33",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482637",
-      "cves": [
-        "CVE-2026-125067"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e33",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482637",
-      "cves": [
-        "CVE-2026-125067"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Low",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482636",
-      "cves": [
-        "CVE-2026-125195"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Low",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482636",
-      "cves": [
-        "CVE-2026-125195"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482635",
-      "cves": [
-        "CVE-2026-125187"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482635",
-      "cves": [
-        "CVE-2026-125187"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "High",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482634",
-      "cves": [
-        "CVE-2026-125201"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "High",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482634",
-      "cves": [
-        "CVE-2026-125201"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Low",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482633",
-      "cves": [
-        "CVE-2026-125198"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Low",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482633",
-      "cves": [
-        "CVE-2026-125198"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e33",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482632",
-      "cves": [
-        "CVE-2026-125064"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e33",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482632",
-      "cves": [
-        "CVE-2026-125064"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482631",
-      "cves": [
-        "CVE-2026-125177"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482631",
-      "cves": [
-        "CVE-2026-125177"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482630",
-      "cves": [
-        "CVE-2026-125178"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e32",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482630",
-      "cves": [
-        "CVE-2026-125178"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e33",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482629",
-      "cves": [
-        "CVE-2026-133519"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e33",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482629",
-      "cves": [
-        "CVE-2026-133519"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482628",
-      "cves": [
-        "CVE-2026-125199"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482628",
-      "cves": [
-        "CVE-2026-125199"
       ]
     }
   ]
