@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-25",
-  "previous_date": "2026-11-18",
+  "current_date": "2026-11-26",
+  "previous_date": "2026-11-19",
   "risers": [
     {
       "id": "CVE-2026-98432",
@@ -13,9 +13,9 @@
     },
     {
       "id": "CVE-2026-16232",
-      "now": 0.80106,
+      "now": 0.78945,
       "prev": 0.03517,
-      "delta": 0.76589,
+      "delta": 0.75428,
       "name": "Authentication Bypass in the SmartConsole Login Process Using an Application Token"
     },
     {
@@ -56,9 +56,16 @@
     {
       "id": "CVE-2026-114938",
       "now": 0.59265,
-      "prev": 0.00734,
-      "delta": 0.58531,
+      "prev": 0.00753,
+      "delta": 0.58512,
       "name": "Oracle Corporation Oracle Java SE"
+    },
+    {
+      "id": "CVE-2026-110264",
+      "now": 0.54049,
+      "prev": 0.01349,
+      "delta": 0.527,
+      "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
       "id": "CVE-2023-4873",
@@ -124,6 +131,13 @@
       "name": "Directory traversal vulnerability in SAP NetWeaver AS Java 7.1 through 7.5 allows remote attackers to read arb"
     },
     {
+      "id": "CVE-2026-123007",
+      "now": 0.45588,
+      "prev": 0.06358,
+      "delta": 0.3923,
+      "name": "NGINX ngx_http_v2_module vulnerability"
+    },
+    {
       "id": "CVE-2025-34102",
       "now": 0.48475,
       "prev": 0.09492,
@@ -143,13 +157,6 @@
       "prev": 0.10303,
       "delta": 0.38672,
       "name": "Apache Software Foundation Apache Tomcat"
-    },
-    {
-      "id": "CVE-2019-19006",
-      "now": 0.92374,
-      "prev": 0.54941,
-      "delta": 0.37433,
-      "name": "Sangoma FreePBX 115.0.16.26 and below, 14.0.13.11 and below, 13.0.197.13 and below have Incorrect Access Contr"
     },
     {
       "id": "CVE-2020-29134",
@@ -194,13 +201,6 @@
       "name": "D-Link Devices command.php Unauthenticated RCE"
     },
     {
-      "id": "CVE-2021-20660",
-      "now": 0.81523,
-      "prev": 0.4704,
-      "delta": 0.34483,
-      "name": "Contec Co., Ltd. SolarView Compact"
-    },
-    {
       "id": "CVE-2010-5333",
       "now": 0.50419,
       "prev": 0.16046,
@@ -225,9 +225,9 @@
     },
     {
       "id": "CVE-2026-16232",
-      "now": 0.80106,
+      "now": 0.78945,
       "prev": 0.03517,
-      "delta": 0.76589,
+      "delta": 0.75428,
       "name": "Authentication Bypass in the SmartConsole Login Process Using an Application Token"
     },
     {
@@ -268,9 +268,16 @@
     {
       "id": "CVE-2026-114938",
       "now": 0.59265,
-      "prev": 0.00734,
-      "delta": 0.58531,
+      "prev": 0.00753,
+      "delta": 0.58512,
       "name": "Oracle Corporation Oracle Java SE"
+    },
+    {
+      "id": "CVE-2026-110264",
+      "now": 0.54049,
+      "prev": 0.01349,
+      "delta": 0.527,
+      "name": "Integer Overflow or Wraparound in GitLab"
     },
     {
       "id": "CVE-2023-4873",
@@ -378,13 +385,6 @@
       "name": "D-Link Devices command.php Unauthenticated RCE"
     },
     {
-      "id": "CVE-2021-20660",
-      "now": 0.81523,
-      "prev": 0.4704,
-      "delta": 0.34483,
-      "name": "Contec Co., Ltd. SolarView Compact"
-    },
-    {
       "id": "CVE-2010-5333",
       "now": 0.50419,
       "prev": 0.16046,
@@ -397,6 +397,13 @@
       "prev": 0.2716,
       "delta": 0.34146,
       "name": "tiki-login.php in Tiki before 21.2 sets the admin password to a blank value after 50 invalid login attempts."
+    },
+    {
+      "id": "CVE-2021-20660",
+      "now": 0.81523,
+      "prev": 0.47449,
+      "delta": 0.34074,
+      "name": "Contec Co., Ltd. SolarView Compact"
     },
     {
       "id": "CVE-2013-10059",
@@ -418,13 +425,6 @@
       "prev": 0.33029,
       "delta": 0.30832,
       "name": "Citrix ADC, Citrix Gateway, Citrix SDWAN WAN-OP"
-    },
-    {
-      "id": "CVE-2024-10697",
-      "now": 0.56235,
-      "prev": 0.26166,
-      "delta": 0.30069,
-      "name": "Tenda AC6 API Endpoint WriteFacMac formWriteFacMac command injection"
     }
   ]
 }

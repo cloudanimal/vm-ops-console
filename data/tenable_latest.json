@@ -1,651 +1,496 @@
 {
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "source": "Tenable newest-plugins RSS",
   "source_url": "https://www.tenable.com/plugins",
   "attribution": "Plugin metadata (c) Tenable, Inc. Syndicated from the public RSS feed; see each link for full details.",
   "count": 60,
   "items": [
     {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e36",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482668",
-      "cves": [
-        "CVE-2026-135740"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: ffmpeg: security update to 7:7.1.5-0+deb13u1+e36",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482668",
-      "cves": [
-        "CVE-2026-135740"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for cakephp/twig-view (GHSA-hq9r-72jq-2pxp)",
+      "id": "506548",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Integer Overflow or Wraparound (CVE-2026-56404)",
       "severity": "Medium",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482663",
-      "cves": [
-        "CVE-2026-59191"
-      ]
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506548",
+      "cves": []
     },
     {
-      "id": null,
-      "title": "SCA: security update for cakephp/twig-view (GHSA-hq9r-72jq-2pxp)",
-      "severity": "Medium",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482663",
-      "cves": [
-        "CVE-2026-59191"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for filament/filament (GHSA-xwpv-pqxp-5v36)",
+      "id": "506547",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Inefficient CPU Computation (CVE-2026-18503)",
       "severity": "Low",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482662",
-      "cves": [
-        "CVE-2026-84307"
-      ]
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506547",
+      "cves": []
     },
     {
-      "id": null,
-      "title": "SCA: security update for filament/filament (GHSA-xwpv-pqxp-5v36)",
+      "id": "506546",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Allocation of Resources Without Limits or Throttling (CVE-2026-35189)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506546",
+      "cves": []
+    },
+    {
+      "id": "506545",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Link Following (CVE-2026-42497)",
+      "severity": "High",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506545",
+      "cves": []
+    },
+    {
+      "id": "506544",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP NULL Pointer Dereference (CVE-2026-75805)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506544",
+      "cves": []
+    },
+    {
+      "id": "506543",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Insufficiently Protected Credentials (CVE-2026-7017)",
+      "severity": "High",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506543",
+      "cves": []
+    },
+    {
+      "id": "506542",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Integer Overflow or Wraparound (CVE-2026-56409)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506542",
+      "cves": []
+    },
+    {
+      "id": "506541",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Uncontrolled Resource Consumption (CVE-2026-15310)",
       "severity": "Low",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482662",
-      "cves": [
-        "CVE-2026-84307"
-      ]
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506541",
+      "cves": []
     },
     {
-      "id": null,
-      "title": "SCA: security update for ruflo (GHSA-c4hm-4h84-2cf3)",
+      "id": "506540",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Out-of-bounds Read (CVE-2026-72522)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506540",
+      "cves": []
+    },
+    {
+      "id": "506539",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Improper Neutralization of Escape, Meta, or Control Sequences (CVE-2026-6019)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506539",
+      "cves": []
+    },
+    {
+      "id": "506538",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Use After Free (CVE-2026-50219)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506538",
+      "cves": []
+    },
+    {
+      "id": "506537",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Inefficient Algorithmic Complexity (CVE-2026-48959)",
+      "severity": "High",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506537",
+      "cves": []
+    },
+    {
+      "id": "506536",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Integer Overflow or Wraparound (CVE-2026-13221)",
       "severity": "Critical",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482660",
-      "cves": [
-        "CVE-2026-59726"
-      ]
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506536",
+      "cves": []
     },
     {
-      "id": null,
-      "title": "SCA: security update for ruflo (GHSA-c4hm-4h84-2cf3)",
+      "id": "506535",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Uncontrolled Resource Consumption (CVE-2025-69534)",
+      "severity": "High",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506535",
+      "cves": []
+    },
+    {
+      "id": "506534",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Use of Uninitialized Resource (CVE-2026-58051)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506534",
+      "cves": []
+    },
+    {
+      "id": "506533",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Inefficient Algorithmic Complexity (CVE-2026-3276)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506533",
+      "cves": []
+    },
+    {
+      "id": "506532",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Use After Free (CVE-2026-76957)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506532",
+      "cves": []
+    },
+    {
+      "id": "506531",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Integer Overflow or Wraparound (CVE-2026-7598)",
+      "severity": "High",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506531",
+      "cves": []
+    },
+    {
+      "id": "506530",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Improper Validation of Certificate with Host Mismatch (CVE-2026-19553)",
+      "severity": "High",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506530",
+      "cves": []
+    },
+    {
+      "id": "506529",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP CRLF Injection (CVE-2026-1502)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506529",
+      "cves": []
+    },
+    {
+      "id": "506528",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Double Free (CVE-2026-66032)",
+      "severity": "High",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506528",
+      "cves": []
+    },
+    {
+      "id": "506527",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Out-of-bounds Read (CVE-2026-77214)",
+      "severity": "High",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506527",
+      "cves": []
+    },
+    {
+      "id": "506526",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Integer Overflow or Wraparound (CVE-2026-56405)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506526",
+      "cves": []
+    },
+    {
+      "id": "506525",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Out-of-bounds Read (CVE-2026-84782)",
+      "severity": "High",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506525",
+      "cves": []
+    },
+    {
+      "id": "506524",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Use After Free (CVE-2026-19445)",
       "severity": "Critical",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482660",
-      "cves": [
-        "CVE-2026-59726"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for go.etcd.io/etcd/v3 (GHSA-3wh4-j44w-pg92)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482659",
-      "cves": [
-        "CVE-2026-59818"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for go.etcd.io/etcd/v3 (GHSA-3wh4-j44w-pg92)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482659",
-      "cves": [
-        "CVE-2026-59818"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/cli/cli/v2 (GHSA-8cg3-r6g9-fpg2)",
-      "severity": "Medium",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482658",
-      "cves": [
-        "CVE-2026-59831"
-      ]
-    },
-    {
-      "id": null,
-      "title": "SCA: security update for github.com/cli/cli/v2 (GHSA-8cg3-r6g9-fpg2)",
-      "severity": "Medium",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482658",
-      "cves": [
-        "CVE-2026-59831"
-      ]
-    },
-    {
-      "id": "385901",
-      "title": "CentOS Linux 8.5 [TuxCare] Security Update: mariadb / mariadb-backup / mariadb-common / mariadb-devel / etc (CENTOS8.5:CLSA-2026:1795549586)",
-      "severity": "Medium",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385901",
-      "cves": [
-        "CVE-2026-44173"
-      ]
-    },
-    {
-      "id": "385900",
-      "title": "Unity Linux 20.1050a / 20.1060a / 20.1070a Security Update: openssh (UTSA-2026-168182)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385900",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506524",
       "cves": []
     },
     {
-      "id": "385899",
-      "title": "Unity Linux 20.1060a / 20.1070a Security Update: procps-ng (UTSA-2026-168174)",
+      "id": "506523",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP SSRF (CVE-2026-8328)",
       "severity": "Medium",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385899",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506523",
       "cves": []
     },
     {
-      "id": "385898",
-      "title": "Fedora 45 : age (2026-2819ff30a6)",
+      "id": "506522",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Integer Overflow or Wraparound (CVE-2026-102633)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506522",
+      "cves": []
+    },
+    {
+      "id": "506521",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Integer Overflow or Wraparound (CVE-2026-57433)",
       "severity": "Critical",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385898",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506521",
       "cves": []
     },
     {
-      "id": "385897",
-      "title": "Fedora 45 : cri-o1.37 (2026-5a04f9092d)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385897",
-      "cves": [
-        "CVE-2026-56855",
-        "CVE-2026-78662",
-        "CVE-2026-78667",
-        "CVE-2026-78669",
-        "CVE-2026-97031"
-      ]
-    },
-    {
-      "id": "385896",
-      "title": "Fedora 44 : php-smarty4 (2026-f214efbf8f)",
-      "severity": "Medium",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385896",
-      "cves": [
-        "CVE-2026-62992",
-        "CVE-2026-62993"
-      ]
-    },
-    {
-      "id": "385895",
-      "title": "Fedora 43 : fluxbox (2026-3a6f0a9978)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385895",
-      "cves": [
-        "CVE-2026-123784",
-        "CVE-2026-123785"
-      ]
-    },
-    {
-      "id": "385894",
-      "title": "Fedora 44 : cri-o1.36 (2026-7973b4e2f1)",
-      "severity": "Medium",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385894",
-      "cves": [
-        "CVE-2026-106096"
-      ]
-    },
-    {
-      "id": "385893",
-      "title": "Fedora 45 : fluxbox (2026-74391c2e03)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385893",
-      "cves": [
-        "CVE-2026-123784",
-        "CVE-2026-123785"
-      ]
-    },
-    {
-      "id": "385892",
-      "title": "Fedora 44 : sqlite (2026-95f1a4f58d)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385892",
-      "cves": [
-        "CVE-2026-119371",
-        "CVE-2026-119372",
-        "CVE-2026-119373",
-        "CVE-2026-119374",
-        "CVE-2026-119375",
-        "CVE-2026-119376",
-        "CVE-2026-119377",
-        "CVE-2026-119378",
-        "CVE-2026-119379",
-        "CVE-2026-119586",
-        "CVE-2026-119591"
-      ]
-    },
-    {
-      "id": "385891",
-      "title": "Fedora 45 : coturn (2026-3030fab390)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385891",
-      "cves": []
-    },
-    {
-      "id": "385890",
-      "title": "MiracleLinux 8 : flatpak-1.12.9-10.el8_10 (AXSA:2026-2358:10)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385890",
-      "cves": [
-        "CVE-2026-92162"
-      ]
-    },
-    {
-      "id": "385889",
-      "title": "MiracleLinux 8 : java-17-openjdk-17.0.21.1.2-2.1.el8 (AXSA:2026-2348:23)",
-      "severity": "Critical",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385889",
-      "cves": [
-        "CVE-2026-114938",
-        "CVE-2026-114939",
-        "CVE-2026-114940",
-        "CVE-2026-114942",
-        "CVE-2026-114943",
-        "CVE-2026-114944",
-        "CVE-2026-114945",
-        "CVE-2026-114946"
-      ]
-    },
-    {
-      "id": "385888",
-      "title": "CentOS Linux 8.5 [TuxCare] Security Update: python3-unbound / unbound / unbound-devel / unbound-libs Multiple Vulnerabilities (CENTOS8.5:CLSA-2026:1795563955)",
-      "severity": "Critical",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385888",
-      "cves": [
-        "CVE-2019-16866",
-        "CVE-2023-50387",
-        "CVE-2026-33278",
-        "CVE-2026-40622",
-        "CVE-2026-85501"
-      ]
-    },
-    {
-      "id": "385887",
-      "title": "Oracle Linux 10 : skopeo (ELSA-2026-100639)",
-      "severity": "Medium",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385887",
-      "cves": []
-    },
-    {
-      "id": "385886",
-      "title": "Oracle Linux 10 : krb5 (ELSA-2026-99624)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385886",
-      "cves": [
-        "CVE-2026-107364",
-        "CVE-2026-107708",
-        "CVE-2026-107778",
-        "CVE-2026-107884",
-        "CVE-2026-111423",
-        "CVE-2026-112314",
-        "CVE-2026-112315",
-        "CVE-2026-112316",
-        "CVE-2026-112317",
-        "CVE-2026-112318",
-        "CVE-2026-112319",
-        "CVE-2026-112320",
-        "CVE-2026-112321",
-        "CVE-2026-112322",
-        "CVE-2026-112323",
-        "CVE-2026-118380",
-        "CVE-2026-119079",
-        "CVE-2026-71199",
-        "CVE-2026-71200"
-      ]
-    },
-    {
-      "id": "385885",
-      "title": "Oracle Linux 10 : php8.4 (ELSA-2026-98609)",
-      "severity": "Critical",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385885",
-      "cves": []
-    },
-    {
-      "id": "385884",
-      "title": "Oracle Linux 10 : rsync (ELSA-2026-102293)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385884",
-      "cves": []
-    },
-    {
-      "id": "385883",
-      "title": "Oracle Linux 10 : libxml2 (ELSA-2026-98572)",
+      "id": "506520",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Observable Timing Discrepancy (CVE-2026-54872)",
       "severity": "Low",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385883",
-      "cves": [
-        "CVE-2026-11979",
-        "CVE-2026-86140",
-        "CVE-2026-86142",
-        "CVE-2026-86143",
-        "CVE-2026-86144"
-      ]
-    },
-    {
-      "id": "385882",
-      "title": "Oracle Linux 10 : dogtag-pki (ELSA-2026-98606)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385882",
-      "cves": [
-        "CVE-2026-89058",
-        "CVE-2026-89059",
-        "CVE-2026-89407",
-        "CVE-2026-89425",
-        "CVE-2026-91777"
-      ]
-    },
-    {
-      "id": "385881",
-      "title": "Oracle Linux 10 : git-lfs (ELSA-2026-102184)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385881",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506520",
       "cves": []
     },
     {
-      "id": "385880",
-      "title": "Oracle Linux 10 : glib-networking (ELSA-2026-99696)",
+      "id": "506519",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Integer Overflow or Wraparound (CVE-2026-57432)",
       "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385880",
-      "cves": [
-        "CVE-2026-103963"
-      ]
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506519",
+      "cves": []
     },
     {
-      "id": "385879",
-      "title": "Oracle Linux 10 : cockpit-machines (ELSA-2026-102943)",
+      "id": "506518",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Interpretation Conflict (CVE-2026-17084)",
       "severity": "Medium",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385879",
-      "cves": [
-        "CVE-2026-113495",
-        "CVE-2026-113496",
-        "CVE-2026-92747",
-        "CVE-2026-92768"
-      ]
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506518",
+      "cves": []
     },
     {
-      "id": "385878",
-      "title": "Oracle Linux 10 : nginx (ELSA-2026-98634)",
+      "id": "506517",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Stack-based Buffer Overflow (CVE-2026-9669)",
+      "severity": "High",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506517",
+      "cves": []
+    },
+    {
+      "id": "506516",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Out-of-bounds Read (CVE-2025-15661)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506516",
+      "cves": []
+    },
+    {
+      "id": "506515",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Eval Injection (CVE-2026-48962)",
+      "severity": "High",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506515",
+      "cves": []
+    },
+    {
+      "id": "506514",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Integer Overflow or Wraparound (CVE-2026-56411)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506514",
+      "cves": []
+    },
+    {
+      "id": "506513",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Integer Overflow or Wraparound (CVE-2026-56410)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506513",
+      "cves": []
+    },
+    {
+      "id": "506512",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Use After Free (CVE-2026-56412)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506512",
+      "cves": []
+    },
+    {
+      "id": "506511",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Improper Validation of Specified Quantity in Input (CVE-2026-75806)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506511",
+      "cves": []
+    },
+    {
+      "id": "506510",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Improper Handling of Unicode Encoding (CVE-2026-93990)",
+      "severity": "High",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506510",
+      "cves": []
+    },
+    {
+      "id": "506509",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Integer Overflow or Wraparound (CVE-2026-56408)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506509",
+      "cves": []
+    },
+    {
+      "id": "506508",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Out-of-bounds Read (CVE-2026-12087)",
       "severity": "Critical",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385878",
-      "cves": [
-        "CVE-2026-15176",
-        "CVE-2026-42055",
-        "CVE-2026-42533",
-        "CVE-2026-56434",
-        "CVE-2026-60005",
-        "CVE-2026-9256",
-        "CVE-2026-97205"
-      ]
-    },
-    {
-      "id": "385877",
-      "title": "Oracle Linux 10 : sssd (ELSA-2026-98559)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385877",
-      "cves": [
-        "CVE-2026-87853"
-      ]
-    },
-    {
-      "id": "385876",
-      "title": "Oracle Linux 10 : glib2 (ELSA-2026-98557)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385876",
-      "cves": [
-        "CVE-2026-16118"
-      ]
-    },
-    {
-      "id": "385875",
-      "title": "Oracle Linux 10 : patch (ELSA-2026-102274)",
-      "severity": "Medium",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385875",
-      "cves": [
-        "CVE-2026-115207"
-      ]
-    },
-    {
-      "id": "385874",
-      "title": "Unity Linux 20.1050a / 20.1060a / 20.1070a Security Update: gstreamer1-plugins-base (UTSA-2026-168176)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385874",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506508",
       "cves": []
     },
     {
-      "id": "385873",
-      "title": "Unity Linux 20.1050a / 20.1060a / 20.1070a Security Update: fetchmail (UTSA-2026-168185)",
+      "id": "506507",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Integer Overflow or Wraparound (CVE-2026-56407)",
       "severity": "Medium",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385873",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506507",
       "cves": []
     },
     {
-      "id": "385872",
-      "title": "Unity Linux 20.1050a / 20.1060a / 20.1070a Security Update: gstreamer1 (UTSA-2026-168177)",
+      "id": "506506",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Inefficient Algorithmic Complexity (CVE-2026-66046)",
       "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385872",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506506",
       "cves": []
     },
     {
-      "id": "385871",
-      "title": "Unity Linux 20.1050a / 20.1060a / 20.1070a Security Update: openssh (UTSA-2026-168184)",
-      "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385871",
+      "id": "506505",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Always-Incorrect Control Flow Implementation (CVE-2026-19487)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506505",
       "cves": []
     },
     {
-      "id": "385870",
-      "title": "Unity Linux 20.1050a / 20.1060a / 20.1070a Security Update: criu (UTSA-2026-168179)",
+      "id": "506504",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Out-of-bounds Read (CVE-2026-66034)",
       "severity": "High",
-      "date": "Wed, 25 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/nessus/385870",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506504",
+      "cves": []
+    },
+    {
+      "id": "506503",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Cleartext Transmission of Sensitive Information (CVE-2026-15806)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506503",
+      "cves": []
+    },
+    {
+      "id": "506502",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Incorrect Synchronization (CVE-2026-56132)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506502",
+      "cves": []
+    },
+    {
+      "id": "506501",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP HTTP Request/Response Splitting (CVE-2026-7010)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506501",
+      "cves": []
+    },
+    {
+      "id": "506500",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Integer Overflow to Buffer Overflow (CVE-2026-8376)",
+      "severity": "High",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506500",
+      "cves": []
+    },
+    {
+      "id": "506499",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Uncaught Exception (CVE-2025-15649)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506499",
+      "cves": []
+    },
+    {
+      "id": "506498",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Integer Overflow or Wraparound (CVE-2026-56406)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506498",
+      "cves": []
+    },
+    {
+      "id": "506497",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Link Following (CVE-2026-42496)",
+      "severity": "Critical",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506497",
+      "cves": []
+    },
+    {
+      "id": "506496",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Use After Free (CVE-2026-56131)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506496",
+      "cves": []
+    },
+    {
+      "id": "506495",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Uncontrolled Resource Consumption (CVE-2026-15308)",
+      "severity": "High",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506495",
+      "cves": []
+    },
+    {
+      "id": "506494",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Observable Timing Discrepancy (CVE-2026-77696)",
+      "severity": "Low",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506494",
+      "cves": []
+    },
+    {
+      "id": "506493",
+      "title": "Siemens SIMATIC S7-1500 CPU 1518 MFP Integer Overflow or Wraparound (CVE-2026-56403)",
+      "severity": "Medium",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/ot/506493",
       "cves": []
     },
     {
       "id": null,
-      "title": "Google: app-admin/extensions-manager: security update to 18867.652.79dev-lang/go: security update to 18867.381.144",
-      "severity": "High",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482657",
-      "cves": [
-        "CVE-2026-33814"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: app-admin/extensions-manager: security update to 18867.652.79dev-lang/go: security update to 18867.381.144",
-      "severity": "High",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482657",
-      "cves": [
-        "CVE-2026-33814"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: multiple glibc-2.44 packages, multiple ld-linux-2.44 packages, multiple nscd-2.44 packages, multiple pcprofiledump-2.44 packages, multiple sln-2.44 packages, tzutils-2.44: security update to 2.44-r1",
+      "title": "Chainguard: multiple amazon-cloudwatch-agent packages: security update to 1.300073.1-r2multiple aws-otel-collector packages: security update to 0.50.0-r4aws-otel-collector-fips: security update to 0.50.0-r5multiple caddy packages: security update to 2.11.4-r14commercial-grafana-12.4: security update to 12.4.12-r0commercial-grafana-13.0: security update to 13.0.10-r0commercial-grafana-13.1: security update to 13.1.7-r0commercial-grafana-13.2: security update to 13.2.3-r0multiple datadog-agent-7.78 packages: security update to 7.78.4-r21multiple datadog-agent-7.80 packages: security update to 7.80.4-r18datadog-agent-7.80-full: security update to 7.80.4-r19multiple datadog-agent-7.81 packages: security update to 7.81.3-r7multiple datadog-agent-7.83 packages: security update to 7.83.2-r3multiple datadog-agent-fips-7.79 packages: security update to 7.79.2-r17multiple datadog-agent-fips-7.80 packages: security update to 7.80.4-r20multiple datadog-agent-fips-7.81 packages: security update to 7.81.3-r11multiple datadog-agent-fips-7.82 packages: security update to 7.82.3-r7multiple datadog-agent-fips-7.83 packages: security update to 7.83.3-r1distribution, harbor-registry: security update to 3.1.1-r16distribution-fips: security update to 3.1.1-r15dynatrace-operator: security update to 1.10.2-r6dynatrace-operator-fips: security update to 1.10.2-r7elastic-agent-8.19: security update to 8.19.21-r3elastic-agent-9.2: security update to 9.2.8-r24multiple elastic-agent-9.3 packages: security update to 9.3.8-r8elastic-agent-fips-8.19: security update to 8.19.21-r4elastic-agent-fips-9.2: security update to 9.2.8-r20multiple elastic-agent-fips-9.3 packages: security update to 9.3.8-r12envoy-ai-gateway-extproc: security update to 1.1.0-r4envoy-ai-gateway-fips-extproc: security update to 1.1.0-r5multiple falcosidekick packages: security update to 2.35.0-r5fluent-bit-plugin-loki, multiple loki-3.7 packages, ruby3.2-fluent-plugin-grafana-loki-3.7: security update to 3.7.8-r1frankenphp-8.2: security update to 1.12.7-r12frankenphp-8.3: security update to 1.12.7-r10google-cloud-otel-ops-collector: security update to 0.159.0-r5grafana-11.6: security update to 11.6.16-r27grafana-12.2: security update to 12.2.10-r27multiple grafana-12.3 packages: security update to 12.3.11-r8multiple grafana-12.4 packages: security update to 12.4.11-r2multiple grafana-13.0 packages: security update to 13.0.9-r2multiple grafana-13.1 packages: security update to 13.1.6-r2multiple grafana-13.2 packages: security update to 13.2.2-r1multiple grafana-alloy packages: security update to 1.19.2-r6grafana-alloy-fips: security update to 1.20.0-r0grafana-fips-11.6: security update to 11.6.16-r29grafana-fips-12.1: security update to 12.1.10.01-r16grafana-fips-12.2: security update to 12.2.10-r22grafana-fips-12.3: security update to 12.3.11-r6multiple grafana-mimir-2.17 packages: security update to 2.17.11-r16multiple grafana-mimir-3.0 packages: security update to 3.0.9-r6multiple grafana-mimir-3.1 packages: security update to 3.1.6-r1multiple grafana-mimir-3.2 packages: security update to 3.2.1-r1grafana-pyroscope-1.15: security update to 1.15.3-r22grafana-pyroscope-1.16: security update to 1.16.2-r26grafana-pyroscope-1.17: security update to 1.17.4-r22grafana-pyroscope-1.18: security update to 1.18.2-r22grafana-pyroscope-1.19: security update to 1.19.3-r17grafana-pyroscope-1.20: security update to 1.20.4-r17grafana-pyroscope-1.21: security update to 1.21.1-r14grafana-pyroscope-2.0: security update to 2.0.6-r8grafana-pyroscope-2.1: security update to 2.1.2-r6multiple grafana-pyroscope-2.2 packages: security update to 2.2.2-r2multiple grafana-pyroscope-2.3 packages: security update to 2.3.1-r2grafana-pyroscope-fips-2.0: security update to 2.0.6-r6grafana-pyroscope-fips-2.1: security update to 2.1.2-r4harbor-registry-fips: security update to 3.1.1-r18multiple kots packages: security update to 1.131.8-r2multiple loki-3.6 packages, ruby3.2-fluent-plugin-grafana-loki-3.6: security update to 3.6.17-r1multiple mcp-grafana packages: security update to 1.6.2-r0mcp-grafana-fips: security update to 1.5.1-r1opentelemetry-go-instrumentation: security update to 0.24.0-r4opentelemetry-go-instrumentation-fips: security update to 0.24.0-r3multiple opentofu-1.11 packages: security update to 1.11.14-r7multiple opentofu-1.12 packages: security update to 1.12.6-r8opentofu-fips-1.11: security update to 1.11.14-r5opentofu-fips-1.12: security update to 1.12.6-r9percona-grafana: security update to 3.9.1-r4pulumi-kubernetes-operator: security update to 2.9.1-r3multiple tempo-2.10 packages: security update to 2.10.8-r7multiple tempo-2.8 packages: security update to 2.8.4-r20multiple tempo-2.9 packages: security update to 2.9.5-r7multiple tempo-3.0 packages: security update to 3.0.3-r8multiple tempo-fips-2.10 packages: security update to 2.10.8-r5multiple tempo-fips-2.8 packages: security update to 2.8.4-r13multiple tempo-fips-2.9 packages: security update to 2.9.5-r6multiple tempo-fips-3.0 packages: security update to 3.0.3-r5multiple terraform-1.14 packages: security update to 1.14.9-r20multiple terraform-1.15 packages: security update to 1.15.9-r6multiple terraform-1.16 packages: security update to 1.16.3-r1terraform-fips-1.14: security update to 1.14.9-r21terraform-fips-1.15: security update to 1.15.9-r7multiple traefik-3.7 packages: security update to 3.7.14-r0zitadel-4: security update to 4.19.1-r1zot: security update to 2.1.21-r3",
       "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482656",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/483958",
       "cves": [
-        "CVE-2026-19542"
+        "CVE-2026-81871"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: multiple glibc-2.44 packages, multiple ld-linux-2.44 packages, multiple nscd-2.44 packages, multiple pcprofiledump-2.44 packages, multiple sln-2.44 packages, tzutils-2.44: security update to 2.44-r1",
+      "title": "Chainguard: multiple amazon-cloudwatch-agent packages: security update to 1.300073.1-r2multiple aws-otel-collector packages: security update to 0.50.0-r4aws-otel-collector-fips: security update to 0.50.0-r5multiple caddy packages: security update to 2.11.4-r14commercial-grafana-12.4: security update to 12.4.12-r0commercial-grafana-13.0: security update to 13.0.10-r0commercial-grafana-13.1: security update to 13.1.7-r0commercial-grafana-13.2: security update to 13.2.3-r0multiple datadog-agent-7.78 packages: security update to 7.78.4-r21multiple datadog-agent-7.80 packages: security update to 7.80.4-r18datadog-agent-7.80-full: security update to 7.80.4-r19multiple datadog-agent-7.81 packages: security update to 7.81.3-r7multiple datadog-agent-7.83 packages: security update to 7.83.2-r3multiple datadog-agent-fips-7.79 packages: security update to 7.79.2-r17multiple datadog-agent-fips-7.80 packages: security update to 7.80.4-r20multiple datadog-agent-fips-7.81 packages: security update to 7.81.3-r11multiple datadog-agent-fips-7.82 packages: security update to 7.82.3-r7multiple datadog-agent-fips-7.83 packages: security update to 7.83.3-r1distribution, harbor-registry: security update to 3.1.1-r16distribution-fips: security update to 3.1.1-r15dynatrace-operator: security update to 1.10.2-r6dynatrace-operator-fips: security update to 1.10.2-r7elastic-agent-8.19: security update to 8.19.21-r3elastic-agent-9.2: security update to 9.2.8-r24multiple elastic-agent-9.3 packages: security update to 9.3.8-r8elastic-agent-fips-8.19: security update to 8.19.21-r4elastic-agent-fips-9.2: security update to 9.2.8-r20multiple elastic-agent-fips-9.3 packages: security update to 9.3.8-r12envoy-ai-gateway-extproc: security update to 1.1.0-r4envoy-ai-gateway-fips-extproc: security update to 1.1.0-r5multiple falcosidekick packages: security update to 2.35.0-r5fluent-bit-plugin-loki, multiple loki-3.7 packages, ruby3.2-fluent-plugin-grafana-loki-3.7: security update to 3.7.8-r1frankenphp-8.2: security update to 1.12.7-r12frankenphp-8.3: security update to 1.12.7-r10google-cloud-otel-ops-collector: security update to 0.159.0-r5grafana-11.6: security update to 11.6.16-r27grafana-12.2: security update to 12.2.10-r27multiple grafana-12.3 packages: security update to 12.3.11-r8multiple grafana-12.4 packages: security update to 12.4.11-r2multiple grafana-13.0 packages: security update to 13.0.9-r2multiple grafana-13.1 packages: security update to 13.1.6-r2multiple grafana-13.2 packages: security update to 13.2.2-r1multiple grafana-alloy packages: security update to 1.19.2-r6grafana-alloy-fips: security update to 1.20.0-r0grafana-fips-11.6: security update to 11.6.16-r29grafana-fips-12.1: security update to 12.1.10.01-r16grafana-fips-12.2: security update to 12.2.10-r22grafana-fips-12.3: security update to 12.3.11-r6multiple grafana-mimir-2.17 packages: security update to 2.17.11-r16multiple grafana-mimir-3.0 packages: security update to 3.0.9-r6multiple grafana-mimir-3.1 packages: security update to 3.1.6-r1multiple grafana-mimir-3.2 packages: security update to 3.2.1-r1grafana-pyroscope-1.15: security update to 1.15.3-r22grafana-pyroscope-1.16: security update to 1.16.2-r26grafana-pyroscope-1.17: security update to 1.17.4-r22grafana-pyroscope-1.18: security update to 1.18.2-r22grafana-pyroscope-1.19: security update to 1.19.3-r17grafana-pyroscope-1.20: security update to 1.20.4-r17grafana-pyroscope-1.21: security update to 1.21.1-r14grafana-pyroscope-2.0: security update to 2.0.6-r8grafana-pyroscope-2.1: security update to 2.1.2-r6multiple grafana-pyroscope-2.2 packages: security update to 2.2.2-r2multiple grafana-pyroscope-2.3 packages: security update to 2.3.1-r2grafana-pyroscope-fips-2.0: security update to 2.0.6-r6grafana-pyroscope-fips-2.1: security update to 2.1.2-r4harbor-registry-fips: security update to 3.1.1-r18multiple kots packages: security update to 1.131.8-r2multiple loki-3.6 packages, ruby3.2-fluent-plugin-grafana-loki-3.6: security update to 3.6.17-r1multiple mcp-grafana packages: security update to 1.6.2-r0mcp-grafana-fips: security update to 1.5.1-r1opentelemetry-go-instrumentation: security update to 0.24.0-r4opentelemetry-go-instrumentation-fips: security update to 0.24.0-r3multiple opentofu-1.11 packages: security update to 1.11.14-r7multiple opentofu-1.12 packages: security update to 1.12.6-r8opentofu-fips-1.11: security update to 1.11.14-r5opentofu-fips-1.12: security update to 1.12.6-r9percona-grafana: security update to 3.9.1-r4pulumi-kubernetes-operator: security update to 2.9.1-r3multiple tempo-2.10 packages: security update to 2.10.8-r7multiple tempo-2.8 packages: security update to 2.8.4-r20multiple tempo-2.9 packages: security update to 2.9.5-r7multiple tempo-3.0 packages: security update to 3.0.3-r8multiple tempo-fips-2.10 packages: security update to 2.10.8-r5multiple tempo-fips-2.8 packages: security update to 2.8.4-r13multiple tempo-fips-2.9 packages: security update to 2.9.5-r6multiple tempo-fips-3.0 packages: security update to 3.0.3-r5multiple terraform-1.14 packages: security update to 1.14.9-r20multiple terraform-1.15 packages: security update to 1.15.9-r6multiple terraform-1.16 packages: security update to 1.16.3-r1terraform-fips-1.14: security update to 1.14.9-r21terraform-fips-1.15: security update to 1.15.9-r7multiple traefik-3.7 packages: security update to 3.7.14-r0zitadel-4: security update to 4.19.1-r1zot: security update to 2.1.21-r3",
       "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482656",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/483958",
       "cves": [
-        "CVE-2026-19542"
+        "CVE-2026-81871"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: libexpat1, multiple expat packages: security update to 2.11.0-r0",
+      "title": "SCA: security update for petebishwhip/laradocs (GHSA-h746-qpxh-ph7g)",
       "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482655",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/cloud-security/483952",
       "cves": [
-        "CVE-2026-128241"
+        "CVE-2026-65973"
       ]
     },
     {
       "id": null,
-      "title": "Chainguard: libexpat1, multiple expat packages: security update to 2.11.0-r0",
+      "title": "SCA: security update for petebishwhip/laradocs (GHSA-h746-qpxh-ph7g)",
       "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482655",
+      "date": "Thu, 26 Nov 2026 00:00:00 GMT",
+      "link": "https://www.tenable.com/plugins/container-security/483952",
       "cves": [
-        "CVE-2026-128241"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: libexpat1, multiple expat packages: security update to 2.11.0-r0",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482654",
-      "cves": [
-        "CVE-2026-124317"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: libexpat1, multiple expat packages: security update to 2.11.0-r0",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482654",
-      "cves": [
-        "CVE-2026-124317"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: app-admin/google-guest-agent: security update to 18867.652.79dev-lang/go: security update to 18867.652.49",
-      "severity": "High",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482653",
-      "cves": [
-        "CVE-2026-97032"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Google: app-admin/google-guest-agent: security update to 18867.652.79dev-lang/go: security update to 18867.652.49",
-      "severity": "High",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482653",
-      "cves": [
-        "CVE-2026-97032"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: qtbase-opensource-src: security update to 5.15.15+dfsg-6+e13",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482652",
-      "cves": [
-        "CVE-2026-103645"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Echo: qtbase-opensource-src: security update to 5.15.15+dfsg-6+e13",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482652",
-      "cves": [
-        "CVE-2026-103645"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: ory-polis: security update to 26.2.0-r3",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482651",
-      "cves": [
-        "CVE-2026-103004",
-        "CVE-2026-119351"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Chainguard: ory-polis: security update to 26.2.0-r3",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482651",
-      "cves": [
-        "CVE-2026-103004",
-        "CVE-2026-119351"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple coturn packages: security update to 4.9.0-r0",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/cloud-security/482650",
-      "cves": [
-        "CVE-2020-26262",
-        "CVE-2025-69217",
-        "CVE-2026-27624"
-      ]
-    },
-    {
-      "id": null,
-      "title": "Alpine: multiple coturn packages: security update to 4.9.0-r0",
-      "severity": "Medium",
-      "date": "Tue, 24 Nov 2026 00:00:00 GMT",
-      "link": "https://www.tenable.com/plugins/container-security/482650",
-      "cves": [
-        "CVE-2020-26262",
-        "CVE-2025-69217",
-        "CVE-2026-27624"
+        "CVE-2026-65973"
       ]
     }
   ]
