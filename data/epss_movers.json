@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "source": "FIRST EPSS",
-  "current_date": "2026-11-26",
-  "previous_date": "2026-11-19",
+  "current_date": "2026-11-27",
+  "previous_date": "2026-11-20",
   "risers": [
     {
       "id": "CVE-2026-98432",
@@ -19,11 +19,25 @@
       "name": "Authentication Bypass in the SmartConsole Login Process Using an Application Token"
     },
     {
+      "id": "CVE-2026-114938",
+      "now": 0.72539,
+      "prev": 0.00907,
+      "delta": 0.71632,
+      "name": "Oracle Corporation Oracle Java SE"
+    },
+    {
       "id": "CVE-2026-48939",
       "now": 0.91199,
       "prev": 0.20069,
       "delta": 0.7113,
       "name": "Joomla Extension - icagenda.com - Remote Code Execution in iCaganda extension for Joomla <"
+    },
+    {
+      "id": "CVE-2026-123158",
+      "now": 0.89631,
+      "prev": 0.189,
+      "delta": 0.70731,
+      "name": "OpenBSD OpenSSH"
     },
     {
       "id": "CVE-2026-56291",
@@ -52,13 +66,6 @@
       "prev": 0.13255,
       "delta": 0.61938,
       "name": "D-Link Devices tools_vct.xgi Authenticated RCE"
-    },
-    {
-      "id": "CVE-2026-114938",
-      "now": 0.59265,
-      "prev": 0.00753,
-      "delta": 0.58512,
-      "name": "Oracle Corporation Oracle Java SE"
     },
     {
       "id": "CVE-2026-110264",
@@ -132,9 +139,9 @@
     },
     {
       "id": "CVE-2026-123007",
-      "now": 0.45588,
-      "prev": 0.06358,
-      "delta": 0.3923,
+      "now": 0.46134,
+      "prev": 0.06033,
+      "delta": 0.40101,
       "name": "NGINX ngx_http_v2_module vulnerability"
     },
     {
@@ -173,18 +180,18 @@
       "name": "Zabbix before 3.0.32rc1, 4.x before 4.0.22rc1, 4.1.x through 4.4.x before 4.4.10rc1, and 5.x before 5.0.2rc1 a"
     },
     {
-      "id": "CVE-2018-8372",
-      "now": 0.62512,
-      "prev": 0.26279,
-      "delta": 0.36233,
-      "name": "Microsoft ChakraCore"
-    },
-    {
       "id": "CVE-2016-5649",
       "now": 0.59673,
       "prev": 0.23582,
       "delta": 0.36091,
       "name": "Netgear DGN2200 and DGND3700 disclose the administrator password"
+    },
+    {
+      "id": "CVE-2018-8372",
+      "now": 0.62512,
+      "prev": 0.26959,
+      "delta": 0.35553,
+      "name": "Microsoft ChakraCore"
     },
     {
       "id": "CVE-2016-1000282",
@@ -206,13 +213,6 @@
       "prev": 0.16046,
       "delta": 0.34373,
       "name": "The web server in Integard Pro and Home before 2.0.0.9037 and 2.2.x before 2.2.0.9037 has a buffer overflow vi"
-    },
-    {
-      "id": "CVE-2020-15906",
-      "now": 0.61306,
-      "prev": 0.2716,
-      "delta": 0.34146,
-      "name": "tiki-login.php in Tiki before 21.2 sets the admin password to a blank value after 50 invalid login attempts."
     }
   ],
   "newly_high": [
@@ -231,11 +231,25 @@
       "name": "Authentication Bypass in the SmartConsole Login Process Using an Application Token"
     },
     {
+      "id": "CVE-2026-114938",
+      "now": 0.72539,
+      "prev": 0.00907,
+      "delta": 0.71632,
+      "name": "Oracle Corporation Oracle Java SE"
+    },
+    {
       "id": "CVE-2026-48939",
       "now": 0.91199,
       "prev": 0.20069,
       "delta": 0.7113,
       "name": "Joomla Extension - icagenda.com - Remote Code Execution in iCaganda extension for Joomla <"
+    },
+    {
+      "id": "CVE-2026-123158",
+      "now": 0.89631,
+      "prev": 0.189,
+      "delta": 0.70731,
+      "name": "OpenBSD OpenSSH"
     },
     {
       "id": "CVE-2026-56291",
@@ -264,13 +278,6 @@
       "prev": 0.13255,
       "delta": 0.61938,
       "name": "D-Link Devices tools_vct.xgi Authenticated RCE"
-    },
-    {
-      "id": "CVE-2026-114938",
-      "now": 0.59265,
-      "prev": 0.00753,
-      "delta": 0.58512,
-      "name": "Oracle Corporation Oracle Java SE"
     },
     {
       "id": "CVE-2026-110264",
@@ -364,18 +371,18 @@
       "name": "Zabbix before 3.0.32rc1, 4.x before 4.0.22rc1, 4.1.x through 4.4.x before 4.4.10rc1, and 5.x before 5.0.2rc1 a"
     },
     {
-      "id": "CVE-2018-8372",
-      "now": 0.62512,
-      "prev": 0.26279,
-      "delta": 0.36233,
-      "name": "Microsoft ChakraCore"
-    },
-    {
       "id": "CVE-2016-5649",
       "now": 0.59673,
       "prev": 0.23582,
       "delta": 0.36091,
       "name": "Netgear DGN2200 and DGND3700 disclose the administrator password"
+    },
+    {
+      "id": "CVE-2018-8372",
+      "now": 0.62512,
+      "prev": 0.26959,
+      "delta": 0.35553,
+      "name": "Microsoft ChakraCore"
     },
     {
       "id": "CVE-2013-10048",
@@ -418,13 +425,6 @@
       "prev": 0.30364,
       "delta": 0.33456,
       "name": "NETGEAR DGN setup.cgi OS Command Injection"
-    },
-    {
-      "id": "CVE-2020-8195",
-      "now": 0.63861,
-      "prev": 0.33029,
-      "delta": 0.30832,
-      "name": "Citrix ADC, Citrix Gateway, Citrix SDWAN WAN-OP"
     }
   ]
 }
